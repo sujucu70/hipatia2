@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recorrido · Modernización · Hipatia</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --navy:#051C2C; --navy-700:#0C2A3D; --navy-500:#1B3D52;
+  --purple:#7C4DBC; --purple-soft:rgba(124,77,188,.12);
+  --coral:#F0552A; --magenta:#C8366F; --blue:#6FA0D8; --green:#3A9E65; --green-soft:#EAF5EF;
+  --white:#FFF; --paper:#F7F5F2; --line:#E6E2DC; --gray:#6B7682; --copper:#B5622A;
+  --ink:#0A1622; --red:#C84040; --red-soft:#FBEFEF;
+  --sb:236px; --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);color:var(--ink);overflow:hidden}
+
+/* ---- Stage / steps ---- */
+.stage{position:fixed;inset:0 0 64px 0;overflow:hidden}
+.step{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .4s var(--ease);overflow:auto}
+.step.on{opacity:1;pointer-events:all}
+
+/* ---- Phase pill ---- */
+.phase{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:60;display:flex;gap:6px;align-items:center;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:30px;padding:5px 8px}
+.phase span{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);padding:3px 11px;border-radius:20px}
+.phase span.act{background:var(--purple);color:#fff}
+
+/* ===== AS-IS scene ===== */
+.asis{background:var(--navy);color:#cdd9e1;display:flex;align-items:center;justify-content:center}
+.asis .box{max-width:1040px;width:100%;padding:60px 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.asis .kick{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9FB3C2;margin-bottom:14px}
+.asis h1{font-size:clamp(30px,3.6vw,46px);font-weight:800;line-height:1.08;letter-spacing:-.02em;color:#fff;margin-bottom:18px}
+.asis p{font-size:16px;line-height:1.65;color:#AEC0CC;max-width:46ch}
+.asis .who{margin-top:24px;display:flex;align-items:center;gap:12px}
+.asis .ava{width:42px;height:42px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:14px}
+.asis .who b{color:#fff;display:block;font-size:15px}
+.asis .who small{color:#8DA3B2;font-size:13px}
+/* messy search mock */
+.mess{background:#0B2536;border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px;box-shadow:0 30px 70px -40px rgba(0,0,0,.7)}
+.mess .bar{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:9px 12px;font-size:13px;color:#8DA3B2;margin-bottom:14px}
+.mess .res{display:flex;align-items:center;gap:11px;padding:10px 8px;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;color:#B9C8D3}
+.mess .res:last-child{border:none}
+.mess .ic{width:26px;height:30px;border-radius:3px;background:rgba(255,255,255,.1);flex-shrink:0}
+.mess .res small{display:block;color:#6E8494;font-size:11px;margin-top:1px}
+.mess .think{margin-top:16px;font-style:italic;color:#cbb6e8;font-size:14px;line-height:1.5}
+.asis .fade{margin-top:18px;color:var(--coral);font-weight:600;font-size:14px}
+
+/* ===== PORTAL ===== */
+.portal{position:absolute;inset:0;background:var(--paper);display:flex;flex-direction:column}
+.tbar{height:50px;background:var(--navy);display:flex;align-items:center;padding:0 20px;flex-shrink:0}
+.tbar .lg{font-weight:800;font-size:15px;color:#fff;letter-spacing:-.02em;margin-right:28px}
+.tbar .lg i{color:var(--copper);font-style:normal}
+.tbar nav{display:flex;gap:2px;flex:1}
+.tbar nav a{font-size:12px;font-weight:600;letter-spacing:.02em;color:rgba(255,255,255,.45);padding:0 14px;height:50px;display:flex;align-items:center;border-bottom:2px solid transparent}
+.tbar nav a.act{color:#fff;border-bottom-color:var(--purple)}
+.tbar .usr{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.65);font-size:13px}
+.tbar .usr .av{width:28px;height:28px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff}
+.cols{flex:1;display:flex;overflow:hidden}
+
+/* sidebar */
+.sb{width:var(--sb);background:var(--white);border-right:1px solid var(--line);overflow-y:auto;padding:16px 0;flex-shrink:0}
+.sb .lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);padding:12px 18px 6px}
+.sb a{display:flex;align-items:center;gap:10px;padding:8px 18px;font-size:13px;color:#46535E;border-left:2px solid transparent}
+.sb a .d{width:6px;height:6px;border-radius:50%;background:var(--line);flex-shrink:0}
+.sb a.act{background:var(--purple-soft);color:var(--purple);border-left-color:var(--purple);font-weight:600}
+.sb a.act .d{background:var(--purple)}
+.sb a.sub{padding-left:30px}
+.sb .div{height:1px;background:var(--line);margin:10px 18px}
+.sb a.tool .d{border-radius:4px;width:7px;height:7px;background:var(--copper)}
+
+/* main */
+.pmain{flex:1;overflow-y:auto;background:var(--paper)}
+.ahd{background:var(--white);border-bottom:1px solid var(--line);padding:20px 32px 0}
+.crumb{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gray);margin-bottom:8px}
+.atitle{font-size:26px;font-weight:800;letter-spacing:-.02em;color:var(--navy)}
+.tabs{display:flex;gap:0;margin-top:16px}
+.tab{font-size:12px;font-weight:700;letter-spacing:.03em;padding:11px 18px;color:var(--gray);border-bottom:2px solid transparent;cursor:default}
+.tab.act{color:var(--purple);border-bottom-color:var(--purple)}
+
+/* content grid */
+.body{display:grid;grid-template-columns:1fr 316px}
+.left{padding:26px 32px;border-right:1px solid var(--line);min-height:420px}
+.tools{padding:24px;background:var(--white)}
+.panel{display:none}
+.panel.on{display:block;animation:fade .35s var(--ease)}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* tarjeta blocks */
+.slbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-bottom:9px}
+.claim{font-size:27px;font-weight:800;line-height:1.18;letter-spacing:-.02em;color:var(--navy);margin-bottom:7px}
+.claim-sub{font-size:14px;color:#5A6670;max-width:54ch;margin-bottom:22px}
+.q{background:var(--navy);border-radius:10px;padding:16px 20px;margin-bottom:14px}
+.q .l{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9FB3C2;margin-bottom:7px}
+.q .t{font-size:16px;color:#EAF1F5;font-style:italic;line-height:1.5}
+.dato{background:var(--purple-soft);border:1px solid rgba(124,77,188,.2);border-radius:10px;padding:15px 18px;display:flex;gap:16px;align-items:center;margin-bottom:14px}
+.dato .n{font-size:40px;font-weight:800;color:var(--purple);line-height:1;flex-shrink:0}
+.dato .t{font-size:13px;color:#4A5660;line-height:1.5}
+.dato .s{font-size:10px;font-weight:600;letter-spacing:.04em;color:var(--gray);margin-top:4px}
+.why{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.why .l{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--copper);margin-bottom:8px}
+.why .t{font-size:14px;color:#33404B;line-height:1.65}
+
+/* sales kit blocks */
+.kc{border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px;background:var(--paper)}
+.kc h4{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.kc h4 .tg{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:4px;background:var(--purple-soft);color:var(--purple)}
+.kc p{font-size:13.5px;color:#46535E;line-height:1.6}
+.obj{border-left:3px solid var(--line);padding:4px 0 4px 14px;margin-bottom:12px}
+.obj b{font-size:13px;color:var(--navy);display:block;margin-bottom:3px}
+.obj p{font-size:13px;color:#5A6670;line-height:1.55}
+
+/* tools panel */
+.tc{border:1px solid var(--line);border-radius:12px;padding:17px;margin-bottom:16px}
+.tc .h{display:flex;align-items:center;gap:9px;margin-bottom:10px}
+.tc .ic{width:30px;height:30px;border-radius:8px;background:var(--purple-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tc .ic.cp{background:#FBEDE6}
+.tc .ti{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
+.tc p{font-size:12.5px;color:#5A6670;line-height:1.5;margin-bottom:12px}
+.btn{display:block;width:100%;text-align:center;padding:10px;border-radius:7px;font-size:12px;font-weight:700;letter-spacing:.03em;border:none;cursor:default}
+.btn.pr{background:var(--purple);color:#fff}
+.btn.sc{background:none;color:var(--navy);border:1px solid var(--line);margin-top:8px}
+.link{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:8px 11px;font-size:11.5px;color:var(--gray);font-family:ui-monospace,monospace;margin-bottom:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lead-it{display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid var(--line)}
+.lead-it:last-child{border:none}
+.lead-sc{width:34px;height:34px;border-radius:50%;background:var(--green-soft);border:1px solid rgba(58,158,101,.25);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--green);flex-shrink:0}
+.lead-nm{font-size:13px;flex:1}
+.lead-nm small{display:block;color:var(--gray);font-size:11px}
+
+/* dejar / repo lists */
+.flist a{display:flex;align-items:center;gap:9px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13px;color:#46535E}
+.flist a:last-child{border:none}
+.flist .ic{width:24px;height:28px;border-radius:3px;background:var(--purple-soft);flex-shrink:0}
+
+/* client result */
+.result{max-width:560px}
+.score-row{display:flex;align-items:center;gap:20px;margin:18px 0 22px}
+.score{width:96px;height:96px;border-radius:50%;border:6px solid var(--purple);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+.score b{font-size:30px;font-weight:800;color:var(--navy);line-height:1}
+.score small{font-size:10px;color:var(--gray);letter-spacing:.05em}
+.risk{display:inline-block;background:var(--red-soft);color:var(--red);font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px;margin-bottom:10px}
+.facts{list-style:none}
+.facts li{font-size:14px;color:#46535E;padding:7px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+.facts li b{color:var(--navy);font-weight:700}
+.reco{background:var(--purple-soft);border:1px solid rgba(124,77,188,.2);border-radius:10px;padding:15px 18px;margin-top:18px}
+.reco .l{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:6px}
+.reco p{font-size:14px;color:#33404B;line-height:1.6}
+
+/* reunion */
+.meet{max-width:620px}
+.meet .lead-card{display:flex;gap:16px;align-items:center;background:var(--green-soft);border:1px solid rgba(58,158,101,.25);border-radius:12px;padding:18px 20px;margin:18px 0}
+.meet .lead-card .sc{width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid rgba(58,158,101,.3);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--green);flex-shrink:0}
+.note{font-size:15px;color:#46535E;line-height:1.7}
+
+/* ===== ETAPA 2 ===== */
+.etapa2{background:var(--navy);color:#cdd9e1;display:flex;align-items:center;justify-content:center}
+.etapa2 .box{max-width:1080px;width:100%;padding:50px 48px}
+.etapa2 .kick{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9FB3C2;margin-bottom:12px}
+.etapa2 h1{font-size:clamp(28px,3.4vw,42px);font-weight:800;line-height:1.1;color:#fff;letter-spacing:-.02em;margin-bottom:14px}
+.etapa2 .sub{font-size:16px;color:#AEC0CC;max-width:62ch;margin-bottom:32px}
+.e2grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.e2{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:22px}
+.e2 .n{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--purple);text-transform:uppercase}
+.e2 h3{font-size:18px;font-weight:800;color:#fff;margin:8px 0 8px}
+.e2 p{font-size:13.5px;color:#AEC0CC;line-height:1.55}
+.e2 .pre{margin-top:14px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7E93A2}
+
+/* ---- nav ---- */
+.rnav{position:fixed;bottom:0;left:0;right:0;height:64px;background:var(--navy-700);border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;padding:0 26px;z-index:50}
+.rnav .lbl{font-size:13px;font-weight:600;color:#cdd9e1}
+.rnav .lbl small{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#7E93A2;margin-top:1px}
+.rnav .ctrl{display:flex;align-items:center;gap:14px}
+.rnav button{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:none;color:#cdd9e1;font-size:16px;cursor:pointer;transition:all .2s}
+.rnav button:hover:not(:disabled){background:var(--purple);border-color:var(--purple);color:#fff}
+.rnav button:disabled{opacity:.3;cursor:default}
+.rnav .ct{font-size:12px;color:#7E93A2;min-width:42px;text-align:center;letter-spacing:.05em}
+.dots{display:flex;gap:6px}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s}
+.dots i.on{background:var(--purple);width:20px;border-radius:4px}
+
+@media(max-width:900px){.asis .box{grid-template-columns:1fr}.body{grid-template-columns:1fr}.tools{border-top:1px solid var(--line)}.e2grid{grid-template-columns:1fr}.sb{display:none}}
+</style>
+</head>
+<body>
+
+<div class="phase">
+  <span id="ph-asis">As-is</span>
+  <span id="ph-e1">Etapa 1 · funciona ya</span>
+  <span id="ph-e2">Etapa 2 · destino</span>
+</div>
+
+<div class="stage">
+
+  <!-- ===== STEP 1 · AS-IS ===== -->
+  <section class="step asis">
+    <div class="box">
+      <div>
+        <div class="kick">Hoy · el canal está roto</div>
+        <h1>Una oportunidad clara. Y el comercial sin saber qué llevar.</h1>
+        <p>Grupo Lantia, seguros. Llevan siete meses sin cubrir un puesto de arquitecto cloud y el core está en un Java de once años. Ana intuye que hay conversación de modernización. Abre el portal a buscar con qué entrar.</p>
+        <div class="who">
+          <div class="ava">AP</div>
+          <div><b>Ana Pérez</b><small>Comercial · cuenta Grupo Lantia</small></div>
+        </div>
+      </div>
+      <div class="mess">
+        <div class="bar">🔍 modernización</div>
+        <div class="res"><div class="ic"></div><div>Servicios_Entelgy_2024_vFINAL.pdf<small>Marketing · 14 MB · hace 8 meses</small></div></div>
+        <div class="res"><div class="ic"></div><div>Capacidades_Software_general.pptx<small>Marketing · 22 MB · hace 1 año</small></div></div>
+        <div class="res"><div class="ic"></div><div>Modernizacion_aplicaciones_v3.pdf<small>sin fecha · ¿vigente?</small></div></div>
+        <div class="res"><div class="ic"></div><div>Mantenimiento_evolutivo_2025.pdf<small>¿es lo mismo que modernización?</small></div></div>
+        <div class="think">"¿Cuál es el bueno? ¿Qué dato llevo a la reunión? ¿Cómo abro sin parecer que vendo humo?"</div>
+        <div class="fade" style="color:var(--coral);font-weight:600;font-size:13px;margin-top:14px">→ Le escribe a Jorge, o va en frío. La reunión se va sin material. La oportunidad se enfría.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTAL (steps 2-6) ===== -->
+  <div class="step portal">
+    <div class="tbar">
+      <div class="lg">Entelgy<i>·</i> Hipatia</div>
+      <nav>
+        <a class="act">Mis áreas</a><a>Escáner</a><a>Assessment</a><a>Pipeline</a>
+      </nav>
+      <div class="usr"><div class="av">AP</div> Ana Pérez · Comercial</div>
+    </div>
+    <div class="cols">
+      <aside class="sb">
+        <div class="lbl">Mis áreas</div>
+        <div class="lbl" style="color:var(--copper);padding-top:4px">Jorge Herrero</div>
+        <a class="act sub"><span class="d"></span> Modernización de Aplicaciones</a>
+        <a class="sub"><span class="d"></span> Mantenimiento Evolutivo</a>
+        <a class="sub"><span class="d"></span> Asistencia Técnica Aumentada</a>
+        <div class="lbl" style="color:var(--copper)">Amador</div>
+        <a class="sub"><span class="d"></span> Digital Workplace</a>
+        <a class="sub"><span class="d"></span> Infraestructura</a>
+        <div class="lbl">Otras áreas</div>
+        <a class="sub"><span class="d"></span> Process Mining</a>
+        <a class="sub"><span class="d"></span> Data &amp; Analytics</a>
+        <a class="sub" style="color:var(--gray)"><span class="d"></span> + 4 áreas más</a>
+        <div class="div"></div>
+        <div class="lbl">Herramientas</div>
+        <a class="tool"><span class="d"></span> Escáner de Cuenta</a>
+        <a class="tool"><span class="d"></span> Generar Assessment</a>
+      </aside>
+
+      <div class="pmain">
+        <div class="ahd">
+          <div class="crumb">Hipatia → Jorge Herrero → Modernización de Aplicaciones</div>
+          <div class="atitle">Modernización de Aplicaciones</div>
+          <div class="tabs">
+            <div class="tab" id="tab-tarjeta">Tarjeta de entrada</div>
+            <div class="tab" id="tab-kit">Sales Kit para visitas</div>
+            <div class="tab" id="tab-repo">Repositorio de conocimiento</div>
+          </div>
+        </div>
+
+        <!-- Panel: TARJETA -->
+        <div class="body panel" id="p-tarjeta">
+          <div class="left">
+            <div class="slbl">Tarjeta de entrada · 2 minutos</div>
+            <div class="claim">El mantenimiento ya no mantiene. Resta cada trimestre.</div>
+            <div class="claim-sub">Para abrir con un CIO o un director de desarrollo de cualquier empresa con más de cinco años de stack propio.</div>
+            <div class="q"><div class="l">Pregunta de apertura</div><div class="t">"¿Cuánto de lo que produce tu equipo es deuda técnica disfrazada de funcionalidad?"</div></div>
+            <div class="dato">
+              <div class="n">74%</div>
+              <div><div class="t">de los incidentes en producción vienen del 42% de código legacy más antiguo. El equipo que lo mantiene no moderniza: apaga fuegos.</div><div class="s">Fuente · GitClear · State of the Code 2024</div></div>
+            </div>
+            <div class="why"><div class="l">Por qué Entelgy</div><div class="t">Cuatro CoE especializados, IA en producción desde 2018, y un modelo de contratación —UCE/IGE— donde la mejora preventiva no baja la factura. Ningún competidor lo ofrece sin romper su propio negocio.</div></div>
+          </div>
+          <div class="tools">
+            <div class="tc">
+              <div class="h"><div class="ic">📋</div><div class="ti">Assessment de madurez</div></div>
+              <p>Genera un enlace para que el cliente evalúe su situación en 5 minutos. Te avisamos cuando lo complete.</p>
+              <button class="btn pr">Generar enlace · Modernización</button>
+            </div>
+            <div class="tc">
+              <div class="h"><div class="ic">🔍</div><div class="ti">Escáner de cuenta</div></div>
+              <p>Señales de oportunidad de una cuenta y el mensaje de entrada ya redactado.</p>
+              <button class="btn sc">Escanear una cuenta</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: SALES KIT -->
+        <div class="body panel" id="p-kit">
+          <div class="left">
+            <div class="slbl">Sales Kit · preparación de la visita</div>
+            <div class="kc"><h4>Por qué ahora <span class="tg">EU AI Act</span></h4><p>El AI Act obliga en sistemas de alto riesgo en diciembre de 2027. Una aplicación con IA embebida sobre un core sin modernizar llega con exposición directa y sin margen para certificar en plazo.</p></div>
+            <div class="kc"><h4>El diferenciador que nadie más tiene <span class="tg">UCE/IGE</span></h4><p>La mejora preventiva no penaliza la facturación. Es el único contrato del mercado donde el éxito del proveedor no reduce sus propios ingresos.</p></div>
+            <div class="kc"><h4>El business case de presupuesto <span class="tg">CAPEX/OPEX</span></h4><p>Operar, mantener y modernizar con el mismo presupuesto. Con IA y metodología el equipo entrega lo de siempre con menos esfuerzo, y la diferencia se dedica a modernizar desde bolsas ya aprobadas.</p></div>
+            <div class="slbl" style="margin-top:20px">Objeciones habituales</div>
+            <div class="obj"><b>"Ya tenemos equipo interno para esto."</b><p>Por eso mismo. El equipo interno apaga fuegos del legacy y no puede modernizar en paralelo. Asumimos el legacy para que avance.</p></div>
+            <div class="obj"><b>"No es el momento, hay otras prioridades."</b><p>Diciembre de 2027 es fecha fija; no depende de las prioridades. ¿Cuánto cuesta llegar tarde a cumplimiento frente a empezar ahora?</p></div>
+          </div>
+          <div class="tools">
+            <div class="tc">
+              <div class="h"><div class="ic cp">📎</div><div class="ti">Material para dejar</div></div>
+              <div class="flist">
+                <a><span class="ic"></span> One-pager Modernización</a>
+                <a><span class="ic"></span> Deck ejecutivo CIO · AI Act</a>
+                <a><span class="ic"></span> Caso de referencia · Mapfre</a>
+              </div>
+            </div>
+            <div class="tc">
+              <div class="h"><div class="ic">📋</div><div class="ti">Diagnóstico para el cliente</div></div>
+              <p>Mándale el Assessment antes de la reunión. Llega cualificado.</p>
+              <button class="btn pr">Generar enlace · Modernización</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: ENVÍO ASSESSMENT -->
+        <div class="body panel" id="p-send">
+          <div class="left">
+            <div class="slbl">Cualificar antes de la reunión</div>
+            <div class="claim" style="font-size:23px">Sin explicar nada: "cinco minutos para ver dónde estáis antes de hablar."</div>
+            <div class="claim-sub">Ana copia el enlace del Assessment de Modernización y se lo manda a su contacto en Grupo Lantia. El cliente responde 8–10 preguntas y recibe su propio diagnóstico.</div>
+            <div class="why" style="background:var(--white)"><div class="l" style="color:var(--purple)">Qué responde el cliente</div><div class="t">Antigüedad del stack · modelo de mantenimiento · exposición al AI Act · rotación de los equipos que sostienen el core.</div></div>
+          </div>
+          <div class="tools">
+            <div class="tc" style="border-color:var(--purple)">
+              <div class="h"><div class="ic">📋</div><div class="ti">Enlace generado</div></div>
+              <div class="link">hipatia.entelgy.com/assessment/mod-lantia-9f2</div>
+              <button class="btn pr">Enlace copiado ✓</button>
+              <button class="btn sc">Ver mis assessments enviados</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: RESULTADO CLIENTE -->
+        <div class="body panel" id="p-result">
+          <div class="left">
+            <div class="slbl">El cliente se diagnostica solo</div>
+            <div class="result">
+              <div class="claim" style="font-size:22px">Grupo Lantia ha completado su diagnóstico.</div>
+              <div class="score-row">
+                <div class="score"><b>78</b><small>/ 100</small></div>
+                <div>
+                  <div class="risk">Riesgo AI Act · alto</div>
+                  <ul class="facts">
+                    <li>Antigüedad del core <b>11 años</b></li>
+                    <li>Equipo de mantenimiento <b>84% capacidad</b></li>
+                    <li>Deuda técnica estimada <b>1,8 M€ / año</b></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="reco"><div class="l">Recomendación</div><p>Modernización progresiva del core con un mecanismo que financia el avance desde el OPEX de mantenimiento actual. El cliente recibe un PDF para compartir con su CFO.</p></div>
+            </div>
+          </div>
+          <div class="tools">
+            <div class="tc">
+              <div class="h"><div class="ic">📈</div><div class="ti">Tus leads · Modernización</div></div>
+              <div class="lead-it"><div class="lead-sc">78</div><div class="lead-nm">Grupo Lantia<small>Completado · hace 2h</small></div></div>
+              <div class="lead-it"><div class="lead-sc">64</div><div class="lead-nm">Cuenta B<small>Completado · ayer</small></div></div>
+              <div class="lead-it"><div class="lead-sc" style="background:#FBEDE6;border-color:rgba(181,98,42,.3);color:var(--copper)">—</div><div class="lead-nm">Cuenta C<small>Enviado · sin completar · 4 días</small></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: REUNIÓN -->
+        <div class="body panel" id="p-meet">
+          <div class="left">
+            <div class="slbl">A la reunión</div>
+            <div class="meet">
+              <div class="claim" style="font-size:23px">Ana no convence en frío. Responde a un interés que el cliente ya declaró.</div>
+              <div class="lead-card">
+                <div class="sc">78</div>
+                <div><b style="color:var(--navy)">Grupo Lantia · diagnóstico del cliente</b><div style="font-size:13px;color:#5A6670">Lo trae impreso. La conversación empieza por el resultado, no por la presentación de Entelgy.</div></div>
+              </div>
+              <div class="note">Lleva el Sales Kit para la visita —argumentario, objeciones y el caso de referencia— y el resultado del Assessment. Si la conversación profundiza, el <b>Repositorio</b> tiene los mapas de dolor y el benchmark para preventa.</div>
+            </div>
+          </div>
+          <div class="tools">
+            <div class="tc">
+              <div class="h"><div class="ic cp">📎</div><div class="ti">Repositorio · para profundizar</div></div>
+              <div class="flist">
+                <a><span class="ic"></span> Mapa de dolores · Modernización</a>
+                <a><span class="ic"></span> Benchmark competitivo</a>
+                <a><span class="ic"></span> Deck ejecutivo · Comité</a>
+              </div>
+              <p style="margin-top:12px;font-size:11.5px">Acceso restringido · preventa y especialista.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== STEP 7 · ETAPA 2 ===== -->
+  <section class="step etapa2">
+    <div class="box">
+      <div class="kick">Etapa 2 · plataforma nueva</div>
+      <h1>Y después, el sistema empieza a empujar.</h1>
+      <p class="sub">Todo lo anterior funciona ya, sobre la plataforma actual. La siguiente etapa convierte el portal en un motor que prioriza y avisa. Esto es el destino, no está construido todavía.</p>
+      <div class="e2grid">
+        <div class="e2"><div class="n">Readiness</div><h3>Te habilitas primero</h3><p>Para abrir el material profundo de un área, el comercial pasa antes una habilitación ligera. Hipatia registra quién está al día.</p><div class="pre">Plataforma nueva</div></div>
+        <div class="e2"><div class="n">Escáner</div><h3>Tu territorio, priorizado</h3><p>Qué cuentas tienen un dolor activo esta semana, cruzando señales externas con el portfolio. Con el mensaje de entrada ya escrito.</p><div class="pre">Plataforma nueva</div></div>
+        <div class="e2"><div class="n">Intelligence</div><h3>Qué funciona y quién actúa</h3><p>Leads, porcentaje de equipo habilitado y qué material abre reuniones. El PM y la dirección lo ven sin esperar a que nadie informe.</p><div class="pre">Plataforma nueva</div></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== NAV ===== -->
+<div class="rnav">
+  <div class="lbl"><span id="nav-title">Hoy · el canal roto</span><small id="nav-phase">As-is</small></div>
+  <div class="ctrl">
+    <div class="dots" id="dots"></div>
+    <span class="ct" id="ct">1 / 7</span>
+    <button id="prev">←</button>
+    <button id="next">→</button>
+  </div>
+</div>
+
+<script>
+const steps = [
+  {scene:'asis',  phase:'asis', title:'Hoy · el canal roto',                lblPhase:'As-is'},
+  {scene:'portal',phase:'e1', panel:'p-tarjeta', tab:'tab-tarjeta', title:'Puerta 1 · Tarjeta de entrada', lblPhase:'Etapa 1 · funciona ya'},
+  {scene:'portal',phase:'e1', panel:'p-kit',     tab:'tab-kit',     title:'Puerta 2 · Sales Kit',          lblPhase:'Etapa 1 · funciona ya'},
+  {scene:'portal',phase:'e1', panel:'p-send',    tab:'tab-kit',     title:'Manda el Assessment',           lblPhase:'Etapa 1 · funciona ya'},
+  {scene:'portal',phase:'e1', panel:'p-result',  tab:'tab-kit',     title:'El cliente se diagnostica',     lblPhase:'Etapa 1 · funciona ya'},
+  {scene:'portal',phase:'e1', panel:'p-meet',    tab:'tab-repo',    title:'A la reunión',                  lblPhase:'Etapa 1 · funciona ya'},
+  {scene:'etapa2',phase:'e2', title:'El destino · plataforma nueva', lblPhase:'Etapa 2 · destino'}
+];
+
+const elAsis=document.querySelector('.asis');
+const elPortal=document.querySelector('.portal');
+const elE2=document.querySelector('.etapa2');
+const scenes={asis:elAsis,portal:elPortal,etapa2:elE2};
+const phPills={asis:document.getElementById('ph-asis'),e1:document.getElementById('ph-e1'),e2:document.getElementById('ph-e2')};
+const dots=document.getElementById('dots');
+let cur=0;
+
+steps.forEach((_,i)=>{const d=document.createElement('i');if(i===0)d.className='on';d.onclick=()=>go(i);dots.appendChild(d);});
+
+function go(n){
+  cur=Math.max(0,Math.min(n,steps.length-1));
+  const s=steps[cur];
+  Object.values(scenes).forEach(e=>e.classList.remove('on'));
+  scenes[s.scene].classList.add('on');
+  if(s.scene==='portal'){
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+    document.getElementById(s.panel).classList.add('on');
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('act'));
+    if(s.tab)document.getElementById(s.tab).classList.add('act');
+  }
+  Object.values(phPills).forEach(p=>p.classList.remove('act'));
+  phPills[s.phase].classList.add('act');
+  document.getElementById('nav-title').textContent=s.title;
+  document.getElementById('nav-phase').textContent=s.lblPhase;
+  document.getElementById('ct').textContent=(cur+1)+' / '+steps.length;
+  document.getElementById('prev').disabled=cur===0;
+  document.getElementById('next').disabled=cur===steps.length-1;
+  [...dots.children].forEach((d,i)=>d.classList.toggle('on',i===cur));
+}
+document.getElementById('prev').onclick=()=>go(cur-1);
+document.getElementById('next').onclick=()=>go(cur+1);
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1);});
+go(0);
+</script>
+</body>
+</html>
