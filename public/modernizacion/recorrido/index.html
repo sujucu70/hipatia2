@@ -202,6 +202,20 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .e2 .pre{margin-top:14px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7E93A2}
 
 /* nav */
+.orient{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:22px;background:var(--white)}
+.orient .row{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line)}
+.orient .row:last-child{border-bottom:none}
+.orient .k{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);padding-top:3px}
+.orient .v{font-size:14px;color:#33404B;line-height:1.5}
+.orient .v b{color:var(--navy);font-weight:700}
+.safety{display:flex;gap:12px;align-items:flex-start;background:#FBF6F0;border:1px solid #EAD9C6;border-radius:10px;padding:13px 16px;margin:14px 0 16px}
+.safety .ic{width:22px;height:22px;border-radius:50%;background:var(--copper);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px}
+.safety p{font-size:13px;color:#5A4A38;line-height:1.55}.safety b{color:var(--navy)}
+.tcard-actions{display:flex;gap:14px;align-items:center;margin-top:22px;flex-wrap:wrap}
+.btn-exam{background:var(--purple);color:#fff;border:none;padding:13px 22px;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s}
+.btn-exam:hover{background:#6B3DAA}
+.btn-link{background:none;border:none;color:var(--navy);font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;text-decoration:underline;text-underline-offset:3px}
+.btn-link:hover{color:var(--purple)}
 .dest-badge{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--copper);color:var(--copper);padding:2px 8px;border-radius:20px;margin-left:8px;white-space:nowrap}
 .hab{font-size:12px;font-weight:700;background:var(--green-soft);color:var(--green);border:1px solid rgba(58,158,101,.3);padding:5px 11px;border-radius:20px}
 .acct{margin-top:20px;border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--white)}
@@ -228,7 +242,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 <body>
 
 <div class="phase">
-  <span id="ph-asis">As-is</span><span id="ph-e1">Etapa 1 · funciona ya</span><span id="ph-e2">Etapa 2 · destino</span>
+  <span id="ph-asis">As-is</span><span id="ph-e1">Etapa 1</span><span id="ph-e2">Etapa 2</span>
 </div>
 
 <div class="stage">
@@ -265,19 +279,19 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
     <div class="box">
       <div class="kick">El recorrido del comercial · dos modos</div>
       <h1>El comercial crea la oportunidad, <em>o la oportunidad le encuentra a él.</em></h1>
-      <div class="jm-legend"><span class="lg ya">funciona ya · Etapa 1</span><span class="lg dest">destino · Etapa 2</span></div>
+      <div class="jm-legend"><span class="lg ya">Etapa 1</span><span class="lg dest">Etapa 2</span></div>
       <div class="jm-flow">
-        <div class="jstep on-ya"><div class="num">1</div><div class="jt">Se habilita</div><p>Lee la tarjeta y responde 5 preguntas. Hipatia lo registra.</p><div class="tags"><span class="cap">Readiness</span><span class="et ya">funciona ya</span></div></div>
+        <div class="jstep on-ya"><div class="num">1</div><div class="jt">Se habilita</div><p>Lee la tarjeta y responde 5 preguntas. Hipatia lo registra.</p><div class="tags"><span class="cap">Readiness</span><span class="et ya">Etapa 1</span></div></div>
         <div class="arr">→</div>
-        <div class="jstep"><div class="num">2</div><div class="jt">Encuentra la oportunidad</div><p>El Escáner le dice a qué cuentas llamar esta semana.</p><div class="tags"><span class="cap">Escáner</span><span class="et dest">destino</span></div></div>
+        <div class="jstep"><div class="num">2</div><div class="jt">Encuentra la oportunidad</div><p>El Escáner le dice a qué cuentas llamar esta semana.</p><div class="tags"><span class="cap">Escáner</span><span class="et dest">Etapa 2</span></div></div>
         <div class="arr">→</div>
-        <div class="jstep on-ya"><div class="num">3</div><div class="jt">Abre y cualifica</div><p>Abre con la tarjeta y manda el Autodiagnóstico. El cliente vuelve con un score.</p><div class="tags"><span class="cap">Tarjeta + Autodiagnóstico</span><span class="et ya">funciona ya</span></div></div>
+        <div class="jstep on-ya"><div class="num">3</div><div class="jt">Abre y cualifica</div><p>Abre con la tarjeta y manda el Autodiagnóstico. El cliente vuelve con un score.</p><div class="tags"><span class="cap">Tarjeta + Autodiagnóstico</span><span class="et ya">Etapa 1</span></div></div>
         <div class="arr">→</div>
-        <div class="jstep on-ya"><div class="num">4</div><div class="jt">Va a la reunión</div><p>Prepara con el Sales Kit y lleva el resultado del cliente.</p><div class="tags"><span class="cap">Sales Kit</span><span class="et ya">funciona ya</span></div></div>
+        <div class="jstep on-ya"><div class="num">4</div><div class="jt">Va a la reunión</div><p>Prepara con el Sales Kit y lleva el resultado del cliente.</p><div class="tags"><span class="cap">Sales Kit</span><span class="et ya">Etapa 1</span></div></div>
       </div>
       <div class="jm-inbound">
         <div class="ib-l">El otro modo · entrante</div>
-        <div class="ib-t"><b>El cliente llega con interés.</b> Lo oyó en un evento, en redes, por un colega. No hace falta el Escáner: el comercial manda el Autodiagnóstico para cualificar y va a la reunión. <span class="et ya">funciona ya</span></div>
+        <div class="ib-t"><b>El cliente llega con interés.</b> Lo oyó en un evento, en redes, por un colega. No hace falta el Escáner: el comercial manda el Autodiagnóstico para cualificar y va a la reunión. <span class="et ya">Etapa 1</span></div>
       </div>
       <div class="jm-bar">Hipatia mide · % habilitados por área · autodiagnósticos enviados y completados · leads entrantes y generados</div>
     </div>
@@ -340,14 +354,31 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
         <!-- PUERTA 1 · TARJETA -->
         <div class="panel doc" id="p-tarjeta">
-          <div class="slbl">Tarjeta de entrada · 2 minutos · abrir</div>
-          <div class="claim">El 70% del gasto IT se va en mantener lo que existe. El negocio lo llama inversión; <em>el CFO lo tiene como coste fijo.</em></div>
-          <div class="claim-sub">Para abrir con un CIO o un director de desarrollo de cualquier empresa con más de cinco años de stack propio.</div>
-          <div class="q"><div class="l">La pregunta que abre</div><div class="t">"¿Qué porcentaje del gasto IT de este año financia sistemas que el negocio va a necesitar dentro de tres?"</div></div>
+          <div class="slbl">Tarjeta de entrada · 2 minutos</div>
+
+          <div class="orient">
+            <div class="row"><div class="k">Qué es</div><div class="v">Modernizamos las aplicaciones <b>legacy que frenan al negocio</b> — con IA, sin parar la operación y firmando el resultado.</div></div>
+            <div class="row"><div class="k">A quién</div><div class="v">Empresas con <b>más de cinco años de stack propio</b> y un core que se usa a diario. Hablas con el CIO, el director de desarrollo o, por el coste, el CFO.</div></div>
+            <div class="row"><div class="k">La señal</div><div class="v">Hay una aplicación que <b>"nadie quiere tocar"</b> porque quien la construyó ya no está. <span style="color:var(--gray)">(las señales completas, en el Sales Kit)</span></div></div>
+          </div>
+
+          <div class="pb-sec">El gancho · úsalo así</div>
+          <div class="slbl" style="margin-bottom:7px">La frase con la que abres</div>
+          <div class="claim" style="font-size:22px">El 70% del gasto IT se va en mantener lo que existe. El negocio lo llama inversión; <em>el CFO lo tiene como coste fijo.</em></div>
+          <div class="q" style="margin-top:14px"><div class="l">La pregunta</div><div class="t">"¿Qué porcentaje del gasto IT de este año financia sistemas que el negocio va a necesitar dentro de tres?"</div></div>
           <div class="q-note">Si hay pausa después de la pregunta, estás en la conversación correcta.</div>
           <div class="dato"><div class="n">75%</div><div><div class="t">del presupuesto IT típico se va en <strong>run</strong>: mantenimiento, soporte, licencias y deuda técnica acumulada.</div><div class="s">Fuente · Deloitte Tech Predictions · Gartner IT Budget Benchmark</div></div></div>
+
           <div class="why"><div class="l">Por qué Entelgy</div><div class="t">El mercado moderniza por horas. Entelgy lo hace con resultado comprometido: el <strong>40% de cada euro de eficiencia ganado vuelve al cliente</strong> en la factura siguiente, medido por Foreworth, no por Entelgy.</div><div class="refs">UNED · BBVA · Santander — los mismos clientes renuevan</div></div>
-          <div class="close-band"><div class="l">El cierre posible de una primera reunión</div><div class="t"><b>El Assessment de modernización</b> — dos semanas, primer contrato. Con él, el CIO tiene el número de su deuda técnica para defender la decisión en Dirección. No hay otro cierre en una primera reunión.</div></div>
+
+          <div class="safety"><div class="ic">!</div><p><b>Si te preguntan un detalle técnico que no tienes, no improvises:</b> "eso te lo confirma el especialista en la siguiente reunión". Convierte la duda en tu cierre, no en un problema.</p></div>
+
+          <div class="close-band"><div class="l">El cierre de una primera reunión</div><div class="t"><b>El Assessment de modernización</b> — dos semanas, primer contrato. Le da al CIO el número de su deuda técnica para defender la decisión en Dirección. No hay otro cierre posible en una primera reunión.</div></div>
+
+          <div class="tcard-actions">
+            <button class="btn-exam" onclick="go(3)">Habilitarme · empezar el examen</button>
+            <button class="btn-link" onclick="go(5)">Ir al Sales Kit para el detalle →</button>
+          </div>
         </div>
 
         <!-- PUERTA 2 · SALES KIT -->
@@ -418,16 +449,16 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
         <!-- HABILITACIÓN · READINESS -->
         <div class="panel toolview" id="p-readiness">
-          <div class="tv-head"><div class="tv-ic">✓</div><div><div class="slbl" style="margin:0">Antes de abrir el área · Readiness <span class="hab">funciona ya</span></div><div class="atitle" style="font-size:20px">Se habilita una vez; luego el área es suya</div></div></div>
-          <div class="tv-note" style="background:#EFEAF6;border-color:rgba(124,77,188,.3);color:#5B3A93">La habilitación —leer la tarjeta y 5 preguntas— se monta ya como formulario. El candado y el panel del PM son lo que añade la plataforma nueva.</div>
+          <div class="tv-head"><div class="tv-ic">✓</div><div><div class="slbl" style="margin:0">Antes de abrir el área · Readiness <span class="hab">Etapa 1</span></div><div class="atitle" style="font-size:20px">Se habilita una vez; luego el área es suya</div></div></div>
+          <div class="tv-note" style="background:#EFEAF6;border-color:rgba(124,77,188,.3);color:#5B3A93">La habilitación —leer la tarjeta y 5 preguntas— se monta como formulario sobre la plataforma actual. El candado y el panel del PM son lo que añade la plataforma nueva.</div>
           <div class="tv-flow">
             <div class="tv-step"><div class="n">1</div><h4>Lee la tarjeta</h4><p>Dos minutos: el encuadre del área, la pregunta que abre, el dato y el cierre.</p></div>
             <div class="tv-step"><div class="n">2</div><h4>Responde 5 preguntas</h4><p>Comprueban que sabe abrir y cerrar. Por ejemplo: "¿cuál es el único cierre de una primera reunión?" o "¿qué diferencia a Entelgy que nadie más firma?".</p></div>
             <div class="tv-step"><div class="n">3</div><h4>Queda habilitado</h4><p>Hipatia lo registra. Queda habilitado en el área.</p><div style="margin-top:10px"><span class="hab">✓ Habilitado · Modernización</span></div></div>
           </div>
-          <div class="why" style="background:#FBF6F0;border-left-color:var(--copper)"><div class="l" style="color:var(--copper)">El añadido de la plataforma nueva <span class="dest-badge">destino</span></div><div class="t">Hacer la habilitación <b>obligatoria</b> —sin certificar, el material profundo no se abre— y darle al PM un panel en vivo de quién está al día. Es lo que convierte un portal que nadie abre en algo que el equipo usa.</div></div>
+          <div class="why" style="background:#FBF6F0;border-left-color:var(--copper)"><div class="l" style="color:var(--copper)">El añadido de la plataforma nueva <span class="dest-badge">Etapa 2</span></div><div class="t">Hacer la habilitación <b>obligatoria</b> —sin certificar, el material profundo no se abre— y darle al PM un panel en vivo de quién está al día. Es lo que convierte un portal que nadie abre en algo que el equipo usa.</div></div>
           <div class="acct">
-            <div class="acct-l">Vista del PM · habilitación por área <span class="dest-badge">destino</span></div>
+            <div class="acct-l">Vista del PM · habilitación por área <span class="dest-badge">Etapa 2</span></div>
             <div class="acct-row"><span>Modernización</span><div class="bar"><i style="width:64%"></i></div><b>14 / 22 · 64%</b></div>
             <div class="acct-row"><span>Mantenimiento Evolutivo</span><div class="bar"><i style="width:41%"></i></div><b>9 / 22 · 41%</b></div>
           </div>
@@ -455,7 +486,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
     <div class="box">
       <div class="kick">Etapa 2 · plataforma nueva</div>
       <h1>Y después, el sistema empieza a empujar.</h1>
-      <p class="sub">El recorrido de hoy ya funciona casi entero. La plataforma nueva lo refuerza por delante y por debajo: prioriza tu territorio, hace obligatoria la habilitación y mide la adopción. Es el destino, todavía sin construir.</p>
+      <p class="sub">El grueso del recorrido se construye sobre la plataforma actual (Etapa 1). La plataforma nueva lo refuerza por delante y por debajo: prioriza tu territorio, hace obligatoria la habilitación y mide la adopción. Es el destino, todavía sin construir.</p>
       <div class="e2grid">
         <div class="e2"><div class="n">Escáner</div><h3>Tu territorio, priorizado</h3><p>Qué cuentas tienen un dolor activo esta semana, cruzando señales externas con el portfolio, con el mensaje de entrada ya escrito.</p><div class="pre">Plataforma nueva</div></div>
         <div class="e2"><div class="n">Gating</div><h3>La habilitación, obligatoria</h3><p>Sin certificarte en el área, el material profundo no se abre. Hipatia hace el paso obligatorio, no opcional, y registra quién está al día.</p><div class="pre">Plataforma nueva</div></div>
@@ -479,12 +510,12 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 const steps=[
  {scene:'asis',phase:'asis',title:'Hoy · el hueco',lblPhase:'As-is'},
  {scene:'journey',phase:'map',title:'El recorrido del comercial',lblPhase:'Dos modos'},
- {scene:'portal',phase:'e1',panel:'p-tarjeta',tab:'tab-tarjeta',area:1,title:'Puerta 1 · Tarjeta de entrada',lblPhase:'Etapa 1 · funciona ya'},
- {scene:'portal',phase:'e1',panel:'p-readiness',area:1,title:'Se habilita · Readiness',lblPhase:'Etapa 1 · funciona ya'},
- {scene:'portal',phase:'e1',panel:'p-tool',tool:1,title:'Cualifica · Autodiagnóstico',lblPhase:'Etapa 1 · funciona ya'},
- {scene:'portal',phase:'e1',panel:'p-kit',tab:'tab-kit',area:1,title:'Prepara y va a la reunión · Sales Kit',lblPhase:'Etapa 1 · funciona ya'},
- {scene:'portal',phase:'e1',panel:'p-repo',tab:'tab-repo',area:1,title:'Profundiza · Repositorio',lblPhase:'Etapa 1 · funciona ya'},
- {scene:'etapa2',phase:'e2',title:'El recorrido por delante · plataforma nueva',lblPhase:'Etapa 2 · destino'}
+ {scene:'portal',phase:'e1',panel:'p-tarjeta',tab:'tab-tarjeta',area:1,title:'Puerta 1 · Tarjeta de entrada',lblPhase:'Etapa 1'},
+ {scene:'portal',phase:'e1',panel:'p-readiness',area:1,title:'Se habilita · Readiness',lblPhase:'Etapa 1'},
+ {scene:'portal',phase:'e1',panel:'p-tool',tool:1,title:'Cualifica · Autodiagnóstico',lblPhase:'Etapa 1'},
+ {scene:'portal',phase:'e1',panel:'p-kit',tab:'tab-kit',area:1,title:'Prepara y va a la reunión · Sales Kit',lblPhase:'Etapa 1'},
+ {scene:'portal',phase:'e1',panel:'p-repo',tab:'tab-repo',area:1,title:'Profundiza · Repositorio',lblPhase:'Etapa 1'},
+ {scene:'etapa2',phase:'e2',title:'El recorrido por delante · plataforma nueva',lblPhase:'Etapa 2'}
 ];
 const scenes={asis:document.querySelector('.asis'),journey:document.querySelector('.journey'),portal:document.querySelector('.portal'),etapa2:document.querySelector('.etapa2')};
 const ph={asis:document.getElementById('ph-asis'),e1:document.getElementById('ph-e1'),e2:document.getElementById('ph-e2')};
