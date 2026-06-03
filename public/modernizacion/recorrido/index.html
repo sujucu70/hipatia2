@@ -65,6 +65,17 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .sb a.sub{padding-left:30px}
 .sb .div{height:1px;background:var(--line);margin:10px 18px}
 .sb a.tool .d{border-radius:4px;width:7px;height:7px;background:var(--copper)}
+.areas-nav a{white-space:nowrap;cursor:pointer}
+.area-tab.dim{color:rgba(255,255,255,.3)}
+.flow{cursor:pointer}
+.flow .fn{width:22px;height:22px;border-radius:50%;background:#EEF0F2;color:var(--gray);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.flow:hover{background:var(--paper)}
+.flow.act{background:var(--purple-soft);color:var(--purple);border-left-color:var(--purple);font-weight:600}
+.flow.act .fn{background:var(--purple);color:#fff}
+.flow.dest{color:var(--gray)}
+.flow.dest .fn{background:none;border:1px solid #C2C8CE;color:var(--gray)}
+.flow.dest.act{background:#FBF6F0;color:var(--copper);border-left-color:var(--copper)}
+.flow.dest.act .fn{background:var(--copper);color:#fff;border:none}
 .pmain{flex:1;overflow-y:auto;background:var(--paper)}
 .ahd{background:var(--white);border-bottom:1px solid var(--line);padding:18px 32px 0}
 .crumb{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gray);margin-bottom:8px}
@@ -202,6 +213,18 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .e2 .pre{margin-top:14px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7E93A2}
 
 /* nav */
+.exam{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--white);margin-bottom:18px}
+.exam-h{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:3px}
+.exam-sub{font-size:12px;color:var(--gray);margin-bottom:14px}
+.exq{margin-bottom:15px}.exq:last-child{margin-bottom:0}
+.exq-t{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.4}
+.exo{font-size:13px;color:#46535E;border:1px solid var(--line);border-radius:8px;padding:9px 13px;margin-bottom:7px;cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:9px;line-height:1.4}
+.exo:hover{border-color:var(--purple);background:var(--purple-soft)}
+.exo::before{content:'';width:15px;height:15px;border-radius:50%;border:1.5px solid #C2C8CE;flex-shrink:0}
+.exo.ok{border-color:var(--green);background:var(--green-soft);color:#1F6B43;font-weight:600}
+.exo.ok::before{content:'✓';border:none;color:var(--green);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+.exo.no{border-color:var(--red);background:var(--red-soft);color:var(--red)}
+.exo.no::before{content:'✕';border:none;color:var(--red);font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center}
 .orient{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:22px;background:var(--white)}
 .orient .row{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line)}
 .orient .row:last-child{border-bottom:none}
@@ -301,37 +324,30 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
   <div class="step portal">
     <div class="tbar">
       <div class="lg">Entelgy<i>·</i> Hipatia</div>
-      <nav><a class="act">Mis áreas</a><a>Escáner</a><a>Autodiagnóstico</a><a>Pipeline</a></nav>
-      <div class="usr"><div class="av">AP</div> Ana Pérez · Comercial</div>
+      <nav class="areas-nav">
+        <a class="area-tab act">Modernización de Aplicaciones</a>
+        <a class="area-tab">Mantenimiento Evolutivo</a>
+        <a class="area-tab">Smart Operations</a>
+        <a class="area-tab dim">+ 6 áreas</a>
+      </nav>
+      <div class="usr"><div class="av">AP</div> Ana Pérez</div>
     </div>
     <div class="cols">
       <aside class="sb">
-        <div class="lbl">Mis áreas</div>
-        <div class="lbl" style="color:var(--copper);padding-top:4px">Jorge Herrero</div>
-        <a class="act sub" id="sb-area"><span class="d"></span> Modernización de Aplicaciones</a>
-        <a class="sub"><span class="d"></span> Mantenimiento Evolutivo</a>
-        <a class="sub"><span class="d"></span> Asistencia Técnica Aumentada</a>
-        <div class="lbl" style="color:var(--copper)">Amador</div>
-        <a class="sub"><span class="d"></span> Digital Workplace</a>
-        <a class="sub"><span class="d"></span> Infraestructura</a>
-        <div class="lbl">Otras áreas</div>
-        <a class="sub"><span class="d"></span> Process Mining</a>
-        <a class="sub" style="color:var(--gray)"><span class="d"></span> + 5 áreas más</a>
+        <div class="lbl">El recorrido</div>
+        <a class="flow" id="f-tarjeta" onclick="go(2)"><span class="fn">1</span> Tarjeta de entrada</a>
+        <a class="flow" id="f-readiness" onclick="go(3)"><span class="fn">2</span> Habilitación</a>
+        <a class="flow" id="f-tool" onclick="go(4)"><span class="fn">3</span> Autodiagnóstico</a>
+        <a class="flow" id="f-kit" onclick="go(5)"><span class="fn">4</span> Sales Kit</a>
+        <a class="flow" id="f-repo" onclick="go(6)"><span class="fn">5</span> Repositorio</a>
         <div class="div"></div>
-        <div class="lbl">Herramientas</div>
-        <a class="tool" id="sb-tool"><span class="d"></span> Autodiagnóstico</a>
-        <a class="tool"><span class="d"></span> Escáner de cuenta</a>
+        <div class="lbl">Etapa 2 · destino</div>
+        <a class="flow dest" id="f-e2" onclick="go(7)"><span class="fn">→</span> El sistema empuja</a>
       </aside>
 
       <div class="pmain">
         <div class="ahd">
-          <div class="crumb">Hipatia → Jorge Herrero → Modernización de Aplicaciones</div>
-          <div class="atitle">Modernización de Aplicaciones</div>
-          <div class="tabs">
-            <div class="tab" id="tab-tarjeta">Tarjeta de entrada</div>
-            <div class="tab" id="tab-kit">Sales Kit para visitas</div>
-            <div class="tab" id="tab-repo">Repositorio de conocimiento</div>
-          </div>
+          <div class="crumb">Hipatia → Modernización de Aplicaciones</div>
         </div>
 
         <!-- OVERVIEW -->
@@ -456,6 +472,29 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="tv-step"><div class="n">2</div><h4>Responde 5 preguntas</h4><p>Comprueban que sabe abrir y cerrar. Por ejemplo: "¿cuál es el único cierre de una primera reunión?" o "¿qué diferencia a Entelgy que nadie más firma?".</p></div>
             <div class="tv-step"><div class="n">3</div><h4>Queda habilitado</h4><p>Hipatia lo registra. Queda habilitado en el área.</p><div style="margin-top:10px"><span class="hab">✓ Habilitado · Modernización</span></div></div>
           </div>
+          <div class="exam">
+            <div class="exam-h">Ejemplo · 3 de las 5 preguntas de habilitación</div>
+            <div class="exam-sub">Comprueban que sabe abrir y cerrar el área. Pulsa una respuesta.</div>
+            <div class="exq">
+              <div class="exq-t">1 · ¿Cuál es el único cierre posible de una primera reunión?</div>
+              <div class="exo" data-c="0">Una propuesta completa de proyecto</div>
+              <div class="exo" data-c="1">El Assessment de modernización de dos semanas</div>
+              <div class="exo" data-c="0">Un descuento por cerrar rápido</div>
+            </div>
+            <div class="exq">
+              <div class="exq-t">2 · ¿Qué diferencia a Entelgy que ningún competidor firma?</div>
+              <div class="exo" data-c="0">El precio por hora más bajo del mercado</div>
+              <div class="exo" data-c="1">El 40% del ahorro de productividad vuelve al cliente, medido por Foreworth</div>
+              <div class="exo" data-c="0">Más consultores en el equipo</div>
+            </div>
+            <div class="exq">
+              <div class="exq-t">3 · Te preguntan un detalle técnico que no sabes. ¿Qué haces?</div>
+              <div class="exo" data-c="0">Improvisas una respuesta para no quedar mal</div>
+              <div class="exo" data-c="1">"Eso te lo confirma el especialista en la siguiente reunión" — y lo usas como cierre</div>
+              <div class="exo" data-c="0">Cambias de tema</div>
+            </div>
+          </div>
+
           <div class="why" style="background:#FBF6F0;border-left-color:var(--copper)"><div class="l" style="color:var(--copper)">El añadido de la plataforma nueva <span class="dest-badge">Etapa 2</span></div><div class="t">Hacer la habilitación <b>obligatoria</b> —sin certificar, el material profundo no se abre— y darle al PM un panel en vivo de quién está al día. Es lo que convierte un portal que nadie abre en algo que el equipo usa.</div></div>
           <div class="acct">
             <div class="acct-l">Vista del PM · habilitación por área <span class="dest-badge">Etapa 2</span></div>
@@ -510,11 +549,11 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 const steps=[
  {scene:'asis',phase:'asis',title:'Hoy · el hueco',lblPhase:'As-is'},
  {scene:'journey',phase:'map',title:'El recorrido del comercial',lblPhase:'Dos modos'},
- {scene:'portal',phase:'e1',panel:'p-tarjeta',tab:'tab-tarjeta',area:1,title:'Puerta 1 · Tarjeta de entrada',lblPhase:'Etapa 1'},
- {scene:'portal',phase:'e1',panel:'p-readiness',area:1,title:'Se habilita · Readiness',lblPhase:'Etapa 1'},
- {scene:'portal',phase:'e1',panel:'p-tool',tool:1,title:'Cualifica · Autodiagnóstico',lblPhase:'Etapa 1'},
- {scene:'portal',phase:'e1',panel:'p-kit',tab:'tab-kit',area:1,title:'Prepara y va a la reunión · Sales Kit',lblPhase:'Etapa 1'},
- {scene:'portal',phase:'e1',panel:'p-repo',tab:'tab-repo',area:1,title:'Profundiza · Repositorio',lblPhase:'Etapa 1'},
+ {scene:'portal',phase:'e1',panel:'p-tarjeta',flow:'f-tarjeta',title:'Puerta 1 · Tarjeta de entrada',lblPhase:'Etapa 1'},
+ {scene:'portal',phase:'e1',panel:'p-readiness',flow:'f-readiness',title:'Se habilita · Readiness',lblPhase:'Etapa 1'},
+ {scene:'portal',phase:'e1',panel:'p-tool',flow:'f-tool',title:'Cualifica · Autodiagnóstico',lblPhase:'Etapa 1'},
+ {scene:'portal',phase:'e1',panel:'p-kit',flow:'f-kit',title:'Prepara y va a la reunión · Sales Kit',lblPhase:'Etapa 1'},
+ {scene:'portal',phase:'e1',panel:'p-repo',flow:'f-repo',title:'Profundiza · Repositorio',lblPhase:'Etapa 1'},
  {scene:'etapa2',phase:'e2',title:'El recorrido por delante · plataforma nueva',lblPhase:'Etapa 2'}
 ];
 const scenes={asis:document.querySelector('.asis'),journey:document.querySelector('.journey'),portal:document.querySelector('.portal'),etapa2:document.querySelector('.etapa2')};
@@ -527,10 +566,8 @@ function go(n){
  if(s.scene==='portal'){
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
   document.getElementById(s.panel).classList.add('on');
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('act'));
-  if(s.tab)document.getElementById(s.tab).classList.add('act');
-  document.getElementById('sb-area').classList.toggle('act',!!s.area);
-  document.getElementById('sb-tool').classList.toggle('act',!!s.tool);
+  document.querySelectorAll('.flow').forEach(f=>f.classList.remove('act'));
+  if(s.flow)document.getElementById(s.flow).classList.add('act');
  }
  Object.values(ph).forEach(p=>p.classList.remove('act'));if(ph[s.phase])ph[s.phase].classList.add('act');
  document.getElementById('nav-title').textContent=s.title;
@@ -543,6 +580,13 @@ function go(n){
 document.getElementById('prev').onclick=()=>go(cur-1);
 document.getElementById('next').onclick=()=>go(cur+1);
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
+document.querySelectorAll('#p-readiness .exq').forEach(q=>{
+ q.querySelectorAll('.exo').forEach(o=>o.addEventListener('click',()=>{
+  if(q.dataset.done)return;q.dataset.done=1;
+  if(o.dataset.c==='1')o.classList.add('ok');
+  else{o.classList.add('no');q.querySelector('.exo[data-c="1"]').classList.add('ok');}
+ }));
+});
 go(0);
 </script>
 </body>
