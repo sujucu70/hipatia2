@@ -45,6 +45,25 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .asis .punch{margin-top:10px;font-size:15px;font-weight:700;color:#fff}
 .asis .punch em{color:var(--purple);font-style:normal}
 
+/* AS-IS · repositorio saturado */
+.repo-mock{background:#fff;border-radius:10px;box-shadow:0 30px 70px -40px rgba(0,0,0,.7);overflow:hidden}
+.rm-head{background:var(--paper);border-bottom:1px solid var(--line);padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+.rm-head .t{font-size:13px;font-weight:800;color:var(--navy)}
+.rm-head .c{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gray)}
+.rm-row{display:flex;align-items:center;gap:11px;padding:10px 16px;border-bottom:1px solid #F1EFEB}
+.rm-ic{width:28px;height:32px;border-radius:4px;flex-shrink:0;position:relative;background:#EEF0F2}
+.rm-ic.vid{background:rgba(124,77,188,.14)}
+.rm-ic.vid::after{content:'▶';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--purple);font-size:10px}
+.rm-ic.doc::after{content:'';position:absolute;left:6px;right:6px;top:8px;height:2px;background:#C2C8CE;box-shadow:0 5px 0 #D6DADE,0 10px 0 #E2E5E8}
+.rm-row .nm{flex:1;font-size:12.5px;color:#33404B;line-height:1.25;font-weight:600}
+.rm-row .nm small{display:block;font-size:10.5px;color:var(--gray);margin-top:2px;font-weight:400}
+.rm-tag{font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 7px;border-radius:5px;white-space:nowrap;flex-shrink:0}
+.rm-tag.tec{background:#FBF6F0;color:var(--copper)}
+.rm-tag.old{background:#F1F3F4;color:var(--gray)}
+.rm-tag.apt{background:var(--green-soft);color:var(--green)}
+.rm-foot{padding:11px 16px;background:var(--navy);color:#AEC0CC;font-size:11.5px;text-align:center;line-height:1.45}
+.rm-foot b{color:#fff}
+
 /* PORTAL */
 .portal{position:absolute;inset:0;background:var(--paper);display:flex;flex-direction:column}
 .tbar{height:50px;background:var(--navy);display:flex;align-items:center;padding:0 20px;flex-shrink:0}
@@ -196,6 +215,31 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .verdict .vt b{font-size:15px;color:var(--navy)}
 .verdict .vt p{font-size:12.5px;color:#5A6670;margin-top:2px}
 
+/* La herramienta · input de cuenta */
+.acct-tool{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--white);margin-bottom:10px}
+.at-field{display:flex;align-items:center;gap:10px}
+.at-ic{width:36px;height:36px;border-radius:8px;background:var(--purple-soft);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.at-input{flex:1;font-family:inherit;font-size:15px;font-weight:600;color:var(--navy);border:1px solid var(--line);border-radius:8px;padding:11px 14px;background:var(--paper)}
+.at-input:focus{outline:none;border-color:var(--purple);background:#fff}
+.at-btn{background:var(--purple);color:#fff;border:none;font-family:inherit;font-size:13px;font-weight:700;padding:12px 18px;border-radius:8px;cursor:pointer;white-space:nowrap;transition:background .2s}
+.at-btn:hover{background:#6B3DAA}
+.at-sources{font-size:11.5px;color:var(--gray);margin-top:11px;line-height:1.55}
+.at-sources b{color:#46535E;font-weight:600}
+.at-status{font-size:12px;font-weight:600;color:var(--green);margin-bottom:14px;display:flex;align-items:center;gap:7px}
+.at-status::before{content:'✓';width:16px;height:16px;border-radius:50%;background:var(--green);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* Correo · editable y copiable */
+.mail-edit-tag{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);background:var(--purple-soft);padding:3px 8px;border-radius:5px;margin-left:auto}
+.mail-body[contenteditable]{outline:none}
+.mail-body[contenteditable]:hover{background:#FCFBFA}
+.mail-body[contenteditable]:focus{box-shadow:inset 0 0 0 2px rgba(124,77,188,.22)}
+.mail-actions{display:flex;align-items:center;gap:14px;margin:-6px 0 16px;flex-wrap:wrap}
+.btn-copy{display:inline-flex;align-items:center;gap:7px;background:var(--navy);color:#fff;border:none;font-family:inherit;font-size:13px;font-weight:700;padding:10px 16px;border-radius:8px;cursor:pointer;transition:background .2s}
+.btn-copy:hover{background:var(--navy-500)}
+.btn-copy.done{background:var(--green)}
+.mail-editnote{font-size:12px;color:var(--gray);line-height:1.5}
+.mail-editnote b{color:#46535E}
+
 /* PRIMER CONTACTO · el mail */
 .mail{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--white);box-shadow:0 16px 40px -32px rgba(5,28,44,.5);margin-bottom:18px}
 .mail-bar{background:var(--paper);border-bottom:1px solid var(--line);padding:10px 18px;display:flex;align-items:center;gap:8px}
@@ -345,25 +389,28 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
   <section class="step asis">
     <div class="box">
       <div>
-        <div class="kick">Hoy · el hueco</div>
-        <h1>El material está. Falta saber qué hacer con él delante del cliente.</h1>
-        <p>Ana tiene una oportunidad clara en Grupo Lantia. Abre el portal: el material de modernización existe y describe bien el servicio.</p>
+        <div class="kick">Hoy · el punto de partida</div>
+        <h1>Material hay de sobra. Encontrar el que sirve para esta llamada es otra historia.</h1>
+        <p>Ana tiene una oportunidad en Grupo Lantia y abre el portal. Hay vídeos, decks, fichas, casos con cliente real: mucho, repartido por nueve áreas y a distintas velocidades. Parte sirve para vender; parte es técnica, pensada para una sala de preventa. Y nada le dice cuál de todo eso sacar delante del cliente.</p>
         <div class="who"><div class="ava">AP</div><div><b>Ana Pérez</b><small>Comercial · cuenta Grupo Lantia</small></div></div>
       </div>
       <div>
-        <div class="onepager">
-          <span class="ok">Disponible · correcto</span>
-          <div class="h">Modernización de Aplicaciones</div>
-          <div class="s">One-pager de servicio · Marketing</div>
-          <div class="ln w1"></div><div class="ln w2"></div><div class="ln w3"></div><div class="ln w4"></div>
+        <div class="repo-mock">
+          <div class="rm-head"><span class="t">Portal actual · Modernización</span><span class="c">9 áreas · 53 páginas</span></div>
+          <div class="rm-row"><div class="rm-ic vid"></div><div class="nm">Vídeo del servicio · 1 min<small>lo presenta el responsable del área</small></div><span class="rm-tag apt">útil</span></div>
+          <div class="rm-row"><div class="rm-ic doc"></div><div class="nm">Deck de capacidades<small>cuenta qué es el servicio, no qué le duele al cliente</small></div></div>
+          <div class="rm-row"><div class="rm-ic doc"></div><div class="nm">Arquitectura de referencia<small>denso, escrito para una sala técnica</small></div><span class="rm-tag tec">preventa</span></div>
+          <div class="rm-row"><div class="rm-ic doc"></div><div class="nm">Propuesta de valor 2024<small>conviven 2024 y 2026 sin señal de cuál vale</small></div><span class="rm-tag old">¿vigente?</span></div>
+          <div class="rm-row"><div class="rm-ic doc"></div><div class="nm">La Vitrina · 20+ casos con cliente real<small>Santander, Telefónica, UNED… en otra sección del portal</small></div><span class="rm-tag old">aparte</span></div>
+          <div class="rm-foot">Y <b>decenas de documentos más</b>, repartidos por las nueve áreas.</div>
         </div>
         <div class="qs">
-          <div class="qbox">"¿Cómo abro la conversación?"</div>
-          <div class="qbox">"¿Qué pregunto para saber si hay proyecto?"</div>
-          <div class="qbox">"¿Con qué cierro la primera reunión?"</div>
+          <div class="qbox">"¿Cuál de todos abro delante del cliente?"</div>
+          <div class="qbox">"¿Esto vale para el cliente, o es para un técnico?"</div>
+          <div class="qbox">"Y cuando lo encuentre… ¿cómo abro y con qué cierro?"</div>
         </div>
-        <div class="cap">Ninguna de estas respuestas está en el material. Va con lo genérico, o le escribe al especialista.</div>
-        <div class="punch">Esa capa que falta encima del material es lo que <em>añade Hipatia</em>.</div>
+        <div class="cap">El material está bien hecho. Lo que falta es tiempo para bucear hasta el que sirve — así que, demasiadas veces, no se abre y Ana entra con lo genérico.</div>
+        <div class="punch">El proyecto no añade material nuevo. <em>Ordena lo que ya hay y le dice al comercial qué sacar delante de cada cliente.</em></div>
       </div>
     </div>
   </section>
@@ -383,7 +430,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         <div class="arr">→</div>
         <div class="jstep on-ya"><div class="num">2</div><div class="jt">Mira la cuenta con IA</div><p>Le pregunta a la IA por esa cuenta. Vuelve con el stack, las señales de dolor y si hay recorrido.</p><div class="tags"><span class="cap">Estado de la cuenta</span><span class="et ya">Etapa 1</span></div></div>
         <div class="arr">→</div>
-        <div class="jstep on-ya"><div class="num">3</div><div class="jt">Escribe el mail y cualifica</div><p>Un correo con algo de valor dentro y el autodiagnóstico de regalo. El cliente lo completa y vuelve con un score.</p><div class="tags"><span class="cap">El mail + Autodiagnóstico</span><span class="et ya">Etapa 1</span></div></div>
+        <div class="jstep on-ya"><div class="num">3</div><div class="jt">Escribe el mail y cualifica</div><p>Un correo con dos frases de contexto y el autodiagnóstico como recurso. El cliente lo completa y vuelve con un score.</p><div class="tags"><span class="cap">El mail + Autodiagnóstico</span><span class="et ya">Etapa 1</span></div></div>
         <div class="arr">→</div>
         <div class="jstep on-ya"><div class="num">4</div><div class="jt">Prepara y va a la reunión</div><p>Prepara con el Kit de visita y entra con el resultado del cliente en la mano.</p><div class="tags"><span class="cap">Kit de visita</span><span class="et ya">Etapa 1</span></div></div>
       </div>
@@ -416,7 +463,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         <a class="flow" id="f-repo" onclick="go(7)"><span class="fn">6</span> Repositorio</a>
         <div class="div"></div>
         <div class="lbl">Etapa 2 · destino</div>
-        <a class="flow dest" id="f-e2" onclick="go(8)"><span class="fn">→</span> El sistema empuja</a>
+        <a class="flow dest" id="f-e2" onclick="go(8)"><span class="fn">→</span> El sistema se anticipa</a>
       </aside>
 
       <div class="pmain">
@@ -574,17 +621,28 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="trig"><div class="tl">Quiero tocar la cuenta</div><p>O al revés: Ana decide trabajar Lantia por su cuenta, sin que nadie haya preguntado todavía.</p></div>
           </div>
 
-          <div class="tv-note">En Etapa 1 esto trabaja <b>solo con señales públicas</b> —web, ofertas de empleo que delatan el stack, notas de prensa, sector, exposición regulatoria— más lo que el comercial ya sabe. El cruce con el CRM y el histórico de la cuenta llega en Fase 2.</div>
+          <div class="slbl" style="margin:18px 0 9px">La herramienta · escribes el nombre, la IA mira por ti</div>
+          <div class="acct-tool">
+            <div class="at-field">
+              <span class="at-ic">🔍</span>
+              <input class="at-input" value="Grupo Lantia" aria-label="Nombre de la cuenta">
+              <button class="at-btn" type="button">Analizar cuenta</button>
+            </div>
+            <div class="at-sources">La IA lee <b>fuentes públicas</b>: web corporativa, ofertas de empleo que delatan el stack, notas de prensa, registro mercantil y señales del sector. Cada dato del informe lleva de dónde sale.</div>
+          </div>
+          <div class="at-status">Analizado hace unos segundos · esto es lo que ha encontrado</div>
+
+          <div class="tv-note">En Etapa 1 la IA trabaja solo con lo público y con lo que el comercial ya sabe. El cruce con el CRM y el histórico de la cuenta llega en Fase 2.</div>
 
           <div class="scan">
             <div class="scan-head">
-              <div><div class="l">Estado de la cuenta · señales públicas</div><div class="t">Grupo Lantia</div></div>
-              <div class="src">Web · ofertas de empleo · prensa · registro mercantil</div>
+              <div><div class="l">Lo que la IA ha encontrado</div><div class="t">Grupo Lantia</div></div>
+              <div class="src">5 fuentes públicas consultadas</div>
             </div>
-            <div class="scan-row"><div class="k">Stack y antigüedad</div><div class="v">Núcleo de pólizas en <b>Java sobre un core de ~11 años</b>. Sin arquitecto cloud en plantilla, a juzgar por sus propias ofertas de empleo.</div></div>
-            <div class="scan-row"><div class="k">Señales de dolor</div><div class="v"><span class="sig">Oferta abierta · mantenimiento PL/SQL</span><span class="sig">Migración "en evaluación" desde 2023</span><span class="sig">Rotación en el equipo de core</span></div></div>
-            <div class="scan-row"><div class="k">Exposición AI Act</div><div class="v">Seguros es sector con sistemas de <b>alto riesgo</b>; plazo de cumplimiento en <b>diciembre 2027</b>. Un core sin documentación auditable deja de ser solo un problema técnico.</div></div>
-            <div class="scan-row"><div class="k">Tamaño y sector</div><div class="v">Aseguradora mediana, ramo de no-vida, en torno a 600 empleados. La decisión tecnológica se concentra en CIO y CFO.</div></div>
+            <div class="scan-row"><div class="k">Stack y antigüedad</div><div class="v">Núcleo de pólizas en <b>Java sobre un core de ~11 años</b>. Sin arquitecto cloud en plantilla, a juzgar por sus propias ofertas de empleo.<div style="font-size:10.5px;color:var(--gray);margin-top:5px">Fuente · ofertas de empleo + notas técnicas en su web</div></div></div>
+            <div class="scan-row"><div class="k">Señales de dolor</div><div class="v"><span class="sig">Oferta abierta · mantenimiento PL/SQL</span><span class="sig">Migración "en evaluación" desde 2023</span><span class="sig">Rotación en el equipo de core</span><div style="font-size:10.5px;color:var(--gray);margin-top:7px">Fuente · portal de empleo + nota de prensa 2023 + perfiles públicos del equipo</div></div></div>
+            <div class="scan-row"><div class="k">Exposición AI Act</div><div class="v">Seguros es sector con sistemas de <b>alto riesgo</b>; plazo de cumplimiento en <b>diciembre 2027</b>. Un core sin documentación auditable deja de ser solo un problema técnico.<div style="font-size:10.5px;color:var(--gray);margin-top:5px">Fuente · clasificación del sector + texto del EU AI Act</div></div></div>
+            <div class="scan-row"><div class="k">Tamaño y sector</div><div class="v">Aseguradora mediana, ramo de no-vida, en torno a 600 empleados. La decisión tecnológica se concentra en CIO y CFO.<div style="font-size:10.5px;color:var(--gray);margin-top:5px">Fuente · registro mercantil + web corporativa</div></div></div>
           </div>
 
           <div class="verdict go">
@@ -592,34 +650,34 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="vt"><b>Hay recorrido · 3 señales activas</b><p>Stack antiguo, dolor de mantenimiento y exposición regulatoria. Da para abrir conversación esta semana.</p></div>
           </div>
 
-          <div class="bridge">Con esto Ana tiene lo que le hace falta para el primer correo. En vez de un mensaje genérico, manda <b>dos o tres frases que demuestran que ha mirado su casa</b>. Ese es el paso siguiente.</div>
+          <div class="bridge">Con esto Ana tiene lo que le hace falta para el primer correo. En vez de un mensaje genérico, abre con <b>dos o tres frases que demuestran que ha hecho los deberes sobre la cuenta</b>. Ese es el paso siguiente.</div>
         </div>
 
         <!-- TRABAJO POR CUENTA · EL MAIL -->
         <div class="panel toolview" id="p-mail">
-          <div class="tv-head"><div class="tv-ic">✉️</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Primer contacto <span class="hab">Etapa 1</span></div><div class="atitle" style="font-size:20px">El correo que abre, con algo de valor dentro</div></div></div>
-          <div class="tv-note">El correo no intenta vender todavía. <b>Demuestra que Ana ha mirado la cuenta</b> y deja algo útil de paso. Las frases de valor salen directas del escaneo del paso anterior.</div>
+          <div class="tv-head"><div class="tv-ic">✉️</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Primer contacto <span class="hab">Etapa 1</span></div><div class="atitle" style="font-size:20px">El correo que abre, con el tono que espera un CIO</div></div></div>
+          <div class="tv-note">No es un correo de venta. Demuestra que Ana ha hecho los deberes sobre la cuenta y ofrece un primer recurso de criterio. Las dos primeras frases salen del análisis del paso anterior; el resto es plantilla.</div>
 
           <div class="mail">
-            <div class="mail-bar"><i></i><i></i><i></i></div>
+            <div class="mail-bar"><i></i><i></i><i></i><span class="mail-edit-tag">Borrador editable</span></div>
             <div class="mail-meta">
+              <div class="mr"><b>Para</b> [nombre] · Dirección de Sistemas, Grupo Lantia</div>
               <div class="mr"><b>De</b> Ana Pérez · Entelgy</div>
-              <div class="mr"><b>Para</b> Dirección de Sistemas · Grupo Lantia</div>
-              <div class="subj">Asunto · El core de pólizas que nadie quiere tocar, y lo que cuesta dejarlo así</div>
+              <div class="subj">Asunto · Modernización del core de pólizas: exposición regulatoria y coste de mantenimiento</div>
             </div>
-            <div class="mail-body">
-              <p>Hola [nombre],</p>
-              <p>No escribo para venderte nada todavía. Escribo porque he estado mirando vuestro sector y vuestra casa, y hay algo que seguramente os suene.</p>
-              <div class="mail-value">
-                <div class="vl">El algo de valor · sacado del escaneo</div>
-                <p>Desde fuera se ve que lleváis tiempo con un core de pólizas en Java que ya pide relevo, y la migración aparece "en evaluación" desde hace un par de años. En seguros eso pesa doble: a partir de diciembre de 2027 el AI Act exige documentación auditable en sistemas de alto riesgo, y un core que nadie se atreve a tocar es justo lo que más se complica.</p>
-              </div>
-              <div class="mail-gift">
-                <div><div class="gl">El regalo útil</div><div class="gt"><b>Autodiagnóstico de modernización</b> · cinco minutos, sin compromiso. Sale un informe con vuestro nivel de exposición y una estimación de lo que cuesta mantener el core tal cual, listo para enseñar a Dirección.</div></div>
-              </div>
-              <p>Si luego quieres que lo veamos juntos, encantada. Y si no, te quedas con el informe igualmente.</p>
+            <div class="mail-body" contenteditable="true" spellcheck="false">
+              <p>Estimado/a [nombre]:</p>
+              <p>Le escribo a raíz de un análisis del sector asegurador de cara al plazo del EU AI Act. En él, Grupo Lantia figura entre las compañías cuyo núcleo de pólizas lleva tiempo pendiente de una modernización de fondo.</p>
+              <p>Es una situación frecuente y, en seguros, especialmente sensible: a partir de diciembre de 2027 el AI Act exigirá documentación auditable en los sistemas de alto riesgo. Un core difícil de mantener encarece tanto el cumplimiento como el coste de sostenerlo año a año.</p>
+              <p>Por si le resulta útil de cara a su comité, hemos preparado una herramienta de autodiagnóstico —apenas cinco minutos— que devuelve un informe con el nivel de exposición de la organización y una primera estimación del coste de mantener el core en su estado actual. Es información que puede emplear internamente, trabajemos juntos o no.</p>
+              <p>Si más adelante considera oportuno comentarlo, quedo a su disposición para una conversación sin compromiso.</p>
+              <p>Un cordial saludo,</p>
               <div class="mail-sign"><b>Ana Pérez</b>Modernización de Aplicaciones · Entelgy</div>
             </div>
+          </div>
+          <div class="mail-actions">
+            <button class="btn-copy" type="button" onclick="copyMail(this)">⧉ Copiar correo</button>
+            <div class="mail-editnote"><b>El texto es editable.</b> Ana lo ajusta al contacto y a la cuenta antes de enviarlo desde su propio correo.</div>
           </div>
 
           <div class="rep-intro">Lo que vuelve · el informe que el cliente completa</div>
@@ -659,7 +717,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
   <section class="step etapa2">
     <div class="box">
       <div class="kick">Etapa 2 · plataforma nueva</div>
-      <h1>Y después, el sistema empieza a empujar.</h1>
+      <h1>Y después, el sistema empieza a anticiparse.</h1>
       <p class="sub">El grueso del recorrido se construye sobre la plataforma actual (Etapa 1). La plataforma nueva lo refuerza por delante y por debajo: prioriza tu territorio, hace obligatoria la habilitación y mide la adopción. Es el destino, todavía sin construir.</p>
       <div class="e2grid">
         <div class="e2"><div class="n">Escáner</div><h3>Tu territorio, sin preguntar</h3><p>En Etapa 1 le preguntas a la IA por una cuenta concreta. En Etapa 2 es al revés: el sistema te avisa de qué cuentas tienen un dolor activo esta semana, cruzando señales externas con tu cartera y el mensaje de entrada ya escrito.</p><div class="pre">Plataforma nueva</div></div>
@@ -723,6 +781,13 @@ document.querySelectorAll('#p-readiness .exq').forEach(q=>{
   else{o.classList.add('no');q.querySelector('.exo[data-c="1"]').classList.add('ok');}
  }));
 });
+function copyMail(btn){
+ const body=document.querySelector('#p-mail .mail-body');
+ const txt=body?body.innerText.replace(/\n{3,}/g,'\n\n').trim():'';
+ try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt);}else{const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();}}catch(e){}
+ const old=btn.innerHTML;btn.innerHTML='✓ Copiado';btn.classList.add('done');
+ setTimeout(()=>{btn.innerHTML=old;btn.classList.remove('done');},1600);
+}
 go(0);
 </script>
 </body>
