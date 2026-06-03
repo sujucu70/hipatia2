@@ -61,6 +61,9 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .rm-tag.tec{background:#FBF6F0;color:var(--copper)}
 .rm-tag.old{background:#F1F3F4;color:var(--gray)}
 .rm-tag.apt{background:var(--green-soft);color:var(--green)}
+.rm-tag.gap{background:#fff;color:var(--purple);border:1px dashed var(--purple)}
+.rm-ic.gap{background:#fff;border:1.5px dashed #C2C8CE}
+.rm-ic.gap::after{content:'+';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#B6BBC1;font-size:15px;font-weight:700}
 .rm-foot{padding:11px 16px;background:var(--navy);color:#AEC0CC;font-size:11.5px;text-align:center;line-height:1.45}
 .rm-foot b{color:#fff}
 
@@ -374,7 +377,41 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .dots{display:flex;gap:6px}
 .dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s}
 .dots i.on{background:var(--purple);width:20px;border-radius:4px}
-@media(max-width:900px){.asis .box,.tv-flow,.ov-doors,.e2grid,.rep-body,.trigger{grid-template-columns:1fr}.jm-flow{flex-direction:column;gap:10px}.arr{display:none}.sb{display:none}.doc,.toolview{padding:22px}.dim span{width:160px}}
+@media(max-width:900px){.asis .box,.tv-flow,.ov-doors,.e2grid,.rep-body,.trigger,.g2{grid-template-columns:1fr}.jm-flow{flex-direction:column;gap:10px}.arr{display:none}.sb{display:none}.doc,.toolview{padding:22px}.dim span{width:160px}}
+
+/* ===== Ajuste a una sola pantalla ===== */
+.toolview,.doc{padding:18px 30px;max-width:1060px}
+.tv-head{margin-bottom:6px}
+.tv-flow{gap:12px;margin-bottom:12px}
+.tv-step{padding:12px 14px}
+.tv-step .n{width:23px;height:23px;margin-bottom:8px}
+.tv-note{margin:10px 0 12px;padding:9px 13px;font-size:12.5px}
+.pb-sec{margin:0 0 9px}
+.slbl{margin-bottom:7px}
+.bridge{margin-top:12px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.g2-col{display:flex;flex-direction:column;gap:11px}
+.g2-col>*{margin:0!important}
+.colhd{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+.span2{grid-column:1 / -1}
+
+/* acordeón · desplegables */
+.acc details{border:1px solid var(--line);border-radius:10px;background:#fff;margin-bottom:8px;overflow:hidden}
+.acc details:last-child{margin-bottom:0}
+.acc details[open]{border-color:rgba(124,77,188,.4)}
+.acc summary{list-style:none;cursor:pointer;padding:10px 14px;font-size:13px;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:9px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .chev{color:var(--purple);font-size:11px;transition:transform .2s;flex-shrink:0}
+.acc details[open] summary .chev{transform:rotate(90deg)}
+.acc .acc-b{padding:2px 14px 12px}
+
+@media(max-height:820px){.toolview,.doc{padding:13px 30px}.tv-step p{font-size:12px}.ahd{padding-top:12px}}
+
+.mail-link{color:var(--copper);font-weight:700;text-decoration:underline;text-underline-offset:2px;word-break:break-all}
+.lead-db{background:var(--purple-soft);border:1px solid rgba(124,77,188,.22);border-radius:10px;padding:12px 15px;font-size:12.5px;color:#33404B;line-height:1.5}
+.lead-db b{color:var(--purple)}
+.pb-more{margin-top:9px;font-size:12px;font-weight:700;color:var(--purple);cursor:pointer;display:inline-block}
+.pb-more:hover{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -390,9 +427,11 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
     <div class="box">
       <div>
         <div class="kick">Hoy · el punto de partida</div>
-        <h1>Material hay de sobra. Encontrar el que sirve para esta llamada es otra historia.</h1>
-        <p>Ana tiene una oportunidad en Grupo Lantia y abre el portal. Hay vídeos, decks, fichas, casos con cliente real: mucho, repartido por nueve áreas y a distintas velocidades. Parte sirve para vender; parte es técnica, pensada para una sala de preventa. Y nada le dice cuál de todo eso sacar delante del cliente.</p>
+        <h1>Hay mucho material. Saber cuál sirve para esta llamada es otra historia.</h1>
+        <p>Ana tiene una oportunidad en Grupo Lantia y abre el portal. Hay vídeos, decks, fichas, casos con cliente real: mucho, repartido por nueve áreas y a distintas velocidades. Parte sirve para vender; parte es técnica, pensada para una sala de preventa. Y de las soluciones más nuevas, casi no hay material aún. Nada le dice cuál de todo eso sacar delante del cliente.</p>
         <div class="who"><div class="ava">AP</div><div><b>Ana Pérez</b><small>Comercial · cuenta Grupo Lantia</small></div></div>
+        <div class="cap" style="margin-top:20px">Hay material muy bueno. También lo hay obsoleto, y de las soluciones más nuevas —las más diferenciadoras— casi no hay nada todavía. Entre todo eso, Ana no distingue rápido qué sirve y acaba tirando de lo genérico.</div>
+        <div class="punch">Por eso el proyecto <em>sí añade material nuevo</em> —el de las soluciones más recientes—, además de ordenar lo que ya hay y orientar al comercial sobre qué usar con cada cliente.</div>
       </div>
       <div>
         <div class="repo-mock">
@@ -402,15 +441,14 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
           <div class="rm-row"><div class="rm-ic doc"></div><div class="nm">Arquitectura de referencia<small>denso, escrito para una sala técnica</small></div><span class="rm-tag tec">preventa</span></div>
           <div class="rm-row"><div class="rm-ic doc"></div><div class="nm">Propuesta de valor 2024<small>conviven 2024 y 2026 sin señal de cuál vale</small></div><span class="rm-tag old">¿vigente?</span></div>
           <div class="rm-row"><div class="rm-ic doc"></div><div class="nm">La Vitrina · 20+ casos con cliente real<small>Santander, Telefónica, UNED… en otra sección del portal</small></div><span class="rm-tag old">aparte</span></div>
-          <div class="rm-foot">Y <b>decenas de documentos más</b>, repartidos por las nueve áreas.</div>
+          <div class="rm-row"><div class="rm-ic gap"></div><div class="nm">Soluciones más recientes · IA, SPEC-IA, productos propios<small>lo más diferenciador todavía no tiene material comercial</small></div><span class="rm-tag gap">por crear</span></div>
+          <div class="rm-foot">Material bueno, material viejo y huecos por llenar — todo mezclado en <b>nueve áreas</b>.</div>
         </div>
         <div class="qs">
           <div class="qbox">"¿Cuál de todos abro delante del cliente?"</div>
           <div class="qbox">"¿Esto vale para el cliente, o es para un técnico?"</div>
-          <div class="qbox">"Y cuando lo encuentre… ¿cómo abro y con qué cierro?"</div>
+          <div class="qbox">"Y de lo nuevo… ¿por qué no hay nada todavía?"</div>
         </div>
-        <div class="cap">El material está bien hecho. Lo que falta es tiempo para bucear hasta el que sirve — así que, demasiadas veces, no se abre y Ana entra con lo genérico.</div>
-        <div class="punch">El proyecto no añade material nuevo. <em>Ordena lo que ya hay y le dice al comercial qué sacar delante de cada cliente.</em></div>
       </div>
     </div>
   </section>
@@ -424,7 +462,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         <div class="ib-l">El disparador · dos formas de empezar</div>
         <div class="ib-t"><b>El cliente preguntó algo</b> —en un evento, por un colega, en redes— o <b>el comercial decide tocar la cuenta</b> por su cuenta. Empiece como empiece, el paso siguiente es el mismo: preguntarle a la IA qué pasa en esa cuenta. <span class="et ya">Etapa 1</span></div>
       </div>
-      <div class="jm-legend"><span class="lg ya">Etapa 1 · plataforma actual</span><span class="lg dest">Etapa 2 · plataforma nueva</span></div>
+      <div class="jm-legend"><span class="lg ya">Etapa 1 · el recorrido base</span><span class="lg dest">Etapa 2 · el sistema se anticipa</span></div>
       <div class="jm-flow">
         <div class="jstep on-ya"><div class="num">1</div><div class="jt">Se habilita</div><p>Lee la tarjeta del área y responde 5 preguntas. Una vez, y el área es suya.</p><div class="tags"><span class="cap">Tarjeta + Habilitación</span><span class="et ya">Etapa 1</span></div></div>
         <div class="arr">→</div>
@@ -491,30 +529,28 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
         <!-- PUERTA 1 · TARJETA -->
         <div class="panel doc" id="p-tarjeta">
-          <div class="slbl">Tarjeta de entrada · 2 minutos</div>
+          <div class="slbl">Tarjeta de entrada · 2 minutos <span class="hab" style="margin-left:6px">Etapa 1</span></div>
 
-          <div class="orient">
-            <div class="row"><div class="k">Qué es</div><div class="v">Modernizamos las aplicaciones <b>legacy que frenan al negocio</b> — con IA, sin parar la operación y firmando el resultado.</div></div>
-            <div class="row"><div class="k">A quién</div><div class="v">Empresas con <b>más de cinco años de stack propio</b> y un core que se usa a diario. Hablas con el CIO, el director de desarrollo o, por el coste, el CFO.</div></div>
-            <div class="row"><div class="k">La señal</div><div class="v">Hay una aplicación que <b>"nadie quiere tocar"</b> porque quien la construyó ya no está. <span style="color:var(--gray)">(las señales completas las ves en Estado de la cuenta)</span></div></div>
-          </div>
-
-          <div class="pb-sec">El gancho · úsalo así</div>
-          <div class="slbl" style="margin-bottom:7px">La frase con la que abres</div>
-          <div class="claim" style="font-size:22px">El 70% del gasto IT se va en mantener lo que existe. El negocio lo llama inversión; <em>el CFO lo tiene como coste fijo.</em></div>
-          <div class="q" style="margin-top:14px"><div class="l">La pregunta</div><div class="t">"¿Qué porcentaje del gasto IT de este año financia sistemas que el negocio va a necesitar dentro de tres?"</div></div>
-          <div class="q-note">Si hay pausa después de la pregunta, estás en la conversación correcta.</div>
-          <div class="dato"><div class="n">75%</div><div><div class="t">del presupuesto IT típico se va en <strong>run</strong>: mantenimiento, soporte, licencias y deuda técnica acumulada.</div><div class="s">Fuente · Deloitte Tech Predictions · Gartner IT Budget Benchmark</div></div></div>
-
-          <div class="why"><div class="l">Por qué Entelgy</div><div class="t">El mercado moderniza por horas. Entelgy lo hace con resultado comprometido: el <strong>40% de cada euro de eficiencia ganado vuelve al cliente</strong> en la factura siguiente, medido por Foreworth, no por Entelgy.</div><div class="refs">UNED · BBVA · Santander — los mismos clientes renuevan</div></div>
-
-          <div class="safety"><div class="ic">!</div><p><b>Si te preguntan un detalle técnico que no tienes, no improvises:</b> "eso te lo confirma el especialista en la siguiente reunión". Convierte la duda en tu cierre, no en un problema.</p></div>
-
-          <div class="close-band"><div class="l">El cierre de una primera reunión</div><div class="t"><b>El Assessment de modernización</b> — dos semanas, primer contrato. Le da al CIO el número de su deuda técnica para defender la decisión en Dirección. No hay otro cierre posible en una primera reunión.</div></div>
-
-          <div class="tcard-actions">
-            <button class="btn-exam" onclick="go(3)">Habilitarme · empezar el examen</button>
-            <button class="btn-link" onclick="go(4)">Empezar con una cuenta →</button>
+          <div class="g2">
+            <div class="g2-col">
+              <div class="orient" style="margin:0">
+                <div class="row"><div class="k">Qué es</div><div class="v">Modernizamos las aplicaciones <b>legacy que frenan al negocio</b> — con IA, sin parar la operación y firmando el resultado.</div></div>
+                <div class="row"><div class="k">A quién</div><div class="v">Empresas con <b>+5 años de stack propio</b> y un core que se usa a diario. Hablas con el CIO, el director de desarrollo o, por el coste, el CFO.</div></div>
+                <div class="row"><div class="k">La señal</div><div class="v">Una aplicación que <b>"nadie quiere tocar"</b> porque quien la construyó ya no está. <span style="color:var(--gray)">(las completas, en Estado de la cuenta)</span></div></div>
+              </div>
+              <div class="claim" style="font-size:20px;margin:0">El 70% del gasto IT se va en mantener lo que existe. El negocio lo llama inversión; <em>el CFO lo tiene como coste fijo.</em></div>
+              <div class="q" style="margin:0"><div class="l">La pregunta con la que abres</div><div class="t">"¿Qué porcentaje del gasto IT de este año financia sistemas que el negocio va a necesitar dentro de tres?"</div></div>
+              <div class="dato" style="margin:0"><div class="n">75%</div><div><div class="t">del presupuesto IT típico se va en <strong>run</strong>: mantenimiento, soporte, licencias y deuda técnica.</div><div class="s">Fuente · Deloitte · Gartner IT Budget Benchmark</div></div></div>
+            </div>
+            <div class="g2-col">
+              <div class="why" style="margin:0"><div class="l">Por qué Entelgy</div><div class="t">El mercado moderniza por horas. Entelgy lo hace con resultado comprometido: el <strong>40% de cada euro de eficiencia ganado vuelve al cliente</strong> en la factura siguiente, medido por Foreworth, no por Entelgy.</div><div class="refs">UNED · BBVA · Santander — los mismos clientes renuevan</div></div>
+              <div class="safety" style="margin:0"><div class="ic">!</div><p><b>Si te preguntan un detalle técnico que no tienes, no improvises:</b> "eso te lo confirma el especialista en la siguiente reunión". Convierte la duda en tu cierre.</p></div>
+              <div class="close-band" style="margin:0"><div class="l">El cierre de una primera reunión</div><div class="t"><b>El Assessment de modernización</b> — dos semanas, primer contrato. Le da al CIO el número de su deuda técnica para defender la decisión en Dirección. No hay otro cierre posible.</div></div>
+              <div class="tcard-actions" style="margin:0">
+                <button class="btn-exam" onclick="go(3)">Habilitarme · empezar el examen</button>
+                <button class="btn-link" onclick="go(4)">Empezar con una cuenta →</button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -525,39 +561,43 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
           <div class="kit-input">
             <div class="sc">78</div>
-            <div><b>Entras con el autodiagnóstico de Grupo Lantia</b><div class="meta">78/100 · riesgo AI Act alto · deuda técnica estimada 1,8 M€/año. No empiezas de cero: empiezas con su número encima de la mesa.</div></div>
+            <div><b>Entras con el autodiagnóstico de Grupo Lantia</b><div class="meta">78/100 · riesgo AI Act alto · deuda técnica ~1,8 M€/año. No empiezas de cero: empiezas con su número encima de la mesa.</div></div>
           </div>
 
           <div class="pb-sec">En la reunión</div>
-          <div class="pb-card">
-            <h4>El pitch, según quién tienes delante</h4>
-            <div class="pb-role"><b>CTO</b><div class="mv">"¿Cuál es la app que más frena al negocio y lleváis años sin tocar?" · le mueve: <em>Spec-Driven</em>, el conocimiento pasa al cliente.</div></div>
-            <div class="pb-role"><b>Dir. Ops</b><div class="mv">"¿Cuántos pilotos de digitalización llevan +1 año sin producción?" · le mueve: <em>productividad certificada por Foreworth</em>.</div></div>
-            <div class="pb-role"><b>CIO</b><div class="mv">"¿Qué % del presupuesto IT va a mantener lo que ya existe?" · le mueve: <em>el assessment</em>, mapa de deuda con datos propios.</div></div>
-            <div class="pb-role"><b>CFO</b><div class="mv">"¿Cuánto cuesta mantener los sistemas tal como están, en un número?" · le mueve: <em>la cláusula bilateral</em>, 40% del ahorro a factura.</div></div>
-          </div>
-          <div class="pb-card">
-            <h4>Si quieres confirmar que hay proyecto, en la conversación</h4>
-            <ul class="pb-list">
-              <li>"¿Alguna aplicación lleva años pendiente de modernizar porque nadie sabe qué rompe si la tocan?"</li>
-              <li>"¿Proyectos de IA o digitalización más de un año en piloto sin llegar a producción?"</li>
-              <li>"¿Sabéis en un número concreto cuánto cuesta mantener los sistemas tal como están?"</li>
-            </ul>
-            <div class="pb-rule">El autodiagnóstico ya cualifica antes de la reunión; esto es por si quieres confirmarlo cara a cara.</div>
-          </div>
-          <div class="pb-card">
-            <h4>Objeciones habituales</h4>
-            <div class="obj"><b>"Ya tenemos proveedor de desarrollo."</b><p>No pedimos cambiarlo. Complementamos en la pieza que más duele, con métricas auditables. ¿Tu proveedor puede decirte qué productividad entregó el mes pasado, certificada por un tercero?</p></div>
-            <div class="obj"><b>"No vemos urgencia ahora mismo."</b><p>La deuda técnica crece sola (Gartner: 20–40% del valor de los activos). Y el AI Act obliga en sistemas de alto riesgo en diciembre de 2027: un core sin documentación auditable es riesgo regulatorio.</p></div>
-          </div>
-          <div class="pb-card">
-            <h4>Referencias</h4>
-            <ul class="pb-list">
-              <li><b>UNED</b> — migración PL/SQL → Java con IA, conocimiento documentado y en manos del cliente.</li>
-              <li><b>REA</b> — IA en producción desde hace +4 años. Para escépticos de que la IA funcione en real.</li>
-              <li><b>H10</b> — el assessment como primer contrato y base de la decisión de inversión.</li>
-            </ul>
-            <div class="warn">⚠ Confirma con Jorge qué nombres son mencionables antes de cada reunión.</div>
+          <div class="g2">
+            <div class="pb-card" style="margin:0">
+              <h4>El pitch, según quién tienes delante</h4>
+              <div class="pb-role"><b>CTO</b><div class="mv">"¿Cuál es la app que más frena al negocio y lleváis años sin tocar?" · le mueve: <em>Spec-Driven</em>, el conocimiento pasa al cliente.</div></div>
+              <div class="pb-role"><b>Dir. Ops</b><div class="mv">"¿Cuántos pilotos llevan +1 año sin producción?" · le mueve: <em>productividad certificada por Foreworth</em>.</div></div>
+              <div class="pb-role"><b>CIO</b><div class="mv">"¿Qué % del presupuesto IT va a mantener lo que ya existe?" · le mueve: <em>el assessment</em>, deuda con datos propios.</div></div>
+              <div class="pb-role"><b>CFO</b><div class="mv">"¿Cuánto cuesta mantener los sistemas, en un número?" · le mueve: <em>la cláusula bilateral</em>, 40% del ahorro a factura.</div></div>
+            </div>
+            <div class="pb-card" style="margin:0">
+              <h4>Objeciones · una muestra</h4>
+              <div class="obj"><b>"Ya tenemos proveedor de desarrollo."</b><p>No pedimos cambiarlo. Complementamos en la pieza que más duele, con métricas auditables. ¿Tu proveedor puede decirte qué productividad entregó el mes pasado, certificada por un tercero?</p></div>
+              <div class="obj"><b>"No vemos urgencia ahora mismo."</b><p>La deuda técnica crece sola (Gartner: 20–40% del valor de los activos). Y el AI Act obliga en sistemas de alto riesgo en diciembre de 2027.</p></div>
+              <span class="pb-more" onclick="go(7)">+ 6 objeciones más en el Repositorio →</span>
+            </div>
+            <div class="pb-card" style="margin:0">
+              <h4>Si quieres confirmar que hay proyecto, en la conversación</h4>
+              <ul class="pb-list">
+                <li>"¿Alguna aplicación lleva años pendiente porque nadie sabe qué rompe si la tocan?"</li>
+                <li>"¿Proyectos de IA más de un año en piloto sin llegar a producción?"</li>
+                <li>"¿Sabéis en un número cuánto cuesta mantener los sistemas tal como están?"</li>
+              </ul>
+              <div class="pb-rule">El autodiagnóstico ya cualifica antes; esto es por si quieres confirmarlo cara a cara.</div>
+            </div>
+            <div class="pb-card" style="margin:0">
+              <h4>Referencias · 3 destacadas</h4>
+              <ul class="pb-list">
+                <li><b>UNED</b> — migración PL/SQL → Java con IA, conocimiento en manos del cliente.</li>
+                <li><b>REA</b> — IA en producción desde hace +4 años. Para escépticos.</li>
+                <li><b>H10</b> — el assessment como primer contrato y base de la decisión.</li>
+              </ul>
+              <span class="pb-more" onclick="go(7)">Ver todos los casos y su contexto en el Repositorio →</span>
+              <div class="warn">⚠ Confirma con Jorge qué nombres son mencionables antes de cada reunión.</div>
+            </div>
           </div>
         </div>
 
@@ -565,49 +605,60 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         <div class="panel doc" id="p-repo">
           <div class="repo-head"><div class="slbl" style="margin:0">Repositorio de conocimiento · profundizar</div><span class="repo-lock">Acceso restringido · preventa</span></div>
           <div class="dsub">Material de fondo para preventa y especialista. No hace falta para una primera reunión.</div>
+          <div class="repo-it"><div class="repo-ic"></div><div><div class="ty">Comité de Dirección</div><h4>Decks ejecutivos · C-Suite</h4><p>ROI, coste de la inacción y caso de inversión para reuniones de comité. Lo primero que necesita Dirección.</p></div></div>
+          <div class="repo-it"><div class="repo-ic"></div><div><div class="ty">Mercado y competencia</div><h4>Benchmark competitivo + mercado español</h4><p>Posicionamiento frente a Accenture, Capgemini, Minsait, Globant/EPAM y otros, y estado del portfolio legacy en empresas de +500 empleados.</p></div></div>
           <div class="repo-it"><div class="repo-ic"></div><div><div class="ty">Análisis de territorio</div><h4>Mapa de dolores · Modernización</h4><p>21 dolores clasificados por familia, con impacto en OPEX/CAPEX y nivel de urgencia comercial.</p></div></div>
-          <div class="repo-it"><div class="repo-ic"></div><div><div class="ty">Competencia</div><h4>Benchmark competitivo</h4><p>Posicionamiento frente a Accenture, Capgemini, Minsait, Globant/EPAM, Ada Leap y otros.</p></div></div>
-          <div class="repo-it"><div class="repo-ic"></div><div><div class="ty">Mercado</div><h4>Análisis del mercado español</h4><p>Estado del portfolio legacy en empresas de +500 empleados y sectores prioritarios.</p></div></div>
-          <div class="repo-it"><div class="repo-ic"></div><div><div class="ty">Comité de Dirección</div><h4>Deck ejecutivo · C-Suite</h4><p>12 slides con ROI y coste de la inacción para reuniones de comité.</p></div></div>
+          <div class="repo-it"><div class="repo-ic"></div><div><div class="ty">Documentación técnica</div><h4>Arquitecturas de referencia y metodología</h4><p>Detalle técnico de modernización (Spec-Driven, patrones de migración) para preventa y especialista. <span style="color:var(--copper);font-weight:600">Pendiente de incorporar.</span></p></div></div>
         </div>
 
         <!-- HABILITACIÓN · READINESS -->
         <div class="panel toolview" id="p-readiness">
           <div class="tv-head"><div class="tv-ic">✓</div><div><div class="slbl" style="margin:0">Antes de abrir el área · Readiness <span class="hab">Etapa 1</span></div><div class="atitle" style="font-size:20px">Se habilita una vez; luego el área es suya</div></div></div>
-          <div class="tv-note" style="background:#EFEAF6;border-color:rgba(124,77,188,.3);color:#5B3A93">La habilitación —leer la tarjeta y 5 preguntas— se monta como formulario sobre la plataforma actual. El candado y el panel del PM son lo que añade la plataforma nueva.</div>
-          <div class="tv-flow">
-            <div class="tv-step"><div class="n">1</div><h4>Lee la tarjeta</h4><p>Dos minutos: el encuadre del área, la pregunta que abre, el dato y el cierre.</p></div>
-            <div class="tv-step"><div class="n">2</div><h4>Responde 5 preguntas</h4><p>Comprueban que sabe abrir y cerrar. Por ejemplo: "¿cuál es el único cierre de una primera reunión?" o "¿qué diferencia a Entelgy que nadie más firma?".</p></div>
-            <div class="tv-step"><div class="n">3</div><h4>Queda habilitado</h4><p>Hipatia lo registra. Queda habilitado en el área.</p><div style="margin-top:10px"><span class="hab">✓ Habilitado · Modernización</span></div></div>
-          </div>
-          <div class="exam">
-            <div class="exam-h">Ejemplo · 3 de las 5 preguntas de habilitación</div>
-            <div class="exam-sub">Comprueban que sabe abrir y cerrar el área. Pulsa una respuesta.</div>
-            <div class="exq">
-              <div class="exq-t">1 · ¿Cuál es el único cierre posible de una primera reunión?</div>
-              <div class="exo" data-c="0">Una propuesta completa de proyecto</div>
-              <div class="exo" data-c="1">El Assessment de modernización de dos semanas</div>
-              <div class="exo" data-c="0">Un descuento por cerrar rápido</div>
+          <div class="tv-note" style="background:#EFEAF6;border-color:rgba(124,77,188,.3);color:#5B3A93">La habilitación —leer la tarjeta y 5 preguntas— forma parte del recorrido base. El candado obligatorio y el panel del PM llegan en Etapa 2.</div>
+          <div class="g2">
+            <div class="g2-col">
+              <div class="colhd">Cómo se habilita · una vez</div>
+              <div style="display:flex;flex-direction:column;gap:9px">
+                <div class="tv-step"><div class="n">1</div><h4>Lee la tarjeta</h4><p>Dos minutos: encuadre del área, la pregunta que abre, el dato y el cierre.</p></div>
+                <div class="tv-step"><div class="n">2</div><h4>Responde 5 preguntas</h4><p>Comprueban que sabe abrir y cerrar el área.</p></div>
+                <div class="tv-step"><div class="n">3</div><h4>Queda habilitado</h4><p>Hipatia lo registra. <span class="hab">✓ Habilitado · Modernización</span></p></div>
+              </div>
+              <div class="why" style="background:#FBF6F0;border-left-color:var(--copper)"><div class="l" style="color:var(--copper)">El añadido de la Etapa 2 <span class="dest-badge">Etapa 2</span></div><div class="t">Hacer la habilitación <b>obligatoria</b> —sin certificar, el material profundo no se abre— y dar al PM un panel en vivo de quién está al día.</div></div>
             </div>
-            <div class="exq">
-              <div class="exq-t">2 · ¿Qué diferencia a Entelgy que ningún competidor firma?</div>
-              <div class="exo" data-c="0">El precio por hora más bajo del mercado</div>
-              <div class="exo" data-c="1">El 40% del ahorro de productividad vuelve al cliente, medido por Foreworth</div>
-              <div class="exo" data-c="0">Más consultores en el equipo</div>
+            <div class="g2-col">
+              <div class="colhd">Ejemplo · 3 de las 5 preguntas · despliega para responder</div>
+              <div class="acc">
+                <details>
+                  <summary><span class="chev">▸</span>1 · ¿Cuál es el único cierre posible de una primera reunión?</summary>
+                  <div class="acc-b exq">
+                    <div class="exo" data-c="0">Una propuesta completa de proyecto</div>
+                    <div class="exo" data-c="1">El Assessment de modernización de dos semanas</div>
+                    <div class="exo" data-c="0">Un descuento por cerrar rápido</div>
+                  </div>
+                </details>
+                <details>
+                  <summary><span class="chev">▸</span>2 · ¿Qué diferencia a Entelgy que ningún competidor firma?</summary>
+                  <div class="acc-b exq">
+                    <div class="exo" data-c="0">El precio por hora más bajo del mercado</div>
+                    <div class="exo" data-c="1">El 40% del ahorro de productividad vuelve al cliente, medido por Foreworth</div>
+                    <div class="exo" data-c="0">Más consultores en el equipo</div>
+                  </div>
+                </details>
+                <details>
+                  <summary><span class="chev">▸</span>3 · Te preguntan un detalle técnico que no sabes. ¿Qué haces?</summary>
+                  <div class="acc-b exq">
+                    <div class="exo" data-c="0">Improvisas una respuesta para no quedar mal</div>
+                    <div class="exo" data-c="1">"Eso te lo confirma el especialista en la siguiente reunión" — y lo usas como cierre</div>
+                    <div class="exo" data-c="0">Cambias de tema</div>
+                  </div>
+                </details>
+              </div>
+              <div class="acct">
+                <div class="acct-l">Vista del PM · habilitación por área <span class="dest-badge">Etapa 2</span></div>
+                <div class="acct-row"><span>Modernización</span><div class="bar"><i style="width:64%"></i></div><b>14 / 22</b></div>
+                <div class="acct-row"><span>Mantenimiento Evolutivo</span><div class="bar"><i style="width:41%"></i></div><b>9 / 22</b></div>
+              </div>
             </div>
-            <div class="exq">
-              <div class="exq-t">3 · Te preguntan un detalle técnico que no sabes. ¿Qué haces?</div>
-              <div class="exo" data-c="0">Improvisas una respuesta para no quedar mal</div>
-              <div class="exo" data-c="1">"Eso te lo confirma el especialista en la siguiente reunión" — y lo usas como cierre</div>
-              <div class="exo" data-c="0">Cambias de tema</div>
-            </div>
-          </div>
-
-          <div class="why" style="background:#FBF6F0;border-left-color:var(--copper)"><div class="l" style="color:var(--copper)">El añadido de la plataforma nueva <span class="dest-badge">Etapa 2</span></div><div class="t">Hacer la habilitación <b>obligatoria</b> —sin certificar, el material profundo no se abre— y darle al PM un panel en vivo de quién está al día. Es lo que convierte un portal que nadie abre en algo que el equipo usa.</div></div>
-          <div class="acct">
-            <div class="acct-l">Vista del PM · habilitación por área <span class="dest-badge">Etapa 2</span></div>
-            <div class="acct-row"><span>Modernización</span><div class="bar"><i style="width:64%"></i></div><b>14 / 22 · 64%</b></div>
-            <div class="acct-row"><span>Mantenimiento Evolutivo</span><div class="bar"><i style="width:41%"></i></div><b>9 / 22 · 41%</b></div>
           </div>
         </div>
 
@@ -615,34 +666,26 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         <div class="panel toolview" id="p-cuenta">
           <div class="tv-head"><div class="tv-ic">🔍</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Estado de la cuenta con IA <span class="hab">Etapa 1</span></div><div class="atitle" style="font-size:20px">Lo que sabes de una cuenta antes de escribir nada</div></div></div>
 
-          <div class="slbl" style="margin-bottom:9px">El disparador · por qué miras esta cuenta</div>
-          <div class="trigger">
-            <div class="trig now"><div class="tl">El cliente preguntó</div><p>En un foro del sector, alguien de <b>Grupo Lantia</b> comentó que arrastran un core de seguros que "no se atreven a tocar". Le llega a Ana.</p></div>
-            <div class="trig"><div class="tl">Quiero tocar la cuenta</div><p>O al revés: Ana decide trabajar Lantia por su cuenta, sin que nadie haya preguntado todavía.</p></div>
-          </div>
-
-          <div class="slbl" style="margin:18px 0 9px">La herramienta · escribes el nombre, la IA mira por ti</div>
+          <div class="colhd" style="margin-bottom:8px">La herramienta · escribes el nombre, la IA mira por ti</div>
           <div class="acct-tool">
             <div class="at-field">
               <span class="at-ic">🔍</span>
               <input class="at-input" value="Grupo Lantia" aria-label="Nombre de la cuenta">
-              <button class="at-btn" type="button">Analizar cuenta</button>
+              <button class="at-btn" type="button">Analizar</button>
             </div>
-            <div class="at-sources">La IA lee <b>fuentes públicas</b>: web corporativa, ofertas de empleo que delatan el stack, notas de prensa, registro mercantil y señales del sector. Cada dato del informe lleva de dónde sale.</div>
+            <div class="at-sources">La IA lee <b>fuentes públicas</b>: web, ofertas de empleo que delatan el stack, prensa, registro mercantil y señales del sector. Cada dato lleva de dónde sale.</div>
           </div>
           <div class="at-status">Analizado hace unos segundos · esto es lo que ha encontrado</div>
-
-          <div class="tv-note">En Etapa 1 la IA trabaja solo con lo público y con lo que el comercial ya sabe. El cruce con el CRM y el histórico de la cuenta llega en Fase 2.</div>
 
           <div class="scan">
             <div class="scan-head">
               <div><div class="l">Lo que la IA ha encontrado</div><div class="t">Grupo Lantia</div></div>
-              <div class="src">5 fuentes públicas consultadas</div>
+              <div class="src">5 fuentes públicas</div>
             </div>
-            <div class="scan-row"><div class="k">Stack y antigüedad</div><div class="v">Núcleo de pólizas en <b>Java sobre un core de ~11 años</b>. Sin arquitecto cloud en plantilla, a juzgar por sus propias ofertas de empleo.<div style="font-size:10.5px;color:var(--gray);margin-top:5px">Fuente · ofertas de empleo + notas técnicas en su web</div></div></div>
-            <div class="scan-row"><div class="k">Señales de dolor</div><div class="v"><span class="sig">Oferta abierta · mantenimiento PL/SQL</span><span class="sig">Migración "en evaluación" desde 2023</span><span class="sig">Rotación en el equipo de core</span><div style="font-size:10.5px;color:var(--gray);margin-top:7px">Fuente · portal de empleo + nota de prensa 2023 + perfiles públicos del equipo</div></div></div>
-            <div class="scan-row"><div class="k">Exposición AI Act</div><div class="v">Seguros es sector con sistemas de <b>alto riesgo</b>; plazo de cumplimiento en <b>diciembre 2027</b>. Un core sin documentación auditable deja de ser solo un problema técnico.<div style="font-size:10.5px;color:var(--gray);margin-top:5px">Fuente · clasificación del sector + texto del EU AI Act</div></div></div>
-            <div class="scan-row"><div class="k">Tamaño y sector</div><div class="v">Aseguradora mediana, ramo de no-vida, en torno a 600 empleados. La decisión tecnológica se concentra en CIO y CFO.<div style="font-size:10.5px;color:var(--gray);margin-top:5px">Fuente · registro mercantil + web corporativa</div></div></div>
+            <div class="scan-row"><div class="k">Stack y antigüedad</div><div class="v">Núcleo de pólizas en <b>Java sobre un core de ~11 años</b>; sin arquitecto cloud en plantilla.<span style="font-size:10.5px;color:var(--gray)"> · Fuente: ofertas de empleo + su web</span></div></div>
+            <div class="scan-row"><div class="k">Señales de dolor</div><div class="v"><span class="sig">Oferta · mantenimiento PL/SQL</span><span class="sig">Migración "en evaluación" desde 2023</span><span class="sig">Rotación en el core</span><div style="font-size:10.5px;color:var(--gray);margin-top:6px">Fuente · portal de empleo + prensa 2023 + perfiles públicos</div></div></div>
+            <div class="scan-row"><div class="k">Exposición AI Act</div><div class="v">Seguros = sistemas de <b>alto riesgo</b>; cumplimiento en <b>diciembre 2027</b>. Un core sin documentación auditable deja de ser solo técnico.<span style="font-size:10.5px;color:var(--gray)"> · Fuente: sector + texto del EU AI Act</span></div></div>
+            <div class="scan-row"><div class="k">Tamaño y sector</div><div class="v">Aseguradora mediana de no-vida, ~600 empleados. La decisión se concentra en CIO y CFO.<span style="font-size:10.5px;color:var(--gray)"> · Fuente: registro mercantil + web</span></div></div>
           </div>
 
           <div class="verdict go">
@@ -650,63 +693,71 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="vt"><b>Hay recorrido · 3 señales activas</b><p>Stack antiguo, dolor de mantenimiento y exposición regulatoria. Da para abrir conversación esta semana.</p></div>
           </div>
 
-          <div class="bridge">Con esto Ana tiene lo que le hace falta para el primer correo. En vez de un mensaje genérico, abre con <b>dos o tres frases que demuestran que ha hecho los deberes sobre la cuenta</b>. Ese es el paso siguiente.</div>
+          <div class="bridge">Con esto Ana tiene lo que le hace falta para el primer correo: en vez de un mensaje genérico, abre con <b>dos o tres frases que demuestran que ha hecho los deberes sobre la cuenta</b>.</div>
         </div>
 
         <!-- TRABAJO POR CUENTA · EL MAIL -->
         <div class="panel toolview" id="p-mail">
           <div class="tv-head"><div class="tv-ic">✉️</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Primer contacto <span class="hab">Etapa 1</span></div><div class="atitle" style="font-size:20px">El correo que abre, con el tono que espera un CIO</div></div></div>
-          <div class="tv-note">No es un correo de venta. Demuestra que Ana ha hecho los deberes sobre la cuenta y ofrece un primer recurso de criterio. Las dos primeras frases salen del análisis del paso anterior; el resto es plantilla.</div>
 
-          <div class="mail">
-            <div class="mail-bar"><i></i><i></i><i></i><span class="mail-edit-tag">Borrador editable</span></div>
-            <div class="mail-meta">
-              <div class="mr"><b>Para</b> [nombre] · Dirección de Sistemas, Grupo Lantia</div>
-              <div class="mr"><b>De</b> Ana Pérez · Entelgy</div>
-              <div class="subj">Asunto · Modernización del core de pólizas: exposición regulatoria y coste de mantenimiento</div>
-            </div>
-            <div class="mail-body" contenteditable="true" spellcheck="false">
-              <p>Estimado/a [nombre]:</p>
-              <p>Le escribo a raíz de un análisis del sector asegurador de cara al plazo del EU AI Act. En él, Grupo Lantia figura entre las compañías cuyo núcleo de pólizas lleva tiempo pendiente de una modernización de fondo.</p>
-              <p>Es una situación frecuente y, en seguros, especialmente sensible: a partir de diciembre de 2027 el AI Act exigirá documentación auditable en los sistemas de alto riesgo. Un core difícil de mantener encarece tanto el cumplimiento como el coste de sostenerlo año a año.</p>
-              <p>Por si le resulta útil de cara a su comité, hemos preparado una herramienta de autodiagnóstico —apenas cinco minutos— que devuelve un informe con el nivel de exposición de la organización y una primera estimación del coste de mantener el core en su estado actual. Es información que puede emplear internamente, trabajemos juntos o no.</p>
-              <p>Si más adelante considera oportuno comentarlo, quedo a su disposición para una conversación sin compromiso.</p>
-              <p>Un cordial saludo,</p>
-              <div class="mail-sign"><b>Ana Pérez</b>Modernización de Aplicaciones · Entelgy</div>
-            </div>
-          </div>
-          <div class="mail-actions">
-            <button class="btn-copy" type="button" onclick="copyMail(this)">⧉ Copiar correo</button>
-            <div class="mail-editnote"><b>El texto es editable.</b> Ana lo ajusta al contacto y a la cuenta antes de enviarlo desde su propio correo.</div>
-          </div>
-
-          <div class="rep-intro">Lo que vuelve · el informe que el cliente completa</div>
-          <div class="report">
-            <div class="rep-head">
-              <div><div class="rep-k">Autodiagnóstico de madurez · Modernización</div><div class="rep-t">Grupo Lantia</div></div>
-              <div class="rep-logo">Entelgy<span class="dot">·</span></div>
-            </div>
-            <div class="rep-body">
-              <div class="rep-score">
-                <div class="rep-circle"><b>78</b><small>/ 100</small></div>
-                <div class="rep-risk">Riesgo AI Act · alto</div>
-                <div class="rep-risk-note">Plazo de cumplimiento · dic 2027</div>
+          <div class="g2">
+            <div class="g2-col">
+              <div class="colhd">El correo que envía Ana · editable</div>
+              <div class="mail" style="margin:0">
+                <div class="mail-bar"><i></i><i></i><i></i><span class="mail-edit-tag">Borrador editable</span></div>
+                <div class="mail-meta">
+                  <div class="mr"><b>Para</b> [nombre] · Dirección de Sistemas, Grupo Lantia</div>
+                  <div class="mr"><b>De</b> Ana Pérez · Entelgy</div>
+                  <div class="subj">Asunto · Modernización del core de pólizas: exposición regulatoria y coste de mantenimiento</div>
+                </div>
+                <div class="mail-body" contenteditable="true" spellcheck="false">
+                  <p>Estimado/a [nombre]:</p>
+                  <p>Le escribo a raíz de un análisis del sector asegurador de cara al plazo del EU AI Act. En él, Grupo Lantia figura entre las compañías cuyo núcleo de pólizas lleva tiempo pendiente de una modernización de fondo.</p>
+                  <p>Es una situación frecuente y, en seguros, especialmente sensible: a partir de diciembre de 2027 el AI Act exigirá documentación auditable en los sistemas de alto riesgo. Un core difícil de mantener encarece tanto el cumplimiento como el coste de sostenerlo año a año.</p>
+                  <p>Por si le resulta útil de cara a su comité, puede hacer un breve autodiagnóstico —apenas cinco minutos— en este enlace:</p>
+                  <p><a href="#" class="mail-link" onclick="return false">entelgy.com/autodiagnostico/modernizacion</a></p>
+                  <p>Devuelve un informe con el nivel de exposición de la organización y una primera estimación del coste de mantener el core en su estado actual. Es información que puede emplear internamente, trabajemos juntos o no.</p>
+                  <p>Si más adelante lo considera oportuno, quedo a su disposición para comentarlo sin compromiso.</p>
+                  <p>Un cordial saludo,</p>
+                  <div class="mail-sign"><b>Ana Pérez</b>Modernización de Aplicaciones · Entelgy</div>
+                </div>
               </div>
-              <div class="rep-dims">
-                <div class="dim"><span>Antigüedad del core</span><div class="db"><i style="width:88%"></i></div><b>11 años</b></div>
-                <div class="dim"><span>Capacidad de mantenimiento</span><div class="db"><i style="width:84%"></i></div><b>84%</b></div>
-                <div class="dim"><span>Exposición regulatoria</span><div class="db"><i style="width:75%"></i></div><b>alta</b></div>
-                <div class="dim"><span>Rotación del equipo</span><div class="db"><i style="width:58%"></i></div><b>media</b></div>
+              <div class="mail-actions" style="margin:0">
+                <button class="btn-copy" type="button" onclick="copyMail(this)">⧉ Copiar correo</button>
+                <div class="mail-editnote"><b>Editable.</b> Ana lo ajusta y lo envía desde su propio correo.</div>
               </div>
             </div>
-            <div class="rep-foot">
-              <div class="rep-reco"><b>Recomendación.</b> Modernización progresiva del core, financiada desde el OPEX de mantenimiento actual. Deuda técnica estimada: 1,8 M€ al año.</div>
-              <div class="rep-pdf">PDF generado automáticamente · para compartir con Dirección y el CFO</div>
+            <div class="g2-col">
+              <div class="colhd">Lo que vuelve · el informe que el cliente completa</div>
+              <div class="report" style="margin:0">
+                <div class="rep-head">
+                  <div><div class="rep-k">Autodiagnóstico de madurez · Modernización</div><div class="rep-t">Grupo Lantia</div></div>
+                  <div class="rep-logo">Entelgy<span class="dot">·</span></div>
+                </div>
+                <div class="rep-body">
+                  <div class="rep-score">
+                    <div class="rep-circle"><b>78</b><small>/ 100</small></div>
+                    <div class="rep-risk">Riesgo AI Act · alto</div>
+                    <div class="rep-risk-note">Cumplimiento · dic 2027</div>
+                  </div>
+                  <div class="rep-dims">
+                    <div class="dim"><span>Antigüedad del core</span><div class="db"><i style="width:88%"></i></div><b>11 años</b></div>
+                    <div class="dim"><span>Capacidad de mantenimiento</span><div class="db"><i style="width:84%"></i></div><b>84%</b></div>
+                    <div class="dim"><span>Exposición regulatoria</span><div class="db"><i style="width:75%"></i></div><b>alta</b></div>
+                    <div class="dim"><span>Rotación del equipo</span><div class="db"><i style="width:58%"></i></div><b>media</b></div>
+                  </div>
+                </div>
+                <div class="rep-foot">
+                  <div class="rep-reco"><b>Recomendación.</b> Modernización progresiva del core, financiada desde el OPEX de mantenimiento actual. Deuda técnica estimada: 1,8 M€ al año.</div>
+                  <div class="rep-pdf">PDF automático · para Dirección y el CFO</div>
+                </div>
+              </div>
+              <div class="lead-row" style="margin:0"><div class="sc">78</div><div><b>Grupo Lantia</b> · autodiagnóstico completado<div class="meta">Riesgo AI Act alto · hace 2h · ya en el pipeline de Ana</div></div></div>
+              <div class="lead-db">El cliente entra en una URL propia y se autodiagnostica. Cada vez que lo hace, <b>Entelgy suma un lead cualificado a su propia base de datos</b> — un activo de pipeline que hoy no existe y que crece solo con cada envío.</div>
             </div>
           </div>
 
-          <div class="lead-row"><div class="sc">78</div><div><b>Grupo Lantia</b> · autodiagnóstico completado<div class="meta">Riesgo AI Act alto · hace 2h · ya está en el pipeline de Ana</div></div></div>
-          <div class="bridge">Con el lead cualificado, Ana propone el <b>Assessment de modernización</b> de dos semanas. Son dos cosas distintas: el autodiagnóstico es gratis y cualifica; el Assessment es de pago y es el primer contrato. Ahora toca preparar la visita.</div>
+          <div class="bridge">Con el lead cualificado, Ana propone el <b>Assessment de modernización</b> de dos semanas. Son dos cosas distintas: el autodiagnóstico es gratis y cualifica; el Assessment es de pago y es el primer contrato.</div>
         </div>
 
       </div>
@@ -716,13 +767,13 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
   <!-- STEP 7 · ETAPA 2 -->
   <section class="step etapa2">
     <div class="box">
-      <div class="kick">Etapa 2 · plataforma nueva</div>
+      <div class="kick">Etapa 2 · el destino</div>
       <h1>Y después, el sistema empieza a anticiparse.</h1>
-      <p class="sub">El grueso del recorrido se construye sobre la plataforma actual (Etapa 1). La plataforma nueva lo refuerza por delante y por debajo: prioriza tu territorio, hace obligatoria la habilitación y mide la adopción. Es el destino, todavía sin construir.</p>
+      <p class="sub">El recorrido base se entrega primero. Lo que ves aquí es el destino: un sistema que se anticipa, que exige la habilitación antes de abrir el material y que mide la adopción. Sobre qué plataforma se construye cada parte —cuánto se aprovecha de lo actual o si va todo sobre una nueva— es una decisión todavía abierta.</p>
       <div class="e2grid">
-        <div class="e2"><div class="n">Escáner</div><h3>Tu territorio, sin preguntar</h3><p>En Etapa 1 le preguntas a la IA por una cuenta concreta. En Etapa 2 es al revés: el sistema te avisa de qué cuentas tienen un dolor activo esta semana, cruzando señales externas con tu cartera y el mensaje de entrada ya escrito.</p><div class="pre">Plataforma nueva</div></div>
-        <div class="e2"><div class="n">Gating</div><h3>La habilitación, obligatoria</h3><p>Sin certificarte en el área, el material profundo no se abre. Hipatia hace el paso obligatorio, no opcional, y registra quién está al día.</p><div class="pre">Plataforma nueva</div></div>
-        <div class="e2"><div class="n">Intelligence</div><h3>Qué funciona y quién actúa</h3><p>Leads, porcentaje de equipo habilitado y qué material abre reuniones. El PM y la dirección lo ven sin esperar a que nadie informe.</p><div class="pre">Plataforma nueva</div></div>
+        <div class="e2"><div class="n">Escáner</div><h3>Tu territorio, sin preguntar</h3><p>En Etapa 1 le preguntas a la IA por una cuenta concreta. En Etapa 2 es al revés: el sistema te avisa de qué cuentas tienen un dolor activo esta semana, cruzando señales externas con tu cartera y el mensaje de entrada ya escrito.</p><div class="pre">Etapa 2</div></div>
+        <div class="e2"><div class="n">Gating</div><h3>La habilitación, obligatoria</h3><p>Sin certificarte en el área, el material profundo no se abre. Hipatia hace el paso obligatorio, no opcional, y registra quién está al día.</p><div class="pre">Etapa 2</div></div>
+        <div class="e2"><div class="n">Intelligence</div><h3>Qué funciona y quién actúa</h3><p>Leads, porcentaje de equipo habilitado y qué material abre reuniones. El PM y la dirección lo ven sin esperar a que nadie informe.</p><div class="pre">Etapa 2</div></div>
       </div>
     </div>
   </section>
@@ -748,7 +799,7 @@ const steps=[
  {scene:'portal',phase:'e1',panel:'p-mail',flow:'f-mail',title:'Primer contacto · el mail',lblPhase:'Etapa 1'},
  {scene:'portal',phase:'e1',panel:'p-kit',flow:'f-kit',title:'Kit de visita · preparar la reunión',lblPhase:'Etapa 1'},
  {scene:'portal',phase:'e1',panel:'p-repo',flow:'f-repo',title:'Repositorio de conocimiento',lblPhase:'Etapa 1'},
- {scene:'etapa2',phase:'e2',title:'El recorrido por delante · plataforma nueva',lblPhase:'Etapa 2'}
+ {scene:'etapa2',phase:'e2',title:'El recorrido por delante · Etapa 2',lblPhase:'Etapa 2'}
 ];
 const scenes={asis:document.querySelector('.asis'),journey:document.querySelector('.journey'),portal:document.querySelector('.portal'),etapa2:document.querySelector('.etapa2')};
 const ph={asis:document.getElementById('ph-asis'),e1:document.getElementById('ph-e1'),e2:document.getElementById('ph-e2')};
