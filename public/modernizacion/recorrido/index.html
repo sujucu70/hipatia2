@@ -158,6 +158,36 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .bridge{margin-top:16px;font-size:14px;color:#33404B;line-height:1.6}
 .bridge b{color:var(--navy)}
 
+/* JOURNEY MAP */
+.journey{background:var(--navy);color:#cdd9e1;display:flex;align-items:center;justify-content:center}
+.journey .box{max-width:1160px;width:100%;padding:40px 44px}
+.journey .kick{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9FB3C2;margin-bottom:12px}
+.journey h1{font-size:clamp(26px,3.2vw,40px);font-weight:800;line-height:1.12;color:#fff;letter-spacing:-.02em;margin-bottom:18px}
+.journey h1 em{color:var(--copper);font-style:normal}
+.jm-legend{display:flex;gap:18px;margin-bottom:18px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.jm-legend .lg{display:flex;align-items:center;gap:7px}
+.jm-legend .lg::before{content:'';width:9px;height:9px;border-radius:50%}
+.jm-legend .lg.ya{color:#7FCBA1}.jm-legend .lg.ya::before{background:var(--green)}
+.jm-legend .lg.dest{color:#8DA3B2}.jm-legend .lg.dest::before{background:none;border:1.5px solid #6E8494}
+.jm-flow{display:flex;align-items:stretch;margin-bottom:16px}
+.jstep{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px;display:flex;flex-direction:column}
+.jstep.on-ya{background:rgba(58,158,101,.10);border-color:rgba(58,158,101,.4)}
+.jstep .num{font-size:13px;font-weight:800;color:#7E93A2;margin-bottom:8px}
+.jstep.on-ya .num{color:var(--green)}
+.jstep .jt{font-size:15px;font-weight:800;color:#fff;margin-bottom:6px;line-height:1.15}
+.jstep p{font-size:12.5px;color:#AEC0CC;line-height:1.45;flex:1;margin-bottom:12px}
+.jstep .tags{display:flex;flex-direction:column;gap:5px;align-items:flex-start}
+.jstep .cap{font-size:10px;font-weight:700;color:#cdd9e1;background:rgba(255,255,255,.08);padding:3px 8px;border-radius:5px}
+.jstep .et{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:20px}
+.jstep .et.ya{background:rgba(58,158,101,.2);color:#7FCBA1}
+.jstep .et.dest{border:1px solid #6E8494;color:#8DA3B2}
+.arr{display:flex;align-items:center;color:#5E7587;font-size:18px;padding:0 6px;flex-shrink:0}
+.jm-inbound{background:rgba(124,77,188,.12);border:1px solid rgba(124,77,188,.3);border-radius:12px;padding:14px 18px;margin-bottom:16px}
+.jm-inbound .ib-l{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B79AE0;margin-bottom:5px}
+.jm-inbound .ib-t{font-size:13.5px;color:#CFD9E1;line-height:1.5}.jm-inbound .ib-t b{color:#fff}
+.jm-inbound .et.ya{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:20px;background:rgba(58,158,101,.2);color:#7FCBA1;margin-left:6px;white-space:nowrap}
+.jm-bar{border-top:1px solid rgba(255,255,255,.1);padding-top:14px;font-size:11px;font-weight:600;letter-spacing:.05em;color:#7E93A2}
+
 /* ETAPA 2 */
 .etapa2{background:var(--navy);color:#cdd9e1;display:flex;align-items:center;justify-content:center}
 .etapa2 .box{max-width:1080px;width:100%;padding:50px 48px}
@@ -183,7 +213,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .dots{display:flex;gap:6px}
 .dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s}
 .dots i.on{background:var(--purple);width:20px;border-radius:4px}
-@media(max-width:900px){.asis .box,.tv-flow,.ov-doors,.e2grid{grid-template-columns:1fr}.sb{display:none}.doc,.toolview{padding:22px}}
+@media(max-width:900px){.asis .box,.tv-flow,.ov-doors,.e2grid{grid-template-columns:1fr}.jm-flow{flex-direction:column;gap:10px}.arr{display:none}.sb{display:none}.doc,.toolview{padding:22px}}
 </style>
 </head>
 <body>
@@ -218,6 +248,29 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         <div class="cap">Ninguna de estas respuestas está en el material. Va con lo genérico, o le escribe al especialista.</div>
         <div class="punch">Esa capa que falta encima del material es lo que <em>añade Hipatia</em>.</div>
       </div>
+    </div>
+  </section>
+
+  <!-- STEP 2 · JOURNEY MAP -->
+  <section class="step journey">
+    <div class="box">
+      <div class="kick">El recorrido del comercial · dos modos</div>
+      <h1>El comercial crea la oportunidad, <em>o la oportunidad le encuentra a él.</em></h1>
+      <div class="jm-legend"><span class="lg ya">funciona ya · Etapa 1</span><span class="lg dest">destino · Etapa 2</span></div>
+      <div class="jm-flow">
+        <div class="jstep"><div class="num">1</div><div class="jt">Se habilita</div><p>Hipatia registra que está al día en el área.</p><div class="tags"><span class="cap">Readiness</span><span class="et dest">destino</span></div></div>
+        <div class="arr">→</div>
+        <div class="jstep"><div class="num">2</div><div class="jt">Encuentra la oportunidad</div><p>El Escáner le dice a qué cuentas llamar esta semana.</p><div class="tags"><span class="cap">Escáner</span><span class="et dest">destino</span></div></div>
+        <div class="arr">→</div>
+        <div class="jstep on-ya"><div class="num">3</div><div class="jt">Abre y cualifica</div><p>Abre con la tarjeta y manda el Autodiagnóstico. El cliente vuelve con un score.</p><div class="tags"><span class="cap">Tarjeta + Autodiagnóstico</span><span class="et ya">funciona ya</span></div></div>
+        <div class="arr">→</div>
+        <div class="jstep on-ya"><div class="num">4</div><div class="jt">Va a la reunión</div><p>Prepara con el Sales Kit y lleva el resultado del cliente.</p><div class="tags"><span class="cap">Sales Kit</span><span class="et ya">funciona ya</span></div></div>
+      </div>
+      <div class="jm-inbound">
+        <div class="ib-l">El otro modo · entrante</div>
+        <div class="ib-t"><b>El cliente llega con interés.</b> Lo oyó en un evento, en redes, por un colega. No hace falta el Escáner: el comercial manda el Autodiagnóstico para cualificar y va a la reunión. <span class="et ya">funciona ya</span></div>
+      </div>
+      <div class="jm-bar">Hipatia mide · % habilitados por área · autodiagnósticos enviados y completados · leads entrantes y generados</div>
     </div>
   </section>
 
@@ -376,7 +429,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
     <div class="box">
       <div class="kick">Etapa 2 · plataforma nueva</div>
       <h1>Y después, el sistema empieza a empujar.</h1>
-      <p class="sub">Todo lo anterior funciona ya, sobre la plataforma actual. La siguiente etapa convierte el portal en un motor que prioriza y avisa. Es el destino, todavía sin construir.</p>
+      <p class="sub">El recorrido de hoy empieza cuando el comercial abre y cualifica. La plataforma nueva añade lo de delante del mapa: que se habilite en el área y que la oportunidad le encuentre a él. Es el destino, todavía sin construir.</p>
       <div class="e2grid">
         <div class="e2"><div class="n">Readiness</div><h3>Te habilitas primero</h3><p>Para abrir el material profundo de un área, el comercial pasa antes una habilitación ligera. Hipatia registra quién está al día.</p><div class="pre">Plataforma nueva</div></div>
         <div class="e2"><div class="n">Escáner</div><h3>Tu territorio, priorizado</h3><p>Qué cuentas tienen un dolor activo esta semana, cruzando señales externas con el portfolio, con el mensaje de entrada ya escrito.</p><div class="pre">Plataforma nueva</div></div>
@@ -399,14 +452,14 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 <script>
 const steps=[
  {scene:'asis',phase:'asis',title:'Hoy · el hueco',lblPhase:'As-is'},
- {scene:'portal',phase:'e1',panel:'p-overview',area:1,title:'Entra a su área',lblPhase:'Etapa 1 · funciona ya'},
- {scene:'portal',phase:'e1',panel:'p-tarjeta',tab:'tab-tarjeta',area:1,title:'Puerta 1 · Tarjeta de entrada',lblPhase:'Etapa 1 · funciona ya'},
- {scene:'portal',phase:'e1',panel:'p-kit',tab:'tab-kit',area:1,title:'Puerta 2 · Sales Kit',lblPhase:'Etapa 1 · funciona ya'},
- {scene:'portal',phase:'e1',panel:'p-repo',tab:'tab-repo',area:1,title:'Puerta 3 · Repositorio',lblPhase:'Etapa 1 · funciona ya'},
- {scene:'portal',phase:'e1',panel:'p-tool',tool:1,title:'Herramienta · Autodiagnóstico',lblPhase:'Etapa 1 · funciona ya'},
- {scene:'etapa2',phase:'e2',title:'El destino · plataforma nueva',lblPhase:'Etapa 2 · destino'}
+ {scene:'journey',phase:'map',title:'El recorrido del comercial',lblPhase:'Dos modos'},
+ {scene:'portal',phase:'e1',panel:'p-tarjeta',tab:'tab-tarjeta',area:1,title:'Abre · Tarjeta de entrada',lblPhase:'Etapa 1 · funciona ya'},
+ {scene:'portal',phase:'e1',panel:'p-tool',tool:1,title:'Cualifica · Autodiagnóstico',lblPhase:'Etapa 1 · funciona ya'},
+ {scene:'portal',phase:'e1',panel:'p-kit',tab:'tab-kit',area:1,title:'Prepara y va a la reunión · Sales Kit',lblPhase:'Etapa 1 · funciona ya'},
+ {scene:'portal',phase:'e1',panel:'p-repo',tab:'tab-repo',area:1,title:'Profundiza · Repositorio',lblPhase:'Etapa 1 · funciona ya'},
+ {scene:'etapa2',phase:'e2',title:'El recorrido por delante · plataforma nueva',lblPhase:'Etapa 2 · destino'}
 ];
-const scenes={asis:document.querySelector('.asis'),portal:document.querySelector('.portal'),etapa2:document.querySelector('.etapa2')};
+const scenes={asis:document.querySelector('.asis'),journey:document.querySelector('.journey'),portal:document.querySelector('.portal'),etapa2:document.querySelector('.etapa2')};
 const ph={asis:document.getElementById('ph-asis'),e1:document.getElementById('ph-e1'),e2:document.getElementById('ph-e2')};
 const dots=document.getElementById('dots');let cur=0;
 steps.forEach((_,i)=>{const d=document.createElement('i');if(!i)d.className='on';d.onclick=()=>go(i);dots.appendChild(d);});
@@ -421,7 +474,7 @@ function go(n){
   document.getElementById('sb-area').classList.toggle('act',!!s.area);
   document.getElementById('sb-tool').classList.toggle('act',!!s.tool);
  }
- Object.values(ph).forEach(p=>p.classList.remove('act'));ph[s.phase].classList.add('act');
+ Object.values(ph).forEach(p=>p.classList.remove('act'));if(ph[s.phase])ph[s.phase].classList.add('act');
  document.getElementById('nav-title').textContent=s.title;
  document.getElementById('nav-phase').textContent=s.lblPhase;
  document.getElementById('ct').textContent=(cur+1)+' / '+steps.length;
