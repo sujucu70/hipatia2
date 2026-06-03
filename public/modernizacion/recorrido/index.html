@@ -202,6 +202,15 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .e2 .pre{margin-top:14px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7E93A2}
 
 /* nav */
+.dest-badge{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--copper);color:var(--copper);padding:2px 8px;border-radius:20px;margin-left:8px;white-space:nowrap}
+.hab{font-size:12px;font-weight:700;background:var(--green-soft);color:var(--green);border:1px solid rgba(58,158,101,.3);padding:5px 11px;border-radius:20px}
+.acct{margin-top:20px;border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--white)}
+.acct-l{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-bottom:12px}
+.acct-row{display:flex;align-items:center;gap:14px;font-size:13px;color:#46535E;margin-bottom:9px}
+.acct-row span{width:180px;flex-shrink:0}
+.acct-row .bar{flex:1;height:8px;background:#EEF0F2;border-radius:4px;overflow:hidden}
+.acct-row .bar i{display:block;height:100%;background:var(--purple);border-radius:4px}
+.acct-row b{width:92px;text-align:right;color:var(--navy)}
 .rnav{position:fixed;bottom:0;left:0;right:0;height:64px;background:var(--navy-700);border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;padding:0 26px;z-index:50}
 .rnav .lbl{font-size:13px;font-weight:600;color:#cdd9e1}
 .rnav .lbl small{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#7E93A2;margin-top:1px}
@@ -407,6 +416,23 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
           <div class="repo-it"><div class="repo-ic"></div><div><div class="ty">Comité de Dirección</div><h4>Deck ejecutivo · C-Suite</h4><p>12 slides con ROI y coste de la inacción para reuniones de comité.</p></div></div>
         </div>
 
+        <!-- HABILITACIÓN · READINESS -->
+        <div class="panel toolview" id="p-readiness">
+          <div class="tv-head"><div class="tv-ic">✓</div><div><div class="slbl" style="margin:0">Antes de abrir el área · Readiness <span class="dest-badge">destino · plataforma nueva</span></div><div class="atitle" style="font-size:20px">Se habilita una vez; luego el área es suya</div></div></div>
+          <div class="tv-note" style="background:#EFEAF6;border-color:rgba(124,77,188,.3);color:#5B3A93">Todavía no está construido. Lo enseñamos para que se vea cómo se completa el recorrido por delante.</div>
+          <div class="tv-flow">
+            <div class="tv-step"><div class="n">1</div><h4>Lee la tarjeta</h4><p>Dos minutos: el encuadre del área, la pregunta que abre, el dato y el cierre.</p></div>
+            <div class="tv-step"><div class="n">2</div><h4>Responde 5 preguntas</h4><p>Comprueban que sabe abrir y cerrar. Por ejemplo: "¿cuál es el único cierre de una primera reunión?" o "¿qué diferencia a Entelgy que nadie más firma?".</p></div>
+            <div class="tv-step"><div class="n">3</div><h4>Queda habilitado</h4><p>Hipatia lo registra. A partir de ahí, el material profundo del área se le abre.</p><div style="margin-top:10px"><span class="hab">✓ Habilitado · Modernización</span></div></div>
+          </div>
+          <div class="why" style="background:var(--white)"><div class="l" style="color:var(--purple)">Por qué importa</div><div class="t">Sin habilitarse, el material profundo del área no se abre. Hipatia sabe quién está al día, y el PM ve el porcentaje de equipo habilitado por área. Es lo que convierte un portal que nadie abre en algo que el equipo usa.</div></div>
+          <div class="acct">
+            <div class="acct-l">Vista del PM · habilitación por área</div>
+            <div class="acct-row"><span>Modernización</span><div class="bar"><i style="width:64%"></i></div><b>14 / 22 · 64%</b></div>
+            <div class="acct-row"><span>Mantenimiento Evolutivo</span><div class="bar"><i style="width:41%"></i></div><b>9 / 22 · 41%</b></div>
+          </div>
+        </div>
+
         <!-- HERRAMIENTA · AUTODIAGNÓSTICO -->
         <div class="panel toolview" id="p-tool">
           <div class="tv-head"><div class="tv-ic">📋</div><div><div class="slbl" style="margin:0">Herramienta · Autodiagnóstico de madurez</div><div class="atitle" style="font-size:20px">El cliente se cualifica solo</div></div></div>
@@ -457,6 +483,7 @@ const steps=[
  {scene:'portal',phase:'e1',panel:'p-tool',tool:1,title:'Cualifica · Autodiagnóstico',lblPhase:'Etapa 1 · funciona ya'},
  {scene:'portal',phase:'e1',panel:'p-kit',tab:'tab-kit',area:1,title:'Prepara y va a la reunión · Sales Kit',lblPhase:'Etapa 1 · funciona ya'},
  {scene:'portal',phase:'e1',panel:'p-repo',tab:'tab-repo',area:1,title:'Profundiza · Repositorio',lblPhase:'Etapa 1 · funciona ya'},
+ {scene:'portal',phase:'e2',panel:'p-readiness',area:1,title:'Se habilita · Readiness',lblPhase:'Etapa 2 · destino'},
  {scene:'etapa2',phase:'e2',title:'El recorrido por delante · plataforma nueva',lblPhase:'Etapa 2 · destino'}
 ];
 const scenes={asis:document.querySelector('.asis'),journey:document.querySelector('.journey'),portal:document.querySelector('.portal'),etapa2:document.querySelector('.etapa2')};
