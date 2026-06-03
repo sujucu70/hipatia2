@@ -213,6 +213,28 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .e2 .pre{margin-top:14px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7E93A2}
 
 /* nav */
+.rep-intro{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin:18px 0 8px}
+.report{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--white);margin-bottom:18px;box-shadow:0 16px 40px -30px rgba(5,28,44,.5)}
+.rep-head{background:var(--navy);color:#fff;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.rep-k{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9FB3C2}
+.rep-t{font-size:17px;font-weight:800;margin-top:3px}
+.rep-logo{font-size:14px;font-weight:800}.rep-logo .dot{color:var(--copper)}
+.rep-body{display:grid;grid-template-columns:160px 1fr;gap:26px;padding:22px 20px}
+.rep-score{text-align:center}
+.rep-circle{width:96px;height:96px;border-radius:50%;border:6px solid var(--purple);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 11px}
+.rep-circle b{font-size:32px;font-weight:800;color:var(--navy);line-height:1}
+.rep-circle small{font-size:11px;color:var(--gray);margin-top:2px}
+.rep-risk{display:inline-block;background:var(--red-soft);color:var(--red);font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px}
+.rep-risk-note{font-size:11px;color:var(--gray);margin-top:7px}
+.rep-dims{display:flex;flex-direction:column;justify-content:center;gap:12px}
+.dim{display:flex;align-items:center;gap:12px;font-size:13px;color:#46535E}
+.dim span{width:180px;flex-shrink:0}
+.dim .db{flex:1;height:8px;background:#EEF0F2;border-radius:4px;overflow:hidden}
+.dim .db i{display:block;height:100%;background:var(--purple);border-radius:4px}
+.dim b{width:62px;text-align:right;color:var(--navy)}
+.rep-foot{border-top:1px solid var(--line);padding:16px 20px;background:var(--paper)}
+.rep-reco{font-size:13.5px;color:#33404B;line-height:1.55}.rep-reco b{color:var(--navy)}
+.rep-pdf{font-size:11px;font-weight:600;color:var(--gray);margin-top:9px}
 .exam{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--white);margin-bottom:18px}
 .exam-h{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:3px}
 .exam-sub{font-size:12px;color:var(--gray);margin-bottom:14px}
@@ -259,7 +281,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .dots{display:flex;gap:6px}
 .dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s}
 .dots i.on{background:var(--purple);width:20px;border-radius:4px}
-@media(max-width:900px){.asis .box,.tv-flow,.ov-doors,.e2grid{grid-template-columns:1fr}.jm-flow{flex-direction:column;gap:10px}.arr{display:none}.sb{display:none}.doc,.toolview{padding:22px}}
+@media(max-width:900px){.asis .box,.tv-flow,.ov-doors,.e2grid,.rep-body{grid-template-columns:1fr}.jm-flow{flex-direction:column;gap:10px}.arr{display:none}.sb{display:none}.doc,.toolview{padding:22px}.dim span{width:160px}}
 </style>
 </head>
 <body>
@@ -512,6 +534,31 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="tv-step"><div class="n">2</div><h4>El cliente responde</h4><p>8–10 preguntas en 5 minutos: antigüedad del stack, modelo de mantenimiento, exposición al AI Act, rotación de equipos.</p></div>
             <div class="tv-step"><div class="n">3</div><h4>Vuelve cualificado</h4><p>El cliente recibe su score y un PDF para su CFO. Ana ve el lead en su pipeline.</p></div>
           </div>
+          <div class="rep-intro">Ejemplo · el informe que recibe el cliente al terminar</div>
+          <div class="report">
+            <div class="rep-head">
+              <div><div class="rep-k">Autodiagnóstico de madurez · Modernización</div><div class="rep-t">Grupo Lantia</div></div>
+              <div class="rep-logo">Entelgy<span class="dot">·</span></div>
+            </div>
+            <div class="rep-body">
+              <div class="rep-score">
+                <div class="rep-circle"><b>78</b><small>/ 100</small></div>
+                <div class="rep-risk">Riesgo AI Act · alto</div>
+                <div class="rep-risk-note">Plazo de cumplimiento · dic 2027</div>
+              </div>
+              <div class="rep-dims">
+                <div class="dim"><span>Antigüedad del core</span><div class="db"><i style="width:88%"></i></div><b>11 años</b></div>
+                <div class="dim"><span>Capacidad de mantenimiento</span><div class="db"><i style="width:84%"></i></div><b>84%</b></div>
+                <div class="dim"><span>Exposición regulatoria</span><div class="db"><i style="width:75%"></i></div><b>alta</b></div>
+                <div class="dim"><span>Rotación del equipo</span><div class="db"><i style="width:58%"></i></div><b>media</b></div>
+              </div>
+            </div>
+            <div class="rep-foot">
+              <div class="rep-reco"><b>Recomendación.</b> Modernización progresiva del core, financiada desde el OPEX de mantenimiento actual. Deuda técnica estimada: 1,8 M€ al año.</div>
+              <div class="rep-pdf">PDF generado automáticamente · para compartir con Dirección y el CFO</div>
+            </div>
+          </div>
+
           <div class="lead-row"><div class="sc">78</div><div><b>Grupo Lantia</b> · autodiagnóstico completado<div class="meta">Riesgo AI Act alto · hace 2h · ya está en el pipeline de Ana</div></div></div>
           <div class="bridge">Y de aquí sale el cierre: con el lead cualificado, Ana propone el <b>Assessment de modernización</b> de dos semanas. Son dos cosas distintas: el autodiagnóstico es gratis y cualifica; el assessment de modernización es de pago y es el primer contrato.</div>
         </div>
