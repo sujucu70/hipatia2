@@ -377,7 +377,8 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .dots{display:flex;gap:6px}
 .dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s}
 .dots i.on{background:var(--purple);width:20px;border-radius:4px}
-@media(max-width:900px){.asis .box,.tv-flow,.ov-doors,.e2grid,.rep-body,.trigger,.g2{grid-template-columns:1fr}.jm-flow{flex-direction:column;gap:10px}.arr{display:none}.sb{display:none}.doc,.toolview{padding:22px}.dim span{width:160px}}
+.e2grid.g2x2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.asis .box,.tv-flow,.ov-doors,.e2grid,.e2grid.g2x2,.rep-body,.trigger,.g2{grid-template-columns:1fr}.jm-flow{flex-direction:column;gap:10px}.arr{display:none}.sb{display:none}.doc,.toolview{padding:22px}.dim span{width:160px}}
 
 /* ===== Ajuste a una sola pantalla ===== */
 .toolview,.doc{padding:18px 30px;max-width:1060px}
@@ -412,6 +413,40 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .lead-db b{color:var(--purple)}
 .pb-more{margin-top:9px;font-size:12px;font-weight:700;color:var(--purple);cursor:pointer;display:inline-block}
 .pb-more:hover{text-decoration:underline}
+
+/* ===== HOME del portal ===== */
+.step.home{background:var(--paper)}
+.hm{height:100%;display:flex;flex-direction:column}
+.hm-body{flex:1;padding:24px 34px;display:flex;flex-direction:column;justify-content:center;gap:20px;max-width:1180px;margin:0 auto;width:100%}
+.hm-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.hm-k{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-bottom:7px}
+.hm-title{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-.02em}
+.hm-one{font-size:15px;color:#5A6670;margin-top:6px;max-width:62ch}
+.hm-status{flex-shrink:0;font-size:12px;font-weight:700;color:var(--green);background:var(--green-soft);border:1px solid rgba(58,158,101,.3);border-radius:20px;padding:7px 14px;white-space:nowrap}
+.hm-lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-bottom:13px}
+.hm-rail{display:flex;align-items:stretch;gap:14px}
+.hm-grp{border:1px solid var(--line);border-radius:14px;padding:14px 14px 15px;background:#fff}
+.hm-gl{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-bottom:11px;text-align:center}
+.hm-grp.loop{border:1.5px solid var(--purple);flex:1;box-shadow:0 18px 44px -30px rgba(124,77,188,.55)}
+.hm-grp.loop .hm-gl{color:var(--purple)}
+.hm-cells{display:flex;align-items:stretch;gap:12px}
+.hm-cell{width:174px;border:1px solid var(--line);border-radius:11px;background:#fff;padding:14px;cursor:pointer;transition:all .18s var(--ease);display:flex;flex-direction:column}
+.hm-cell:hover{border-color:var(--purple);transform:translateY(-2px);box-shadow:0 16px 36px -26px rgba(124,77,188,.55)}
+.hm-grp.loop .hm-cell{background:var(--paper)}
+.hm-ic{width:30px;height:30px;border-radius:50%;background:var(--purple-soft);color:var(--purple);font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.hm-cell h3{font-size:15px;font-weight:800;color:var(--navy)}
+.hm-cell p{font-size:12px;color:#5A6670;margin-top:4px;line-height:1.45;flex:1}
+.hm-st{align-self:flex-start;font-size:10.5px;font-weight:700;color:var(--navy);background:#F0F0EE;border:1px solid var(--line);border-radius:6px;padding:3px 8px;margin-top:10px}
+.hm-st.ok{color:var(--green);background:var(--green-soft);border-color:rgba(58,158,101,.3)}
+.hm-st.dash{color:var(--gray);border-style:dashed}
+.hm-arr{display:flex;align-items:center;color:#C2C8CE;font-size:18px;flex-shrink:0}
+.hm-arr.sm{font-size:15px}
+.hm-loopnote{text-align:center;font-size:11px;color:var(--purple);font-style:italic;margin-top:10px}
+.hm-band{border:1px dashed var(--copper);border-radius:12px;background:#FBF6F0;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.hm-bt{font-size:13px;color:#5A4A38}.hm-bt b{color:var(--navy)}
+.hm-tag{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--copper);background:#fff;border:1px solid #E2D4C0;border-radius:20px;padding:4px 10px;white-space:nowrap}
+.intro-tag{margin-top:22px;display:inline-flex;align-items:center;gap:10px;background:rgba(124,77,188,.14);border:1px solid rgba(124,77,188,.3);border-radius:30px;padding:8px 16px;font-size:12px;font-weight:700;color:#CFC0EC;letter-spacing:.04em}
+@media(max-width:900px){.hm-rail{flex-direction:column}.hm-cells{flex-wrap:wrap}.hm-arr{transform:rotate(90deg);align-self:center}}
 </style>
 </head>
 <body>
@@ -453,26 +488,75 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
     </div>
   </section>
 
-  <!-- STEP 2 · JOURNEY MAP -->
+  <!-- STEP 2 · INTRO -->
   <section class="step journey">
-    <div class="box">
-      <div class="kick">El recorrido del comercial · trabajo por cuenta</div>
-      <h1>Llega un disparador, y el comercial <em>trabaja la cuenta de principio a fin.</em></h1>
-      <div class="jm-inbound" style="margin-bottom:18px">
-        <div class="ib-l">El disparador · dos formas de empezar</div>
-        <div class="ib-t"><b>El cliente preguntó algo</b> —en un evento, por un colega, en redes— o <b>el comercial decide tocar la cuenta</b> por su cuenta. Empiece como empiece, el paso siguiente es el mismo: preguntarle a la IA qué pasa en esa cuenta. <span class="et ya">Etapa 1</span></div>
+    <div class="box" style="max-width:920px;display:block">
+      <div class="kick">Lo que viene</div>
+      <h1>A partir de aquí, un <em>mockup en draft</em> de cómo se vería el portal del comercial.</h1>
+      <p style="font-size:16px;color:#AEC0CC;max-width:60ch;margin-top:8px">El to-be del área de Modernización de Aplicaciones. El comercial entra, ve su recorrido completo y va directo al punto donde está. No es la plataforma final: es una maqueta para enseñar la forma y el valor.</p>
+      <div class="intro-tag">BORRADOR · MOCKUP DE TRABAJO</div>
+    </div>
+  </section>
+
+  <!-- STEP 3 · HOME DEL PORTAL -->
+  <section class="step home">
+    <div class="hm">
+      <div class="tbar">
+        <div class="lg">Entelgy<i>·</i> Hipatia</div>
+        <nav class="areas-nav">
+          <a class="area-tab act">Modernización de Aplicaciones</a>
+          <a class="area-tab">Mantenimiento Evolutivo</a>
+          <a class="area-tab">Smart Operations</a>
+          <a class="area-tab dim">+ 6 áreas</a>
+        </nav>
+        <div class="usr"><div class="av">AP</div> Ana Pérez</div>
       </div>
-      <div class="jm-legend"><span class="lg ya">Etapa 1 · el recorrido base</span><span class="lg dest">Etapa 2 · el sistema se anticipa</span></div>
-      <div class="jm-flow">
-        <div class="jstep on-ya"><div class="num">1</div><div class="jt">Se habilita</div><p>Lee la tarjeta del área y responde 5 preguntas. Una vez, y el área es suya.</p><div class="tags"><span class="cap">Tarjeta + Habilitación</span><span class="et ya">Etapa 1</span></div></div>
-        <div class="arr">→</div>
-        <div class="jstep on-ya"><div class="num">2</div><div class="jt">Mira la cuenta con IA</div><p>Le pregunta a la IA por esa cuenta. Vuelve con el stack, las señales de dolor y si hay recorrido.</p><div class="tags"><span class="cap">Estado de la cuenta</span><span class="et ya">Etapa 1</span></div></div>
-        <div class="arr">→</div>
-        <div class="jstep on-ya"><div class="num">3</div><div class="jt">Escribe el mail y cualifica</div><p>Un correo con dos frases de contexto y el autodiagnóstico como recurso. El cliente lo completa y vuelve con un score.</p><div class="tags"><span class="cap">El mail + Autodiagnóstico</span><span class="et ya">Etapa 1</span></div></div>
-        <div class="arr">→</div>
-        <div class="jstep on-ya"><div class="num">4</div><div class="jt">Prepara y va a la reunión</div><p>Prepara con el Kit de visita y entra con el resultado del cliente en la mano.</p><div class="tags"><span class="cap">Kit de visita</span><span class="et ya">Etapa 1</span></div></div>
+      <div class="hm-body">
+        <div class="hm-head">
+          <div>
+            <div class="hm-k">Tu área</div>
+            <h1 class="hm-title">Modernización de Aplicaciones</h1>
+            <div class="hm-one">Sacamos el core legacy del riesgo regulatorio y del coste de sostenerlo, con IA y sin parar la operación.</div>
+          </div>
+          <div class="hm-status">✓ Habilitada en el área</div>
+        </div>
+
+        <div>
+          <div class="hm-lbl">El recorrido · elige dónde estás</div>
+          <div class="hm-rail">
+            <div class="hm-grp">
+              <div class="hm-gl">Entrada · una vez</div>
+              <div class="hm-cells">
+                <div class="hm-cell" onclick="go(3)"><div class="hm-ic">①</div><h3>Habilitación</h3><p>Lee la tarjeta del área y 5 preguntas. Desbloquea el área.</p><span class="hm-st ok">✓ Habilitada</span></div>
+              </div>
+            </div>
+            <div class="hm-arr">→</div>
+            <div class="hm-grp loop">
+              <div class="hm-gl">Por cada cuenta · el día a día</div>
+              <div class="hm-cells">
+                <div class="hm-cell" onclick="go(5)"><div class="hm-ic">②</div><h3>Mirar la cuenta</h3><p>La IA analiza la cuenta y dice si hay recorrido.</p><span class="hm-st">1 cuenta abierta</span></div>
+                <div class="hm-arr sm">→</div>
+                <div class="hm-cell" onclick="go(6)"><div class="hm-ic">③</div><h3>Primer contacto</h3><p>El correo de apertura y el enlace de autodiagnóstico.</p><span class="hm-st">borrador listo</span></div>
+                <div class="hm-arr sm">→</div>
+                <div class="hm-cell" onclick="go(7)"><div class="hm-ic">④</div><h3>Preparar la visita</h3><p>Pitch por rol, objeciones y referencias para la reunión.</p><span class="hm-st dash">—</span></div>
+              </div>
+              <div class="hm-loopnote">↻ se repite por cada cuenta que trabajas</div>
+            </div>
+            <div class="hm-arr">→</div>
+            <div class="hm-grp">
+              <div class="hm-gl">Profundidad</div>
+              <div class="hm-cells">
+                <div class="hm-cell" onclick="go(8)"><div class="hm-ic">↗</div><h3>Repositorio</h3><p>Decks ejecutivos, mercado, dolores y técnica.</p><span class="hm-st">4 bloques</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hm-band">
+          <div class="hm-bt"><b>Tus cuentas · lo que el sistema te sugiere.</b> Hoy vacío. Aquí el escáner pondrá solo las cuentas con un dolor activo esta semana.</div>
+          <span class="hm-tag">Fase 2</span>
+        </div>
       </div>
-      <div class="jm-bar">Mañana, en Etapa 2, no esperas al disparador: el sistema te avisa de qué cuenta tiene un dolor activo esta semana. · Hipatia mide habilitados por área, autodiagnósticos completados y leads.</div>
     </div>
   </section>
 
@@ -490,18 +574,20 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
     </div>
     <div class="cols">
       <aside class="sb">
+        <a class="flow" onclick="go(2)"><span class="fn">⌂</span> Home del área</a>
+        <div class="div"></div>
         <div class="lbl">Entrada al área</div>
-        <a class="flow" id="f-tarjeta" onclick="go(2)"><span class="fn">1</span> Tarjeta de entrada</a>
-        <a class="flow" id="f-readiness" onclick="go(3)"><span class="fn">2</span> Habilitación</a>
+        <a class="flow" id="f-tarjeta" onclick="go(3)"><span class="fn">1</span> Tarjeta de entrada</a>
+        <a class="flow" id="f-readiness" onclick="go(4)"><span class="fn">2</span> Habilitación</a>
         <div class="div"></div>
         <div class="lbl">Trabajo por cuenta</div>
-        <a class="flow" id="f-cuenta" onclick="go(4)"><span class="fn">3</span> Estado de la cuenta</a>
-        <a class="flow" id="f-mail" onclick="go(5)"><span class="fn">4</span> Primer contacto · el mail</a>
-        <a class="flow" id="f-kit" onclick="go(6)"><span class="fn">5</span> Kit de visita</a>
-        <a class="flow" id="f-repo" onclick="go(7)"><span class="fn">6</span> Repositorio</a>
+        <a class="flow" id="f-cuenta" onclick="go(5)"><span class="fn">3</span> Estado de la cuenta</a>
+        <a class="flow" id="f-mail" onclick="go(6)"><span class="fn">4</span> Primer contacto · el mail</a>
+        <a class="flow" id="f-kit" onclick="go(7)"><span class="fn">5</span> Kit de visita</a>
+        <a class="flow" id="f-repo" onclick="go(8)"><span class="fn">6</span> Repositorio</a>
         <div class="div"></div>
         <div class="lbl">Etapa 2 · destino</div>
-        <a class="flow dest" id="f-e2" onclick="go(8)"><span class="fn">→</span> El sistema se anticipa</a>
+        <a class="flow dest" id="f-e2" onclick="go(9)"><span class="fn">→</span> El sistema se anticipa</a>
       </aside>
 
       <div class="pmain">
@@ -543,12 +629,12 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
               <div class="dato" style="margin:0"><div class="n">75%</div><div><div class="t">del presupuesto IT típico se va en <strong>run</strong>: mantenimiento, soporte, licencias y deuda técnica.</div><div class="s">Fuente · Deloitte · Gartner IT Budget Benchmark</div></div></div>
             </div>
             <div class="g2-col">
-              <div class="why" style="margin:0"><div class="l">Por qué Entelgy</div><div class="t">El mercado moderniza por horas. Entelgy lo hace con resultado comprometido: el <strong>40% de cada euro de eficiencia ganado vuelve al cliente</strong> en la factura siguiente, medido por Foreworth, no por Entelgy.</div><div class="refs">UNED · BBVA · Santander — los mismos clientes renuevan</div></div>
+              <div class="why" style="margin:0"><div class="l">Por qué Entelgy</div><div class="t">El mercado moderniza por horas y pidiendo partida nueva. Entelgy lo financia <strong>desde lo que el cliente ya gasta en mantener</strong> — mismo presupuesto, más valor entregado — y lo mide con Foreworth, no de palabra.</div><div class="refs">UNED · BBVA · Santander — los mismos clientes renuevan</div></div>
               <div class="safety" style="margin:0"><div class="ic">!</div><p><b>Si te preguntan un detalle técnico que no tienes, no improvises:</b> "eso te lo confirma el especialista en la siguiente reunión". Convierte la duda en tu cierre.</p></div>
-              <div class="close-band" style="margin:0"><div class="l">El cierre de una primera reunión</div><div class="t"><b>El Assessment de modernización</b> — dos semanas, primer contrato. Le da al CIO el número de su deuda técnica para defender la decisión en Dirección. No hay otro cierre posible.</div></div>
+              <div class="close-band" style="margin:0"><div class="l">El cierre de una primera reunión</div><div class="t"><b>El Assessment de modernización</b> — 10–15 días, primer contrato. Entrega el <b>triaje del portfolio</b> (qué se moderniza, qué no, qué va a AM) y el business case para Dirección. La estrategia, el gobierno y el método se quedan dentro de Entelgy — el assessment no los regala.</div></div>
               <div class="tcard-actions" style="margin:0">
-                <button class="btn-exam" onclick="go(3)">Habilitarme · empezar el examen</button>
-                <button class="btn-link" onclick="go(4)">Empezar con una cuenta →</button>
+                <button class="btn-exam" onclick="go(4)">Habilitarme · empezar el examen</button>
+                <button class="btn-link" onclick="go(5)">Empezar con una cuenta →</button>
               </div>
             </div>
           </div>
@@ -568,16 +654,17 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
           <div class="g2">
             <div class="pb-card" style="margin:0">
               <h4>El pitch, según quién tienes delante</h4>
+              <div style="font-size:11px;color:var(--copper);font-weight:600;margin:-3px 0 9px">El presupuesto lo mueven CFO/CCO. Entra por ahí siempre que puedas.</div>
               <div class="pb-role"><b>CTO</b><div class="mv">"¿Cuál es la app que más frena al negocio y lleváis años sin tocar?" · le mueve: <em>Spec-Driven</em>, el conocimiento pasa al cliente.</div></div>
               <div class="pb-role"><b>Dir. Ops</b><div class="mv">"¿Cuántos pilotos llevan +1 año sin producción?" · le mueve: <em>productividad certificada por Foreworth</em>.</div></div>
               <div class="pb-role"><b>CIO</b><div class="mv">"¿Qué % del presupuesto IT va a mantener lo que ya existe?" · le mueve: <em>el assessment</em>, deuda con datos propios.</div></div>
-              <div class="pb-role"><b>CFO</b><div class="mv">"¿Cuánto cuesta mantener los sistemas, en un número?" · le mueve: <em>la cláusula bilateral</em>, 40% del ahorro a factura.</div></div>
+              <div class="pb-role"><b>CFO</b><div class="mv">"¿Cuánto cuesta mantener los sistemas, en un número?" · le mueve: <em>financiarlo desde el mantenimiento que ya paga</em> — mismo presupuesto, más valor.</div></div>
             </div>
             <div class="pb-card" style="margin:0">
               <h4>Objeciones · una muestra</h4>
               <div class="obj"><b>"Ya tenemos proveedor de desarrollo."</b><p>No pedimos cambiarlo. Complementamos en la pieza que más duele, con métricas auditables. ¿Tu proveedor puede decirte qué productividad entregó el mes pasado, certificada por un tercero?</p></div>
               <div class="obj"><b>"No vemos urgencia ahora mismo."</b><p>La deuda técnica crece sola (Gartner: 20–40% del valor de los activos). Y el AI Act obliga en sistemas de alto riesgo en diciembre de 2027.</p></div>
-              <span class="pb-more" onclick="go(7)">+ 6 objeciones más en el Repositorio →</span>
+              <span class="pb-more" onclick="go(8)">+ 6 objeciones más en el Repositorio →</span>
             </div>
             <div class="pb-card" style="margin:0">
               <h4>Si quieres confirmar que hay proyecto, en la conversación</h4>
@@ -595,7 +682,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
                 <li><b>REA</b> — IA en producción desde hace +4 años. Para escépticos.</li>
                 <li><b>H10</b> — el assessment como primer contrato y base de la decisión.</li>
               </ul>
-              <span class="pb-more" onclick="go(7)">Ver todos los casos y su contexto en el Repositorio →</span>
+              <span class="pb-more" onclick="go(8)">Ver todos los casos y su contexto en el Repositorio →</span>
               <div class="warn">⚠ Confirma con Jorge qué nombres son mencionables antes de cada reunión.</div>
             </div>
           </div>
@@ -640,7 +727,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
                   <summary><span class="chev">▸</span>2 · ¿Qué diferencia a Entelgy que ningún competidor firma?</summary>
                   <div class="acc-b exq">
                     <div class="exo" data-c="0">El precio por hora más bajo del mercado</div>
-                    <div class="exo" data-c="1">El 40% del ahorro de productividad vuelve al cliente, medido por Foreworth</div>
+                    <div class="exo" data-c="1">Financiar la modernización desde el presupuesto que ya gastan — mismo importe, más valor, medido por Foreworth</div>
                     <div class="exo" data-c="0">Más consultores en el equipo</div>
                   </div>
                 </details>
@@ -684,7 +771,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             </div>
             <div class="scan-row"><div class="k">Stack y antigüedad</div><div class="v">Núcleo de pólizas en <b>Java sobre un core de ~11 años</b>; sin arquitecto cloud en plantilla.<span style="font-size:10.5px;color:var(--gray)"> · Fuente: ofertas de empleo + su web</span></div></div>
             <div class="scan-row"><div class="k">Señales de dolor</div><div class="v"><span class="sig">Oferta · mantenimiento PL/SQL</span><span class="sig">Migración "en evaluación" desde 2023</span><span class="sig">Rotación en el core</span><div style="font-size:10.5px;color:var(--gray);margin-top:6px">Fuente · portal de empleo + prensa 2023 + perfiles públicos</div></div></div>
-            <div class="scan-row"><div class="k">Exposición AI Act</div><div class="v">Seguros = sistemas de <b>alto riesgo</b>; cumplimiento en <b>diciembre 2027</b>. Un core sin documentación auditable deja de ser solo técnico.<span style="font-size:10.5px;color:var(--gray)"> · Fuente: sector + texto del EU AI Act</span></div></div>
+            <div class="scan-row"><div class="k">Exposición regulatoria</div><div class="v">Seguros: sistemas de <b>alto riesgo</b> bajo el AI Act (cumplimiento dic 2027) y resiliencia operativa exigida por <b>DORA</b>. Un core sin documentación auditable deja de ser solo técnico.<span style="font-size:10.5px;color:var(--gray)"> · Fuente: sector + EU AI Act + DORA</span></div></div>
             <div class="scan-row"><div class="k">Tamaño y sector</div><div class="v">Aseguradora mediana de no-vida, ~600 empleados. La decisión se concentra en CIO y CFO.<span style="font-size:10.5px;color:var(--gray)"> · Fuente: registro mercantil + web</span></div></div>
           </div>
 
@@ -693,7 +780,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="vt"><b>Hay recorrido · 3 señales activas</b><p>Stack antiguo, dolor de mantenimiento y exposición regulatoria. Da para abrir conversación esta semana.</p></div>
           </div>
 
-          <div class="bridge">Con esto Ana tiene lo que le hace falta para el primer correo: en vez de un mensaje genérico, abre con <b>dos o tres frases que demuestran que ha hecho los deberes sobre la cuenta</b>.</div>
+          <div class="bridge">Con esto Ana tiene lo que le hace falta para el primer correo: abre con <b>dos o tres frases que demuestran que ha hecho los deberes</b> y con el ángulo que de verdad mueve a un CIO — <b>cómo financiar la modernización desde lo que ya gastan en mantenimiento, sin pedir partida nueva</b>.</div>
         </div>
 
         <!-- TRABAJO POR CUENTA · EL MAIL -->
@@ -713,7 +800,8 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
                 <div class="mail-body" contenteditable="true" spellcheck="false">
                   <p>Estimado/a [nombre]:</p>
                   <p>Le escribo a raíz de un análisis del sector asegurador de cara al plazo del EU AI Act. En él, Grupo Lantia figura entre las compañías cuyo núcleo de pólizas lleva tiempo pendiente de una modernización de fondo.</p>
-                  <p>Es una situación frecuente y, en seguros, especialmente sensible: a partir de diciembre de 2027 el AI Act exigirá documentación auditable en los sistemas de alto riesgo. Un core difícil de mantener encarece tanto el cumplimiento como el coste de sostenerlo año a año.</p>
+                  <p>Es una situación frecuente y, en seguros, especialmente sensible: a partir de diciembre de 2027 el AI Act exigirá documentación auditable en los sistemas de alto riesgo, y DORA aprieta en resiliencia operativa. Un core difícil de mantener encarece tanto el cumplimiento como el coste de sostenerlo año a año.</p>
+                  <p>La parte que suele sorprender: buena parte de esa modernización puede financiarse <b>desde el propio presupuesto de mantenimiento</b>, sin abrir una partida nueva. Mismo importe, más valor entregado.</p>
                   <p>Por si le resulta útil de cara a su comité, puede hacer un breve autodiagnóstico —apenas cinco minutos— en este enlace:</p>
                   <p><a href="#" class="mail-link" onclick="return false">entelgy.com/autodiagnostico/modernizacion</a></p>
                   <p>Devuelve un informe con el nivel de exposición de la organización y una primera estimación del coste de mantener el core en su estado actual. Es información que puede emplear internamente, trabajemos juntos o no.</p>
@@ -770,8 +858,9 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
       <div class="kick">Etapa 2 · el destino</div>
       <h1>Y después, el sistema empieza a anticiparse.</h1>
       <p class="sub">El recorrido base se entrega primero. Lo que ves aquí es el destino: un sistema que se anticipa, que exige la habilitación antes de abrir el material y que mide la adopción. Sobre qué plataforma se construye cada parte —cuánto se aprovecha de lo actual o si va todo sobre una nueva— es una decisión todavía abierta.</p>
-      <div class="e2grid">
-        <div class="e2"><div class="n">Escáner</div><h3>Tu territorio, sin preguntar</h3><p>En Etapa 1 le preguntas a la IA por una cuenta concreta. En Etapa 2 es al revés: el sistema te avisa de qué cuentas tienen un dolor activo esta semana, cruzando señales externas con tu cartera y el mensaje de entrada ya escrito.</p><div class="pre">Etapa 2</div></div>
+      <div class="e2grid g2x2">
+        <div class="e2"><div class="n">Mina de AM · la joya</div><h3>Los leads salen de tu propio dato</h3><p>El sistema mina la telemetría de los contratos AM: filtra los tickets por encima de un umbral y los convierte en leads de modernización que se justifican solos. Un dato que solo tiene Entelgy — la competencia no puede copiarlo.</p><div class="pre">Etapa 2</div></div>
+        <div class="e2"><div class="n">Escáner externo</div><h3>Tu territorio, sin preguntar</h3><p>En Etapa 1 le preguntas a la IA por una cuenta. En Etapa 2 es al revés: el sistema te avisa de qué cuentas tienen un dolor activo esta semana, cruzando señales externas con tu cartera y el mensaje de entrada ya escrito.</p><div class="pre">Etapa 2</div></div>
         <div class="e2"><div class="n">Gating</div><h3>La habilitación, obligatoria</h3><p>Sin certificarte en el área, el material profundo no se abre. Hipatia hace el paso obligatorio, no opcional, y registra quién está al día.</p><div class="pre">Etapa 2</div></div>
         <div class="e2"><div class="n">Intelligence</div><h3>Qué funciona y quién actúa</h3><p>Leads, porcentaje de equipo habilitado y qué material abre reuniones. El PM y la dirección lo ven sin esperar a que nadie informe.</p><div class="pre">Etapa 2</div></div>
       </div>
@@ -784,24 +873,25 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
   <div class="lbl"><span id="nav-title">Hoy · el hueco</span><small id="nav-phase">As-is</small></div>
   <div class="ctrl">
     <div class="dots" id="dots"></div>
-    <span class="ct" id="ct">1 / 9</span>
+    <span class="ct" id="ct">1 / 10</span>
     <button id="prev">←</button><button id="next">→</button>
   </div>
 </div>
 
 <script>
 const steps=[
- {scene:'asis',phase:'asis',title:'Hoy · el hueco',lblPhase:'As-is'},
- {scene:'journey',phase:'map',title:'El recorrido del comercial',lblPhase:'Trabajo por cuenta'},
+ {scene:'asis',phase:'asis',title:'Hoy · el punto de partida',lblPhase:'As-is'},
+ {scene:'journey',phase:'intro',title:'Lo que viene · mockup del to-be',lblPhase:'Intro'},
+ {scene:'home',phase:'e1',title:'El portal del comercial · home',lblPhase:'Portal'},
  {scene:'portal',phase:'e1',panel:'p-tarjeta',flow:'f-tarjeta',title:'Tarjeta de entrada',lblPhase:'Etapa 1'},
- {scene:'portal',phase:'e1',panel:'p-readiness',flow:'f-readiness',title:'Se habilita · Readiness',lblPhase:'Etapa 1'},
+ {scene:'portal',phase:'e1',panel:'p-readiness',flow:'f-readiness',title:'Habilitación · Readiness',lblPhase:'Etapa 1'},
  {scene:'portal',phase:'e1',panel:'p-cuenta',flow:'f-cuenta',title:'Estado de la cuenta · con IA',lblPhase:'Etapa 1'},
  {scene:'portal',phase:'e1',panel:'p-mail',flow:'f-mail',title:'Primer contacto · el mail',lblPhase:'Etapa 1'},
  {scene:'portal',phase:'e1',panel:'p-kit',flow:'f-kit',title:'Kit de visita · preparar la reunión',lblPhase:'Etapa 1'},
  {scene:'portal',phase:'e1',panel:'p-repo',flow:'f-repo',title:'Repositorio de conocimiento',lblPhase:'Etapa 1'},
- {scene:'etapa2',phase:'e2',title:'El recorrido por delante · Etapa 2',lblPhase:'Etapa 2'}
+ {scene:'etapa2',phase:'e2',title:'El recorrido por delante · Fase 2',lblPhase:'Fase 2'}
 ];
-const scenes={asis:document.querySelector('.asis'),journey:document.querySelector('.journey'),portal:document.querySelector('.portal'),etapa2:document.querySelector('.etapa2')};
+const scenes={asis:document.querySelector('.asis'),journey:document.querySelector('.journey'),home:document.querySelector('.home'),portal:document.querySelector('.portal'),etapa2:document.querySelector('.etapa2')};
 const ph={asis:document.getElementById('ph-asis'),e1:document.getElementById('ph-e1'),e2:document.getElementById('ph-e2')};
 const dots=document.getElementById('dots');let cur=0;
 steps.forEach((_,i)=>{const d=document.createElement('i');if(!i)d.className='on';d.onclick=()=>go(i);dots.appendChild(d);});
