@@ -447,6 +447,42 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .hm-tag{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--copper);background:#fff;border:1px solid #E2D4C0;border-radius:20px;padding:4px 10px;white-space:nowrap}
 .intro-tag{margin-top:22px;display:inline-flex;align-items:center;gap:10px;background:rgba(124,77,188,.14);border:1px solid rgba(124,77,188,.3);border-radius:30px;padding:8px 16px;font-size:12px;font-weight:700;color:#CFC0EC;letter-spacing:.04em}
 @media(max-width:900px){.hm-rail{flex-direction:column}.hm-cells{flex-wrap:wrap}.hm-arr{transform:rotate(90deg);align-self:center}}
+/* ===== Repositorio · dos pistas ===== */
+.pista{margin-top:16px}
+.pista-h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 12px;border-radius:8px;margin-bottom:10px}
+.pista-h.interno{background:#EEF0F2;border:1px solid var(--line)}
+.pista-h.cliente{background:var(--green-soft);border:1px solid rgba(58,158,101,.3)}
+.pista-t{font-size:13px;font-weight:800;color:var(--navy)}
+.pista-tag{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#8A6D3B;background:#FBF1DC;border:1px solid #E7D3A8;border-radius:20px;padding:3px 9px;white-space:nowrap}
+.pista-tag.ok{color:var(--green);background:#fff;border-color:rgba(58,158,101,.4)}
+.repo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.rcard{border:1px solid var(--line);border-radius:9px;background:var(--white);padding:11px 12px}
+.rcard .ty{font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gray);margin-bottom:3px}
+.rcard h4{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:3px;line-height:1.25}
+.rcard p{font-size:11.5px;color:#5A6670;line-height:1.45}
+.mt{display:inline-block;font-size:9.5px;font-weight:700;border-radius:5px;padding:1px 6px;white-space:nowrap}
+.mt.sm{color:#7A5C2E;background:#FBF1DC;border:1px solid #E7D3A8}
+.mt.ag{color:var(--purple);background:var(--purple-soft);border:1px solid rgba(124,77,188,.3)}
+.xref{color:var(--purple);font-weight:700;cursor:pointer;font-size:11.5px}
+.xref:hover{text-decoration:underline}
+/* ===== Procesos · Microsoft ===== */
+.proc-note{font-size:12px;color:#5A6670;line-height:1.5;margin-bottom:11px}.proc-note b{color:var(--navy)}
+.notif{display:flex;gap:11px;align-items:flex-start;border:1px solid var(--line);border-radius:9px;background:var(--white);padding:10px 12px;margin-bottom:8px}
+.ni{flex-shrink:0;font-size:9.5px;font-weight:700;border-radius:6px;padding:4px 8px;color:#fff}
+.ni.teams{background:#6264A7}.ni.mail{background:#0F6CBD}
+.notif h4{font-size:13px;font-weight:700;color:var(--navy)}
+.notif p{font-size:11px;color:var(--gray);margin-top:2px}
+.fb-box{border:1px solid var(--line);border-radius:10px;background:var(--white);padding:13px}
+.fb-ph{font-size:12.5px;color:#8A95A0;font-style:italic;border:1px dashed #D8D8D2;border-radius:7px;padding:11px;line-height:1.45}
+.fb-actions{display:flex;gap:9px;margin-top:11px}
+.fb-btn{border:none;border-radius:8px;padding:9px 14px;font-size:12.5px;font-weight:700;color:#fff;cursor:pointer;font-family:inherit}
+.fb-btn.teams{background:#6264A7}.fb-btn.mail{background:#0F6CBD}
+.proc-foot{font-size:11px;color:var(--gray);margin-top:10px;font-style:italic}
+/* ===== Home · barra Estar al día ===== */
+.hm-proc{display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid var(--line);border-radius:12px;background:var(--white);padding:12px 16px}
+.hm-proc-l{font-size:13px;color:#5A6670}.hm-proc-l b{color:var(--navy)}
+.hm-proc-go{border:1px solid var(--purple);background:var(--purple-soft);color:var(--purple);font-weight:700;font-size:12.5px;border-radius:8px;padding:8px 14px;cursor:pointer;font-family:inherit;white-space:nowrap}
+.hm-proc-go:hover{background:var(--purple);color:#fff}
 </style>
 </head>
 <body>
@@ -552,6 +588,11 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
           </div>
         </div>
 
+        <div class="hm-proc">
+          <div class="hm-proc-l"><b>Estar al día.</b> El PM te avisa de lo nuevo y tú le mandas feedback — por correo y Teams.</div>
+          <button class="hm-proc-go" onclick="go(9)">Abrir →</button>
+        </div>
+
         <div class="hm-band">
           <div class="hm-bt"><b>Tus cuentas · lo que el sistema te sugiere.</b> Hoy vacío. Aquí el escáner pondrá solo las cuentas con un dolor activo esta semana.</div>
           <span class="hm-tag">Fase 2</span>
@@ -585,9 +626,10 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         <a class="flow" id="f-mail" onclick="go(6)"><span class="fn">4</span> Primer contacto · el mail</a>
         <a class="flow" id="f-kit" onclick="go(7)"><span class="fn">5</span> Kit de visita</a>
         <a class="flow" id="f-repo" onclick="go(8)"><span class="fn">6</span> Repositorio</a>
+        <a class="flow" id="f-procesos" onclick="go(9)"><span class="fn">7</span> Estar al día</a>
         <div class="div"></div>
         <div class="lbl">Etapa 2 · destino</div>
-        <a class="flow dest" id="f-e2" onclick="go(9)"><span class="fn">→</span> El sistema se anticipa</a>
+        <a class="flow dest" id="f-e2" onclick="go(10)"><span class="fn">→</span> El sistema se anticipa</a>
       </aside>
 
       <div class="pmain">
@@ -690,12 +732,57 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
         <!-- PUERTA 3 · REPOSITORIO -->
         <div class="panel doc" id="p-repo">
-          <div class="repo-head"><div class="slbl" style="margin:0">Repositorio de conocimiento · profundizar</div><span class="repo-lock">Acceso restringido · preventa</span></div>
-          <div class="dsub">Material de fondo para preventa y especialista. No hace falta para una primera reunión.</div>
-          <div class="repo-it"><div class="repo-ic"></div><div><div class="ty">Comité de Dirección</div><h4>Decks ejecutivos · C-Suite</h4><p>ROI, coste de la inacción y caso de inversión para reuniones de comité. Lo primero que necesita Dirección.</p></div></div>
-          <div class="repo-it"><div class="repo-ic"></div><div><div class="ty">Mercado y competencia</div><h4>Benchmark competitivo + mercado español</h4><p>Posicionamiento frente a Accenture, Capgemini, Minsait, Globant/EPAM y otros, y estado del portfolio legacy en empresas de +500 empleados.</p></div></div>
-          <div class="repo-it"><div class="repo-ic"></div><div><div class="ty">Análisis de territorio</div><h4>Mapa de dolores · Modernización</h4><p>21 dolores clasificados por familia, con impacto en OPEX/CAPEX y nivel de urgencia comercial.</p></div></div>
-          <div class="repo-it"><div class="repo-ic"></div><div><div class="ty">Documentación técnica</div><h4>Arquitecturas de referencia y metodología</h4><p>Detalle técnico de modernización (Spec-Driven, patrones de migración) para preventa y especialista. <span style="color:var(--copper);font-weight:600">Pendiente de incorporar.</span></p></div></div>
+          <div class="repo-head"><div class="slbl" style="margin:0">Repositorio de conocimiento · profundidad</div><span class="repo-lock">Acceso restringido · preventa</span></div>
+          <div class="dsub">Dos caras que no se mezclan: lo que es para que <b>tú</b> sepas, y lo que <b>sacas al cliente</b>. Cada pieza marca si se mantiene sola (🤖 agente) o la actualiza el SM (✍️).</div>
+
+          <div class="pista">
+            <div class="pista-h interno"><span class="pista-t">Para conocer · uso interno</span><span class="pista-tag">No sale al cliente</span></div>
+            <div class="repo-grid">
+              <div class="rcard"><div class="ty">Propuesta de valor</div><h4>Qué vende el área y por qué Entelgy</h4><p>El diferenciador, el encuadre y el cierre, para tenerlo claro tú. <span class="mt sm">✍️ SM</span></p></div>
+              <div class="rcard"><div class="ty">Cómo abordar al cliente</div><h4>Guía de diálogo · qué preguntar</h4><p>Incluye cómo sacar qué partidas presupuestarias tiene hoy y proponer desde ahí. <b>Interno: nunca en la presentación.</b> <span class="mt sm">✍️ SM</span></p></div>
+              <div class="rcard"><div class="ty">Mercado y competencia</div><h4>Benchmark + mercado español</h4><p>Frente a Accenture, Capgemini, Minsait, Globant/EPAM. <span class="mt sm">✍️ SM</span></p></div>
+              <div class="rcard"><div class="ty">Territorio</div><h4>Mapa de dolores del sector</h4><p>Dolores por familia, con impacto en OPEX/CAPEX y urgencia. <span class="mt sm">✍️ SM</span></p></div>
+              <div class="rcard"><div class="ty">Argumentario</div><h4>Objeciones y respuestas</h4><p>Las objeciones frecuentes con su respuesta lista. <span class="mt sm">✍️ SM</span></p></div>
+            </div>
+          </div>
+
+          <div class="pista">
+            <div class="pista-h cliente"><span class="pista-t">Para usar con cliente · por momento del ciclo</span><span class="pista-tag ok">Sale al cliente</span></div>
+            <div class="repo-grid">
+              <div class="rcard"><div class="ty">Conversación · primer contacto</div><h4>Correo de apertura + autodiagnóstico</h4><p>Lo genera la herramienta del recorrido. <span class="xref" onclick="go(6)">→ ir a la herramienta</span> <span class="mt ag">🤖 agente</span></p></div>
+              <div class="rcard"><div class="ty">Reunión introductoria</div><h4>Deck ejecutivo C-Suite + one-pager</h4><p>ROI, coste de la inacción y caso de inversión para Dirección. <span class="mt sm">✍️ SM</span></p></div>
+              <div class="rcard"><div class="ty">Reunión avanzada</div><h4>Casos de éxito de modernización</h4><p>Los casos referenciables del área, con su resultado. <b>Imprescindibles.</b> <span class="mt sm">✍️ SM</span></p></div>
+              <div class="rcard"><div class="ty">Reunión avanzada</div><h4>Documentación técnica + business case</h4><p>Arquitecturas de referencia y el número de la deuda técnica. <span style="color:var(--copper);font-weight:600">Pendiente de incorporar.</span> <span class="mt sm">✍️ SM</span></p></div>
+              <div class="rcard"><div class="ty">Pitch a medida</div><h4>¿Necesitas un pitch personalizado?</h4><p>No lo guardamos hecho: lo generas en la herramienta de preparar la visita. <span class="xref" onclick="go(7)">→ ir a la herramienta</span> <span class="mt ag">🤖 agente</span></p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ESTAR AL DÍA · PROCESOS -->
+        <div class="panel doc" id="p-procesos">
+          <div class="repo-head"><div class="slbl" style="margin:0">Estar al día · procesos del área</div><span class="repo-lock">Sobre Microsoft · Outlook + Teams</span></div>
+          <div class="dsub">El bucle en dos sentidos: el PM te avisa de lo nuevo, y tú le devuelves lo que falta. Todo por donde ya trabajáis — correo y Teams.</div>
+          <div class="g2">
+            <div class="g2-col">
+              <div class="colhd">📣 De tu PM a ti · novedades</div>
+              <p class="proc-note">Cuando el PM publica algo nuevo, sale por <b>los dos canales</b>: un correo de Outlook (le llega a todo el mundo) y un aviso en el <b>canal de Teams</b> del área (para quien lo sigue). Así no depende de estar metido en Teams.</p>
+              <div class="notif"><div class="ni teams">Teams</div><div><h4>Nuevo caso de éxito · Modernización</h4><p>Publicado por Jorge Herrero · hoy · canal "Ciclo de Software"</p></div></div>
+              <div class="notif"><div class="ni mail">Correo</div><div><h4>Nueva versión del argumentario de objeciones</h4><p>Outlook · a todo el equipo comercial · ayer</p></div></div>
+              <div class="notif"><div class="ni teams">Teams</div><div><h4>Actualizado el deck ejecutivo C-Suite</h4><p>Canal "Ciclo de Software" · esta semana</p></div></div>
+            </div>
+            <div class="g2-col">
+              <div class="colhd">💬 De ti a tu PM · feedback</div>
+              <p class="proc-note">¿Echas algo en falta, una objeción nueva, una idea? Díselo al PM sin salir de aquí. Su feedback es lo que mantiene el área viva — es lo que alimenta las novedades de la izquierda.</p>
+              <div class="fb-box">
+                <div class="fb-ph">"En la cuenta X me pidieron un caso de seguros de vida y no lo tenemos…"</div>
+                <div class="fb-actions">
+                  <button class="fb-btn teams">Abrir en Teams</button>
+                  <button class="fb-btn mail">Enviar por correo</button>
+                </div>
+              </div>
+              <div class="proc-foot">Botones que abren Teams u Outlook ya rellenados al PM del área. Cierra el bucle que pedía Dirección.</div>
+            </div>
+          </div>
         </div>
 
         <!-- HABILITACIÓN · READINESS -->
@@ -870,7 +957,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
   <div class="lbl"><span id="nav-title">Hoy · el hueco</span><small id="nav-phase">As-is</small></div>
   <div class="ctrl">
     <div class="dots" id="dots"></div>
-    <span class="ct" id="ct">1 / 10</span>
+    <span class="ct" id="ct">1 / 11</span>
     <button id="prev">←</button><button id="next">→</button>
   </div>
 </div>
@@ -886,6 +973,7 @@ const steps=[
  {scene:'portal',phase:'e1',panel:'p-mail',flow:'f-mail',title:'Primer contacto · el mail',lblPhase:'Etapa 1'},
  {scene:'portal',phase:'e1',panel:'p-kit',flow:'f-kit',title:'Kit de visita · preparar la reunión',lblPhase:'Etapa 1'},
  {scene:'portal',phase:'e1',panel:'p-repo',flow:'f-repo',title:'Repositorio de conocimiento',lblPhase:'Etapa 1'},
+ {scene:'portal',phase:'e1',panel:'p-procesos',flow:'f-procesos',title:'Estar al día · procesos del área',lblPhase:'Etapa 1'},
  {scene:'etapa2',phase:'e2',title:'El recorrido por delante · Fase 2',lblPhase:'Fase 2'}
 ];
 const scenes={asis:document.querySelector('.asis'),journey:document.querySelector('.journey'),home:document.querySelector('.home'),portal:document.querySelector('.portal'),etapa2:document.querySelector('.etapa2')};
