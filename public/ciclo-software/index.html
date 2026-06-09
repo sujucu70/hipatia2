@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ciclo de Software · Hipatia</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap');
+:root{
+  --navy:#051C2C;--purple:#7C4DBC;--purple-soft:rgba(124,77,188,.14);
+  --copper:#B5622A;--green:#3A9E65;--line:rgba(255,255,255,.12);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);color:#cdd9e1;
+  min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(900px 520px at 82% -12%,rgba(124,77,188,.20),transparent 60%);}
+.top{display:flex;align-items:center;justify-content:space-between;padding:20px 38px}
+.lg{font-weight:800;font-size:17px;color:#fff;letter-spacing:-.02em}
+.lg i{color:var(--copper);font-style:normal}
+.tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#CFC0EC;
+  background:var(--purple-soft);border:1px solid rgba(124,77,188,.35);border-radius:30px;padding:6px 13px}
+.wrap{flex:1;display:flex;flex-direction:column;justify-content:center;padding:14px 38px 30px;max-width:1120px;margin:0 auto;width:100%}
+.crumb{font-size:12.5px;color:#7E93A2;margin-bottom:16px}
+.crumb a{color:#9FB3C2;text-decoration:none}.crumb a:hover{color:#CFC0EC}
+.crumb b{color:#E7EEF3;font-weight:600}
+h1{font-size:clamp(26px,3.4vw,38px);font-weight:800;line-height:1.1;letter-spacing:-.02em;color:#fff;margin-bottom:10px}
+.lead{font-size:15.5px;line-height:1.6;color:#AEC0CC;max-width:64ch;margin-bottom:28px}
+.lead b{color:#E7EEF3;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ar{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.04);padding:20px;
+  display:flex;flex-direction:column;min-height:150px;transition:all .18s var(--ease)}
+.ar h3{font-size:17px;font-weight:800;color:#E7EEF3;margin-bottom:6px}
+.ar p{font-size:12.5px;color:#92A4B2;line-height:1.5;flex:1}
+.ar .st{align-self:flex-start;margin-top:14px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:#7E93A2;border:1px solid var(--line);border-radius:20px;padding:4px 11px}
+.ar.live{border-color:rgba(124,77,188,.55);background:rgba(124,77,188,.10);cursor:pointer;
+  box-shadow:0 22px 50px -34px rgba(124,77,188,.8)}
+.ar.live:hover{transform:translateY(-3px);border-color:var(--purple)}
+.ar.live h3{color:#fff}
+.ar.live .st{color:#CFC0EC;border-color:rgba(124,77,188,.5);background:var(--purple-soft)}
+.ar.live .go{margin-top:14px;font-size:13px;font-weight:700;color:#CFC0EC}
+.ar.soon{opacity:.62}
+footer{padding:16px 38px;font-size:11.5px;color:#5E7382;border-top:1px solid rgba(255,255,255,.08)}
+@media(max-width:820px){.grid{grid-template-columns:1fr}.top,.wrap,footer{padding-left:22px;padding-right:22px}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="lg">Entelgy<i>·</i> Hipatia</div>
+  <span class="tag">Borrador · mockup de trabajo</span>
+</header>
+
+<main class="wrap">
+  <div class="crumb"><a href="/">Prácticas</a> &nbsp;›&nbsp; <b>Ciclo de Software</b></div>
+  <h1>Ciclo de Software</h1>
+  <p class="lead">Lo que el cliente contrata para construir, modernizar y mantener su software con IA. Hoy, <b>Modernización de Aplicaciones</b> está desarrollada como piloto del modelo; las demás llegan con el mismo recorrido.</p>
+
+  <div class="grid">
+    <div class="ar live" onclick="location.href='/modernizacion/recorrido/'">
+      <h3>Modernización de Aplicaciones</h3>
+      <p>Sacar el core legacy del riesgo regulatorio y del coste de sostenerlo, con IA y sin parar la operación.</p>
+      <div class="go">Entrar al recorrido →</div>
+    </div>
+    <div class="ar soon"><h3>Mantenimiento Evolutivo Inteligente</h3><p>Evolucionar lo que ya está en producción, con productividad medida.</p><span class="st">En preparación</span></div>
+    <div class="ar soon"><h3>Spec-Driven Development</h3><p>Construir a partir de la especificación, con el conocimiento del lado del cliente.</p><span class="st">En preparación</span></div>
+    <div class="ar soon"><h3>Asistencia Técnica Aumentada</h3><p>Equipos reforzados con capacidad y herramientas de IA.</p><span class="st">En preparación</span></div>
+    <div class="ar soon"><h3>Factoría SEAS</h3><p>Capacidad industrial de desarrollo a escala.</p><span class="st">En preparación</span></div>
+  </div>
+</main>
+
+<footer>Entelgy · Hipatia · Entorno de demostración · uso interno</footer>
+
+</body>
+</html>
