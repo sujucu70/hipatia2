@@ -659,25 +659,58 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         <div class="panel doc" id="p-tarjeta">
           <div class="slbl">Tarjeta de entrada · 2 minutos <span class="hab" style="margin-left:6px">Etapa 1</span></div>
 
-          <div class="g2">
-            <div class="g2-col">
-              <div class="orient" style="margin:0">
-                <div class="row"><div class="k">Qué es</div><div class="v">Cogemos las aplicaciones <b>legacy que ya frenan al negocio</b> y las modernizamos con IA, sin parar la operación.</div></div>
-                <div class="row"><div class="k">A quién</div><div class="v">Empresas con <b>+5 años de stack propio</b> y un core que se usa a diario. Hablas con el CIO o el director de desarrollo; por el coste, antes o después aparece el CFO.</div></div>
-                <div class="row"><div class="k">La señal</div><div class="v">Una aplicación que <b>"nadie quiere tocar"</b> porque quien la construyó ya no está. <span style="color:var(--gray)">(las completas, en Estado de la cuenta)</span></div></div>
-              </div>
-              <div class="q" style="margin:0"><div class="l">Para abrir conversación</div><div class="t">"¿Qué porcentaje del gasto IT de este año financia sistemas que el negocio va a necesitar dentro de tres?"</div></div>
-              <div class="dato" style="margin:0"><div class="n">75%</div><div><div class="t">del presupuesto IT típico se va en <strong>run</strong>: mantenimiento, soporte, licencias y deuda técnica. El negocio lo llama inversión; <em>el CFO lo tiene como coste fijo.</em></div><div class="s">Fuente · Deloitte · Gartner IT Budget Benchmark</div></div></div>
-            </div>
-            <div class="g2-col">
-              <div class="why" style="margin:0"><div class="l">Por qué Entelgy</div><div class="t">El mercado moderniza por horas y pidiendo partida nueva. Entelgy lo financia <strong>desde lo que el cliente ya gasta en mantener</strong> — mismo presupuesto, más valor — y un externo (Foreworth) mide que el resultado llegó. Esa medición es la que aguanta delante del CFO.</div><div class="refs">UNED · BBVA · Santander — los mismos clientes renuevan</div></div>
-              <div class="safety" style="margin:0"><div class="ic">!</div><p><b>Si te preguntan un detalle técnico que no tienes, no improvises:</b> "eso te lo confirma el especialista en la siguiente reunión". Convierte la duda en tu cierre.</p></div>
-              <div class="close-band" style="margin:0"><div class="l">El cierre de una primera reunión</div><div class="t"><b>El Assessment de modernización</b> — 10–15 días, primer contrato. Entrega el <b>triaje del portfolio</b> (qué se moderniza, qué no, qué va a AM) y el business case para Dirección. La estrategia, el gobierno y el método se quedan dentro de Entelgy — el assessment no los regala.</div></div>
-              <div class="tcard-actions" style="margin:0">
-                <button class="btn-exam" onclick="go(4)">Habilitarme · empezar el examen</button>
-                <button class="btn-link" onclick="go(5)">Empezar con una cuenta →</button>
-              </div>
-            </div>
+          <!-- ¿ES TU CUENTA? -->
+          <div class="colhd" style="margin:16px 0 9px">¿Es tu cuenta?</div>
+          <div class="orient" style="margin:0">
+            <div class="row"><div class="k">Qué es</div><div class="v">Cogemos las aplicaciones <b>legacy que ya frenan al negocio</b> y las modernizamos con IA, sin parar la operación.</div></div>
+            <div class="row"><div class="k">A quién</div><div class="v">Empresas con <b>+5 años de stack propio</b> y un core que se usa a diario. Hablas con el CIO o el director de desarrollo; por el coste, antes o después aparece el CFO.</div></div>
+            <div class="row"><div class="k">La señal</div><div class="v">Una aplicación que <b>"nadie quiere tocar"</b> porque quien la construyó ya no está. <span style="color:var(--gray)">(las completas, en Estado de la cuenta)</span></div></div>
+          </div>
+
+          <!-- POR QUÉ AHORA -->
+          <div class="colhd" style="margin:24px 0 9px">Por qué moverse ahora</div>
+          <div class="claim" style="font-size:21px;margin-bottom:13px">Lo que hoy es deuda técnica, en 2027 es <em>exposición regulatoria.</em></div>
+          <div style="display:flex;flex-direction:column;gap:11px">
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--copper);font-weight:800;flex-shrink:0;font-size:15px">›</span><div style="font-size:14px;color:#33404B;line-height:1.55"><b style="color:var(--navy)">Regulación.</b> El AI Act exige los sistemas de alto riesgo en regla en diciembre de 2027. En seguros, DORA ya aprieta la resiliencia operativa.</div></div>
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--copper);font-weight:800;flex-shrink:0;font-size:15px">›</span><div style="font-size:14px;color:#33404B;line-height:1.55"><b style="color:var(--navy)">Persona clave.</b> Quien construyó el core ya no está. Cada mes que pasa hay menos gente capaz de tocarlo, y sale más caro hacerlo.</div></div>
+            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--copper);font-weight:800;flex-shrink:0;font-size:15px">›</span><div style="font-size:14px;color:#33404B;line-height:1.55"><b style="color:var(--navy)">El coste solo sube.</b> Mantener lo viejo encarece año a año. La deuda técnica se paga con intereses.</div></div>
+          </div>
+
+          <!-- QUÉ HACEMOS -->
+          <div class="colhd" style="margin:24px 0 9px">Qué hacemos, en cristiano</div>
+          <div style="background:var(--white);border:1px solid var(--line);border-radius:10px;padding:14px 18px;font-size:14px;color:#33404B;line-height:1.6">Refactorizamos, llevamos a cloud o abrimos con APIs lo que aún da servicio — <b style="color:var(--navy)">por piezas y en paralelo a la operación</b>. Sin un big-bang de reescritura: el cliente empieza pequeño y escala cuando lo ve funcionar.</div>
+
+          <!-- EL DIFERENCIADOR -->
+          <div class="colhd" style="margin:24px 0 9px">El diferenciador que puedes defender</div>
+          <div class="why" style="margin:0"><div class="l">Por qué Entelgy</div><div class="t">El mercado moderniza por horas y pidiendo partida nueva. Entelgy lo financia <strong>desde lo que el cliente ya gasta en mantener</strong> — mismo presupuesto, más valor — y un externo (Foreworth) mide que el resultado llegó. Esa medición es la que aguanta delante del CFO.</div><div class="refs">UNED · BBVA · Santander — los mismos clientes renuevan</div></div>
+
+          <!-- MUNICIÓN PARA ABRIR -->
+          <div class="colhd" style="margin:24px 0 9px">Munición para abrir</div>
+          <div class="dato" style="margin:0 0 11px"><div class="n">75%</div><div><div class="t">del presupuesto IT típico se va en <strong>run</strong>: mantenimiento, soporte, licencias y deuda técnica. El negocio lo llama inversión; <em>el CFO lo tiene como coste fijo.</em></div><div class="s">Fuente · Deloitte · Gartner IT Budget Benchmark</div></div></div>
+          <div class="q" style="margin:0"><div class="l">Para abrir conversación</div><div class="t">"¿Qué porcentaje del gasto IT de este año financia sistemas que el negocio va a necesitar dentro de tres?"</div></div>
+
+          <!-- LA PRIMERA OBJECIÓN -->
+          <div class="colhd" style="margin:24px 0 9px">La objeción que más vas a oír</div>
+          <div style="background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 18px">
+            <div style="font-size:15px;font-style:italic;color:var(--gray);margin-bottom:9px">"Funciona. ¿Para qué tocarlo?"</div>
+            <div style="font-size:14px;color:#33404B;line-height:1.6">Funciona hoy. El día que se rompa, quien lo construyó ya no está — y cada año que sigue ahí cuesta más sostenerlo. El primer paso solo mide: el Assessment dice qué tocar y qué dejar, sin comprometer al cliente a nada.</div>
+          </div>
+
+          <!-- UNA PRUEBA · pendiente de Jorge -->
+          <div class="colhd" style="margin:24px 0 9px">Una prueba que puedas citar <span class="dest-badge">Pendiente · Jorge</span></div>
+          <div class="dato" style="margin:0"><div class="n">—</div><div><div class="t">Aquí va un caso real con un antes→después concreto: qué se recortó, qué se entregó y en cuánto tiempo. Pendiente de que Jorge confirme un caso nombrable y una cifra usable — las cifras de Foreworth son de uso interno.</div><div class="s">Borrador · pendiente de validación</div></div></div>
+
+          <!-- RED DE SEGURIDAD -->
+          <div class="safety" style="margin:24px 0 0"><div class="ic">!</div><p><b>Si te preguntan un detalle técnico que no tienes, no improvises:</b> "eso te lo confirma el especialista en la siguiente reunión". Convierte la duda en tu cierre.</p></div>
+
+          <!-- EL CIERRE -->
+          <div class="colhd" style="margin:20px 0 9px">El cierre de una primera reunión</div>
+          <div class="close-band" style="margin:0"><div class="t"><b>El Assessment de modernización</b> — 10–15 días, primer contrato. Entrega el <b>triaje del portfolio</b> (qué se moderniza, qué no, qué va a AM) y el business case para Dirección. La estrategia, el gobierno y el método se quedan dentro de Entelgy — el assessment no los regala.</div></div>
+
+          <!-- ACCIONES -->
+          <div class="tcard-actions" style="margin-top:24px">
+            <button class="btn-exam" onclick="go(4)">Habilitarme · empezar el examen</button>
+            <button class="btn-link" onclick="go(5)">Empezar con una cuenta →</button>
           </div>
         </div>
 
