@@ -304,6 +304,14 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .mail-value{background:var(--purple-soft);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:12px 16px;margin:4px 0 14px}
 .mail-value .vl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:6px}
 .mail-value p{font-size:13.5px;color:#33404B;margin:0;line-height:1.55}
+.sector-pick{margin:0 0 12px}
+.sp-lbl{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gray);margin-bottom:8px}
+.sp-chips{display:flex;flex-wrap:wrap;gap:7px}
+.sp-chip{font-family:inherit;font-size:12px;font-weight:600;color:var(--gray);background:#fff;border:1px solid var(--line);padding:7px 13px;border-radius:8px;cursor:pointer;transition:border-color .18s,color .18s,background .18s}
+.sp-chip:hover{border-color:var(--purple);color:var(--purple)}
+.sp-chip.on{background:var(--purple);border-color:var(--purple);color:#fff}
+.sp-note{font-size:11.5px;color:var(--gray);line-height:1.5;margin-top:9px;padding-top:9px;border-top:1px dashed rgba(124,77,188,.3)}
+.sp-note b{color:var(--purple)}
 .mail-gift{display:flex;align-items:center;gap:12px;border:1px dashed var(--copper);border-radius:8px;padding:11px 14px;margin:4px 0 14px;background:#FBF6F0}
 .mail-gift .gl{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--copper);margin-bottom:3px}
 .mail-gift .gt{font-size:13px;color:#5A4A38;line-height:1.5}.mail-gift .gt b{color:var(--navy)}
@@ -1008,6 +1016,23 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         <div class="panel toolview" id="p-mail">
           <div class="tv-head"><div class="tv-ic">✉️</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Primer contacto <span class="hab">Etapa 1</span></div><div class="atitle" style="font-size:20px">El correo que abre, con el tono que espera un CIO</div></div></div>
 
+          <div class="sector-pick" id="sector-pick">
+            <div class="sp-lbl">Sector de la cuenta · cambia el gancho con que abres</div>
+            <div class="sp-chips">
+              <button type="button" class="sp-chip on" data-sec="fin">Financiero · banca/seguros</button>
+              <button type="button" class="sp-chip" data-sec="edu">Educación</button>
+              <button type="button" class="sp-chip" data-sec="ret">Retail / eCommerce</button>
+              <button type="button" class="sp-chip" data-sec="ind">Industria</button>
+              <button type="button" class="sp-chip" data-sec="pub">Sector público</button>
+              <button type="button" class="sp-chip" data-sec="tur">Turismo</button>
+            </div>
+          </div>
+          <div class="mail-value" id="sector-hook">
+            <div class="vl">Algo de valor · lo que le hace abrir el correo</div>
+            <p id="sector-hook-text"></p>
+            <div class="sp-note" id="sector-note" hidden>El correo completo, de momento, está cableado para <b>Financiero</b> — la cuenta de ejemplo, Grupo Lantia, es una aseguradora. Aquí ves cómo cambia el gancho de apertura en cada sector; el resto del correo se adapta igual cuando llega ese sector.</div>
+          </div>
+
           <div class="mail-contrib" id="mail-contrib" hidden>
             <div class="mail-contrib-h">Tú sabes algo que la IA no ve</div>
             <div class="mail-contrib-b" id="mail-contrib-b"></div>
@@ -1027,7 +1052,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
                 <div class="mail-body" contenteditable="true" spellcheck="false">
                   <p>Estimado/a [nombre]:</p>
                   <p>Le escribo a raíz de un análisis del sector asegurador de cara al plazo del EU AI Act. En él, Grupo Lantia figura entre las compañías cuyo núcleo de pólizas lleva tiempo pendiente de una modernización de fondo.</p>
-                  <p>Es una situación frecuente y, en seguros, especialmente sensible: a partir de diciembre de 2027 el AI Act exigirá documentación auditable en los sistemas de alto riesgo, y DORA aprieta en resiliencia operativa. Un core difícil de mantener encarece tanto el cumplimiento como el coste de sostenerlo año a año.</p>
+                  <p>Es una situación frecuente y, en seguros, especialmente sensible: a partir de diciembre de 2027 el AI Act exigirá documentación auditable en los sistemas de alto riesgo, y DORA —con NIS2 al lado— aprieta en resiliencia operativa. Un core difícil de mantener encarece tanto el cumplimiento como el coste de sostenerlo año a año.</p>
                   <p>La parte que suele sorprender: buena parte de esa modernización puede financiarse <b>desde el propio presupuesto de mantenimiento</b>, sin abrir una partida nueva. Mismo importe, más valor entregado.</p>
                   <p>Por si le resulta útil de cara a su comité, puede hacer un breve autodiagnóstico —apenas cinco minutos— en este enlace:</p>
                   <p><a href="#" class="mail-link" onclick="return false">entelgy.com/autodiagnostico/modernizacion</a></p>
@@ -1056,10 +1081,11 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
                     <div class="rep-risk-note">Cumplimiento · dic 2027</div>
                   </div>
                   <div class="rep-dims">
-                    <div class="dim"><span>Antigüedad del core</span><div class="db"><i style="width:88%"></i></div><b>11 años</b></div>
-                    <div class="dim"><span>Capacidad de mantenimiento</span><div class="db"><i style="width:84%"></i></div><b>84%</b></div>
-                    <div class="dim"><span>Exposición regulatoria</span><div class="db"><i style="width:75%"></i></div><b>alta</b></div>
-                    <div class="dim"><span>Rotación del equipo</span><div class="db"><i style="width:58%"></i></div><b>media</b></div>
+                    <div class="dim"><span>Técnica</span><div class="db"><i style="width:86%"></i></div><b>alta</b></div>
+                    <div class="dim"><span>Económica</span><div class="db"><i style="width:80%"></i></div><b>1,8 M€</b></div>
+                    <div class="dim"><span>Operativa</span><div class="db"><i style="width:60%"></i></div><b>media</b></div>
+                    <div class="dim"><span>Riesgos</span><div class="db"><i style="width:84%"></i></div><b>alta</b></div>
+                    <div class="dim"><span>Time-to-Value</span><div class="db"><i style="width:72%"></i></div><b>lento</b></div>
                   </div>
                 </div>
                 <div class="rep-foot">
@@ -1231,6 +1257,29 @@ function copyMail(btn){
   }
   addBtn.textContent='✓ Sumado';setTimeout(()=>{addBtn.textContent='Actualizar';},1500);
  });
+})();
+/* Selector de sector · cambia el gancho "algo de valor"; el correo está cableado para Financiero */
+(function(){
+ const hooks={
+  fin:{t:'Casi 7 de cada 10 euros de IT se van en sostener el legacy (Gartner). Modernizar el core libera ese gasto sin abrir partida nueva, y DORA y NIS2 ya marcan el plazo.',wired:true},
+  edu:{t:'Cada hora que el equipo dedica a sostener lo viejo es una hora que no mejora la experiencia del estudiante. Modernizas y reinviertes ese ahorro en el campus.',wired:false},
+  ret:{t:'Una app lenta pierde ventas en cada pico: más del 80% de los usuarios la abandona. Modernizar te da velocidad y escalado justo cuando más vendes.',wired:false},
+  ind:{t:'Integrar IoT y operar en tiempo real pide una base que el legacy no sostiene. Modernizar el core es tu entrada real a Industry 4.0.',wired:false},
+  pub:{t:'Modernizar recorta el coste de soporte y agiliza el trámite al ciudadano. Y el ENS lo cubres desde el primer día.',wired:false},
+  tur:{t:'Reservas y omnicanalidad que no se caen en temporada alta, con un 30–40% menos de esfuerzo en evolutivo.',wired:false}
+ };
+ const pick=document.getElementById('sector-pick');
+ const txt=document.getElementById('sector-hook-text');
+ const note=document.getElementById('sector-note');
+ if(!pick||!txt||!note)return;
+ function set(sec){
+  const h=hooks[sec];if(!h)return;
+  txt.textContent=h.t;
+  note.hidden=h.wired;
+  pick.querySelectorAll('.sp-chip').forEach(c=>c.classList.toggle('on',c.dataset.sec===sec));
+ }
+ pick.querySelectorAll('.sp-chip').forEach(c=>c.addEventListener('click',()=>set(c.dataset.sec)));
+ set('fin');
 })();
 go(0);
 </script>
