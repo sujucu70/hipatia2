@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autodiagnóstico de madurez · Modernización · Grupo Lantia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#051C2C;--purple:#7C4DBC;--purple-soft:rgba(124,77,188,.12);
+  --white:#FFF;--paper:#F7F5F2;--line:#E6E2DC;--gray:#6B7682;--copper:#B5622A;
+  --ink:#0A1622;--green:#3A9E65;--green-soft:#EAF5EF;--red:#C84040;--ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;display:flex;flex-direction:column}
+.top{background:var(--navy);padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:16px;font-weight:800;color:#fff}.logo .dot{color:var(--copper)}
+.draft{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9FB3C2;border:1px solid rgba(255,255,255,.2);padding:4px 9px;border-radius:5px}
+.wrap{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:34px 18px 50px}
+.card{width:100%;max-width:620px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 60px -40px rgba(5,28,44,.5);padding:26px 28px}
+.adt-head{text-align:center;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:16px}
+.adt-t{font-size:17px;font-weight:800;color:var(--navy);margin-top:4px}
+.adt-s{font-size:12px;color:var(--gray);margin-top:4px}
+.adt-ctx{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-bottom:20px;justify-content:center}
+.adt-ctx-l{font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gray)}
+.adt-chip{font-size:11px;font-weight:600;color:var(--navy);background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:3px 9px}
+.adt-prog{margin-bottom:18px}
+.adt-prog-l{font-size:10.5px;font-weight:700;color:var(--gray);margin-bottom:6px}
+.adt-prog-bar{height:6px;background:#EEF0F2;border-radius:4px;overflow:hidden}
+.adt-prog-bar i{display:block;height:100%;background:var(--purple);border-radius:4px;transition:width .3s var(--ease)}
+.adt-q .ql{font-size:14.5px;color:var(--navy);font-weight:700;margin-bottom:12px;line-height:1.4}
+.adt-q .ql em{color:var(--purple);font-style:normal;font-weight:800;font-size:10px;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:5px}
+.adt-opts{display:flex;flex-direction:column;gap:8px}
+.adt-opt{text-align:left;font-family:inherit;font-size:13.5px;color:#46535E;background:#fff;border:1px solid var(--line);border-radius:9px;padding:12px 14px;cursor:pointer;transition:border-color .15s,background .15s}
+.adt-opt:hover{border-color:var(--purple)}
+.adt-opt.on{border-color:var(--purple);background:var(--purple-soft);color:var(--navy);font-weight:600}
+.adt-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
+.adt-go{background:var(--purple);color:#fff;border:none;font-family:inherit;font-size:13.5px;font-weight:700;padding:12px 20px;border-radius:8px;cursor:pointer;transition:background .2s}
+.adt-go:hover{background:#6A3FA6}
+.adt-demo{background:#fff;color:var(--purple);border:1px solid rgba(124,77,188,.4);font-family:inherit;font-size:12px;font-weight:700;padding:9px 14px;border-radius:8px;cursor:pointer;transition:background .2s}
+.adt-demo:hover{background:var(--purple-soft)}
+.adt-demo-note{font-size:11px;color:var(--gray)}
+.adt-back{background:none;border:none;font-family:inherit;font-size:12px;font-weight:700;color:var(--gray);cursor:pointer;padding:8px 0;margin-top:10px;text-align:left}
+.adt-back:hover{color:var(--purple)}
+.adt-mail{width:100%;font-family:inherit;font-size:14px;color:var(--navy);border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:#fff}
+.adt-mail:focus{outline:none;border-color:var(--purple)}
+.adt-mail.err{border-color:var(--red)}
+.adt-mail-note{font-size:11.5px;color:var(--gray);margin-top:8px;line-height:1.5}
+.adt-result{margin-top:20px;border-top:1px solid var(--line);padding-top:20px}
+.adt-rscore{display:flex;align-items:center;gap:18px;margin-bottom:16px}
+.rep-circle{width:96px;height:96px;border-radius:50%;border:6px solid var(--purple);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+.rep-circle b{font-size:32px;font-weight:800;color:var(--navy);line-height:1}
+.rep-circle small{font-size:11px;color:var(--gray);margin-top:2px}
+.adt-rrisk{font-size:15px;font-weight:800}
+.adt-rdims{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.adt-rdim{font-size:11.5px;color:#46535E;background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:5px 10px}
+.adt-rdim b{color:var(--navy)}
+.adt-reco{font-size:13px;color:#33404B;line-height:1.55;background:var(--purple-soft);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:12px 15px}
+.adt-reco b{color:var(--navy)}
+.adt-read{font-size:13px;color:#33404B;line-height:1.55;margin-bottom:10px}
+.adt-read b{color:var(--navy)}
+.adt-next{font-size:13px;color:#33404B;line-height:1.55;background:var(--green-soft);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:12px 15px;margin-top:10px}
+.adt-next b{color:var(--navy)}
+.adt-tie{font-size:12px;color:var(--gray);line-height:1.5;margin-top:10px}
+.adt-pdf{margin-top:14px;border:1px dashed rgba(124,77,188,.35);border-radius:10px;padding:13px 15px;background:#fff}
+.adt-pdf-l{font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:9px}
+.adt-pdf-row{display:flex;gap:9px;flex-wrap:wrap}
+.adt-pdf-row .adt-mail{flex:1;min-width:200px;width:auto}
+.adt-go:disabled{opacity:.6;cursor:default}
+.foot{text-align:center;font-size:11px;color:var(--gray);padding:0 18px 26px}
+@media(max-width:560px){.card{padding:20px 18px}.adt-rscore{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<div class="top"><div class="logo">Entelgy<span class="dot">·</span></div><div class="draft">Borrador · mockup de trabajo</div></div>
+<div class="wrap">
+  <div class="card">
+    <div class="adt-head">
+      <div class="adt-t">Autodiagnóstico de madurez · Modernización</div>
+      <div class="adt-s">Grupo Lantia · ~2 minutos · gratis · el informe es suyo</div>
+    </div>
+    <div class="adt-ctx">
+      <span class="adt-ctx-l">Preparado para su organización</span>
+      <span class="adt-chip">Sector · Seguros</span>
+      <span class="adt-chip">Core · Java, ~11 años</span>
+      <span class="adt-chip">Reloj · AI Act dic 2027 + DORA</span>
+    </div>
+    <div class="adt-prog"><div class="adt-prog-l" id="adt-prog-l">Pregunta 1 de 10 · ~2 minutos</div><div class="adt-prog-bar"><i id="adt-prog-i" style="width:9%"></i></div></div>
+    <div class="adt-form" id="adt-form"></div>
+    <div class="adt-actions">
+      <button type="button" class="adt-demo" id="adt-demo">▶ Recorrerlo como Grupo Lantia</button>
+      <span class="adt-demo-note">demo · rellena las respuestas del ejemplo</span>
+    </div>
+    <div class="adt-result" id="adt-result" hidden></div>
+  </div>
+</div>
+<div class="foot">Entelgy · Modernización de Aplicaciones · este enlace es propio de su organización</div>
+<script>
+/* Autodiagnóstico · wizard 10 preguntas (2 por dimensión de Jorge) + timeline + correo → informe · Lantia = 78 */
+(function(){
+ const form=document.getElementById('adt-form');
+ const demo=document.getElementById('adt-demo');
+ const res=document.getElementById('adt-result');
+ const progL=document.getElementById('adt-prog-l');
+ const progI=document.getElementById('adt-prog-i');
+ if(!form||!demo||!res)return;
+ const Q=[
+  {dim:'Técnica',sub:'Obsolescencia y deuda técnica',q:'El núcleo del sistema, ¿sobre qué base corre?',o:[['Tecnología actual, deuda controlada',3],['Versiones atrasadas, deuda visible',7],['Tecnología fuera de soporte o cerca de estarlo',12]]},
+  {dim:'Técnica',sub:'Calidad de código y arquitectura',q:'Tocar una pieza del sistema, ¿qué supone?',o:[['Cambios localizados, sin sustos',2],['Hay que mirar bien qué más se toca',6],['Cualquier cambio puede romper otra cosa',10]]},
+  {dim:'Económica',sub:'Coste de mantener vs. valor aportado',q:'Del presupuesto del sistema, ¿cuánto se va solo en mantenerlo?',o:[['Menos de la mitad',3],['Alrededor de la mitad',6],['La mayor parte',10]]},
+  {dim:'Económica',sub:'Ahorro potencial',q:'Si el mantenimiento costara menos, ¿tendríais dónde invertir la diferencia?',o:[['No especialmente',2],['Alguna iniciativa esperando',6],['Una lista de iniciativas paradas por presupuesto',10]]},
+  {dim:'Operativa',sub:'Esfuerzo de soporte',q:'El día a día del soporte, ¿cuánto equipo consume?',o:[['Poco · mayormente automatizado',2],['Una parte relevante del equipo',6],['Equipos enteros dedicados a apagar fuegos',10]]},
+  {dim:'Operativa',sub:'Entrega · CI/CD',q:'¿Cómo llegan los cambios a producción?',o:[['Pipeline automatizado, despliegues frecuentes',2],['Semi-automatizado, con ventanas planificadas',6],['Proceso manual, despliegues que dan respeto',10]]},
+  {dim:'Riesgos',sub:'Cumplimiento regulatorio',q:'Si mañana os piden documentación auditable del sistema (AI Act, DORA), ¿la tenéis?',o:[['Sí, al día',3],['Parcial · habría que completarla',6],['No · sería un proyecto en sí mismo',10]]},
+  {dim:'Riesgos',sub:'Seguridad y persona clave',q:'El conocimiento del core, ¿dónde vive?',o:[['Documentado y repartido en el equipo',2],['En el equipo, con documentación a medias',5],['En la cabeza de una o dos personas',8]]},
+  {dim:'Time-to-Value',sub:'Tiempo de entrega de nuevas funciones',q:'Una funcionalidad nueva, de petición a producción, ¿cuánto tarda?',o:[['Días o pocas semanas',3],['Uno o dos meses',6],['Varios meses, o ni se intenta',10]]},
+  {dim:'Time-to-Value',sub:'Velocidad de adaptación al negocio',q:'Cuando el negocio pide un cambio de rumbo, el sistema…',o:[['Acompaña sin problema',2],['Acompaña, con esfuerzo',4],['Frena · el negocio se adapta al sistema',10]]}
+ ];
+ const TL={q:'Una última, sin puntuar: la modernización del core, ¿la tenéis en agenda?',o:['Ya en marcha o decidida','En los próximos 12 meses','Sin fecha aún']};
+ const lantia={a:[2,1,2,1,1,1,2,2,2,1],tl:1,mail:'cio@grupolantia.es'};
+ const DIMS=['Técnica','Económica','Operativa','Riesgos','Time-to-Value'];
+ const TH={ 'Técnica':[9,15],'Económica':[9,14],'Operativa':[9,14],'Riesgos':[8,13],'Time-to-Value':[9,13] };
+ let ans=new Array(Q.length).fill(-1),tl=-1,step=0;
+ const esc=s=>(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+ function prog(lbl,pct){if(progL)progL.textContent=lbl;if(progI)progI.style.width=pct+'%';}
+ function render(){
+  if(step<Q.length){
+   const it=Q[step];
+   prog('Pregunta '+(step+1)+' de '+Q.length+' · ~2 minutos',Math.round((step)/12*100)+9);
+   form.innerHTML='<div class="adt-q"><div class="ql"><em>'+it.dim+' · '+it.sub+'</em>'+it.q+'</div><div class="adt-opts">'
+    +it.o.map((op,j)=>'<button type="button" class="adt-opt'+(ans[step]===j?' on':'')+'" data-o="'+j+'">'+op[0]+'</button>').join('')+'</div></div>'
+    +(step>0?'<button type="button" class="adt-back" id="adt-back">← Anterior</button>':'');
+  }else if(step===Q.length){
+   prog('Cualificación · sin puntuar',88);
+   form.innerHTML='<div class="adt-q"><div class="ql"><em>Agenda</em>'+TL.q+'</div><div class="adt-opts">'
+    +TL.o.map((op,j)=>'<button type="button" class="adt-opt'+(tl===j?' on':'')+'" data-o="'+j+'">'+op+'</button>').join('')+'</div></div>'
+    +'<button type="button" class="adt-back" id="adt-back">← Anterior</button>';
+  }else{
+   result();return;
+  }
+  const back=document.getElementById('adt-back');
+  if(back)back.addEventListener('click',()=>{step=Math.max(0,step-1);res.hidden=true;render();});
+  form.querySelectorAll('.adt-opt').forEach(b=>b.addEventListener('click',()=>{
+   const j=+b.dataset.o;
+   if(step<Q.length)ans[step]=j;else tl=j;
+   b.parentNode.querySelectorAll('.adt-opt').forEach(x=>x.classList.toggle('on',x===b));
+   setTimeout(()=>{step++;render();},220);
+  }));
+ }
+ function lvl(dim,sub){const[a,b]=TH[dim];const lab=dim==='Time-to-Value'?['ágil','medio','lento']:['baja','media','alta'];return sub<a?lab[0]:sub<b?lab[1]:lab[2];}
+ function euros(eco){return eco>=14?'1,5–2 M€/año':eco>=9?'0,5–1,5 M€/año':'menos de 0,5 M€/año';}
+ const MAXD={'Técnica':22,'Económica':20,'Operativa':20,'Riesgos':18,'Time-to-Value':20};
+ const READ={
+  'Técnica':'el núcleo acumula deuda y obsolescencia: cada cambio cuesta más que el anterior',
+  'Económica':'el presupuesto está atrapado en sostener lo que hay, no en mejorarlo',
+  'Operativa':'la operación consume al equipo: soporte y entregas manuales se comen la capacidad',
+  'Riesgos':'la señal es regulatoria: sin documentación auditable, el AI Act (dic 2027) y DORA convierten el core en un asunto de cumplimiento, no solo técnico',
+  'Time-to-Value':'el negocio espera: cada funcionalidad tarda meses en llegar'
+ };
+ function lectura(subs,score){
+  const rank=DIMS.map(d=>[d,subs[d]/MAXD[d]]).sort((x,y)=>y[1]-x[1]);
+  const hot=rank.filter(r=>r[1]>=0.65).slice(0,2).map(r=>r[0]);
+  if(score<45)return 'Tu sistema está razonablemente sano: la deuda y el riesgo están contenidos y el coste de mantenerlo es proporcionado.';
+  if(hot.length===0)return 'Ninguna dimensión dispara sola, pero la suma pesa: varios frentes a media carga acaban costando como uno grave.';
+  if(hot.length===1)return 'Donde más te aprieta es en <b>'+hot[0]+'</b>: '+READ[hot[0]]+'.';
+  return 'Donde más te aprieta: <b>'+hot[0]+'</b> — '+READ[hot[0]]+'. Y detrás, <b>'+hot[1]+'</b>: '+READ[hot[1]]+'.';
+ }
+ function pasoSiguiente(score){
+  if(score>=70)return 'Con esta exposición, el paso útil es un <b>Assessment de dos semanas</b>: triaje del portfolio —qué se moderniza, qué se queda— y un business case con tus números reales. El plan se financia desde el presupuesto de mantenimiento que ya pagas: mismo importe, más valor.';
+  if(score>=45)return 'Exposición media: no necesitas una transformación total, sí atacar los cuellos de botella. Un <b>Assessment corto</b> identifica por dónde empezar para que el ahorro de la primera pieza pague la siguiente.';
+  return 'No hay urgencia de modernizar a fondo. Vigila la deuda y repite este diagnóstico si algo cambia: regulación nueva, crecimiento, salida de gente clave del core.';
+ }
+ function costeTxt(eco,score){
+  if(score<45)return 'Mantener el sistema te cuesta del orden de <b>'+euros(eco)+'</b> — un coste contenido para lo que entrega.';
+  return 'Mantener el sistema en su estado actual cuesta del orden de <b>'+euros(eco)+'</b>, y la deuda lo encarece año a año. Es una estimación orientativa a partir de tus respuestas; el Assessment la sustituye por tu número real.';
+ }
+ function result(prefMail){
+  const score=ans.reduce((s,j,i)=>s+(j>=0?Q[i].o[j][1]:0),0);
+  const rk=score>=70?['alta','alto','var(--red)']:score>=45?['media','medio','var(--copper)']:['baja','bajo','var(--green)'];
+  const subs={};DIMS.forEach(d=>subs[d]=0);
+  Q.forEach((it,i)=>{if(ans[i]>=0)subs[it.dim]+=it.o[ans[i]][1];});
+  const eco=subs['Económica'];
+  res.innerHTML='<div class="adt-rscore"><div class="rep-circle"><b>'+score+'</b><small>/ 100</small></div>'
+   +'<div><div class="adt-rrisk" style="color:'+rk[2]+'">Exposición · '+rk[0]+'</div>'
+   +'<div class="adt-tie" style="margin-top:4px">Riesgo AI Act · '+rk[1]+' · cumplimiento dic 2027 · DORA en resiliencia</div></div></div>'
+   +'<div class="adt-rdims">'+DIMS.map(d=>'<span class="adt-rdim">'+d+' · <b>'+lvl(d,subs[d])+'</b></span>').join('')+'</div>'   +'<div class="adt-read"><b>Lectura de tu situación.</b> '+lectura(subs,score)+'</div>'
+   +'<div class="adt-reco"><b>Coste de seguir como hasta ahora.</b> '+costeTxt(eco,score)+'</div>'
+   +'<div class="adt-next"><b>Qué hacer con esto.</b> '+pasoSiguiente(score)+'</div>'
+   +'<div class="adt-pdf"><div class="adt-pdf-l">¿Lo quieres también en PDF, para tu comité?</div>'
+   +'<div class="adt-pdf-row"><input type="email" class="adt-mail" id="adt-mail" placeholder="nombre@empresa.com" autocomplete="off"'+(prefMail?' value="'+esc(prefMail)+'"':'')+'>'
+   +'<button type="button" class="adt-go" id="adt-send">Enviármelo</button></div>'
+   +'<div class="adt-mail-note" id="adt-sent">El informe es tuyo: úsalo internamente, trabajemos juntos o no.</div></div>'
+   +(tl>=0?'<div class="adt-tie">Agenda: '+TL.o[tl]+' · este resultado vuelve a Entelgy como lead cualificado — lo ves en el paso 3.</div>':'<div class="adt-tie">Este resultado vuelve a Entelgy como lead cualificado — lo ves en el paso 3.</div>');
+  res.hidden=false;
+  prog('Diagnóstico completado',100);
+  form.innerHTML='<button type="button" class="adt-back" id="adt-restart">↺ Volver a empezar</button>';
+  document.getElementById('adt-restart').addEventListener('click',()=>{ans=new Array(Q.length).fill(-1);tl=-1;step=0;res.hidden=true;render();});
+  const send=document.getElementById('adt-send');
+  send.addEventListener('click',()=>{
+   const m=document.getElementById('adt-mail');
+   if(!m.value.trim()){m.focus();m.classList.add('err');return;}
+   m.classList.remove('err');
+   document.getElementById('adt-sent').innerHTML='✓ Informe en PDF enviado a <b>'+esc(m.value.trim())+'</b>.';
+   send.textContent='✓ Enviado';send.disabled=true;
+  });
+ }
+ demo.addEventListener('click',()=>{ans=[...lantia.a];tl=lantia.tl;step=Q.length+1;result(lantia.mail);});
+ render();
+})();
+</script>
+</body>
+</html>

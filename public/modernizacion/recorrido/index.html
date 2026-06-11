@@ -467,6 +467,43 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .mail-link{color:var(--copper);font-weight:700;text-decoration:underline;text-underline-offset:2px;word-break:break-all}
 .lead-db{background:var(--purple-soft);border:1px solid rgba(124,77,188,.22);border-radius:10px;padding:12px 15px;font-size:12.5px;color:#33404B;line-height:1.5}
 .lead-db b{color:var(--purple)}
+.jstrip{display:flex;align-items:stretch;gap:8px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:16px}
+.jstep{display:flex;align-items:center;gap:10px;flex:1}
+.jstep b{display:block;font-size:12.5px;color:var(--navy);font-weight:800;line-height:1.2}
+.jstep small{display:block;font-size:11px;color:var(--gray);margin-top:2px;line-height:1.3}
+.jconn{display:flex;align-items:center;color:#C2C8CE;font-size:16px;flex-shrink:0}
+.jn{width:22px;height:22px;border-radius:50%;background:var(--purple);color:#fff;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.jn.sm{width:20px;height:20px;font-size:11px}
+.jn.xs{width:16px;height:16px;font-size:9.5px;vertical-align:-3px;margin-right:6px}
+.genrow{background:var(--purple-soft);border:1px solid rgba(124,77,188,.22);border-radius:12px;padding:15px 18px;margin-bottom:16px}
+.gen-head{display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.gen-head b{font-size:13.5px;color:var(--navy);font-weight:800}
+.gen-auto{margin-left:auto;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);background:#fff;border:1px solid rgba(124,77,188,.3);padding:3px 9px;border-radius:6px}
+.gen-body{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
+.gen-note{font-size:13px;color:#33404B;line-height:1.55}.gen-note b{color:var(--navy)}
+.urlrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin:12px 0}
+.urlrow-url{font-size:13px;color:#5A6670;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:6px 14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:240px}
+.urlrow-url b{color:var(--purple)}
+.adt-open{font-size:12.5px;font-weight:700;color:var(--purple);text-decoration:none;border:1px solid rgba(124,77,188,.4);border-radius:8px;padding:9px 14px;transition:background .2s;white-space:nowrap}
+.adt-open:hover{background:var(--purple-soft)}
+.gen-tie{font-size:12px;color:var(--gray);line-height:1.5;margin-top:4px}
+.prev-sig{border:1px solid var(--line);border-radius:12px;background:#fff;padding:15px 18px}
+.prev-sig-h{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);margin-bottom:11px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.prev-sig-rows{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px}
+.psr{font-size:12.5px;color:#46535E;line-height:1.5}
+.psr b{display:block;color:var(--navy);font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin-bottom:3px}
+@media(max-width:900px){.prev-sig-rows{grid-template-columns:1fr}}
+.ret-stamp{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;color:var(--green);background:var(--green-soft);border:1px solid rgba(58,158,101,.25);border-radius:8px;padding:6px 11px;align-self:flex-start}
+.jstep{cursor:pointer;border-radius:9px;padding:7px 9px;transition:background .15s}
+.jstep:hover{background:rgba(124,77,188,.07)}
+.jstep.on{background:var(--purple-soft)}
+.jstep:not(.on) .jn{background:#C9CDD3}
+.jstep:not(.on) b{color:#5A6670}
+.jstep.on .jn{box-shadow:0 0 0 3px rgba(124,77,188,.18)}
+.jstep:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
+.jview{display:none}
+.jview.on{display:flex;flex-direction:column;gap:12px}
+@media(max-width:900px){.jstrip{flex-direction:column;gap:10px}.jconn{transform:rotate(90deg);justify-content:center}.gen-body{grid-template-columns:1fr}}
 .pb-more{margin-top:9px;font-size:12px;font-weight:700;color:var(--purple);cursor:pointer;display:inline-block}
 .pb-more:hover{text-decoration:underline}
 
@@ -1016,85 +1053,113 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         <div class="panel toolview" id="p-mail">
           <div class="tv-head"><div class="tv-ic">✉️</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Primer contacto <span class="hab">Etapa 1</span></div><div class="atitle" style="font-size:20px">El correo que abre, con el tono que espera un CIO</div></div></div>
 
-          <div class="sector-pick" id="sector-pick">
-            <div class="sp-lbl">Sector de la cuenta · cambia el gancho con que abres</div>
-            <div class="sp-chips">
-              <button type="button" class="sp-chip on" data-sec="fin">Financiero · banca/seguros</button>
-              <button type="button" class="sp-chip" data-sec="edu">Educación</button>
-              <button type="button" class="sp-chip" data-sec="ret">Retail / eCommerce</button>
-              <button type="button" class="sp-chip" data-sec="ind">Industria</button>
-              <button type="button" class="sp-chip" data-sec="pub">Sector público</button>
-              <button type="button" class="sp-chip" data-sec="tur">Turismo</button>
-            </div>
-          </div>
-          <div class="mail-value" id="sector-hook">
-            <div class="vl">Algo de valor · lo que le hace abrir el correo</div>
-            <p id="sector-hook-text"></p>
-            <div class="sp-note" id="sector-note" hidden>El correo completo, de momento, está cableado para <b>Financiero</b> — la cuenta de ejemplo, Grupo Lantia, es una aseguradora. Aquí ves cómo cambia el gancho de apertura en cada sector; el resto del correo se adapta igual cuando llega ese sector.</div>
+          <div class="jstrip" role="tablist">
+            <div class="jstep on" data-view="1" role="tab" tabindex="0"><span class="jn">1</span><div><b>Del análisis, la herramienta</b><small>El sistema genera el autodiagnóstico y su URL</small></div></div>
+            <div class="jconn">→</div>
+            <div class="jstep" data-view="2" role="tab" tabindex="0"><span class="jn">2</span><div><b>El correo, autogenerado</b><small>Ya lleva esa URL; Ana lo ajusta y lo envía</small></div></div>
+            <div class="jconn">→</div>
+            <div class="jstep" data-view="3" role="tab" tabindex="0"><span class="jn">3</span><div><b>Vuelve el diagnóstico real</b><small>El cliente lo completa y entra como lead</small></div></div>
           </div>
 
-          <div class="mail-contrib" id="mail-contrib" hidden>
-            <div class="mail-contrib-h">Tú sabes algo que la IA no ve</div>
-            <div class="mail-contrib-b" id="mail-contrib-b"></div>
-            <div class="mail-contrib-foot">Incorpóralo al correo a tu manera.</div>
+          <div class="jview on" data-view="1">
+            <div class="genrow">
+              <div class="gen-head"><span class="jn sm">1</span><b>Del escaneo de la cuenta sale la herramienta</b><span class="gen-auto">⚙ generado automáticamente</span></div>
+              <div class="gen-note">Del escaneo del paso anterior, el sistema monta el autodiagnóstico <b>a medida de Grupo Lantia</b> y lo publica en una <b>URL propia de la cuenta</b>. Ana no construye nada: copia el enlace y se lo reenvía al cliente — viaja dentro del correo del paso siguiente.</div>
+              <div class="urlrow">
+                <div class="urlrow-url" id="adt-url-text">🔒 entelgy.com/autodiagnostico/<b>grupo-lantia</b></div>
+                <button type="button" class="btn-copy" onclick="copyAdtUrl(this)">⧉ Copiar enlace</button>
+                <a class="adt-open" href="/autodiagnostico/grupo-lantia/" target="_blank" rel="noopener">Abrir como lo ve el cliente →</a>
+              </div>
+              <div class="gen-tie">La herramienta vive fuera del portal: es la página que el cliente abre y completa en ~2 minutos (10 preguntas, una por pantalla, con su informe al final). Cada cuenta tiene su propia URL — otra cuenta, otro enlace. Cuando el cliente lo termina, el resultado vuelve a Entelgy: paso 3.</div>
+            </div>
           </div>
 
-          <div class="g2">
-            <div class="g2-col">
-              <div class="colhd">El correo que envía Ana · editable</div>
-              <div class="mail" style="margin:0">
-                <div class="mail-bar"><i></i><i></i><i></i><span class="mail-edit-tag">Borrador editable</span></div>
-                <div class="mail-meta">
-                  <div class="mr"><b>Para</b> [nombre] · Dirección de Sistemas, Grupo Lantia</div>
-                  <div class="mr"><b>De</b> Ana Pérez · Entelgy</div>
-                  <div class="subj">Asunto · Modernización del core de pólizas: exposición regulatoria y coste de mantenimiento</div>
-                </div>
-                <div class="mail-body" contenteditable="true" spellcheck="false">
-                  <p>Estimado/a [nombre]:</p>
-                  <p>Le escribo a raíz de un análisis del sector asegurador de cara al plazo del EU AI Act. En él, Grupo Lantia figura entre las compañías cuyo núcleo de pólizas lleva tiempo pendiente de una modernización de fondo.</p>
-                  <p>Es una situación frecuente y, en seguros, especialmente sensible: a partir de diciembre de 2027 el AI Act exigirá documentación auditable en los sistemas de alto riesgo, y DORA —con NIS2 al lado— aprieta en resiliencia operativa. Un core difícil de mantener encarece tanto el cumplimiento como el coste de sostenerlo año a año.</p>
-                  <p>La parte que suele sorprender: buena parte de esa modernización puede financiarse <b>desde el propio presupuesto de mantenimiento</b>, sin abrir una partida nueva. Mismo importe, más valor entregado.</p>
-                  <p>Por si le resulta útil de cara a su comité, puede hacer un breve autodiagnóstico —apenas cinco minutos— en este enlace:</p>
-                  <p><a href="#" class="mail-link" onclick="return false">entelgy.com/autodiagnostico/modernizacion</a></p>
-                  <p>Devuelve un informe con el nivel de exposición de la organización y una primera estimación del coste de mantener el core en su estado actual. Es información que puede emplear internamente, trabajemos juntos o no.</p>
-                  <p>Si más adelante lo considera oportuno, quedo a su disposición para comentarlo sin compromiso.</p>
-                  <p>Un cordial saludo,</p>
-                  <div class="mail-sign"><b>Ana Pérez</b>Modernización de Aplicaciones · Entelgy</div>
-                </div>
-              </div>
-              <div class="mail-actions" style="margin:0">
-                <button class="btn-copy" type="button" onclick="copyMail(this)">⧉ Copiar correo</button>
-                <div class="mail-editnote"><b>Editable.</b> Ana lo ajusta y lo envía desde su propio correo.</div>
+          <div class="jview" data-view="2">
+            <div class="sector-pick" id="sector-pick">
+              <div class="sp-lbl">Sector de la cuenta · cambia el gancho con que abres</div>
+              <div class="sp-chips">
+                <button type="button" class="sp-chip on" data-sec="fin">Financiero · banca/seguros</button>
+                <button type="button" class="sp-chip" data-sec="edu">Educación</button>
+                <button type="button" class="sp-chip" data-sec="ret">Retail / eCommerce</button>
+                <button type="button" class="sp-chip" data-sec="ind">Industria</button>
+                <button type="button" class="sp-chip" data-sec="pub">Sector público</button>
+                <button type="button" class="sp-chip" data-sec="tur">Turismo</button>
               </div>
             </div>
-            <div class="g2-col">
-              <div class="colhd">Lo que vuelve · el informe que el cliente completa</div>
-              <div class="report" style="margin:0">
-                <div class="rep-head">
-                  <div><div class="rep-k">Autodiagnóstico de madurez · Modernización</div><div class="rep-t">Grupo Lantia</div></div>
-                  <div class="rep-logo">Entelgy<span class="dot">·</span></div>
+            <div class="mail-value" id="sector-hook">
+              <div class="vl">Algo de valor · lo que le hace abrir el correo</div>
+              <p id="sector-hook-text"></p>
+              <div class="sp-note" id="sector-note" hidden>El correo completo, de momento, está cableado para <b>Financiero</b> — la cuenta de ejemplo, Grupo Lantia, es una aseguradora. Aquí ves cómo cambia el gancho de apertura en cada sector; el resto del correo se adapta igual cuando llega ese sector.</div>
+            </div>
+            <div class="mail-contrib" id="mail-contrib" hidden>
+              <div class="mail-contrib-h">Tú sabes algo que la IA no ve</div>
+              <div class="mail-contrib-b" id="mail-contrib-b"></div>
+              <div class="mail-contrib-foot">Incorpóralo al correo a tu manera.</div>
+            </div>
+            <div class="colhd"><span class="jn xs">2</span>Lo que envías · el correo autogenerado · editable</div>
+            <div class="mail" style="margin:0">
+              <div class="mail-bar"><i></i><i></i><i></i><span class="mail-edit-tag">Autogenerado · editable</span></div>
+              <div class="mail-meta">
+                <div class="mr"><b>Para</b> [nombre] · Dirección de Sistemas, Grupo Lantia</div>
+                <div class="mr"><b>De</b> Ana Pérez · Entelgy</div>
+                <div class="subj">Asunto · Modernización del core de pólizas: exposición regulatoria y coste de mantenimiento</div>
+              </div>
+              <div class="mail-body" contenteditable="true" spellcheck="false">
+                <p>Estimado/a [nombre]:</p>
+                <p>Le escribo a raíz de un análisis del sector asegurador de cara al plazo del EU AI Act. En él, Grupo Lantia figura entre las compañías cuyo núcleo de pólizas lleva tiempo pendiente de una modernización de fondo.</p>
+                <p>Es una situación frecuente y, en seguros, especialmente sensible: a partir de diciembre de 2027 el AI Act exigirá documentación auditable en los sistemas de alto riesgo, y DORA —con NIS2 al lado— aprieta en resiliencia operativa. Un core difícil de mantener encarece tanto el cumplimiento como el coste de sostenerlo año a año.</p>
+                <p>La parte que suele sorprender: buena parte de esa modernización puede financiarse <b>desde el propio presupuesto de mantenimiento</b>, sin abrir una partida nueva. Mismo importe, más valor entregado.</p>
+                <p>Por si le resulta útil de cara a su comité, puede hacer un breve autodiagnóstico —apenas cinco minutos— en este enlace:</p>
+                <p><a href="/autodiagnostico/grupo-lantia/" class="mail-link" target="_blank" rel="noopener">entelgy.com/autodiagnostico/grupo-lantia</a></p>
+                <p>Devuelve un informe con el nivel de exposición de la organización y una primera estimación del coste de mantener el core en su estado actual. Es información que puede emplear internamente, trabajemos juntos o no.</p>
+                <p>Si más adelante lo considera oportuno, quedo a su disposición para comentarlo sin compromiso.</p>
+                <p>Un cordial saludo,</p>
+                <div class="mail-sign"><b>Ana Pérez</b>Modernización de Aplicaciones · Entelgy</div>
+              </div>
+            </div>
+            <div class="mail-actions" style="margin:0">
+              <button class="btn-copy" type="button" onclick="copyMail(this)">⧉ Copiar correo</button>
+              <div class="mail-editnote"><b>Lo redacta el sistema.</b> Ana lo ajusta y lo envía desde su propio correo.</div>
+            </div>
+          </div>
+
+          <div class="jview" data-view="3">
+            <div class="colhd"><span class="jn xs">3</span>Lo que vuelve · el diagnóstico real del cliente</div>
+            <div class="ret-stamp">↩ Vuelto hace 2h · lo completó el cliente</div>
+            <div class="report" style="margin:0">
+              <div class="rep-head">
+                <div><div class="rep-k">Autodiagnóstico de madurez · Modernización</div><div class="rep-t">Grupo Lantia</div></div>
+                <div class="rep-logo">Entelgy<span class="dot">·</span></div>
+              </div>
+              <div class="rep-body">
+                <div class="rep-score">
+                  <div class="rep-circle"><b>78</b><small>/ 100</small></div>
+                  <div class="rep-risk">Riesgo AI Act · alto</div>
+                  <div class="rep-risk-note">Cumplimiento · dic 2027</div>
                 </div>
-                <div class="rep-body">
-                  <div class="rep-score">
-                    <div class="rep-circle"><b>78</b><small>/ 100</small></div>
-                    <div class="rep-risk">Riesgo AI Act · alto</div>
-                    <div class="rep-risk-note">Cumplimiento · dic 2027</div>
-                  </div>
-                  <div class="rep-dims">
-                    <div class="dim"><span>Técnica</span><div class="db"><i style="width:86%"></i></div><b>alta</b></div>
-                    <div class="dim"><span>Económica</span><div class="db"><i style="width:80%"></i></div><b>1,8 M€</b></div>
-                    <div class="dim"><span>Operativa</span><div class="db"><i style="width:60%"></i></div><b>media</b></div>
-                    <div class="dim"><span>Riesgos</span><div class="db"><i style="width:84%"></i></div><b>alta</b></div>
-                    <div class="dim"><span>Time-to-Value</span><div class="db"><i style="width:72%"></i></div><b>lento</b></div>
-                  </div>
-                </div>
-                <div class="rep-foot">
-                  <div class="rep-reco"><b>Recomendación.</b> Modernización progresiva del core, financiada desde el OPEX de mantenimiento actual. Deuda técnica estimada: 1,8 M€ al año.</div>
-                  <div class="rep-pdf">PDF automático · para Dirección y el CFO</div>
+                <div class="rep-dims">
+                  <div class="dim"><span>Técnica</span><div class="db"><i style="width:86%"></i></div><b>alta</b></div>
+                  <div class="dim"><span>Económica</span><div class="db"><i style="width:80%"></i></div><b>1,8 M€</b></div>
+                  <div class="dim"><span>Operativa</span><div class="db"><i style="width:60%"></i></div><b>media</b></div>
+                  <div class="dim"><span>Riesgos</span><div class="db"><i style="width:84%"></i></div><b>alta</b></div>
+                  <div class="dim"><span>Time-to-Value</span><div class="db"><i style="width:72%"></i></div><b>lento</b></div>
                 </div>
               </div>
-              <div class="lead-row" style="margin:0"><div class="sc">78</div><div><b>Grupo Lantia</b> · autodiagnóstico completado<div class="meta">Riesgo AI Act alto · hace 2h · ya en el pipeline de Ana</div></div></div>
-              <div class="lead-db">El cliente entra en una URL propia y se autodiagnostica. Cada vez que lo hace, <b>Entelgy suma un lead cualificado a su propia base de datos</b> — un activo de pipeline que hoy no existe y que crece solo con cada envío.</div>
+              <div class="rep-foot">
+                <div class="rep-reco"><b>Recomendación.</b> Modernización progresiva del core, financiada desde el OPEX de mantenimiento actual. Deuda técnica estimada: 1,8 M€ al año.</div>
+                <div class="rep-pdf">PDF automático · para Dirección y el CFO</div>
+              </div>
+            </div>
+            <div class="lead-row" style="margin:0"><div class="sc">78</div><div><b>Grupo Lantia</b> · autodiagnóstico completado<div class="meta">Riesgo AI Act alto · hace 2h · ya en el pipeline de Ana</div></div></div>
+            <div class="lead-db">El cliente entra en una URL propia y se autodiagnostica. Cada vez que lo hace, <b>Entelgy suma un lead cualificado a su propia base de datos</b> — un activo de pipeline que hoy no existe y que crece solo con cada envío.</div>
+            <div class="prev-sig">
+              <div class="prev-sig-h">Señales para dar forma a la oportunidad · preventa <span class="mt ag">🤖 derivado de las respuestas</span></div>
+              <div class="prev-sig-rows">
+                <div class="psr"><b>Por dónde entrar</b>Riesgos (AI Act dic 2027 + DORA: sin documentación auditable) y Técnica (deuda en el core Java). El ángulo regulatorio abre la puerta; la deuda sostiene el caso.</div>
+                <div class="psr"><b>Tamaño del caso</b>Mantenimiento del orden de 1,5–2 M€/año — el presupuesto desde el que se financia el plan.</div>
+                <div class="psr"><b>Cuándo</b>En agenda · próximos 12 meses. Lead de ahora, no de algún día.</div>
+                <div class="psr"><b>Qué triar primero en el Assessment</b>El core de pólizas: documentación auditable, dependencia de persona clave y coste de evolución. De ahí sale el business case.</div>
+              </div>
             </div>
           </div>
 
@@ -1174,6 +1239,12 @@ document.querySelectorAll('#p-readiness .exq').forEach(q=>{
   else{o.classList.add('no');q.querySelector('.exo[data-c="1"]').classList.add('ok');}
  }));
 });
+function copyAdtUrl(btn){
+ const url=location.origin+'/autodiagnostico/grupo-lantia/';
+ try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url);}else{const ta=document.createElement('textarea');ta.value=url;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();}}catch(e){}
+ const old=btn.innerHTML;btn.innerHTML='✓ Copiado';btn.classList.add('done');
+ setTimeout(()=>{btn.innerHTML=old;btn.classList.remove('done');},1600);
+}
 function copyMail(btn){
  const body=document.querySelector('#p-mail .mail-body');
  const txt=body?body.innerText.replace(/\n{3,}/g,'\n\n').trim():'';
@@ -1257,6 +1328,22 @@ function copyMail(btn){
   }
   addBtn.textContent='✓ Sumado';setTimeout(()=>{addBtn.textContent='Actualizar';},1500);
  });
+})();
+/* Espinazo interactivo · cada paso muestra su vista */
+(function(){
+ const strip=document.querySelector('#p-mail .jstrip');
+ if(!strip)return;
+ const steps=[...strip.querySelectorAll('.jstep')];
+ const views=[...document.querySelectorAll('#p-mail .jview')];
+ function show(v){
+  steps.forEach(s=>s.classList.toggle('on',s.dataset.view===v));
+  views.forEach(w=>w.classList.toggle('on',w.dataset.view===v));
+ }
+ steps.forEach(s=>{
+  s.addEventListener('click',()=>show(s.dataset.view));
+  s.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(s.dataset.view);}});
+ });
+ show('1');
 })();
 /* Selector de sector · cambia el gancho "algo de valor"; el correo está cableado para Financiero */
 (function(){
