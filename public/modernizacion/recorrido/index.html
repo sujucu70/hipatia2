@@ -230,6 +230,54 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .at-sources b{color:#46535E;font-weight:600}
 .at-status{font-size:12px;font-weight:600;color:var(--green);margin-bottom:14px;display:flex;align-items:center;gap:7px}
 .at-status::before{content:'✓';width:16px;height:16px;border-radius:50%;background:var(--green);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+/* Estado de cuenta · analizando + aviso honesto */
+.cuenta-loading{display:none;align-items:center;gap:12px;border:1px solid var(--line);border-radius:12px;padding:18px 20px;background:var(--white);color:#46535E;font-size:13.5px;font-weight:600}
+.cuenta-loading b{color:var(--navy)}
+.cuenta-loading .spin{width:18px;height:18px;border-radius:50%;border:2px solid var(--purple-soft);border-top-color:var(--purple);animation:cspin .7s linear infinite;flex-shrink:0}
+@keyframes cspin{to{transform:rotate(360deg)}}
+.cuenta-empty{display:none;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--white)}
+.cuenta-empty .ceh{background:var(--paper);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;align-items:center;gap:11px}
+.cuenta-empty .ceh .ic{width:34px;height:34px;border-radius:8px;background:var(--purple-soft);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.cuenta-empty .ceh b{font-size:14.5px;color:var(--navy)}
+.cuenta-empty .ceb{padding:16px 18px;font-size:13.5px;color:#33404B;line-height:1.6}
+.cuenta-empty .ceb b{color:var(--navy)}
+.cuenta-empty .ceb .rows{margin-top:11px;padding:11px 14px;background:var(--paper);border-radius:8px;font-size:12.5px;color:#46535E;line-height:1.55}
+.cuenta-empty .cea{padding:0 18px 18px}
+.btn-ghost{background:#fff;color:var(--purple);border:1px solid rgba(124,77,188,.4);font-family:inherit;font-size:12.5px;font-weight:700;padding:9px 15px;border-radius:8px;cursor:pointer;transition:background .2s}
+.btn-ghost:hover{background:var(--purple-soft)}
+.sig-note{font-size:11px;color:var(--gray);line-height:1.55;margin-top:8px}
+.scan-note{font-size:11.5px;color:var(--gray);line-height:1.5;margin:0 2px 14px}
+.match{border:1px solid rgba(124,77,188,.3);border-radius:12px;background:var(--purple-soft);padding:14px 18px;margin-bottom:14px}
+.match-h{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:6px}
+.match-b{font-size:13.5px;color:#33404B;line-height:1.55}
+.match-b b{color:var(--navy)}
+.match-note{display:block;color:var(--gray);font-size:11.5px;margin-top:4px}
+.match-link{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:700;color:var(--purple);cursor:pointer}
+.match-link:hover{text-decoration:underline}
+/* Aporte del comercial · texto + archivos */
+.contrib{border:1px dashed rgba(124,77,188,.45);border-radius:12px;background:#fff;padding:16px 18px;margin-bottom:14px}
+.contrib-h{font-size:13px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:8px}
+.contrib-opt{font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);background:var(--purple-soft);padding:2px 7px;border-radius:5px}
+.contrib-sub{font-size:12px;color:#5A6670;line-height:1.5;margin:6px 0 11px}
+.contrib-ta{width:100%;box-sizing:border-box;font-family:inherit;font-size:13px;color:var(--navy);line-height:1.5;border:1px solid var(--line);border-radius:8px;padding:10px 12px;background:var(--paper);resize:vertical}
+.contrib-ta:focus{outline:none;border-color:var(--purple);background:#fff}
+.contrib-files{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.fchip{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:#46535E;background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:4px 9px}
+.fchip em{font-style:normal;font-weight:500;color:var(--gray)}
+.fchip-x{border:none;background:none;color:var(--gray);font-size:15px;line-height:1;cursor:pointer;padding:0 0 0 2px;font-family:inherit}
+.fchip-x:hover{color:var(--navy)}
+.contrib-actions{display:flex;align-items:center;gap:10px;margin-top:12px}
+.contrib-actions .at-btn{margin-left:auto}
+.contrib-filenote{font-size:11px;color:var(--gray);line-height:1.5;margin-top:9px}
+.contrib-out{border:1px solid rgba(58,158,101,.3);background:var(--green-soft);border-radius:10px;padding:12px 15px;margin-top:13px}
+.contrib-out-h{font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin-bottom:6px}
+.contrib-out-note{font-size:13px;color:#27343E;line-height:1.55;white-space:pre-wrap}
+.contrib-out-files{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+.mail-contrib{border:1px solid rgba(124,77,188,.35);background:var(--purple-soft);border-radius:10px;padding:12px 15px;margin-bottom:16px}
+.mail-contrib-h{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);margin-bottom:5px}
+.mail-contrib-b{font-size:13px;color:#27343E;line-height:1.55;white-space:pre-wrap}
+.mail-contrib-b .mail-contrib-files{display:block;margin-top:6px;font-size:11.5px;color:var(--gray);font-weight:500}
+.mail-contrib-foot{font-size:11px;color:#5A6670;margin-top:7px}
 
 /* Correo · editable y copiable */
 .mail-edit-tag{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);background:var(--purple-soft);padding:3px 8px;border-radius:5px;margin-left:auto}
@@ -891,11 +939,12 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
           <div class="acct-tool">
             <div class="at-field">
               <span class="at-ic">🔍</span>
-              <input class="at-input" value="Grupo Lantia" aria-label="Nombre de la cuenta">
-              <button class="at-btn" type="button">Analizar</button>
+              <input class="at-input" id="acct-input" value="Grupo Lantia" aria-label="Nombre de la cuenta" autocomplete="off">
+              <button class="at-btn" type="button" id="acct-btn">Analizar</button>
             </div>
             <div class="at-sources">La IA lee <b>fuentes públicas</b>: web, ofertas de empleo que delatan el stack, prensa, registro mercantil y señales del sector. Cada dato lleva de dónde sale.</div>
           </div>
+          <div id="cuenta-result">
           <div class="at-status">Analizado hace unos segundos · esto es lo que ha encontrado</div>
 
           <div class="scan">
@@ -904,22 +953,66 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
               <div class="src">5 fuentes públicas</div>
             </div>
             <div class="scan-row"><div class="k">Stack y antigüedad</div><div class="v">Núcleo de pólizas en <b>Java sobre un core de ~11 años</b>; sin arquitecto cloud en plantilla.<span style="font-size:10.5px;color:var(--gray)"> · Fuente: ofertas de empleo + su web</span></div></div>
-            <div class="scan-row"><div class="k">Señales de dolor</div><div class="v"><span class="sig">Oferta · mantenimiento PL/SQL</span><span class="sig">Migración "en evaluación" desde 2023</span><span class="sig">Rotación en el core</span><div style="font-size:10.5px;color:var(--gray);margin-top:6px">Fuente · portal de empleo + prensa 2023 + perfiles públicos</div></div></div>
+            <div class="scan-row"><div class="k">Señales de dolor</div><div class="v"><span class="sig">Oferta de empleo · mantenimiento PL/SQL</span><span class="sig">Migración "en evaluación"</span><span class="sig">Rotación en el core</span><div class="sig-note">La oferta es de hace ~3 semanas (alta confianza). La migración sale de prensa de 2023 — verifica si ya la han hecho. La rotación está inferida de las ofertas, no confirmada. Confírmalo antes de soltárselo a un CIO.<br>Fuente · portal de empleo + prensa 2023 + perfiles públicos</div></div></div>
             <div class="scan-row"><div class="k">Exposición regulatoria</div><div class="v">Seguros: sistemas de <b>alto riesgo</b> bajo el AI Act (cumplimiento dic 2027) y resiliencia operativa exigida por <b>DORA</b>. Un core sin documentación auditable deja de ser solo técnico.<span style="font-size:10.5px;color:var(--gray)"> · Fuente: sector + EU AI Act + DORA</span></div></div>
-            <div class="scan-row"><div class="k">Tamaño y sector</div><div class="v">Aseguradora mediana de no-vida, ~600 empleados. La decisión se concentra en CIO y CFO.<span style="font-size:10.5px;color:var(--gray)"> · Fuente: registro mercantil + web</span></div></div>
+            <div class="scan-row"><div class="k">Tamaño y entrada</div><div class="v">Aseguradora mediana de no-vida, ~600 empleados. Deciden CIO y CFO. <b>Punto de entrada probable: Marta Ruiz, Dir. de Sistemas</b> (perfil público en LinkedIn).<span style="font-size:10.5px;color:var(--gray)"> · Fuente: registro mercantil + web + perfiles públicos</span></div></div>
+          </div>
+
+          <div class="scan-note">Esto es solo lo que se ve desde fuera (señal pública). Cruza con el CRM antes de tratarla como cuenta nueva — puede que Entelgy ya trabaje con ellos.</div>
+
+          <div class="contrib">
+            <div class="contrib-h">Lo que tú sabes de esta cuenta <span class="contrib-opt">opcional</span></div>
+            <div class="contrib-sub">Lo de dentro, que la IA no ve: un contacto, un proyecto anterior, en qué punto está su presupuesto. Se suma al brief y al correo.</div>
+            <textarea class="contrib-ta" id="contrib-ta" rows="3" placeholder="Ej.: hablé con su Dir. de Sistemas en un evento en marzo; tienen una migración parada por presupuesto."></textarea>
+            <div class="contrib-files" id="contrib-files"></div>
+            <div class="contrib-actions">
+              <button class="btn-ghost" type="button" id="contrib-attach">📎 Adjuntar archivo</button>
+              <button class="at-btn" type="button" id="contrib-add">Sumar al análisis</button>
+              <input type="file" id="contrib-file-input" multiple hidden>
+            </div>
+            <div class="contrib-filenote" id="contrib-filenote" hidden>El agente leerá el contenido cuando esté conectado. Por ahora se guarda el nombre, no el contenido.</div>
+            <div class="contrib-out" id="contrib-out" hidden>
+              <div class="contrib-out-h">Lo aporta el comercial · no es señal pública</div>
+              <div class="contrib-out-note" id="contrib-out-note"></div>
+              <div class="contrib-out-files" id="contrib-out-files"></div>
+            </div>
+          </div>
+
+          <div class="match">
+            <div class="match-h">Lo que le puedes enseñar de Entelgy</div>
+            <div class="match-b">Mismo patrón: <b>core de seguros en Java, modernizado y financiado desde el propio mantenimiento</b>. El caso de Entelgy que encaja está en el repositorio.<span class="match-note">Caso nombrable pendiente de que Jorge lo confirme.</span></div>
+            <span class="match-link" onclick="go(8)">Ver el caso en el repositorio →</span>
           </div>
 
           <div class="verdict go">
             <div class="vm">✓</div>
-            <div class="vt"><b>Hay recorrido · 3 señales activas</b><p>Stack antiguo, dolor de mantenimiento y exposición regulatoria. Da para abrir conversación esta semana.</p></div>
+            <div class="vt"><b>Hay recorrido · empieza por DORA</b><p>De las tres señales, la que aprieta ya es <b>DORA</b>, en vigor desde enero 2025; el AI Act (dic 2027) refuerza. Ese es el gancho más fuerte de esta cuenta.</p></div>
           </div>
 
-          <div class="bridge">Con esto Ana tiene lo que le hace falta para el primer correo: abre con <b>dos o tres frases que demuestran que ha hecho los deberes</b> y con el ángulo que de verdad mueve a un CIO — <b>cómo financiar la modernización desde lo que ya gastan en mantenimiento, sin pedir partida nueva</b>.</div>
+          <div class="bridge">El ángulo que mueve a un CIO de seguros: <b>financiar la modernización desde lo que ya gastan en mantenimiento, sin pedir partida nueva</b>. El primer paso que le propones es el <b>autodiagnóstico</b> —gratis, le devuelve su número—; de ahí sale el correo del paso siguiente.</div>
+          </div><!-- /#cuenta-result -->
+
+          <div class="cuenta-loading" id="cuenta-loading"><span class="spin"></span><span>Analizando señales públicas de <b id="cuenta-loading-name">la cuenta</b>…</span></div>
+
+          <div class="cuenta-empty" id="cuenta-empty">
+            <div class="ceh"><span class="ic">🔍</span><b>«<span id="cuenta-empty-name">la cuenta</span>» · todavía sin datos en vivo</b></div>
+            <div class="ceb">
+              En este borrador solo <b>Grupo Lantia</b>, la cuenta de ejemplo, trae un escaneo real. El escaneo en vivo —el agente que lee la web, las ofertas de empleo, la prensa y el registro de cualquier empresa— llega en el siguiente paso.
+              <div class="rows">Cuando esté conectado, aquí saldrían las mismas filas para esta cuenta —<b>stack, señales de dolor con su fecha y confianza, exposición regulatoria, tamaño y a quién escribir</b>— más <b>el caso de Entelgy que encaja</b> y su cruce al repositorio. Cada dato con su fuente, y el aviso de cruzarlo con el CRM.</div>
+            </div>
+            <div class="cea"><button class="btn-ghost" type="button" id="cuenta-empty-demo">Ver el ejemplo de Grupo Lantia</button></div>
+          </div>
         </div>
 
         <!-- TRABAJO POR CUENTA · EL MAIL -->
         <div class="panel toolview" id="p-mail">
           <div class="tv-head"><div class="tv-ic">✉️</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Primer contacto <span class="hab">Etapa 1</span></div><div class="atitle" style="font-size:20px">El correo que abre, con el tono que espera un CIO</div></div></div>
+
+          <div class="mail-contrib" id="mail-contrib" hidden>
+            <div class="mail-contrib-h">Tú sabes algo que la IA no ve</div>
+            <div class="mail-contrib-b" id="mail-contrib-b"></div>
+            <div class="mail-contrib-foot">Incorpóralo al correo a tu manera.</div>
+          </div>
 
           <div class="g2">
             <div class="g2-col">
@@ -1062,6 +1155,83 @@ function copyMail(btn){
  const old=btn.innerHTML;btn.innerHTML='✓ Copiado';btn.classList.add('done');
  setTimeout(()=>{btn.innerHTML=old;btn.classList.remove('done');},1600);
 }
+/* Estado de la cuenta · Lantia = ejemplo real · resto = aviso honesto */
+(function(){
+ const input=document.getElementById('acct-input');
+ const btn=document.getElementById('acct-btn');
+ const elResult=document.getElementById('cuenta-result');
+ const elLoading=document.getElementById('cuenta-loading');
+ const elEmpty=document.getElementById('cuenta-empty');
+ const elEmptyName=document.getElementById('cuenta-empty-name');
+ const elLoadName=document.getElementById('cuenta-loading-name');
+ const btnDemo=document.getElementById('cuenta-empty-demo');
+ if(!input||!btn||!elResult||!elLoading||!elEmpty)return;
+ const norm=s=>(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
+ const esLantia=v=>{const x=norm(v);return x==='grupolantia'||x==='lantia';};
+ function show(which){
+  elResult.style.display=which==='result'?'block':'none';
+  elLoading.style.display=which==='loading'?'flex':'none';
+  elEmpty.style.display=which==='empty'?'block':'none';
+ }
+ function analizar(){
+  const v=input.value.trim();
+  if(!v){input.focus();return;}
+  if(elLoadName)elLoadName.textContent=v;
+  show('loading');btn.disabled=true;
+  setTimeout(()=>{
+   btn.disabled=false;
+   if(esLantia(v)){show('result');}
+   else{if(elEmptyName)elEmptyName.textContent=v;show('empty');}
+  },750);
+ }
+ btn.addEventListener('click',analizar);
+ input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();analizar();}});
+ if(btnDemo)btnDemo.addEventListener('click',()=>{input.value='Grupo Lantia';analizar();});
+})();
+/* Aporte del comercial · texto + adjuntos (stub honesto) → brief + correo */
+(function(){
+ const ta=document.getElementById('contrib-ta');
+ const addBtn=document.getElementById('contrib-add');
+ const attachBtn=document.getElementById('contrib-attach');
+ const fileInput=document.getElementById('contrib-file-input');
+ const filesWrap=document.getElementById('contrib-files');
+ const fileNote=document.getElementById('contrib-filenote');
+ const out=document.getElementById('contrib-out');
+ const outNote=document.getElementById('contrib-out-note');
+ const outFiles=document.getElementById('contrib-out-files');
+ const mailBox=document.getElementById('mail-contrib');
+ const mailBody=document.getElementById('mail-contrib-b');
+ if(!ta||!addBtn||!attachBtn||!fileInput)return;
+ let files=[];
+ const esc=s=>(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+ const fmt=b=>b<1024?b+' B':b<1048576?Math.round(b/1024)+' KB':(b/1048576).toFixed(1)+' MB';
+ function chips(wrap,removable){
+  wrap.innerHTML='';
+  files.forEach((f,i)=>{
+   const c=document.createElement('span');c.className='fchip';
+   c.innerHTML='📎 '+esc(f.name)+' <em>'+fmt(f.size)+'</em>';
+   if(removable){const x=document.createElement('button');x.type='button';x.className='fchip-x';x.setAttribute('aria-label','Quitar');x.textContent='×';x.onclick=()=>{files.splice(i,1);chips(filesWrap,true);if(!files.length)fileNote.hidden=true;};c.appendChild(x);}
+   wrap.appendChild(c);
+  });
+ }
+ attachBtn.addEventListener('click',()=>fileInput.click());
+ fileInput.addEventListener('change',()=>{
+  [...fileInput.files].forEach(f=>files.push({name:f.name,size:f.size}));
+  fileInput.value='';chips(filesWrap,true);if(files.length)fileNote.hidden=false;
+ });
+ addBtn.addEventListener('click',()=>{
+  const note=ta.value.trim();
+  if(!note&&!files.length){ta.focus();return;}
+  outNote.textContent=note||'';outNote.style.display=note?'':'none';
+  chips(outFiles,false);out.hidden=false;
+  if(mailBox&&mailBody){
+   let html=note?esc(note):'';
+   if(files.length)html+='<span class="mail-contrib-files">Adjuntos pendientes de que los lea el agente: '+files.map(f=>esc(f.name)).join(', ')+'</span>';
+   mailBody.innerHTML=html;mailBox.hidden=false;
+  }
+  addBtn.textContent='✓ Sumado';setTimeout(()=>{addBtn.textContent='Actualizar';},1500);
+ });
+})();
 go(0);
 </script>
 </body>
