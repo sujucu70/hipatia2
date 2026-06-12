@@ -617,6 +617,89 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .hm-cell{position:relative}
 .hm-ctx{display:block;margin-top:14px;font-size:12px;color:#8DA3B2;text-decoration:none}
 .hm-ctx:hover{color:#5B3A93;text-decoration:underline}
+
+/* ===== Pasada WOW · profundidad, movimiento y acabado ===== */
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{opacity:0;transform:scale(.95) translateY(8px)}100%{opacity:1;transform:none}}
+@keyframes fillw{from{width:0}}
+
+/* atmósfera: el papel deja de ser plano */
+.pmain{background:radial-gradient(760px 420px at 90% -8%,rgba(124,77,188,.08),transparent 62%),var(--paper)}
+
+/* cascada de entrada en cada paso del portal */
+.panel.on>*{animation:rise .5s var(--ease) both}
+.panel.on>*:nth-child(1){animation-delay:.03s}
+.panel.on>*:nth-child(2){animation-delay:.08s}
+.panel.on>*:nth-child(3){animation-delay:.13s}
+.panel.on>*:nth-child(4){animation-delay:.18s}
+.panel.on>*:nth-child(5){animation-delay:.23s}
+.panel.on>*:nth-child(6){animation-delay:.28s}
+.panel.on>*:nth-child(7){animation-delay:.33s}
+.panel.on>*:nth-child(8){animation-delay:.38s}
+.panel.on>*:nth-child(9){animation-delay:.43s}
+.panel.on>*:nth-child(10){animation-delay:.48s}
+.panel.on>*:nth-child(11){animation-delay:.53s}
+.panel.on>*:nth-child(n+12){animation-delay:.58s}
+
+/* la Home y la Etapa 2 también entran por capas, cada vez que vuelves */
+.step.home.on .hm-body>*{animation:rise .55s var(--ease) both}
+.step.home.on .hm-body>*:nth-child(1){animation-delay:.05s}
+.step.home.on .hm-body>*:nth-child(2){animation-delay:.14s}
+.step.home.on .hm-body>*:nth-child(3){animation-delay:.23s}
+.step.home.on .hm-body>*:nth-child(4){animation-delay:.32s}
+.step.home.on .hm-body>*:nth-child(5){animation-delay:.41s}
+.step.etapa2.on .box>*{animation:rise .55s var(--ease) both}
+.step.etapa2.on .box>*:nth-child(1){animation-delay:.05s}
+.step.etapa2.on .box>*:nth-child(2){animation-delay:.14s}
+.step.etapa2.on .box>*:nth-child(3){animation-delay:.23s}
+.step.etapa2.on .box>*:nth-child(4){animation-delay:.32s}
+
+/* títulos de herramienta con degradado navy→morado */
+.atitle{background:linear-gradient(100deg,var(--navy) 35%,#6B3DAA);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* el escaneo se revela fila a fila — el momento demo */
+#cuenta-result .scan-row{animation:rise .4s var(--ease) both}
+#cuenta-result .scan-row:nth-child(2){animation-delay:.18s}
+#cuenta-result .scan-row:nth-child(3){animation-delay:.32s}
+#cuenta-result .scan-row:nth-child(4){animation-delay:.46s}
+#cuenta-result .scan-row:nth-child(5){animation-delay:.60s}
+#cuenta-result .verdict.go{animation:pop .55s .75s var(--ease) both;box-shadow:0 18px 38px -26px rgba(58,158,101,.7)}
+
+/* barras que se llenan: panel del PM, informe y dimensiones */
+.panel.on .dim .db i,.panel.on .acct-row .bar i{animation:fillw .9s .35s var(--ease) both}
+
+/* el anillo del 78 se dibuja de verdad */
+.rep-circle{border:none;position:relative;background:conic-gradient(var(--purple) 0 78%,#EEF0F2 0)}
+.rep-circle::before{content:'';position:absolute;inset:7px;border-radius:50%;background:#fff}
+.rep-circle b,.rep-circle small{position:relative;z-index:1}
+
+/* botones primarios con cuerpo */
+.at-btn,.btn-exam{background:linear-gradient(135deg,#8D5FD0,#6B3DAA);box-shadow:0 12px 26px -14px rgba(124,77,188,.8);transition:transform .18s var(--ease),box-shadow .18s var(--ease)}
+.at-btn:hover,.btn-exam:hover{background:linear-gradient(135deg,#9A6FDB,#7C4DBC);transform:translateY(-1px);box-shadow:0 16px 30px -14px rgba(124,77,188,.9)}
+
+/* la flecha "siguiente" es el botón primario de la demo */
+#next:not(:disabled){background:linear-gradient(135deg,#8D5FD0,#6B3DAA);border-color:transparent;color:#fff;box-shadow:0 12px 26px -12px rgba(124,77,188,.9)}
+#next:not(:disabled):hover{transform:translateY(-1px) scale(1.04)}
+
+/* tarjetas vivas al pasar el cursor */
+.rcard,.pb-card,.notif,.tv-step,.rcase,.fb-box{transition:transform .18s var(--ease),box-shadow .18s var(--ease)}
+.rcard:hover,.pb-card:hover,.notif:hover,.tv-step:hover,.rcase:hover{transform:translateY(-2px);box-shadow:0 14px 30px -22px rgba(5,28,44,.45)}
+.e2{transition:transform .2s var(--ease),border-color .2s var(--ease),box-shadow .2s var(--ease)}
+.e2:hover{transform:translateY(-3px);border-color:rgba(124,77,188,.55);box-shadow:0 24px 50px -30px rgba(124,77,188,.65)}
+
+/* el bucle de la Home con un velo morado */
+.hm-grp.loop{background:linear-gradient(180deg,rgba(124,77,188,.07),#fff 58%)}
+
+/* Etapa 2: doble atmósfera */
+.etapa2{background-image:radial-gradient(900px 520px at 82% -12%,rgba(124,77,188,.24),transparent 60%),radial-gradient(640px 420px at -6% 112%,rgba(181,98,42,.12),transparent 60%)}
+
+/* la ventana de correo parece una app real */
+.mail{box-shadow:0 26px 60px -36px rgba(5,28,44,.65)}
+.mail-bar i{background:#E89A8A}
+.mail-bar i:nth-child(2){background:#E9C98D}
+.mail-bar i:nth-child(3){background:#9FCBAA}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>

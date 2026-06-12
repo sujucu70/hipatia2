@@ -73,6 +73,36 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--paper);c
 .adt-go:disabled{opacity:.6;cursor:default}
 .foot{text-align:center;font-size:11px;color:var(--gray);padding:0 18px 26px}
 @media(max-width:560px){.card{padding:20px 18px}.adt-rscore{flex-direction:column;text-align:center}}
+
+/* ===== Pasada WOW ===== */
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+body{background-image:radial-gradient(700px 420px at 88% -10%,rgba(124,77,188,.10),transparent 60%)}
+.card>*{animation:rise .55s var(--ease) both}
+.card>*:nth-child(1){animation-delay:.04s}
+.card>*:nth-child(2){animation-delay:.12s}
+.card>*:nth-child(3){animation-delay:.20s}
+.card>*:nth-child(4){animation-delay:.28s}
+.card>*:nth-child(5){animation-delay:.36s}
+.adt-q{animation:rise .4s var(--ease) both}
+.adt-opt{animation:rise .4s var(--ease) both;transition:transform .15s var(--ease),border-color .15s,background .15s}
+.adt-opts .adt-opt:nth-child(1){animation-delay:.08s}
+.adt-opts .adt-opt:nth-child(2){animation-delay:.16s}
+.adt-opts .adt-opt:nth-child(3){animation-delay:.24s}
+.adt-opt:hover{transform:translateY(-1px)}
+.adt-go{background:linear-gradient(135deg,#8D5FD0,#6B3DAA);box-shadow:0 12px 26px -14px rgba(124,77,188,.8);transition:transform .18s var(--ease)}
+.adt-go:hover{background:linear-gradient(135deg,#9A6FDB,#7C4DBC);transform:translateY(-1px)}
+#adt-result>*{animation:rise .5s var(--ease) both}
+#adt-result>*:nth-child(1){animation-delay:.05s}
+#adt-result>*:nth-child(2){animation-delay:.13s}
+#adt-result>*:nth-child(3){animation-delay:.21s}
+#adt-result>*:nth-child(4){animation-delay:.29s}
+#adt-result>*:nth-child(5){animation-delay:.37s}
+#adt-result>*:nth-child(6){animation-delay:.45s}
+#adt-result>*:nth-child(n+7){animation-delay:.53s}
+.rep-circle{border:none;position:relative;background:conic-gradient(var(--purple) 0 calc(var(--p,78)*1%),#EEF0F2 0)}
+.rep-circle::before{content:'';position:absolute;inset:7px;border-radius:50%;background:#fff}
+.rep-circle b,.rep-circle small{position:relative;z-index:1}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -185,7 +215,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--paper);c
   const subs={};DIMS.forEach(d=>subs[d]=0);
   Q.forEach((it,i)=>{if(ans[i]>=0)subs[it.dim]+=it.o[ans[i]][1];});
   const eco=subs['Económica'];
-  res.innerHTML='<div class="adt-rscore"><div class="rep-circle"><b>'+score+'</b><small>/ 100</small></div>'
+  res.innerHTML='<div class="adt-rscore"><div class="rep-circle" style="--p:'+score+'"><b>'+score+'</b><small>/ 100</small></div>'
    +'<div><div class="adt-rrisk" style="color:'+rk[2]+'">Exposición · '+rk[0]+'</div>'
    +'<div class="adt-tie" style="margin-top:4px">Riesgo AI Act · '+rk[1]+' · cumplimiento dic 2027 · DORA en resiliencia</div></div></div>'
    +'<div class="adt-rdims">'+DIMS.map(d=>'<span class="adt-rdim">'+d+' · <b>'+lvl(d,subs[d])+'</b></span>').join('')+'</div>'   +'<div class="adt-read"><b>Lectura de tu situación.</b> '+lectura(subs,score)+'</div>'
