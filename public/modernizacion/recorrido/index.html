@@ -807,7 +807,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         <div class="lbl">Profundidad</div>
         <a class="flow" id="f-repo" onclick="go(6)"><span class="fn">6</span> Repositorio</a>
         <div class="div"></div>
-        <div class="lbl">Procesos del área</div>
+        <div class="lbl">Relación con el área</div>
         <a class="flow" id="f-procesos" onclick="go(7)"><span class="fn">7</span> Estar al día</a>
         <div class="div"></div>
         <div class="lbl">Etapa 2 · destino</div>
@@ -986,7 +986,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
         <!-- ESTAR AL DÍA · PROCESOS -->
         <div class="panel doc" id="p-procesos">
-          <div class="repo-head"><div class="slbl" style="margin:0">Estar al día · procesos del área <span class="hab">Etapa 1</span></div><span class="repo-lock">Sobre Microsoft · Outlook + Teams</span></div>
+          <div class="repo-head"><div class="slbl" style="margin:0">Estar al día · relación con el área <span class="hab">Etapa 1</span></div><span class="repo-lock">Sobre Microsoft · Outlook + Teams</span></div>
           <div class="dsub">El bucle en dos sentidos: el PM te avisa de lo nuevo, y tú le devuelves lo que falta. Todo por donde ya trabajáis — correo y Teams. Sin ruido: te llega cuando hay algo que usar, más un resumen del área al mes.</div>
           <div class="g2">
             <div class="g2-col">
@@ -1223,6 +1223,10 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
               <button class="btn-copy" type="button" onclick="copyMail(this)">⧉ Copiar correo</button>
               <div class="mail-editnote"><b>Lo redacta el sistema.</b> Ana lo ajusta y lo envía desde su propio correo.</div>
             </div>
+            <div class="hm-band" style="margin-top:14px">
+              <div class="hm-proc-l"><b>¿No tienes el contacto?</b> Aquí irá la búsqueda de contactos de la cuenta — nombre, cargo y email de la persona a la que escribir. En Entelgy Digital ya se usa una herramienta para esto; la integramos en el recorrido.</div>
+              <span style="font-size:10px;font-weight:800;letter-spacing:.08em;color:var(--copper);border:1px solid var(--copper);border-radius:20px;padding:4px 10px;white-space:nowrap">EN PREPARACIÓN</span>
+            </div>
           </div>
 
           <div class="jview" data-view="3">
@@ -1305,7 +1309,7 @@ const steps=[
  {scene:'portal',phase:'e1',panel:'p-mail',flow:'f-mail',title:'Primer contacto · el mail',lblPhase:'Etapa 1'},
  {scene:'portal',phase:'e1',panel:'p-kit',flow:'f-kit',title:'Kit de visita · preparar la reunión',lblPhase:'Etapa 1'},
  {scene:'portal',phase:'e1',panel:'p-repo',flow:'f-repo',title:'Repositorio de conocimiento',lblPhase:'Etapa 1'},
- {scene:'portal',phase:'e1',panel:'p-procesos',flow:'f-procesos',title:'Estar al día · procesos del área',lblPhase:'Etapa 1'},
+ {scene:'portal',phase:'e1',panel:'p-procesos',flow:'f-procesos',title:'Estar al día · relación con el área',lblPhase:'Etapa 1'},
  {scene:'etapa2',phase:'e2',title:'El recorrido por delante · Fase 2',lblPhase:'Fase 2'}
 ];
 const scenes={home:document.querySelector('.home'),portal:document.querySelector('.portal'),etapa2:document.querySelector('.etapa2')};

@@ -28,15 +28,15 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .ctx{min-height:calc(100vh - 78px);display:flex;flex-direction:column;justify-content:center;
   padding:10px 38px 40px;max-width:1120px;margin:0 auto;width:100%}
 .kick{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9FB3C2;margin-bottom:8px}
-.ctx h1{font-size:clamp(26px,3vw,38px);font-weight:800;line-height:1.1;letter-spacing:-.02em;color:#fff;margin-bottom:12px;max-width:34ch}
+.ctx h1{font-size:clamp(28px,3.4vw,44px);font-weight:800;line-height:1.08;letter-spacing:-.02em;color:#fff;margin-bottom:18px;max-width:26ch}
 .ctx h1 em{color:var(--copper);font-style:normal}
 .ctx .body{display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:start}
-.ctx p{font-size:14.5px;line-height:1.6;color:#AEC0CC;max-width:54ch}
+.ctx p{font-size:16px;line-height:1.65;color:#AEC0CC;max-width:50ch}
 .who{margin-top:12px;display:flex;align-items:center;gap:12px}
 .ava{width:42px;height:42px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:14px}
 .who b{color:#fff;display:block;font-size:15px}
 .who small{color:#8DA3B2;font-size:13px}
-.punch{margin-top:12px;font-size:14.5px;font-weight:700;color:#fff;max-width:50ch;line-height:1.5}
+.punch{margin-top:12px;font-size:17px;font-weight:700;color:#fff;max-width:46ch;line-height:1.55}
 .punch em{color:var(--purple);font-style:normal}
 .qs{display:flex;flex-direction:column;gap:8px;margin-top:16px}
 .qbox{border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:0 10px 10px 0;
@@ -54,7 +54,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .stat b{display:block;font-size:24px;font-weight:800;color:var(--copper);letter-spacing:-.02em;line-height:1.1}
 .stat span{display:block;font-size:12px;color:#AEC0CC;line-height:1.45;margin-top:4px}
 .qwho{display:block;font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#7E93A2;margin-top:6px}
-.go-tobe{margin-top:22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.go-tobe{margin-top:30px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .btn-tobe{display:inline-flex;align-items:center;gap:9px;background:var(--purple);color:#fff;font-weight:700;
   font-size:14.5px;border:none;border-radius:10px;padding:13px 22px;cursor:pointer;text-decoration:none;
   font-family:inherit;transition:all .18s var(--ease);box-shadow:0 18px 40px -22px rgba(124,77,188,.9)}
@@ -112,30 +112,19 @@ body{background-image:radial-gradient(900px 520px at 82% -12%,rgba(124,77,188,.2
 
 <!-- TIEMPO 1 · EL PUNTO DE PARTIDA -->
 <section class="ctx" id="contexto">
-  <div class="kick">El punto de partida</div>
-  <h1>Hay material de sobra, y muy bueno. Aun así, <em>nueve de cada diez veces</em> no se abre.</h1>
+  <div class="kick">Hipatia · de repositorio a herramienta</div>
+  <h1>Convertir el repositorio actual en una <em>herramienta de venta</em> de verdad.</h1>
   <div class="body">
     <div>
-      <p>Ana tiene una oportunidad en Grupo Lantia y abre el portal. El área de Modernización tiene de todo, y bueno: el vídeo del responsable, know-how interno, casos reales, fichas comerciales. Y ahí está el problema — hay tanto que, para esta llamada concreta, no sabe por dónde empezar. Buscar cuesta, la reunión es mañana, y lo más cómodo acaba siendo tirar de lo de siempre.</p>
-      <p style="margin-top:14px">Al otro lado, el responsable del área publica y mejora ese material — y recibe silencio. No sabe qué se usa, qué funciona en una reunión ni qué falta. Sin esa señal, ayudar al comercial es ir a ciegas.</p>
-      <div class="stats">
-        <div class="stat"><b>~90%</b><span>de las veces, el material se queda sin abrir</span></div>
-        <div class="stat"><b>0</b><span>señales de vuelta al área: qué se usa, qué ayuda, qué falta</span></div>
-      </div>
-      <div class="who"><div class="ava">AP</div><div><b>Ana Pérez</b><small>Comercial · cuenta Grupo Lantia</small></div></div>
-      <div class="punch">Este proyecto va de una cosa: <em>que al comercial le compense entrar</em>. Un recorrido con un punto de entrada claro y un agente en cada parada — y, de vuelta, la señal que el área necesita para mejorar cada día.</div>
+      <p>Hipatia hoy tiene material de sobra, y bueno. El problema es cómo llega al comercial: como un Quijote entregado por capítulos sueltos, grapados y desordenados encima de la mesa. Quien entra se abruma — y acaba tirando de lo de siempre.</p>
+      <p class="punch" style="margin-top:18px">El to-be es un recorrido. El comercial entra sin conocer el área y sale <em>sabiendo, con leads, con acciones y con seguridad</em> — con un agente que trabaja por él en cada parada.</p>
     </div>
     <div>
       <div class="caps">
         <figure class="cap"><img src="/assets/asis-hipatia-1.jpg" alt="Hipatia hoy · vídeos y know-how interno del área de Modernización"><div class="cap-fade"></div></figure>
         <figure class="cap"><img src="/assets/asis-hipatia-2.jpg" alt="Hipatia hoy · recursos comerciales y propuesta de email del área de Modernización"><div class="cap-fade"></div></figure>
       </div>
-      <div class="caps-note">Hipatia hoy · el área de Modernización: vídeos, know-how, casos, recursos comerciales. Material de sobra. Lo que no hay es un recorrido.</div>
-      <div class="qs">
-        <div class="qbox">"Seguro que está… pero no tengo veinte minutos para buscarlo."<span class="qwho">Ana · comercial</span></div>
-        <div class="qbox">"¿Qué abro para esta llamada, exactamente?"<span class="qwho">Ana · comercial</span></div>
-        <div class="qbox">"Publico material y no sé si alguien lo usa, ni si ayuda."<span class="qwho">El responsable del área</span></div>
-      </div>
+      <div class="caps-note">Hipatia hoy · el área de Modernización: todo el material está. Lo que no hay es orden ni recorrido.</div>
     </div>
   </div>
   <div class="go-tobe">
