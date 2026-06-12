@@ -481,6 +481,12 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .gen-auto{margin-left:auto;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);background:#fff;border:1px solid rgba(124,77,188,.3);padding:3px 9px;border-radius:6px}
 .gen-body{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:18px;align-items:center}
 .gen-note{font-size:13px;color:#33404B;line-height:1.55}.gen-note b{color:var(--navy)}
+.kit-io{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px}
+.kit-in{font-size:12px;color:#33404B;background:#fff;border:1px solid rgba(124,77,188,.3);border-radius:8px;padding:5px 10px}
+.kit-in b{color:var(--navy)}
+.kit-arr{color:var(--purple);font-weight:700}
+.kit-out{font-size:12px;color:#5B3A93;font-weight:600}
+.kit-int{margin-top:10px;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#7E93A2}
 .urlrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin:12px 0}
 .urlrow-url{font-size:13px;color:#5A6670;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:6px 14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:240px}
 .urlrow-url b{color:var(--purple)}
@@ -556,6 +562,16 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .mt{display:inline-block;font-size:9.5px;font-weight:700;border-radius:5px;padding:1px 6px;white-space:nowrap}
 .mt.sm{color:#7A5C2E;background:#FBF1DC;border:1px solid #E7D3A8}
 .mt.ag{color:var(--purple);background:var(--purple-soft);border:1px solid rgba(124,77,188,.3)}
+.rcases{margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.rcases-h{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.rcases-h h4{font-size:14.5px;font-weight:800;color:var(--navy);margin:0;flex:1}
+.rcases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.rcase{border:1px solid var(--line);border-radius:9px;background:var(--paper);padding:10px 12px}
+.rcase>b{font-size:13px;color:var(--navy);display:block}
+.rc-sec{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#7E93A2;display:block;margin:2px 0 6px}
+.rc-res{font-size:12px;color:#33404B;line-height:1.4}
+.rc-res b{color:var(--purple)}
+@media(max-width:900px){.rcases-grid{grid-template-columns:1fr 1fr}}
 .xref{color:var(--purple);font-weight:700;cursor:pointer;font-size:11.5px}
 .xref:hover{text-decoration:underline}
 /* ===== Procesos · Microsoft ===== */
@@ -576,56 +592,19 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .hm-proc-l{font-size:13px;color:#5A6670}.hm-proc-l b{color:var(--navy)}
 .hm-proc-go{border:1px solid var(--purple);background:var(--purple-soft);color:var(--purple);font-weight:700;font-size:12.5px;border-radius:8px;padding:8px 14px;cursor:pointer;font-family:inherit;white-space:nowrap}
 .hm-proc-go:hover{background:var(--purple);color:#fff}
+.hm-ag{position:absolute;top:10px;right:10px;font-size:9.5px;font-weight:700;letter-spacing:.04em;color:#5B3A93;background:var(--purple-soft,rgba(124,77,188,.14));border:1px solid rgba(124,77,188,.3);border-radius:20px;padding:2px 8px}
+.hm-cell{position:relative}
+.hm-ctx{display:block;margin-top:14px;font-size:12px;color:#8DA3B2;text-decoration:none}
+.hm-ctx:hover{color:#5B3A93;text-decoration:underline}
 </style>
 </head>
 <body>
 
 <div class="phase">
-  <span id="ph-asis">As-is</span><span id="ph-e1">Etapa 1</span><span id="ph-e2">Etapa 2</span>
+  <span id="ph-e1">Etapa 1</span><span id="ph-e2">Etapa 2</span>
 </div>
 
 <div class="stage">
-
-  <!-- STEP 1 · AS-IS -->
-  <section class="step asis">
-    <div class="box">
-      <div>
-        <div class="kick">Hoy · el punto de partida</div>
-        <h1>Hay mucho material. Saber cuál sirve para esta llamada es otra historia.</h1>
-        <p>Ana tiene una oportunidad en Grupo Lantia y abre el portal. Hay vídeos, decks, fichas, casos con cliente real: mucho, repartido por nueve áreas y a distintas velocidades. Parte sirve para vender; parte es técnica, pensada para una sala de preventa. Y de las soluciones más nuevas, casi no hay material aún. Nada le dice cuál de todo eso sacar delante del cliente.</p>
-        <div class="who"><div class="ava">AP</div><div><b>Ana Pérez</b><small>Comercial · cuenta Grupo Lantia</small></div></div>
-        <div class="cap" style="margin-top:20px">Hay material muy bueno. También lo hay obsoleto, y de las soluciones más nuevas —las más diferenciadoras— casi no hay nada todavía. Entre todo eso, Ana no distingue rápido qué sirve y acaba tirando de lo genérico.</div>
-        <div class="punch">Por eso el proyecto <em>sí añade material nuevo</em> —el de las soluciones más recientes—, además de ordenar lo que ya hay y orientar al comercial sobre qué usar con cada cliente.</div>
-      </div>
-      <div>
-        <div class="repo-mock">
-          <div class="rm-head"><span class="t">Portal actual · Modernización</span><span class="c">9 áreas · 53 páginas</span></div>
-          <div class="rm-row"><div class="rm-ic vid"></div><div class="nm">Vídeo del servicio · 1 min<small>lo presenta el responsable del área</small></div><span class="rm-tag apt">útil</span></div>
-          <div class="rm-row"><div class="rm-ic doc"></div><div class="nm">Deck de capacidades<small>cuenta qué es el servicio, no qué le duele al cliente</small></div></div>
-          <div class="rm-row"><div class="rm-ic doc"></div><div class="nm">Arquitectura de referencia<small>denso, escrito para una sala técnica</small></div><span class="rm-tag tec">preventa</span></div>
-          <div class="rm-row"><div class="rm-ic doc"></div><div class="nm">Propuesta de valor 2024<small>conviven 2024 y 2026 sin señal de cuál vale</small></div><span class="rm-tag old">¿vigente?</span></div>
-          <div class="rm-row"><div class="rm-ic doc"></div><div class="nm">La Vitrina · 20+ casos con cliente real<small>Santander, Telefónica, UNED… en otra sección del portal</small></div><span class="rm-tag old">aparte</span></div>
-          <div class="rm-row"><div class="rm-ic gap"></div><div class="nm">Soluciones más recientes · IA, SPEC-IA, productos propios<small>lo más diferenciador todavía no tiene material comercial</small></div><span class="rm-tag gap">por crear</span></div>
-          <div class="rm-foot">Material bueno, material viejo y huecos por llenar — todo mezclado en <b>nueve áreas</b>.</div>
-        </div>
-        <div class="qs">
-          <div class="qbox">"¿Cuál de todos abro delante del cliente?"</div>
-          <div class="qbox">"¿Esto vale para el cliente, o es para un técnico?"</div>
-          <div class="qbox">"Y de lo nuevo… ¿por qué no hay nada todavía?"</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STEP 2 · INTRO -->
-  <section class="step journey">
-    <div class="box" style="max-width:920px;display:block">
-      <div class="kick">Lo que viene</div>
-      <h1>A partir de aquí, un <em>mockup en draft</em> de cómo se vería el portal del comercial.</h1>
-      <p style="font-size:16px;color:#AEC0CC;max-width:60ch;margin-top:8px">El to-be del área de Modernización de Aplicaciones. El comercial entra, ve su recorrido completo y va directo al punto donde está. No es la plataforma final: es una maqueta para enseñar la forma y el valor.</p>
-      <div class="intro-tag">BORRADOR · MOCKUP DE TRABAJO</div>
-    </div>
-  </section>
 
   <!-- STEP 3 · HOME DEL PORTAL -->
   <section class="step home">
@@ -656,18 +635,18 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="hm-grp">
               <div class="hm-gl">Entrada · una vez</div>
               <div class="hm-cells">
-                <div class="hm-cell" onclick="go(3)"><div class="hm-ic">①</div><h3>Habilitación</h3><p>Lee la tarjeta del área y 5 preguntas. Desbloquea el área.</p><span class="hm-st ok">✓ Habilitada</span></div>
+                <div class="hm-cell" onclick="go(1)"><div class="hm-ic">1·2</div><h3>Tarjeta + Habilitación</h3><p>Lee la tarjeta del área y responde 5 preguntas. Te abre el área.</p><span class="hm-st ok">✓ Habilitada</span></div>
               </div>
             </div>
             <div class="hm-arr">→</div>
             <div class="hm-grp loop">
-              <div class="hm-gl">Por cada cuenta · el día a día</div>
+              <div class="hm-gl">Por cada cuenta · un agente en cada parada</div>
               <div class="hm-cells">
-                <div class="hm-cell" onclick="go(5)"><div class="hm-ic">②</div><h3>Mirar la cuenta</h3><p>La IA analiza la cuenta y dice si hay recorrido.</p><span class="hm-st">1 cuenta abierta</span></div>
+                <div class="hm-cell" onclick="go(3)"><div class="hm-ic">3</div><h3>Mirar la cuenta</h3><p>Un agente analiza la cuenta y te dice si hay recorrido.</p><span class="hm-st">1 cuenta abierta</span><span class="hm-ag">🤖 agente</span></div>
                 <div class="hm-arr sm">→</div>
-                <div class="hm-cell" onclick="go(6)"><div class="hm-ic">③</div><h3>Primer contacto</h3><p>El correo de apertura y el enlace de autodiagnóstico.</p><span class="hm-st">borrador listo</span></div>
+                <div class="hm-cell" onclick="go(4)"><div class="hm-ic">4</div><h3>Primer contacto</h3><p>Un agente te escribe el correo de apertura con el enlace de autodiagnóstico.</p><span class="hm-st">borrador listo</span><span class="hm-ag">🤖 agente</span></div>
                 <div class="hm-arr sm">→</div>
-                <div class="hm-cell" onclick="go(7)"><div class="hm-ic">④</div><h3>Preparar la visita</h3><p>Pitch por rol, objeciones y referencias para la reunión.</p><span class="hm-st dash">—</span></div>
+                <div class="hm-cell" onclick="go(5)"><div class="hm-ic">5</div><h3>Preparar la visita</h3><p>Un agente te arma el argumento: pitch por rol, objeciones y referencias.</p><span class="hm-st dash">—</span><span class="hm-ag">🤖 agente</span></div>
               </div>
               <div class="hm-loopnote">↻ se repite por cada cuenta que trabajas</div>
             </div>
@@ -675,7 +654,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="hm-grp">
               <div class="hm-gl">Profundidad</div>
               <div class="hm-cells">
-                <div class="hm-cell" onclick="go(8)"><div class="hm-ic">↗</div><h3>Repositorio</h3><p>Decks ejecutivos, mercado, dolores y técnica.</p><span class="hm-st">4 bloques</span></div>
+                <div class="hm-cell" onclick="go(6)"><div class="hm-ic">6</div><h3>Repositorio</h3><p>Decks ejecutivos, mercado, dolores y técnica.</p><span class="hm-st">4 bloques</span></div>
               </div>
             </div>
           </div>
@@ -683,13 +662,15 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
         <div class="hm-proc">
           <div class="hm-proc-l"><b>Estar al día.</b> El PM te avisa de lo nuevo y tú le mandas feedback — por correo y Teams.</div>
-          <button class="hm-proc-go" onclick="go(9)">Abrir →</button>
+          <button class="hm-proc-go" onclick="go(7)">Abrir →</button>
         </div>
 
         <div class="hm-band">
           <div class="hm-bt"><b>Tus cuentas · lo que el sistema te sugiere.</b> Hoy vacío. Aquí el escáner pondrá solo las cuentas con un dolor activo esta semana.</div>
           <span class="hm-tag">Fase 2</span>
         </div>
+
+        <a class="hm-ctx" href="/#contexto">¿De dónde viene esto? · el punto de partida, en la portada →</a>
       </div>
     </div>
   </section>
@@ -708,44 +689,26 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
     </div>
     <div class="cols">
       <aside class="sb">
-        <a class="flow" onclick="go(2)"><span class="fn">⌂</span> Home del área</a>
+        <a class="flow" onclick="go(0)"><span class="fn">⌂</span> Home del área</a>
         <div class="div"></div>
         <div class="lbl">Entrada al área</div>
-        <a class="flow" id="f-tarjeta" onclick="go(3)"><span class="fn">1</span> Tarjeta de entrada</a>
-        <a class="flow" id="f-readiness" onclick="go(4)"><span class="fn">2</span> Habilitación</a>
+        <a class="flow" id="f-tarjeta" onclick="go(1)"><span class="fn">1</span> Tarjeta de entrada</a>
+        <a class="flow" id="f-readiness" onclick="go(2)"><span class="fn">2</span> Habilitación</a>
         <div class="div"></div>
         <div class="lbl">Trabajo por cuenta</div>
-        <a class="flow" id="f-cuenta" onclick="go(5)"><span class="fn">3</span> Estado de la cuenta</a>
-        <a class="flow" id="f-mail" onclick="go(6)"><span class="fn">4</span> Primer contacto · el mail</a>
-        <a class="flow" id="f-kit" onclick="go(7)"><span class="fn">5</span> Kit de visita</a>
-        <a class="flow" id="f-repo" onclick="go(8)"><span class="fn">6</span> Repositorio</a>
-        <a class="flow" id="f-procesos" onclick="go(9)"><span class="fn">7</span> Estar al día</a>
+        <a class="flow" id="f-cuenta" onclick="go(3)"><span class="fn">3</span> Estado de la cuenta</a>
+        <a class="flow" id="f-mail" onclick="go(4)"><span class="fn">4</span> Primer contacto · el mail</a>
+        <a class="flow" id="f-kit" onclick="go(5)"><span class="fn">5</span> Kit de visita</a>
+        <a class="flow" id="f-repo" onclick="go(6)"><span class="fn">6</span> Repositorio</a>
+        <a class="flow" id="f-procesos" onclick="go(7)"><span class="fn">7</span> Estar al día</a>
         <div class="div"></div>
         <div class="lbl">Etapa 2 · destino</div>
-        <a class="flow dest" id="f-e2" onclick="go(10)"><span class="fn">→</span> El sistema se anticipa</a>
+        <a class="flow dest" id="f-e2" onclick="go(8)"><span class="fn">→</span> El sistema se anticipa</a>
       </aside>
 
       <div class="pmain">
         <div class="ahd">
           <div class="crumb">Hipatia → Modernización de Aplicaciones</div>
-        </div>
-
-        <!-- OVERVIEW -->
-        <div class="panel doc" id="p-overview">
-          <div class="slbl">Tu área · cómo está ordenada</div>
-          <div class="dsub">Dos bloques: lo que haces una vez para entrar al área, y lo que repites cada vez que trabajas una cuenta.</div>
-          <div class="ov-doors">
-            <div class="ov-door"><div class="mo">Entrada · una vez</div><h4>Tarjeta + Habilitación</h4><p>Lees la tarjeta del área y te habilitas. A partir de ahí, el área es tuya.</p></div>
-            <div class="ov-door"><div class="mo">Por cuenta</div><h4>Estado de la cuenta · el mail</h4><p>Le preguntas a la IA por la cuenta y, con eso, escribes el primer correo con algo de valor.</p></div>
-            <div class="ov-door"><div class="mo">Por cuenta</div><h4>Kit de visita · Repositorio</h4><p>Preparas la reunión con el resultado del cliente. El repositorio queda para preventa.</p></div>
-          </div>
-          <div class="ov-tools">
-            <div class="tl">Lo que mandas al cliente, no lo que lees</div>
-            <div class="tr">
-              <div class="ti"><b>Autodiagnóstico</b>Un enlace; el cliente se cualifica solo y vuelve con un score.</div>
-              <div class="ti"><b>Estado de la cuenta</b>Le preguntas a la IA por una cuenta. Etapa 1, señales públicas.</div>
-            </div>
-          </div>
         </div>
 
         <!-- PUERTA 1 · TARJETA -->
@@ -802,15 +765,27 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
           <!-- ACCIONES -->
           <div class="tcard-actions" style="margin-top:24px">
-            <button class="btn-exam" onclick="go(4)">Habilitarme · empezar el examen</button>
-            <button class="btn-link" onclick="go(5)">Empezar con una cuenta →</button>
+            <button class="btn-exam" onclick="go(2)">Habilitarme · empezar el examen</button>
+            <button class="btn-link" onclick="go(3)">Empezar con una cuenta →</button>
           </div>
         </div>
 
         <!-- TRABAJO POR CUENTA · KIT DE VISITA -->
         <div class="panel doc" id="p-kit">
-          <div class="slbl">Kit de visita · preparar la reunión <span class="hab" style="margin-left:6px">Etapa 1</span></div>
+          <div class="tv-head"><div class="tv-ic">🎯</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Kit de visita <span class="hab">Etapa 1</span> <span class="mt ag">🤖 agente</span></div><div class="atitle" style="font-size:20px">El argumento para la reunión, armado por el agente</div></div></div>
           <div class="dsub">Llegas con la cuenta mirada y el cliente ya cualificado. Aquí está lo que necesitas para la reunión, no para encontrarla.</div>
+
+          <div class="genrow">
+            <div class="gen-head"><b>El agente de preparación de visita</b><span class="gen-auto">⚙ Ya existe en Entelgy</span></div>
+            <div class="gen-note">Entelgy ya tiene un agente que prepara visitas — lo construyó el equipo de Digital Change y funciona hoy. Le das dos cosas, <b>la cuenta y el ámbito</b>, y te devuelve el argumento y la preparación de la reunión. El Kit lo trae al recorrido tal cual, sin construirlo de nuevo.</div>
+            <div class="kit-io">
+              <span class="kit-in">Cuenta · <b>Grupo Lantia</b></span>
+              <span class="kit-in">Ámbito · <b>Modernización del core de pólizas</b></span>
+              <span class="kit-arr">→</span>
+              <span class="kit-out">Lo que ves abajo: pitch por rol, objeciones, preguntas y referencias</span>
+            </div>
+            <div class="kit-int">Integración en el portal: en curso · Etapa 1</div>
+          </div>
 
           <div class="kit-input">
             <div class="sc">78</div>
@@ -831,7 +806,8 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
               <h4>Objeciones · una muestra</h4>
               <div class="obj"><b>"Ya tenemos proveedor de desarrollo."</b><p>No pedimos cambiarlo. Complementamos en la pieza que más duele, con métricas auditables. ¿Tu proveedor puede decirte qué productividad entregó el mes pasado, certificada por un tercero?</p></div>
               <div class="obj"><b>"No vemos urgencia ahora mismo."</b><p>La deuda técnica crece sola (Gartner: 20–40% del valor de los activos). Y el AI Act obliga en sistemas de alto riesgo en diciembre de 2027.</p></div>
-              <span class="pb-more" onclick="go(8)">+ 6 objeciones más en el Repositorio →</span>
+              <div class="obj"><b>"Esto nos lo hace cualquier proveedor."</b><p>Pídeles que firmen lo que firmamos nosotros: reinvertir la eficiencia recuperada en el propio mantenimiento, sin subir el presupuesto, con la productividad medida por un tercero (Foreworth). Esa firma no la encuentras en otra propuesta.</p></div>
+              <span class="pb-more" onclick="go(6)">+ objeciones con respuesta en el Repositorio →</span>
             </div>
             <div class="pb-card" style="margin:0">
               <h4>Si quieres confirmar que hay proyecto, en la conversación</h4>
@@ -845,11 +821,11 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="pb-card" style="margin:0">
               <h4>Referencias · 3 destacadas</h4>
               <ul class="pb-list">
-                <li><b>UNED</b> — migración PL/SQL → Java con IA, conocimiento en manos del cliente.</li>
-                <li><b>REA</b> — IA en producción desde hace +4 años. Para escépticos.</li>
-                <li><b>H10</b> — el assessment como primer contrato y base de la decisión.</li>
+                <li><b>Nasertic</b> — una migración estimada en 9 meses, entregada en 3.</li>
+                <li><b>UNED</b> — migración PL/SQL → Java con IA · −30% de esfuerzo.</li>
+                <li><b>H10</b> — el assessment como primer contrato · −90% del tiempo de documentación.</li>
               </ul>
-              <span class="pb-more" onclick="go(8)">Ver todos los casos y su contexto en el Repositorio →</span>
+              <span class="pb-more" onclick="go(6)">Ver todos los casos y su contexto en el Repositorio →</span>
               <div class="warn">⚠ Confirma con Jorge qué nombres son mencionables antes de cada reunión.</div>
             </div>
           </div>
@@ -874,24 +850,36 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
           <div class="pista">
             <div class="pista-h cliente"><span class="pista-t">Para usar con cliente · por momento del ciclo</span><span class="pista-tag ok">Sale al cliente</span></div>
             <div class="repo-grid">
-              <div class="rcard"><div class="ty">Conversación · primer contacto</div><h4>Correo de apertura + autodiagnóstico</h4><p>Lo genera la herramienta del recorrido. <span class="xref" onclick="go(6)">→ ir a la herramienta</span> <span class="mt ag">🤖 agente</span></p></div>
+              <div class="rcard"><div class="ty">Conversación · primer contacto</div><h4>Correo de apertura + autodiagnóstico</h4><p>Lo genera la herramienta del recorrido. <span class="xref" onclick="go(4)">→ ir a la herramienta</span> <span class="mt ag">🤖 agente</span></p></div>
               <div class="rcard"><div class="ty">Reunión introductoria</div><h4>Deck ejecutivo C-Suite + one-pager</h4><p>ROI, coste de la inacción y caso de inversión para Dirección. <span class="mt sm">✍️ SM</span></p></div>
-              <div class="rcard"><div class="ty">Reunión avanzada</div><h4>Casos de éxito de modernización</h4><p>Los casos referenciables del área, con su resultado. <b>Imprescindibles.</b> <span class="mt sm">✍️ SM</span></p></div>
               <div class="rcard"><div class="ty">Reunión avanzada</div><h4>Documentación técnica + business case</h4><p>Arquitecturas de referencia y el número de la deuda técnica. <span style="color:var(--copper);font-weight:600">Pendiente de incorporar.</span> <span class="mt sm">✍️ SM</span></p></div>
-              <div class="rcard"><div class="ty">Pitch a medida</div><h4>¿Necesitas un pitch personalizado?</h4><p>No lo guardamos hecho: lo generas en la herramienta de preparar la visita. <span class="xref" onclick="go(7)">→ ir a la herramienta</span> <span class="mt ag">🤖 agente</span></p></div>
+              <div class="rcard"><div class="ty">Pitch a medida</div><h4>¿Necesitas un pitch personalizado?</h4><p>No lo guardamos hecho: lo generas en la herramienta de preparar la visita. <span class="xref" onclick="go(5)">→ ir a la herramienta</span> <span class="mt ag">🤖 agente</span></p></div>
+            </div>
+
+            <div class="rcases">
+              <div class="rcases-h"><span class="ty" style="margin:0">Reunión avanzada · imprescindibles</span><h4>Los casos de modernización, con su resultado</h4><span class="mt sm">✍️ SM</span></div>
+              <div class="rcases-grid">
+                <div class="rcase"><b>Nasertic</b><span class="rc-sec">Sector público · Navarra</span><div class="rc-res">Migración estimada en 9 meses, entregada en <b>3</b></div></div>
+                <div class="rcase"><b>UNED</b><span class="rc-sec">Educación · AAPP</span><div class="rc-res">PL/SQL → Java con IA · <b>−30%</b> de esfuerzo</div></div>
+                <div class="rcase"><b>DGOJ</b><span class="rc-sec">Sector público</span><div class="rc-res"><b>−40/60%</b> en coste de mantenimiento</div></div>
+                <div class="rcase"><b>AESA</b><span class="rc-sec">Sector público · aviación</span><div class="rc-res"><b>+80%</b> de automatización</div></div>
+                <div class="rcase"><b>H10 Hotels</b><span class="rc-sec">Turismo</span><div class="rc-res"><b>−90%</b> del tiempo de documentación</div></div>
+                <div class="rcase"><b>Min. Ciencia · AEI</b><span class="rc-sec">Sector público</span><div class="rc-res"><b>+40%</b> de cumplimiento de SLA</div></div>
+              </div>
+              <div class="warn" style="margin-top:10px">⚠ Antes de nombrar una cuenta fuera, confirma con el PM que es referenciable. Los resultados valen para preparar; el nombre, solo con luz verde.</div>
             </div>
           </div>
         </div>
 
         <!-- ESTAR AL DÍA · PROCESOS -->
         <div class="panel doc" id="p-procesos">
-          <div class="repo-head"><div class="slbl" style="margin:0">Estar al día · procesos del área</div><span class="repo-lock">Sobre Microsoft · Outlook + Teams</span></div>
-          <div class="dsub">El bucle en dos sentidos: el PM te avisa de lo nuevo, y tú le devuelves lo que falta. Todo por donde ya trabajáis — correo y Teams.</div>
+          <div class="repo-head"><div class="slbl" style="margin:0">Estar al día · procesos del área <span class="hab">Etapa 1</span></div><span class="repo-lock">Sobre Microsoft · Outlook + Teams</span></div>
+          <div class="dsub">El bucle en dos sentidos: el PM te avisa de lo nuevo, y tú le devuelves lo que falta. Todo por donde ya trabajáis — correo y Teams. Sin ruido: te llega cuando hay algo que usar, más un resumen del área al mes.</div>
           <div class="g2">
             <div class="g2-col">
               <div class="colhd">📣 De tu PM a ti · novedades</div>
               <p class="proc-note">Cuando el PM publica algo nuevo, sale por <b>los dos canales</b>: un correo de Outlook (le llega a todo el mundo) y un aviso en el <b>canal de Teams</b> del área (para quien lo sigue). Así no depende de estar metido en Teams.</p>
-              <div class="notif"><div class="ni teams">Teams</div><div><h4>Nuevo caso de éxito · Modernización</h4><p>Publicado por Jorge Herrero · hoy · canal "Ciclo de Software"</p></div></div>
+              <div class="notif"><div class="ni teams">Teams</div><div><h4>Seis casos de modernización, ya en el Repositorio</h4><p>Publicado por el PM del área · hoy · canal "Ciclo de Software"</p></div></div>
               <div class="notif"><div class="ni mail">Correo</div><div><h4>Nueva versión del argumentario de objeciones</h4><p>Outlook · a todo el equipo comercial · ayer</p></div></div>
               <div class="notif"><div class="ni teams">Teams</div><div><h4>Actualizado el deck ejecutivo C-Suite</h4><p>Canal "Ciclo de Software" · esta semana</p></div></div>
             </div>
@@ -905,7 +893,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
                   <button class="fb-btn mail">Enviar por correo</button>
                 </div>
               </div>
-              <div class="proc-foot">Botones que abren Teams u Outlook ya rellenados al PM del área. Cierra el bucle que pedía Dirección.</div>
+              <div class="proc-foot">Los botones abren Teams u Outlook ya dirigidos al PM del área. Lo que se incorpora vuelve por las novedades de la izquierda — ves que tu aviso sirvió.</div>
             </div>
           </div>
         </div>
@@ -978,7 +966,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
         <!-- TRABAJO POR CUENTA · ESTADO DE LA CUENTA -->
         <div class="panel toolview" id="p-cuenta">
-          <div class="tv-head"><div class="tv-ic">🔍</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Estado de la cuenta con IA <span class="hab">Etapa 1</span></div><div class="atitle" style="font-size:20px">Lo que sabes de una cuenta antes de escribir nada</div></div></div>
+          <div class="tv-head"><div class="tv-ic">🔍</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Estado de la cuenta <span class="hab">Etapa 1</span> <span class="mt ag">🤖 agente</span></div><div class="atitle" style="font-size:20px">Lo que sabes de una cuenta antes de escribir nada</div></div></div>
 
           <div class="colhd" style="margin-bottom:8px">La herramienta · escribes el nombre, la IA mira por ti</div>
           <div class="acct-tool">
@@ -1026,7 +1014,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
           <div class="match">
             <div class="match-h">Lo que le puedes enseñar de Entelgy</div>
             <div class="match-b">Mismo patrón: <b>core de seguros en Java, modernizado y financiado desde el propio mantenimiento</b>. El caso de Entelgy que encaja está en el repositorio.<span class="match-note">Caso nombrable pendiente de que Jorge lo confirme.</span></div>
-            <span class="match-link" onclick="go(8)">Ver el caso en el repositorio →</span>
+            <span class="match-link" onclick="go(6)">Ver el caso en el repositorio →</span>
           </div>
 
           <div class="verdict go">
@@ -1051,7 +1039,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
         <!-- TRABAJO POR CUENTA · EL MAIL -->
         <div class="panel toolview" id="p-mail">
-          <div class="tv-head"><div class="tv-ic">✉️</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Primer contacto <span class="hab">Etapa 1</span></div><div class="atitle" style="font-size:20px">El correo que abre, con el tono que espera un CIO</div></div></div>
+          <div class="tv-head"><div class="tv-ic">✉️</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Primer contacto <span class="hab">Etapa 1</span> <span class="mt ag">🤖 agente</span></div><div class="atitle" style="font-size:20px">El correo que abre, con el tono que espera un CIO</div></div></div>
 
           <div class="jstrip" role="tablist">
             <div class="jstep on" data-view="1" role="tab" tabindex="0"><span class="jn">1</span><div><b>Del análisis, la herramienta</b><small>El sistema genera el autodiagnóstico y su URL</small></div></div>
@@ -1186,7 +1174,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 </div>
 
 <div class="rnav">
-  <div class="lbl"><span id="nav-title">Hoy · el hueco</span><small id="nav-phase">As-is</small></div>
+  <div class="lbl"><span id="nav-title">El portal del comercial · home</span><small id="nav-phase">Portal</small></div>
   <div class="ctrl">
     <div class="dots" id="dots"></div>
     <span class="ct" id="ct">1 / 11</span>
@@ -1196,8 +1184,6 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
 <script>
 const steps=[
- {scene:'asis',phase:'asis',title:'Hoy · el punto de partida',lblPhase:'As-is'},
- {scene:'journey',phase:'intro',title:'Lo que viene · mockup del to-be',lblPhase:'Intro'},
  {scene:'home',phase:'e1',title:'El portal del comercial · home',lblPhase:'Portal'},
  {scene:'portal',phase:'e1',panel:'p-tarjeta',flow:'f-tarjeta',title:'Tarjeta de entrada',lblPhase:'Etapa 1'},
  {scene:'portal',phase:'e1',panel:'p-readiness',flow:'f-readiness',title:'Habilitación · Readiness',lblPhase:'Etapa 1'},
@@ -1208,8 +1194,8 @@ const steps=[
  {scene:'portal',phase:'e1',panel:'p-procesos',flow:'f-procesos',title:'Estar al día · procesos del área',lblPhase:'Etapa 1'},
  {scene:'etapa2',phase:'e2',title:'El recorrido por delante · Fase 2',lblPhase:'Fase 2'}
 ];
-const scenes={asis:document.querySelector('.asis'),journey:document.querySelector('.journey'),home:document.querySelector('.home'),portal:document.querySelector('.portal'),etapa2:document.querySelector('.etapa2')};
-const ph={asis:document.getElementById('ph-asis'),e1:document.getElementById('ph-e1'),e2:document.getElementById('ph-e2')};
+const scenes={home:document.querySelector('.home'),portal:document.querySelector('.portal'),etapa2:document.querySelector('.etapa2')};
+const ph={e1:document.getElementById('ph-e1'),e2:document.getElementById('ph-e2')};
 const dots=document.getElementById('dots');let cur=0;
 steps.forEach((_,i)=>{const d=document.createElement('i');if(!i)d.className='on';d.onclick=()=>go(i);dots.appendChild(d);});
 function go(n){
