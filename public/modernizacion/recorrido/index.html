@@ -87,7 +87,8 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .sb a.sub{padding-left:30px}
 .sb .div{height:1px;background:var(--line);margin:10px 18px}
 .sb a.tool .d{border-radius:4px;width:7px;height:7px;background:var(--copper)}
-.areas-nav a{white-space:nowrap;cursor:pointer}
+.areas-nav a{white-space:nowrap;cursor:default}
+.area-tab:not(.act){color:rgba(255,255,255,.35)}
 .area-tab.dim{color:rgba(255,255,255,.3)}
 .flow{cursor:pointer}
 .flow .fn{width:22px;height:22px;border-radius:50%;background:#EEF0F2;color:var(--gray);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -99,6 +100,9 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .flow.dest.act{background:#FBF6F0;color:var(--copper);border-left-color:var(--copper)}
 .flow.dest.act .fn{background:var(--copper);color:#fff;border:none}
 .pmain{flex:1;overflow-y:auto;background:var(--paper)}
+.scrollfade{position:sticky;bottom:0;height:0;z-index:5}
+.scrollfade::before{content:'';position:absolute;left:0;right:0;bottom:0;height:46px;background:linear-gradient(to bottom,rgba(247,245,242,0),#F7F5F2 88%);pointer-events:none;opacity:0;transition:opacity .25s}
+.pmain.more .scrollfade::before{opacity:1}
 .ahd{background:var(--white);border-bottom:1px solid var(--line);padding:18px 32px 0}
 .crumb{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gray);margin-bottom:8px}
 .atitle{font-size:24px;font-weight:800;letter-spacing:-.02em;color:var(--navy)}
@@ -1149,11 +1153,11 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
                 <div class="psr"><b>Qué triar primero en el Assessment</b>El core de pólizas: documentación auditable, dependencia de persona clave y coste de evolución. De ahí sale el business case.</div>
               </div>
             </div>
+            <div class="bridge" style="margin:0">Con el lead cualificado, Ana propone el <b>Assessment de modernización</b> de dos semanas. Son dos cosas distintas: el autodiagnóstico es gratis y cualifica; el Assessment es de pago y es el primer contrato.</div>
           </div>
-
-          <div class="bridge">Con el lead cualificado, Ana propone el <b>Assessment de modernización</b> de dos semanas. Son dos cosas distintas: el autodiagnóstico es gratis y cualifica; el Assessment es de pago y es el primer contrato.</div>
         </div>
 
+        <div class="scrollfade"></div>
       </div>
     </div>
   </div>
@@ -1177,7 +1181,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
   <div class="lbl"><span id="nav-title">El portal del comercial · home</span><small id="nav-phase">Portal</small></div>
   <div class="ctrl">
     <div class="dots" id="dots"></div>
-    <span class="ct" id="ct">1 / 11</span>
+    <span class="ct" id="ct">1 / 9</span>
     <button id="prev">←</button><button id="next">→</button>
   </div>
 </div>
@@ -1207,6 +1211,8 @@ function go(n){
   document.querySelectorAll('.flow').forEach(f=>f.classList.remove('act'));
   if(s.flow)document.getElementById(s.flow).classList.add('act');
  }
+ const pm=document.querySelector('.pmain');if(pm){pm.scrollTop=0;updFade();}
+ document.querySelector('.phase').style.display=(s.scene==='etapa2')?'flex':'none';
  Object.values(ph).forEach(p=>p.classList.remove('act'));if(ph[s.phase])ph[s.phase].classList.add('act');
  document.getElementById('nav-title').textContent=s.title;
  document.getElementById('nav-phase').textContent=s.lblPhase;
@@ -1215,6 +1221,12 @@ function go(n){
  document.getElementById('next').disabled=cur===steps.length-1;
  [...dots.children].forEach((d,i)=>d.classList.toggle('on',i===cur));
 }
+function updFade(){
+ const pm=document.querySelector('.pmain');if(!pm)return;
+ pm.classList.toggle('more',pm.scrollHeight-pm.scrollTop-pm.clientHeight>12);
+}
+document.querySelector('.pmain').addEventListener('scroll',updFade);
+window.addEventListener('resize',updFade);
 document.getElementById('prev').onclick=()=>go(cur-1);
 document.getElementById('next').onclick=()=>go(cur+1);
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
