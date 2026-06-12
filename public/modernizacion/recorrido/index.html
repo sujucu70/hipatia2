@@ -558,6 +558,12 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .pista-t{font-size:13px;font-weight:800;color:var(--navy)}
 .pista-tag{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#8A6D3B;background:#FBF1DC;border:1px solid #E7D3A8;border-radius:20px;padding:3px 9px;white-space:nowrap}
 .pista-tag.ok{color:var(--green);background:#fff;border-color:rgba(58,158,101,.4)}
+.repo-mig{margin-top:10px;font-size:12.5px;color:#33404B;line-height:1.55;background:var(--white);border:1px dashed var(--line);border-radius:8px;padding:10px 14px}
+.repo-mig b{color:var(--navy)}
+.vid-strip{display:flex;gap:12px;align-items:center;background:var(--navy);color:#E8EDF2;border-radius:10px;padding:12px 16px;margin:14px 0 4px;font-size:13.5px;line-height:1.5}
+.vid-strip b{color:#fff}
+.vid-ic{width:34px;height:34px;border-radius:50%;background:var(--purple);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.vid-src{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#9DB2C4;white-space:nowrap;flex-shrink:0}
 .repo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
 .rcard{border:1px solid var(--line);border-radius:9px;background:var(--white);padding:11px 12px}
 .rcard .ty{font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gray);margin-bottom:3px}
@@ -719,6 +725,9 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         <div class="panel doc" id="p-tarjeta">
           <div class="slbl">Tarjeta de entrada · 2 minutos <span class="hab" style="margin-left:6px">Etapa 1</span></div>
 
+          <!-- VÍDEO DEL ÁREA · pieza real del Hipatia actual -->
+          <div class="vid-strip"><span class="vid-ic">▶</span><div><b>Modernización de aplicaciones en 1 minuto</b> — el vídeo del área (1:58). Si vas con prisa, empieza por aquí; la tarjeta amplía lo que cuenta.</div><span class="vid-src">Ya existe · en Hipatia hoy</span></div>
+
           <!-- ¿ES TU CUENTA? -->
           <div class="colhd" style="margin:16px 0 9px">¿Es tu cuenta?</div>
           <div class="orient" style="margin:0">
@@ -833,6 +842,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
               <div class="warn">⚠ Confirma con Jorge qué nombres son mencionables antes de cada reunión.</div>
             </div>
           </div>
+          <div class="proc-foot" style="margin-top:12px">🎬 Para entrenar la reunión antes de tenerla: el vídeo <b>ROL-PLAY Servicios AM</b> (oct 2025), en el Repositorio — una visita simulada, con el diálogo completo.</div>
         </div>
 
         <!-- PUERTA 3 · REPOSITORIO -->
@@ -843,20 +853,21 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
           <div class="pista">
             <div class="pista-h interno"><span class="pista-t">Para conocer · uso interno</span><span class="pista-tag">No sale al cliente</span></div>
             <div class="repo-grid">
-              <div class="rcard"><div class="ty">Propuesta de valor</div><h4>Qué vende el área y por qué Entelgy</h4><p>El diferenciador, el encuadre y el cierre, para tenerlo claro tú. <span class="mt sm">✍️ SM</span></p></div>
+              <div class="rcard"><div class="ty">Propuesta de valor</div><h4>Qué vende el área y por qué Entelgy</h4><p>El diferenciador, el encuadre y el cierre, para tenerlo claro tú. Pieza: <b>Propuesta de Valor SW Engineering</b> (nov 25). <span class="mt sm">✍️ SM</span></p></div>
               <div class="rcard"><div class="ty">Cómo abordar al cliente</div><h4>Guía de diálogo · qué preguntar</h4><p>Incluye cómo sacar qué partidas presupuestarias tiene hoy y proponer desde ahí. <b>Interno: nunca en la presentación.</b> <span class="mt sm">✍️ SM</span></p></div>
               <div class="rcard"><div class="ty">Mercado y competencia</div><h4>Benchmark + mercado español</h4><p>Frente a Accenture, Capgemini, Minsait, Globant/EPAM. <span class="mt sm">✍️ SM</span></p></div>
               <div class="rcard"><div class="ty">Territorio</div><h4>Mapa de dolores del sector</h4><p>Dolores por familia, con impacto en OPEX/CAPEX y urgencia. <span class="mt sm">✍️ SM</span></p></div>
               <div class="rcard"><div class="ty">Argumentario</div><h4>Objeciones y respuestas</h4><p>Las objeciones frecuentes con su respuesta lista. <span class="mt sm">✍️ SM</span></p></div>
             </div>
+            <div class="repo-mig">Del Hipatia actual ya hay piezas con sitio aquí: <b>Iniciativas IA en SW 2025</b> (dic 25) · <b>Sales Readiness IA</b> (may 25) · <b>ROL-PLAY Servicios AM</b> (vídeo, oct 25) · <b>Corner WK · caso de éxito</b> (2023 — confirmar referenciabilidad antes de usarla). Lo antiguo (la sesión de 2022, los vídeos sin etiquetar) va al Histórico, fuera del recorrido.</div>
           </div>
 
           <div class="pista">
             <div class="pista-h cliente"><span class="pista-t">Para usar con cliente · por momento del ciclo</span><span class="pista-tag ok">Sale al cliente</span></div>
             <div class="repo-grid">
               <div class="rcard"><div class="ty">Conversación · primer contacto</div><h4>Correo de apertura + autodiagnóstico</h4><p>Lo genera la herramienta del recorrido. <span class="xref" onclick="go(4)">→ ir a la herramienta</span> <span class="mt ag">🤖 agente</span></p></div>
-              <div class="rcard"><div class="ty">Reunión introductoria</div><h4>Deck ejecutivo C-Suite + one-pager</h4><p>ROI, coste de la inacción y caso de inversión para Dirección. <span class="mt sm">✍️ SM</span></p></div>
-              <div class="rcard"><div class="ty">Reunión avanzada</div><h4>Documentación técnica + business case</h4><p>Arquitecturas de referencia y el número de la deuda técnica. <span style="color:var(--copper);font-weight:600">Pendiente de incorporar.</span> <span class="mt sm">✍️ SM</span></p></div>
+              <div class="rcard"><div class="ty">Reunión introductoria</div><h4>Deck ejecutivo C-Suite + one-pager</h4><p>ROI, coste de la inacción y caso de inversión para Dirección. Piezas: <b>NextGen SW Engineering</b> (ene 26) · <b>Modernización de Aplicaciones</b> (nov 25). Las fichas de solución 2024 se revisan antes de volver a usarse. <span class="mt sm">✍️ SM</span></p></div>
+              <div class="rcard"><div class="ty">Reunión avanzada</div><h4>Documentación técnica + business case</h4><p>Arquitecturas de referencia y el número de la deuda técnica. El material <b>SPEC-IA</b> ya está aquí; <span style="color:var(--copper);font-weight:600">el business case tipo, pendiente.</span> <span class="mt sm">✍️ SM</span></p></div>
               <div class="rcard"><div class="ty">Pitch a medida</div><h4>¿Necesitas un pitch personalizado?</h4><p>No lo guardamos hecho: lo generas en la herramienta de preparar la visita. <span class="xref" onclick="go(5)">→ ir a la herramienta</span> <span class="mt ag">🤖 agente</span></p></div>
             </div>
 
@@ -914,6 +925,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
                 <div class="tv-step"><div class="n">2</div><h4>Responde 5 preguntas</h4><p>Comprueban que sabe abrir y cerrar el área.</p></div>
                 <div class="tv-step"><div class="n">3</div><h4>Queda habilitado</h4><p>Hipatia lo registra. <span class="hab">✓ Habilitado · Modernización</span></p></div>
               </div>
+              <p class="proc-note" style="margin-top:11px">Esto no parte de cero: el área ya hacía sesiones de <b>Sales Readiness</b> (la última, mayo 2025, sobre desarrollo con IA). La puerta las recoge y deja traza de quién está habilitado.</p>
             </div>
             <div class="g2-col">
               <div class="colhd">Las 5 preguntas · despliega para responder</div>
