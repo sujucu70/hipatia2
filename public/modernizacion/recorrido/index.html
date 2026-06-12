@@ -700,6 +700,49 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .mail-bar i:nth-child(3){background:#9FCBAA}
 
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ===== Repositorio · mapa de 4 zonas ===== */
+.repo4{display:grid;grid-template-columns:1.12fr 1.12fr 1fr;gap:11px;margin-top:11px;align-items:stretch}
+.rz{border-radius:13px;border:1px solid var(--line);display:flex;flex-direction:column;overflow:hidden}
+.rz-h{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:7px 11px;border-bottom:1px solid var(--line)}
+.rz-t{font-size:11px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+.rz.interno{background:#F6F5F1;border-color:#DDD9D1}
+.rz.interno .rz-h{background:#ECE9E2;border-bottom-color:#DDD9D1}
+.rz.cliente{background:#F2F9F4;border-color:rgba(58,158,101,.4)}
+.rz.cliente .rz-h{background:#E1F1E7;border-bottom-color:rgba(58,158,101,.3)}
+.rz.refs{background:#F7F4FB;border-color:rgba(124,77,188,.35)}
+.rz.refs .rz-h{background:#ECE4F6;border-bottom-color:rgba(124,77,188,.25)}
+.rz-b{padding:8px 9px;display:flex;flex-direction:column;gap:6px;flex:1}
+.rrow{background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 9px}
+.rrow h5{font-size:12px;font-weight:700;color:var(--navy);line-height:1.25;margin:0;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.rrow h5 .mt{flex-shrink:0}
+.rrow p{font-size:10.5px;color:#5A6670;line-height:1.35;margin-top:2px}
+.rrow p b{color:#33404B}
+.rrow .rk{font-size:8.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--green);margin-bottom:1px}
+.rref{display:flex;justify-content:space-between;gap:8px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 9px;align-items:baseline}
+.rref .rn{font-size:12px;font-weight:700;color:var(--navy);white-space:nowrap}
+.rref .rn small{display:block;font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gray)}
+.rref .rr{font-size:11px;color:#33404B;text-align:right;line-height:1.3}
+.rref .rr b{color:var(--purple)}
+.rz-note{font-size:9.5px;color:#8A6D3B;line-height:1.4;margin-top:auto;padding-top:5px}
+.rz-hist{margin-top:10px;border:1px dashed #CFC9BF;border-radius:13px;background:#F1EFEA;padding:8px 14px;display:flex;align-items:center;gap:14px}
+.rz-hist .rz-t{color:#5A6670;white-space:nowrap}
+.rz-hist p{font-size:10.5px;color:#5A6670;line-height:1.45;flex:1}
+.rz-hist p b{color:#33404B}
+@media(max-width:1080px){.repo4{grid-template-columns:1fr}}
+@media(max-height:745px){
+ #p-repo .dsub{font-size:12px}
+ .repo4{gap:9px;margin-top:9px}
+ .rz-b{gap:5px;padding:6px 7px}
+ .rrow{padding:5px 8px}
+ .rrow h5{font-size:11.5px}
+ .rrow p{font-size:10px;line-height:1.3}
+ .rref{padding:4px 8px}
+ .rref .rn{font-size:11.5px}
+ .rref .rr{font-size:10.5px}
+ .rz-hist{padding:7px 12px;margin-top:8px}
+ .rz-hist p{font-size:10px;line-height:1.35}
+}
 </style>
 </head>
 <body>
@@ -946,47 +989,50 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         <!-- PUERTA 3 · REPOSITORIO -->
         <div class="panel doc" id="p-repo">
           <div class="repo-head"><div class="slbl" style="margin:0">Repositorio de conocimiento · profundidad</div><span class="repo-lock">Abierto a todo el equipo comercial</span></div>
-          <div class="dsub">Dos caras que no se mezclan: lo que es para que <b>tú</b> sepas, y lo que <b>sacas al cliente</b>. Cada pieza marca si se mantiene sola (🤖 agente) o la actualiza el SM (✍️).</div>
+          <div class="dsub">Cuatro zonas que no se mezclan: lo <b>interno</b>, lo que <b>sale al cliente</b>, las <b>referencias</b> y el <b>archivo</b>. Cada pieza marca quién la mantiene: 🤖 agente o ✍️ SM.</div>
 
-          <div class="pista">
-            <div class="pista-h interno"><span class="pista-t">Para conocer · uso interno</span><span class="pista-tag">No sale al cliente</span></div>
-            <div class="repo-grid">
-              <div class="rcard"><div class="ty">Propuesta de valor</div><h4>Qué vende el área y por qué Entelgy</h4><p>El diferenciador, el encuadre y el cierre, para tenerlo claro tú. Pieza: <b>Propuesta de Valor SW Engineering</b> (nov 25). <span class="mt sm">✍️ SM</span></p></div>
-              <div class="rcard"><div class="ty">Cómo abordar al cliente</div><h4>Guía de diálogo · qué preguntar</h4><p>Incluye cómo sacar qué partidas presupuestarias tiene hoy y proponer desde ahí. <b>Interno: nunca en la presentación.</b> <span class="mt sm">✍️ SM</span></p></div>
-              <div class="rcard"><div class="ty">Mercado y competencia</div><h4>Benchmark + mercado español</h4><p>Frente a Accenture, Capgemini, Minsait, Globant/EPAM. <span class="mt sm">✍️ SM</span></p></div>
-              <div class="rcard"><div class="ty">Territorio</div><h4>Mapa de dolores del sector</h4><p>Dolores por familia, con impacto en OPEX/CAPEX y urgencia. <span class="mt sm">✍️ SM</span></p></div>
-              <div class="rcard"><div class="ty">Argumentario</div><h4>Objeciones y respuestas</h4><p>Las objeciones frecuentes con su respuesta lista. <span class="mt sm">✍️ SM</span></p></div>
-              <div class="rcard"><div class="ty">Formación</div><h4>Formaciones internas y role-plays</h4><p>Sesiones del área y entrenamiento de la reunión. Piezas: <b>ROL-PLAY Servicios AM</b> (vídeo, oct 25) · <b>Sales Readiness IA</b> (may 25). <span class="mt sm">✍️ SM</span></p></div>
-            </div>
-            <div class="repo-mig">Del Hipatia actual ya hay piezas con sitio aquí: <b>Iniciativas IA en SW 2025</b> (dic 25) · <b>Sales Readiness IA</b> (may 25) · <b>ROL-PLAY Servicios AM</b> (vídeo, oct 25) · <b>Corner WK · caso de éxito</b> (2023 — confirmar referenciabilidad antes de usarla). Lo antiguo (la sesión de 2022, los vídeos sin etiquetar) va al Histórico, fuera del recorrido.</div>
-          </div>
-
-          <div class="pista">
-            <div class="pista-h cliente"><span class="pista-t">Para usar con cliente · por momento del ciclo</span><span class="pista-tag ok">Sale al cliente</span></div>
-            <div class="repo-grid">
-              <div class="rcard"><div class="ty">Conversación · primer contacto</div><h4>Correo de apertura + autodiagnóstico</h4><p>Lo genera la herramienta del recorrido. <span class="xref" onclick="go(4)">→ ir a la herramienta</span> <span class="mt ag">🤖 agente</span></p></div>
-              <div class="rcard"><div class="ty">Reunión introductoria</div><h4>Deck ejecutivo C-Suite + one-pager</h4><p>ROI, coste de la inacción y caso de inversión para Dirección. Piezas: <b>NextGen SW Engineering</b> (ene 26) · <b>Modernización de Aplicaciones</b> (nov 25). Las fichas de solución 2024 se revisan antes de volver a usarse. <span class="mt sm">✍️ SM</span></p></div>
-              <div class="rcard"><div class="ty">Reunión avanzada</div><h4>Documentación técnica + business case</h4><p>Arquitecturas de referencia y el número de la deuda técnica. El material <b>SPEC-IA</b> ya está aquí; <span style="color:var(--copper);font-weight:600">el business case tipo, pendiente.</span> <span class="mt sm">✍️ SM</span></p></div>
-              <div class="rcard"><div class="ty">Pitch a medida</div><h4>¿Necesitas un pitch personalizado?</h4><p>No lo guardamos hecho: lo generas en la herramienta de preparar la visita. <span class="xref" onclick="go(5)">→ ir a la herramienta</span> <span class="mt ag">🤖 agente</span></p></div>
-            </div>
-
-            <div class="rcases">
-              <div class="rcases-h"><span class="ty" style="margin:0">Reunión avanzada · imprescindibles</span><h4>Los casos de modernización, con su resultado</h4><span class="mt sm">✍️ SM</span></div>
-              <div class="rcases-grid">
-                <div class="rcase"><b>Nasertic</b><span class="rc-sec">Sector público · Navarra</span><div class="rc-res">Migración estimada en 9 meses, entregada en <b>3</b></div></div>
-                <div class="rcase"><b>UNED</b><span class="rc-sec">Educación · AAPP</span><div class="rc-res">PL/SQL → Java con IA · <b>−30%</b> de esfuerzo</div></div>
-                <div class="rcase"><b>DGOJ</b><span class="rc-sec">Sector público</span><div class="rc-res"><b>−40/60%</b> en coste de mantenimiento</div></div>
-                <div class="rcase"><b>AESA</b><span class="rc-sec">Sector público · aviación</span><div class="rc-res"><b>+80%</b> de automatización</div></div>
-                <div class="rcase"><b>H10 Hotels</b><span class="rc-sec">Turismo</span><div class="rc-res"><b>−90%</b> del tiempo de documentación</div></div>
-                <div class="rcase"><b>Min. Ciencia · AEI</b><span class="rc-sec">Sector público</span><div class="rc-res"><b>+40%</b> de cumplimiento de SLA</div></div>
+          <div class="repo4">
+            <div class="rz interno">
+              <div class="rz-h"><span class="rz-t">Para conocer</span><span class="pista-tag">No sale al cliente</span></div>
+              <div class="rz-b">
+                <div class="rrow"><h5>Qué vende el área y por qué Entelgy <span class="mt sm">✍️ SM</span></h5><p>Piezas: <b>Propuesta de Valor SW Engineering</b> (nov 25) · <b>Iniciativas IA en SW 2025</b> (dic 25).</p></div>
+                <div class="rrow"><h5>Guía de diálogo · qué preguntar <span class="mt sm">✍️ SM</span></h5><p>Cómo sacar qué partidas presupuestarias tiene hoy. <b>Interno: nunca en la presentación.</b></p></div>
+                <div class="rrow"><h5>Benchmark + mercado español <span class="mt sm">✍️ SM</span></h5><p>Frente a Accenture, Capgemini, Minsait, Globant/EPAM.</p></div>
+                <div class="rrow"><h5>Mapa de dolores del sector <span class="mt sm">✍️ SM</span></h5><p>Dolores por familia, con impacto en OPEX/CAPEX y urgencia.</p></div>
+                <div class="rrow"><h5>Objeciones y respuestas <span class="mt sm">✍️ SM</span></h5><p>Las objeciones frecuentes con su respuesta lista.</p></div>
+                <div class="rrow"><h5>Formaciones internas y role-plays <span class="mt sm">✍️ SM</span></h5><p>Piezas: <b>ROL-PLAY Servicios AM</b> (vídeo, oct 25) · <b>Sales Readiness IA</b> (may 25).</p></div>
               </div>
-              <div class="warn" style="margin-top:10px">⚠ Antes de nombrar una cuenta fuera, confirma con el PM que es referenciable. Los resultados valen para preparar; el nombre, solo con luz verde.</div>
+            </div>
+
+            <div class="rz cliente">
+              <div class="rz-h"><span class="rz-t">Para usar con cliente</span><span class="pista-tag ok">Sale al cliente</span></div>
+              <div class="rz-b">
+                <div class="rrow"><div class="rk">Conversación · primer contacto</div><h5>Correo de apertura + autodiagnóstico <span class="mt ag">🤖 agente</span></h5><p>Lo genera la herramienta del recorrido. <span class="xref" onclick="go(4)">→ ir a la herramienta</span></p></div>
+                <div class="rrow"><div class="rk">Reunión introductoria</div><h5>Deck ejecutivo C-Suite + one-pager <span class="mt sm">✍️ SM</span></h5><p>Piezas: <b>NextGen SW Engineering</b> (ene 26) · <b>Modernización de Aplicaciones</b> (nov 25). Fichas 2024: revisar antes de reusar.</p></div>
+                <div class="rrow"><div class="rk">Reunión avanzada</div><h5>Documentación técnica + business case <span class="mt sm">✍️ SM</span></h5><p>Arquitecturas y el número de la deuda técnica. <b>SPEC-IA</b> ya está; <span style="color:var(--copper);font-weight:600">business case tipo, pendiente.</span></p></div>
+                <div class="rrow"><div class="rk">Pitch a medida</div><h5>¿Necesitas un pitch personalizado? <span class="mt ag">🤖 agente</span></h5><p>No lo guardamos hecho: lo generas en la herramienta de la visita. <span class="xref" onclick="go(5)">→ ir a la herramienta</span></p></div>
+              </div>
+            </div>
+
+            <div class="rz refs">
+              <div class="rz-h"><span class="rz-t">Referencias · con resultado</span><span class="mt sm">✍️ SM</span></div>
+              <div class="rz-b">
+                <div class="rref"><span class="rn">Nasertic<small>Sector público · Navarra</small></span><span class="rr">9 meses estimados, entregada en <b>3</b></span></div>
+                <div class="rref"><span class="rn">UNED<small>Educación · AAPP</small></span><span class="rr">PL/SQL → Java con IA · <b>−30%</b> esfuerzo</span></div>
+                <div class="rref"><span class="rn">DGOJ<small>Sector público</small></span><span class="rr"><b>−40/60%</b> coste de mantenimiento</span></div>
+                <div class="rref"><span class="rn">AESA<small>Sector público · aviación</small></span><span class="rr"><b>+80%</b> de automatización</span></div>
+                <div class="rref"><span class="rn">H10 Hotels<small>Turismo</small></span><span class="rr"><b>−90%</b> tiempo de documentación</span></div>
+                <div class="rref"><span class="rn">Min. Ciencia · AEI<small>Sector público</small></span><span class="rr"><b>+40%</b> cumplimiento de SLA</span></div>
+                <div class="rref" style="border-style:dashed;background:#FBFAF8"><span class="rn">Corner WK<small>Caso de éxito · 2023</small></span><span class="rr" style="color:var(--copper)">Confirmar referenciabilidad</span></div>
+                <div class="rz-note">⚠ El nombre de una cuenta, solo con luz verde del PM. Los resultados valen para preparar.</div>
+              </div>
             </div>
           </div>
 
-          <div class="pista" style="margin-top:18px">
-            <div class="pista-h" style="background:#F1EFEA;border:1px dashed #D9D4CC"><span class="pista-t" style="color:#5A6670">Histórico · archivo del área</span><span class="pista-tag" style="color:#7A8691;background:#fff;border-color:#D9D4CC">Fuera del recorrido</span></div>
-            <div class="repo-mig" style="margin-top:0;color:#5A6670">Todo lo del Hipatia actual que no entra en el recorrido — por antiguo, sustituido o sin contexto (la sesión de 2022, los vídeos sin etiquetar, las fichas retiradas) — se guarda aquí, con su fecha. <b>Consultable siempre, sugerido nunca:</b> el recorrido solo ofrece material vigente, y nada se pierde.</div>
+          <div class="rz-hist">
+            <span class="rz-t">Histórico · archivo del área</span>
+            <p>Lo que no entra en el recorrido — por antiguo, sustituido o sin contexto (la sesión de 2022, los vídeos sin etiquetar, las fichas retiradas) — se guarda aquí, con su fecha. <b>Consultable siempre, sugerido nunca.</b></p>
+            <span class="pista-tag" style="color:#7A8691;background:#fff;border-color:#D9D4CC">Fuera del recorrido</span>
           </div>
         </div>
 
