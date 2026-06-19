@@ -155,6 +155,24 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .close-band .l{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9FB3C2;margin-bottom:6px}
 .close-band .t{font-size:15px;color:#EAF1F5;line-height:1.5}
 .close-band .t b{color:#fff}
+/* Tarjeta · capa escaneable (si solo te llevas tres frases) */
+.tldr{background:var(--white);border:1px solid rgba(124,77,188,.30);border-radius:12px;margin:14px 0 6px;overflow:hidden;box-shadow:0 20px 44px -32px rgba(124,77,188,.7)}
+.tldr-h{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);padding:12px 18px 9px;display:flex;align-items:center;gap:8px}
+.tldr-h::before{content:'';width:14px;height:3px;border-radius:2px;background:var(--purple);flex-shrink:0}
+.tldr-row{display:grid;grid-template-columns:118px 1fr;gap:14px;padding:11px 18px;border-top:1px solid var(--line);align-items:start}
+.tldr-row .k{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--gray);padding-top:2px}
+.tldr-row .v{font-size:14.5px;color:#23303B;line-height:1.5}
+.tldr-row .v b{color:var(--navy)}
+.tldr-row.diff{background:var(--purple-soft)}
+.tldr-row.diff .k{color:var(--purple)}
+.tldr-row.diff .v b{color:var(--purple)}
+/* Tarjeta · el diferenciador, destacado en su sitio */
+.why.hero{border-left-color:var(--purple);box-shadow:0 16px 38px -28px rgba(124,77,188,.7)}
+.why.hero .l{color:var(--purple)}
+.why.hero .refs{color:var(--purple)}
+/* Tarjeta · la señal, resaltada en la rejilla */
+.orient .row.sig{background:var(--purple-soft);box-shadow:inset 3px 0 0 var(--purple)}
+.orient .row.sig .k{color:var(--purple)}
 
 /* playbook */
 .pb-sec{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);border-bottom:1px solid var(--line);padding-bottom:8px;margin:22px 0 14px;display:flex;align-items:center;gap:8px}
@@ -169,6 +187,22 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .pb-role:last-child{border:none}
 .pb-role b{color:var(--navy)}
 .pb-role .mv{color:#5A6670}.pb-role .mv em{color:var(--purple);font-style:normal;font-weight:600}
+.role-pick{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 11px}
+.role-pick .rp-lbl{font-size:11px;font-weight:700;color:var(--gray);margin-right:2px}
+.rp-chip{font-family:inherit;font-size:11.5px;font-weight:700;color:#46535E;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:4px 11px;cursor:pointer;transition:all .15s var(--ease)}
+.rp-chip:hover{border-color:var(--purple)}
+.rp-chip.on{background:var(--purple);color:#fff;border-color:var(--purple)}
+.pb-role{transition:opacity .15s var(--ease),background .15s var(--ease)}
+.pb-role.hi{background:var(--purple-soft);box-shadow:inset 3px 0 0 var(--purple)}
+.pb-role.dim{opacity:.4}
+.post-sub{font-size:12px;font-weight:700;color:var(--navy);margin:18px 0 9px;display:flex;align-items:center;gap:7px}
+.post-sub::before{content:'';width:9px;height:9px;border-radius:50%;border:2px solid var(--purple);flex-shrink:0}
+.post-card .post-card-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:7px}
+.post-card .post-card-h h4{margin:0}
+.post-card .post-card-d{font-size:12.5px;color:#5A6670;line-height:1.5;margin-bottom:9px}
+.post-mail{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:12px;color:#46535E;line-height:1.5}
+.post-mail .post-mail-subj{font-weight:700;color:var(--navy);margin-bottom:6px;font-size:12px}
+.post-mail p{margin-bottom:6px}.post-mail p:last-child{margin-bottom:0}
 .obj{border-left:3px solid var(--line);padding:3px 0 3px 14px;margin-bottom:11px}
 .obj b{font-size:13px;color:var(--navy);display:block;margin-bottom:3px}
 .obj p{font-size:13px;color:#5A6670;line-height:1.55}
@@ -258,11 +292,21 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .btn-ghost:hover{background:var(--purple-soft)}
 .sig-note{font-size:11px;color:var(--gray);line-height:1.55;margin-top:8px}
 .scan-note{font-size:11.5px;color:var(--gray);line-height:1.5;margin:0 2px 14px}
+.prep-chip{font-size:9.5px;font-weight:800;letter-spacing:.08em;color:var(--copper);border:1px solid var(--copper);border-radius:20px;padding:4px 9px;white-space:nowrap;flex-shrink:0}
+.ppl-intro{font-size:12px;color:var(--gray);line-height:1.5;padding:11px 18px 2px}
+.ppl-foot{font-size:12px;color:#33404B;padding:11px 18px 13px;border-top:1px solid var(--line)}
 .match{border:1px solid rgba(124,77,188,.3);border-radius:12px;background:var(--purple-soft);padding:14px 18px;margin-bottom:14px}
 .match-h{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:6px}
 .match-b{font-size:13.5px;color:#33404B;line-height:1.55}
 .match-b b{color:var(--navy)}
 .match-note{display:block;color:var(--gray);font-size:11.5px;margin-top:4px}
+.refmark{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;letter-spacing:.03em;border-radius:20px;padding:2px 8px;white-space:nowrap;border:1px solid;vertical-align:middle}
+.refmark::before{content:'';width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.refmark.conf{color:var(--copper);border-color:rgba(181,98,42,.4);background:#FBF6F0}
+.refmark.conf::before{background:var(--copper)}
+.refmark.ok{color:var(--green);border-color:rgba(58,158,101,.35);background:var(--green-soft)}
+.refmark.ok::before{background:var(--green)}
+.mr-hint{font-size:10px;font-weight:700;color:var(--copper);background:#FBF6F0;border:1px solid #EAD9C6;border-radius:20px;padding:1px 8px;margin-left:6px;white-space:nowrap}
 .match-link{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:700;color:var(--purple);cursor:pointer}
 .match-link:hover{text-decoration:underline}
 /* Aporte del comercial · texto + archivos */
@@ -331,6 +375,11 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .kit-input{display:flex;align-items:center;gap:14px;background:var(--green-soft);border:1px solid rgba(58,158,101,.25);border-radius:12px;padding:14px 18px;margin-bottom:22px}
 .kit-input .sc{width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid rgba(58,158,101,.3);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:var(--green);flex-shrink:0}
 .kit-input b{color:var(--navy)}.kit-input .meta{font-size:12.5px;color:#5A6670}
+.kit-situ{margin-bottom:22px}
+.kit-situ .situ-score{display:flex;flex-direction:column;align-items:flex-end;flex-shrink:0;text-align:right}
+.kit-situ .situ-score b{font-size:26px;font-weight:800;line-height:1;color:#7CD0A0}
+.kit-situ .situ-score span{font-size:10.5px;color:#9FB3C2;margin-top:3px;max-width:140px}
+.kit-situ .situ-foot{font-size:11px;color:var(--gray);line-height:1.5;padding:11px 18px;border-top:1px solid var(--line)}
 
 /* JOURNEY MAP */
 .journey{background:var(--navy);color:#cdd9e1;display:flex;align-items:center;justify-content:center}
@@ -426,6 +475,26 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .btn-link:hover{color:var(--purple)}
 .dest-badge{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--copper);color:var(--copper);padding:2px 8px;border-radius:20px;margin-left:8px;white-space:nowrap}
 .hab{font-size:12px;font-weight:700;background:var(--green-soft);color:var(--green);border:1px solid rgba(58,158,101,.3);padding:5px 11px;border-radius:20px}
+.acr-result{margin-top:16px;border:1px solid var(--line);border-radius:12px;padding:14px 18px;background:var(--white)}
+.acr-prog{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:9px}
+.acr-prog b{color:var(--purple);font-size:17px}
+.acr-bar{height:8px;background:#EEF0F2;border-radius:4px;overflow:hidden;margin-bottom:10px}
+.acr-bar i{display:block;height:100%;width:0;background:var(--purple);border-radius:4px;transition:width .4s var(--ease)}
+.acr-pending{font-size:12.5px;color:var(--gray);line-height:1.5}
+.acr-done{font-size:13px;color:#33404B;line-height:1.6;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.exo.sel{border-color:var(--purple);background:var(--purple-soft);color:var(--navy);font-weight:600}
+.exo.sel::before{border-color:var(--purple);background:var(--purple);box-shadow:inset 0 0 0 2.5px #fff}
+.acr-msg{font-size:12.5px;font-weight:700;color:var(--copper);margin-bottom:9px}
+.acr-submit{margin:2px 0 10px;padding:10px 18px;font-size:13px}
+.btn-exam:disabled{opacity:.45;cursor:not-allowed;box-shadow:none;transform:none}
+.hm-band-col{flex-direction:column;align-items:stretch;gap:11px}
+.hm-band-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.hm-samp{display:flex;flex-direction:column;gap:6px}
+.hm-samp-r{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.hm-samp-n{font-size:12.5px;font-weight:800;color:var(--navy);width:118px;flex-shrink:0}
+.hm-samp-s{font-size:12px;color:#5A6670;flex:1;line-height:1.4}
+.hm-samp-sc{font-size:13px;font-weight:800;color:var(--copper);flex-shrink:0}
+.hm-samp-tag{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9A8A78;align-self:flex-start}
 .acct{margin-top:20px;border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--white)}
 .acct-l{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-bottom:12px}
 .acct-row{display:flex;align-items:center;gap:14px;font-size:13px;color:#46535E;margin-bottom:9px}
@@ -441,6 +510,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .rnav button:hover:not(:disabled){background:var(--purple);border-color:var(--purple);color:#fff}
 .rnav button:disabled{opacity:.3;cursor:default}
 .rnav .ct{font-size:12px;color:#7E93A2;min-width:42px;text-align:center}
+.rnav .lbl .rnav-meta{display:block;font-size:10px;font-style:italic;font-weight:500;letter-spacing:0;text-transform:none;color:#6E8494;margin-top:3px;white-space:nowrap}
 .dots{display:flex;gap:6px}
 .dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .25s}
 .dots i.on{background:var(--purple);width:20px;border-radius:4px}
@@ -499,6 +569,9 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .kit-arr{color:var(--purple);font-weight:700}
 .kit-out{font-size:12px;color:#5B3A93;font-weight:600}
 .kit-int{margin-top:10px;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#7E93A2}
+.kit-base-note{font-size:12px;color:#5A4A38;line-height:1.5;margin:12px 0 18px;background:#FBF6F0;border-left:3px solid var(--copper);border-radius:0 8px 8px 0;padding:9px 13px}
+.kit-base-note b{color:var(--navy)}
+.kit-score-note{font-size:11.5px;color:var(--gray);line-height:1.5;margin:-12px 0 18px}
 .urlrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin:12px 0}
 .urlrow-url{font-size:13px;color:#5A6670;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:6px 14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:240px}
 .urlrow-url b{color:var(--purple)}
@@ -521,6 +594,15 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .jstep:focus-visible{outline:2px solid var(--purple);outline-offset:2px}
 .jview{display:none}
 .jview.on{display:flex;flex-direction:column;gap:12px}
+.jstep.locked{opacity:.4;cursor:not-allowed}
+.jstep.locked:hover{background:none}
+.adt-toggle{background:#fff;border:1px solid rgba(124,77,188,.28);border-radius:12px;padding:14px 16px;margin-bottom:14px}
+.adt-toggle-h{font-size:14px;font-weight:800;color:var(--navy)}
+.adt-toggle-note{font-size:12.5px;color:var(--gray);line-height:1.5;margin:4px 0 11px}
+.adt-opts{display:flex;gap:8px;flex-wrap:wrap}
+.adt-opt{border:1px solid var(--line);background:var(--paper);color:#33404B;font-family:inherit;font-size:13px;font-weight:700;padding:9px 15px;border-radius:8px;cursor:pointer;transition:all .16s var(--ease)}
+.adt-opt:hover{border-color:var(--purple)}
+.adt-opt.on{background:var(--purple);color:#fff;border-color:var(--purple);box-shadow:0 10px 22px -14px rgba(124,77,188,.8)}
 @media(max-width:900px){.jstrip{flex-direction:column;gap:10px}.jconn{transform:rotate(90deg);justify-content:center}.gen-body{grid-template-columns:1fr}}
 .pb-more{margin-top:9px;font-size:12px;font-weight:700;color:var(--purple);cursor:pointer;display:inline-block}
 .pb-more:hover{text-decoration:underline}
@@ -536,7 +618,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .hm-status{flex-shrink:0;font-size:12px;font-weight:700;color:var(--green);background:var(--green-soft);border:1px solid rgba(58,158,101,.3);border-radius:20px;padding:7px 14px;white-space:nowrap}
 .hm-lbl{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#51606C;margin-bottom:13px;display:flex;align-items:center;gap:8px}
 .hm-lbl::before{content:'';width:14px;height:3px;border-radius:2px;background:var(--purple);flex-shrink:0}
-.hm-rail{display:flex;align-items:stretch;gap:14px}
+.hm-rail{display:flex;align-items:center;gap:14px}
 .hm-grp{border:1px solid var(--line);border-radius:14px;padding:14px 14px 15px;background:#fff}
 .hm-gl{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-bottom:11px;text-align:center}
 .hm-grp.loop{border:1.5px solid var(--purple);flex:1;box-shadow:0 18px 44px -30px rgba(124,77,188,.55)}
@@ -555,6 +637,9 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .hm-st.dash{color:var(--gray);border-style:dashed}
 .hm-arr{display:flex;align-items:center;color:#C2C8CE;font-size:18px;flex-shrink:0}
 .hm-arr.sm{font-size:15px}
+.hm-grp.loop .hm-cells{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hm-grp.loop .hm-cell{width:auto}
+.kit-close-note{margin-top:11px;font-size:12.5px;color:#5A6671;line-height:1.5}
 .hm-loopnote{text-align:center;font-size:11px;color:var(--purple);font-style:italic;margin-top:10px}
 .hm-band{border:1px dashed var(--copper);border-radius:12px;background:#FBF6F0;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .hm-bt{font-size:13px;color:#5A4A38}.hm-bt b{color:var(--navy)}
@@ -608,6 +693,32 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .fb-btn{border:none;border-radius:8px;padding:9px 14px;font-size:12.5px;font-weight:700;color:#fff;cursor:pointer;font-family:inherit}
 .fb-btn.teams{background:#6264A7}.fb-btn.mail{background:#0F6CBD}
 .proc-foot{font-size:11px;color:var(--gray);margin-top:10px;font-style:italic}
+.notif.r-click{cursor:pointer;transition:border-color .15s var(--ease),box-shadow .15s var(--ease)}
+.notif.r-click:hover{border-color:var(--purple);box-shadow:0 8px 22px -16px rgba(124,77,188,.5)}
+.notif.nv-new{border-left:3px solid var(--purple)}
+.nv-badge{font-size:8.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--purple);background:var(--purple-soft);border:1px solid rgba(124,77,188,.3);border-radius:5px;padding:1px 6px;vertical-align:middle;margin-left:5px}
+.nv-unread{font-size:9.5px;font-weight:800;color:var(--purple);background:var(--purple-soft);border:1px solid rgba(124,77,188,.3);border-radius:20px;padding:2px 9px;text-transform:none;letter-spacing:0}
+.nv-health{font-size:11px;color:#566069;line-height:1.5;background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 11px;margin-bottom:11px}
+.nv-health b{color:var(--green)}
+.nv-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);vertical-align:middle;margin-right:3px}
+.nv-health-note{display:block;color:#8A95A0;margin-top:3px}
+.fb-input{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:8px;padding:10px 11px;font:inherit;font-size:12.5px;color:var(--navy);line-height:1.45;resize:vertical;background:#fff}
+.fb-input:focus{outline:none;border-color:var(--purple)}
+.fb-row{display:flex;align-items:center;gap:12px;margin-top:9px;flex-wrap:wrap}
+.fb-send{border:none;border-radius:8px;padding:9px 18px;font:inherit;font-size:12.5px;font-weight:800;color:#fff;background:var(--purple);cursor:pointer}
+.fb-send:hover{filter:brightness(1.06)}
+.fb-alt{font-size:11px;color:#8A95A0}
+.fb-link{border:none;background:none;padding:0;font:inherit;font-size:11px;font-weight:700;color:var(--purple);cursor:pointer;text-decoration:underline}
+.fb-ok{font-size:11.5px;color:var(--green);font-weight:600;margin-top:9px;line-height:1.5}
+.fb-trace{margin-top:13px}
+.fb-trace-h{font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8A95A0;margin-bottom:7px}
+.fb-item{border:1px solid var(--line);border-radius:8px;background:#fff;padding:8px 10px;margin-bottom:7px}
+.fb-i-t{font-size:12px;color:var(--navy);font-weight:600;line-height:1.35}
+.fb-i-s{font-size:10.5px;color:#6A7681;margin-top:3px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.fb-st{font-size:9px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;border-radius:5px;padding:2px 6px}
+.fb-st.pub{color:var(--green);background:var(--green-soft);border:1px solid rgba(58,158,101,.3)}
+.fb-st.cola{color:#B25E00;background:#FCF3E6;border:1px solid #F0D9B5}
+.fb-st.env{color:var(--purple);background:var(--purple-soft);border:1px solid rgba(124,77,188,.3)}
 /* ===== Home · barra Estar al día ===== */
 .hm-proc{display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid var(--line);border-radius:12px;background:var(--white);padding:12px 16px}
 .hm-proc-l{font-size:13px;color:#5A6670}.hm-proc-l b{color:var(--navy)}
@@ -726,6 +837,46 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .rref .rr b{color:var(--purple)}
 .rz-note{font-size:9.5px;color:#8A6D3B;line-height:1.4;margin-top:auto;padding-top:5px}
 .rz-hist{margin-top:10px;border:1px dashed #CFC9BF;border-radius:13px;background:#F1EFEA;padding:8px 14px;display:flex;align-items:center;gap:14px}
+.repo-filters{margin:4px 0;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#FBFAF8}
+.rf-top{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.rf-search{flex:1;min-width:0;border:1px solid var(--line);border-radius:8px;padding:8px 11px;font:inherit;font-size:13px;color:var(--navy);background:#fff}
+.rf-search:focus{outline:none;border-color:var(--purple)}
+.rf-count{font-size:11px;font-weight:700;color:#6A7681;white-space:nowrap}
+.rf-clear{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 12px;font:inherit;font-size:11.5px;font-weight:700;color:#6A7681;cursor:pointer}
+.rf-clear:hover{border-color:var(--purple);color:var(--purple)}
+.rf-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.rf-grp{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.rf-lbl{font-size:9.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#8A95A0;margin-right:1px}
+.chip{font-size:11px;font-weight:700;border:1px solid var(--line);background:#fff;color:#566069;border-radius:20px;padding:3px 10px;cursor:pointer;transition:all .15s var(--ease)}
+.chip:hover{border-color:var(--purple)}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.rf-toggle{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:#566069;cursor:pointer}
+.repo-fresh-note{font-size:11px;color:#6A7681;line-height:1.5;margin:0 0 4px;padding:7px 11px;background:#fff;border:1px dashed var(--line);border-radius:9px}
+.repo-fresh-note b{color:var(--copper)}
+.r-foot{margin-top:5px;display:flex;flex-wrap:wrap;gap:5px}
+.r-fresh{font-size:9px;font-weight:800;letter-spacing:.02em;border-radius:5px;padding:2px 6px;white-space:nowrap}
+.r-fresh.ok{color:var(--green);background:var(--green-soft);border:1px solid rgba(58,158,101,.3)}
+.r-fresh.rev{color:#B25E00;background:#FCF3E6;border:1px solid #F0D9B5}
+.r-fresh.pend{color:var(--copper);background:#FBF1E8;border:1px solid #EBD3BF}
+.r-click{cursor:pointer;transition:border-color .15s var(--ease),box-shadow .15s var(--ease)}
+.r-click:hover{border-color:var(--purple);box-shadow:0 8px 22px -16px rgba(124,77,188,.5)}
+.r-hidden{display:none!important}
+.rz.r-collapsed{display:none}
+.repo-empty{font-size:12.5px;color:#6A7681;padding:14px;text-align:center;border:1px dashed var(--line);border-radius:10px;margin-top:6px}
+.ficha-ov{position:fixed;inset:0;background:rgba(5,28,44,.55);display:none;align-items:center;justify-content:center;z-index:200;padding:24px}
+.ficha-ov.on{display:flex}
+.ficha-card{background:#fff;border-radius:16px;max-width:480px;width:100%;padding:24px 26px;box-shadow:0 40px 90px -30px rgba(0,0,0,.5);position:relative;animation:fichaIn .2s var(--ease)}
+@keyframes fichaIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ficha-x{position:absolute;top:14px;right:14px;border:none;background:#F1EFEA;width:28px;height:28px;border-radius:8px;cursor:pointer;font-size:13px;color:#6A7681}
+.ficha-x:hover{background:#E5E2DB}
+.ficha-kic{font-size:9.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--purple)}
+.ficha-t{font-size:19px;font-weight:800;color:var(--navy);margin:3px 0 9px;line-height:1.2}
+.ficha-q{font-size:13px;color:#46535E;line-height:1.55;margin:0 0 16px}
+.ficha-rows{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.ficha-r{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--line);font-size:12.5px}
+.ficha-l{color:#8A95A0;font-weight:700;white-space:nowrap}
+.ficha-r span:last-child{color:var(--navy);text-align:right}
+.ficha-foot{font-size:10.5px;color:#8A95A0;line-height:1.45;margin-top:14px;font-style:italic}
 .rz-hist .rz-t{color:#5A6670;white-space:nowrap}
 .rz-hist p{font-size:10.5px;color:#5A6670;line-height:1.45;flex:1}
 .rz-hist p b{color:#33404B}
@@ -742,6 +893,32 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
  .rref .rr{font-size:10.5px}
  .rz-hist{padding:7px 12px;margin-top:8px}
  .rz-hist p{font-size:10px;line-height:1.35}
+}
+/* ===== Dossier de visita · imprimible ===== */
+.dossier-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:16px 0 0}
+.dossier-cta-note{font-size:12px;color:var(--gray);line-height:1.5;flex:1;min-width:220px}
+.dossier{display:none}
+@media print{
+ body{background:#fff !important;overflow:visible !important;height:auto !important}
+ body>*:not(.dossier){display:none !important}
+ .dossier{display:block !important;color:#0A1622;font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:12px;line-height:1.5}
+ .dossier .dz-head{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #051C2C;padding-bottom:8px;margin-bottom:14px}
+ .dossier .dz-logo{font-weight:800;font-size:16px;color:#051C2C}
+ .dossier .dz-logo span{color:#B5622A}
+ .dossier .dz-date{font-size:11px;color:#6B7682}
+ .dossier h1{font-size:20px;color:#051C2C;margin:0 0 2px}
+ .dossier .dz-sub{font-size:12px;color:#6B7682;margin-bottom:14px}
+ .dossier h2{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#7C4DBC;border-bottom:1px solid #E6E2DC;padding-bottom:4px;margin:16px 0 8px}
+ .dossier .dz-row{margin-bottom:8px;page-break-inside:avoid}
+ .dossier .dz-row b{color:#051C2C;display:block;margin-bottom:1px}
+ .dossier .dz-row span{color:#33404B}
+ .dossier .dz-score{background:#EAF5EF;border:1px solid rgba(58,158,101,.3);border-radius:8px;padding:8px 12px;margin-bottom:6px}
+ .dossier .dz-score b{font-size:16px;color:#3A9E65;margin-right:6px}
+ .dossier ul{margin:0 0 8px 18px}
+ .dossier li{margin-bottom:4px;color:#33404B}
+ .dossier .dz-note{font-size:11px;color:#6B7682;background:#FBF6F0;border-left:3px solid #B5622A;padding:8px 10px}
+ .dossier .dz-foot{margin-top:18px;border-top:1px solid #E6E2DC;padding-top:8px;font-size:10.5px;color:#6B7682}
+ @page{size:A4 portrait;margin:15mm}
 }
 </style>
 </head>
@@ -773,7 +950,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <h1 class="hm-title">Modernización de Aplicaciones</h1>
             <div class="hm-one">Sacamos el core legacy del riesgo regulatorio y del coste de sostenerlo, con IA y sin parar la operación.</div>
           </div>
-          <div class="hm-status">✓ Habilitada en el área</div>
+          <div class="hm-status">✓ Acreditada en el área</div>
         </div>
 
         <div>
@@ -782,18 +959,17 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="hm-grp">
               <div class="hm-gl">Entrada · una vez</div>
               <div class="hm-cells">
-                <div class="hm-cell" onclick="go(1)"><div class="hm-ic">1·2</div><h3>Tarjeta + Habilitación</h3><p>Lee la tarjeta del área y responde 5 preguntas. Te abre el área.</p><span class="hm-st ok">✓ Habilitada</span></div>
+                <div class="hm-cell" onclick="go(1)"><div class="hm-ic">1·2</div><h3>Tarjeta + Acreditación</h3><p>Lee la tarjeta del área y responde 5 preguntas. Te abre el área.</p><span class="hm-st ok">✓ Acreditada</span></div>
               </div>
             </div>
             <div class="hm-arr">→</div>
             <div class="hm-grp loop">
               <div class="hm-gl">Por cada cuenta · un agente en cada parada</div>
               <div class="hm-cells">
-                <div class="hm-cell" onclick="go(3)"><div class="hm-ic">3</div><h3>Mirar la cuenta</h3><p>Un agente analiza la cuenta y te dice si hay recorrido.</p><span class="hm-st">1 cuenta abierta</span><span class="hm-ag">🤖 agente</span></div>
-                <div class="hm-arr sm">→</div>
+                <div class="hm-cell" onclick="go(3)"><div class="hm-ic">3</div><h3>Mirar la cuenta</h3><p>Un agente lee la empresa; otro mapea a quién dirigirte.</p><span class="hm-st">1 cuenta abierta</span><span class="hm-ag">🤖 agente</span></div>
                 <div class="hm-cell" onclick="go(4)"><div class="hm-ic">4</div><h3>Primer contacto</h3><p>Un agente te escribe el correo de apertura con el enlace de autodiagnóstico.</p><span class="hm-st">borrador listo</span><span class="hm-ag">🤖 agente</span></div>
-                <div class="hm-arr sm">→</div>
                 <div class="hm-cell" onclick="go(5)"><div class="hm-ic">5</div><h3>Preparar la visita</h3><p>Un agente te arma el argumento: pitch por rol, objeciones y referencias.</p><span class="hm-st dash">—</span><span class="hm-ag">🤖 agente</span></div>
+                <div class="hm-cell" onclick="go(6)"><div class="hm-ic">6</div><h3>Después de la reunión</h3><p>Cierras la propuesta y mantienes vivo el lead.</p><span class="hm-st dash">—</span><span class="hm-ag">🤖 agente</span></div>
               </div>
               <div class="hm-loopnote">↻ se repite por cada cuenta que trabajas</div>
             </div>
@@ -801,7 +977,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="hm-grp">
               <div class="hm-gl">Profundidad</div>
               <div class="hm-cells">
-                <div class="hm-cell" onclick="go(6)"><div class="hm-ic">6</div><h3>Repositorio</h3><p>Decks ejecutivos, mercado, dolores y técnica.</p><span class="hm-st">4 bloques</span></div>
+                <div class="hm-cell" onclick="go(7)"><div class="hm-ic">7</div><h3>Repositorio</h3><p>Decks ejecutivos, mercado, dolores y técnica.</p><span class="hm-st">4 bloques</span></div>
               </div>
             </div>
           </div>
@@ -809,12 +985,20 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
         <div class="hm-proc">
           <div class="hm-proc-l"><b>Estar al día.</b> El PM te avisa de lo nuevo y tú le mandas feedback — por correo y Teams.</div>
-          <button class="hm-proc-go" onclick="go(7)">Abrir →</button>
+          <button class="hm-proc-go" onclick="go(8)">Abrir →</button>
         </div>
 
-        <div class="hm-band">
-          <div class="hm-bt"><b>Tus cuentas · lo que el sistema te sugiere.</b> Hoy vacío. Aquí el escáner pondrá solo las cuentas con un dolor activo esta semana.</div>
-          <span class="hm-tag">Fase 2</span>
+        <div class="hm-band hm-band-col">
+          <div class="hm-band-top">
+            <div class="hm-bt"><b>Tus cuentas · lo que el sistema te sugiere.</b> Así se verá: el escáner pone arriba solo las cuentas con un dolor activo esta semana.</div>
+            <span class="hm-tag">Fase 2</span>
+          </div>
+          <div class="hm-samp">
+            <div class="hm-samp-r"><span class="hm-samp-n">Grupo Lantia</span><span class="hm-samp-s">Core de pólizas · DORA aprieta esta semana</span><span class="hm-samp-sc">78</span></div>
+            <div class="hm-samp-r"><span class="hm-samp-n">[aseguradora]</span><span class="hm-samp-s">Migración del core parada por presupuesto</span><span class="hm-samp-sc">71</span></div>
+            <div class="hm-samp-r"><span class="hm-samp-n">[mutua]</span><span class="hm-samp-s">Core en Java sin arquitecto cloud</span><span class="hm-samp-sc">66</span></div>
+          </div>
+          <span class="hm-samp-tag">Muestra · datos de ejemplo, no reales</span>
         </div>
 
         <a class="hm-ctx" href="/#contexto">¿De dónde viene esto? · el punto de partida, en la portada →</a>
@@ -840,21 +1024,22 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         <div class="div"></div>
         <div class="lbl">Entrada al área</div>
         <a class="flow" id="f-tarjeta" onclick="go(1)"><span class="fn">1</span> Tarjeta de entrada</a>
-        <a class="flow" id="f-readiness" onclick="go(2)"><span class="fn">2</span> Habilitación</a>
+        <a class="flow" id="f-readiness" onclick="go(2)"><span class="fn">2</span> Acreditación</a>
         <div class="div"></div>
         <div class="lbl">Trabajo por cuenta</div>
         <a class="flow" id="f-cuenta" onclick="go(3)"><span class="fn">3</span> Estado de la cuenta</a>
         <a class="flow" id="f-mail" onclick="go(4)"><span class="fn">4</span> Primer contacto · el mail</a>
         <a class="flow" id="f-kit" onclick="go(5)"><span class="fn">5</span> Kit de visita</a>
+        <a class="flow" id="f-post" onclick="go(6)"><span class="fn">6</span> Después de la reunión</a>
         <div class="div"></div>
         <div class="lbl">Profundidad</div>
-        <a class="flow" id="f-repo" onclick="go(6)"><span class="fn">6</span> Repositorio</a>
+        <a class="flow" id="f-repo" onclick="go(7)"><span class="fn">7</span> Repositorio</a>
         <div class="div"></div>
         <div class="lbl">Relación con el área</div>
-        <a class="flow" id="f-procesos" onclick="go(7)"><span class="fn">7</span> Estar al día</a>
+        <a class="flow" id="f-procesos" onclick="go(8)"><span class="fn">8</span> Estar al día</a>
         <div class="div"></div>
         <div class="lbl">Etapa 2 · destino</div>
-        <a class="flow dest" id="f-e2" onclick="go(8)"><span class="fn">→</span> El sistema se anticipa</a>
+        <a class="flow dest" id="f-e2" onclick="go(9)"><span class="fn">→</span> El sistema se anticipa</a>
       </aside>
 
       <div class="pmain">
@@ -864,17 +1049,25 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
         <!-- PUERTA 1 · TARJETA -->
         <div class="panel doc" id="p-tarjeta">
-          <div class="slbl">Tarjeta de entrada · 2 minutos <span class="hab" style="margin-left:6px">Etapa 1</span></div>
+          <div class="slbl">Tarjeta de entrada</div>
+
+          <!-- SI SOLO TE LLEVAS TRES FRASES -->
+          <div class="tldr">
+            <div class="tldr-h">Si solo te llevas tres frases</div>
+            <div class="tldr-row"><div class="k">La señal</div><div class="v">Una aplicación que <b>nadie quiere tocar</b> porque quien la construyó ya no está. Ahí hay caso.</div></div>
+            <div class="tldr-row diff"><div class="k">Por qué nosotros</div><div class="v">Reinvertimos la eficiencia que recuperamos del mantenimiento en modernizar — <b>sin presupuesto nuevo</b> — y lo mide un externo (Foreworth).</div></div>
+            <div class="tldr-row"><div class="k">Cómo abres</div><div class="v">«¿Qué % del gasto IT de este año financia sistemas que vas a necesitar dentro de tres?»</div></div>
+          </div>
 
           <!-- VÍDEO DEL ÁREA · pieza real del Hipatia actual -->
-          <div class="vid-strip"><span class="vid-ic">▶</span><div><b>Modernización de aplicaciones en 1 minuto</b> — el vídeo del área (1:58). Si vas con prisa, empieza por aquí; la tarjeta amplía lo que cuenta.</div><span class="vid-src">Ya existe · en Hipatia hoy</span></div>
+          <div class="vid-strip"><span class="vid-ic">▶</span><div><b>¿Prefieres verlo contado?</b> El vídeo del área (1:58). La tarjeta de aquí abajo es la versión completa.</div><span class="vid-src">Ya existe · en Hipatia hoy</span></div>
 
           <!-- ¿ES TU CUENTA? -->
           <div class="colhd" style="margin:16px 0 9px">¿Es tu cuenta?</div>
           <div class="orient" style="margin:0">
             <div class="row"><div class="k">Qué es</div><div class="v">Cogemos las aplicaciones <b>legacy que ya frenan al negocio</b> y las modernizamos con un enfoque <b>Spec-Driven</b> y IA, sin parar la operación.</div></div>
             <div class="row"><div class="k">A quién</div><div class="v">Empresas con <b>+5 años de stack propio</b> y un core que se usa a diario. Hablas con el CIO o el director de desarrollo; por el coste, antes o después aparece el CFO.</div></div>
-            <div class="row"><div class="k">La señal</div><div class="v">Una aplicación que <b>"nadie quiere tocar"</b> porque quien la construyó ya no está. <span style="color:var(--gray)">(las completas, en Estado de la cuenta)</span></div></div>
+            <div class="row sig"><div class="k">La señal</div><div class="v">La de arriba es la más clara. Las demás salen al analizar la cuenta, en <b>Estado de la cuenta</b>.</div></div>
           </div>
 
           <!-- POR QUÉ AHORA -->
@@ -888,11 +1081,11 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
           <!-- QUÉ HACEMOS -->
           <div class="colhd" style="margin:24px 0 9px">Qué hacemos, en cristiano</div>
-          <div style="background:var(--white);border:1px solid var(--line);border-radius:10px;padding:14px 18px;font-size:14px;color:#33404B;line-height:1.6">Definimos primero la especificación —qué tiene que hacer el sistema, en lenguaje de negocio—; <b style="color:var(--navy)">la IA escribe el código a partir de ella y un equipo gobierna el desarrollo</b>. Por piezas y en paralelo a la operación: el cliente empieza pequeño y escala cuando lo ve funcionar.</div>
+          <div style="background:var(--white);border:1px solid var(--line);border-radius:10px;padding:14px 18px;font-size:14px;color:#33404B;line-height:1.6">Definimos la especificación en lenguaje de negocio; <b style="color:var(--navy)">la IA escribe el código y el equipo lo gobierna</b>. Por piezas y en paralelo a la operación: el cliente empieza pequeño y escala al verlo funcionar.</div>
 
           <!-- EL DIFERENCIADOR -->
           <div class="colhd" style="margin:24px 0 9px">El diferenciador que puedes defender</div>
-          <div class="why" style="margin:0"><div class="l">Por qué Entelgy</div><div class="t">El mercado moderniza por horas y pidiendo partida nueva. Entelgy mide con <strong>Foreworth</strong> la productividad que recupera en el mantenimiento y <strong>reinvierte esa eficiencia en modernizar las mismas aplicaciones</strong> — sin aumento neto del presupuesto ya comprometido. Que lo mida un externo es lo que aguanta delante del CFO.</div><div class="refs">UNED · DGOJ · AESA · H10 · Nasertic — casos reales de modernización</div></div>
+          <div class="why hero" style="margin:0"><div class="l">Por qué Entelgy</div><div class="t">El mercado moderniza por horas y pidiendo partida nueva. Entelgy mide con <strong>Foreworth</strong> la productividad que recupera en el mantenimiento y <strong>reinvierte esa eficiencia en modernizar las mismas aplicaciones</strong> — sin aumento neto del presupuesto ya comprometido. Que lo mida un externo es lo que aguanta delante del CFO.</div><div class="refs">UNED · DGOJ · AESA · H10 · Nasertic — casos reales <span class="refmark conf">confirmar por cuenta</span></div></div>
 
           <!-- MUNICIÓN PARA ABRIR -->
           <div class="colhd" style="margin:24px 0 9px">Munición para abrir</div>
@@ -908,7 +1101,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
           <!-- UNA PRUEBA · caso Nasertic (interno) -->
           <div class="colhd" style="margin:24px 0 9px">Una prueba que puedas citar</div>
-          <div class="dato" style="margin:0"><div class="n">9→3</div><div><div class="t"><b>Nasertic</b> — modernización de una aplicación Access con Spec-Driven: el proyecto pasó de <b>9 a 3 meses</b>, un 70% menos. Hay más casos en el repositorio (AESA, DGOJ, H10, UNED).</div><div class="s">Caso Entelgy · uso interno</div></div></div>
+          <div class="dato" style="margin:0"><div class="n">9→3</div><div><div class="t"><b>Nasertic</b> — modernización de una aplicación Access con Spec-Driven: el proyecto pasó de <b>9 a 3 meses</b>, un 70% menos. Hay más casos en el repositorio (AESA, DGOJ, H10, UNED).</div><div class="s">Caso Entelgy</div></div></div>
 
           <!-- RED DE SEGURIDAD -->
           <div class="safety" style="margin:24px 0 0"><div class="ic">!</div><p><b>Si te preguntan un detalle técnico que no tienes, no improvises:</b> "eso te lo confirma el especialista en la siguiente reunión". Convierte la duda en tu cierre.</p></div>
@@ -919,14 +1112,15 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
           <!-- ACCIONES -->
           <div class="tcard-actions" style="margin-top:24px">
-            <button class="btn-exam" onclick="go(2)">Habilitarme · empezar el examen</button>
-            <button class="btn-link" onclick="go(3)">Empezar con una cuenta →</button>
+            <button class="btn-exam" onclick="go(2)">Acreditarme en el área →</button>
+            <button class="btn-link" onclick="go(3)">Solo echar un vistazo</button>
           </div>
+          <div style="font-size:12px;color:var(--gray);margin-top:9px;line-height:1.5">Cinco preguntas: te acreditan y desbloquean las herramientas del recorrido —análisis de cuenta, correo y kit—. Sin acreditarte puedes leer la tarjeta y el área; para usar las herramientas, acredítate.</div>
         </div>
 
         <!-- TRABAJO POR CUENTA · KIT DE VISITA -->
         <div class="panel doc" id="p-kit">
-          <div class="tv-head"><div class="tv-ic">🎯</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Kit de visita <span class="hab">Etapa 1</span> <span class="mt ag">🤖 agente</span></div><div class="atitle" style="font-size:20px">El argumento para la reunión, armado por el agente</div></div></div>
+          <div class="tv-head"><div class="tv-ic">🎯</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Kit de visita <span class="mt ag">🤖 agente</span></div><div class="atitle" style="font-size:20px">El argumento para la reunión, armado por el agente</div></div></div>
           <div class="dsub">Llegas con la cuenta mirada y el cliente ya cualificado. Aquí está lo que necesitas para la reunión, no para encontrarla.</div>
 
           <div class="genrow">
@@ -938,12 +1132,21 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
               <span class="kit-arr">→</span>
               <span class="kit-out">Lo que ves abajo: pitch por rol, objeciones, preguntas y referencias</span>
             </div>
-            <div class="kit-int">Integración en el portal: en curso · Etapa 1</div>
+            <div class="kit-int">Integración en el portal: en curso</div>
           </div>
+          <div class="kit-base-note">Esta ficha es <b>Grupo Lantia</b>, afinada con lo que trabajaste en el recorrido. El agente de preparación lo hará así para <b>cualquier cuenta</b>, automático — integración en curso.</div>
 
-          <div class="kit-input">
-            <div class="sc">78</div>
-            <div><b>Entras con el autodiagnóstico de Grupo Lantia</b><div class="meta">78/100 · riesgo AI Act alto · deuda técnica ~1,8 M€/año. No empiezas de cero: empiezas con su número encima de la mesa.</div></div>
+          <div class="scan kit-situ">
+            <div class="scan-head">
+              <div><div class="l">Para esta reunión</div><div class="t">Grupo Lantia · lo que ya sabes</div></div>
+              <div class="situ-score"><b>78</b><span>/100 · deuda ~1,8 M€/año</span></div>
+            </div>
+            <div class="scan-row"><div class="k">El gancho</div><div class="v"><b>DORA aprieta ya</b> (en vigor enero 2025); el AI Act (dic 2027) refuerza. Es el ángulo más fuerte de esta cuenta.</div></div>
+            <div class="scan-row"><div class="k">El sistema</div><div class="v">Core de pólizas en <b>Java</b>, ~11 años, sin arquitecto cloud en plantilla.</div></div>
+            <div class="scan-row"><div class="k">A quién ves</div><div class="v"><b>Marta Ruiz</b> (Dir. de Sistemas) abre; deciden con el <b>CIO</b> y el <b>CFO</b>.</div></div>
+            <div class="scan-row"><div class="k">El ángulo</div><div class="v">Financiar la modernización <b>desde el propio mantenimiento</b>, sin abrir partida nueva. Mismo importe, más valor.</div></div>
+            <div class="scan-row"><div class="k">Orden de ataque</div><div class="v">Entra con Marta por el riesgo (DORA); cierra con el CFO con la deuda de <b>1,8 M€</b>, financiable desde lo que ya gasta.</div></div>
+            <div class="situ-foot">El 78 y la deuda salen del autodiagnóstico (paso 4). Si esta cuenta no lo hizo, la ficha va sin número — el resto lo tienes del paso 3.</div>
           </div>
 
           <div class="pb-sec">En la reunión</div>
@@ -951,17 +1154,25 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="pb-card" style="margin:0">
               <h4>El pitch, según quién tienes delante</h4>
               <div style="font-size:11px;color:var(--copper);font-weight:600;margin:-3px 0 9px">El presupuesto lo mueven CFO/CCO. Entra por ahí siempre que puedas.</div>
-              <div class="pb-role"><b>CTO</b><div class="mv">"¿Cuál es la app que más frena al negocio y lleváis años sin tocar?" · le mueve: <em>Spec-Driven</em>, el conocimiento pasa al cliente.</div></div>
-              <div class="pb-role"><b>Dir. Ops</b><div class="mv">"¿Cuántos pilotos llevan +1 año sin producción?" · le mueve: <em>productividad certificada por Foreworth</em>.</div></div>
-              <div class="pb-role"><b>CIO</b><div class="mv">"¿Qué % del presupuesto IT va a mantener lo que ya existe?" · le mueve: <em>el assessment</em>, deuda con datos propios.</div></div>
-              <div class="pb-role"><b>CFO</b><div class="mv">"¿Cuánto cuesta mantener los sistemas, en un número?" · le mueve: <em>financiarlo desde el mantenimiento que ya paga</em> — mismo presupuesto, más valor.</div></div>
+              <div class="role-pick" id="role-pick">
+                <span class="rp-lbl">¿A quién verás?</span>
+                <button type="button" class="rp-chip on" data-role="all">Todos</button>
+                <button type="button" class="rp-chip" data-role="cfo">CFO</button>
+                <button type="button" class="rp-chip" data-role="cio">CIO</button>
+                <button type="button" class="rp-chip" data-role="cto">CTO</button>
+                <button type="button" class="rp-chip" data-role="ops">Dir. Ops</button>
+              </div>
+              <div class="pb-role" data-role="cto"><b>CTO</b><div class="mv">"¿Cuál es la app que más frena al negocio y lleváis años sin tocar?" · le mueve: <em>Spec-Driven</em>, el conocimiento pasa al cliente.</div></div>
+              <div class="pb-role" data-role="ops"><b>Dir. Ops</b><div class="mv">"¿Cuántos pilotos llevan +1 año sin producción?" · le mueve: <em>productividad certificada por Foreworth</em>.</div></div>
+              <div class="pb-role" data-role="cio"><b>CIO</b><div class="mv">"¿Qué % del presupuesto IT va a mantener lo que ya existe?" · le mueve: <em>el assessment</em>, deuda con datos propios.</div></div>
+              <div class="pb-role" data-role="cfo"><b>CFO</b><div class="mv">"¿Cuánto cuesta mantener los sistemas, en un número?" · le mueve: <em>financiarlo desde el mantenimiento que ya paga</em> — mismo presupuesto, más valor.</div></div>
             </div>
             <div class="pb-card" style="margin:0">
               <h4>Objeciones · una muestra</h4>
               <div class="obj"><b>"Ya tenemos proveedor de desarrollo."</b><p>No pedimos cambiarlo. Complementamos en la pieza que más duele, con métricas auditables. ¿Tu proveedor puede decirte qué productividad entregó el mes pasado, certificada por un tercero?</p></div>
               <div class="obj"><b>"No vemos urgencia ahora mismo."</b><p>La deuda técnica crece sola (Gartner: 20–40% del valor de los activos). Y el AI Act obliga en sistemas de alto riesgo en diciembre de 2027.</p></div>
               <div class="obj"><b>"Esto nos lo hace cualquier proveedor."</b><p>Pídeles que firmen lo que firmamos nosotros: reinvertir la eficiencia recuperada en el propio mantenimiento, sin subir el presupuesto, con la productividad medida por un tercero (Foreworth). Esa firma no la encuentras en otra propuesta.</p></div>
-              <span class="pb-more" onclick="go(6)">+ objeciones con respuesta en el Repositorio →</span>
+              <span class="pb-more" onclick="go(7)">+ objeciones con respuesta en el Repositorio →</span>
             </div>
             <div class="pb-card" style="margin:0">
               <h4>Si quieres confirmar que hay proyecto, en la conversación</h4>
@@ -979,11 +1190,64 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
                 <li><b>UNED</b> — migración PL/SQL → Java con IA · −30% de esfuerzo.</li>
                 <li><b>H10</b> — el assessment como primer contrato · −90% del tiempo de documentación.</li>
               </ul>
-              <span class="pb-more" onclick="go(6)">Ver todos los casos y su contexto en el Repositorio →</span>
-              <div class="warn">⚠ Confirma con Jorge qué nombres son mencionables antes de cada reunión.</div>
+              <span class="pb-more" onclick="go(7)">Ver todos los casos y su contexto en el Repositorio →</span>
+              <div class="warn">Marca por caso: <span class="refmark ok">citable</span> puedes nombrarlo al cliente · <span class="refmark conf">confirmar por cuenta</span> úsalo en interno y confírmalo con el PM antes. Hoy, todos en confirmar.</div>
             </div>
           </div>
           <div class="proc-foot" style="margin-top:12px">🎬 Para entrenar la reunión antes de tenerla: el vídeo <b>ROL-PLAY Servicios AM</b> (oct 2025), en el Repositorio — una visita simulada, con el diálogo completo.</div>
+
+          <div class="dossier-cta">
+            <button type="button" class="btn-exam" id="dossier-btn">📄 Preparar dossier de visita</button>
+            <span class="dossier-cta-note">Lo esencial —pitch del rol elegido, objeciones, preguntas y referencias citables— en una hoja para imprimir, guardar en PDF o llevar en el móvil.</span>
+          </div>
+
+          <div class="pb-sec" style="margin-top:26px">El cierre · qué propones</div>
+          <div class="close-band"><div class="l">El siguiente paso concreto</div><div class="t">Con el caso de Grupo Lantia montado —<b>1,8 M€/año</b> de deuda, financiable desde el propio mantenimiento— propones el <b>Assessment de modernización</b>: 10–15 días, primer contrato. Entrega el triaje del portfolio —qué se moderniza, qué no, qué va a AM— y el business case para Dirección. La estrategia, el gobierno y el método se quedan en Entelgy.</div></div>
+          <div class="kit-close-note">El Assessment es el output de la primera reunión. Lo de después —armar la propuesta y mantener vivo el lead— vive en <span class="xref" onclick="go(6)">Después de la reunión →</span></div>
+        </div>
+
+        <!-- DESPUÉS DE LA REUNIÓN -->
+        <div class="panel doc" id="p-postreunion">
+          <div class="tv-head"><div class="tv-ic">📩</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · después de la visita</div><div class="atitle">Después de la reunión</div></div></div>
+          <div class="dsub">La reunión salió con un siguiente paso claro —el Assessment—. Aquí montas la propuesta y mantienes la cuenta viva hasta que avance.</div>
+
+          <div class="post-sub">Armar la propuesta</div>
+          <p style="font-size:13px;color:#46535E;line-height:1.55;margin:0 0 11px">Metes las cifras de la cuenta —gasto de mantenimiento, nº de desarrolladores, deuda técnica— y sale el caso económico para tu propuesta: cuánto se libera y cómo se financia la modernización desde el presupuesto actual.</p>
+          <div class="hm-band" style="margin:0 0 22px">
+            <div style="font-size:12.5px;color:#5A4A38;line-height:1.5"><b style="color:var(--navy)">Calculadora de business case.</b> La está construyendo el equipo de producto; la integramos aquí cuando esté. Su salida es para preparar tu caso en interno, no para entregársela al cliente.</div>
+            <span class="prep-chip">EN PREPARACIÓN</span>
+          </div>
+
+          <div class="post-sub">Mantener vivo el lead</div>
+          <div class="g2">
+            <div class="pb-card post-card" style="margin:0">
+              <div class="post-card-h"><h4>Correo de seguimiento</h4><span class="prep-chip">PRÓXIMAMENTE</span></div>
+              <p class="post-card-d">El agente redacta el seguimiento tras la reunión: agradece, recoge lo que hablasteis y propone el Assessment. Tú lo ajustas y lo envías.</p>
+              <div class="post-mail">
+                <div class="post-mail-subj">Asunto · Gracias, Marta — y el siguiente paso</div>
+                <p>Gracias por el rato de hoy. Como veíamos, lo que más aprieta en el core de pólizas es el plazo de DORA.</p>
+                <p>Te propongo un Assessment de dos semanas: te deja el triaje y el business case para tu comité, sin compromiso.</p>
+              </div>
+            </div>
+            <div class="pb-card post-card" style="margin:0">
+              <div class="post-card-h"><h4>Qué puedes enviarle</h4></div>
+              <p class="post-card-d">Lo seguro para dejar o mandar tras la reunión — solo lo marcado citable.</p>
+              <ul class="pb-list">
+                <li>El informe del autodiagnóstico (su 78 y la lectura)</li>
+                <li>El dossier de la visita</li>
+                <li>Los casos citables del Repositorio <span class="mr-hint">hoy ninguno · pendiente PM</span></li>
+              </ul>
+            </div>
+            <div class="pb-card post-card" style="margin:0">
+              <div class="post-card-h"><h4>Déjalo en el CRM</h4><span class="prep-chip">EN PREPARACIÓN</span></div>
+              <p class="post-card-d">Registra el resultado y marca la cuenta como lista para Assessment. Con el CRM conectado se actualiza solo y avisa al equipo — y te avisa si la cuenta ya era cliente.</p>
+            </div>
+            <div class="pb-card post-card" style="margin:0">
+              <div class="post-card-h"><h4>Recoge de la reunión</h4><span class="prep-chip">PRÓXIMAMENTE</span></div>
+              <p class="post-card-d">Qué objeciones nuevas salieron, qué interesó. Vuelve al equipo del área para afinar el material.</p>
+              <span class="xref" onclick="go(8)">→ el bucle de Estar al día</span>
+            </div>
+          </div>
         </div>
 
         <!-- PUERTA 3 · REPOSITORIO -->
@@ -991,45 +1255,61 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
           <div class="repo-head"><div class="slbl" style="margin:0">Repositorio de conocimiento · profundidad</div><span class="repo-lock">Abierto a todo el equipo comercial</span></div>
           <div class="dsub">Cuatro zonas que no se mezclan: lo <b>interno</b>, lo que <b>sale al cliente</b>, las <b>referencias</b> y el <b>archivo</b>. Cada pieza marca quién la mantiene: 🤖 agente o ✍️ SM.</div>
 
+          <div class="repo-filters">
+            <div class="rf-top">
+              <input type="text" id="rf-q" class="rf-search" placeholder="Buscar pieza por palabra clave…" autocomplete="off">
+              <span class="rf-count" id="rf-count"></span>
+              <button type="button" class="rf-clear" id="rf-clear">Limpiar</button>
+            </div>
+            <div class="rf-row">
+              <div class="rf-grp"><span class="rf-lbl">Tipo</span><span class="chip on" data-f="tipo" data-v="">Todo</span><span class="chip" data-f="tipo" data-v="conocer">Para conocer</span><span class="chip" data-f="tipo" data-v="cliente">Con cliente</span><span class="chip" data-f="tipo" data-v="ref">Referencias</span><span class="chip" data-f="tipo" data-v="archivo">Archivo</span></div>
+              <div class="rf-grp"><span class="rf-lbl">Sector</span><span class="chip on" data-f="sector" data-v="">Todos</span><span class="chip" data-f="sector" data-v="publico">Público</span><span class="chip" data-f="sector" data-v="educacion">Educación</span><span class="chip" data-f="sector" data-v="turismo">Turismo</span></div>
+              <div class="rf-grp"><span class="rf-lbl">Estado</span><span class="chip on" data-f="rev" data-v="">Todo</span><span class="chip" data-f="rev" data-v="ok">Vigente</span><span class="chip" data-f="rev" data-v="revisar">Revisar</span><span class="chip" data-f="rev" data-v="pendiente">Pendiente</span></div>
+              <label class="rf-toggle"><input type="checkbox" id="rf-cli"> Solo lo que sale al cliente</label>
+            </div>
+          </div>
+          <div class="repo-fresh-note">🟢 vigente · 🟠 revisar · ⏳ pendiente. Una pieza que pasa <b>seis meses sin revisar</b> salta sola a 🟠 y avisa a su responsable y al PM <span class="prep-chip">aviso automático · PRÓXIMAMENTE</span>. La parte 🤖 agente se mantiene sola; la parte ✍️ SM depende de su dueño — ese es el flanco a vigilar.</div>
+          <div class="repo-empty" id="rf-empty" style="display:none">Ninguna pieza coincide con el filtro. <span class="xref" id="rf-empty-clear">Limpiar filtros</span></div>
+
           <div class="repo4">
-            <div class="rz interno">
+            <div class="rz interno" data-zone="conocer">
               <div class="rz-h"><span class="rz-t">Para conocer</span><span class="pista-tag">No sale al cliente</span></div>
               <div class="rz-b">
-                <div class="rrow"><h5>Qué vende el área y por qué Entelgy <span class="mt sm">✍️ SM</span></h5><p>Piezas: <b>Propuesta de Valor SW Engineering</b> (nov 25) · <b>Iniciativas IA en SW 2025</b> (dic 25).</p></div>
-                <div class="rrow"><h5>Guía de diálogo · qué preguntar <span class="mt sm">✍️ SM</span></h5><p>Cómo sacar qué partidas presupuestarias tiene hoy. <b>Interno: nunca en la presentación.</b></p></div>
-                <div class="rrow"><h5>Benchmark + mercado español <span class="mt sm">✍️ SM</span></h5><p>Frente a Accenture, Capgemini, Minsait, Globant/EPAM.</p></div>
-                <div class="rrow"><h5>Mapa de dolores del sector <span class="mt sm">✍️ SM</span></h5><p>Dolores por familia, con impacto en OPEX/CAPEX y urgencia.</p></div>
-                <div class="rrow"><h5>Objeciones y respuestas <span class="mt sm">✍️ SM</span></h5><p>Las objeciones frecuentes con su respuesta lista.</p></div>
-                <div class="rrow"><h5>Formaciones internas y role-plays <span class="mt sm">✍️ SM</span></h5><p>Piezas: <b>ROL-PLAY Servicios AM</b> (vídeo, oct 25) · <b>Sales Readiness IA</b> (may 25).</p></div>
+                <div class="rrow r-click" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="ok" data-title="Qué vende el área y por qué Entelgy" data-q="El argumentario base del área: qué vendemos en Modernización y por qué Entelgy, no un genérico de mercado." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisada nov 2025" data-vive="Hub del área · Propuesta de valor"><h5>Qué vende el área y por qué Entelgy <span class="mt sm">✍️ SM</span></h5><p>Piezas: <b>Propuesta de Valor SW Engineering</b> (nov 25) · <b>Iniciativas IA en SW 2025</b> (dic 25).</p><div class="r-foot"><span class="r-fresh ok">✓ rev. nov 25</span></div></div>
+                <div class="rrow r-click" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="ok" data-title="Guía de diálogo · qué preguntar" data-q="Las preguntas para sacar qué partidas presupuestarias tiene hoy la cuenta. Interno, nunca en la presentación." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisada dic 2025" data-vive="Hub del área · Interno"><h5>Guía de diálogo · qué preguntar <span class="mt sm">✍️ SM</span></h5><p>Cómo sacar qué partidas presupuestarias tiene hoy. <b>Interno: nunca en la presentación.</b></p><div class="r-foot"><span class="r-fresh ok">✓ rev. dic 25</span></div></div>
+                <div class="rrow r-click" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="ok" data-title="Benchmark + mercado español" data-q="Cómo nos posicionamos frente a Accenture, Capgemini, Minsait y Globant/EPAM en el mercado español." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisada dic 2025" data-vive="Hub del área · Mercado"><h5>Benchmark + mercado español <span class="mt sm">✍️ SM</span></h5><p>Frente a Accenture, Capgemini, Minsait, Globant/EPAM.</p><div class="r-foot"><span class="r-fresh ok">✓ rev. dic 25</span></div></div>
+                <div class="rrow r-click" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="revisar" data-title="Mapa de dolores del sector" data-q="Los dolores por familia de sistema, con su impacto en OPEX/CAPEX y su urgencia." data-resp="✍️ SM · Solution Manager del área" data-fecha="Sin revisión reciente — marcada sola" data-vive="Hub del área · Mercado"><h5>Mapa de dolores del sector <span class="mt sm">✍️ SM</span></h5><p>Dolores por familia, con impacto en OPEX/CAPEX y urgencia.</p><div class="r-foot"><span class="r-fresh rev">⚠ revisar</span></div></div>
+                <div class="rrow r-click" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="ok" data-title="Objeciones y respuestas" data-q="Las objeciones frecuentes con su respuesta lista para usar en conversación." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisada ene 2026" data-vive="Hub del área · Interno"><h5>Objeciones y respuestas <span class="mt sm">✍️ SM</span></h5><p>Las objeciones frecuentes con su respuesta lista.</p><div class="r-foot"><span class="r-fresh ok">✓ rev. ene 26</span></div></div>
+                <div class="rrow r-click" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="ok" data-title="Formaciones internas y role-plays" data-q="El material de entrenamiento del equipo: el role-play en vídeo y la sesión de Sales Readiness IA." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisada oct 2025" data-vive="Hub del área · Formación"><h5>Formaciones internas y role-plays <span class="mt sm">✍️ SM</span></h5><p>Piezas: <b>ROL-PLAY Servicios AM</b> (vídeo, oct 25) · <b>Sales Readiness IA</b> (may 25).</p><div class="r-foot"><span class="r-fresh ok">✓ rev. oct 25</span></div></div>
               </div>
             </div>
 
-            <div class="rz cliente">
+            <div class="rz cliente" data-zone="cliente">
               <div class="rz-h"><span class="rz-t">Para usar con cliente</span><span class="pista-tag ok">Sale al cliente</span></div>
               <div class="rz-b">
-                <div class="rrow"><div class="rk">Conversación · primer contacto</div><h5>Correo de apertura + autodiagnóstico <span class="mt ag">🤖 agente</span></h5><p>Lo genera la herramienta del recorrido. <span class="xref" onclick="go(4)">→ ir a la herramienta</span></p></div>
-                <div class="rrow"><div class="rk">Reunión introductoria</div><h5>Deck ejecutivo C-Suite + one-pager <span class="mt sm">✍️ SM</span></h5><p>Piezas: <b>NextGen SW Engineering</b> (ene 26) · <b>Modernización de Aplicaciones</b> (nov 25). Fichas 2024: revisar antes de reusar.</p></div>
-                <div class="rrow"><div class="rk">Reunión avanzada</div><h5>Documentación técnica + business case <span class="mt sm">✍️ SM</span></h5><p>Arquitecturas y el número de la deuda técnica. <b>SPEC-IA</b> ya está; <span style="color:var(--copper);font-weight:600">business case tipo, pendiente.</span></p></div>
-                <div class="rrow"><div class="rk">Pitch a medida</div><h5>¿Necesitas un pitch personalizado? <span class="mt ag">🤖 agente</span></h5><p>No lo guardamos hecho: lo generas en la herramienta de la visita. <span class="xref" onclick="go(5)">→ ir a la herramienta</span></p></div>
+                <div class="rrow" data-tipo="cliente" data-sector="todos" data-cliente="si" data-rev="ok"><div class="rk">Conversación · primer contacto</div><h5>Correo de apertura + autodiagnóstico <span class="mt ag">🤖 agente</span></h5><p>Lo genera la herramienta del recorrido. <span class="xref" onclick="go(4)">→ ir a la herramienta</span></p><div class="r-foot"><span class="r-fresh ok">⚡ se genera al momento</span></div></div>
+                <div class="rrow r-click" data-tipo="cliente" data-sector="todos" data-cliente="si" data-rev="ok" data-title="Deck ejecutivo C-Suite + one-pager" data-q="Los decks ejecutivos para la reunión introductoria: NextGen SW Engineering y Modernización de Aplicaciones. Las fichas de 2024 hay que revisarlas antes de reusarlas." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisado ene 2026 · contiene fichas 2024 a revisar" data-vive="Hub del área · Decks ejecutivos"><div class="rk">Reunión introductoria</div><h5>Deck ejecutivo C-Suite + one-pager <span class="mt sm">✍️ SM</span></h5><p>Piezas: <b>NextGen SW Engineering</b> (ene 26) · <b>Modernización de Aplicaciones</b> (nov 25). Fichas 2024: revisar antes de reusar.</p><div class="r-foot"><span class="r-fresh ok">✓ rev. ene 26</span> <span class="r-fresh rev">fichas 2024: revisar</span></div></div>
+                <div class="rrow r-click" data-tipo="cliente" data-sector="todos" data-cliente="si" data-rev="pendiente" data-title="Documentación técnica + business case" data-q="Arquitecturas y el número de la deuda técnica. SPEC-IA ya está disponible; el business case tipo está pendiente de construir (lo arma el SM)." data-resp="✍️ SM · Solution Manager del área" data-fecha="SPEC-IA vigente · business case tipo pendiente" data-vive="Hub del área · Técnica"><div class="rk">Reunión avanzada</div><h5>Documentación técnica + business case <span class="mt sm">✍️ SM</span></h5><p>Arquitecturas y el número de la deuda técnica. <b>SPEC-IA</b> ya está; <span style="color:var(--copper);font-weight:600">business case tipo, pendiente.</span></p><div class="r-foot"><span class="r-fresh pend">⏳ business case pendiente</span></div></div>
+                <div class="rrow" data-tipo="cliente" data-sector="todos" data-cliente="si" data-rev="ok"><div class="rk">Pitch a medida</div><h5>¿Necesitas un pitch personalizado? <span class="mt ag">🤖 agente</span></h5><p>No lo guardamos hecho: lo generas en la herramienta de la visita. <span class="xref" onclick="go(5)">→ ir a la herramienta</span></p><div class="r-foot"><span class="r-fresh ok">⚡ se genera al momento</span></div></div>
               </div>
             </div>
 
-            <div class="rz refs">
+            <div class="rz refs" data-zone="ref">
               <div class="rz-h"><span class="rz-t">Referencias · con resultado</span><span class="mt sm">✍️ SM</span></div>
               <div class="rz-b">
-                <div class="rref"><span class="rn">Nasertic<small>Sector público · Navarra</small></span><span class="rr">9 meses estimados, entregada en <b>3</b></span></div>
-                <div class="rref"><span class="rn">UNED<small>Educación · AAPP</small></span><span class="rr">PL/SQL → Java con IA · <b>−30%</b> esfuerzo</span></div>
-                <div class="rref"><span class="rn">DGOJ<small>Sector público</small></span><span class="rr"><b>−40/60%</b> coste de mantenimiento</span></div>
-                <div class="rref"><span class="rn">AESA<small>Sector público · aviación</small></span><span class="rr"><b>+80%</b> de automatización</span></div>
-                <div class="rref"><span class="rn">H10 Hotels<small>Turismo</small></span><span class="rr"><b>−90%</b> tiempo de documentación</span></div>
-                <div class="rref"><span class="rn">Min. Ciencia · AEI<small>Sector público</small></span><span class="rr"><b>+40%</b> cumplimiento de SLA</span></div>
-                <div class="rref" style="border-style:dashed;background:#FBFAF8"><span class="rn">Corner WK<small>Caso de éxito · 2023</small></span><span class="rr" style="color:var(--copper)">Confirmar referenciabilidad</span></div>
-                <div class="rz-note">⚠ El nombre de una cuenta, solo con luz verde del PM. Los resultados valen para preparar.</div>
+                <div class="rref r-click" data-tipo="ref" data-sector="publico" data-cliente="no" data-rev="ok" data-title="Nasertic" data-q="Migración en el sector público (Navarra)." data-resp="✍️ SM · Solution Manager del área" data-fecha="Resultado validado 2025" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — pendiente de sign-off del PM"><span class="rn">Nasertic<small>Sector público · Navarra</small></span><span class="rr">9 meses estimados, entregada en <b>3</b></span></div>
+                <div class="rref r-click" data-tipo="ref" data-sector="educacion publico" data-cliente="no" data-rev="ok" data-title="UNED" data-q="Migración PL/SQL → Java con IA en educación / AAPP." data-resp="✍️ SM · Solution Manager del área" data-fecha="Resultado validado 2025" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — vía expediente público es la candidata más rápida a citable (pendiente PM)"><span class="rn">UNED<small>Educación · AAPP</small></span><span class="rr">PL/SQL → Java con IA · <b>−30%</b> esfuerzo</span></div>
+                <div class="rref r-click" data-tipo="ref" data-sector="publico" data-cliente="no" data-rev="ok" data-title="DGOJ" data-q="Reducción del coste de mantenimiento en sector público." data-resp="✍️ SM · Solution Manager del área" data-fecha="Resultado validado 2025" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — pendiente de sign-off del PM"><span class="rn">DGOJ<small>Sector público</small></span><span class="rr"><b>−40/60%</b> coste de mantenimiento</span></div>
+                <div class="rref r-click" data-tipo="ref" data-sector="publico" data-cliente="no" data-rev="ok" data-title="AESA" data-q="Automatización en sector público (aviación)." data-resp="✍️ SM · Solution Manager del área" data-fecha="Resultado validado 2025" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — pendiente de sign-off del PM"><span class="rn">AESA<small>Sector público · aviación</small></span><span class="rr"><b>+80%</b> de automatización</span></div>
+                <div class="rref r-click" data-tipo="ref" data-sector="turismo" data-cliente="no" data-rev="ok" data-title="H10 Hotels" data-q="Reducción del tiempo de documentación en turismo." data-resp="✍️ SM · Solution Manager del área" data-fecha="Resultado validado 2025" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — pendiente de sign-off del PM"><span class="rn">H10 Hotels<small>Turismo</small></span><span class="rr"><b>−90%</b> tiempo de documentación</span></div>
+                <div class="rref r-click" data-tipo="ref" data-sector="publico" data-cliente="no" data-rev="ok" data-title="Min. Ciencia · AEI" data-q="Cumplimiento de SLA en sector público." data-resp="✍️ SM · Solution Manager del área" data-fecha="Resultado validado 2025" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — pendiente de sign-off del PM"><span class="rn">Min. Ciencia · AEI<small>Sector público</small></span><span class="rr"><b>+40%</b> cumplimiento de SLA</span></div>
+                <div class="rref r-click" data-tipo="ref" data-sector="todos" data-cliente="no" data-rev="revisar" data-title="Corner WK" data-q="Caso de éxito de 2023." data-resp="✍️ SM · Solution Manager del área" data-fecha="2023 — revisar antes de usar" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — y revisar por antigüedad (2023)" style="border-style:dashed;background:#FBFAF8"><span class="rn">Corner WK<small>Caso de éxito · 2023</small></span><span class="rr"><span class="refmark conf">confirmar por cuenta</span></span></div>
+                <div class="rz-note">Marca por caso: <span class="refmark ok">citable</span> el PM ha confirmado que puedes nombrarlo · <span class="refmark conf">confirmar por cuenta</span> interno, confírmalo antes. Hoy todos en confirmar; los resultados sí valen para preparar.</div>
               </div>
             </div>
           </div>
 
-          <div class="rz-hist">
+          <div class="rz-hist r-click" data-tipo="archivo" data-sector="todos" data-cliente="no" data-rev="revisar" data-title="Histórico · archivo del área" data-q="Lo que no entra en el recorrido por antiguo, sustituido o sin contexto: la sesión de 2022, los vídeos sin etiquetar, las fichas retiradas. Consultable siempre, sugerido nunca." data-resp="✍️ SM · Solution Manager del área" data-fecha="Material antiguo — fuera de vigencia por diseño" data-vive="Hub del área · Archivo">
             <span class="rz-t">Histórico · archivo del área</span>
             <p>Lo que no entra en el recorrido — por antiguo, sustituido o sin contexto (la sesión de 2022, los vídeos sin etiquetar, las fichas retiradas) — se guarda aquí, con su fecha. <b>Consultable siempre, sugerido nunca.</b></p>
             <span class="pista-tag" style="color:#7A8691;background:#fff;border-color:#D9D4CC">Fuera del recorrido</span>
@@ -1038,47 +1318,56 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
         <!-- ESTAR AL DÍA · PROCESOS -->
         <div class="panel doc" id="p-procesos">
-          <div class="repo-head"><div class="slbl" style="margin:0">Estar al día · relación con el área <span class="hab">Etapa 1</span></div><span class="repo-lock">Sobre Microsoft · Outlook + Teams</span></div>
+          <div class="repo-head"><div class="slbl" style="margin:0">Estar al día · relación con el área</div><span class="repo-lock">Sobre Microsoft · Outlook + Teams</span></div>
           <div class="dsub">El bucle en dos sentidos: el PM te avisa de lo nuevo, y tú le devuelves lo que falta. Todo por donde ya trabajáis — correo y Teams. Sin ruido: te llega cuando hay algo que usar, más un resumen del área al mes.</div>
           <div class="g2">
             <div class="g2-col">
-              <div class="colhd">📣 De tu PM a ti · novedades</div>
-              <p class="proc-note">Cuando el PM publica algo nuevo, sale por <b>los dos canales</b>: un correo de Outlook (le llega a todo el mundo) y un aviso en el <b>canal de Teams</b> del área (para quien lo sigue). Así no depende de estar metido en Teams.</p>
-              <div class="notif"><div class="ni teams">Teams</div><div><h4>Seis casos de modernización, ya en el Repositorio</h4><p>Publicado por el PM del área · hoy · canal "Ciclo de Software"</p></div></div>
-              <div class="notif"><div class="ni mail">Correo</div><div><h4>Nueva versión del argumentario de objeciones</h4><p>Outlook · a todo el equipo comercial · ayer</p></div></div>
-              <div class="notif"><div class="ni teams">Teams</div><div><h4>Actualizado el deck ejecutivo C-Suite</h4><p>Canal "Ciclo de Software" · esta semana</p></div></div>
+              <div class="colhd">📣 De tu PM a ti · novedades <span class="nv-unread" id="nv-unread">2 sin leer</span></div>
+              <div class="nv-health"><span class="nv-dot ok"></span> <b>Área activa</b> · última novedad hoy · ritmo ~3 al mes. <span class="nv-health-note">Si el PM pasa semanas sin publicar, esto vira a 🟠 y le llega un recordatorio <span class="prep-chip">aviso al PM · PRÓXIMAMENTE</span></span></div>
+              <p class="proc-note">Cuando el PM publica algo, sale por <b>los dos canales</b>: correo de Outlook (a todo el mundo) y aviso en el <b>canal de Teams</b> del área. Toca una novedad para abrirla.</p>
+              <div class="notif nv r-click nv-new" data-kic="Novedad del área" data-title="Seis casos de modernización, ya en el Repositorio" data-q="El PM ha subido seis casos nuevos al Repositorio, cada uno con su resultado." data-resp="📣 PM del área" data-fecha="Publicado hoy · canal Ciclo de Software" data-vive="Repositorio · Referencias" data-go="7"><div class="ni teams">Teams</div><div><h4>Seis casos de modernización, ya en el Repositorio <span class="nv-badge">nuevo</span></h4><p>Publicado por el PM del área · hoy · canal "Ciclo de Software"</p></div></div>
+              <div class="notif nv r-click nv-new" data-kic="Novedad del área" data-title="Nueva versión del argumentario de objeciones" data-q="Actualización del argumentario de objeciones con respuestas nuevas." data-resp="📣 PM del área" data-fecha="Ayer · Outlook a todo el equipo" data-vive="Repositorio · Para conocer" data-go="7"><div class="ni mail">Correo</div><div><h4>Nueva versión del argumentario de objeciones <span class="nv-badge">nuevo</span></h4><p>Outlook · a todo el equipo comercial · ayer</p></div></div>
+              <div class="notif nv r-click" data-kic="Novedad del área" data-title="Actualizado el deck ejecutivo C-Suite" data-q="Nueva versión del deck ejecutivo para la reunión introductoria." data-resp="📣 PM del área" data-fecha="Esta semana · canal Ciclo de Software" data-vive="Repositorio · Para usar con cliente" data-go="7"><div class="ni teams">Teams</div><div><h4>Actualizado el deck ejecutivo C-Suite</h4><p>Canal "Ciclo de Software" · esta semana</p></div></div>
             </div>
             <div class="g2-col">
               <div class="colhd">💬 De ti a tu PM · feedback</div>
-              <p class="proc-note">¿Echas algo en falta, una objeción nueva, una idea? Díselo al PM sin salir de aquí. Su feedback es lo que mantiene el área viva — es lo que alimenta las novedades de la izquierda.</p>
+              <p class="proc-note">¿Echas algo en falta —una objeción nueva, un caso que no tienes? Suéltalo aquí en un clic, sin salir. Es lo que mantiene el área viva.</p>
               <div class="fb-box">
-                <div class="fb-ph">"En la cuenta X me pidieron un caso de seguros de vida y no lo tenemos…"</div>
-                <div class="fb-actions">
-                  <button class="fb-btn teams">Abrir en Teams</button>
-                  <button class="fb-btn mail">Enviar por correo</button>
+                <textarea id="fb-text" class="fb-input" rows="3" placeholder="Ej.: en una cuenta me pidieron un caso de seguros de vida y no lo tenemos…"></textarea>
+                <div class="fb-row">
+                  <button type="button" class="fb-send" id="fb-send">Enviar al PM</button>
+                  <span class="fb-alt">¿Prefieres ampliarlo? <button type="button" class="fb-link" id="fb-teams">Teams</button> · <button type="button" class="fb-link" id="fb-mail">correo</button></span>
+                </div>
+                <div class="fb-ok" id="fb-ok" style="display:none"></div>
+              </div>
+              <div class="fb-trace">
+                <div class="fb-trace-h">Tus sugerencias</div>
+                <div id="fb-list">
+                  <div class="fb-item"><div class="fb-i-t">«Falta un caso de seguros de vida»</div><div class="fb-i-s"><span class="fb-st pub">publicada</span> 12 may · salió como una de las novedades de la izquierda</div></div>
+                  <div class="fb-item"><div class="fb-i-t">«La objeción de "ya tenemos proveedor" necesita mejor respuesta»</div><div class="fb-i-s"><span class="fb-st cola">en cola</span> 3 jun · el PM la está viendo</div></div>
                 </div>
               </div>
-              <div class="proc-foot">Los botones abren Teams u Outlook ya dirigidos al PM del área. Lo que se incorpora vuelve por las novedades de la izquierda — ves que tu aviso sirvió.</div>
+              <div class="proc-foot">Lo que envías queda registrado y el PM lo ve. Lo que se incorpora vuelve por las novedades — y aquí te marcamos cuál de tus sugerencias se publicó.</div>
             </div>
           </div>
         </div>
 
-        <!-- HABILITACIÓN · READINESS -->
+        <!-- ACREDITACIÓN -->
         <div class="panel toolview" id="p-readiness">
-          <div class="tv-head"><div class="tv-ic">✓</div><div><div class="slbl" style="margin:0">Antes de abrir el área · Readiness <span class="hab">Etapa 1</span></div><div class="atitle" style="font-size:20px">Se habilita una vez; luego el área es suya</div></div></div>
-          <div class="tv-note" style="background:#EFEAF6;border-color:rgba(124,77,188,.3);color:#5B3A93">La habilitación —leer la tarjeta y 5 preguntas— es la <b>puerta del área</b>: una vez dentro, se te abren las herramientas y la profundidad. No es nadie obligándote; es que detrás hay algo que quieres usar. El panel del PM con la adopción del equipo llega en Etapa 2.</div>
+          <div class="tv-head"><div class="tv-ic">✓</div><div><div class="slbl" style="margin:0">Antes de abrir el área · Acreditación</div><div class="atitle" style="font-size:20px">Te acreditas una vez; luego el área es tuya</div></div></div>
+          <div class="tv-note" style="background:#EFEAF6;border-color:rgba(124,77,188,.3);color:#5B3A93">Cinco preguntas: los cinco mensajes del área que tienes que dominar. Al acertarlas quedas acreditado y se te abren las herramientas y la profundidad.</div>
           <div class="g2">
             <div class="g2-col">
-              <div class="colhd">Cómo se habilita · una vez</div>
+              <div class="colhd">Cómo te acreditas · una vez</div>
               <div style="display:flex;flex-direction:column;gap:9px">
-                <div class="tv-step"><div class="n">1</div><h4>Lee la tarjeta</h4><p>Dos minutos: encuadre del área, la pregunta que abre, el dato y el cierre.</p></div>
-                <div class="tv-step"><div class="n">2</div><h4>Responde 5 preguntas</h4><p>Comprueban que sabe abrir y cerrar el área.</p></div>
-                <div class="tv-step"><div class="n">3</div><h4>Queda habilitado</h4><p>Hipatia lo registra. <span class="hab">✓ Habilitado · Modernización</span></p></div>
+                <div class="tv-step"><div class="n">1</div><h4>Lee la tarjeta</h4><p>El encuadre del área, la pregunta que abre, el dato y el cierre.</p></div>
+                <div class="tv-step"><div class="n">2</div><h4>Llévate las 5</h4><p>Son los cinco mensajes del área que tienes que dominar.</p></div>
+                <div class="tv-step"><div class="n">3</div><h4>Quedas acreditado</h4><p>Al acertar las cinco, Hipatia lo registra. Es una vez: no caduca ni te lo vuelve a pedir cada vez que entras.</p></div>
               </div>
-              <p class="proc-note" style="margin-top:11px">Esto no parte de cero: el área ya hacía sesiones de <b>Sales Readiness</b> (la última, mayo 2025, sobre desarrollo con IA). La puerta las recoge y deja traza de quién está habilitado.</p>
+              <p class="proc-note" style="margin-top:11px">Esto no parte de cero: el área ya hacía sesiones de <b>Sales Readiness</b> (la última, mayo 2025, sobre desarrollo con IA). La puerta las recoge y deja traza de quién está acreditado.</p>
             </div>
             <div class="g2-col">
-              <div class="colhd">Las 5 preguntas · despliega para responder</div>
+              <div class="colhd">Las 5 preguntas · llévate las cinco para acreditarte</div>
               <div class="acc">
                 <details>
                   <summary><span class="chev">▸</span>1 · ¿Cuál es el único cierre posible de una primera reunión?</summary>
@@ -1091,17 +1380,17 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
                 <details>
                   <summary><span class="chev">▸</span>2 · ¿Qué diferencia a Entelgy que ningún competidor firma?</summary>
                   <div class="acc-b exq">
-                    <div class="exo" data-c="0">El precio por hora más bajo del mercado</div>
-                    <div class="exo" data-c="1">Reinvertir la eficiencia que recupera en el mantenimiento para costear la modernización — sin aumento neto del presupuesto, medido por Foreworth</div>
-                    <div class="exo" data-c="0">Más consultores en el equipo</div>
+                    <div class="exo" data-c="0">Que tenemos más años y más casos de modernización que cualquier otro</div>
+                    <div class="exo" data-c="0">Que usamos IA para escribir el código mucho más rápido que la competencia</div>
+                    <div class="exo" data-c="1">Que reinvertimos la eficiencia del mantenimiento en modernizar, sin presupuesto nuevo y medido por un externo</div>
                   </div>
                 </details>
                 <details>
                   <summary><span class="chev">▸</span>3 · ¿Qué le pasa al cliente que no moderniza su legacy?</summary>
                   <div class="acc-b exq">
-                    <div class="exo" data-c="0">Nada relevante: si funciona, no hay coste</div>
-                    <div class="exo" data-c="1">El coste de mantenerlo sube cada año, se queda sin gente que sepa tocarlo y no puede innovar al ritmo del negocio</div>
-                    <div class="exo" data-c="0">Solo un problema de imagen, no de dinero</div>
+                    <div class="exo" data-c="1">Cada año cuesta más sostenerlo y quedan menos personas capaces de mantenerlo</div>
+                    <div class="exo" data-c="0">Si no lo toca, no pasa nada: el coste solo llega si decide cambiarlo</div>
+                    <div class="exo" data-c="0">El riesgo es de seguridad; con parches y backups al día queda cubierto</div>
                   </div>
                 </details>
                 <details>
@@ -1115,16 +1404,19 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
                 <details>
                   <summary><span class="chev">▸</span>5 · La guía de "cómo abordar al cliente" está marcada como interna. ¿Cómo la usas?</summary>
                   <div class="acc-b exq">
-                    <div class="exo" data-c="1">Para preparar tu conversación — incluido de qué partidas podría salir el presupuesto. Nunca la enseñas ni la metes en el deck del cliente</div>
-                    <div class="exo" data-c="0">Se la pasas al cliente como muestra de transparencia</div>
-                    <div class="exo" data-c="0">La incluyes en el deck para que vean el método</div>
+                    <div class="exo" data-c="0">Se la enseñas al cliente como muestra de transparencia y de que no le ocultas nada</div>
+                    <div class="exo" data-c="0">La incluyes en el deck para que vea el método y el rigor con que trabajáis</div>
+                    <div class="exo" data-c="1">Solo para prepararte —incluido de qué partidas saldría el presupuesto—, nunca la enseñas</div>
                   </div>
                 </details>
               </div>
-              <div class="acct">
-                <div class="acct-l">Vista del PM · habilitación por área <span class="dest-badge">Etapa 2</span></div>
-                <div class="acct-row"><span>Modernización</span><div class="bar"><i style="width:64%"></i></div><b>14 / 22</b></div>
-                <div class="acct-row"><span>Mantenimiento Evolutivo</span><div class="bar"><i style="width:41%"></i></div><b>9 / 22</b></div>
+              <div class="acr-result" id="acr-result">
+                <div class="acr-prog"><b id="acr-count">0</b> / 5 respondidas</div>
+                <div class="acr-bar"><i id="acr-bar-fill"></i></div>
+                <button type="button" class="btn-exam acr-submit" id="acr-submit" disabled>Comprobar mis respuestas</button>
+                <div class="acr-pending" id="acr-pending">Responde las cinco y comprueba. Hay que llevarse las cinco —son los mensajes con los que vas a abrir—; si alguna se te escapa, la repasas en la tarjeta y lo retomas.</div>
+                <div class="acr-msg" id="acr-msg" hidden></div>
+                <div class="acr-done" id="acr-done" hidden><span class="hab">✓ Acreditado · Modernización</span> Área desbloqueada. Hipatia deja traza.</div>
               </div>
             </div>
           </div>
@@ -1132,7 +1424,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
         <!-- TRABAJO POR CUENTA · ESTADO DE LA CUENTA -->
         <div class="panel toolview" id="p-cuenta">
-          <div class="tv-head"><div class="tv-ic">🔍</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Estado de la cuenta <span class="hab">Etapa 1</span> <span class="mt ag">🤖 agente</span></div><div class="atitle" style="font-size:20px">Lo que sabes de una cuenta antes de escribir nada</div></div></div>
+          <div class="tv-head"><div class="tv-ic">🔍</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Estado de la cuenta <span class="mt ag">🤖 agente</span></div><div class="atitle" style="font-size:20px">Lo que sabes de una cuenta antes de escribir nada</div></div></div>
 
           <div class="colhd" style="margin-bottom:8px">La herramienta · escribes el nombre, la IA mira por ti</div>
           <div class="acct-tool">
@@ -1141,7 +1433,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
               <input class="at-input" id="acct-input" value="Grupo Lantia" aria-label="Nombre de la cuenta" autocomplete="off">
               <button class="at-btn" type="button" id="acct-btn">Analizar</button>
             </div>
-            <div class="at-sources">La IA lee <b>fuentes públicas</b>: web, ofertas de empleo que delatan el stack, prensa, registro mercantil y señales del sector. Cada dato lleva de dónde sale.</div>
+            <div class="at-sources">La IA lee <b>fuentes públicas</b>: web, ofertas de empleo que delatan el stack, prensa, registro mercantil y señales del sector. Cada dato lleva de dónde sale y con qué confianza; cuando no hay señal fiable, lo dice en vez de inventar.</div>
           </div>
           <div id="cuenta-result">
           <div class="at-status">Analizado hace unos segundos · esto es lo que ha encontrado</div>
@@ -1154,14 +1446,27 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="scan-row"><div class="k">Stack y antigüedad</div><div class="v">Núcleo de pólizas en <b>Java sobre un core de ~11 años</b>; sin arquitecto cloud en plantilla.<span style="font-size:10.5px;color:var(--gray)"> · Fuente: ofertas de empleo + su web</span></div></div>
             <div class="scan-row"><div class="k">Señales de dolor</div><div class="v"><span class="sig">Oferta de empleo · mantenimiento PL/SQL</span><span class="sig">Migración "en evaluación"</span><span class="sig">Rotación en el core</span><div class="sig-note">La oferta es de hace ~3 semanas (alta confianza). La migración sale de prensa de 2023 — verifica si ya la han hecho. La rotación está inferida de las ofertas, no confirmada. Confírmalo antes de soltárselo a un CIO.<br>Fuente · portal de empleo + prensa 2023 + perfiles públicos</div></div></div>
             <div class="scan-row"><div class="k">Exposición regulatoria</div><div class="v">Seguros: sistemas de <b>alto riesgo</b> bajo el AI Act (cumplimiento dic 2027) y resiliencia operativa exigida por <b>DORA</b>. Un core sin documentación auditable deja de ser solo técnico.<span style="font-size:10.5px;color:var(--gray)"> · Fuente: sector + EU AI Act + DORA</span></div></div>
-            <div class="scan-row"><div class="k">Tamaño y entrada</div><div class="v">Aseguradora mediana de no-vida, ~600 empleados. Deciden CIO y CFO. <b>Punto de entrada probable: Marta Ruiz, Dir. de Sistemas</b> (perfil público en LinkedIn).<span style="font-size:10.5px;color:var(--gray)"> · Fuente: registro mercantil + web + perfiles públicos</span></div></div>
+            <div class="scan-row"><div class="k">Tamaño</div><div class="v">Aseguradora mediana de no-vida, ~600 empleados. Deciden CIO y CFO; las personas concretas, en el mapa de abajo.<span style="font-size:10.5px;color:var(--gray)"> · Fuente: registro mercantil + web</span></div></div>
           </div>
 
           <div class="scan-note">Esto es solo lo que se ve desde fuera (señal pública). Cruza con el CRM antes de tratarla como cuenta nueva — puede que Entelgy ya trabaje con ellos.</div>
 
+          <!-- AGENTE 2 · MAPA DE PERSONAS · agente nuevo, en preparación -->
+          <div class="scan">
+            <div class="scan-head">
+              <div><div class="l">¿A quién escribo? · las personas de la cuenta <span class="mt ag">🤖 agente</span></div><div class="t">Grupo Lantia</div></div>
+              <span class="prep-chip">EN PREPARACIÓN</span>
+            </div>
+            <div class="ppl-intro">Un segundo agente mapea a quién dirigirse —cargo, por qué importa y vía de contacto—, con su nivel de confianza. Es un agente nuevo, todavía por construir; así se verá.</div>
+            <div class="scan-row"><div class="k">Primer contacto</div><div class="v"><b>Marta Ruiz</b> · Dirección de Sistemas. Por aquí entra lo técnico; es quien recibe el correo del paso siguiente. <span class="mr-hint">⚠ de perfil público · confírmalo</span></div></div>
+            <div class="scan-row"><div class="k">Decide el alcance</div><div class="v"><b>Dirección de IT / CIO</b>. Aprueba qué se moderniza. <span class="mr-hint">por identificar</span></div></div>
+            <div class="scan-row"><div class="k">Tiene el presupuesto</div><div class="v"><b>Dirección Financiera / CFO</b>. La pieza del ángulo de financiar desde el mantenimiento. <span class="mr-hint">por identificar</span></div></div>
+            <div class="ppl-foot">El primer contacto pasa al correo del paso siguiente. <span class="xref" onclick="go(4)">→ ir al correo</span></div>
+          </div>
+
           <div class="contrib">
             <div class="contrib-h">Añade lo que tú sabes de esta cuenta <span class="contrib-opt">opcional</span></div>
-            <div class="contrib-sub">El análisis es lo que se ve desde fuera. Suma lo de dentro —un contacto, un proyecto anterior, en qué punto está su presupuesto— y se tiene en cuenta en el correo del siguiente paso.</div>
+            <div class="contrib-sub">El análisis es lo que se ve desde fuera. Suma lo de dentro —un contacto, un proyecto anterior, en qué punto está su presupuesto— y se tiene en cuenta en el correo del siguiente paso. No incluyas datos confidenciales del cliente, ni en el texto ni en archivos: mientras esto sea borrador, no está cerrado dónde acaba un adjunto ni quién lo ve.</div>
             <textarea class="contrib-ta" id="contrib-ta" rows="3" placeholder="Ej.: hablé con su Dir. de Sistemas en un evento en marzo; tienen una migración parada por presupuesto."></textarea>
             <div class="contrib-files" id="contrib-files"></div>
             <div class="contrib-actions">
@@ -1179,8 +1484,8 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
           <div class="match">
             <div class="match-h">Lo que le puedes enseñar de Entelgy</div>
-            <div class="match-b">Mismo patrón: <b>core de seguros en Java, modernizado y financiado desde el propio mantenimiento</b>. El caso de Entelgy que encaja está en el repositorio.<span class="match-note">Caso nombrable pendiente de que Jorge lo confirme.</span></div>
-            <span class="match-link" onclick="go(6)">Ver el caso en el repositorio →</span>
+            <div class="match-b">Mismo patrón: <b>core de seguros en Java, modernizado y financiado desde el propio mantenimiento</b>. El caso de Entelgy que encaja está en el repositorio.<span class="match-note">Referenciabilidad: <span class="refmark conf">confirmar por cuenta</span></span></div>
+            <span class="match-link" onclick="go(7)">Ver el caso en el repositorio →</span>
           </div>
 
           <div class="verdict go">
@@ -1205,17 +1510,17 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
         <!-- TRABAJO POR CUENTA · EL MAIL -->
         <div class="panel toolview" id="p-mail">
-          <div class="tv-head"><div class="tv-ic">✉️</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Primer contacto <span class="hab">Etapa 1</span> <span class="mt ag">🤖 agente</span></div><div class="atitle" style="font-size:20px">El correo que abre, con el tono que espera un CIO</div></div></div>
+          <div class="tv-head"><div class="tv-ic">✉️</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Primer contacto <span class="mt ag">🤖 agente</span></div><div class="atitle" style="font-size:20px">El correo que abre, con el tono que espera un CIO</div></div></div>
 
           <div class="jstrip" role="tablist">
-            <div class="jstep on" data-view="1" role="tab" tabindex="0"><span class="jn">1</span><div><b>Del análisis, la herramienta</b><small>El sistema genera el autodiagnóstico y su URL</small></div></div>
+            <div class="jstep" data-view="1" role="tab" tabindex="0"><span class="jn">+</span><div><b>El autodiagnóstico</b><small>Opcional · si lo añades, el sistema crea su URL</small></div></div>
             <div class="jconn">→</div>
-            <div class="jstep" data-view="2" role="tab" tabindex="0"><span class="jn">2</span><div><b>El correo, autogenerado</b><small>Ya lleva esa URL; Ana lo ajusta y lo envía</small></div></div>
+            <div class="jstep on" data-view="2" role="tab" tabindex="0"><span class="jn">✉</span><div><b>El correo</b><small>Lo que envías a la cuenta · editable</small></div></div>
             <div class="jconn">→</div>
-            <div class="jstep" data-view="3" role="tab" tabindex="0"><span class="jn">3</span><div><b>El diagnóstico real</b><small>El cliente lo completa y entra como lead</small></div></div>
+            <div class="jstep" data-view="3" role="tab" tabindex="0"><span class="jn">↩</span><div><b>Lo que vuelve</b><small>Opcional · el lead, si lo añadiste</small></div></div>
           </div>
 
-          <div class="jview on" data-view="1">
+          <div class="jview" data-view="1">
             <div class="genrow">
               <div class="gen-head"><span class="jn sm">1</span><b>Del escaneo de la cuenta sale la herramienta</b><span class="gen-auto">⚙ generado automáticamente</span></div>
               <div class="gen-note">Del escaneo del paso anterior, el sistema monta el autodiagnóstico <b>a medida de Grupo Lantia</b> y lo publica en una <b>URL propia de la cuenta</b>. Ana no construye nada: copia el enlace y se lo reenvía al cliente — viaja dentro del correo del paso siguiente.</div>
@@ -1228,22 +1533,22 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             </div>
           </div>
 
-          <div class="jview" data-view="2">
-            <div class="sector-pick" id="sector-pick">
-              <div class="sp-lbl">Sector de la cuenta · cambia el gancho con que abres</div>
-              <div class="sp-chips">
-                <button type="button" class="sp-chip on" data-sec="fin">Financiero · banca/seguros</button>
-                <button type="button" class="sp-chip" data-sec="edu">Educación</button>
-                <button type="button" class="sp-chip" data-sec="ret">Retail / eCommerce</button>
-                <button type="button" class="sp-chip" data-sec="ind">Industria</button>
-                <button type="button" class="sp-chip" data-sec="pub">Sector público</button>
-                <button type="button" class="sp-chip" data-sec="tur">Turismo</button>
+          <div class="jview on" data-view="2">
+            <div class="adt-toggle" id="adt-toggle">
+              <div class="adt-toggle-h">¿Añadir el autodiagnóstico al correo?</div>
+              <div class="adt-toggle-note">El cliente se autodiagnostica en 2 minutos y vuelve como lead cualificado. Tú decides cómo abrir esta cuenta.</div>
+              <div class="adt-opts">
+                <button type="button" class="adt-opt" data-adt="0">Correo solo</button>
+                <button type="button" class="adt-opt on" data-adt="1">Correo + autodiagnóstico</button>
               </div>
+            </div>
+            <div class="sector-pick">
+              <div class="sp-lbl">Sector de la cuenta · <b style="color:var(--navy)">seguros</b> — lo toma del paso 3; el correo va adaptado a él</div>
             </div>
             <div class="mail-value" id="sector-hook">
               <div class="vl">Algo de valor · lo que le hace abrir el correo</div>
-              <p id="sector-hook-text"></p>
-              <div class="sp-note" id="sector-note" hidden>El correo completo, de momento, está cableado para <b>Financiero</b> — la cuenta de ejemplo, Grupo Lantia, es una aseguradora. Aquí ves cómo cambia el gancho de apertura en cada sector; el resto del correo se adapta igual cuando llega ese sector.</div>
+              <p>Casi 7 de cada 10 euros de IT se van en sostener el legacy (Gartner). Modernizar el core libera ese gasto sin abrir partida nueva, y DORA y NIS2 ya marcan el plazo.</p>
+              <div class="sp-note">El correo va construido para el sector de la cuenta — seguros, en Grupo Lantia. Otra cuenta, de otro sector, generaría el suyo.</div>
             </div>
             <div class="mail-contrib" id="mail-contrib" hidden>
               <div class="mail-contrib-h">Tú sabes algo que la IA no ve</div>
@@ -1254,18 +1559,20 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="mail" style="margin:0">
               <div class="mail-bar"><i></i><i></i><i></i><span class="mail-edit-tag">Autogenerado · editable</span></div>
               <div class="mail-meta">
-                <div class="mr"><b>Para</b> [nombre] · Dirección de Sistemas, Grupo Lantia</div>
+                <div class="mr"><b>Para</b> Marta Ruiz · Dirección de Sistemas, Grupo Lantia <span class="mr-hint">⚠ de perfil público · confírmalo</span></div>
                 <div class="mr"><b>De</b> Ana Pérez · Entelgy</div>
-                <div class="subj">Asunto · Modernización del core de pólizas: exposición regulatoria y coste de mantenimiento</div>
+                <div class="subj">Asunto · ¿Modernizar el core de pólizas sin abrir partida nueva?</div>
               </div>
               <div class="mail-body" contenteditable="true" spellcheck="false">
-                <p>Estimado/a [nombre]:</p>
-                <p>Le escribo a raíz de un análisis del sector asegurador de cara al plazo del EU AI Act. En él, Grupo Lantia figura entre las compañías cuyo núcleo de pólizas lleva tiempo pendiente de una modernización de fondo.</p>
+                <p>Estimada Marta Ruiz:</p>
+                <p>Le escribo a raíz de un análisis del sector asegurador de cara al plazo del EU AI Act. En él, el núcleo de pólizas de compañías como Grupo Lantia aparece como candidato a una modernización de fondo.</p>
                 <p>Es una situación frecuente y, en seguros, especialmente sensible: a partir de diciembre de 2027 el AI Act exigirá documentación auditable en los sistemas de alto riesgo, y DORA —con NIS2 al lado— aprieta en resiliencia operativa. Un core difícil de mantener encarece tanto el cumplimiento como el coste de sostenerlo año a año.</p>
                 <p>La parte que suele sorprender: buena parte de esa modernización puede financiarse <b>desde el propio presupuesto de mantenimiento</b>, sin abrir una partida nueva. Mismo importe, más valor entregado.</p>
+                <div id="mail-adt-block">
                 <p>Por si le resulta útil de cara a su comité, puede hacer un breve autodiagnóstico —apenas cinco minutos— en este enlace:</p>
                 <p><a href="/autodiagnostico/grupo-lantia/" class="mail-link" target="_blank" rel="noopener">entelgy.com/autodiagnostico/grupo-lantia</a></p>
                 <p>Devuelve un informe con el nivel de exposición de la organización y una primera estimación del coste de mantener el core en su estado actual. Es información que puede emplear internamente, trabajemos juntos o no.</p>
+                </div>
                 <p>Si más adelante lo considera oportuno, quedo a su disposición para comentarlo sin compromiso.</p>
                 <p>Un cordial saludo,</p>
                 <div class="mail-sign"><b>Ana Pérez</b>Modernización de Aplicaciones · Entelgy</div>
@@ -1275,10 +1582,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
               <button class="btn-copy" type="button" onclick="copyMail(this)">⧉ Copiar correo</button>
               <div class="mail-editnote"><b>Lo redacta el sistema.</b> Ana lo ajusta y lo envía desde su propio correo.</div>
             </div>
-            <div class="hm-band" style="margin-top:14px">
-              <div class="hm-proc-l"><b>¿No tienes el contacto?</b> Aquí irá la búsqueda de contactos de la cuenta — nombre, cargo y email de la persona a la que escribir. En Entelgy Digital ya se usa una herramienta para esto; la integramos en el recorrido.</div>
-              <span style="font-size:10px;font-weight:800;letter-spacing:.08em;color:var(--copper);border:1px solid var(--copper);border-radius:20px;padding:4px 10px;white-space:nowrap">EN PREPARACIÓN</span>
-            </div>
+            <div style="margin-top:14px;font-size:12px;color:var(--gray);line-height:1.5">¿Otro contacto? El mapa de personas de la cuenta —a quién escribir primero y quién más interviene— está en <b style="color:var(--navy)">Estado de la cuenta</b>. <span class="xref" onclick="go(3)">→ ver el mapa de personas</span></div>
           </div>
 
           <div class="jview" data-view="3">
@@ -1333,10 +1637,10 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
     <div class="box">
       <div class="kick">Etapa 2 · el destino</div>
       <h1>Y después, el sistema empieza a anticiparse.</h1>
-      <p class="sub">El recorrido base se entrega primero. Lo que ves aquí es el destino: un sistema que se anticipa, que exige la habilitación antes de abrir el material y que mide la adopción. Sobre qué plataforma se construye cada parte —cuánto se aprovecha de lo actual o si va todo sobre una nueva— es una decisión todavía abierta.</p>
+      <p class="sub">El recorrido base se entrega primero. Lo que ves aquí es el destino: un sistema que se anticipa, que exige la acreditación antes de abrir el material y que mide la adopción.</p>
       <div class="e2grid g2x2">
         <div class="e2"><div class="n">Escáner de territorio</div><h3>Tu territorio, sin preguntar</h3><p>En Etapa 1 le preguntas a la IA por una cuenta. En Etapa 2 es al revés: el sistema te avisa de qué cuentas tienen un dolor activo esta semana, cruzando señales externas con tu cartera y el mensaje de entrada ya escrito.</p><div class="pre">Etapa 2</div></div>
-        <div class="e2"><div class="n">Intelligence</div><h3>Qué funciona y quién actúa</h3><p>Leads, porcentaje de equipo habilitado y qué material abre reuniones. El PM y la dirección lo ven sin esperar a que nadie informe.</p><div class="pre">Etapa 2</div></div>
+        <div class="e2"><div class="n">Intelligence</div><h3>Qué funciona y quién actúa</h3><p>Leads, porcentaje de equipo acreditado y qué material abre reuniones. El PM y la dirección lo ven sin esperar a que nadie informe.</p><div class="pre">Etapa 2</div></div>
       </div>
     </div>
   </section>
@@ -1344,7 +1648,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 </div>
 
 <div class="rnav">
-  <div class="lbl"><span id="nav-title">El portal del comercial · home</span><small id="nav-phase">Portal</small></div>
+  <div class="lbl"><span id="nav-title">El portal del comercial · home</span><small id="nav-phase">Portal</small><small class="rnav-meta">Recorrido guiado · el uso diario abrirá directo en el menú</small></div>
   <div class="ctrl">
     <div class="dots" id="dots"></div>
     <span class="ct" id="ct">1 / 9</span>
@@ -1355,13 +1659,14 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 <script>
 const steps=[
  {scene:'home',phase:'e1',title:'El portal del comercial · home',lblPhase:'Portal'},
- {scene:'portal',phase:'e1',panel:'p-tarjeta',flow:'f-tarjeta',title:'Tarjeta de entrada',lblPhase:'Etapa 1'},
- {scene:'portal',phase:'e1',panel:'p-readiness',flow:'f-readiness',title:'Habilitación · Readiness',lblPhase:'Etapa 1'},
- {scene:'portal',phase:'e1',panel:'p-cuenta',flow:'f-cuenta',title:'Estado de la cuenta · con IA',lblPhase:'Etapa 1'},
- {scene:'portal',phase:'e1',panel:'p-mail',flow:'f-mail',title:'Primer contacto · el mail',lblPhase:'Etapa 1'},
- {scene:'portal',phase:'e1',panel:'p-kit',flow:'f-kit',title:'Kit de visita · preparar la reunión',lblPhase:'Etapa 1'},
- {scene:'portal',phase:'e1',panel:'p-repo',flow:'f-repo',title:'Repositorio de conocimiento',lblPhase:'Etapa 1'},
- {scene:'portal',phase:'e1',panel:'p-procesos',flow:'f-procesos',title:'Estar al día · relación con el área',lblPhase:'Etapa 1'},
+ {scene:'portal',phase:'e1',panel:'p-tarjeta',flow:'f-tarjeta',title:'Tarjeta de entrada',lblPhase:''},
+ {scene:'portal',phase:'e1',panel:'p-readiness',flow:'f-readiness',title:'Acreditación del área',lblPhase:''},
+ {scene:'portal',phase:'e1',panel:'p-cuenta',flow:'f-cuenta',title:'Estado de la cuenta · con IA',lblPhase:''},
+ {scene:'portal',phase:'e1',panel:'p-mail',flow:'f-mail',title:'Primer contacto · el mail',lblPhase:''},
+ {scene:'portal',phase:'e1',panel:'p-kit',flow:'f-kit',title:'Kit de visita · preparar la reunión',lblPhase:''},
+ {scene:'portal',phase:'e1',panel:'p-postreunion',flow:'f-post',title:'Después de la reunión',lblPhase:''},
+ {scene:'portal',phase:'e1',panel:'p-repo',flow:'f-repo',title:'Repositorio de conocimiento',lblPhase:''},
+ {scene:'portal',phase:'e1',panel:'p-procesos',flow:'f-procesos',title:'Estar al día · relación con el área',lblPhase:''},
  {scene:'etapa2',phase:'e2',title:'El recorrido por delante · Fase 2',lblPhase:'Fase 2'}
 ];
 const scenes={home:document.querySelector('.home'),portal:document.querySelector('.portal'),etapa2:document.querySelector('.etapa2')};
@@ -1396,13 +1701,57 @@ window.addEventListener('resize',updFade);
 document.getElementById('prev').onclick=()=>go(cur-1);
 document.getElementById('next').onclick=()=>go(cur+1);
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
-document.querySelectorAll('#p-readiness .exq').forEach(q=>{
- q.querySelectorAll('.exo').forEach(o=>o.addEventListener('click',()=>{
-  if(q.dataset.done)return;q.dataset.done=1;
-  if(o.dataset.c==='1')o.classList.add('ok');
-  else{o.classList.add('no');q.querySelector('.exo[data-c="1"]').classList.add('ok');}
- }));
-});
+(function(){
+ const qs=[...document.querySelectorAll('#p-readiness .exq')];
+ if(!qs.length)return;
+ const count=document.getElementById('acr-count');
+ const fill=document.getElementById('acr-bar-fill');
+ const done=document.getElementById('acr-done');
+ const pending=document.getElementById('acr-pending');
+ const msg=document.getElementById('acr-msg');
+ const submit=document.getElementById('acr-submit');
+ const total=qs.length;
+ let locked=false;
+ const answered=()=>qs.filter(q=>q.querySelector('.exo.sel')).length;
+ function refresh(){
+  const n=answered();
+  if(count)count.textContent=n;
+  if(fill)fill.style.width=(n/total*100)+'%';
+  if(submit)submit.disabled=locked||n<total;
+ }
+ qs.forEach(q=>q.querySelectorAll('.exo').forEach(o=>o.addEventListener('click',()=>{
+  if(locked)return;
+  q.querySelectorAll('.exo').forEach(x=>x.classList.remove('sel'));
+  o.classList.add('sel');
+  if(msg)msg.hidden=true;
+  refresh();
+ })));
+ function reshuffle(){
+  qs.forEach(q=>{
+   const opts=[...q.querySelectorAll('.exo')];
+   for(let i=opts.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const t=opts[i];opts[i]=opts[j];opts[j]=t;}
+   opts.forEach(o=>{o.classList.remove('sel');q.appendChild(o);});
+  });
+ }
+ if(submit)submit.addEventListener('click',()=>{
+  if(submit.disabled)return;
+  const right=qs.filter(q=>{const s=q.querySelector('.exo.sel');return s&&s.dataset.c==='1';}).length;
+  if(right===total){
+   locked=true;
+   qs.forEach(q=>{const s=q.querySelector('.exo.sel');if(s)s.classList.add('ok');});
+   if(msg)msg.hidden=true;
+   if(pending)pending.hidden=true;
+   if(done)done.hidden=false;
+   if(fill)fill.style.width='100%';
+   submit.disabled=true;submit.textContent='Acreditado ✓';
+  }else{
+   if(msg){msg.hidden=false;msg.textContent='Aún no: '+right+' de 5. Las cinco están en la tarjeta de al lado; lo retomas cuando quieras.';}
+   reshuffle();
+   refresh();
+  }
+ });
+ refresh();
+})();
 function copyAdtUrl(btn){
  const url=location.origin+'/autodiagnostico/grupo-lantia/';
  try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url);}else{const ta=document.createElement('textarea');ta.value=url;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();}}catch(e){}
@@ -1411,8 +1760,20 @@ function copyAdtUrl(btn){
 }
 function copyMail(btn){
  const body=document.querySelector('#p-mail .mail-body');
- const txt=body?body.innerText.replace(/\n{3,}/g,'\n\n').trim():'';
- try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt);}else{const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();}}catch(e){}
+ if(!body)return;
+ const clone=body.cloneNode(true);
+ clone.querySelectorAll('[hidden]').forEach(el=>el.remove());
+ const html=clone.innerHTML;
+ const txt=body.innerText.replace(/\n{3,}/g,'\n\n').trim();
+ const fallback=()=>{try{const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();}catch(e){}};
+ try{
+  if(navigator.clipboard&&window.ClipboardItem){
+   const item=new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([txt],{type:'text/plain'})});
+   navigator.clipboard.write([item]).catch(fallback);
+  }else if(navigator.clipboard&&navigator.clipboard.writeText){
+   navigator.clipboard.writeText(txt).catch(fallback);
+  }else{fallback();}
+ }catch(e){fallback();}
  const old=btn.innerHTML;btn.innerHTML='✓ Copiado';btn.classList.add('done');
  setTimeout(()=>{btn.innerHTML=old;btn.classList.remove('done');},1600);
 }
@@ -1499,40 +1860,201 @@ function copyMail(btn){
  if(!strip)return;
  const steps=[...strip.querySelectorAll('.jstep')];
  const views=[...document.querySelectorAll('#p-mail .jview')];
+ let curView='2';
  function show(v){
+  curView=v;
   steps.forEach(s=>s.classList.toggle('on',s.dataset.view===v));
   views.forEach(w=>w.classList.toggle('on',w.dataset.view===v));
  }
  steps.forEach(s=>{
-  s.addEventListener('click',()=>show(s.dataset.view));
-  s.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(s.dataset.view);}});
+  s.addEventListener('click',()=>{if(s.classList.contains('locked'))return;show(s.dataset.view);});
+  s.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&!s.classList.contains('locked')){e.preventDefault();show(s.dataset.view);}});
  });
- show('1');
-})();
-/* Selector de sector · cambia el gancho "algo de valor"; el correo está cableado para Financiero */
-(function(){
- const hooks={
-  fin:{t:'Casi 7 de cada 10 euros de IT se van en sostener el legacy (Gartner). Modernizar el core libera ese gasto sin abrir partida nueva, y DORA y NIS2 ya marcan el plazo.',wired:true},
-  edu:{t:'Cada hora que el equipo dedica a sostener lo viejo es una hora que no mejora la experiencia del estudiante. Modernizas y reinviertes ese ahorro en el campus.',wired:false},
-  ret:{t:'Una app lenta pierde ventas en cada pico: más del 80% de los usuarios la abandona. Modernizar te da velocidad y escalado justo cuando más vendes.',wired:false},
-  ind:{t:'Integrar IoT y operar en tiempo real pide una base que el legacy no sostiene. Modernizar el core es tu entrada real a Industry 4.0.',wired:false},
-  pub:{t:'Modernizar recorta el coste de soporte y agiliza el trámite al ciudadano. Y el ENS lo cubres desde el primer día.',wired:false},
-  tur:{t:'Reservas y omnicanalidad que no se caen en temporada alta, con un 30–40% menos de esfuerzo en evolutivo.',wired:false}
- };
- const pick=document.getElementById('sector-pick');
- const txt=document.getElementById('sector-hook-text');
- const note=document.getElementById('sector-note');
- if(!pick||!txt||!note)return;
- function set(sec){
-  const h=hooks[sec];if(!h)return;
-  txt.textContent=h.t;
-  note.hidden=h.wired;
-  pick.querySelectorAll('.sp-chip').forEach(c=>c.classList.toggle('on',c.dataset.sec===sec));
+ /* Autodiagnóstico opcional · lo decide el comercial: correo solo o correo + autodiagnóstico */
+ const adtBlock=document.getElementById('mail-adt-block');
+ const adtBtns=[...document.querySelectorAll('#adt-toggle .adt-opt')];
+ const lockable=steps.filter(s=>s.dataset.view==='1'||s.dataset.view==='3');
+ function setAdt(on){
+  if(adtBlock)adtBlock.hidden=!on;
+  adtBtns.forEach(b=>b.classList.toggle('on',(b.dataset.adt==='1')===on));
+  lockable.forEach(s=>s.classList.toggle('locked',!on));
+  if(!on&&curView!=='2')show('2');
  }
- pick.querySelectorAll('.sp-chip').forEach(c=>c.addEventListener('click',()=>set(c.dataset.sec)));
- set('fin');
+ adtBtns.forEach(b=>b.addEventListener('click',()=>setAdt(b.dataset.adt==='1')));
+ show('2');
+ setAdt(true);
+})();
+(function(){
+ const pick=document.getElementById('role-pick');if(!pick)return;
+ const roles=[...document.querySelectorAll('#p-kit .pb-role')];
+ const chips=[...pick.querySelectorAll('.rp-chip')];
+ pick.addEventListener('click',e=>{
+  const b=e.target.closest('.rp-chip');if(!b)return;
+  const r=b.dataset.role;
+  chips.forEach(c=>c.classList.toggle('on',c===b));
+  roles.forEach(x=>{const m=x.dataset.role===r;x.classList.toggle('hi',r!=='all'&&m);x.classList.toggle('dim',r!=='all'&&!m);});
+ });
+})();
+(function(){
+ const btn=document.getElementById('dossier-btn');
+ if(!btn)return;
+ const txt=el=>el?el.textContent.trim():'';
+ const esc=s=>(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+ function build(){
+  const out=document.getElementById('dossier-print');
+  if(!out)return;
+  const onChip=document.querySelector('#role-pick .rp-chip.on');
+  const sel=onChip?onChip.dataset.role:'all';
+  const roles=[...document.querySelectorAll('#p-kit .pb-role')].filter(r=>sel==='all'||r.dataset.role===sel);
+  const pitch=roles.map(r=>'<div class="dz-row"><b>'+esc(txt(r.querySelector('b')))+'</b><span>'+esc(txt(r.querySelector('.mv')))+'</span></div>').join('');
+  const objs=[...document.querySelectorAll('#p-kit .obj')].map(o=>'<div class="dz-row"><b>'+esc(txt(o.querySelector('b')))+'</b><span>'+esc(txt(o.querySelector('p')))+'</span></div>').join('');
+  const qCard=[...document.querySelectorAll('#p-kit .pb-card')].find(c=>/confirmar que hay proyecto/i.test(txt(c.querySelector('h4'))));
+  const qs=qCard?[...qCard.querySelectorAll('.pb-list li')].map(li=>'<li>'+esc(txt(li))+'</li>').join(''):'';
+  const situ=document.querySelector('#p-kit .kit-situ');
+  let situScore='',situRows='';
+  if(situ){
+   const sc=situ.querySelector('.situ-score');
+   if(sc)situScore='<div class="dz-score"><b>'+esc(txt(sc.querySelector('b')))+'</b><span>'+esc(txt(sc.querySelector('span')))+'</span></div>';
+   situRows=[...situ.querySelectorAll('.scan-row')].map(r=>'<div class="dz-row"><b>'+esc(txt(r.querySelector('.k')))+'</b><span>'+esc(txt(r.querySelector('.v')))+'</span></div>').join('');
+  }
+  const close=document.querySelector('#p-kit .close-band .t');
+  const next=close?'<div class="dz-row"><span>'+esc(txt(close))+'</span></div>':'';
+  const date=new Date().toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric'});
+  const roleLbl=(sel!=='all'&&onChip)?' · '+esc(txt(onChip)):'';
+  out.innerHTML='<div class="dz-head"><div class="dz-logo">Entelgy<span>·</span></div><div class="dz-date">'+date+'</div></div>'
+   +'<h1>Dossier de visita · Grupo Lantia</h1>'
+   +'<div class="dz-sub">Modernización de Aplicaciones · preparación de la reunión</div>'
+   +'<h2>Para esta reunión</h2>'+situScore+situRows
+   +'<h2>El pitch'+roleLbl+'</h2>'+pitch
+   +'<h2>Objeciones</h2>'+objs
+   +'<h2>Si quieres confirmar que hay proyecto</h2><ul>'+qs+'</ul>'
+   +'<h2>Siguiente paso</h2>'+next
+   +'<h2>Referencias</h2><div class="dz-note">Aún ninguna marcada citable: pendiente del visto bueno del PM (hoy todas en «confirmar por cuenta»). Confírmalas antes de nombrarlas al cliente.</div>'
+   +'<div class="dz-foot">Material de preparación · uso interno. Al cliente, solo lo marcado citable.</div>';
+ }
+ btn.addEventListener('click',function(){build();window.print();});
 })();
 go(0);
+</script>
+<div id="dossier-print" class="dossier" aria-hidden="true"></div>
+
+<div class="ficha-ov" id="ficha-ov" aria-hidden="true">
+  <div class="ficha-card" role="dialog" aria-modal="true">
+    <button type="button" class="ficha-x" id="ficha-x" aria-label="Cerrar">✕</button>
+    <div class="ficha-kic" id="ficha-tipo">Pieza</div>
+    <h3 class="ficha-t" id="ficha-title"></h3>
+    <p class="ficha-q" id="ficha-q"></p>
+    <div class="ficha-rows">
+      <div class="ficha-r"><span class="ficha-l">Responsable</span><span id="ficha-resp"></span></div>
+      <div class="ficha-r"><span class="ficha-l">Última revisión</span><span id="ficha-fecha"></span></div>
+      <div class="ficha-r" id="ficha-cli-row"><span class="ficha-l">¿Sale al cliente?</span><span id="ficha-cli"></span></div>
+      <div class="ficha-r" id="ficha-ref-row"><span class="ficha-l">Referenciabilidad</span><span id="ficha-ref"></span></div>
+      <div class="ficha-r"><span class="ficha-l">Dónde vive</span><span id="ficha-vive"></span></div>
+    </div>
+    <button type="button" class="ficha-go" id="ficha-go" style="display:none">Ver en el repositorio →</button>
+    <div class="ficha-foot">Ficha de ejemplo. El contenido real vive en el hub del área; aquí se muestra cómo se presentará cada pieza.</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const panel=document.getElementById('p-repo');if(!panel)return;
+  const q=document.getElementById('rf-q'),cnt=document.getElementById('rf-count'),
+        clr=document.getElementById('rf-clear'),cli=document.getElementById('rf-cli'),
+        empty=document.getElementById('rf-empty');
+  const state={tipo:'',sector:'',rev:'',q:'',cli:false};
+  const pieces=[...panel.querySelectorAll('[data-tipo]')];
+  function match(el){
+    if(state.tipo&&el.dataset.tipo!==state.tipo)return false;
+    if(state.sector){const s=(el.dataset.sector||'');if(!(s.split(' ').includes(state.sector)||s.includes('todos')))return false;}
+    if(state.rev&&el.dataset.rev!==state.rev)return false;
+    if(state.cli&&el.dataset.cliente!=='si')return false;
+    if(state.q&&!el.textContent.toLowerCase().includes(state.q))return false;
+    return true;
+  }
+  function apply(){
+    let n=0;
+    pieces.forEach(el=>{const ok=match(el);el.classList.toggle('r-hidden',!ok);if(ok)n++;});
+    panel.querySelectorAll('.rz').forEach(z=>{
+      const vis=[...z.querySelectorAll('[data-tipo]')].some(p=>!p.classList.contains('r-hidden'));
+      z.classList.toggle('r-collapsed',!vis);
+    });
+    cnt.textContent=n+(n===1?' pieza':' piezas');
+    empty.style.display=n?'none':'block';
+  }
+  q.addEventListener('input',()=>{state.q=q.value.trim().toLowerCase();apply();});
+  cli.addEventListener('change',()=>{state.cli=cli.checked;apply();});
+  panel.querySelectorAll('.chip').forEach(ch=>ch.addEventListener('click',()=>{
+    const f=ch.dataset.f;
+    panel.querySelectorAll('.chip[data-f="'+f+'"]').forEach(c=>c.classList.remove('on'));
+    ch.classList.add('on');state[f]=ch.dataset.v;apply();
+  }));
+  function reset(){
+    state.tipo='';state.sector='';state.rev='';state.q='';state.cli=false;
+    q.value='';cli.checked=false;
+    panel.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c.dataset.v===''));
+    apply();
+  }
+  clr.addEventListener('click',reset);
+  const ec=document.getElementById('rf-empty-clear');if(ec)ec.addEventListener('click',reset);
+
+  const ov=document.getElementById('ficha-ov');const F=id=>document.getElementById(id);
+  const tipoLabel={conocer:'Para conocer · interno',cliente:'Para usar con cliente',ref:'Referencia · con resultado',archivo:'Histórico · archivo'};
+  const goBtn=F('ficha-go');
+  function openFicha(el){
+    F('ficha-tipo').textContent=el.dataset.kic||tipoLabel[el.dataset.tipo]||'Pieza';
+    F('ficha-title').textContent=el.dataset.title||'';
+    F('ficha-q').textContent=el.dataset.q||'';
+    F('ficha-resp').textContent=el.dataset.resp||'—';
+    F('ficha-fecha').textContent=el.dataset.fecha||'—';
+    const cr=F('ficha-cli-row');
+    if(el.dataset.cliente){cr.style.display='';F('ficha-cli').textContent=el.dataset.cliente==='si'?'Sí':'No · uso interno';}else{cr.style.display='none';}
+    const rr=F('ficha-ref-row');
+    if(el.dataset.ref){rr.style.display='';F('ficha-ref').textContent=el.dataset.ref;}else{rr.style.display='none';}
+    F('ficha-vive').textContent=el.dataset.vive||'—';
+    if(el.dataset.go){goBtn.style.display='';goBtn.onclick=()=>{closeFicha();window.go(+el.dataset.go);};}else{goBtn.style.display='none';}
+    ov.classList.add('on');ov.setAttribute('aria-hidden','false');
+  }
+  function closeFicha(){ov.classList.remove('on');ov.setAttribute('aria-hidden','true');}
+  document.querySelectorAll('.r-click').forEach(el=>{
+    el.setAttribute('role','button');el.setAttribute('tabindex','0');
+    el.addEventListener('click',e=>{if(e.target.closest('.xref'))return;openFicha(el);});
+    el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openFicha(el);}});
+  });
+  F('ficha-x').addEventListener('click',closeFicha);
+  ov.addEventListener('click',e=>{if(e.target===ov)closeFicha();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFicha();});
+  apply();
+})();
+</script>
+<script>
+(function(){
+  const p=document.getElementById('p-procesos');if(!p)return;
+  const ta=document.getElementById('fb-text'),send=document.getElementById('fb-send'),
+        ok=document.getElementById('fb-ok'),list=document.getElementById('fb-list');
+  function addItem(text,stat,statlbl,detail){
+    const it=document.createElement('div');it.className='fb-item';
+    it.innerHTML='<div class="fb-i-t"></div><div class="fb-i-s"><span class="fb-st '+stat+'">'+statlbl+'</span> '+detail+'</div>';
+    it.querySelector('.fb-i-t').textContent='«'+text+'»';
+    list.insertBefore(it,list.firstChild);
+  }
+  send.addEventListener('click',()=>{
+    const t=(ta.value||'').trim();if(!t){ta.focus();return;}
+    addItem(t,'env','enviada','hoy · el PM la recibe');
+    ta.value='';ok.style.display='block';
+    ok.innerHTML='✓ Enviada al PM. Te avisará cuando se publique. <span class="prep-chip">conexión al PM · en preparación</span>';
+    setTimeout(()=>{ok.style.display='none';},5000);
+  });
+  function alt(canal){ok.style.display='block';ok.textContent='Abriría '+canal+' dirigido al PM del área, con tu texto ya puesto.';setTimeout(()=>{ok.style.display='none';},4000);}
+  document.getElementById('fb-teams').addEventListener('click',()=>alt('Teams'));
+  document.getElementById('fb-mail').addEventListener('click',()=>alt('Outlook'));
+  const unread=document.getElementById('nv-unread');
+  function refresh(){const n=p.querySelectorAll('.notif.nv-new').length;unread.textContent=n+' sin leer';unread.style.display=n?'':'none';}
+  p.querySelectorAll('.notif.nv').forEach(nt=>nt.addEventListener('click',()=>{
+    if(nt.classList.contains('nv-new')){nt.classList.remove('nv-new');const b=nt.querySelector('.nv-badge');if(b)b.remove();refresh();}
+  }));
+  refresh();
+})();
 </script>
 </body>
 </html>
