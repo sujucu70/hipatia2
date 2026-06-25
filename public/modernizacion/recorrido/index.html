@@ -155,6 +155,16 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .close-band .l{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9FB3C2;margin-bottom:6px}
 .close-band .t{font-size:15px;color:#EAF1F5;line-height:1.5}
 .close-band .t b{color:#fff}
+/* Plegables de poda · "más información / más para la reunión" (escaparate · 25 jun) */
+.fold{border:1px solid var(--line);border-radius:11px;background:var(--paper);margin:24px 0 0;overflow:hidden}
+.fold[open]{background:#fff;border-color:rgba(124,77,188,.32)}
+.fold>summary{list-style:none;cursor:pointer;padding:13px 17px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700;color:var(--navy)}
+.fold>summary::-webkit-details-marker{display:none}
+.fold>summary .fchev{color:var(--purple);font-size:12px;transition:transform .2s;flex-shrink:0}
+.fold[open]>summary .fchev{transform:rotate(90deg)}
+.fold>summary .fnote{font-size:11.5px;font-weight:500;color:var(--gray);margin-left:auto;text-align:right}
+.fold-body{padding:2px 17px 17px}
+.fold-body>.colhd:first-child{margin-top:6px}
 /* Tarjeta · capa escaneable (si solo te llevas tres frases) */
 .tldr{background:var(--white);border:1px solid rgba(124,77,188,.30);border-radius:12px;margin:14px 0 6px;overflow:hidden;box-shadow:0 20px 44px -32px rgba(124,77,188,.7)}
 .tldr-h{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);padding:12px 18px 9px;display:flex;align-items:center;gap:8px}
@@ -203,6 +213,27 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .post-mail{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:12px;color:#46535E;line-height:1.5}
 .post-mail .post-mail-subj{font-weight:700;color:var(--navy);margin-bottom:6px;font-size:12px}
 .post-mail p{margin-bottom:6px}.post-mail p:last-child{margin-bottom:0}
+
+/* Quién te ayuda · agenda de contactos + canal (mockups · 23 jun, panel propio 25 jun) */
+.area-extra{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.area-extra .colhd{margin-bottom:9px}
+.contactos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.svc-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 13px}
+.svc-card .svc-name{font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:9px;display:flex;align-items:center;gap:7px}
+.svc-card .svc-name .svc-tag{font-size:10px;font-weight:600;color:var(--purple);background:var(--purple-soft);border-radius:20px;padding:2px 8px;letter-spacing:.02em}
+.ct-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-top:1px dashed var(--line)}
+.ct-row:first-of-type{border-top:none}
+.ct-ava{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--purple));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
+.ct-info{flex:1;min-width:0}
+.ct-info b{font-size:12.5px;color:var(--navy);display:block;line-height:1.3}
+.ct-info span{font-size:11px;color:var(--gray);display:block;line-height:1.35}
+.ct-rank{font-size:10px;font-weight:600;color:var(--gray);background:#fff;border:1px solid var(--line);border-radius:20px;padding:2px 7px;flex-shrink:0}
+.ct-rank.first{color:var(--purple);border-color:rgba(124,77,188,.3)}
+.area-teams{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:13px 15px;margin-top:11px}
+.area-teams .at-l b{font-size:13px;color:var(--navy);display:block;margin-bottom:2px}
+.area-teams .at-l p{font-size:11.5px;color:var(--gray);line-height:1.45;margin:0}
+.area-teams .at-btn{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 14px;font-size:12.5px;font-weight:700;color:var(--navy);text-decoration:none;flex-shrink:0;white-space:nowrap}
+.area-teams .at-btn .at-tlogo{width:18px;height:18px;border-radius:4px;background:#5059C9;color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800}
 .obj{border-left:3px solid var(--line);padding:3px 0 3px 14px;margin-bottom:11px}
 .obj b{font-size:13px;color:var(--navy);display:block;margin-bottom:3px}
 .obj p{font-size:13px;color:#5A6670;line-height:1.55}
@@ -637,7 +668,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .hm-st.dash{color:var(--gray);border-style:dashed}
 .hm-arr{display:flex;align-items:center;color:#C2C8CE;font-size:18px;flex-shrink:0}
 .hm-arr.sm{font-size:15px}
-.hm-grp.loop .hm-cells{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hm-grp.loop .hm-cells{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
 .hm-grp.loop .hm-cell{width:auto}
 .kit-close-note{margin-top:11px;font-size:12.5px;color:#5A6671;line-height:1.5}
 .hm-loopnote{text-align:center;font-size:11px;color:var(--purple);font-style:italic;margin-top:10px}
@@ -724,6 +755,15 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .hm-proc-l{font-size:13px;color:#5A6670}.hm-proc-l b{color:var(--navy)}
 .hm-proc-go{border:1px solid var(--purple);background:var(--purple-soft);color:var(--purple);font-weight:700;font-size:12.5px;border-radius:8px;padding:8px 14px;cursor:pointer;font-family:inherit;white-space:nowrap}
 .hm-proc-go:hover{background:var(--purple);color:#fff}
+/* Home · banda "Quién te ayuda" (Contactos + Novedades · 25 jun) */
+.hm-help{border:1px solid var(--line);border-radius:12px;background:var(--white);padding:13px 16px}
+.hm-help-lbl{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#51606C;margin-bottom:10px}
+.hm-help-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hm-help-card{border:1px solid var(--line);border-radius:10px;background:var(--paper);padding:11px 14px;cursor:pointer;transition:border-color .15s,background .15s}
+.hm-help-card:hover{border-color:rgba(124,77,188,.4);background:#fff}
+.hm-help-t{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.hm-help-card p{font-size:12px;color:#5A6670;line-height:1.45;margin:0 0 7px}
+.hm-help-go{font-size:12px;font-weight:700;color:var(--purple)}
 .hm-ag{position:absolute;top:10px;right:10px;font-size:9.5px;font-weight:700;letter-spacing:.04em;color:#5B3A93;background:var(--purple-soft,rgba(124,77,188,.14));border:1px solid rgba(124,77,188,.3);border-radius:20px;padding:2px 8px}
 .hm-cell{position:relative}
 .hm-ctx{display:block;margin-top:14px;font-size:12px;color:#8DA3B2;text-decoration:none}
@@ -862,6 +902,13 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .r-click:hover{border-color:var(--purple);box-shadow:0 8px 22px -16px rgba(124,77,188,.5)}
 .r-hidden{display:none!important}
 .rz.r-collapsed{display:none}
+/* Escaparate del repo · 2-3 por zona + "más recursos" (25 jun) */
+.rz.zone-folded [data-extra="1"]:not(.r-hidden){display:none}
+.rz-more{margin:4px 7px 8px;border:1px dashed var(--line);background:#fff;border-radius:8px;padding:7px 11px;font-size:11.5px;font-weight:700;color:var(--purple);cursor:pointer;font-family:inherit;text-align:center;transition:background .15s,border-color .15s}
+.rz-more:hover{background:var(--purple-soft);border-color:rgba(124,77,188,.4)}
+.rz:not(.zone-folded) .rz-more .more-show{display:none}
+.rz.zone-folded .rz-more .less-show{display:none}
+.repo-filtering .rz-more{display:none}
 .repo-empty{font-size:12.5px;color:#6A7681;padding:14px;text-align:center;border:1px dashed var(--line);border-radius:10px;margin-top:6px}
 .ficha-ov{position:fixed;inset:0;background:rgba(5,28,44,.55);display:none;align-items:center;justify-content:center;z-index:200;padding:24px}
 .ficha-ov.on{display:flex}
@@ -969,7 +1016,6 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
                 <div class="hm-cell" onclick="go(3)"><div class="hm-ic">3</div><h3>Mirar la cuenta</h3><p>Un agente lee la empresa; otro mapea a quién dirigirte.</p><span class="hm-st">1 cuenta abierta</span><span class="hm-ag">🤖 agente</span></div>
                 <div class="hm-cell" onclick="go(4)"><div class="hm-ic">4</div><h3>Primer contacto</h3><p>Un agente te escribe el correo de apertura con el enlace de autodiagnóstico.</p><span class="hm-st">borrador listo</span><span class="hm-ag">🤖 agente</span></div>
                 <div class="hm-cell" onclick="go(5)"><div class="hm-ic">5</div><h3>Preparar la visita</h3><p>Un agente te arma el argumento: pitch por rol, objeciones y referencias.</p><span class="hm-st dash">—</span><span class="hm-ag">🤖 agente</span></div>
-                <div class="hm-cell" onclick="go(6)"><div class="hm-ic">6</div><h3>Después de la reunión</h3><p>Cierras la propuesta y mantienes vivo el lead.</p><span class="hm-st dash">—</span><span class="hm-ag">🤖 agente</span></div>
               </div>
               <div class="hm-loopnote">↻ se repite por cada cuenta que trabajas</div>
             </div>
@@ -977,15 +1023,26 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="hm-grp">
               <div class="hm-gl">Profundidad</div>
               <div class="hm-cells">
-                <div class="hm-cell" onclick="go(7)"><div class="hm-ic">7</div><h3>Repositorio</h3><p>Decks ejecutivos, mercado, dolores y técnica.</p><span class="hm-st">4 bloques</span></div>
+                <div class="hm-cell" onclick="go(6)"><div class="hm-ic">6</div><h3>Repositorio</h3><p>Decks ejecutivos, mercado, dolores y técnica.</p><span class="hm-st">4 bloques</span></div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="hm-proc">
-          <div class="hm-proc-l"><b>Novedades y feedback.</b> El PM te avisa de lo nuevo y tú le mandas feedback — por correo y Teams.</div>
-          <button class="hm-proc-go" onclick="go(8)">Abrir →</button>
+        <div class="hm-help">
+          <div class="hm-help-lbl">Quién te ayuda</div>
+          <div class="hm-help-row">
+            <div class="hm-help-card" onclick="go(7)">
+              <div class="hm-help-t">👥 Contactos del área</div>
+              <p>A quién recurrir por servicio y el canal del área en Teams.</p>
+              <span class="hm-help-go">Abrir →</span>
+            </div>
+            <div class="hm-help-card" onclick="go(8)">
+              <div class="hm-help-t">📣 Novedades y feedback</div>
+              <p>El PM te avisa de lo nuevo y tú le mandas lo que falta.</p>
+              <span class="hm-help-go">Abrir →</span>
+            </div>
+          </div>
         </div>
 
         <div class="hm-band hm-band-col">
@@ -1030,12 +1087,12 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         <a class="flow" id="f-cuenta" onclick="go(3)"><span class="fn">3</span> Estado de la cuenta</a>
         <a class="flow" id="f-mail" onclick="go(4)"><span class="fn">4</span> Primer contacto · el mail</a>
         <a class="flow" id="f-kit" onclick="go(5)"><span class="fn">5</span> Kit de visita</a>
-        <a class="flow" id="f-post" onclick="go(6)"><span class="fn">6</span> Después de la reunión</a>
         <div class="div"></div>
         <div class="lbl">Profundidad</div>
-        <a class="flow" id="f-repo" onclick="go(7)"><span class="fn">7</span> Repositorio</a>
+        <a class="flow" id="f-repo" onclick="go(6)"><span class="fn">6</span> Repositorio</a>
         <div class="div"></div>
-        <div class="lbl">Con el área</div>
+        <div class="lbl">Quién te ayuda</div>
+        <a class="flow" id="f-contactos" onclick="go(7)"><span class="fn">7</span> Contactos del área</a>
         <a class="flow" id="f-procesos" onclick="go(8)"><span class="fn">8</span> Novedades y feedback</a>
         <div class="div"></div>
         <div class="lbl">Etapa 2 · destino</div>
@@ -1059,56 +1116,63 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="tldr-row"><div class="k">Cómo abres</div><div class="v">«¿Qué % del gasto IT de este año financia sistemas que vas a necesitar dentro de tres?»</div></div>
           </div>
 
-          <!-- VÍDEO DEL ÁREA · pieza real del Hipatia actual -->
-          <div class="vid-strip"><span class="vid-ic">▶</span><div><b>¿Prefieres verlo contado?</b> El vídeo del área (1:58). La tarjeta de aquí abajo es la versión completa.</div><span class="vid-src">Ya existe · en Hipatia hoy</span></div>
-
           <!-- ¿ES TU CUENTA? -->
           <div class="colhd" style="margin:16px 0 9px">¿Es tu cuenta?</div>
           <div class="orient" style="margin:0">
             <div class="row"><div class="k">Qué es</div><div class="v">Cogemos las aplicaciones <b>legacy que ya frenan al negocio</b> y las modernizamos con un enfoque <b>Spec-Driven</b> y IA, sin parar la operación.</div></div>
             <div class="row"><div class="k">A quién</div><div class="v">Empresas con <b>+5 años de stack propio</b> y un core que se usa a diario. Hablas con el CIO o el director de desarrollo; por el coste, antes o después aparece el CFO.</div></div>
-            <div class="row sig"><div class="k">La señal</div><div class="v">La de arriba es la más clara. Las demás salen al analizar la cuenta, en <b>Estado de la cuenta</b>.</div></div>
           </div>
-
-          <!-- POR QUÉ AHORA -->
-          <div class="colhd" style="margin:24px 0 9px">Por qué moverse ahora</div>
-          <div class="claim" style="font-size:21px;margin-bottom:13px">Lo que hoy es deuda técnica, en 2027 es <em>exposición regulatoria.</em></div>
-          <div style="display:flex;flex-direction:column;gap:11px">
-            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--copper);font-weight:800;flex-shrink:0;font-size:15px">›</span><div style="font-size:14px;color:#33404B;line-height:1.55"><b style="color:var(--navy)">Regulación.</b> El AI Act exige los sistemas de alto riesgo en regla en diciembre de 2027. En seguros, DORA ya aprieta la resiliencia operativa.</div></div>
-            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--copper);font-weight:800;flex-shrink:0;font-size:15px">›</span><div style="font-size:14px;color:#33404B;line-height:1.55"><b style="color:var(--navy)">Persona clave.</b> Quien construyó el core ya no está. Cada mes que pasa hay menos gente capaz de tocarlo, y sale más caro hacerlo.</div></div>
-            <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--copper);font-weight:800;flex-shrink:0;font-size:15px">›</span><div style="font-size:14px;color:#33404B;line-height:1.55"><b style="color:var(--navy)">El coste solo sube.</b> Mantener lo viejo encarece año a año: en 2025, la mitad de las empresas vio que el legacy costó más de lo presupuestado (Ensono, State of IT Modernization 2025).</div></div>
-          </div>
-
-          <!-- QUÉ HACEMOS -->
-          <div class="colhd" style="margin:24px 0 9px">Qué hacemos, en cristiano</div>
-          <div style="background:var(--white);border:1px solid var(--line);border-radius:10px;padding:14px 18px;font-size:14px;color:#33404B;line-height:1.6">Definimos la especificación en lenguaje de negocio; <b style="color:var(--navy)">la IA escribe el código y el equipo lo gobierna</b>. Por piezas y en paralelo a la operación: el cliente empieza pequeño y escala al verlo funcionar.</div>
 
           <!-- EL DIFERENCIADOR -->
           <div class="colhd" style="margin:24px 0 9px">El diferenciador que puedes defender</div>
           <div class="why hero" style="margin:0"><div class="l">Por qué Entelgy</div><div class="t">El mercado moderniza por horas y pidiendo partida nueva. Entelgy mide con <strong>Foreworth</strong> la productividad que recupera en el mantenimiento y <strong>reinvierte esa eficiencia en modernizar las mismas aplicaciones</strong> — sin aumento neto del presupuesto ya comprometido. Que lo mida un externo es lo que aguanta delante del CFO.</div><div class="refs">UNED · DGOJ · AESA · H10 · Nasertic — casos reales <span class="refmark conf">confirmar por cuenta</span></div></div>
 
-          <!-- MUNICIÓN PARA ABRIR -->
-          <div class="colhd" style="margin:24px 0 9px">Munición para abrir</div>
-          <div class="dato" style="margin:0 0 11px"><div class="n">~70%</div><div><div class="t">del gasto IT se va en mantener lo que ya existe (<strong>run</strong>): soporte, licencias, deuda técnica. El negocio lo llama inversión; <em>el CFO lo tiene como coste fijo.</em></div><div class="s">Fuente · Gartner · modelo Run/Grow/Transform</div></div></div>
-          <div class="q" style="margin:0"><div class="l">Para abrir conversación</div><div class="t">"¿Qué porcentaje del gasto IT de este año financia sistemas que el negocio va a necesitar dentro de tres?"</div></div>
-
-          <!-- LA PRIMERA OBJECIÓN -->
+          <!-- LA PRIMERA OBJECIÓN (munición de apertura · visible) -->
           <div class="colhd" style="margin:24px 0 9px">La objeción que más vas a oír</div>
           <div style="background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 18px">
             <div style="font-size:15px;font-style:italic;color:var(--gray);margin-bottom:9px">"Funciona. ¿Para qué tocarlo?"</div>
             <div style="font-size:14px;color:#33404B;line-height:1.6">Funciona hoy. El día que se rompa, quien lo construyó ya no está — y cada año que sigue ahí cuesta más sostenerlo. El primer paso solo mide: el Assessment dice qué tocar y qué dejar, sin comprometer al cliente a nada.</div>
           </div>
 
-          <!-- UNA PRUEBA · caso Nasertic (interno) -->
-          <div class="colhd" style="margin:24px 0 9px">Una prueba que puedas citar</div>
-          <div class="dato" style="margin:0"><div class="n">9→3</div><div><div class="t"><b>Nasertic</b> — modernización de una aplicación Access con Spec-Driven: el proyecto pasó de <b>9 a 3 meses</b>, un 70% menos. Hay más casos en el repositorio (AESA, DGOJ, H10, UNED).</div><div class="s">Caso Entelgy</div></div></div>
+          <!-- PLEGABLE · MÁS MUNICIÓN Y RESPALDO -->
+          <details class="fold">
+            <summary><span class="fchev">▸</span>Más munición y respaldo<span class="fnote">por qué ahora · qué hacemos · el dato · una prueba · el cierre</span></summary>
+            <div class="fold-body">
 
-          <!-- RED DE SEGURIDAD -->
-          <div class="safety" style="margin:24px 0 0"><div class="ic">!</div><p><b>Si te preguntan un detalle técnico que no tienes, no improvises:</b> "eso te lo confirma el especialista en la siguiente reunión". Convierte la duda en tu cierre.</p></div>
+              <!-- POR QUÉ AHORA -->
+              <div class="colhd" style="margin:18px 0 9px">Por qué moverse ahora</div>
+              <div class="claim" style="font-size:21px;margin-bottom:13px">Lo que hoy es deuda técnica, en 2027 es <em>exposición regulatoria.</em></div>
+              <div style="display:flex;flex-direction:column;gap:11px">
+                <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--copper);font-weight:800;flex-shrink:0;font-size:15px">›</span><div style="font-size:14px;color:#33404B;line-height:1.55"><b style="color:var(--navy)">Regulación.</b> El AI Act exige los sistemas de alto riesgo en regla en diciembre de 2027. En seguros, DORA ya aprieta la resiliencia operativa.</div></div>
+                <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--copper);font-weight:800;flex-shrink:0;font-size:15px">›</span><div style="font-size:14px;color:#33404B;line-height:1.55"><b style="color:var(--navy)">Persona clave.</b> Quien construyó el core ya no está. Cada mes que pasa hay menos gente capaz de tocarlo, y sale más caro hacerlo.</div></div>
+                <div style="display:flex;gap:11px;align-items:flex-start"><span style="color:var(--copper);font-weight:800;flex-shrink:0;font-size:15px">›</span><div style="font-size:14px;color:#33404B;line-height:1.55"><b style="color:var(--navy)">El coste solo sube.</b> Mantener lo viejo encarece año a año: en 2025, la mitad de las empresas vio que el legacy costó más de lo presupuestado (Ensono, State of IT Modernization 2025).</div></div>
+              </div>
 
-          <!-- EL CIERRE -->
-          <div class="colhd" style="margin:20px 0 9px">El cierre de una primera reunión</div>
-          <div class="close-band" style="margin:0"><div class="t"><b>El Assessment de modernización</b> — 10–15 días, primer contrato. Entrega el <b>triaje del portfolio</b> (qué se moderniza, qué no, qué va a AM) y el business case para Dirección. La estrategia, el gobierno y el método se quedan dentro de Entelgy — el assessment no los regala.</div></div>
+              <!-- QUÉ HACEMOS -->
+              <div class="colhd" style="margin:24px 0 9px">Qué hacemos, en cristiano</div>
+              <div style="background:var(--white);border:1px solid var(--line);border-radius:10px;padding:14px 18px;font-size:14px;color:#33404B;line-height:1.6">Definimos la especificación en lenguaje de negocio; <b style="color:var(--navy)">la IA escribe el código y el equipo lo gobierna</b>. Por piezas y en paralelo a la operación: el cliente empieza pequeño y escala al verlo funcionar.</div>
+
+              <!-- MUNICIÓN PARA ABRIR -->
+              <div class="colhd" style="margin:24px 0 9px">Munición para abrir</div>
+              <div class="dato" style="margin:0 0 11px"><div class="n">~70%</div><div><div class="t">del gasto IT se va en mantener lo que ya existe (<strong>run</strong>): soporte, licencias, deuda técnica. El negocio lo llama inversión; <em>el CFO lo tiene como coste fijo.</em></div><div class="s">Fuente · Gartner · modelo Run/Grow/Transform</div></div></div>
+              <div class="q" style="margin:0"><div class="l">Para abrir conversación</div><div class="t">"¿Qué porcentaje del gasto IT de este año financia sistemas que el negocio va a necesitar dentro de tres?"</div></div>
+
+              <!-- UNA PRUEBA · caso Nasertic (interno) -->
+              <div class="colhd" style="margin:24px 0 9px">Una prueba que puedas citar</div>
+              <div class="dato" style="margin:0"><div class="n">9→3</div><div><div class="t"><b>Nasertic</b> — modernización de una aplicación Access con Spec-Driven: el proyecto pasó de <b>9 a 3 meses</b>, un 70% menos. Hay más casos en el repositorio (AESA, DGOJ, H10, UNED).</div><div class="s">Caso Entelgy</div></div></div>
+
+              <!-- RED DE SEGURIDAD -->
+              <div class="safety" style="margin:24px 0 0"><div class="ic">!</div><p><b>Si te preguntan un detalle técnico que no tienes, no improvises:</b> "eso te lo confirma el especialista en la siguiente reunión". Convierte la duda en tu cierre.</p></div>
+
+              <!-- EL CIERRE -->
+              <div class="colhd" style="margin:24px 0 9px">El cierre de una primera reunión</div>
+              <div class="close-band" style="margin:0"><div class="t"><b>El Assessment de modernización</b> — 10–15 días, primer contrato. Entrega el <b>triaje del portfolio</b> (qué se moderniza, qué no, qué va a AM) y el business case para Dirección. La estrategia, el gobierno y el método se quedan dentro de Entelgy — el assessment no los regala.</div></div>
+
+              <!-- VÍDEO DEL ÁREA · pieza real del Hipatia actual -->
+              <div class="vid-strip" style="margin-top:24px"><span class="vid-ic">▶</span><div><b>¿Prefieres verlo contado?</b> El vídeo del área (1:58), la versión en vídeo de esta tarjeta.</div><span class="vid-src">Ya existe · en Hipatia hoy</span></div>
+
+            </div>
+          </details>
 
           <!-- ACCIONES -->
           <div class="tcard-actions" style="margin-top:24px">
@@ -1123,18 +1187,23 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
           <div class="tv-head"><div class="tv-ic">🎯</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · Kit de visita <span class="mt ag">🤖 agente</span></div><div class="atitle" style="font-size:20px">El argumento para la reunión, armado por el agente</div></div></div>
           <div class="dsub">Llegas con la cuenta mirada y el cliente ya cualificado. Aquí está lo que necesitas para la reunión, no para encontrarla.</div>
 
-          <div class="genrow">
-            <div class="gen-head"><b>El agente de preparación de visita</b><span class="gen-auto">⚙ Ya existe en Entelgy</span></div>
-            <div class="gen-note">Entelgy ya tiene un agente que prepara visitas — lo construyó el equipo de Digital Change y funciona hoy. Le das dos cosas, <b>la cuenta y el ámbito</b>, y te devuelve el argumento y la preparación de la reunión. El Kit lo trae al recorrido tal cual, sin construirlo de nuevo.</div>
-            <div class="kit-io">
-              <span class="kit-in">Cuenta · <b>Grupo Lantia</b></span>
-              <span class="kit-in">Ámbito · <b>Modernización del core de pólizas</b></span>
-              <span class="kit-arr">→</span>
-              <span class="kit-out">Lo que ves abajo: pitch por rol, objeciones, preguntas y referencias</span>
+          <details class="fold" style="margin-top:14px">
+            <summary><span class="fchev">▸</span>Cómo se arma esto<span class="fnote">el agente de preparación de visita</span></summary>
+            <div class="fold-body">
+              <div class="genrow" style="margin-top:12px">
+                <div class="gen-head"><b>El agente de preparación de visita</b><span class="gen-auto">⚙ Ya existe en Entelgy</span></div>
+                <div class="gen-note">Entelgy ya tiene un agente que prepara visitas — lo construyó el equipo de Digital Change y funciona hoy. Le das dos cosas, <b>la cuenta y el ámbito</b>, y te devuelve el argumento y la preparación de la reunión. El Kit lo trae al recorrido tal cual, sin construirlo de nuevo.</div>
+                <div class="kit-io">
+                  <span class="kit-in">Cuenta · <b>Grupo Lantia</b></span>
+                  <span class="kit-in">Ámbito · <b>Modernización del core de pólizas</b></span>
+                  <span class="kit-arr">→</span>
+                  <span class="kit-out">Lo que ves abajo: pitch por rol, objeciones, preguntas y referencias</span>
+                </div>
+                <div class="kit-int">Integración en el portal: en curso</div>
+              </div>
+              <div class="kit-base-note" style="margin-top:11px">Esta ficha es <b>Grupo Lantia</b>, afinada con lo que trabajaste en el recorrido. El agente de preparación lo hará así para <b>cualquier cuenta</b>, automático — integración en curso.</div>
             </div>
-            <div class="kit-int">Integración en el portal: en curso</div>
-          </div>
-          <div class="kit-base-note">Esta ficha es <b>Grupo Lantia</b>, afinada con lo que trabajaste en el recorrido. El agente de preparación lo hará así para <b>cualquier cuenta</b>, automático — integración en curso.</div>
+          </details>
 
           <div class="scan kit-situ">
             <div class="scan-head">
@@ -1172,28 +1241,36 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
               <div class="obj"><b>"Ya tenemos proveedor de desarrollo."</b><p>No pedimos cambiarlo. Complementamos en la pieza que más duele, con métricas auditables. ¿Tu proveedor puede decirte qué productividad entregó el mes pasado, certificada por un tercero?</p></div>
               <div class="obj"><b>"No vemos urgencia ahora mismo."</b><p>La deuda técnica crece sola (Gartner: 20–40% del valor de los activos). Y el AI Act obliga en sistemas de alto riesgo en diciembre de 2027.</p></div>
               <div class="obj"><b>"Esto nos lo hace cualquier proveedor."</b><p>Pídeles que firmen lo que firmamos nosotros: reinvertir la eficiencia recuperada en el propio mantenimiento, sin subir el presupuesto, con la productividad medida por un tercero (Foreworth). Esa firma no la encuentras en otra propuesta.</p></div>
-              <span class="pb-more" onclick="go(7)">+ objeciones con respuesta en el Repositorio →</span>
-            </div>
-            <div class="pb-card" style="margin:0">
-              <h4>Si quieres confirmar que hay proyecto, en la conversación</h4>
-              <ul class="pb-list">
-                <li>"¿Alguna aplicación lleva años pendiente porque nadie sabe qué rompe si la tocan?"</li>
-                <li>"¿Proyectos de IA más de un año en piloto sin llegar a producción?"</li>
-                <li>"¿Sabéis en un número cuánto cuesta mantener los sistemas tal como están?"</li>
-              </ul>
-              <div class="pb-rule">El autodiagnóstico ya cualifica antes; esto es por si quieres confirmarlo cara a cara.</div>
-            </div>
-            <div class="pb-card" style="margin:0">
-              <h4>Referencias · 3 destacadas</h4>
-              <ul class="pb-list">
-                <li><b>Nasertic</b> — una migración estimada en 9 meses, entregada en 3.</li>
-                <li><b>UNED</b> — migración PL/SQL → Java con IA · −30% de esfuerzo.</li>
-                <li><b>H10</b> — el assessment como primer contrato · −90% del tiempo de documentación.</li>
-              </ul>
-              <span class="pb-more" onclick="go(7)">Ver todos los casos y su contexto en el Repositorio →</span>
-              <div class="warn">Marca por caso: <span class="refmark ok">citable</span> puedes nombrarlo al cliente · <span class="refmark conf">confirmar por cuenta</span> úsalo en interno y confírmalo con el PM antes. Hoy, todos en confirmar.</div>
+              <span class="pb-more" onclick="go(6)">+ objeciones con respuesta en el Repositorio →</span>
             </div>
           </div>
+
+          <details class="fold">
+            <summary><span class="fchev">▸</span>Para confirmar y para cerrar<span class="fnote">preguntas de cualificación · referencias</span></summary>
+            <div class="fold-body">
+              <div class="g2" style="margin-top:12px">
+                <div class="pb-card" style="margin:0">
+                  <h4>Si quieres confirmar que hay proyecto, en la conversación</h4>
+                  <ul class="pb-list">
+                    <li>"¿Alguna aplicación lleva años pendiente porque nadie sabe qué rompe si la tocan?"</li>
+                    <li>"¿Proyectos de IA más de un año en piloto sin llegar a producción?"</li>
+                    <li>"¿Sabéis en un número cuánto cuesta mantener los sistemas tal como están?"</li>
+                  </ul>
+                  <div class="pb-rule">El autodiagnóstico ya cualifica antes; esto es por si quieres confirmarlo cara a cara.</div>
+                </div>
+                <div class="pb-card" style="margin:0">
+                  <h4>Referencias · 3 destacadas</h4>
+                  <ul class="pb-list">
+                    <li><b>Nasertic</b> — una migración estimada en 9 meses, entregada en 3.</li>
+                    <li><b>UNED</b> — migración PL/SQL → Java con IA · −30% de esfuerzo.</li>
+                    <li><b>H10</b> — el assessment como primer contrato · −90% del tiempo de documentación.</li>
+                  </ul>
+                  <span class="pb-more" onclick="go(6)">Ver todos los casos y su contexto en el Repositorio →</span>
+                  <div class="warn">Marca por caso: <span class="refmark ok">citable</span> puedes nombrarlo al cliente · <span class="refmark conf">confirmar por cuenta</span> úsalo en interno y confírmalo con el PM antes. Hoy, todos en confirmar — por eso van aquí y no en primer plano.</div>
+                </div>
+              </div>
+            </div>
+          </details>
           <div class="proc-foot" style="margin-top:12px">🎬 Para entrenar la reunión antes de tenerla: el vídeo <b>ROL-PLAY Servicios AM</b> (oct 2025), en el Repositorio — una visita simulada, con el diálogo completo.</div>
 
           <div class="dossier-cta">
@@ -1203,51 +1280,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
           <div class="pb-sec" style="margin-top:26px">El cierre · qué propones</div>
           <div class="close-band"><div class="l">El siguiente paso concreto</div><div class="t">Con el caso de Grupo Lantia montado —<b>1,8 M€/año</b> de deuda, financiable desde el propio mantenimiento— propones el <b>Assessment de modernización</b>: 10–15 días, primer contrato. Entrega el triaje del portfolio —qué se moderniza, qué no, qué va a AM— y el business case para Dirección. La estrategia, el gobierno y el método se quedan en Entelgy.</div></div>
-          <div class="kit-close-note">El Assessment es el output de la primera reunión. Lo de después —armar la propuesta y mantener vivo el lead— vive en <span class="xref" onclick="go(6)">Después de la reunión →</span></div>
-        </div>
-
-        <!-- DESPUÉS DE LA REUNIÓN -->
-        <div class="panel doc" id="p-postreunion">
-          <div class="tv-head"><div class="tv-ic">📩</div><div><div class="slbl" style="margin:0">Trabajo por cuenta · después de la visita</div><div class="atitle">Después de la reunión</div></div></div>
-          <div class="dsub">La reunión salió con un siguiente paso claro —el Assessment—. Aquí montas la propuesta y mantienes la cuenta viva hasta que avance.</div>
-
-          <div class="post-sub">Armar la propuesta</div>
-          <p style="font-size:13px;color:#46535E;line-height:1.55;margin:0 0 11px">Metes las cifras de la cuenta —gasto de mantenimiento, nº de desarrolladores, deuda técnica— y sale el caso económico para tu propuesta: cuánto se libera y cómo se financia la modernización desde el presupuesto actual.</p>
-          <div class="hm-band" style="margin:0 0 22px">
-            <div style="font-size:12.5px;color:#5A4A38;line-height:1.5"><b style="color:var(--navy)">Calculadora de business case.</b> La está construyendo el equipo de producto; la integramos aquí cuando esté. Su salida es para preparar tu caso en interno, no para entregársela al cliente.</div>
-            <span class="prep-chip">EN PREPARACIÓN</span>
-          </div>
-
-          <div class="post-sub">Mantener vivo el lead</div>
-          <div class="g2">
-            <div class="pb-card post-card" style="margin:0">
-              <div class="post-card-h"><h4>Correo de seguimiento</h4><span class="prep-chip">PRÓXIMAMENTE</span></div>
-              <p class="post-card-d">El agente redacta el seguimiento tras la reunión: agradece, recoge lo que hablasteis y propone el Assessment. Tú lo ajustas y lo envías.</p>
-              <div class="post-mail">
-                <div class="post-mail-subj">Asunto · Gracias, Marta — y el siguiente paso</div>
-                <p>Gracias por el rato de hoy. Como veíamos, lo que más aprieta en el core de pólizas es el plazo de DORA.</p>
-                <p>Te propongo un Assessment de dos semanas: te deja el triaje y el business case para tu comité, sin compromiso.</p>
-              </div>
-            </div>
-            <div class="pb-card post-card" style="margin:0">
-              <div class="post-card-h"><h4>Qué puedes enviarle</h4></div>
-              <p class="post-card-d">Lo seguro para dejar o mandar tras la reunión — solo lo marcado citable.</p>
-              <ul class="pb-list">
-                <li>El informe del autodiagnóstico (su 78 y la lectura)</li>
-                <li>El dossier de la visita</li>
-                <li>Los casos citables del Repositorio <span class="mr-hint">hoy ninguno · pendiente PM</span></li>
-              </ul>
-            </div>
-            <div class="pb-card post-card" style="margin:0">
-              <div class="post-card-h"><h4>Déjalo en el CRM</h4><span class="prep-chip">EN PREPARACIÓN</span></div>
-              <p class="post-card-d">Registra el resultado y marca la cuenta como lista para Assessment. Con el CRM conectado se actualiza solo y avisa al equipo — y te avisa si la cuenta ya era cliente.</p>
-            </div>
-            <div class="pb-card post-card" style="margin:0">
-              <div class="post-card-h"><h4>Recoge de la reunión</h4><span class="prep-chip">PRÓXIMAMENTE</span></div>
-              <p class="post-card-d">Qué objeciones nuevas salieron, qué interesó. Vuelve al equipo del área para afinar el material.</p>
-              <span class="xref" onclick="go(8)">→ Novedades y feedback</span>
-            </div>
-          </div>
+          <div class="kit-close-note">El Assessment es el output de la primera reunión: el triaje y el business case que se queda en Entelgy, sin precio en este punto.</div>
         </div>
 
         <!-- PUERTA 3 · REPOSITORIO -->
@@ -1276,11 +1309,12 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
               <div class="rz-h"><span class="rz-t">Para conocer</span><span class="pista-tag">No sale al cliente</span></div>
               <div class="rz-b">
                 <div class="rrow r-click" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="ok" data-title="Qué vende el área y por qué Entelgy" data-q="El argumentario base del área: qué vendemos en Modernización y por qué Entelgy, no un genérico de mercado." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisada nov 2025" data-vive="Hub del área · Propuesta de valor"><h5>Qué vende el área y por qué Entelgy <span class="mt sm">✍️ SM</span></h5><p>Piezas: <b>Propuesta de Valor SW Engineering</b> (nov 25) · <b>Iniciativas IA en SW 2025</b> (dic 25).</p><div class="r-foot"><span class="r-fresh ok">✓ rev. nov 25</span></div></div>
-                <div class="rrow r-click" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="ok" data-title="Guía de diálogo · qué preguntar" data-q="Las preguntas para sacar qué partidas presupuestarias tiene hoy la cuenta. Interno, nunca en la presentación." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisada dic 2025" data-vive="Hub del área · Interno"><h5>Guía de diálogo · qué preguntar <span class="mt sm">✍️ SM</span></h5><p>Cómo sacar qué partidas presupuestarias tiene hoy. <b>Interno: nunca en la presentación.</b></p><div class="r-foot"><span class="r-fresh ok">✓ rev. dic 25</span></div></div>
-                <div class="rrow r-click" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="ok" data-title="Benchmark + mercado español" data-q="Cómo nos posicionamos frente a Accenture, Capgemini, Minsait y Globant/EPAM en el mercado español." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisada dic 2025" data-vive="Hub del área · Mercado"><h5>Benchmark + mercado español <span class="mt sm">✍️ SM</span></h5><p>Frente a Accenture, Capgemini, Minsait, Globant/EPAM.</p><div class="r-foot"><span class="r-fresh ok">✓ rev. dic 25</span></div></div>
-                <div class="rrow r-click" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="revisar" data-title="Mapa de dolores del sector" data-q="Los dolores por familia de sistema, con su impacto en OPEX/CAPEX y su urgencia." data-resp="✍️ SM · Solution Manager del área" data-fecha="Sin revisión reciente — marcada sola" data-vive="Hub del área · Mercado"><h5>Mapa de dolores del sector <span class="mt sm">✍️ SM</span></h5><p>Dolores por familia, con impacto en OPEX/CAPEX y urgencia.</p><div class="r-foot"><span class="r-fresh rev">⚠ revisar</span></div></div>
                 <div class="rrow r-click" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="ok" data-title="Objeciones y respuestas" data-q="Las objeciones frecuentes con su respuesta lista para usar en conversación." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisada ene 2026" data-vive="Hub del área · Interno"><h5>Objeciones y respuestas <span class="mt sm">✍️ SM</span></h5><p>Las objeciones frecuentes con su respuesta lista.</p><div class="r-foot"><span class="r-fresh ok">✓ rev. ene 26</span></div></div>
-                <div class="rrow r-click" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="ok" data-title="Formaciones internas y role-plays" data-q="El material de entrenamiento del equipo: el role-play en vídeo y la sesión de Sales Readiness IA." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisada oct 2025" data-vive="Hub del área · Formación"><h5>Formaciones internas y role-plays <span class="mt sm">✍️ SM</span></h5><p>Piezas: <b>ROL-PLAY Servicios AM</b> (vídeo, oct 25) · <b>Sales Readiness IA</b> (may 25).</p><div class="r-foot"><span class="r-fresh ok">✓ rev. oct 25</span></div></div>
+                <div class="rrow r-click" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="ok" data-title="Benchmark + mercado español" data-q="Cómo nos posicionamos frente a Accenture, Capgemini, Minsait y Globant/EPAM en el mercado español." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisada dic 2025" data-vive="Hub del área · Mercado"><h5>Benchmark + mercado español <span class="mt sm">✍️ SM</span></h5><p>Frente a Accenture, Capgemini, Minsait, Globant/EPAM.</p><div class="r-foot"><span class="r-fresh ok">✓ rev. dic 25</span></div></div>
+                <div class="rrow r-click" data-extra="1" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="ok" data-title="Guía de diálogo · qué preguntar" data-q="Las preguntas para sacar qué partidas presupuestarias tiene hoy la cuenta. Interno, nunca en la presentación." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisada dic 2025" data-vive="Hub del área · Interno"><h5>Guía de diálogo · qué preguntar <span class="mt sm">✍️ SM</span></h5><p>Cómo sacar qué partidas presupuestarias tiene hoy. <b>Interno: nunca en la presentación.</b></p><div class="r-foot"><span class="r-fresh ok">✓ rev. dic 25</span></div></div>
+                <div class="rrow r-click" data-extra="1" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="revisar" data-title="Mapa de dolores del sector" data-q="Los dolores por familia de sistema, con su impacto en OPEX/CAPEX y su urgencia." data-resp="✍️ SM · Solution Manager del área" data-fecha="Sin revisión reciente — marcada sola" data-vive="Hub del área · Mercado"><h5>Mapa de dolores del sector <span class="mt sm">✍️ SM</span></h5><p>Dolores por familia, con impacto en OPEX/CAPEX y urgencia.</p><div class="r-foot"><span class="r-fresh rev">⚠ revisar</span></div></div>
+                <div class="rrow r-click" data-extra="1" data-tipo="conocer" data-sector="todos" data-cliente="no" data-rev="ok" data-title="Formaciones internas y role-plays" data-q="El material de entrenamiento del equipo: el role-play en vídeo y la sesión de Sales Readiness IA." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisada oct 2025" data-vive="Hub del área · Formación"><h5>Formaciones internas y role-plays <span class="mt sm">✍️ SM</span></h5><p>Piezas: <b>ROL-PLAY Servicios AM</b> (vídeo, oct 25) · <b>Sales Readiness IA</b> (may 25).</p><div class="r-foot"><span class="r-fresh ok">✓ rev. oct 25</span></div></div>
+                <button type="button" class="rz-more" data-zone-more><span class="more-show">+ 3 recursos más</span><span class="less-show">− Ver menos</span></button>
               </div>
             </div>
 
@@ -1289,8 +1323,9 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
               <div class="rz-b">
                 <div class="rrow" data-tipo="cliente" data-sector="todos" data-cliente="si" data-rev="ok"><div class="rk">Conversación · primer contacto</div><h5>Correo de apertura + autodiagnóstico <span class="mt ag">🤖 agente</span></h5><p>Lo genera la herramienta del recorrido. <span class="xref" onclick="go(4)">→ ir a la herramienta</span></p><div class="r-foot"><span class="r-fresh ok">⚡ se genera al momento</span></div></div>
                 <div class="rrow r-click" data-tipo="cliente" data-sector="todos" data-cliente="si" data-rev="ok" data-title="Deck ejecutivo C-Suite + one-pager" data-q="Los decks ejecutivos para la reunión introductoria: NextGen SW Engineering y Modernización de Aplicaciones. Las fichas de 2024 hay que revisarlas antes de reusarlas." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisado ene 2026 · contiene fichas 2024 a revisar" data-vive="Hub del área · Decks ejecutivos"><div class="rk">Reunión introductoria</div><h5>Deck ejecutivo C-Suite + one-pager <span class="mt sm">✍️ SM</span></h5><p>Piezas: <b>NextGen SW Engineering</b> (ene 26) · <b>Modernización de Aplicaciones</b> (nov 25). Fichas 2024: revisar antes de reusar.</p><div class="r-foot"><span class="r-fresh ok">✓ rev. ene 26</span> <span class="r-fresh rev">fichas 2024: revisar</span></div></div>
-                <div class="rrow r-click" data-tipo="cliente" data-sector="todos" data-cliente="si" data-rev="pendiente" data-title="Documentación técnica + business case" data-q="Arquitecturas y el número de la deuda técnica. SPEC-IA ya está disponible; el business case tipo está pendiente de construir (lo arma el SM)." data-resp="✍️ SM · Solution Manager del área" data-fecha="SPEC-IA vigente · business case tipo pendiente" data-vive="Hub del área · Técnica"><div class="rk">Reunión avanzada</div><h5>Documentación técnica + business case <span class="mt sm">✍️ SM</span></h5><p>Arquitecturas y el número de la deuda técnica. <b>SPEC-IA</b> ya está; <span style="color:var(--copper);font-weight:600">business case tipo, pendiente.</span></p><div class="r-foot"><span class="r-fresh pend">⏳ business case pendiente</span></div></div>
                 <div class="rrow" data-tipo="cliente" data-sector="todos" data-cliente="si" data-rev="ok"><div class="rk">Pitch a medida</div><h5>¿Necesitas un pitch personalizado? <span class="mt ag">🤖 agente</span></h5><p>No lo guardamos hecho: lo generas en la herramienta de la visita. <span class="xref" onclick="go(5)">→ ir a la herramienta</span></p><div class="r-foot"><span class="r-fresh ok">⚡ se genera al momento</span></div></div>
+                <div class="rrow r-click" data-extra="1" data-tipo="cliente" data-sector="todos" data-cliente="si" data-rev="pendiente" data-title="Documentación técnica + business case" data-q="Arquitecturas y el número de la deuda técnica. SPEC-IA ya está disponible; el business case tipo está pendiente de construir (lo arma el SM)." data-resp="✍️ SM · Solution Manager del área" data-fecha="SPEC-IA vigente · business case tipo pendiente" data-vive="Hub del área · Técnica"><div class="rk">Reunión avanzada</div><h5>Documentación técnica + business case <span class="mt sm">✍️ SM</span></h5><p>Arquitecturas y el número de la deuda técnica. <b>SPEC-IA</b> ya está; <span style="color:var(--copper);font-weight:600">business case tipo, pendiente.</span></p><div class="r-foot"><span class="r-fresh pend">⏳ business case pendiente</span></div></div>
+                <button type="button" class="rz-more" data-zone-more><span class="more-show">+ 1 recurso más</span><span class="less-show">− Ver menos</span></button>
               </div>
             </div>
 
@@ -1300,10 +1335,11 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
                 <div class="rref r-click" data-tipo="ref" data-sector="publico" data-cliente="no" data-rev="ok" data-title="Nasertic" data-q="Migración en el sector público (Navarra)." data-resp="✍️ SM · Solution Manager del área" data-fecha="Resultado validado 2025" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — pendiente de sign-off del PM"><span class="rn">Nasertic<small>Sector público · Navarra</small></span><span class="rr">9 meses estimados, entregada en <b>3</b></span></div>
                 <div class="rref r-click" data-tipo="ref" data-sector="educacion publico" data-cliente="no" data-rev="ok" data-title="UNED" data-q="Migración PL/SQL → Java con IA en educación / AAPP." data-resp="✍️ SM · Solution Manager del área" data-fecha="Resultado validado 2025" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — vía expediente público es la candidata más rápida a citable (pendiente PM)"><span class="rn">UNED<small>Educación · AAPP</small></span><span class="rr">PL/SQL → Java con IA · <b>−30%</b> esfuerzo</span></div>
                 <div class="rref r-click" data-tipo="ref" data-sector="publico" data-cliente="no" data-rev="ok" data-title="DGOJ" data-q="Reducción del coste de mantenimiento en sector público." data-resp="✍️ SM · Solution Manager del área" data-fecha="Resultado validado 2025" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — pendiente de sign-off del PM"><span class="rn">DGOJ<small>Sector público</small></span><span class="rr"><b>−40/60%</b> coste de mantenimiento</span></div>
-                <div class="rref r-click" data-tipo="ref" data-sector="publico" data-cliente="no" data-rev="ok" data-title="AESA" data-q="Automatización en sector público (aviación)." data-resp="✍️ SM · Solution Manager del área" data-fecha="Resultado validado 2025" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — pendiente de sign-off del PM"><span class="rn">AESA<small>Sector público · aviación</small></span><span class="rr"><b>+80%</b> de automatización</span></div>
-                <div class="rref r-click" data-tipo="ref" data-sector="turismo" data-cliente="no" data-rev="ok" data-title="H10 Hotels" data-q="Reducción del tiempo de documentación en turismo." data-resp="✍️ SM · Solution Manager del área" data-fecha="Resultado validado 2025" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — pendiente de sign-off del PM"><span class="rn">H10 Hotels<small>Turismo</small></span><span class="rr"><b>−90%</b> tiempo de documentación</span></div>
-                <div class="rref r-click" data-tipo="ref" data-sector="publico" data-cliente="no" data-rev="ok" data-title="Min. Ciencia · AEI" data-q="Cumplimiento de SLA en sector público." data-resp="✍️ SM · Solution Manager del área" data-fecha="Resultado validado 2025" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — pendiente de sign-off del PM"><span class="rn">Min. Ciencia · AEI<small>Sector público</small></span><span class="rr"><b>+40%</b> cumplimiento de SLA</span></div>
-                <div class="rref r-click" data-tipo="ref" data-sector="todos" data-cliente="no" data-rev="revisar" data-title="Corner WK" data-q="Caso de éxito de 2023." data-resp="✍️ SM · Solution Manager del área" data-fecha="2023 — revisar antes de usar" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — y revisar por antigüedad (2023)" style="border-style:dashed;background:#FBFAF8"><span class="rn">Corner WK<small>Caso de éxito · 2023</small></span><span class="rr"><span class="refmark conf">confirmar por cuenta</span></span></div>
+                <div class="rref r-click" data-extra="1" data-tipo="ref" data-sector="publico" data-cliente="no" data-rev="ok" data-title="AESA" data-q="Automatización en sector público (aviación)." data-resp="✍️ SM · Solution Manager del área" data-fecha="Resultado validado 2025" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — pendiente de sign-off del PM"><span class="rn">AESA<small>Sector público · aviación</small></span><span class="rr"><b>+80%</b> de automatización</span></div>
+                <div class="rref r-click" data-extra="1" data-tipo="ref" data-sector="turismo" data-cliente="no" data-rev="ok" data-title="H10 Hotels" data-q="Reducción del tiempo de documentación en turismo." data-resp="✍️ SM · Solution Manager del área" data-fecha="Resultado validado 2025" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — pendiente de sign-off del PM"><span class="rn">H10 Hotels<small>Turismo</small></span><span class="rr"><b>−90%</b> tiempo de documentación</span></div>
+                <div class="rref r-click" data-extra="1" data-tipo="ref" data-sector="publico" data-cliente="no" data-rev="ok" data-title="Min. Ciencia · AEI" data-q="Cumplimiento de SLA en sector público." data-resp="✍️ SM · Solution Manager del área" data-fecha="Resultado validado 2025" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — pendiente de sign-off del PM"><span class="rn">Min. Ciencia · AEI<small>Sector público</small></span><span class="rr"><b>+40%</b> cumplimiento de SLA</span></div>
+                <div class="rref r-click" data-extra="1" data-tipo="ref" data-sector="todos" data-cliente="no" data-rev="revisar" data-title="Corner WK" data-q="Caso de éxito de 2023." data-resp="✍️ SM · Solution Manager del área" data-fecha="2023 — revisar antes de usar" data-vive="Hub del área · Referencias" data-ref="Confirmar por cuenta — y revisar por antigüedad (2023)" style="border-style:dashed;background:#FBFAF8"><span class="rn">Corner WK<small>Caso de éxito · 2023</small></span><span class="rr"><span class="refmark conf">confirmar por cuenta</span></span></div>
+                <button type="button" class="rz-more" data-zone-more><span class="more-show">+ 4 referencias más</span><span class="less-show">− Ver menos</span></button>
                 <div class="rz-note">Marca por caso: <span class="refmark ok">citable</span> el PM ha confirmado que puedes nombrarlo · <span class="refmark conf">confirmar por cuenta</span> interno, confírmalo antes. Hoy todos en confirmar; los resultados sí valen para preparar.</div>
               </div>
             </div>
@@ -1317,6 +1353,36 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
         </div>
 
         <!-- ESTAR AL DÍA · PROCESOS -->
+        <div class="panel doc" id="p-contactos">
+          <div class="repo-head"><div class="slbl" style="margin:0">Contactos del área · ¿a quién recurro?</div><span class="repo-lock">Quién te ayuda</span></div>
+          <div class="dsub">Para cada servicio, quién te resuelve: el primero a quien escribir y a quién acudir si no está. Pensado sobre todo para quien acaba de llegar al equipo — cuando aún no sabes a quién llamar. Más el canal del área para una duda rápida.</div>
+
+          <div class="colhd" style="margin:16px 0 9px">👥 Las personas, por servicio <span class="prep-chip">PRÓXIMAMENTE</span></div>
+          <div class="contactos">
+            <div class="svc-card">
+              <div class="svc-name">Modernización de Aplicaciones <span class="svc-tag">servicio</span></div>
+              <div class="ct-row"><div class="ct-ava">JH</div><div class="ct-info"><b>Jorge Herrero</b><span>Solution Manager · Ciclo de Software</span></div><span class="ct-rank first">1.º</span></div>
+              <div class="ct-row"><div class="ct-ava">CG</div><div class="ct-info"><b>Carla González</b><span>Especialista · si Jorge no está</span></div><span class="ct-rank">2.º</span></div>
+            </div>
+            <div class="svc-card">
+              <div class="svc-name">Digital Change <span class="svc-tag">servicio</span></div>
+              <div class="ct-row"><div class="ct-ava">AZ</div><div class="ct-info"><b>Alfredo Zurdo</b><span>Solution Manager · Digital Change</span></div><span class="ct-rank first">1.º</span></div>
+              <div class="ct-row"><div class="ct-ava">AB</div><div class="ct-info"><b>Antonio Barco</b><span>Agente de preparación de visita</span></div><span class="ct-rank">2.º</span></div>
+            </div>
+          </div>
+          <p class="proc-note" style="margin-top:11px">El resto de servicios —Smart Operations, Process Mining, Data &amp; AI, Automatización— se irán sumando con su foto, nombre y vía de contacto. Incluye también quién puede dar apoyo puntual en operación.</p>
+
+          <div class="colhd" style="margin:24px 0 9px">💬 El canal del área</div>
+          <div class="area-teams" style="margin-top:0">
+            <div class="at-l">
+              <b>Canal del área en Teams</b>
+              <p>Para lo que no cabe en el feedback: una duda rápida o validar un enfoque con el equipo del servicio. Conversación abierta, por línea de negocio.</p>
+            </div>
+            <a class="at-btn" href="#" onclick="return false"><span class="at-tlogo">T</span> Abrir en Teams →</a>
+          </div>
+        </div>
+
+        <!-- NOVEDADES Y FEEDBACK -->
         <div class="panel doc" id="p-procesos">
           <div class="repo-head"><div class="slbl" style="margin:0">Novedades y feedback</div><span class="repo-lock">Sobre Microsoft · Outlook + Teams</span></div>
           <div class="dsub">El bucle en dos sentidos: el PM te avisa de lo nuevo, y tú le devuelves lo que falta. Todo por donde ya trabajáis — correo y Teams. Sin ruido: te llega cuando hay algo que usar, más un resumen del área al mes.</div>
@@ -1485,7 +1551,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
           <div class="match">
             <div class="match-h">Lo que le puedes enseñar de Entelgy</div>
             <div class="match-b">Mismo patrón: <b>core de seguros en Java, modernizado y financiado desde el propio mantenimiento</b>. El caso de Entelgy que encaja está en el repositorio.<span class="match-note">Referenciabilidad: <span class="refmark conf">confirmar por cuenta</span></span></div>
-            <span class="match-link" onclick="go(7)">Ver el caso en el repositorio →</span>
+            <span class="match-link" onclick="go(6)">Ver el caso en el repositorio →</span>
           </div>
 
           <div class="verdict go">
@@ -1664,8 +1730,8 @@ const steps=[
  {scene:'portal',phase:'e1',panel:'p-cuenta',flow:'f-cuenta',title:'Estado de la cuenta · con IA',lblPhase:''},
  {scene:'portal',phase:'e1',panel:'p-mail',flow:'f-mail',title:'Primer contacto · el mail',lblPhase:''},
  {scene:'portal',phase:'e1',panel:'p-kit',flow:'f-kit',title:'Kit de visita · preparar la reunión',lblPhase:''},
- {scene:'portal',phase:'e1',panel:'p-postreunion',flow:'f-post',title:'Después de la reunión',lblPhase:''},
  {scene:'portal',phase:'e1',panel:'p-repo',flow:'f-repo',title:'Repositorio de conocimiento',lblPhase:''},
+ {scene:'portal',phase:'e1',panel:'p-contactos',flow:'f-contactos',title:'Contactos del área',lblPhase:''},
  {scene:'portal',phase:'e1',panel:'p-procesos',flow:'f-procesos',title:'Novedades y feedback',lblPhase:''},
  {scene:'etapa2',phase:'e2',title:'El recorrido por delante · Fase 2',lblPhase:'Fase 2'}
 ];
@@ -1964,6 +2030,10 @@ go(0);
         empty=document.getElementById('rf-empty');
   const state={tipo:'',sector:'',rev:'',q:'',cli:false};
   const pieces=[...panel.querySelectorAll('[data-tipo]')];
+  const zones=[...panel.querySelectorAll('.rz')];
+  // Escaparate: cada zona arranca plegada (solo 2-3 visibles)
+  zones.forEach(z=>{if(z.querySelector('[data-extra="1"]'))z.classList.add('zone-folded');});
+  const filterActive=()=>!!(state.q||state.tipo||state.sector||state.rev||state.cli);
   function match(el){
     if(state.tipo&&el.dataset.tipo!==state.tipo)return false;
     if(state.sector){const s=(el.dataset.sector||'');if(!(s.split(' ').includes(state.sector)||s.includes('todos')))return false;}
@@ -1973,15 +2043,27 @@ go(0);
     return true;
   }
   function apply(){
+    const filt=filterActive();
+    panel.classList.toggle('repo-filtering',filt);
     let n=0;
     pieces.forEach(el=>{const ok=match(el);el.classList.toggle('r-hidden',!ok);if(ok)n++;});
-    panel.querySelectorAll('.rz').forEach(z=>{
+    zones.forEach(z=>{
       const vis=[...z.querySelectorAll('[data-tipo]')].some(p=>!p.classList.contains('r-hidden'));
       z.classList.toggle('r-collapsed',!vis);
+      // con filtro activo se ve todo lo que casa; sin filtro, vuelve al escaparate (salvo expansión manual)
+      if(z.querySelector('[data-extra="1"]')){
+        if(filt)z.classList.remove('zone-folded');
+        else if(!z.dataset.userOpen)z.classList.add('zone-folded');
+      }
     });
     cnt.textContent=n+(n===1?' pieza':' piezas');
     empty.style.display=n?'none':'block';
   }
+  // Botón "+ N recursos más" / "Ver menos"
+  panel.querySelectorAll('[data-zone-more]').forEach(btn=>btn.addEventListener('click',()=>{
+    const z=btn.closest('.rz');const folded=z.classList.toggle('zone-folded');
+    if(folded){delete z.dataset.userOpen;}else{z.dataset.userOpen='1';}
+  }));
   q.addEventListener('input',()=>{state.q=q.value.trim().toLowerCase();apply();});
   cli.addEventListener('change',()=>{state.cli=cli.checked;apply();});
   panel.querySelectorAll('.chip').forEach(ch=>ch.addEventListener('click',()=>{
@@ -1993,6 +2075,7 @@ go(0);
     state.tipo='';state.sector='';state.rev='';state.q='';state.cli=false;
     q.value='';cli.checked=false;
     panel.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c.dataset.v===''));
+    zones.forEach(z=>delete z.dataset.userOpen);
     apply();
   }
   clr.addEventListener('click',reset);
