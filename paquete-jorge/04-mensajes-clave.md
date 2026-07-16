@@ -21,7 +21,7 @@ Formato por keynote: el dolor como lo vive el cliente → la frase del comercial
 **El dolor.** "El sistema funciona, pero no está documentado. La gente que lo conocía ya no está, o está a punto de irse."
 **La frase.** "Ese conocimiento no está perdido: está en el código. La IA lo recupera y lo convierte en documentación viva — no hace falta reescribir el sistema de memoria."
 **La prueba.** NASERTIC: 1.000 horas de carga funcional documentadas en la primera semana.
-**El paso.** "El primer movimiento es un assessment de 10–15 días que te dice qué hay ahí dentro. Te presento al especialista."
+**El paso.** "El primer movimiento es un assessment de dos semanas que te dice qué hay ahí dentro. Te presento al especialista."
 
 ### K3 · El core que frena al negocio
 **El dolor.** "Cada cambio tarda meses. El negocio pide y el sistema dice que no — o que en seis meses."

@@ -27,7 +27,8 @@ Escaparate hoy: 3 visibles + 1 en trastienda, organizadas por momento del ciclo.
 |---|---|---|---|
 | Primer contacto | Correo de apertura + autodiagnóstico | 🟠 El correo, cableado solo para Financiero (P0-3: V1 sale así, nombrándolo). El autodiagnóstico, construido y pendiente de la validación de la pieza 2 | 🤖 herramienta · redacción nuestra |
 | Reunión introductoria | Deck ejecutivo C-Suite | 🟠 Existe y es reciente (v3 alineada a UCE, 10 jul) pero con los **edits del 14 jul pendientes**: slide 7 AT a modelo de créditos, referencias reorganizadas (UNED · H10 · NASERTIC, fuera Salud), nuevo Anexo 3. Bloqueado hasta que Jorge mande el documento de AT | Nosotros + doc de Jorge |
-| Reunión introductoria | One-pager de la solución | 🟠 Existe la ficha comercial de Modernización; falta decidir si es el one-pager que sale al cliente o pieza interna (la taxonomía dice: ficha comercial = interna). Si es interna, el one-pager cliente **hay que producirlo** | Nosotros, sobre el deck |
+| Reunión introductoria | One-pager de la solución | ✅ **Subido (16 jul)** — V1 provisional en el portal, se abre desde su ficha (`materiales/onepager-modernizacion.html`). Revisión de fondo: equipo de Jorge en verano | Nosotros · revisa equipo Jorge |
+| Para dejar al cliente | Ficha de servicio | ✅ **Subida (16 jul)** — V1 provisional (`materiales/ficha-modernizacion.html`), fila nueva en la zona cliente. ⚠ confirmar con Jorge la mención del 40% en documento público | Nosotros · revisa equipo Jorge |
 | Reunión avanzada | Presentación técnica (SPEC-IA) | ✅ Existe (deck Spec-Driven v2) | ✍️ SM |
 | Reunión avanzada | Business case tipo | ⏳ **No existe.** Es la ranura EN PREPARACIÓN del portal; lo arma producto/SM con guardarraíl Foreworth (salida interna, no material cliente — confirmar si sale de esta zona) | Jorge / producto |
 | Fichas 2024 | (dentro del deck) | ⚠ Marcadas "revisar antes de reusar" desde ene 26 — decidir si se actualizan o van al Histórico | ✍️ SM |
@@ -45,7 +46,7 @@ Escaparate hoy: 3 visibles + 1 en trastienda, organizadas por momento del ciclo.
 ## La lista de la compra (lo que de verdad falta, en orden)
 
 1. **Deck ejecutivo · edits del 14 jul** — lo único bloqueado por material de Jorge (documento de AT + slide NASERTIC). Todo lo demás del deck es nuestro.
-2. **One-pager cliente de Modernización** — decidir taxonomía (¿la ficha comercial vale o se produce pieza nueva?) y producirlo. Nuestro, sobre el deck ya cerrado.
+2. ✅ **Resuelto (16 jul)** — One-pager y ficha de servicio V1 provisionales subidos y conectados al Repositorio. Queda la revisión de fondo (equipo de Jorge, verano) y confirmar el 40% en documento público.
 3. **Objeciones y respuestas · pieza completa** — consolidar desde el Argumentario UCE. Nuestro.
 4. **Benchmark expuesto al comercial** — curar el análisis interno a versión "qué puedo decir de la competencia". Nuestro. Conecta con la petición del Menti de información de competencia — es la pieza que la responde en V1 sin esperar a la visión estratégica de V2.
 5. **Guía de diálogo** — consolidar redacción. Nuestro + OK de Jorge.

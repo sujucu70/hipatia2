@@ -16,7 +16,7 @@ Por pregunta: la correcta en **negrita**, los distractores debajo, y una sola cu
 - **El Assessment de modernización de dos semanas** ✓
 - Un descuento por cerrar rápido
 
-*Nota nuestra:* "dos semanas" vs el canon del Kit "10–15 días" — misma incoherencia detectada en el autodiagnóstico (P6 de la pieza 2). Unificar cuando se decida.
+*Nota nuestra:* ✅ resuelto (16 jul): el Assessment se cuenta como **"dos semanas"** en todo el portal — la pregunta ya es coherente con el canon.
 
 > ☐ OK ☐ Ajusta: ___
 

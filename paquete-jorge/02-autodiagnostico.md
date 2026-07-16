@@ -78,7 +78,7 @@ Siguiente paso según el global: ≥70 → **Assessment de dos semanas** (triaje
 
 > **P5:** Las horquillas en euros son nuestras, pensadas para una cuenta tipo Lantia (~600 empleados). ¿Las sostienes, las cambiamos por horquillas relativas ("del orden del X% de tu presupuesto IT"), o las quitamos? ☐ Sostener ☐ Relativas ☐ Quitar
 
-> **P6:** El Assessment sale como "dos semanas". El canon del Kit dice 10–15 días. ¿Unificamos en "10–15 días"? ☐ Sí ☐ Dejar "dos semanas"
+> ~~P6~~ ✅ **Resuelta (16 jul, Susana): el Assessment se cuenta como "dos semanas"** en todo el portal. Aplicado en Kit y Tarjeta; el autodiagnóstico ya lo decía así.
 
 ---
 

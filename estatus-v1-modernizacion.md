@@ -75,16 +75,16 @@ También salió: el test de las 5 preguntas cuestionado (se responde con el ajus
 
 ### B · Construcción — nuestro, respuesta directa al Menti
 
-7. **Encuadre CRM visible** en Home o Tarjeta: "Hipatia alimenta tu CRM, no lo sustituye; el CRM sigue siendo el registro único". Cuesta poco y desactiva la objeción más repetida.
-8. **Poda del escaparate, segunda pasada**: Tarjeta a su núcleo (las tres frases + por qué ahora + prueba; el resto a "más información") y Kit a vista de escaparate. Resolver de paso la acreditación: mantener 5/5 pero mostrar cuáles fallaste, sin chivar la correcta.
-9. **Fichas del repositorio → documento real**: que cada ficha enlace o previsualice la pieza. Sin esto, el repositorio nuevo pierde contra el SharePoint viejo en lo único que el comercial hace hoy.
-10. **Sellos "en preparación" con dueño y fecha** en los tres agentes + encaminado del feedback: es la pieza que convierte la decisión de alcance en algo visible y honesto. Requiere una pasada corta con MA para poner nombres (escaneo de cuenta · localizador de contactos · agente de visita · encaminado feedback→PM).
+7. ✅ **HECHO (16 jul)** — **Encuadre CRM visible**: banda en la Home ("El CRM sigue siendo el registro único — Hipatia lo alimenta, no lo sustituye ni lo duplica") + nota reforzada en Estado de la cuenta. Responde a la señal nº1 del Menti.
+8. ✅ **HECHO (16 jul)** — **Poda del escaparate**: descubrimiento al auditar el código — la poda de Tarjeta y Kit **ya estaba hecha** en el commit del 25 jun (plegables "Más munición y respaldo" y "Para confirmar y para cerrar"); el estatus la daba pendiente por documentación desfasada. Lo que faltaba era la **acreditación**: ahora al fallar se señalan en cobre las preguntas falladas ("repásala") sin chivar la correcta, se mantiene el 5/5 y el barajado. Fleco cerrado de la pieza 4: las keynotes viven en el Repositorio; la Tarjeta conserva su bloque "Si solo te llevas tres frases" como núcleo.
+9. ✅ **MECANISMO HECHO (16 jul)** — **Fichas → documento real**: botón "Abrir el documento ↗" vía `data-doc`; sin URL muestra "enlace directo pendiente". **Primeros dos documentos conectados el mismo día**: one-pager y ficha de servicio de Modernización (V1 provisionales, en `materiales/`). El resto de URLs, con el volcado de septiembre.
+10. ✅ **HECHO (16 jul)** — **Sellos con dueño y fecha** en los cuatro puntos: escaneo de cuenta (dueño **por asignar** · fecha con la decisión de plataforma, sept), mapa de contactos (en conversación con Entelgy Digital), agente de visita (Digital Change — el agente ya existe), encaminado feedback→PM (dueño **por asignar**), agenda de contactos (contenido de los SM · sept). Los dos "por asignar" son la pasada corta con MA que sigue pendiente.
 
 ### C · Gobierno — condición de lanzamiento, no de código
 
 11. **Dueño del mantenimiento nombrado**: quién persigue al SM y con qué cadencia (la respuesta de MA del 23 jun: recursos dedicados — ponerle nombre antes de lanzar).
 12. **Política del botón de adjuntar** (qué pasa con los archivos subidos) — la mención a confidencialidad del Menti la hace obligatoria.
-13. **Respuesta pública al Menti** en "Novedades y feedback": qué se ha incorporado ("tu sugerencia salió como…"). Primera prueba de que el bucle funciona.
+13. ⏸ **APARCADO (16 jul, decisión de Susana)** — Respuesta pública al Menti: de momento no se envía. Reabrir si se quiere usar como primera prueba del bucle de feedback en el lanzamiento.
 
 ### Fuera de V1 · registrado para que nadie lo dé por perdido
 

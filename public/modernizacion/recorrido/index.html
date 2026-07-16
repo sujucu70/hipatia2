@@ -517,6 +517,12 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 .exo.sel::before{border-color:var(--purple);background:var(--purple);box-shadow:inset 0 0 0 2.5px #fff}
 .acr-msg{font-size:12.5px;font-weight:700;color:var(--copper);margin-bottom:9px}
 .acr-submit{margin:2px 0 10px;padding:10px 18px;font-size:13px}
+.hm-crm{margin:18px 0 0;background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:10px;padding:12px 16px;font-size:12.5px;color:#46535E;line-height:1.55}
+.hm-crm b{color:var(--navy)}
+.prep-owner{font-size:10.5px;color:#8A94A0;font-weight:600;line-height:1.45;margin-top:4px}
+.acc details.miss summary{color:var(--copper)}
+.acc details.miss summary::after{content:'· repásala';margin-left:6px;font-size:10.5px;font-weight:800;color:var(--copper)}
+.ficha-doc{display:inline-block;margin:10px 8px 0 0;font-size:13px;font-weight:700;color:#fff;background:var(--purple);border-radius:8px;padding:9px 14px;text-decoration:none}
 .btn-exam:disabled{opacity:.45;cursor:not-allowed;box-shadow:none;transform:none}
 .hm-band-col{flex-direction:column;align-items:stretch;gap:11px}
 .hm-band-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -1045,7 +1051,8 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
           </div>
         </div>
 
-        <a class="hm-ctx" href="/#contexto">¿De dónde viene esto? · el punto de partida, en la portada →</a>
+        <div class="hm-crm"><b>El CRM sigue siendo el registro único.</b> Hipatia lo alimenta —la cuenta que trabajas, el correo que sale, el seguimiento— y te avisa si la cuenta ya es cliente. No lo sustituye ni lo duplica.</div>
+<a class="hm-ctx" href="/#contexto">¿De dónde viene esto? · el punto de partida, en la portada →</a>
       </div>
     </div>
   </section>
@@ -1153,7 +1160,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
 
               <!-- EL CIERRE -->
               <div class="colhd" style="margin:24px 0 9px">El cierre de una primera reunión</div>
-              <div class="close-band" style="margin:0"><div class="t"><b>El Assessment de modernización</b> — 10–15 días, primer contrato. Entrega el <b>triaje del portfolio</b> (qué se moderniza, qué no, qué va a AM) y el business case para Dirección. La estrategia, el gobierno y el método se quedan dentro de Entelgy — el assessment no los regala.</div></div>
+              <div class="close-band" style="margin:0"><div class="t"><b>El Assessment de modernización</b> — dos semanas, primer contrato. Entrega el <b>triaje del portfolio</b> (qué se moderniza, qué no, qué va a AM) y el business case para Dirección. La estrategia, el gobierno y el método se quedan dentro de Entelgy — el assessment no los regala.</div></div>
 
               <!-- VÍDEO DEL ÁREA · pieza real del Hipatia actual -->
               <div class="vid-strip" style="margin-top:24px"><span class="vid-ic">▶</span><div><b>¿Prefieres verlo contado?</b> El vídeo del área (1:58), la versión en vídeo de esta tarjeta.</div><span class="vid-src">Ya existe · en Hipatia hoy</span></div>
@@ -1186,7 +1193,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
                   <span class="kit-arr">→</span>
                   <span class="kit-out">Lo que ves abajo: pitch por rol, objeciones, preguntas y referencias</span>
                 </div>
-                <div class="kit-int">Integración en el portal: en curso</div>
+                <div class="kit-int">Integración en el portal: en curso · dueño: Digital Change (el agente ya existe) · fecha objetivo: con la decisión de plataforma (septiembre)</div>
               </div>
               <div class="kit-base-note" style="margin-top:11px">Esta ficha es <b>Grupo Lantia</b>, afinada con lo que trabajaste en el recorrido. El agente de preparación lo hará así para <b>cualquier cuenta</b>, automático — integración en curso.</div>
             </div>
@@ -1276,7 +1283,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
           </div>
 
           <div class="pb-sec" style="margin-top:26px">El cierre · qué propones</div>
-          <div class="close-band"><div class="l">El siguiente paso concreto</div><div class="t">Con el caso de Grupo Lantia montado —<b>1,8 M€/año</b> de deuda, financiable desde el propio mantenimiento— propones el <b>Assessment de modernización</b>: 10–15 días, primer contrato. Entrega el triaje del portfolio —qué se moderniza, qué no, qué va a AM— y el business case para Dirección. La estrategia, el gobierno y el método se quedan en Entelgy.</div></div>
+          <div class="close-band"><div class="l">El siguiente paso concreto</div><div class="t">Con el caso de Grupo Lantia montado —<b>1,8 M€/año</b> de deuda, financiable desde el propio mantenimiento— propones el <b>Assessment de modernización</b>: dos semanas, primer contrato. Entrega el triaje del portfolio —qué se moderniza, qué no, qué va a AM— y el business case para Dirección. La estrategia, el gobierno y el método se quedan en Entelgy.</div></div>
           <div class="kit-close-note">El Assessment es el output de la primera reunión: el triaje y el business case que se queda en Entelgy, sin precio en este punto.</div>
         </div>
 
@@ -1320,10 +1327,11 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
               <div class="rz-h"><span class="rz-t">Para usar con cliente</span><span class="pista-tag ok">Sale al cliente</span></div>
               <div class="rz-b">
                 <div class="rrow" data-tipo="cliente" data-sector="todos" data-cliente="si" data-rev="ok"><div class="rk">Conversación · primer contacto</div><h5>Correo de apertura + autodiagnóstico <span class="mt ag">🤖 agente</span></h5><p>Lo genera la herramienta del recorrido. <span class="xref" onclick="go(4)">→ ir a la herramienta</span></p><div class="r-foot"><span class="r-fresh ok">⚡ se genera al momento</span></div></div>
-                <div class="rrow r-click" data-tipo="cliente" data-sector="todos" data-cliente="si" data-rev="ok" data-title="Deck ejecutivo C-Suite + one-pager" data-q="Los decks ejecutivos para la reunión introductoria: NextGen SW Engineering y Modernización de Aplicaciones. Las fichas de 2024 hay que revisarlas antes de reusarlas." data-resp="✍️ SM · Solution Manager del área" data-fecha="Revisado ene 2026 · contiene fichas 2024 a revisar" data-vive="Hub del área · Decks ejecutivos"><div class="rk">Reunión introductoria</div><h5>Deck ejecutivo C-Suite + one-pager <span class="mt sm">✍️ SM</span></h5><p>Piezas: <b>NextGen SW Engineering</b> (ene 26) · <b>Modernización de Aplicaciones</b> (nov 25). Fichas 2024: revisar antes de reusar.</p><div class="r-foot"><span class="r-fresh ok">✓ rev. ene 26</span> <span class="r-fresh rev">fichas 2024: revisar</span></div></div>
+                <div class="rrow r-click" data-tipo="cliente" data-sector="todos" data-cliente="si" data-rev="ok" data-title="Deck ejecutivo C-Suite + one-pager" data-doc="/modernizacion/materiales/onepager-modernizacion.html" data-q="El one-pager de Modernización (V1 provisional · jul 2026) se abre desde aquí. Los decks ejecutivos —NextGen SW Engineering y Modernización— viven en el hub del área; las fichas de 2024 hay que revisarlas antes de reusarlas." data-resp="✍️ SM · Solution Manager del área" data-fecha="One-pager V1 provisional · jul 2026 · decks en el hub" data-vive="Hub del área · Decks ejecutivos"><div class="rk">Reunión introductoria</div><h5>Deck ejecutivo C-Suite + one-pager <span class="mt sm">✍️ SM</span></h5><p><b>One-pager V1</b> (jul 26, se abre desde la ficha) · decks <b>NextGen SW Engineering</b> (ene 26) y <b>Modernización</b> (nov 25) en el hub. Fichas 2024: revisar antes de reusar.</p><div class="r-foot"><span class="r-fresh ok">✓ one-pager jul 26</span> <span class="r-fresh rev">fichas 2024: revisar</span></div></div>
                 <div class="rrow" data-tipo="cliente" data-sector="todos" data-cliente="si" data-rev="ok"><div class="rk">Pitch a medida</div><h5>¿Necesitas un pitch personalizado? <span class="mt ag">🤖 agente</span></h5><p>No lo guardamos hecho: lo generas en la herramienta de la visita. <span class="xref" onclick="go(5)">→ ir a la herramienta</span></p><div class="r-foot"><span class="r-fresh ok">⚡ se genera al momento</span></div></div>
                 <div class="rrow r-click" data-extra="1" data-tipo="cliente" data-sector="todos" data-cliente="si" data-rev="pendiente" data-title="Documentación técnica + business case" data-q="Arquitecturas y el número de la deuda técnica. SPEC-IA ya está disponible; el business case tipo está pendiente de construir (lo arma el SM)." data-resp="✍️ SM · Solution Manager del área" data-fecha="SPEC-IA vigente · business case tipo pendiente" data-vive="Hub del área · Técnica"><div class="rk">Reunión avanzada</div><h5>Documentación técnica + business case <span class="mt sm">✍️ SM</span></h5><p>Arquitecturas y el número de la deuda técnica. <b>SPEC-IA</b> ya está; <span style="color:var(--copper);font-weight:600">business case tipo, pendiente.</span></p><div class="r-foot"><span class="r-fresh pend">⏳ business case pendiente</span></div></div>
-                <button type="button" class="rz-more" data-zone-more><span class="more-show">+ 1 recurso más</span><span class="less-show">− Ver menos</span></button>
+                <div class="rrow r-click" data-extra="1" data-tipo="cliente" data-sector="todos" data-cliente="si" data-rev="ok" data-title="Ficha de servicio · Modernización" data-doc="/modernizacion/materiales/ficha-modernizacion.html" data-q="La ficha de servicio de Modernización (V1 provisional · jul 2026): qué es, qué incluye —del diagnóstico a la nueva arquitectura— y cómo se contrata. Pensada para IT y compras; documento público." data-resp="✍️ SM · Solution Manager del área" data-fecha="V1 provisional · jul 2026" data-vive="Portal · materiales del área"><div class="rk">Para dejar al cliente</div><h5>Ficha de servicio · Modernización <span class="mt sm">✍️ SM</span></h5><p>Qué es, qué incluye y cómo se contrata. <b>V1 provisional</b> — se abre desde la ficha.</p><div class="r-foot"><span class="r-fresh ok">✓ V1 jul 26</span></div></div>
+                <button type="button" class="rz-more" data-zone-more><span class="more-show">+ 2 recursos más</span><span class="less-show">− Ver menos</span></button>
               </div>
             </div>
 
@@ -1356,6 +1364,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
           <div class="dsub">Para cada servicio, quién te resuelve: el primero a quien escribir y a quién acudir si no está. Pensado sobre todo para quien acaba de llegar al equipo — cuando aún no sabes a quién llamar. Más el canal del área para una duda rápida.</div>
 
           <div class="colhd" style="margin:16px 0 9px">👥 Las personas, por servicio <span class="prep-chip">PRÓXIMAMENTE</span></div>
+          <div class="prep-owner" style="margin:-4px 0 10px">Dueño del contenido: los Solution Managers, un bloque por servicio · se puebla en septiembre</div>
           <div class="contactos">
             <div class="svc-card">
               <div class="svc-name">Modernización de Aplicaciones <span class="svc-tag">servicio</span></div>
@@ -1497,7 +1506,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
               <input class="at-input" id="acct-input" value="Grupo Lantia" aria-label="Nombre de la cuenta" autocomplete="off">
               <button class="at-btn" type="button" id="acct-btn">Analizar</button>
             </div>
-            <div class="at-sources">La IA lee <b>fuentes públicas</b>: web, ofertas de empleo que delatan el stack, prensa, registro mercantil y señales del sector. Cada dato lleva de dónde sale y con qué confianza; cuando no hay señal fiable, lo dice en vez de inventar.</div>
+            <div class="at-sources">La IA lee <b>fuentes públicas</b>: web, ofertas de empleo que delatan el stack, prensa, registro mercantil y señales del sector. Cada dato lleva de dónde sale y con qué confianza; cuando no hay señal fiable, lo dice en vez de inventar. <span class="prep-owner" style="display:block;margin-top:5px">Hoy, demo con Grupo Lantia · el agente en vivo está en preparación — dueño: por asignar · fecha objetivo: con la decisión de plataforma (septiembre)</span></div>
           </div>
           <div id="cuenta-result">
           <div class="at-status">Analizado hace unos segundos · esto es lo que ha encontrado</div>
@@ -1513,7 +1522,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
             <div class="scan-row"><div class="k">Tamaño</div><div class="v">Aseguradora mediana de no-vida, ~600 empleados. Deciden CIO y CFO; las personas concretas, en el mapa de abajo.<span style="font-size:10.5px;color:var(--gray)"> · Fuente: registro mercantil + web</span></div></div>
           </div>
 
-          <div class="scan-note">Esto es solo lo que se ve desde fuera (señal pública). Cruza con el CRM antes de tratarla como cuenta nueva — puede que Entelgy ya trabaje con ellos.</div>
+          <div class="scan-note">Esto es solo lo que se ve desde fuera (señal pública). Cruza con el CRM antes de tratarla como cuenta nueva — puede que Entelgy ya trabaje con ellos. El CRM sigue siendo el registro único: Hipatia lo alimenta, no lo sustituye.</div>
 
           <!-- AGENTE 2 · MAPA DE PERSONAS · agente nuevo, en preparación -->
           <div class="scan">
@@ -1522,6 +1531,7 @@ body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);co
               <span class="prep-chip">EN PREPARACIÓN</span>
             </div>
             <div class="ppl-intro">Un segundo agente mapea a quién dirigirse —cargo, por qué importa y vía de contacto—, con su nivel de confianza. Es un agente nuevo, todavía por construir; así se verá.</div>
+            <div class="prep-owner">Dueño: en conversación con Entelgy Digital · fecha objetivo: con la decisión de plataforma (septiembre)</div>
             <div class="scan-row"><div class="k">Primer contacto</div><div class="v"><b>Marta Ruiz</b> · Dirección de Sistemas. Por aquí entra lo técnico; es quien recibe el correo del paso siguiente. <span class="mr-hint">⚠ de perfil público · confírmalo</span></div></div>
             <div class="scan-row"><div class="k">Decide el alcance</div><div class="v"><b>Dirección de IT / CIO</b>. Aprueba qué se moderniza. <span class="mr-hint">por identificar</span></div></div>
             <div class="scan-row"><div class="k">Tiene el presupuesto</div><div class="v"><b>Dirección Financiera / CFO</b>. La pieza del ángulo de financiar desde el mantenimiento. <span class="mr-hint">por identificar</span></div></div>
@@ -1787,6 +1797,7 @@ document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(cur+1);if(e.k
   if(locked)return;
   q.querySelectorAll('.exo').forEach(x=>x.classList.remove('sel'));
   o.classList.add('sel');
+  const dd=q.closest('details');if(dd)dd.classList.remove('miss');
   if(msg)msg.hidden=true;
   refresh();
  })));
@@ -1802,14 +1813,15 @@ document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(cur+1);if(e.k
   const right=qs.filter(q=>{const s=q.querySelector('.exo.sel');return s&&s.dataset.c==='1';}).length;
   if(right===total){
    locked=true;
-   qs.forEach(q=>{const s=q.querySelector('.exo.sel');if(s)s.classList.add('ok');});
+   qs.forEach(q=>{const s=q.querySelector('.exo.sel');if(s)s.classList.add('ok');const dd=q.closest('details');if(dd)dd.classList.remove('miss');});
    if(msg)msg.hidden=true;
    if(pending)pending.hidden=true;
    if(done)done.hidden=false;
    if(fill)fill.style.width='100%';
    submit.disabled=true;submit.textContent='Acreditado ✓';
   }else{
-   if(msg){msg.hidden=false;msg.textContent='Aún no: '+right+' de 5. Las cinco están en la tarjeta de al lado; lo retomas cuando quieras.';}
+   qs.forEach(q=>{const s=q.querySelector('.exo.sel');const dd=q.closest('details');if(dd)dd.classList.toggle('miss',!(s&&s.dataset.c==='1'));});
+   if(msg){msg.hidden=false;msg.textContent='Aún no: '+right+' de 5. Las señaladas en cobre son las que se te escaparon — repásalas en la tarjeta y vuelve a intentarlo (las opciones se barajan).';}
    reshuffle();
    refresh();
   }
@@ -2016,7 +2028,8 @@ go(0);
       <div class="ficha-r"><span class="ficha-l">Dónde vive</span><span id="ficha-vive"></span></div>
     </div>
     <button type="button" class="ficha-go" id="ficha-go" style="display:none">Ver en el repositorio →</button>
-    <div class="ficha-foot">Ficha de ejemplo. El contenido real vive en el hub del área; aquí se muestra cómo se presentará cada pieza.</div>
+<a class="ficha-doc" id="ficha-doc" style="display:none" target="_blank" rel="noopener">Abrir el documento ↗</a>
+    <div class="ficha-foot">Cuando la pieza tiene su enlace conectado, «Abrir el documento» lo abre directo; mientras, la ficha dice dónde vive.</div>
   </div>
 </div>
 
@@ -2092,8 +2105,10 @@ go(0);
     if(el.dataset.cliente){cr.style.display='';F('ficha-cli').textContent=el.dataset.cliente==='si'?'Sí':'No · uso interno';}else{cr.style.display='none';}
     const rr=F('ficha-ref-row');
     if(el.dataset.ref){rr.style.display='';F('ficha-ref').textContent=el.dataset.ref;}else{rr.style.display='none';}
-    F('ficha-vive').textContent=el.dataset.vive||'—';
+    F('ficha-vive').textContent=(el.dataset.vive||'—')+(el.dataset.doc?'':' · enlace directo pendiente');
     if(el.dataset.go){goBtn.style.display='';goBtn.onclick=()=>{closeFicha();window.go(+el.dataset.go);};}else{goBtn.style.display='none';}
+    const doc=F('ficha-doc');
+    if(doc){if(el.dataset.doc){doc.style.display='';doc.href=el.dataset.doc;}else{doc.style.display='none';doc.removeAttribute('href');}}
     ov.classList.add('on');ov.setAttribute('aria-hidden','false');
   }
   function closeFicha(){ov.classList.remove('on');ov.setAttribute('aria-hidden','true');}
@@ -2123,7 +2138,7 @@ go(0);
     const t=(ta.value||'').trim();if(!t){ta.focus();return;}
     addItem(t,'env','enviada','hoy · el PM la recibe');
     ta.value='';ok.style.display='block';
-    ok.innerHTML='✓ Enviada al PM. Te avisará cuando se publique. <span class="prep-chip">conexión al PM · en preparación</span>';
+    ok.innerHTML='✓ Enviada al PM. Te avisará cuando se publique. <span class="prep-chip">conexión al PM · en preparación · dueño: por asignar</span>';
     setTimeout(()=>{ok.style.display='none';},5000);
   });
   function alt(canal){ok.style.display='block';ok.textContent='Abriría '+canal+' dirigido al PM del área, con tu texto ya puesto.';setTimeout(()=>{ok.style.display='none';},4000);}
