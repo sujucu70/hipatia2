@@ -68,7 +68,7 @@ También salió: el test de las 5 preguntas cuestionado (se responde con el ajus
 
 1. ✅ **HECHO (16 jul)** — Sign-off de **referenciabilidad**: Jorge confirma y los seis casos pasan a `citable` en el portal, con la leyenda "en presentación sí · envío formal por cuenta". Dossier y trazabilidad en `paquete-jorge/01-referenciabilidad-casos.md`. Queda viva la verificación de cifras por caso (H10 ~90% la más señalada).
 2. **Autodiagnóstico**: las 10 preguntas, pesos, umbrales y frases de lectura.
-3. Resultados definitivos de los **seis casos** del Repositorio.
+3. ✅ **HECHO (16 jul)** — Resultados de los **seis casos** redactados, validados por Jorge y volcados a las fichas del Repositorio (`paquete-jorge/03-casos-repositorio.md`).
 4. **Mensajes clave**: 3–4 keynotes por dolor (P1-7) + 3 frases a medida de cuenta (P1-8).
 5. Validar **distractores** de la acreditación y las cifras flagged (el "+70%" no sale sin sign-off).
 6. Los **materiales cliente** del repositorio — las 5–6 piezas curadas por zona.
