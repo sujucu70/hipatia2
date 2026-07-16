@@ -69,9 +69,9 @@ También salió: el test de las 5 preguntas cuestionado (se responde con el ajus
 1. ✅ **HECHO (16 jul)** — Sign-off de **referenciabilidad**: Jorge confirma y los seis casos pasan a `citable` en el portal, con la leyenda "en presentación sí · envío formal por cuenta". Dossier y trazabilidad en `paquete-jorge/01-referenciabilidad-casos.md`. Queda viva la verificación de cifras por caso (H10 ~90% la más señalada).
 2. **Autodiagnóstico**: las 10 preguntas, pesos, umbrales y frases de lectura.
 3. ✅ **HECHO (16 jul)** — Resultados de los **seis casos** redactados, validados por Jorge y volcados a las fichas del Repositorio (`paquete-jorge/03-casos-repositorio.md`).
-4. **Mensajes clave**: 3–4 keynotes por dolor (P1-7) + 3 frases a medida de cuenta (P1-8).
+4. ✅ **HECHO (16 jul)** — **Mensajes clave** validados y cableados: 4 keynotes por dolor (pieza nueva en el Repositorio · *Para conocer*) + 3 frases de Lantia en el Kit con la regla de las tres frases (`paquete-jorge/04-mensajes-clave.md`). La Tarjeta se resuelve en la segunda poda (punto 8).
 5. Validar **distractores** de la acreditación y las cifras flagged (el "+70%" no sale sin sign-off).
-6. Los **materiales cliente** del repositorio — las 5–6 piezas curadas por zona.
+6. 🟠 **Índice curado hecho (16 jul)** — `paquete-jorge/06-indice-materiales.md`: de ~20 piezas, 12 existen o están cerradas; faltan 7, de las que 5 son nuestras (one-pager cliente, objeciones completas, benchmark curado, guía de diálogo, y los edits del deck cuando Jorge mande su doc de AT) y 2 de Jorge (doc AT + business case tipo, que no bloquea V1). Producción en septiembre.
 
 ### B · Construcción — nuestro, respuesta directa al Menti
 
