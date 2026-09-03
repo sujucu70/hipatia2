@@ -1,0 +1,185 @@
+/* ============================================================
+   ENTELGY DESIGN SYSTEM — tokens.css
+   v1.0 · Human Driven Technology
+   ============================================================ */
+
+:root {
+  /* ----------------------------------------
+     COLOR · Brand (core)
+     ---------------------------------------- */
+  --color-brand-navy:   #041C2C;
+  --color-brand-slate:  #243947;
+  --color-brand-purple: #855AC6;
+  --color-brand-orange: #E05730;
+  --color-brand-white:  #FFFFFF;
+
+  /* ----------------------------------------
+     COLOR · Slate scale (neutrals)
+     ---------------------------------------- */
+  --color-slate-50:  #F5F7F9;
+  --color-slate-100: #E5EAEF;
+  --color-slate-200: #C8D2DA;
+  --color-slate-300: #9DAEB9;
+  --color-slate-400: #6E8493;
+  --color-slate-500: #4A6273;
+  --color-slate-600: #354A5A;
+  --color-slate-700: #243947;  /* brand */
+  --color-slate-800: #122734;
+  --color-slate-900: #041C2C;  /* brand */
+
+  /* ----------------------------------------
+     COLOR · Purple scale (visionary accent)
+     ---------------------------------------- */
+  --color-purple-100: #EDE3F7;
+  --color-purple-300: #B696DC;
+  --color-purple-500: #855AC6;  /* brand */
+  --color-purple-700: #5E3D9B;
+  --color-purple-900: #3A2566;
+
+  /* ----------------------------------------
+     COLOR · Orange scale (warm CTA accent)
+     ---------------------------------------- */
+  --color-orange-100: #FBE0D6;
+  --color-orange-300: #EE9277;
+  --color-orange-500: #E05730;  /* brand */
+  --color-orange-700: #B23E1D;
+  --color-orange-900: #6E2511;
+
+  /* ----------------------------------------
+     COLOR · Semantic
+     ---------------------------------------- */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error:   #DC2626;
+  --color-info:    var(--color-brand-purple);
+
+  /* ----------------------------------------
+     COLOR · Aliases (use these in components)
+     ---------------------------------------- */
+  /* Surfaces */
+  --color-bg-primary:    var(--color-brand-white);
+  --color-bg-secondary:  var(--color-slate-50);
+  --color-bg-inverse:    var(--color-brand-navy);
+  --color-surface:       var(--color-brand-white);
+  --color-surface-raised:var(--color-slate-50);
+
+  /* Text */
+  --color-text-primary:  var(--color-brand-navy);
+  --color-text-secondary:var(--color-slate-600);
+  --color-text-muted:    var(--color-slate-400);
+  --color-text-inverse:  var(--color-brand-white);
+  --color-text-accent:   var(--color-brand-purple);
+  --color-text-cta:      var(--color-brand-orange);
+
+  /* Borders */
+  --color-border-subtle:  var(--color-slate-100);
+  --color-border-default: var(--color-slate-200);
+  --color-border-strong:  var(--color-slate-400);
+
+  /* ----------------------------------------
+     TYPOGRAPHY
+     ---------------------------------------- */
+  --font-family-display: 'DIN Pro', 'DIN', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-body:    'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono:    'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  --font-weight-regular: 400;
+  --font-weight-medium:  500;
+  --font-weight-bold:    700;
+
+  /* Type scale (modular, ratio 1.25) */
+  --font-size-xs:   0.75rem;   /* 12 */
+  --font-size-sm:   0.875rem;  /* 14 */
+  --font-size-base: 1rem;      /* 16 */
+  --font-size-lg:   1.125rem;  /* 18 */
+  --font-size-xl:   1.25rem;   /* 20 */
+  --font-size-2xl:  1.5rem;    /* 24 */
+  --font-size-3xl:  1.875rem;  /* 30 */
+  --font-size-4xl:  2.25rem;   /* 36 */
+  --font-size-5xl:  3rem;      /* 48 */
+  --font-size-6xl:  3.75rem;   /* 60 */
+
+  --line-height-tight:   1.1;
+  --line-height-snug:    1.25;
+  --line-height-normal:  1.5;
+  --line-height-relaxed: 1.625;
+
+  --letter-spacing-tight:  -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide:   0.05em;
+
+  /* ----------------------------------------
+     SPACING (8px base)
+     ---------------------------------------- */
+  --space-0:  0;
+  --space-1:  0.25rem;  /*   4 */
+  --space-2:  0.5rem;   /*   8 */
+  --space-3:  0.75rem;  /*  12 */
+  --space-4:  1rem;     /*  16 */
+  --space-5:  1.5rem;   /*  24 */
+  --space-6:  2rem;     /*  32 */
+  --space-7:  3rem;     /*  48 */
+  --space-8:  4rem;     /*  64 */
+  --space-9:  6rem;     /*  96 */
+  --space-10: 8rem;     /* 128 */
+
+  /* ----------------------------------------
+     RADIUS (sleek / corporate-modern)
+     ---------------------------------------- */
+  --radius-none: 0;
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   8px;
+  --radius-xl:   12px;
+  --radius-full: 9999px;
+
+  /* ----------------------------------------
+     SHADOWS (subtle, editorial)
+     ---------------------------------------- */
+  --shadow-xs: 0 1px 2px   rgba(4, 28, 44, 0.04);
+  --shadow-sm: 0 2px 4px   rgba(4, 28, 44, 0.06);
+  --shadow-md: 0 4px 12px  rgba(4, 28, 44, 0.08);
+  --shadow-lg: 0 12px 28px rgba(4, 28, 44, 0.12);
+  --shadow-xl: 0 24px 48px rgba(4, 28, 44, 0.18);
+
+  /* ----------------------------------------
+     MOTION
+     ---------------------------------------- */
+  --duration-fast:   150ms;
+  --duration-normal: 250ms;
+  --duration-slow:   400ms;
+  --easing-standard:    cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-emphasized:  cubic-bezier(0.2, 0, 0, 1);
+
+  /* ----------------------------------------
+     Z-INDEX
+     ---------------------------------------- */
+  --z-base:     0;
+  --z-dropdown: 1000;
+  --z-sticky:   1020;
+  --z-modal:    1040;
+  --z-toast:    1060;
+
+  /* ----------------------------------------
+     BREAKPOINTS (reference values)
+     ---------------------------------------- */
+  /* sm: 640px · md: 768px · lg: 1024px · xl: 1280px · 2xl: 1536px */
+}
+
+/* ============================================================
+   DARK MODE (optional · apply [data-theme="dark"] on <html>)
+   ============================================================ */
+[data-theme="dark"] {
+  --color-bg-primary:     var(--color-brand-navy);
+  --color-bg-secondary:   var(--color-slate-800);
+  --color-surface:        var(--color-slate-800);
+  --color-surface-raised: var(--color-slate-700);
+
+  --color-text-primary:   var(--color-brand-white);
+  --color-text-secondary: var(--color-slate-200);
+  --color-text-muted:     var(--color-slate-400);
+
+  --color-border-subtle:  var(--color-slate-700);
+  --color-border-default: var(--color-slate-600);
+  --color-border-strong:  var(--color-slate-400);
+}

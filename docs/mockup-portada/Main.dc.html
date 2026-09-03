@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif; color: #041C2C; background: #F5F7F9; -webkit-font-smoothing: antialiased; }
+    a { color: #E05730; text-decoration: none; } a:hover { color: #B23E1D; }
+    .h { font-family: 'DIN Pro', 'DIN', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+  </style>
+</helmet>
+<div style="width: 1440px; min-height: 1080px; background: #F5F7F9; display: flex; flex-direction: column;">
+
+  <!-- Cabecera -->
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 32px; height: 72px; padding: 0 64px; background: #FFFFFF; border-bottom: 1px solid #E5EAEF;">
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <img src="entelgy-logo-dark.png" alt="Entelgy" style="height: 28px; width: auto; display: block;">
+      <div style="width: 1px; height: 24px; background: #C8D2DA;"></div>
+      <div style="display: flex; flex-direction: column; line-height: 1.1;">
+        <span class="h" style="font-size: 18px; color: #041C2C;">Hipatia</span>
+        <span style="font-size: 11px; color: #6E8493; letter-spacing: 0.05em; text-transform: uppercase;">Portal comercial</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 32px; font-size: 15px; font-weight: 500; color: #354A5A;">
+      <span style="color: #041C2C; border-bottom: 2px solid #E05730; padding-bottom: 4px;">Inicio</span>
+      <span>Entelgy</span>
+      <span>Prácticas</span>
+      <span>Materiales</span>
+      <span>Contactos</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; width: 360px; height: 44px; padding: 0 14px; border: 1px solid #C8D2DA; border-radius: 8px; background: #FFFFFF; color: #6E8493; font-size: 14px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E8493" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="20" y1="20" x2="16.5" y2="16.5"></line></svg>
+      <span>Buscar un material: deck, one-pager, caso, ficha…</span>
+    </div>
+  </div>
+
+  <!-- Entelgy en una frase -->
+  <div style="background: #041C2C; padding: 48px 64px; display: flex; align-items: flex-end; justify-content: space-between; gap: 64px;">
+    <div style="display: flex; flex-direction: column; gap: 14px; max-width: 880px;">
+      <span style="font-size: 12px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: #9DAEB9;">Entelgy en una frase</span>
+      <p class="h" style="margin: 0; font-size: 36px; line-height: 1.1; color: #FFFFFF;">Las transformaciones no fallan por la tecnología. Fallan cuando tecnología, procesos, personas y cultura no avanzan juntas.</p>
+      <p style="margin: 0; font-size: 18px; line-height: 1.5; color: #C8D2DA; max-width: 720px;">Entelgy trabaja los cuatro a la vez, con un método común, para que el cambio llegue a resultados y se sostenga.</p>
+    </div>
+    <a href="#" style="display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 22px; border: 1px solid #E05730; border-radius: 8px; color: #FFFFFF; font-size: 15px; font-weight: 500; white-space: nowrap; background: #E05730;">Cómo presentar Entelgy →</a>
+  </div>
+
+  <!-- La oferta -->
+  <div style="padding: 40px 64px 8px; display: flex; flex-direction: column; gap: 20px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <span style="font-size: 12px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: #E05730;">La oferta</span>
+        <span class="h" style="font-size: 30px; line-height: 1.1; color: #041C2C;">Cinco prácticas. Entra por la que necesite tu cliente.</span>
+      </div>
+      <span style="font-size: 14px; color: #6E8493;">Entra en la práctica o directamente en una de sus soluciones.</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px;">
+
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px 20px; min-height: 250px; background: #FFFFFF; border: 1px solid #E5EAEF; border-radius: 12px; box-shadow: 0 1px 2px rgba(4, 28, 44, 0.04);">
+        <span style="font-size: 12px; font-weight: 500; color: #6E8493;">01</span>
+        <span class="h" style="font-size: 20px; line-height: 1.15; color: #041C2C;">Process Intelligence</span>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #354A5A; flex-grow: 1;">Ver dónde se pierde coste, tiempo o control en un proceso antes de rediseñarlo y automatizarlo.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;"><a href="#" style="display: inline-flex; align-items: center; height: 26px; padding: 0 9px; border: 1px solid #C8D2DA; border-radius: 6px; background: #F5F7F9; color: #041C2C; font-size: 12px; font-weight: 500; white-space: nowrap;">Inteligencia de procesos</a><a href="#" style="display: inline-flex; align-items: center; height: 26px; padding: 0 9px; border: 1px solid #C8D2DA; border-radius: 6px; background: #F5F7F9; color: #041C2C; font-size: 12px; font-weight: 500; white-space: nowrap;">Automatización y agentes IA</a></div>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12px; color: #6E8493; padding-top: 12px; border-top: 1px solid #E5EAEF;">
+          <span>Carmen · Carla</span><a href="#" style="font-weight: 500;">Ver práctica →</a>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px 20px; min-height: 250px; background: #FFFFFF; border: 1px solid #E5EAEF; border-radius: 12px; box-shadow: 0 1px 2px rgba(4, 28, 44, 0.04);">
+        <span style="font-size: 12px; font-weight: 500; color: #6E8493;">02</span>
+        <span class="h" style="font-size: 20px; line-height: 1.15; color: #041C2C;">Software Development</span>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #354A5A; flex-grow: 1;">Modernizar, mantener y evolucionar las aplicaciones críticas con IA, sin parar el negocio.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;"><a href="#" style="display: inline-flex; align-items: center; height: 26px; padding: 0 9px; border: 1px solid #C8D2DA; border-radius: 6px; background: #F5F7F9; color: #041C2C; font-size: 12px; font-weight: 500; white-space: nowrap;">Modernización</a><a href="#" style="display: inline-flex; align-items: center; height: 26px; padding: 0 9px; border: 1px solid #C8D2DA; border-radius: 6px; background: #F5F7F9; color: #041C2C; font-size: 12px; font-weight: 500; white-space: nowrap;">Mantenimiento evolutivo</a><a href="#" style="display: inline-flex; align-items: center; height: 26px; padding: 0 9px; border: 1px solid #C8D2DA; border-radius: 6px; background: #F5F7F9; color: #041C2C; font-size: 12px; font-weight: 500; white-space: nowrap;">Asistencia técnica</a></div>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12px; color: #6E8493; padding-top: 12px; border-top: 1px solid #E5EAEF;">
+          <span>Jorge</span><a href="#" style="font-weight: 500;">Ver práctica →</a>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px 20px; min-height: 250px; background: #FFFFFF; border: 1px solid #E5EAEF; border-radius: 12px; box-shadow: 0 1px 2px rgba(4, 28, 44, 0.04);">
+        <span style="font-size: 12px; font-weight: 500; color: #6E8493;">03</span>
+        <span class="h" style="font-size: 20px; line-height: 1.15; color: #041C2C;">Data &amp; AI</span>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #354A5A; flex-grow: 1;">Convertir datos, modelos y agentes en decisiones y operación con gobierno.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;"><a href="#" style="display: inline-flex; align-items: center; height: 26px; padding: 0 9px; border: 1px solid #C8D2DA; border-radius: 6px; background: #F5F7F9; color: #041C2C; font-size: 12px; font-weight: 500; white-space: nowrap;">Gobierno del dato</a><a href="#" style="display: inline-flex; align-items: center; height: 26px; padding: 0 9px; border: 1px solid #C8D2DA; border-radius: 6px; background: #F5F7F9; color: #041C2C; font-size: 12px; font-weight: 500; white-space: nowrap;">Gobernanza de modelos e IA</a><a href="#" style="display: inline-flex; align-items: center; height: 26px; padding: 0 9px; border: 1px solid #C8D2DA; border-radius: 6px; background: #F5F7F9; color: #041C2C; font-size: 12px; font-weight: 500; white-space: nowrap;">Analítica para decidir</a><a href="#" style="display: inline-flex; align-items: center; height: 26px; padding: 0 9px; border: 1px solid #C8D2DA; border-radius: 6px; background: #F5F7F9; color: #041C2C; font-size: 12px; font-weight: 500; white-space: nowrap;">Analítica predictiva</a></div>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12px; color: #6E8493; padding-top: 12px; border-top: 1px solid #E5EAEF;">
+          <span>Daniela</span><a href="#" style="font-weight: 500;">Ver práctica →</a>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px 20px; min-height: 250px; background: #FFFFFF; border: 1px solid #E5EAEF; border-radius: 12px; box-shadow: 0 1px 2px rgba(4, 28, 44, 0.04);">
+        <span style="font-size: 12px; font-weight: 500; color: #6E8493;">04</span>
+        <span class="h" style="font-size: 20px; line-height: 1.15; color: #041C2C;">Smart Operations</span>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #354A5A; flex-grow: 1;">Que el puesto de trabajo y la infraestructura recuperen capacidad, con operación inteligente.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;"><a href="#" style="display: inline-flex; align-items: center; height: 26px; padding: 0 9px; border: 1px solid #C8D2DA; border-radius: 6px; background: #F5F7F9; color: #041C2C; font-size: 12px; font-weight: 500; white-space: nowrap;">Puesto de trabajo</a><a href="#" style="display: inline-flex; align-items: center; height: 26px; padding: 0 9px; border: 1px solid #C8D2DA; border-radius: 6px; background: #F5F7F9; color: #041C2C; font-size: 12px; font-weight: 500; white-space: nowrap;">Infraestructura crítica</a></div>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12px; color: #6E8493; padding-top: 12px; border-top: 1px solid #E5EAEF;">
+          <span>Amador</span><a href="#" style="font-weight: 500;">Ver práctica →</a>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px 20px; min-height: 250px; background: #FFFFFF; border: 1px solid #E5EAEF; border-radius: 12px; box-shadow: 0 1px 2px rgba(4, 28, 44, 0.04);">
+        <span style="font-size: 12px; font-weight: 500; color: #6E8493;">05</span>
+        <span class="h" style="font-size: 20px; line-height: 1.15; color: #041C2C;">IA + Digital Change</span>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #354A5A; flex-grow: 1;">Que las personas adopten, gobiernen y aprovechen la IA en la organización.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;"><a href="#" style="display: inline-flex; align-items: center; height: 26px; padding: 0 9px; border: 1px solid #C8D2DA; border-radius: 6px; background: #F5F7F9; color: #041C2C; font-size: 12px; font-weight: 500; white-space: nowrap;">IAbility</a><a href="#" style="display: inline-flex; align-items: center; height: 26px; padding: 0 9px; border: 1px solid #C8D2DA; border-radius: 6px; background: #F5F7F9; color: #041C2C; font-size: 12px; font-weight: 500; white-space: nowrap;">PreservIA</a><a href="#" style="display: inline-flex; align-items: center; height: 26px; padding: 0 9px; border: 1px solid #C8D2DA; border-radius: 6px; background: #F5F7F9; color: #041C2C; font-size: 12px; font-weight: 500; white-space: nowrap;">Gobernanza humana de la IA</a></div>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12px; color: #6E8493; padding-top: 12px; border-top: 1px solid #E5EAEF;">
+          <span>Alfredo</span><a href="#" style="font-weight: 500;">Ver práctica →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Material para el cliente -->
+  <div style="padding: 36px 64px 40px; display: flex; flex-direction: column; gap: 18px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <span style="font-size: 12px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: #E05730;">Material para el cliente</span>
+        <span class="h" style="font-size: 30px; line-height: 1.1; color: #041C2C;">Lo que puedes enseñar o enviar hoy.</span>
+      </div>
+      <a href="#" style="font-size: 14px; font-weight: 500;">Ver todos los materiales →</a>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span style="display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 9999px; background: #041C2C; color: #FFFFFF; font-size: 13px; font-weight: 500;">Sale al cliente</span>
+      <span style="display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #C8D2DA; background: #FFFFFF; color: #354A5A; font-size: 13px;">Decks</span>
+      <span style="display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #C8D2DA; background: #FFFFFF; color: #354A5A; font-size: 13px;">One-pagers</span>
+      <span style="display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #C8D2DA; background: #FFFFFF; color: #354A5A; font-size: 13px;">Fichas de servicio</span>
+      <span style="display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: 9999px; border: 1px solid #C8D2DA; background: #FFFFFF; color: #354A5A; font-size: 13px;">Casos y referencias</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;">
+
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; background: #FFFFFF; border: 1px solid #E5EAEF; border-radius: 12px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+          <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: #6E8493;">One-pager · Modernización</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #354A5A;"><i style="display: inline-block; width: 8px; height: 8px; border-radius: 9999px; background: #10B981;"></i>Vigente · jul 26</span>
+        </div>
+        <span class="h" style="font-size: 17px; line-height: 1.2; color: #041C2C;">Modernización de aplicaciones · one-pager</span>
+        <span style="font-size: 13px; line-height: 1.5; color: #354A5A;">Para la reunión introductoria. Sale al cliente · Jorge.</span>
+        <a href="#" style="font-size: 13px; font-weight: 500; margin-top: 4px;">Abrir el documento ↗</a>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; background: #FFFFFF; border: 1px solid #E5EAEF; border-radius: 12px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+          <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: #6E8493;">Ficha de servicio · Modernización</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #354A5A;"><i style="display: inline-block; width: 8px; height: 8px; border-radius: 9999px; background: #10B981;"></i>Vigente · jul 26</span>
+        </div>
+        <span class="h" style="font-size: 17px; line-height: 1.2; color: #041C2C;">Qué es, qué incluye y cómo se contrata</span>
+        <span style="font-size: 13px; line-height: 1.5; color: #354A5A;">Para dejar al cliente tras la primera reunión. Sale al cliente · Jorge.</span>
+        <a href="#" style="font-size: 13px; font-weight: 500; margin-top: 4px;">Abrir el documento ↗</a>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; background: #FFFFFF; border: 1px solid #E5EAEF; border-radius: 12px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+          <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: #6E8493;">Deck ejecutivo · Smart Operations</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #354A5A;"><i style="display: inline-block; width: 8px; height: 8px; border-radius: 9999px; background: #10B981;"></i>Vigente · 2026</span>
+        </div>
+        <span class="h" style="font-size: 17px; line-height: 1.2; color: #041C2C;">SmartOPS · Resumen ejecutivo global 2026</span>
+        <span style="font-size: 13px; line-height: 1.5; color: #354A5A;">Visión global de SmartOPS para dirección. Sale al cliente · Amador.</span>
+        <a href="#" style="font-size: 13px; font-weight: 500; margin-top: 4px;">Abrir el documento ↗</a>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; background: #FFFFFF; border: 1px solid #E5EAEF; border-radius: 12px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+          <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: #6E8493;">Caso · Modernización</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #354A5A;"><i style="display: inline-block; width: 8px; height: 8px; border-radius: 9999px; background: #10B981;"></i>Citable · sign-off jul 26</span>
+        </div>
+        <span class="h" style="font-size: 17px; line-height: 1.2; color: #041C2C;">Nasertic · de 9 meses estimados a 3</span>
+        <span style="font-size: 13px; line-height: 1.5; color: #354A5A;">Sector público · Navarra. Citable en presentación; envío formal por cuenta.</span>
+        <a href="#" style="font-size: 13px; font-weight: 500; margin-top: 4px;">Ver la referencia →</a>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; background: #FFFFFF; border: 1px solid #E5EAEF; border-radius: 12px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+          <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: #6E8493;">Deck corporativo</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #354A5A;"><i style="display: inline-block; width: 8px; height: 8px; border-radius: 9999px; background: #F59E0B;"></i>En revisión</span>
+        </div>
+        <span class="h" style="font-size: 17px; line-height: 1.2; color: #041C2C;">Entelgy Executive Deck · 2026</span>
+        <span style="font-size: 13px; line-height: 1.5; color: #354A5A;">Para compartir después de una conversación preparada. Sale al cliente · Corporativo.</span>
+        <a href="#" style="font-size: 13px; font-weight: 500; margin-top: 4px;">Ver cómo usarlo →</a>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; background: #FFFFFF; border: 1px solid #E5EAEF; border-radius: 12px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+          <span style="font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: #6E8493;">Herramienta · Modernización</span>
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #354A5A;"><i style="display: inline-block; width: 8px; height: 8px; border-radius: 9999px; background: #F59E0B;"></i>Pendiente de validar</span>
+        </div>
+        <span class="h" style="font-size: 17px; line-height: 1.2; color: #041C2C;">Autodiagnóstico · 10 preguntas en 2 minutos</span>
+        <span style="font-size: 13px; line-height: 1.5; color: #354A5A;">Para enviar al cliente en el primer contacto. Devuelve un informe · Jorge.</span>
+        <a href="#" style="font-size: 13px; font-weight: 500; margin-top: 4px;">Ver cómo usarlo →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Pie -->
+  <div style="margin-top: auto; padding: 18px 64px; background: #FFFFFF; border-top: 1px solid #E5EAEF; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 13px; color: #6E8493;">
+    <span>El CRM sigue siendo el registro único. Hipatia lo alimenta; no lo sustituye ni lo duplica.</span>
+    <span>Entelgy · Hipatia · uso interno · ¿Falta algo? Escribe al responsable de la práctica</span>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
