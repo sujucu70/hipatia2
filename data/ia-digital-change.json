@@ -91,7 +91,10 @@
       },
       "keynotes": [],
       "referencias": [],
-      "materiales": [],
+      "materiales": [
+        "iability-onepager",
+        "iability-ficha"
+      ],
       "acreditacion": [],
       "pendiente": {
         "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
@@ -141,7 +144,11 @@
       },
       "keynotes": [],
       "referencias": [],
-      "materiales": [],
+      "materiales": [
+        "preservia-publico",
+        "preservia-privado",
+        "preservia-ficha"
+      ],
       "acreditacion": [],
       "pendiente": {
         "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
@@ -191,7 +198,10 @@
       },
       "keynotes": [],
       "referencias": [],
-      "materiales": [],
+      "materiales": [
+        "ogh-onepager",
+        "ogh-ficha"
+      ],
       "acreditacion": [],
       "pendiente": {
         "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
@@ -201,8 +211,8 @@
     }
   ],
   "material_comun": [
-    "dc-deck",
-    "dc-onepager-iability",
-    "dc-onepager-preservia"
+    "digital-change-deck",
+    "iability-onepager",
+    "preservia-ficha"
   ]
 }

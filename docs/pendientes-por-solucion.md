@@ -10,9 +10,6 @@
 |---|---|---|
 | **Inteligencia de procesos** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Carmen | sept 2026 |
 | **Automatización de procesos y agentes IA** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Carla | sept 2026 |
-| Material: Deck · Process Intelligence | Carmen | sept 2026 |
-| Material: One-pager · Process Intelligence | Carmen | sept 2026 |
-| Material: Ficha de servicio · Process Intelligence | Carmen | sept 2026 |
 
 ## Software Development
 
@@ -27,9 +24,6 @@
 | Qué falta | Dueño | Fecha objetivo |
 |---|---|---|
 | **Data & AI** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Daniela | sept 2026 |
-| **data-ai** · Material: Deck · Data & AI | Daniela | sept 2026 |
-| **data-ai** · Material: One-pager · Data & AI | Daniela | sept 2026 |
-| **data-ai** · Material: Ficha de servicio · Data & AI | Daniela | sept 2026 |
 
 ## Smart Operations
 
@@ -37,9 +31,6 @@
 |---|---|---|
 | **Puesto de trabajo** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Amador | sept 2026 |
 | **Infraestructura crítica** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Amador | sept 2026 |
-| Material: Deck · Smart Operations | Amador | sept 2026 |
-| **smartops-workplace** · Material: One-pager · Puesto de trabajo | Amador | sept 2026 |
-| **smartops-infra** · Material: One-pager · Infraestructura crítica | Amador | sept 2026 |
 
 ## IA + Digital Change
 
@@ -48,16 +39,13 @@
 | **IAbility** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Alfredo | sept 2026 |
 | **PreservIA** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Alfredo | sept 2026 |
 | **Oficina de Gobernanza Humana de la IA** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Alfredo | sept 2026 |
-| Material: Deck · IA + Digital Change | Alfredo | sept 2026 |
-| **iability** · Material: One-pager · IAbility | Alfredo | sept 2026 |
-| **preservia** · Material: One-pager · PreservIA | Alfredo | sept 2026 |
 
 ---
 
 ## Resumen
 
 - Errores duros: **0**
-- Avisos: **12**
-- Pendientes registrados: **23**
+- Avisos: **150**
+- Pendientes registrados: **11**
 
 Modernización (Software Development) es la única solución con contenido íntegro validado (tarjeta, 6 casos con sign-off jul 2026, materiales por momento, «para prepararte»). El resto muestra su propuesta auditada del Executive Deck y marca casos y materiales «en preparación».

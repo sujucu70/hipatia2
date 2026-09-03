@@ -299,11 +299,12 @@
         "dossier_imprimible": false
       },
       "keynotes": [],
-      "referencias": [
-        "mod-caso-dgoj",
-        "mod-caso-miciu"
+      "referencias": [],
+      "materiales": [
+        "software-mantenimiento-onepager",
+        "software-mantenimiento-ficha",
+        "software-pains-mantenimiento"
       ],
-      "materiales": [],
       "acreditacion": [],
       "pendiente": {
         "texto": "Tarjeta completa, casos y materiales de esta solución",
@@ -352,7 +353,11 @@
       },
       "keynotes": [],
       "referencias": [],
-      "materiales": [],
+      "materiales": [
+        "software-asistencia-onepager",
+        "software-asistencia-ficha",
+        "software-pains-asistencia"
+      ],
       "acreditacion": [],
       "pendiente": {
         "texto": "Tarjeta completa, casos y materiales de esta solución",

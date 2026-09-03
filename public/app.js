@@ -125,6 +125,22 @@
         if (tpl) open(tpl.innerHTML, btn.getAttribute("data-modal-label"));
       });
     });
+    // ficha bajo demanda desde su URL (sin incrustar todas las fichas en la página)
+    document.querySelectorAll("[data-open-modal-url]").forEach(function (el) {
+      el.addEventListener("click", function (ev) {
+        var url = el.getAttribute("data-open-modal-url");
+        if (!url) return;
+        ev.preventDefault();
+        open('<p class="footer-note">Cargando…</p>', el.getAttribute("data-modal-label"));
+        fetch(url).then(function (r) { return r.text(); }).then(function (html) {
+          var doc = new DOMParser().parseFromString(html, "text/html");
+          var main = doc.querySelector("main");
+          if (panel) panel.innerHTML = main ? main.innerHTML : '<p>No se pudo cargar la ficha. <a href="' + url + '">Abrir en su página</a>.</p>';
+        }).catch(function () {
+          if (panel) panel.innerHTML = '<p>No se pudo cargar la ficha. <a href="' + url + '">Abrir en su página ↗</a>.</p>';
+        });
+      });
+    });
   }
 
   /* --- Impresión (dossier / ficha) --- */
