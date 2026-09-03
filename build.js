@@ -561,7 +561,7 @@ function entelgyPage(corp) {
 
     <section class="section"><h2 style="font-size:var(--font-size-2xl);margin-bottom:var(--space-2)">El método</h2>
       <p class="footer-note" style="margin-bottom:var(--space-4)">${esc(r.metodo && r.metodo.nota || "")} Transversal: ${esc((r.metodo && r.metodo.transversal || []).join(" · "))}.</p>
-      <div class="grid" style="grid-template-columns:repeat(5,minmax(0,1fr))">${metodo}</div></section>
+      <div class="grid grid-5">${metodo}</div></section>
 
     ${otg}
   </div></section>`;
