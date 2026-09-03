@@ -82,7 +82,15 @@
       },
       "keynotes": [],
       "referencias": [],
-      "materiales": [],
+      "materiales": [
+        "dataai-producto",
+        "dataai-onepager",
+        "dataai-ficha",
+        "dataai-pains",
+        "dataai-previo",
+        "dataai-analisis-competencia",
+        "data-legacy-entry"
+      ],
       "acreditacion": [],
       "pendiente": {
         "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
@@ -93,7 +101,7 @@
   ],
   "solucion_global_nota": "Decisión de Susana (3 sep): Data & AI se presenta de momento como una única solución global, sin subprácticas ni puertas de entrada. Cuando Daniela valide el desglose, se abre en soluciones.",
   "material_comun": [
-    "dataai-deck",
+    "dataai-producto",
     "dataai-onepager",
     "dataai-ficha"
   ]

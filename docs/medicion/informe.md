@@ -1,6 +1,6 @@
 # Medición · Hipatia v3
 
-> Generado por `medir.js` el 2026-09-03. Rutas medidas: 57.
+> Generado por `medir.js` el 2026-09-03. Rutas medidas: 114.
 
 ## Criterios de aceptación (§6.8)
 
@@ -12,7 +12,7 @@
 | 5 | Uso/estado/dueño, citable⇒sign_off, sin enlaces rotos | 🟢 (rotos: 0) |
 | 6 | Ninguna pantalla afirma agente/envío/integración | 🟢 |
 | 7 | URL propia y buscador en todas | 🟢 |
-| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 127 KB) |
+| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 147 KB) |
 | 9 | Reconocible por quien usó hipatia2 | ⚪ cualitativo |
 
 ## Clics desde la portada
@@ -38,20 +38,20 @@
 
 | Ruta | KB |
 |---|---|
-| /materiales | 127 |
-| /modernizacion/materiales | 61 |
-| /modernizacion/materiales | 44 |
-| /practicas/software-development/modernizacion | 43 |
+| /materiales | 147 |
+| /modernizacion/materiales | 62 |
+| /modernizacion/materiales | 45 |
+| /practicas/software-development/modernizacion | 44 |
 | /autodiagnostico/grupo-lantia | 42 |
-| / | 37 |
+| / | 38 |
+| /practicas/software-development | 34 |
 | /practicas/ia-digital-change | 33 |
-| /practicas/software-development | 33 |
+| /entelgy | 32 |
+| /practicas/data-ai | 32 |
 | /practicas/process-intelligence | 32 |
 | /practicas/smart-operations | 32 |
-| /entelgy | 31 |
-| /practicas/data-ai | 31 |
 
-(máximo 127 KB de 57 páginas; imágenes aparte)
+(máximo 147 KB de 114 páginas; imágenes aparte)
 
 ## Navegador
 

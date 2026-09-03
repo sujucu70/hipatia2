@@ -383,12 +383,10 @@ function materialesIndex() {
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
       <div class="chips" style="margin-top:var(--space-3)">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(m.dueno)}</span></div>
       <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
-        <button type="button" class="btn btn-ghost" data-open-modal="tpl-${esc(m.id)}" data-modal-label="${esc(m.titulo)}">Ver ficha</button>
+        <a class="btn btn-ghost" href="/materiales/${esc(m.id)}/" data-open-modal-url="/materiales/${esc(m.id)}/" data-modal-label="${esc(m.titulo)}">Ver ficha</a>
         ${materialLink(m)}
       </div>
     </article>`).join("");
-
-  const templates = materiales.map((m) => `<div class="mat-tpl" id="tpl-${esc(m.id)}" hidden>${fichaBody(m)}</div>`).join("\n");
 
   const body = `<section class="section"><div class="wrap">
     <p class="eyebrow">Catálogo</p>
@@ -403,7 +401,7 @@ function materialesIndex() {
       </div>
     </div>
   </div></section>
-  <div style="display:none">${templates}</div>`;
+  `;
 
   const modal = `<div class="modal" data-modal hidden role="dialog" aria-modal="true">
     <div class="modal-panel"><button type="button" class="btn btn-ghost modal-close" data-modal-close aria-label="Cerrar">Cerrar ✕</button><div data-modal-body></div></div>

@@ -82,7 +82,10 @@
       },
       "keynotes": [],
       "referencias": [],
-      "materiales": [],
+      "materiales": [
+        "process-mining-legacy-entry",
+        "process-mining-legacy-competition"
+      ],
       "acreditacion": [],
       "pendiente": {
         "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
@@ -132,7 +135,14 @@
       },
       "keynotes": [],
       "referencias": [],
-      "materiales": [],
+      "materiales": [
+        "automation-deck",
+        "automation-onepager",
+        "automation-ficha",
+        "process-automation-legacy-entry",
+        "process-automation-legacy-preview",
+        "process-automation-legacy-competition"
+      ],
       "acreditacion": [],
       "pendiente": {
         "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
@@ -142,8 +152,8 @@
     }
   ],
   "material_comun": [
-    "pi-deck",
-    "pi-onepager",
-    "pi-ficha"
+    "process-deck",
+    "process-onepager",
+    "process-ficha"
   ]
 }

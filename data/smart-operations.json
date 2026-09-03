@@ -82,7 +82,10 @@
       },
       "keynotes": [],
       "referencias": [],
-      "materiales": [],
+      "materiales": [
+        "smartops-workplace-ficha",
+        "smartops-workplace-legacy-deck"
+      ],
       "acreditacion": [],
       "pendiente": {
         "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
@@ -132,7 +135,11 @@
       },
       "keynotes": [],
       "referencias": [],
-      "materiales": [],
+      "materiales": [
+        "smartops-infra-ficha",
+        "smartops-pains-infra",
+        "smartops-infra-legacy-onepager"
+      ],
       "acreditacion": [],
       "pendiente": {
         "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
@@ -142,8 +149,8 @@
     }
   ],
   "material_comun": [
-    "so-deck",
-    "so-onepager-workplace",
-    "so-onepager-infra"
+    "smartops-resumen",
+    "smartops-onepager-workplace",
+    "smartops-onepager-infra"
   ]
 }
