@@ -46,10 +46,10 @@
 | / | 38 |
 | /practicas/digital-change | 34 |
 | /practicas/software-development | 34 |
-| /entelgy | 33 |
 | /practicas/data-intelligence/data-intelligence | 33 |
 | /practicas/data-intelligence | 33 |
 | /practicas/process-intelligence | 33 |
+| /practicas/smart-operations | 33 |
 
 (máximo 137 KB de 114 páginas; imágenes aparte)
 
