@@ -142,7 +142,9 @@
       "mod-caso-uned",
       "mod-caso-h10"
     ],
-    "nota": "Seis piezas más usadas o recientes. Sin contadores de materiales no validados, sin cabecera de «demostrador»."
+    "nota": "Seis piezas más usadas o recientes. Sin contadores de materiales no validados, sin cabecera de «demostrador».",
+    "titular": "Las transformaciones no fallan por la tecnología. Fallan cuando tecnología, procesos, personas y cultura no avanzan juntas.",
+    "subtitular": "Entelgy trabaja los cuatro a la vez, con un método común, para que el cambio llegue a resultados y se sostenga."
   },
   "punto_de_partida": {
     "fuera_del_menu": true,

@@ -155,5 +155,6 @@
     "process-deck",
     "process-onepager",
     "process-ficha"
-  ]
+  ],
+  "propuesta_portada": "Ver dónde se pierde coste, tiempo o control en un proceso antes de rediseñarlo y automatizarlo."
 }

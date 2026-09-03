@@ -82,7 +82,7 @@ ${modal || ""}
 }
 
 // ---------- Helpers de estado (§6.5) ----------
-const VIG = { vigente: "🟢 vigente", revisar: "🟠 revisar", pendiente: "⏳ pendiente" };
+const VIG = { vigente: "vigente", revisar: "revisar", pendiente: "pendiente" };
 const USO = { si: "sale al cliente", no: "interno", con_validacion: "con validación" };
 function chipVigencia(estado, fecha) {
   const label = (VIG[estado] || estado) + (fecha ? " · " + fecha : "");
@@ -450,8 +450,8 @@ function portadaPage(corp, practicas) {
     <div class="wrap" style="padding:var(--space-7) var(--space-5);display:flex;gap:var(--space-6);align-items:flex-end;justify-content:space-between;flex-wrap:wrap">
       <div style="max-width:60ch">
         <p class="eyebrow" style="color:var(--color-slate-300)">Entelgy en una frase</p>
-        <p class="h" style="font-family:var(--font-family-display);font-weight:700;font-size:var(--font-size-4xl);line-height:1.1;margin:var(--space-3) 0 var(--space-3)">${esc(corp.entelgy_una_frase)}</p>
-        <p style="color:var(--color-slate-200);font-size:var(--font-size-lg);max-width:64ch">${esc(corp.promesa || "")}</p>
+        <p class="h" style="font-family:var(--font-family-display);font-weight:700;font-size:var(--font-size-4xl);line-height:1.1;margin:var(--space-3) 0 var(--space-3)">${esc(corp.portada.titular || corp.entelgy_una_frase)}</p>
+        <p style="color:var(--color-slate-200);font-size:var(--font-size-lg);max-width:64ch">${esc(corp.portada.subtitular || "")}</p>
       </div>
       <a class="btn btn-cta" href="/entelgy/">${esc(cta)}</a>
     </div>
@@ -484,18 +484,59 @@ function portadaPage(corp, practicas) {
     <div class="grid" style="grid-template-columns:repeat(5,minmax(0,1fr));margin-top:var(--space-5)">${cards}</div>
   </div></section>`;
 
-  const usados = (corp.portada.material_mas_usado || []).map((id) => MAT[id]).filter(Boolean).slice(0, 6);
-  const accesos = (corp.portada.accesos_rapidos || []).map((a) => {
-    const qs = Object.entries(a.filtro || {}).map(([k, v]) => `${k === "tipo" ? "tipo" : k}=${encodeURIComponent(v)}`).join("&");
-    return `<a class="chip" style="text-decoration:none" href="/materiales/">${esc(a.label)}</a>`;
-  }).join("");
+  // Regla de portada (§6.3 · rev 5): una pieza por práctica + el deck corporativo.
+  // Pieza = sale al cliente, vigente, no referencia; momento «reunión» preferente; a
+  // igualdad, la de fecha de revisión más reciente. Referencias fuera (viven en «casos»).
+  function fechaKey(m) {
+    if (!m.fecha_revision) return 0;
+    let x = /^(\d{4})-(\d{2})/.exec(m.fecha_revision);
+    if (x) return parseInt(x[1], 10) * 100 + parseInt(x[2], 10);
+    x = /([a-z]{3})\.?\s+(\d{4})/i.exec(m.fecha_revision);
+    if (x) { const i = MESES.indexOf(x[1].toLowerCase()); return parseInt(x[2], 10) * 100 + (i >= 0 ? i + 1 : 0); }
+    return 0;
+  }
+  function piezaPortada(pid) {
+    const cand = materiales.filter((m) => m.practica === pid && m.sale_al_cliente === "si" && m.estado === "vigente" && m.tipo !== "referencia");
+    if (!cand.length) return null;
+    const reunion = cand.filter((m) => m.momento_comercial === "reunion");
+    const pool = reunion.length ? reunion : cand;
+    return pool.slice().sort((a, b) => fechaKey(b) - fechaKey(a))[0];
+  }
+  function deckCorporativo() {
+    const cand = materiales.filter((m) => m.practica === "corporativo" && m.sale_al_cliente === "si" && /deck corporativo/i.test(m.tipo));
+    if (!cand.length) return null;
+    return cand.slice().sort((a, b) => (a.estado === "vigente" ? -1 : 0) - (b.estado === "vigente" ? -1 : 0) || fechaKey(b) - fechaKey(a))[0];
+  }
+  function tarjetaPortada(m, pr) {
+    if (!m) return `<article class="card" style="padding:var(--space-4)">
+      <p class="eyebrow">${esc(pr.nombre)}</p>
+      <p class="pending" style="margin-top:var(--space-2)">Material para cliente en preparación · dueño: ${esc(pr.responsable)}.</p>
+      <p style="margin-top:var(--space-3)"><a class="text-link" href="/practicas/${esc(pr.id)}/">Ver la práctica →</a></p>
+    </article>`;
+    // 2 chips (uso + vigencia); sin chip «enlace pendiente» en tarjeta (solo en la ficha).
+    const enlace = m.url_documento
+      ? `<a class="btn" href="${esc(m.url_documento)}">Abrir el documento ↗</a>`
+      : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`;
+    return `<article class="card" style="padding:var(--space-4)">
+      <p class="eyebrow">${esc(m.tipo)} · ${esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
+      <h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h4>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
+      <div class="chips" style="margin-top:var(--space-3)">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}</div>
+      <div style="margin-top:var(--space-3)">${enlace}</div>
+    </article>`;
+  }
+  const usados = practicas.map((pr) => tarjetaPortada(piezaPortada(pr.id), pr));
+  usados.push(tarjetaPortada(deckCorporativo(), { id: "", nombre: "Corporativo", responsable: "Corporativo" }));
+  const accesos = (corp.portada.accesos_rapidos || []).map((a) =>
+    `<a class="chip" style="text-decoration:none" href="/materiales/">${esc(a.label)}</a>`).join("");
   const material = `<section class="section"><div class="wrap">
     <div style="display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-4);flex-wrap:wrap">
       <div><p class="eyebrow">Material para el cliente</p><h2 style="font-size:var(--font-size-3xl);margin-top:var(--space-1)">Lo que puedes enseñar o enviar hoy.</h2></div>
       <a class="text-link" href="/materiales/">Ver todos los materiales →</a>
     </div>
     <div class="chips" style="margin:var(--space-4) 0">${accesos}</div>
-    <div class="grid grid-3">${usados.map(materialMini).join("")}</div>
+    <p class="eyebrow" style="margin-bottom:var(--space-3)">Lo más reciente, por práctica</p>
+    <div class="grid grid-3">${usados.join("")}</div>
   </div></section>`;
 
   const body = band + oferta + material;
