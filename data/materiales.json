@@ -86,7 +86,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Pieza de una cara para la reunión introductoria. V1 provisional; revisión de fondo por el equipo de Jorge.",
+      "nota_de_uso": "Una cara para la reunión introductoria: qué es modernizar con IA y por qué Entelgy. V1; el equipo de Jorge la revisa en septiembre.",
       "url_documento": "/modernizacion/materiales/onepager-modernizacion.html",
       "origen": "modernizacion/materiales/onepager-modernizacion.html"
     },
@@ -581,7 +581,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Pieza de visión global de SmartOPS.",
+      "nota_de_uso": "Visión global de SmartOPS para dirección: puesto de trabajo e infraestructura como un mismo servicio. Para la reunión introductoria; los decks de Workplace e Infra van después.",
       "url_documento": "https://entelgy.guberna.es/digital-workplace/decks/SmartOPS_Resumen_Ejecutivo_Global_2026.html",
       "origen": "digital-workplace/decks/SmartOPS_Resumen_Ejecutivo_Global_2026.html"
     },
@@ -801,7 +801,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Presentación de Process Intelligence.",
+      "nota_de_uso": "Deck cliente de Process Intelligence para la reunión introductoria: del proceso real, con datos, a la automatización y los agentes.",
       "url_documento": "https://entelgy.guberna.es/process-mining/DECKS/Process_Intelligence.html",
       "origen": "process-mining/DECKS/Process_Intelligence.html"
     },
@@ -889,7 +889,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Presentación de la práctica.",
+      "nota_de_uso": "Deck de Digital Change para la reunión introductoria: el oficio de adopción y los tres productos, IAbility, PreservIA y OGH-IA.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/decks/digital-change-deck.html",
       "origen": "ia-digital-change/decks/digital-change-deck.html"
     },
@@ -1087,7 +1087,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Presentación de producto Data Intelligence.",
+      "nota_de_uso": "Presentación de producto de Data Intelligence para la reunión introductoria: datos, analítica e IA con gobierno.",
       "url_documento": "https://entelgy.guberna.es/data-intelligence/decks/entelgy-dataai-producto.html",
       "origen": "data-intelligence/decks/entelgy-dataai-producto.html"
     },
