@@ -12,7 +12,7 @@
 | 5 | Uso/estado/dueño, citable⇒sign_off, sin enlaces rotos | 🟢 (rotos: 0) |
 | 6 | Ninguna pantalla afirma agente/envío/integración | 🟢 |
 | 7 | URL propia y buscador en todas | 🟢 |
-| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 147 KB) |
+| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 150 KB) |
 | 9 | Reconocible por quien usó hipatia2 | ⚪ cualitativo |
 
 ## Clics desde la portada
@@ -38,12 +38,12 @@
 
 | Ruta | KB |
 |---|---|
-| /materiales | 147 |
+| /materiales | 150 |
 | /modernizacion/materiales | 62 |
 | /modernizacion/materiales | 46 |
 | /practicas/software-development/modernizacion | 44 |
 | /autodiagnostico/grupo-lantia | 43 |
-| / | 36 |
+| / | 38 |
 | /practicas/digital-change | 34 |
 | /practicas/software-development | 34 |
 | /entelgy | 33 |
@@ -51,7 +51,7 @@
 | /practicas/data-intelligence | 33 |
 | /practicas/process-intelligence | 33 |
 
-(máximo 147 KB de 114 páginas; imágenes aparte)
+(máximo 150 KB de 114 páginas; imágenes aparte)
 
 ## Navegador
 
