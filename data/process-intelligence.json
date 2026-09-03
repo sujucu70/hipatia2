@@ -1,0 +1,149 @@
+{
+  "id": "process-intelligence",
+  "nombre": "Process Intelligence",
+  "orden": "01",
+  "responsable": "Carmen · Carla",
+  "propuesta": "Ayudamos a entender cómo funciona realmente un proceso y a mejorar su ejecución, desde la evidencia hasta la automatización y los agentes IA.",
+  "que_cubre": "Hacer visible el proceso real con datos, priorizar dónde está el valor, y rediseñar, automatizar y asistir el trabajo repetitivo con criterio de negocio.",
+  "que_no_prometer": "No se presenta como automatización por automatización ni como sustitución inmediata de equipos. La conveniencia de minería, automatización o agentes se contrasta con el proceso, los datos y la operación real.",
+  "pregunta_comun": "¿En qué parte del proceso se pierde hoy más tiempo, control o capacidad de respuesta, y qué evidencia tenéis para localizarlo?",
+  "capacidades": [
+    {
+      "paso": "01",
+      "titulo": "Descubrir",
+      "texto": "Hacer visible el proceso real con datos —o con método tradicional cuando las trazas no bastan— para localizar variaciones, esperas y puntos de pérdida."
+    },
+    {
+      "paso": "02",
+      "titulo": "Priorizar",
+      "texto": "Elegir qué proceso merece inversión por coste, riesgo y volumen; no automatizar por automatizar."
+    },
+    {
+      "paso": "03",
+      "titulo": "Implantar",
+      "texto": "Rediseñar e implantar mejoras: módulos de sistema, RPA, IA, agentes y la preparación necesaria para que el equipo las adopte."
+    },
+    {
+      "paso": "04",
+      "titulo": "Gobernar",
+      "texto": "Dejar el proceso medido, orquestado y auditable, con seguimiento de eficiencia, retorno y evidencias."
+    }
+  ],
+  "discovery": [
+    "¿Qué proceso, si fallara mañana, os haría más daño en el negocio?",
+    "¿Dónde se os escapan horas, reprocesos o margen sin poder verlo con datos?",
+    "Si ese proceso sigue un año más como está, ¿qué os cuesta?"
+  ],
+  "primer_avance": {
+    "titulo": "Diagnóstico Data Driven",
+    "plazo": "unas seis semanas",
+    "nota": "Precio cerrado. Valida alcance, condiciones y disponibilidad con la especialista antes de ofrecerlo."
+  },
+  "soluciones": [
+    {
+      "id": "process-mining",
+      "nombre": "Inteligencia de procesos",
+      "una_linea": "Ver cómo funciona el proceso real antes de decidir qué mejorar.",
+      "especialista": "Carmen",
+      "estado": "en_preparacion",
+      "dueno": "Carmen",
+      "fecha_objetivo": "sept 2026",
+      "propuesta": {
+        "que_es": "Convertimos trazas operativas en una lectura compartida de cómo funciona el proceso, dónde se pierde valor y qué merece priorizarse — con evidencia, no con intuición.",
+        "a_quien": null,
+        "senal": "El proceso se describe de formas distintas según quién lo cuente; hay cuellos de botella, reprocesos o poca visibilidad de extremo a extremo.",
+        "por_que_nosotros": "La tecnología aporta cuando se apoya en cómo opera realmente la organización, no solo en cómo debería operar sobre un diagrama.",
+        "diferenciador": null,
+        "objecion_principal": null,
+        "como_abres": "«¿Qué proceso relevante se gestiona hoy con más intuición que evidencia?»",
+        "primer_paso": {
+          "titulo": "Diagnóstico Data Driven",
+          "plazo": "unas seis semanas",
+          "nota": "Valida alcance con Carmen."
+        }
+      },
+      "limites": [
+        "No sustituye la conversación con quienes operan el proceso ni convierte un dato incompleto en conclusión automática.",
+        "No se afirma una mejora esperada sin validar calidad de datos, alcance y condiciones de implantación."
+      ],
+      "senales": [
+        "El proceso se conoce por percepción, no hay una visión común de su recorrido real.",
+        "Hay diferencias relevantes entre áreas, sedes o tipos de expediente.",
+        "Se quiere mejorar o automatizar, pero no está claro dónde está el mayor impacto."
+      ],
+      "kit": {
+        "frases_cuenta": null,
+        "pitch_por_rol": [],
+        "objeciones": [],
+        "preguntas_cualificacion": [],
+        "referencias_destacadas": [],
+        "material_interno": [],
+        "dossier_imprimible": false
+      },
+      "keynotes": [],
+      "referencias": [],
+      "materiales": [],
+      "acreditacion": [],
+      "pendiente": {
+        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "dueno": "Carmen",
+        "fecha_objetivo": "sept 2026"
+      }
+    },
+    {
+      "id": "process-automation-ai",
+      "nombre": "Automatización de procesos y agentes IA",
+      "una_linea": "Rediseñar, automatizar y asistir el trabajo repetitivo con criterio de negocio.",
+      "especialista": "Carla",
+      "estado": "en_preparacion",
+      "dueno": "Carla",
+      "fecha_objetivo": "sept 2026",
+      "propuesta": {
+        "que_es": "Diseñamos la automatización y el uso de agentes IA alrededor de procesos concretos para liberar capacidad, reforzar consistencia y mejorar el servicio.",
+        "a_quien": null,
+        "senal": "Hay tareas repetitivas, traspasos manuales o decisiones sencillas que consumen tiempo operativo; se explora automatización o agentes pero falta llevarlos a un proceso con control.",
+        "por_que_nosotros": "La automatización aporta más cuando resuelve una fricción operativa concreta y tiene un responsable claro; los agentes IA deben integrarse en un proceso con límites y supervisión.",
+        "diferenciador": null,
+        "objecion_principal": null,
+        "como_abres": "«¿Qué tarea o decisión del proceso os gustaría simplificar primero sin perder control, calidad o trazabilidad?»",
+        "primer_paso": {
+          "titulo": "Diagnóstico del proceso a automatizar",
+          "plazo": null,
+          "nota": "Confirma volumen, excepciones y criterio de valor con Carla antes de decidir el enfoque."
+        }
+      },
+      "limites": [
+        "No se promete automatización total ni autonomía de agentes sin revisar excepciones, controles, datos y responsables.",
+        "No sustituye el rediseño de un proceso que todavía no está suficientemente entendido o estabilizado."
+      ],
+      "senales": [
+        "Hay tareas repetitivas, traspasos manuales o decisiones sencillas que consumen tiempo.",
+        "El volumen, la variabilidad o los tiempos hacen difícil sostener el servicio.",
+        "Se exploran agentes IA, pero hay que llevarlos a un proceso y una operación con control."
+      ],
+      "kit": {
+        "frases_cuenta": null,
+        "pitch_por_rol": [],
+        "objeciones": [],
+        "preguntas_cualificacion": [],
+        "referencias_destacadas": [],
+        "material_interno": [],
+        "dossier_imprimible": false
+      },
+      "keynotes": [],
+      "referencias": [],
+      "materiales": [],
+      "acreditacion": [],
+      "pendiente": {
+        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "dueno": "Carla",
+        "fecha_objetivo": "sept 2026"
+      }
+    }
+  ],
+  "material_comun": [
+    "pi-deck",
+    "pi-onepager",
+    "pi-ficha"
+  ]
+}

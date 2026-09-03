@@ -1,0 +1,207 @@
+{
+  "personas": [
+    {
+      "nombre": "Carmen",
+      "rol": "Responsable de práctica",
+      "practica": "process-intelligence",
+      "solucion": null,
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": "Carla",
+      "rol": "Especialista · Automatización y agentes IA",
+      "practica": "process-intelligence",
+      "solucion": "process-automation-ai",
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": "Jorge",
+      "rol": "Responsable de práctica",
+      "practica": "software-development",
+      "solucion": null,
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": "Daniela",
+      "rol": "Responsable de práctica",
+      "practica": "data-ai",
+      "solucion": "data-ai",
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": "Amador",
+      "rol": "Responsable de práctica",
+      "practica": "smart-operations",
+      "solucion": null,
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": "Alfredo",
+      "rol": "Responsable de práctica",
+      "practica": "ia-digital-change",
+      "solucion": null,
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": "Carmen",
+      "rol": "Especialista de solución",
+      "practica": "process-intelligence",
+      "solucion": "process-mining",
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": "Carla",
+      "rol": "Especialista de solución",
+      "practica": "process-intelligence",
+      "solucion": "process-automation-ai",
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": null,
+      "rol": "Segundo contacto",
+      "practica": "process-intelligence",
+      "solucion": null,
+      "orden": 2,
+      "canal": null,
+      "estado": "en_preparacion",
+      "pendiente": "en preparación · dueño: los SM · sept 2026"
+    },
+    {
+      "nombre": "Jorge",
+      "rol": "Especialista de solución",
+      "practica": "software-development",
+      "solucion": "modernizacion",
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": "Jorge",
+      "rol": "Especialista de solución",
+      "practica": "software-development",
+      "solucion": "mantenimiento",
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": "Jorge",
+      "rol": "Especialista de solución",
+      "practica": "software-development",
+      "solucion": "asistencia-tecnica",
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": null,
+      "rol": "Segundo contacto",
+      "practica": "software-development",
+      "solucion": null,
+      "orden": 2,
+      "canal": null,
+      "estado": "en_preparacion",
+      "pendiente": "en preparación · dueño: los SM · sept 2026"
+    },
+    {
+      "nombre": "Daniela",
+      "rol": "Especialista de solución",
+      "practica": "data-ai",
+      "solucion": "data-ai",
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": null,
+      "rol": "Segundo contacto",
+      "practica": "data-ai",
+      "solucion": null,
+      "orden": 2,
+      "canal": null,
+      "estado": "en_preparacion",
+      "pendiente": "en preparación · dueño: los SM · sept 2026"
+    },
+    {
+      "nombre": "Amador",
+      "rol": "Especialista de solución",
+      "practica": "smart-operations",
+      "solucion": "smartops-workplace",
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": "Amador",
+      "rol": "Especialista de solución",
+      "practica": "smart-operations",
+      "solucion": "smartops-infra",
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": null,
+      "rol": "Segundo contacto",
+      "practica": "smart-operations",
+      "solucion": null,
+      "orden": 2,
+      "canal": null,
+      "estado": "en_preparacion",
+      "pendiente": "en preparación · dueño: los SM · sept 2026"
+    },
+    {
+      "nombre": "Alfredo",
+      "rol": "Especialista de solución",
+      "practica": "ia-digital-change",
+      "solucion": "iability",
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": "Alfredo",
+      "rol": "Especialista de solución",
+      "practica": "ia-digital-change",
+      "solucion": "preservia",
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": "Alfredo",
+      "rol": "Especialista de solución",
+      "practica": "ia-digital-change",
+      "solucion": "ogh-ia",
+      "orden": 1,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": null,
+      "rol": "Segundo contacto",
+      "practica": "ia-digital-change",
+      "solucion": null,
+      "orden": 2,
+      "canal": null,
+      "estado": "en_preparacion",
+      "pendiente": "en preparación · dueño: los SM · sept 2026"
+    }
+  ]
+}

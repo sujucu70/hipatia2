@@ -1,0 +1,149 @@
+{
+  "id": "smart-operations",
+  "nombre": "Smart Operations",
+  "orden": "04",
+  "responsable": "Amador",
+  "propuesta": "Hacemos que el puesto de trabajo digital, la infraestructura y la operación tecnológica respondan mejor al negocio y a las personas.",
+  "que_cubre": "Mejorar la experiencia digital del empleado de extremo a extremo y operar una infraestructura crítica con continuidad, control, capacidad y eficiencia.",
+  "que_no_prometer": "No se plantea una herramienta, plataforma o cambio operativo sin entender el servicio actual, las personas usuarias y las restricciones de operación. No equivale a una mejora aislada de infraestructura: el resultado depende también de experiencia, procesos y adopción.",
+  "pregunta_comun": "¿Qué parte de la experiencia digital o de la operación está afectando más al servicio, a los equipos o a la capacidad de responder?",
+  "capacidades": [
+    {
+      "paso": "01",
+      "titulo": "Entender el servicio",
+      "texto": "Delimitar servicio, colectivos, operación y métricas antes de proponer un cambio."
+    },
+    {
+      "paso": "02",
+      "titulo": "Mejorar la experiencia",
+      "texto": "Atención, dispositivo, autoservicio y automatización del puesto de trabajo leídos como un mismo servicio."
+    },
+    {
+      "paso": "03",
+      "titulo": "Operar con previsión",
+      "texto": "Infraestructura, cloud y continuidad con observabilidad, FinOps y resiliencia, no solo disponibilidad."
+    },
+    {
+      "paso": "04",
+      "titulo": "Sostener",
+      "texto": "Dejar la operación medida y gobernada, con capacidad de anticipar en lugar de reaccionar."
+    }
+  ],
+  "discovery": [
+    "¿En qué momento de la experiencia digital —soporte, dispositivo, aplicaciones o acceso— se pierde hoy más tiempo o confianza?",
+    "¿Qué parte de la infraestructura, cloud u operación os quita más el sueño por continuidad, coste o capacidad de anticipar?",
+    "¿Cuánto de vuestro coste operativo cuesta justificar cada año sin saber si es el correcto?"
+  ],
+  "primer_avance": {
+    "titulo": "Assessment del puesto de trabajo o de infraestructura",
+    "plazo": null,
+    "nota": "Primera lectura de servicio, experiencia/continuidad, operación y métricas antes de proponer un cambio. Plazo y alcance con la especialista."
+  },
+  "soluciones": [
+    {
+      "id": "smartops-workplace",
+      "nombre": "Puesto de trabajo",
+      "una_linea": "Mejorar la experiencia digital del empleado de extremo a extremo.",
+      "especialista": "Amador",
+      "estado": "en_preparacion",
+      "dueno": "Amador",
+      "fecha_objetivo": "sept 2026",
+      "propuesta": {
+        "que_es": "Mejoramos la experiencia digital del empleado desde la atención y el dispositivo hasta el autoservicio, la automatización y la medición del servicio.",
+        "a_quien": null,
+        "senal": "Las personas encuentran fricción recurrente con herramientas, dispositivos o soporte; el equipo de soporte concentra tareas repetitivas y tiene poca visibilidad de la experiencia real.",
+        "por_que_nosotros": "El puesto de trabajo mejora cuando se conecta la experiencia del empleado con el modelo operativo que la hace posible; atención, ciclo de vida, autoservicio y analítica son un mismo servicio.",
+        "diferenciador": null,
+        "objecion_principal": null,
+        "como_abres": "«¿En qué momento de la experiencia digital —soporte, dispositivo, aplicaciones o acceso— se pierde hoy más tiempo o confianza?»",
+        "primer_paso": {
+          "titulo": "Assessment del puesto de trabajo",
+          "plazo": null,
+          "nota": "Contrasta servicio, colectivos, operación y métricas con Amador."
+        }
+      },
+      "limites": [
+        "No se plantea una herramienta o renovación de puesto sin entender servicio, usuarios y experiencia actual.",
+        "La mejora se sostiene con un modelo de servicio, operación y medidas de experiencia acordados."
+      ],
+      "senales": [
+        "Las personas encuentran fricción recurrente con herramientas, dispositivos o soporte.",
+        "El soporte concentra tareas repetitivas y ve poco la experiencia real.",
+        "El ciclo de vida de puestos, software o licencias necesita más orden y automatización."
+      ],
+      "kit": {
+        "frases_cuenta": null,
+        "pitch_por_rol": [],
+        "objeciones": [],
+        "preguntas_cualificacion": [],
+        "referencias_destacadas": [],
+        "material_interno": [],
+        "dossier_imprimible": false
+      },
+      "keynotes": [],
+      "referencias": [],
+      "materiales": [],
+      "acreditacion": [],
+      "pendiente": {
+        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "dueno": "Amador",
+        "fecha_objetivo": "sept 2026"
+      }
+    },
+    {
+      "id": "smartops-infra",
+      "nombre": "Infraestructura crítica",
+      "una_linea": "Operar continuidad, capacidad y eficiencia con visión preventiva.",
+      "especialista": "Amador",
+      "estado": "en_preparacion",
+      "dueno": "Amador",
+      "fecha_objetivo": "sept 2026",
+      "propuesta": {
+        "que_es": "Aseguramos una operación preventiva de infraestructura crítica, cloud y plataformas para combinar continuidad, control, capacidad y eficiencia.",
+        "a_quien": null,
+        "senal": "La infraestructura o el cloud generan incertidumbre por disponibilidad, coste, capacidad o riesgo; la operación reacciona a incidencias con poca previsión.",
+        "por_que_nosotros": "Una infraestructura crítica aporta valor cuando permite sostener el servicio y anticipar decisiones, no solo reaccionar; cloud, observabilidad, FinOps y resiliencia se conectan para gobernar mejor.",
+        "diferenciador": null,
+        "objecion_principal": null,
+        "como_abres": "«¿Qué parte de la infraestructura, cloud u operación os quita más el sueño por continuidad, coste o capacidad de anticipar?»",
+        "primer_paso": {
+          "titulo": "Assessment de infraestructura",
+          "plazo": null,
+          "nota": "Lee continuidad, capacidad, coste y responsables con Amador antes de fijar una respuesta técnica."
+        }
+      },
+      "limites": [
+        "No se compromete arquitectura, migración o nivel de servicio sin entender criticidad, capacidad, seguridad, coste y operación.",
+        "La continuidad no se reduce a disponibilidad: requiere observabilidad, responsabilidades y evolución sostenible."
+      ],
+      "senales": [
+        "La infraestructura o el cloud generan incertidumbre por disponibilidad, coste, capacidad o riesgo.",
+        "La operación reacciona a incidencias con poca previsión o visibilidad de extremo a extremo.",
+        "Hay una migración, crecimiento o cambio de servicio que necesita proteger la continuidad."
+      ],
+      "kit": {
+        "frases_cuenta": null,
+        "pitch_por_rol": [],
+        "objeciones": [],
+        "preguntas_cualificacion": [],
+        "referencias_destacadas": [],
+        "material_interno": [],
+        "dossier_imprimible": false
+      },
+      "keynotes": [],
+      "referencias": [],
+      "materiales": [],
+      "acreditacion": [],
+      "pendiente": {
+        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "dueno": "Amador",
+        "fecha_objetivo": "sept 2026"
+      }
+    }
+  ],
+  "material_comun": [
+    "so-deck",
+    "so-onepager-workplace",
+    "so-onepager-infra"
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "entelgy_una_frase": "Entelgy transforma entornos críticos conectando tecnología, procesos, personas y cultura: la tecnología sola no da resultado; el valor está en que se adopte, se opere y llegue a la cuenta de resultados.",
+  "promesa": "Human driven technology.",
+  "relato": {
+    "sesenta_segundos": "La mayoría de las transformaciones no falla por la tecnología: falla porque tecnología, procesos, personas y cultura no avanzan juntos. Entelgy trabaja esos cuatro pilares con un método común para que el cambio llegue a resultados y se sostenga.",
+    "entradas": [
+      {
+        "clave": "que",
+        "eyebrow": "Qué hace Entelgy",
+        "titulo": "Hacemos que la tecnología cambie cómo una organización opera y decide.",
+        "texto": "En entornos críticos, una solución solo vale si el proceso mejora, las personas la adoptan y la organización puede sostenerla. Por eso conectamos tecnología, procesos, personas y cultura desde el principio."
+      },
+      {
+        "clave": "diferencia",
+        "eyebrow": "Qué nos diferencia",
+        "titulo": "Respondemos de que el cambio funcione, no solo de implantarlo.",
+        "texto": "La tecnología rara vez es el único problema. La diferencia está en trabajar también los procesos, las personas y la cultura que deciden si una transformación llega a resultados o se queda en la entrega."
+      },
+      {
+        "clave": "como",
+        "eyebrow": "Cómo lo hacemos",
+        "titulo": "Con un método que acompaña el cambio hasta que se puede medir y operar.",
+        "texto": "Entendemos la situación real, diseñamos un futuro gobernado, implantamos de forma integrada, preparamos la adopción y medimos el impacto. Gobierno, seguridad y operación sostenible recorren todo el ciclo."
+      },
+      {
+        "clave": "ayuda",
+        "eyebrow": "En qué podemos ayudar",
+        "titulo": "Entramos por la tensión que tiene delante el cliente, no por un catálogo de silos.",
+        "texto": "Procesos, software, datos e IA, operaciones o cambio: las prácticas son puntos de entrada a una misma forma de transformar. Se activa la combinación que la situación justifica."
+      }
+    ],
+    "metodo": {
+      "ciclico": true,
+      "pasos": [
+        {
+          "paso": "01",
+          "titulo": "Entender",
+          "texto": "Datos, sistemas, dependencias y riesgos tal como son. Evita: diseñar sobre supuestos."
+        },
+        {
+          "paso": "02",
+          "titulo": "Diseñar",
+          "texto": "Objetivo, arquitectura, caso de negocio y modelo de operación. Evita: una solución sin gobierno."
+        },
+        {
+          "paso": "03",
+          "titulo": "Implantar",
+          "texto": "Tecnología, integración, datos, seguridad y legado en producción. Evita: entregar una capa aislada."
+        },
+        {
+          "paso": "04",
+          "titulo": "Adoptar",
+          "texto": "Capacidades, comportamiento y resistencias que deciden el uso real. Evita: que el cambio se quede sin personas."
+        },
+        {
+          "paso": "05",
+          "titulo": "Medir",
+          "texto": "Indicadores ligados al proceso y a la decisión que se quería mejorar. Evita: confundir actividad con impacto."
+        }
+      ],
+      "transversal": [
+        "Gobierno",
+        "Seguridad",
+        "Operación sostenible"
+      ],
+      "nota": "Lo que se mide alimenta un nuevo diagnóstico: el servicio no termina con la entrega."
+    },
+    "otg": {
+      "titulo": "Oficinas de Transformación y Gobierno (OTG)",
+      "texto": "No son una práctica adicional ni una condición para cada proyecto. Son el vehículo transversal para los clientes que necesitan sostener el cambio en el tiempo: diagnostican una función, asumen su operación con roles y backlog definidos, y transfieren capacidad de forma progresiva.",
+      "fases": [
+        {
+          "paso": "01",
+          "titulo": "Diagnóstico",
+          "texto": "Identificamos qué debe gobernarse."
+        },
+        {
+          "paso": "02",
+          "titulo": "Activación",
+          "texto": "Asumimos las funciones acordadas."
+        },
+        {
+          "paso": "03",
+          "titulo": "Transferencia",
+          "texto": "Delegamos de forma progresiva."
+        }
+      ]
+    },
+    "pruebas": {
+      "nota": "«Quiénes somos» y «Sectores y clientes» son respaldo, plegado y no prioritario. Nombres, logos, casos y resultados concretos aparecen solo cuando esté validada su autorización comercial.",
+      "estado": "revisar",
+      "dueno": "Corporativo",
+      "fecha_revision": null
+    }
+  },
+  "mercados": {
+    "general": {
+      "label": "Corporativo · general"
+    },
+    "latam": {
+      "label": "LATAM",
+      "texto": "Misma propuesta, mismo método y las mismas cinco prácticas. El portfolio regional incorpora Ciberseguridad / Entelgy Security América como capacidad regional adicional —no como sexta práctica— y Automatización/RPA permanece integrada en Process Intelligence.",
+      "capacidad_regional": "Ciberseguridad · Entelgy Security América",
+      "deck_estado": "revisar",
+      "dueno": "Corporativo",
+      "nota": "El deck LATAM queda en revisión hasta que Corporativo valide su uso externo y vigencia."
+    }
+  },
+  "portada": {
+    "accesos_rapidos": [
+      {
+        "label": "Decks para cliente",
+        "filtro": {
+          "tipo": "deck",
+          "uso": "cliente"
+        }
+      },
+      {
+        "label": "One-pagers",
+        "filtro": {
+          "tipo": "one-pager"
+        }
+      },
+      {
+        "label": "Fichas de servicio",
+        "filtro": {
+          "tipo": "ficha"
+        }
+      },
+      {
+        "label": "Casos",
+        "filtro": {
+          "tipo": "referencia"
+        }
+      }
+    ],
+    "material_mas_usado": [
+      "mod-onepager",
+      "mod-ficha-servicio",
+      "mod-autodiagnostico",
+      "mod-caso-nasertic",
+      "mod-caso-uned",
+      "mod-caso-h10"
+    ],
+    "nota": "Seis piezas más usadas o recientes. Sin contadores de materiales no validados, sin cabecera de «demostrador»."
+  },
+  "punto_de_partida": {
+    "fuera_del_menu": true,
+    "as_is": {
+      "titulo": "De dónde partimos",
+      "texto": "Hoy el material comercial vive disperso en un SharePoint tipo repositorio: el 90% no se abre. Buscar una pieza, saber si está vigente y si puede salir a cliente cuesta más que preparar la reunión.",
+      "capturas": [
+        "/assets/asis-hipatia-1.jpg",
+        "/assets/asis-hipatia-2.jpg"
+      ]
+    },
+    "to_be": {
+      "titulo": "A dónde vamos",
+      "texto": "Un catálogo comercial: entras por una práctica, ves qué vende Entelgy y por qué, y encuentras el material que puedes enseñar o dejar al cliente, con su estado y su dueño a la vista. El CRM sigue siendo el registro único; Hipatia lo alimenta."
+    },
+    "nota": "Pantalla para la demo a Dirección. Accesible por URL propia, fuera del menú."
+  },
+  "lo_que_viene": {
+    "fuera_del_menu": true,
+    "intro": "Lo que la v3 deja fuera a propósito y llegaría cuando el uso del catálogo lo justifique (§6.9). Nada de esto se simula hoy.",
+    "items": [
+      {
+        "titulo": "Espacio de oportunidad por señales",
+        "texto": "Marcar las señales oídas en una cuenta y que Hipatia proponga la solución y su kit.",
+        "dueno": "Guberna · con MA",
+        "estado": "pendiente"
+      },
+      {
+        "titulo": "Asistente de preparación de visita",
+        "texto": "El agente que ya existe (Digital Change), integrado con cuatro salidas por escenario.",
+        "dueno": "Digital Change",
+        "estado": "pendiente"
+      },
+      {
+        "titulo": "CRM de lectura",
+        "texto": "Traer contexto de la cuenta desde el CRM, sin duplicarlo.",
+        "dueno": "por asignar",
+        "estado": "pendiente"
+      },
+      {
+        "titulo": "Autodiagnóstico como patrón",
+        "texto": "Generalizar la herramienta de Lantia a más soluciones.",
+        "dueno": "por asignar",
+        "estado": "pendiente"
+      },
+      {
+        "titulo": "Visión sectorial y competencia",
+        "texto": "La lectura de mercado que pidió el Menti, más allá del benchmark por solución.",
+        "dueno": "con MA y Jorge",
+        "estado": "pendiente"
+      }
+    ]
+  }
+}

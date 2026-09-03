@@ -1,0 +1,100 @@
+{
+  "id": "data-ai",
+  "nombre": "Data & AI",
+  "orden": "03",
+  "responsable": "Daniela",
+  "propuesta": "Convertimos datos y capacidades de IA en decisiones, productos y operaciones gobernadas y útiles para el negocio.",
+  "que_cubre": "Gobierno del dato y de los modelos, analítica para decidir e IA aplicada, conectando calidad, gobierno, analítica e IA para que el dato sirva a una decisión real.",
+  "que_no_prometer": "No se vende IA como fin en sí mismo ni se prometen resultados sin revisar datos, gobierno, riesgos y adopción. La disponibilidad de datos no equivale por sí sola a calidad, permiso de uso o preparación para un caso de IA.",
+  "pregunta_comun": "¿Qué decisión, operación o experiencia queréis mejorar y qué os impide hoy usar los datos con suficiente confianza?",
+  "capacidades": [
+    {
+      "paso": "01",
+      "titulo": "Gobernar el dato",
+      "texto": "Definir un modelo operativo con roles con mandato y un catálogo vivo, capaz de sostenerse más allá de un roadmap."
+    },
+    {
+      "paso": "02",
+      "titulo": "Gobernar los modelos",
+      "texto": "Inventariar y clasificar la IA en producción por riesgo, trazabilidad y condiciones de cumplimiento."
+    },
+    {
+      "paso": "03",
+      "titulo": "Decidir con analítica",
+      "texto": "Acercar el dato a los equipos con una capa semántica común, para dedicar menos tiempo a cuadrar y más a decidir."
+    },
+    {
+      "paso": "04",
+      "titulo": "Predecir y operar",
+      "texto": "Llevar modelos predictivos y sus pipelines a producción con alcance, responsabilidades y operación acordados."
+    }
+  ],
+  "discovery": [
+    "¿Qué decisión importante sigue dependiendo de datos tardíos, dispersos o poco fiables?",
+    "¿Cuántas iniciativas de IA tenéis en marcha y cuántas han llegado de verdad a producción?",
+    "¿Quién responde hoy por la calidad, el acceso y el uso de un dato crítico?"
+  ],
+  "primer_avance": {
+    "titulo": "Assessment de conformidad y estado del dato",
+    "plazo": null,
+    "nota": "Primer avance para contrastar caso de uso, datos implicados, gobierno y condiciones de producción. Plazo y alcance se validan con la especialista."
+  },
+  "soluciones": [
+    {
+      "id": "data-ai",
+      "nombre": "Data & AI",
+      "una_linea": "Datos, analítica e IA gobernados al servicio de una decisión.",
+      "especialista": "Daniela",
+      "estado": "en_preparacion",
+      "dueno": "Daniela",
+      "fecha_objetivo": "sept 2026",
+      "propuesta": {
+        "que_es": "Conectamos calidad, gobierno, analítica e IA para que el dato sirva a una decisión de negocio real: desde el gobierno del dato y de los modelos hasta la analítica para decidir y la IA aplicada.",
+        "a_quien": null,
+        "senal": "El negocio tiene datos pero no confía lo suficiente en ellos para decidir o automatizar; hay iniciativas de IA dispersas sin un criterio común de valor, gobierno o riesgo.",
+        "por_que_nosotros": "El valor del dato y la IA aparece cuando están ligados a una decisión u operación concreta, no cuando se acumulan capacidades sin uso; gobierno, analítica e IA avanzan con negocio y operación.",
+        "diferenciador": null,
+        "objecion_principal": null,
+        "como_abres": "«¿Qué decisión, operación o experiencia queréis mejorar y qué os impide hoy usar los datos con suficiente confianza?»",
+        "primer_paso": {
+          "titulo": "Assessment de conformidad y estado del dato",
+          "plazo": null,
+          "nota": "Valida caso de uso, datos, gobierno y condiciones con Daniela."
+        }
+      },
+      "limites": [
+        "No se vende IA como fin en sí mismo ni se prometen resultados sin revisar datos, gobierno, riesgos y adopción.",
+        "La disponibilidad de datos no equivale a calidad, permiso de uso o preparación para un caso de IA."
+      ],
+      "senales": [
+        "El negocio tiene datos pero no confía lo suficiente en ellos para decidir o automatizar.",
+        "Existen iniciativas de IA dispersas sin criterio común de valor, gobierno o riesgo.",
+        "Se necesita pasar de análisis aislados a una capacidad de datos mantenible."
+      ],
+      "kit": {
+        "frases_cuenta": null,
+        "pitch_por_rol": [],
+        "objeciones": [],
+        "preguntas_cualificacion": [],
+        "referencias_destacadas": [],
+        "material_interno": [],
+        "dossier_imprimible": false
+      },
+      "keynotes": [],
+      "referencias": [],
+      "materiales": [],
+      "acreditacion": [],
+      "pendiente": {
+        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "dueno": "Daniela",
+        "fecha_objetivo": "sept 2026"
+      }
+    }
+  ],
+  "solucion_global_nota": "Decisión de Susana (3 sep): Data & AI se presenta de momento como una única solución global, sin subprácticas ni puertas de entrada. Cuando Daniela valide el desglose, se abre en soluciones.",
+  "material_comun": [
+    "dataai-deck",
+    "dataai-onepager",
+    "dataai-ficha"
+  ]
+}

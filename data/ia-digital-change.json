@@ -1,0 +1,208 @@
+{
+  "id": "ia-digital-change",
+  "nombre": "IA + Digital Change",
+  "orden": "05",
+  "responsable": "Alfredo",
+  "propuesta": "Conseguimos que la IA y las nuevas capacidades digitales se adopten, se gobiernen y dejen impacto real en las personas y la organización.",
+  "que_cubre": "Acompañar el cambio de extremo a extremo, convertir el despliegue en uso sostenido y activar cultura, conocimiento y gobierno humano de la IA.",
+  "que_no_prometer": "No se presenta como una campaña de comunicación ni como formación desconectada de un cambio operativo concreto. La adopción de IA requiere revisar propósito, personas, procesos y reglas de uso; habilitar una herramienta no basta.",
+  "pregunta_comun": "¿Qué tendría que cambiar en el trabajo real de las personas para que esta iniciativa genere el impacto que esperáis?",
+  "capacidades": [
+    {
+      "paso": "01",
+      "titulo": "Transformar",
+      "texto": "Acompañar un cambio grande de extremo a extremo, conectando tecnología, formas de trabajar y resultados buscados."
+    },
+    {
+      "paso": "02",
+      "titulo": "Adoptar",
+      "texto": "Convertir el despliegue en uso sostenido y retorno para negocio, no solo en una tecnología disponible."
+    },
+    {
+      "paso": "03",
+      "titulo": "Concienciar",
+      "texto": "Construir narrativa, hábitos y cultura compartida para que el cambio cale y se mantenga."
+    }
+  ],
+  "capacidades_ia": [
+    {
+      "titulo": "IAbility · Cultura",
+      "texto": "Activar una cultura de uso responsable de la IA, más allá de una formación aislada."
+    },
+    {
+      "titulo": "PreservIA · Conocimiento",
+      "texto": "Capturar conocimiento experto y activarlo donde hace falta, para que sea un activo vivo."
+    },
+    {
+      "titulo": "Oficina de Gobernanza Humana de la IA",
+      "texto": "Definir quién decide qué avanza, qué se frena y qué evidencias necesita la organización."
+    }
+  ],
+  "discovery": [
+    "¿Qué habéis desplegado que sobre el papel funciona, pero la gente no ha hecho suyo?",
+    "¿Cuánto pagasteis por esa tecnología que hoy se usa a medias?",
+    "¿Cuánto valor se queda encima de la mesa mientras la adopción no llega?"
+  ],
+  "primer_avance": {
+    "titulo": "Diagnóstico de madurez en adopción y gobernanza",
+    "plazo": null,
+    "nota": "Primer avance para entender colectivos, cambio observable, conocimiento y reglas de uso antes de diseñar una intervención."
+  },
+  "soluciones": [
+    {
+      "id": "iability",
+      "nombre": "IAbility",
+      "una_linea": "Activar una cultura de uso responsable de la IA.",
+      "especialista": "Alfredo",
+      "estado": "en_preparacion",
+      "dueno": "Alfredo",
+      "fecha_objetivo": "sept 2026",
+      "propuesta": {
+        "que_es": "Convertimos la IA en una capacidad que las personas incorporan con criterio, confianza y uso responsable en su trabajo diario.",
+        "a_quien": null,
+        "senal": "La organización ha desplegado IA pero el uso es irregular, superficial o genera dudas; los equipos necesitan criterio y confianza para incorporarla.",
+        "por_que_nosotros": "La IA genera impacto cuando las personas saben para qué usarla, cómo hacerlo y qué decisiones siguen siendo humanas; la adopción se diseña desde el principio, no como fase final.",
+        "diferenciador": null,
+        "objecion_principal": null,
+        "como_abres": "«¿Qué tendría que cambiar en el trabajo diario de las personas para que esta IA deje de ser una herramienta disponible y se convierta en una capacidad real?»",
+        "primer_paso": {
+          "titulo": "Primer recorrido de adopción",
+          "plazo": null,
+          "nota": "Alrededor de un caso de uso, sus colectivos y un cambio observable. Con Alfredo."
+        }
+      },
+      "limites": [
+        "No es una formación puntual ni una campaña desconectada de los casos de uso y el trabajo real.",
+        "La adopción tiene en cuenta roles, hábitos, riesgos y reglas de uso; habilitar una herramienta no basta."
+      ],
+      "senales": [
+        "La organización ha desplegado IA, pero el uso es irregular, superficial o genera dudas.",
+        "Los equipos necesitan confianza y criterio para incorporar nuevas capacidades de IA.",
+        "Hay valor esperado en la IA que no se materializa por falta de adopción sostenible."
+      ],
+      "kit": {
+        "frases_cuenta": null,
+        "pitch_por_rol": [],
+        "objeciones": [],
+        "preguntas_cualificacion": [],
+        "referencias_destacadas": [],
+        "material_interno": [],
+        "dossier_imprimible": false
+      },
+      "keynotes": [],
+      "referencias": [],
+      "materiales": [],
+      "acreditacion": [],
+      "pendiente": {
+        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "dueno": "Alfredo",
+        "fecha_objetivo": "sept 2026"
+      }
+    },
+    {
+      "id": "preservia",
+      "nombre": "PreservIA",
+      "una_linea": "Convertir el conocimiento experto en un activo vivo.",
+      "especialista": "Alfredo",
+      "estado": "en_preparacion",
+      "dueno": "Alfredo",
+      "fecha_objetivo": "sept 2026",
+      "propuesta": {
+        "que_es": "Capturamos conocimiento experto y lo activamos donde hace falta, para que no dependa solo de personas, archivos o memoria organizativa.",
+        "a_quien": null,
+        "senal": "El conocimiento crítico reside en pocas personas o se pierde cuando cambian de rol; los equipos tardan demasiado en encontrar, contrastar o reutilizar experiencia existente.",
+        "por_que_nosotros": "El conocimiento crea valor cuando puede reutilizarse en el momento de trabajo, no cuando queda almacenado sin contexto; preservarlo combina tecnología, proceso, personas y reglas de actualización.",
+        "diferenciador": null,
+        "objecion_principal": null,
+        "como_abres": "«¿Qué conocimiento experto os cuesta más preservar o poner a disposición cuando el equipo lo necesita para decidir o actuar?»",
+        "primer_paso": {
+          "titulo": "Primer ámbito de conocimiento",
+          "plazo": null,
+          "nota": "Sus usuarios y su modelo de actualización, antes de diseñar la capacidad. Con Alfredo."
+        }
+      },
+      "limites": [
+        "No es un repositorio documental más: el conocimiento debe tener propósito, responsables y contexto de uso.",
+        "No se automatiza la transferencia sin revisar calidad, sensibilidad, permisos y cómo se mantiene vivo."
+      ],
+      "senales": [
+        "El conocimiento crítico reside en pocas personas o se pierde cuando cambian de rol.",
+        "Los equipos tardan demasiado en encontrar, contrastar o reutilizar experiencia existente.",
+        "Se quiere aplicar IA al conocimiento, pero con contexto y gobierno."
+      ],
+      "kit": {
+        "frases_cuenta": null,
+        "pitch_por_rol": [],
+        "objeciones": [],
+        "preguntas_cualificacion": [],
+        "referencias_destacadas": [],
+        "material_interno": [],
+        "dossier_imprimible": false
+      },
+      "keynotes": [],
+      "referencias": [],
+      "materiales": [],
+      "acreditacion": [],
+      "pendiente": {
+        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "dueno": "Alfredo",
+        "fecha_objetivo": "sept 2026"
+      }
+    },
+    {
+      "id": "ogh-ia",
+      "nombre": "Oficina de Gobernanza Humana de la IA",
+      "una_linea": "Decidir, priorizar y gobernar la IA con las personas en el centro.",
+      "especialista": "Alfredo",
+      "estado": "en_preparacion",
+      "dueno": "Alfredo",
+      "fecha_objetivo": "sept 2026",
+      "propuesta": {
+        "que_es": "Diseñamos una Oficina de Gobernanza Humana de la IA para decidir qué iniciativas avanzan, bajo qué condiciones y con qué evidencias de valor, riesgo y adopción.",
+        "a_quien": null,
+        "senal": "Existen iniciativas de IA sin una forma común de priorizar valor, riesgos, responsables y condiciones de escalado; Dirección necesita saber qué debe avanzar y qué frenarse.",
+        "por_que_nosotros": "La gobernanza humana de la IA hace visible quién decide, con qué criterios y cómo se aprende de la operación; su función no es frenar la IA, sino que los casos valiosos avancen con confianza.",
+        "diferenciador": null,
+        "objecion_principal": null,
+        "como_abres": "«¿Quién decide hoy qué iniciativas de IA avanzan, qué evidencia necesitan y cómo se mantiene el equilibrio entre valor, riesgo y adopción?»",
+        "primer_paso": {
+          "titulo": "Primer perímetro de casos, roles y decisiones",
+          "plazo": null,
+          "nota": "Para diseñar una oficina proporcionada al ritmo y madurez de la organización. Con Alfredo."
+        }
+      },
+      "limites": [
+        "No es una capa burocrática ni una aprobación aislada: debe permitir priorizar y acompañar casos con decisiones claras.",
+        "No se declara gobernanza efectiva sin roles, mandato, criterios y relación con los equipos que crean y usan la IA."
+      ],
+      "senales": [
+        "Existen iniciativas de IA sin una forma común de priorizar valor, riesgos y responsables.",
+        "Dirección necesita saber qué debe avanzar, qué frenarse y quién decide.",
+        "Los equipos piden reglas claras para usar y llevar IA a operación sin perder agilidad."
+      ],
+      "kit": {
+        "frases_cuenta": null,
+        "pitch_por_rol": [],
+        "objeciones": [],
+        "preguntas_cualificacion": [],
+        "referencias_destacadas": [],
+        "material_interno": [],
+        "dossier_imprimible": false
+      },
+      "keynotes": [],
+      "referencias": [],
+      "materiales": [],
+      "acreditacion": [],
+      "pendiente": {
+        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "dueno": "Alfredo",
+        "fecha_objetivo": "sept 2026"
+      }
+    }
+  ],
+  "material_comun": [
+    "dc-deck",
+    "dc-onepager-iability",
+    "dc-onepager-preservia"
+  ]
+}
