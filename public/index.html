@@ -3,168 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hipatia · Portal comercial · Prácticas</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23051C2C'/><text x='29' y='46' font-family='Arial' font-size='40' font-weight='800' fill='%23fff' text-anchor='middle'>e</text><circle cx='50' cy='42' r='5.5' fill='%23B5622A'/></svg>">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap');
-:root{
-  --navy:#051C2C;--purple:#7C4DBC;--purple-soft:rgba(124,77,188,.14);
-  --copper:#B5622A;--green:#3A9E65;--paper:#F7F5F2;--line:rgba(255,255,255,.12);
-  --ease:cubic-bezier(.22,.61,.36,1);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-html,body{min-height:100%}
-body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--navy);color:#cdd9e1;
-  min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased;
-  background-image:radial-gradient(900px 520px at 82% -12%,rgba(124,77,188,.22),transparent 60%);}
-.top{display:flex;align-items:center;justify-content:space-between;padding:20px 38px}
-.lg{font-weight:800;font-size:17px;color:#fff;letter-spacing:-.02em}
-.lg i{color:var(--copper);font-style:normal}
-.tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#CFC0EC;
-  background:var(--purple-soft);border:1px solid rgba(124,77,188,.35);border-radius:30px;padding:6px 13px}
-
-/* ── Tiempo 1 · El punto de partida ── */
-.ctx{min-height:calc(100vh - 78px);display:flex;flex-direction:column;justify-content:center;
-  padding:10px 38px 40px;max-width:1120px;margin:0 auto;width:100%}
-.kick{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9FB3C2;margin-bottom:8px}
-.ctx h1{font-size:clamp(28px,3.4vw,44px);font-weight:800;line-height:1.08;letter-spacing:-.02em;color:#fff;margin-bottom:18px;max-width:28ch}
-.ctx h1 em{color:var(--copper);font-style:normal}
-.ctx .body{display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:start}
-.ctx p{font-size:16px;line-height:1.65;color:#AEC0CC;max-width:50ch}
-.who{margin-top:12px;display:flex;align-items:center;gap:12px}
-.ava{width:42px;height:42px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:14px}
-.who b{color:#fff;display:block;font-size:15px}
-.who small{color:#8DA3B2;font-size:13px}
-.punch{margin-top:12px;font-size:17px;font-weight:700;color:#fff;max-width:46ch;line-height:1.55}
-.punch em{color:var(--purple);font-style:normal}
-.qs{display:flex;flex-direction:column;gap:8px;margin-top:16px}
-.qbox{border:1px solid var(--line);border-left:3px solid var(--purple);border-radius:0 10px 10px 0;
-  background:rgba(255,255,255,.04);padding:10px 14px;font-size:13.5px;color:#D5DFE7;font-style:italic}
-.caps{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.cap{position:relative;margin:0;border:1px solid rgba(255,255,255,.18);border-radius:10px;overflow:hidden;
-  max-height:240px;background:#fff;box-shadow:0 24px 50px -30px rgba(0,0,0,.7)}
-.cap img{display:block;width:100%;height:auto}
-.cap:first-child{transform:rotate(-1.1deg)}
-.cap:last-child{transform:rotate(.9deg)}
-.cap-fade{position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(to bottom,rgba(5,28,44,0),rgba(5,28,44,.92))}
-.caps-note{font-size:11.5px;color:#8DA3B2;line-height:1.5;margin-top:10px}
-.stats{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
-.stat{flex:1;min-width:180px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.04);padding:10px 16px}
-.stat b{display:block;font-size:24px;font-weight:800;color:var(--copper);letter-spacing:-.02em;line-height:1.1}
-.stat span{display:block;font-size:12px;color:#AEC0CC;line-height:1.45;margin-top:4px}
-.qwho{display:block;font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#7E93A2;margin-top:6px}
-.go-tobe{margin-top:30px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.btn-tobe{display:inline-flex;align-items:center;gap:9px;background:var(--purple);color:#fff;font-weight:700;
-  font-size:14.5px;border:none;border-radius:10px;padding:13px 22px;cursor:pointer;text-decoration:none;
-  font-family:inherit;transition:all .18s var(--ease);box-shadow:0 18px 40px -22px rgba(124,77,188,.9)}
-.btn-tobe:hover{transform:translateY(-2px);background:#8D5FD0}
-.mock-note{font-size:12px;color:#8DA3B2;max-width:40ch;line-height:1.5}
-.mock-note b{color:#CFC0EC}
-
-/* ── Tiempo 2 · El menú de prácticas (to-be) ── */
-.portal-sec{border-top:1px solid rgba(255,255,255,.08);padding:54px 38px 40px;max-width:1120px;margin:0 auto;width:100%}
-.portal-sec .hd{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:8px}
-.portal-sec h2{font-size:clamp(22px,2.6vw,30px);font-weight:800;line-height:1.12;letter-spacing:-.02em;color:#fff}
-.lead{font-size:15px;line-height:1.6;color:#AEC0CC;max-width:64ch;margin-bottom:28px}
-.lead b{color:#E7EEF3;font-weight:600}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.pr{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.04);padding:20px;
-  display:flex;flex-direction:column;min-height:148px;transition:all .18s var(--ease)}
-.pr h3{font-size:17px;font-weight:800;color:#E7EEF3;margin-bottom:6px}
-.pr p{font-size:12.5px;color:#92A4B2;line-height:1.5;flex:1}
-.pr .st{align-self:flex-start;margin-top:14px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-  color:#7E93A2;border:1px solid var(--line);border-radius:20px;padding:4px 11px}
-.pr.live{border-color:rgba(124,77,188,.55);background:rgba(124,77,188,.10);cursor:pointer;
-  box-shadow:0 22px 50px -34px rgba(124,77,188,.8)}
-.pr.live:hover{transform:translateY(-3px);border-color:var(--purple)}
-.pr.live h3{color:#fff}
-.pr.live .st{color:#CFC0EC;border-color:rgba(124,77,188,.5);background:var(--purple-soft)}
-.pr.live .go{margin-top:14px;font-size:13px;font-weight:700;color:#CFC0EC}
-.pr.soon{opacity:.72;border-style:dashed}
-footer{padding:16px 38px;font-size:11.5px;color:#5E7382;border-top:1px solid rgba(255,255,255,.08)}
-@media(max-width:820px){.ctx .body,.grid{grid-template-columns:1fr}.top,.ctx,.portal-sec,footer{padding-left:22px;padding-right:22px}.ctx{min-height:0;padding-top:10px}}
-
-/* ===== Pasada WOW ===== */
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-body{background-image:radial-gradient(900px 520px at 82% -12%,rgba(124,77,188,.22),transparent 60%),radial-gradient(680px 440px at -8% 112%,rgba(181,98,42,.12),transparent 60%)}
-.ctx>*{animation:rise .6s var(--ease) both}
-.ctx>*:nth-child(1){animation-delay:.05s}
-.ctx>*:nth-child(2){animation-delay:.14s}
-.ctx>*:nth-child(3){animation-delay:.26s}
-.ctx>*:nth-child(4){animation-delay:.42s}
-.cap{transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
-.cap:hover{transform:rotate(0) scale(1.025);box-shadow:0 30px 60px -32px rgba(0,0,0,.8)}
-.btn-tobe{background:linear-gradient(135deg,#8D5FD0,#6B3DAA);box-shadow:0 18px 40px -18px rgba(124,77,188,.95)}
-.btn-tobe:hover{background:linear-gradient(135deg,#9A6FDB,#7C4DBC);transform:translateY(-2px)}
-.pr.live{background:linear-gradient(165deg,rgba(124,77,188,.18),rgba(124,77,188,.06))}
-.stat{transition:transform .2s var(--ease),border-color .2s var(--ease)}
-.stat:hover{transform:translateY(-2px);border-color:rgba(181,98,42,.5)}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style>
+<title>Hipatia · Catálogo comercial de Entelgy</title>
+<meta name="description" content="Qué vende Entelgy en cada práctica y qué puedes enseñar o enviar a un cliente.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<a class="visually-hidden" href="#main">Saltar al contenido</a>
 
-<header class="top">
-  <div class="lg">Entelgy<i>·</i> Hipatia</div>
-  <span class="tag">Demostrador navegable · piloto: Modernización</span>
+<!-- CABECERA ÚNICA · idéntica en todas las páginas -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/entelgy-logo-white.png" alt="Entelgy"><b>Hipatia</b></a>
+    <button class="btn btn-ghost menu-toggle" data-menu-toggle aria-expanded="false" aria-label="Menú">Menú</button>
+    <nav class="nav" aria-label="Principal">
+      <a href="/" aria-current="page">Inicio</a>
+      <a href="/entelgy/">Entelgy</a>
+      <a href="/practicas/">Prácticas</a>
+      <a href="/materiales/">Materiales</a>
+      <a href="/contactos/">Contactos</a>
+    </nav>
+    <div class="header-search">
+      <form data-header-search data-materiales="/materiales/" role="search" aria-label="Buscar materiales">
+        <input type="search" name="q" placeholder="Buscar materiales…" aria-label="Buscar materiales">
+      </form>
+    </div>
+  </div>
 </header>
 
-<!-- TIEMPO 1 · EL PUNTO DE PARTIDA -->
-<section class="ctx" id="contexto">
-  <div class="kick">Hipatia · el punto de partida</div>
-  <h1>Hipatia ya tiene el material. Falta que <em>llegue al comercial</em> en el momento justo.</h1>
-  <div class="body">
-    <div>
-      <p>Hipatia reúne todo lo que el área de Modernización necesita para vender, y es material bueno: vídeos, casos, propuestas, experiencia acumulada. Lo que un repositorio no puede hacer por su forma es adaptarse a quién tienes delante ni devolverle al PM lo que pasa en la calle.</p>
-      <p class="punch" style="margin-top:18px">El to-be es un recorrido: el comercial entra sin conocer el área y sale con <em>la cuenta analizada y el primer correo escrito</em>, con un agente que trabaja por él en cada parada.</p>
-      <p style="margin-top:14px;font-size:15px;line-height:1.6;color:#9FB3C2;max-width:48ch">Y lo que aprende en la calle vuelve al área, así el material se mantiene vivo en lugar de envejecer solo.</p>
+<main id="main">
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Entelgy · Human driven technology</p>
+      <h1 style="font-size:var(--font-size-5xl);max-width:18ch;margin:var(--space-3) 0 var(--space-4)">Qué vendemos y qué puedes darle al cliente.</h1>
+      <p class="lede">Hipatia es el catálogo comercial de Entelgy: entra por una práctica, ve qué es y por qué Entelgy, y encuentra el material que puedes enseñar o dejar a un cliente. Empieza por las prácticas o busca un material.</p>
+      <p style="margin-top:var(--space-5)"><a class="btn btn-cta" href="/practicas/">Ver las prácticas</a></p>
+      <p class="pending" style="margin-top:var(--space-6)"><b>Base del sitio (día 1).</b> La portada completa, el relato corporativo, las páginas de práctica y solución, los materiales y los contactos se generan desde datos en las tareas siguientes. Dueño: Guberna · Código.</p>
     </div>
-    <div>
-      <div class="caps">
-        <figure class="cap"><img src="/assets/asis-hipatia-1.jpg" alt="Hipatia hoy · vídeos y experiencia interna del área de Modernización"><div class="cap-fade"></div></figure>
-        <figure class="cap"><img src="/assets/asis-hipatia-2.jpg" alt="Hipatia hoy · recursos comerciales y propuesta de email del área de Modernización"><div class="cap-fade"></div></figure>
-      </div>
-      <div class="caps-note">Hipatia hoy · el área de Modernización. Todo el material está aquí; el recorrido es lo que añadimos encima.</div>
-    </div>
-  </div>
-  <div class="go-tobe">
-    <a class="btn-tobe" href="#portal">Ver el to-be · cómo queda el portal ↓</a>
-    <div class="mock-note">Lo que sigue es el portal del comercial, <b>recorrible de principio a fin</b> sobre una práctica. La plataforma definitiva se decide después; el valor ya se ve.</div>
-  </div>
-</section>
-
-<!-- TIEMPO 2 · EL PORTAL (TO-BE) -->
-<main class="portal-sec" id="portal">
-  <div class="hd">
-    <h2>El portal comercial · cada práctica con su recorrido.</h2>
-  </div>
-  <p class="lead">El comercial entra por su práctica, se acredita y trabaja sus cuentas con un agente en cada parada. Hoy <b>Ciclo de Software → Modernización de Aplicaciones</b> está desarrollada como piloto; el resto se monta con el mismo patrón.</p>
-
-  <div class="grid">
-    <div class="pr live" onclick="location.href='/ciclo-software/'">
-      <h3>Ciclo de Software</h3>
-      <p>Modernización de aplicaciones, mantenimiento evolutivo e ingeniería con IA.</p>
-      <div class="go">Entrar →</div>
-    </div>
-    <div class="pr soon"><h3>Smart Operations</h3><p>Puesto de trabajo e infraestructura gestionada.</p><span class="st">En preparación</span></div>
-    <div class="pr soon"><h3>Process Mining &amp; Excellence</h3><p>Visibilidad y mejora de procesos con datos.</p><span class="st">En preparación</span></div>
-    <div class="pr soon"><h3>Data &amp; AI</h3><p>Dato, analítica e IA aplicada al negocio.</p><span class="st">En preparación</span></div>
-    <div class="pr soon"><h3>Automatización Inteligente</h3><p>Automatización de procesos con agentes.</p><span class="st">En preparación</span></div>
-    <div class="pr soon"><h3>Digital Change</h3><p>Adopción y cambio en la era de la IA.</p><span class="st">En preparación</span></div>
-  </div>
+  </section>
 </main>
 
-<footer>Entelgy · Hipatia · Entorno de demostración · uso interno</footer>
+<!-- PIE CON BANDA DEL CRM · idéntico en todas las páginas -->
+<footer class="site-footer">
+  <div class="crm-band">
+    <div class="wrap">El CRM sigue siendo el registro único. <b>Hipatia lo alimenta, no lo sustituye ni lo duplica.</b></div>
+  </div>
+  <div class="footer-main">
+    <div class="wrap">
+      <div><img src="/assets/entelgy-logo-white.png" alt="Entelgy"><p class="footer-note" style="margin-top:var(--space-2)">Portal comercial interno · acceso Entelgy</p></div>
+      <nav class="footer-note" aria-label="Pie">
+        <a href="/practicas/">Prácticas</a> · <a href="/materiales/">Materiales</a> · <a href="/contactos/">Contactos</a> · <a href="/lo-que-viene/">Lo que viene</a>
+      </nav>
+    </div>
+  </div>
+</footer>
 
-<script>
-/* Si se llega con #contexto (enlace "¿de dónde viene esto?" del recorrido),
-   anula la restauración de scroll del navegador y muestra el punto de partida. */
-if('scrollRestoration' in history)history.scrollRestoration='manual';
-function irAlContexto(){if(location.hash==='#contexto')window.scrollTo({top:0,behavior:'auto'});}
-window.addEventListener('load',irAlContexto);
-window.addEventListener('pageshow',irAlContexto);
-</script>
-
+<script src="/app.js" defer></script>
 </body>
 </html>
