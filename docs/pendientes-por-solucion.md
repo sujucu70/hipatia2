@@ -17,6 +17,8 @@
 |---|---|---|
 | **Mantenimiento evolutivo** · Tarjeta completa, casos y materiales de esta solución | Jorge | sept 2026 |
 | **Asistencia técnica aumentada** · Tarjeta completa, casos y materiales de esta solución | Jorge | sept 2026 |
+| **modernizacion** · Material: Correo de apertura | Jorge | sept 2026 |
+| **modernizacion** · Material: Presentación técnica · Spec-Driven | Jorge | sept 2026 |
 | **modernizacion** · Material: Business case tipo · Modernización | Jorge / producto | sept 2026 |
 
 ## Data Intelligence
@@ -45,7 +47,7 @@
 ## Resumen
 
 - Errores duros: **0**
-- Avisos: **108**
-- Pendientes registrados: **11**
+- Avisos: **106**
+- Pendientes registrados: **13**
 
 Modernización (Software Development) es la única solución con contenido íntegro validado (tarjeta, 6 casos con sign-off jul 2026, materiales por momento, «para prepararte»). El resto muestra su propuesta auditada del Executive Deck y marca casos y materiales «en preparación».

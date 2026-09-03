@@ -73,6 +73,13 @@ htmlFiles.forEach((f) => {
   // honestidad: no afirmar agente/envío/integración en funcionamiento
   if (/(agente (te )?(escribe|prepara|arma) )|se ha enviado|enviado correctamente|integrado con el CRM/i.test(html))
     results.honestidad.push(route);
+  // canon de pantalla (revisión 11): nunca Guberna, Security, §<dígito> ni métrica de uso
+  const canon = [];
+  if (/Guberna/.test(html)) canon.push("Guberna");
+  if (/Security/.test(html)) canon.push("Security");
+  if (/§\s*\d/.test(html)) canon.push("§ + dígito");
+  if (/no se abre[^<]{0,40}%|%[^<]{0,40}no se abre/i.test(html)) canon.push("métrica de uso");
+  if (canon.length) results.honestidad.push(`${route} (canon: ${canon.join(", ")})`);
 });
 
 // ---- clics desde la portada (BFS sobre enlaces internos) ----
