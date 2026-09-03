@@ -319,6 +319,99 @@ function practicasIndex(practicas) {
 }
 
 // =====================================================================
+// MATERIALES · índice con buscador y filtros + fichas + modal
+// =====================================================================
+const NOMBRE_PRACTICA = {
+  "process-intelligence": "Process Intelligence", "software-development": "Software Development",
+  "data-ai": "Data & AI", "smart-operations": "Smart Operations", "ia-digital-change": "IA + Digital Change"
+};
+function fichaBody(m) {
+  const fila = (k, v) => v ? `<div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>${esc(k)}</b><div>${v}</div></div>` : "";
+  let meta = "";
+  meta += fila("Tipo", esc(m.tipo));
+  meta += fila("Práctica", esc(NOMBRE_PRACTICA[m.practica] || m.practica));
+  meta += fila("Uso", chipUso(m.sale_al_cliente) + ` <span class="footer-note">${esc(m.confidencialidad || "")}</span>`);
+  meta += fila("Estado", chipVigencia(m.estado, m.fecha_revision));
+  meta += fila("Dueño", esc(m.dueno) + (m.mantenida_por ? ` <span class="footer-note">(${m.mantenida_por === "agente" ? "🤖 agente" : "✍️ SM"})</span>` : ""));
+  if (m.citable && m.citable !== "no_aplica") meta += fila("Citabilidad", m.citable === "citable" ? `citable · sign-off ${esc(m.sign_off ? m.sign_off.quien + " · " + m.sign_off.fecha : "")}` : "confirmar por cuenta");
+  if (m.sector && m.sector.length) meta += fila("Sector", esc(m.sector.join(" · ")));
+  if (m.momento_comercial) meta += fila("Momento", esc({ primer_contacto: "Primer contacto", reunion: "En la reunión", para_dejar: "Para dejar al cliente" }[m.momento_comercial] || m.momento_comercial));
+  let ref = "";
+  if (m.tipo === "referencia") {
+    ref = `<div style="margin-top:var(--space-4)">
+      ${m.contexto ? `<p><b>Contexto.</b> ${esc(m.contexto)}</p>` : ""}
+      ${m.que_hicimos ? `<p style="margin-top:var(--space-2)"><b>Qué hicimos.</b> ${esc(m.que_hicimos)}</p>` : ""}
+      ${m.resultado ? `<p style="margin-top:var(--space-2)"><b>Resultado.</b> ${esc(m.resultado)}</p>` : ""}
+      ${m.frase_reunion ? `<p style="margin-top:var(--space-2);font-style:italic">«${esc(m.frase_reunion)}»</p>` : ""}
+      ${(m.cifras && m.cifras.length) ? `<div class="chips" style="margin-top:var(--space-2)">${m.cifras.map((c) => `<span class="chip ${c.verificada ? "is-vigente" : "is-revisar"}">${esc(c.valor)}${c.verificada ? "" : " · cifra en verificación"}</span>`).join("")}</div>` : ""}
+    </div>`;
+  }
+  return `<p class="eyebrow">${esc(m.tipo)}</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">${esc(m.titulo)}</h3>
+    <p style="color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
+    ${ref}
+    <div style="margin-top:var(--space-4)">${meta}</div>
+    <p style="margin-top:var(--space-4)">${materialLink(m)}</p>`;
+}
+function materialFicha(m) {
+  const body = `<section class="section"><div class="wrap" style="max-width:760px">
+    <p class="eyebrow"><a href="/materiales/" style="color:inherit">Materiales</a></p>
+    <div style="margin-top:var(--space-3)">${fichaBody(m)}</div>
+  </div></section>`;
+  return page({ title: `${m.titulo} · Materiales · Hipatia`, desc: m.nota_de_uso, active: "materiales", body });
+}
+function materialesIndex() {
+  const practicasVals = [...new Set(materiales.map((m) => m.practica))];
+  const tipos = [...new Set(materiales.map((m) => m.tipo))].sort();
+  const estados = ["vigente", "revisar", "pendiente"];
+  const usos = [["si", "Para cliente"], ["con_validacion", "Con validación"], ["no", "Interno"]];
+  const group = (dim, title, opts, checkedVal) => `<div class="filter-group"><b>${esc(title)}</b>${opts.map(([v, l]) =>
+    `<label><input type="checkbox" data-filter="${esc(dim)}" value="${esc(v)}"${v === checkedVal ? " checked" : ""}> ${esc(l)}</label>`).join("")}</div>`;
+  const filters = `<form class="filters" aria-label="Filtros">
+    ${group("uso", "Uso", usos, "si")}
+    ${group("practica", "Práctica", practicasVals.map((p) => [p, NOMBRE_PRACTICA[p] || p]))}
+    ${group("tipo", "Tipo", tipos.map((t) => [t, t[0].toUpperCase() + t.slice(1)]))}
+    ${group("estado", "Estado", estados.map((e) => [e, VIG[e]]))}
+  </form>`;
+
+  const cards = materiales.map((m) => `<article class="card" data-material
+      data-practica="${esc(m.practica)}" data-uso="${esc(m.sale_al_cliente)}" data-tipo="${esc(m.tipo)}" data-estado="${esc(m.estado)}"
+      data-search="${esc([m.titulo, m.tipo, m.nota_de_uso, (m.sector || []).join(" "), NOMBRE_PRACTICA[m.practica]].join(" "))}"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">${esc(m.tipo)} · ${esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
+      <div class="chips" style="margin-top:var(--space-3)">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(m.dueno)}</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-${esc(m.id)}" data-modal-label="${esc(m.titulo)}">Ver ficha</button>
+        ${materialLink(m)}
+      </div>
+    </article>`).join("");
+
+  const templates = materiales.map((m) => `<div class="mat-tpl" id="tpl-${esc(m.id)}" hidden>${fichaBody(m)}</div>`).join("\n");
+
+  const body = `<section class="section"><div class="wrap">
+    <p class="eyebrow">Catálogo</p>
+    <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-4)">Materiales</h1>
+    <p class="lede">Todo el material comercial, con su uso, estado y dueño a la vista. «Para cliente» viene marcado por defecto.</p>
+    <div style="margin-top:var(--space-5)"><input type="search" data-materials-search placeholder="Buscar materiales…" aria-label="Buscar materiales" style="width:100%;max-width:520px;font:inherit;padding:var(--space-3);border:1px solid var(--color-border-default);border-radius:var(--radius-md)"></div>
+    <div class="with-aside" style="margin-top:var(--space-5)">
+      <div>${filters}</div>
+      <div>
+        <p class="footer-note" style="margin-bottom:var(--space-3)"><b data-materials-count>0</b> materiales</p>
+        <div class="grid grid-2" data-materials-list>${cards}</div>
+      </div>
+    </div>
+  </div></section>
+  <div style="display:none">${templates}</div>`;
+
+  const modal = `<div class="modal" data-modal hidden role="dialog" aria-modal="true">
+    <div class="modal-panel"><button type="button" class="btn btn-ghost modal-close" data-modal-close aria-label="Cerrar">Cerrar ✕</button><div data-modal-body></div></div>
+  </div>`;
+  return page({ title: "Materiales · Hipatia", desc: "Buscador y filtros del material comercial de Entelgy.", active: "materiales", body, modal });
+}
+
+// =====================================================================
 // BUILD
 // =====================================================================
 function build() {
@@ -332,6 +425,8 @@ function build() {
       nSol++;
     });
   });
-  console.log(`Generadas: /practicas + ${practicas.length} prácticas + ${nSol} soluciones`);
+  write("materiales", materialesIndex());
+  materiales.forEach((m) => write(path.join("materiales", m.id), materialFicha(m)));
+  console.log(`Generadas: /practicas + ${practicas.length} prácticas + ${nSol} soluciones + /materiales + ${materiales.length} fichas`);
 }
 build();

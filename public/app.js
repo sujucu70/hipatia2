@@ -74,11 +74,19 @@
     if (search) search.addEventListener("input", apply);
     filters.forEach(function (f) { f.addEventListener("change", apply); });
 
-    // q inicial desde la URL
+    // q y práctica iniciales desde la URL
     try {
       var params = new URLSearchParams(location.search);
       var q0 = params.get("q");
       if (q0 && search) search.value = q0;
+      var prac = params.get("practica");
+      if (prac) {
+        filters.forEach(function (f) {
+          if (f.getAttribute("data-filter") === "practica") f.checked = (f.value === prac);
+          // al filtrar por práctica desde una solución, no restringir por uso
+          if (f.getAttribute("data-filter") === "uso") f.checked = false;
+        });
+      }
     } catch (e) {}
     apply();
   }

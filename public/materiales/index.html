@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materiales · Hipatia</title>
+<meta name="description" content="Buscador y filtros del material comercial de Entelgy.">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="visually-hidden" href="#main">Saltar al contenido</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/entelgy-logo-white.png" alt="Entelgy"><b>Hipatia</b></a>
+    <button class="btn btn-ghost menu-toggle" data-menu-toggle aria-expanded="false" aria-label="Menú">Menú</button>
+    <nav class="nav" aria-label="Principal">
+      <a href="/">Inicio</a>
+      <a href="/entelgy/">Entelgy</a>
+      <a href="/practicas/">Prácticas</a>
+      <a href="/materiales/" aria-current="page">Materiales</a>
+      <a href="/contactos/">Contactos</a>
+    </nav>
+    <div class="header-search">
+      <form data-header-search data-materiales="/materiales/" role="search" aria-label="Buscar materiales">
+        <input type="search" name="q" placeholder="Buscar materiales…" aria-label="Buscar materiales">
+      </form>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="section"><div class="wrap">
+    <p class="eyebrow">Catálogo</p>
+    <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-4)">Materiales</h1>
+    <p class="lede">Todo el material comercial, con su uso, estado y dueño a la vista. «Para cliente» viene marcado por defecto.</p>
+    <div style="margin-top:var(--space-5)"><input type="search" data-materials-search placeholder="Buscar materiales…" aria-label="Buscar materiales" style="width:100%;max-width:520px;font:inherit;padding:var(--space-3);border:1px solid var(--color-border-default);border-radius:var(--radius-md)"></div>
+    <div class="with-aside" style="margin-top:var(--space-5)">
+      <div><form class="filters" aria-label="Filtros">
+    <div class="filter-group"><b>Uso</b><label><input type="checkbox" data-filter="uso" value="si" checked> Para cliente</label><label><input type="checkbox" data-filter="uso" value="con_validacion"> Con validación</label><label><input type="checkbox" data-filter="uso" value="no"> Interno</label></div>
+    <div class="filter-group"><b>Práctica</b><label><input type="checkbox" data-filter="practica" value="software-development"> Software Development</label><label><input type="checkbox" data-filter="practica" value="process-intelligence"> Process Intelligence</label><label><input type="checkbox" data-filter="practica" value="data-ai"> Data &amp; AI</label><label><input type="checkbox" data-filter="practica" value="smart-operations"> Smart Operations</label><label><input type="checkbox" data-filter="practica" value="ia-digital-change"> IA + Digital Change</label></div>
+    <div class="filter-group"><b>Tipo</b><label><input type="checkbox" data-filter="tipo" value="análisis interno"> Análisis interno</label><label><input type="checkbox" data-filter="tipo" value="deck"> Deck</label><label><input type="checkbox" data-filter="tipo" value="ficha"> Ficha</label><label><input type="checkbox" data-filter="tipo" value="formación"> Formación</label><label><input type="checkbox" data-filter="tipo" value="guía de discovery"> Guía de discovery</label><label><input type="checkbox" data-filter="tipo" value="guía interna"> Guía interna</label><label><input type="checkbox" data-filter="tipo" value="herramienta"> Herramienta</label><label><input type="checkbox" data-filter="tipo" value="one-pager"> One-pager</label><label><input type="checkbox" data-filter="tipo" value="plantilla"> Plantilla</label><label><input type="checkbox" data-filter="tipo" value="plantilla de correo"> Plantilla de correo</label><label><input type="checkbox" data-filter="tipo" value="referencia"> Referencia</label></div>
+    <div class="filter-group"><b>Estado</b><label><input type="checkbox" data-filter="estado" value="vigente"> 🟢 vigente</label><label><input type="checkbox" data-filter="estado" value="revisar"> 🟠 revisar</label><label><input type="checkbox" data-filter="estado" value="pendiente"> ⏳ pendiente</label></div>
+  </form></div>
+      <div>
+        <p class="footer-note" style="margin-bottom:var(--space-3)"><b data-materials-count>0</b> materiales</p>
+        <div class="grid grid-2" data-materials-list><article class="card" data-material
+      data-practica="software-development" data-uso="si" data-tipo="plantilla de correo" data-estado="revisar"
+      data-search="Correo de apertura plantilla de correo Plantilla de correo de apertura con enlace al autodiagnóstico. Hoy cableada solo para el sector Financiero; el resto de sectores, en preparación. Financiero Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">plantilla de correo · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-correo-apertura/">Correo de apertura</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Plantilla de correo de apertura con enlace al autodiagnóstico. Hoy cableada solo para el sector Financiero; el resto de sectores, en preparación.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-revisar">🟠 revisar · jul 2026</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-correo-apertura" data-modal-label="Correo de apertura">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="si" data-tipo="herramienta" data-estado="vigente"
+      data-search="Autodiagnóstico de modernización herramienta Herramienta de 10 preguntas para enviar al cliente; devuelve un índice de exposición y el siguiente paso. Ejemplo cargado: Grupo Lantia (78). Pendiente el sign-off de Jorge de P0–P5.  Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">herramienta · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-autodiagnostico/">Autodiagnóstico de modernización</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Herramienta de 10 preguntas para enviar al cliente; devuelve un índice de exposición y el siguiente paso. Ejemplo cargado: Grupo Lantia (78). Pendiente el sign-off de Jorge de P0–P5.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-vigente">🟢 vigente · jul 2026</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-autodiagnostico" data-modal-label="Autodiagnóstico de modernización">Ver ficha</button>
+        <a class="btn" href="/autodiagnostico/grupo-lantia/">Abrir el documento ↗</a>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="si" data-tipo="deck" data-estado="revisar"
+      data-search="Deck ejecutivo C-Suite · Modernización deck Deck de reunión introductoria (v3 alineada a UCE, 10 jul). En preparación: edits del 14 jul (slide 7 AT a modelo de créditos, referencias UNED · H10 · NASERTIC, Anexo 3), bloqueados hasta el documento de AT de Jorge.  Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">deck · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-deck-ejecutivo/">Deck ejecutivo C-Suite · Modernización</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck de reunión introductoria (v3 alineada a UCE, 10 jul). En preparación: edits del 14 jul (slide 7 AT a modelo de créditos, referencias UNED · H10 · NASERTIC, Anexo 3), bloqueados hasta el documento de AT de Jorge.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-revisar">🟠 revisar · jul 2026</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-deck-ejecutivo" data-modal-label="Deck ejecutivo C-Suite · Modernización">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="si" data-tipo="one-pager" data-estado="vigente"
+      data-search="One-pager · Modernización one-pager Pieza de una cara para la reunión introductoria. V1 provisional; revisión de fondo por el equipo de Jorge.  Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">one-pager · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-onepager/">One-pager · Modernización</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Pieza de una cara para la reunión introductoria. V1 provisional; revisión de fondo por el equipo de Jorge.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-vigente">🟢 vigente · jul 2026</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-onepager" data-modal-label="One-pager · Modernización">Ver ficha</button>
+        <a class="btn" href="/modernizacion/materiales/onepager-modernizacion.html">Abrir el documento ↗</a>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="si" data-tipo="ficha" data-estado="vigente"
+      data-search="Ficha de servicio · Modernización ficha Ficha de dos caras para dejar al cliente; valida ante IT y compras. V1 provisional. Pendiente confirmar con Jorge la mención del 40% en documento público.  Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">ficha · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-ficha-servicio/">Ficha de servicio · Modernización</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Ficha de dos caras para dejar al cliente; valida ante IT y compras. V1 provisional. Pendiente confirmar con Jorge la mención del 40% en documento público.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-vigente">🟢 vigente · jul 2026</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-ficha-servicio" data-modal-label="Ficha de servicio · Modernización">Ver ficha</button>
+        <a class="btn" href="/modernizacion/materiales/ficha-modernizacion.html">Abrir el documento ↗</a>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="si" data-tipo="deck" data-estado="revisar"
+      data-search="Presentación técnica · Spec-Driven deck Deck Spec-Driven v2 para reunión avanzada. Existe; confirmar edición vigente antes de enviar.  Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">deck · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-presentacion-spec/">Presentación técnica · Spec-Driven</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck Spec-Driven v2 para reunión avanzada. Existe; confirmar edición vigente antes de enviar.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-revisar">🟠 revisar · jul 2026</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-presentacion-spec" data-modal-label="Presentación técnica · Spec-Driven">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="con_validacion" data-tipo="plantilla" data-estado="pendiente"
+      data-search="Business case tipo · Modernización plantilla En preparación · dueño: Jorge / producto · fecha objetivo: sept 2026. Salida interna con guardarraíl Foreworth; no material cliente hasta decidirlo.  Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">plantilla · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-business-case/">Business case tipo · Modernización</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Jorge / producto · fecha objetivo: sept 2026. Salida interna con guardarraíl Foreworth; no material cliente hasta decidirlo.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-validacion">con validación</span><span class="chip is-pendiente">⏳ pendiente</span><span class="chip">Jorge / producto</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-business-case" data-modal-label="Business case tipo · Modernización">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="no" data-tipo="guía interna" data-estado="vigente"
+      data-search="Mensajes clave del área guía interna Las cuatro keynotes por dolor, como recordatorio interno. No sale al cliente.  Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">guía interna · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-mensajes-clave/">Mensajes clave del área</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Las cuatro keynotes por dolor, como recordatorio interno. No sale al cliente.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-interno">interno</span><span class="chip is-vigente">🟢 vigente · jul 2026</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-mensajes-clave" data-modal-label="Mensajes clave del área">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="no" data-tipo="guía interna" data-estado="revisar"
+      data-search="Objeciones y respuestas · completa guía interna Pieza completa a consolidar desde el Argumentario UCE (trabajo de forma, no de fondo). En el portal está la versión resumida (3 objeciones).  Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">guía interna · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-objeciones/">Objeciones y respuestas · completa</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Pieza completa a consolidar desde el Argumentario UCE (trabajo de forma, no de fondo). En el portal está la versión resumida (3 objeciones).</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-interno">interno</span><span class="chip is-revisar">🟠 revisar</span><span class="chip">Guberna</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-objeciones" data-modal-label="Objeciones y respuestas · completa">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="no" data-tipo="análisis interno" data-estado="revisar"
+      data-search="Benchmark + mercado español análisis interno Análisis interno (10 players + monográfico GFT Wynxx). Curar antes de exponer: qué afirmaciones sobre competidores se sostienen por escrito.  Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">análisis interno · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-benchmark/">Benchmark + mercado español</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Análisis interno (10 players + monográfico GFT Wynxx). Curar antes de exponer: qué afirmaciones sobre competidores se sostienen por escrito.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-interno">interno</span><span class="chip is-revisar">🟠 revisar</span><span class="chip">Guberna</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-benchmark" data-modal-label="Benchmark + mercado español">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="no" data-tipo="guía de discovery" data-estado="vigente"
+      data-search="Mapa de dolores del sector guía de discovery Los tres mapas de pains del área, cerrados en mayo. Material interno para estructurar preguntas, no para diagnosticar sin evidencia.  Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">guía de discovery · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-mapa-dolores/">Mapa de dolores del sector</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Los tres mapas de pains del área, cerrados en mayo. Material interno para estructurar preguntas, no para diagnosticar sin evidencia.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-interno">interno</span><span class="chip is-vigente">🟢 vigente · may 2026</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-mapa-dolores" data-modal-label="Mapa de dolores del sector">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="no" data-tipo="guía interna" data-estado="revisar"
+      data-search="Argumentario UCE guía interna Argumentario UCE (12 págs), base de la pieza de objeciones. Uso interno.  Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">guía interna · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-argumentario/">Argumentario UCE</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Argumentario UCE (12 págs), base de la pieza de objeciones. Uso interno.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-interno">interno</span><span class="chip is-revisar">🟠 revisar</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-argumentario" data-modal-label="Argumentario UCE">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="no" data-tipo="formación" data-estado="vigente"
+      data-search="ROL-PLAY Servicios AM formación Vídeo de visita simulada con diálogo completo, para entrenar la reunión. Interno.  Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">formación · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-rolplay/">ROL-PLAY Servicios AM</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Vídeo de visita simulada con diálogo completo, para entrenar la reunión. Interno.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-interno">interno</span><span class="chip is-vigente">🟢 vigente · oct 2025</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-rolplay" data-modal-label="ROL-PLAY Servicios AM">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="con_validacion" data-tipo="referencia" data-estado="vigente"
+      data-search="NASERTIC · Gobierno de Navarra referencia Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta. Sector público Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">referencia · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-caso-nasertic/">NASERTIC · Gobierno de Navarra</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-validacion">con validación</span><span class="chip is-vigente">🟢 vigente · jul 2026</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-caso-nasertic" data-modal-label="NASERTIC · Gobierno de Navarra">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="con_validacion" data-tipo="referencia" data-estado="vigente"
+      data-search="UNED referencia Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta. Sector público Educación Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">referencia · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-caso-uned/">UNED</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-validacion">con validación</span><span class="chip is-vigente">🟢 vigente · jul 2026</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-caso-uned" data-modal-label="UNED">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="con_validacion" data-tipo="referencia" data-estado="vigente"
+      data-search="DGOJ · Dirección General de Ordenación del Juego referencia Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta. Sector público Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">referencia · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-caso-dgoj/">DGOJ · Dirección General de Ordenación del Juego</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-validacion">con validación</span><span class="chip is-vigente">🟢 vigente · jul 2026</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-caso-dgoj" data-modal-label="DGOJ · Dirección General de Ordenación del Juego">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="con_validacion" data-tipo="referencia" data-estado="vigente"
+      data-search="AESA · Agencia Estatal de Seguridad Aérea referencia Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta. Sector público Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">referencia · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-caso-aesa/">AESA · Agencia Estatal de Seguridad Aérea</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-validacion">con validación</span><span class="chip is-vigente">🟢 vigente · jul 2026</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-caso-aesa" data-modal-label="AESA · Agencia Estatal de Seguridad Aérea">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="con_validacion" data-tipo="referencia" data-estado="vigente"
+      data-search="H10 Hotels referencia Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta. Turismo Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">referencia · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-caso-h10/">H10 Hotels</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-validacion">con validación</span><span class="chip is-vigente">🟢 vigente · jul 2026</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-caso-h10" data-modal-label="H10 Hotels">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="software-development" data-uso="con_validacion" data-tipo="referencia" data-estado="vigente"
+      data-search="Ministerio de Ciencia · AEI referencia Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta. Sector público Software Development"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">referencia · Software Development</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-caso-miciu/">Ministerio de Ciencia · AEI</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-validacion">con validación</span><span class="chip is-vigente">🟢 vigente · jul 2026</span><span class="chip">Jorge</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-mod-caso-miciu" data-modal-label="Ministerio de Ciencia · AEI">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="process-intelligence" data-uso="si" data-tipo="deck" data-estado="pendiente"
+      data-search="Deck · Process Intelligence deck En preparación · dueño: Carmen · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.  Process Intelligence"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">deck · Process Intelligence</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/pi-deck/">Deck · Process Intelligence</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Carmen · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-pendiente">⏳ pendiente</span><span class="chip">Carmen</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-pi-deck" data-modal-label="Deck · Process Intelligence">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="process-intelligence" data-uso="si" data-tipo="one-pager" data-estado="pendiente"
+      data-search="One-pager · Process Intelligence one-pager En preparación · dueño: Carmen · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.  Process Intelligence"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">one-pager · Process Intelligence</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/pi-onepager/">One-pager · Process Intelligence</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Carmen · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-pendiente">⏳ pendiente</span><span class="chip">Carmen</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-pi-onepager" data-modal-label="One-pager · Process Intelligence">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="process-intelligence" data-uso="si" data-tipo="ficha" data-estado="pendiente"
+      data-search="Ficha de servicio · Process Intelligence ficha En preparación · dueño: Carmen · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.  Process Intelligence"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">ficha · Process Intelligence</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/pi-ficha/">Ficha de servicio · Process Intelligence</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Carmen · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-pendiente">⏳ pendiente</span><span class="chip">Carmen</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-pi-ficha" data-modal-label="Ficha de servicio · Process Intelligence">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="data-ai" data-uso="si" data-tipo="deck" data-estado="pendiente"
+      data-search="Deck · Data &amp; AI deck En preparación · dueño: Daniela · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.  Data &amp; AI"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">deck · Data &amp; AI</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/dataai-deck/">Deck · Data &amp; AI</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Daniela · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-pendiente">⏳ pendiente</span><span class="chip">Daniela</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-dataai-deck" data-modal-label="Deck · Data &amp; AI">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="data-ai" data-uso="si" data-tipo="one-pager" data-estado="pendiente"
+      data-search="One-pager · Data &amp; AI one-pager En preparación · dueño: Daniela · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.  Data &amp; AI"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">one-pager · Data &amp; AI</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/dataai-onepager/">One-pager · Data &amp; AI</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Daniela · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-pendiente">⏳ pendiente</span><span class="chip">Daniela</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-dataai-onepager" data-modal-label="One-pager · Data &amp; AI">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="data-ai" data-uso="si" data-tipo="ficha" data-estado="pendiente"
+      data-search="Ficha de servicio · Data &amp; AI ficha En preparación · dueño: Daniela · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.  Data &amp; AI"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">ficha · Data &amp; AI</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/dataai-ficha/">Ficha de servicio · Data &amp; AI</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Daniela · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-pendiente">⏳ pendiente</span><span class="chip">Daniela</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-dataai-ficha" data-modal-label="Ficha de servicio · Data &amp; AI">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="smart-operations" data-uso="si" data-tipo="deck" data-estado="pendiente"
+      data-search="Deck · Smart Operations deck En preparación · dueño: Amador · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.  Smart Operations"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">deck · Smart Operations</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/so-deck/">Deck · Smart Operations</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Amador · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-pendiente">⏳ pendiente</span><span class="chip">Amador</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-so-deck" data-modal-label="Deck · Smart Operations">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="smart-operations" data-uso="si" data-tipo="one-pager" data-estado="pendiente"
+      data-search="One-pager · Puesto de trabajo one-pager En preparación · dueño: Amador · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.  Smart Operations"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">one-pager · Smart Operations</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/so-onepager-workplace/">One-pager · Puesto de trabajo</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Amador · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-pendiente">⏳ pendiente</span><span class="chip">Amador</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-so-onepager-workplace" data-modal-label="One-pager · Puesto de trabajo">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="smart-operations" data-uso="si" data-tipo="one-pager" data-estado="pendiente"
+      data-search="One-pager · Infraestructura crítica one-pager En preparación · dueño: Amador · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.  Smart Operations"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">one-pager · Smart Operations</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/so-onepager-infra/">One-pager · Infraestructura crítica</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Amador · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-pendiente">⏳ pendiente</span><span class="chip">Amador</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-so-onepager-infra" data-modal-label="One-pager · Infraestructura crítica">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="ia-digital-change" data-uso="si" data-tipo="deck" data-estado="pendiente"
+      data-search="Deck · IA + Digital Change deck En preparación · dueño: Alfredo · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.  IA + Digital Change"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">deck · IA + Digital Change</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/dc-deck/">Deck · IA + Digital Change</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Alfredo · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-pendiente">⏳ pendiente</span><span class="chip">Alfredo</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-dc-deck" data-modal-label="Deck · IA + Digital Change">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="ia-digital-change" data-uso="si" data-tipo="one-pager" data-estado="pendiente"
+      data-search="One-pager · IAbility one-pager En preparación · dueño: Alfredo · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.  IA + Digital Change"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">one-pager · IA + Digital Change</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/dc-onepager-iability/">One-pager · IAbility</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Alfredo · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-pendiente">⏳ pendiente</span><span class="chip">Alfredo</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-dc-onepager-iability" data-modal-label="One-pager · IAbility">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article><article class="card" data-material
+      data-practica="ia-digital-change" data-uso="si" data-tipo="one-pager" data-estado="pendiente"
+      data-search="One-pager · PreservIA one-pager En preparación · dueño: Alfredo · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.  IA + Digital Change"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">one-pager · IA + Digital Change</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/dc-onepager-preservia/">One-pager · PreservIA</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Alfredo · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+      <div class="chips" style="margin-top:var(--space-3)"><span class="chip is-cliente">sale al cliente</span><span class="chip is-pendiente">⏳ pendiente</span><span class="chip">Alfredo</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <button type="button" class="btn btn-ghost" data-open-modal="tpl-dc-onepager-preservia" data-modal-label="One-pager · PreservIA">Ver ficha</button>
+        <span class="chip">enlace pendiente</span>
+      </div>
+    </article></div>
+      </div>
+    </div>
+  </div></section>
+  <div style="display:none"><div class="mat-tpl" id="tpl-mod-correo-apertura" hidden><p class="eyebrow">plantilla de correo</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Correo de apertura</h3>
+    <p style="color:var(--color-text-secondary)">Plantilla de correo de apertura con enlace al autodiagnóstico. Hoy cableada solo para el sector Financiero; el resto de sectores, en preparación.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>plantilla de correo</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-revisar">🟠 revisar · jul 2026</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Sector</b><div>Financiero</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>Primer contacto</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-mod-autodiagnostico" hidden><p class="eyebrow">herramienta</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Autodiagnóstico de modernización</h3>
+    <p style="color:var(--color-text-secondary)">Herramienta de 10 preguntas para enviar al cliente; devuelve un índice de exposición y el siguiente paso. Ejemplo cargado: Grupo Lantia (78). Pendiente el sign-off de Jorge de P0–P5.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>herramienta</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-vigente">🟢 vigente · jul 2026</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>Primer contacto</div></div></div>
+    <p style="margin-top:var(--space-4)"><a class="btn" href="/autodiagnostico/grupo-lantia/">Abrir el documento ↗</a></p></div>
+<div class="mat-tpl" id="tpl-mod-deck-ejecutivo" hidden><p class="eyebrow">deck</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Deck ejecutivo C-Suite · Modernización</h3>
+    <p style="color:var(--color-text-secondary)">Deck de reunión introductoria (v3 alineada a UCE, 10 jul). En preparación: edits del 14 jul (slide 7 AT a modelo de créditos, referencias UNED · H10 · NASERTIC, Anexo 3), bloqueados hasta el documento de AT de Jorge.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>deck</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-revisar">🟠 revisar · jul 2026</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>En la reunión</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-mod-onepager" hidden><p class="eyebrow">one-pager</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">One-pager · Modernización</h3>
+    <p style="color:var(--color-text-secondary)">Pieza de una cara para la reunión introductoria. V1 provisional; revisión de fondo por el equipo de Jorge.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>one-pager</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-vigente">🟢 vigente · jul 2026</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>En la reunión</div></div></div>
+    <p style="margin-top:var(--space-4)"><a class="btn" href="/modernizacion/materiales/onepager-modernizacion.html">Abrir el documento ↗</a></p></div>
+<div class="mat-tpl" id="tpl-mod-ficha-servicio" hidden><p class="eyebrow">ficha</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Ficha de servicio · Modernización</h3>
+    <p style="color:var(--color-text-secondary)">Ficha de dos caras para dejar al cliente; valida ante IT y compras. V1 provisional. Pendiente confirmar con Jorge la mención del 40% en documento público.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>ficha</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-vigente">🟢 vigente · jul 2026</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>Para dejar al cliente</div></div></div>
+    <p style="margin-top:var(--space-4)"><a class="btn" href="/modernizacion/materiales/ficha-modernizacion.html">Abrir el documento ↗</a></p></div>
+<div class="mat-tpl" id="tpl-mod-presentacion-spec" hidden><p class="eyebrow">deck</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Presentación técnica · Spec-Driven</h3>
+    <p style="color:var(--color-text-secondary)">Deck Spec-Driven v2 para reunión avanzada. Existe; confirmar edición vigente antes de enviar.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>deck</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-revisar">🟠 revisar · jul 2026</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>En la reunión</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-mod-business-case" hidden><p class="eyebrow">plantilla</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Business case tipo · Modernización</h3>
+    <p style="color:var(--color-text-secondary)">En preparación · dueño: Jorge / producto · fecha objetivo: sept 2026. Salida interna con guardarraíl Foreworth; no material cliente hasta decidirlo.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>plantilla</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-validacion">con validación</span> <span class="footer-note">restringido</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-pendiente">⏳ pendiente</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge / producto <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>En la reunión</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-mod-mensajes-clave" hidden><p class="eyebrow">guía interna</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Mensajes clave del área</h3>
+    <p style="color:var(--color-text-secondary)">Las cuatro keynotes por dolor, como recordatorio interno. No sale al cliente.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>guía interna</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-interno">interno</span> <span class="footer-note">interno</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-vigente">🟢 vigente · jul 2026</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>preparar</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-mod-objeciones" hidden><p class="eyebrow">guía interna</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Objeciones y respuestas · completa</h3>
+    <p style="color:var(--color-text-secondary)">Pieza completa a consolidar desde el Argumentario UCE (trabajo de forma, no de fondo). En el portal está la versión resumida (3 objeciones).</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>guía interna</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-interno">interno</span> <span class="footer-note">interno</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-revisar">🟠 revisar</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Guberna <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>preparar</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-mod-benchmark" hidden><p class="eyebrow">análisis interno</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Benchmark + mercado español</h3>
+    <p style="color:var(--color-text-secondary)">Análisis interno (10 players + monográfico GFT Wynxx). Curar antes de exponer: qué afirmaciones sobre competidores se sostienen por escrito.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>análisis interno</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-interno">interno</span> <span class="footer-note">interno</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-revisar">🟠 revisar</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Guberna <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>preparar</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-mod-mapa-dolores" hidden><p class="eyebrow">guía de discovery</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Mapa de dolores del sector</h3>
+    <p style="color:var(--color-text-secondary)">Los tres mapas de pains del área, cerrados en mayo. Material interno para estructurar preguntas, no para diagnosticar sin evidencia.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>guía de discovery</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-interno">interno</span> <span class="footer-note">interno</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-vigente">🟢 vigente · may 2026</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>preparar</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-mod-argumentario" hidden><p class="eyebrow">guía interna</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Argumentario UCE</h3>
+    <p style="color:var(--color-text-secondary)">Argumentario UCE (12 págs), base de la pieza de objeciones. Uso interno.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>guía interna</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-interno">interno</span> <span class="footer-note">interno</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-revisar">🟠 revisar</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>preparar</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-mod-rolplay" hidden><p class="eyebrow">formación</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">ROL-PLAY Servicios AM</h3>
+    <p style="color:var(--color-text-secondary)">Vídeo de visita simulada con diálogo completo, para entrenar la reunión. Interno.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>formación</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-interno">interno</span> <span class="footer-note">interno</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-vigente">🟢 vigente · oct 2025</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>preparar</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-mod-caso-nasertic" hidden><p class="eyebrow">referencia</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">NASERTIC · Gobierno de Navarra</h3>
+    <p style="color:var(--color-text-secondary)">Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.</p>
+    <div style="margin-top:var(--space-4)">
+      <p><b>Contexto.</b> Empresa pública del Gobierno de Navarra. Migración de un core con una estimación clásica de 9 meses.</p>
+      <p style="margin-top:var(--space-2)"><b>Qué hicimos.</b> El método del área: la IA documenta y traduce el sistema existente a especificaciones y el equipo gobierna y valida. En la primera semana quedaron documentadas 1.000 horas de carga funcional.</p>
+      <p style="margin-top:var(--space-2)"><b>Resultado.</b> Entregado en 3 meses (frente a 9 estimados) con un 70% de ahorro sobre el esfuerzo previsto.</p>
+      <p style="margin-top:var(--space-2);font-style:italic">«Un organismo público nos estimó la migración en 9 meses por el método tradicional. La entregamos en 3. Y si quieres, se lo preguntas a ellos: el cliente atiende llamadas de referencia.»</p>
+      <div class="chips" style="margin-top:var(--space-2)"><span class="chip is-vigente">1.000 h documentadas en 1 semana</span><span class="chip is-vigente">70% de ahorro</span><span class="chip is-vigente">9 → 3 meses</span></div>
+    </div>
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>referencia</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-validacion">con validación</span> <span class="footer-note">interno</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-vigente">🟢 vigente · jul 2026</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Citabilidad</b><div>citable · sign-off Jorge (PM del área) · jul 2026</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Sector</b><div>Sector público</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>Aportar prueba</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-mod-caso-uned" hidden><p class="eyebrow">referencia</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">UNED</h3>
+    <p style="color:var(--color-text-secondary)">Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.</p>
+    <div style="margin-top:var(--space-4)">
+      <p><b>Contexto.</b> Universidad pública a distancia. Core académico en PL/SQL con años de evolución acumulada.</p>
+      <p style="margin-top:var(--space-2)"><b>Qué hicimos.</b> Migración de PL/SQL a microservicios Java, con IA en la traducción del código y en la recuperación del conocimiento funcional embebido.</p>
+      <p style="margin-top:var(--space-2)"><b>Resultado.</b> −30% de esfuerzo frente a una migración tradicional equivalente.</p>
+      <p style="margin-top:var(--space-2);font-style:italic">«En la UNED movimos un core PL/SQL a microservicios Java con un 30% menos de esfuerzo. Es expediente público: se puede consultar.»</p>
+      <div class="chips" style="margin-top:var(--space-2)"><span class="chip is-vigente">−30% de esfuerzo</span></div>
+    </div>
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>referencia</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-validacion">con validación</span> <span class="footer-note">interno</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-vigente">🟢 vigente · jul 2026</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Citabilidad</b><div>citable · sign-off Jorge (PM del área) · jul 2026</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Sector</b><div>Sector público · Educación</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>Aportar prueba</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-mod-caso-dgoj" hidden><p class="eyebrow">referencia</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">DGOJ · Dirección General de Ordenación del Juego</h3>
+    <p style="color:var(--color-text-secondary)">Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.</p>
+    <div style="margin-top:var(--space-4)">
+      <p><b>Contexto.</b> Organismo regulador estatal. Servicio de mantenimiento evolutivo sobre sus sistemas.</p>
+      <p style="margin-top:var(--space-2)"><b>Qué hicimos.</b> Mantenimiento evolutivo inteligente: la eficiencia que la IA recupera en el día a día se reinvierte en modernizar las mismas aplicaciones, sin partida nueva.</p>
+      <p style="margin-top:var(--space-2)"><b>Resultado.</b> Entre un 40% y un 60% menos de coste de mantenimiento, según sistema.</p>
+      <p style="margin-top:var(--space-2);font-style:italic">«En un regulador estatal, el mantenimiento cuesta hoy entre un 40 y un 60% menos — y esa diferencia es la que financia la modernización.»</p>
+      <div class="chips" style="margin-top:var(--space-2)"><span class="chip is-vigente">40–60% menos de coste de mantenimiento</span></div>
+    </div>
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>referencia</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-validacion">con validación</span> <span class="footer-note">interno</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-vigente">🟢 vigente · jul 2026</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Citabilidad</b><div>citable · sign-off Jorge (PM del área) · jul 2026</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Sector</b><div>Sector público</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>Aportar prueba</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-mod-caso-aesa" hidden><p class="eyebrow">referencia</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">AESA · Agencia Estatal de Seguridad Aérea</h3>
+    <p style="color:var(--color-text-secondary)">Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.</p>
+    <div style="margin-top:var(--space-4)">
+      <p><b>Contexto.</b> Agencia estatal, sector aviación. Desarrollo desde cero con el método Spec-Driven.</p>
+      <p style="margin-top:var(--space-2)"><b>Qué hicimos.</b> Construcción nueva guiada por especificación: la spec se define, la IA genera y valida, el equipo gobierna.</p>
+      <p style="margin-top:var(--space-2)"><b>Resultado.</b> +80% de automatización en los procesos cubiertos.</p>
+      <p style="margin-top:var(--space-2);font-style:italic">«En AESA, ocho de cada diez pasos del proceso quedaron automatizados. No es una PoC: está en producción en una agencia estatal.»</p>
+      <div class="chips" style="margin-top:var(--space-2)"><span class="chip is-revisar">+80% de automatización · cifra en verificación</span></div>
+    </div>
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>referencia</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-validacion">con validación</span> <span class="footer-note">interno</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-vigente">🟢 vigente · jul 2026</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Citabilidad</b><div>citable · sign-off Jorge (PM del área) · jul 2026</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Sector</b><div>Sector público</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>Aportar prueba</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-mod-caso-h10" hidden><p class="eyebrow">referencia</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">H10 Hotels</h3>
+    <p style="color:var(--color-text-secondary)">Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.</p>
+    <div style="margin-top:var(--space-4)">
+      <p><b>Contexto.</b> Cadena hotelera. Entrada por un assessment como primer contrato — el mismo movimiento que propone el kit de visita.</p>
+      <p style="margin-top:var(--space-2)"><b>Qué hicimos.</b> Adopción del método Spec-Driven en su ciclo de desarrollo, empezando por la documentación: la IA reconstruye y mantiene la documentación del sistema.</p>
+      <p style="margin-top:var(--space-2)"><b>Resultado.</b> ~−90% del tiempo de documentación.</p>
+      <p style="margin-top:var(--space-2);font-style:italic">«H10 empezó con un assessment — el mismo que te propongo — y hoy documentar les cuesta una décima parte del tiempo. Es el sector privado validando el mismo camino.»</p>
+      <div class="chips" style="margin-top:var(--space-2)"><span class="chip is-revisar">~−90% del tiempo de documentación · cifra en verificación</span></div>
+    </div>
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>referencia</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-validacion">con validación</span> <span class="footer-note">interno</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-vigente">🟢 vigente · jul 2026</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Citabilidad</b><div>citable · sign-off Jorge (PM del área) · jul 2026</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Sector</b><div>Turismo</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>Aportar prueba</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-mod-caso-miciu" hidden><p class="eyebrow">referencia</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Ministerio de Ciencia · AEI</h3>
+    <p style="color:var(--color-text-secondary)">Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.</p>
+    <div style="margin-top:var(--space-4)">
+      <p><b>Contexto.</b> Agencia Estatal de Investigación (MICIU). Servicio de mantenimiento evolutivo.</p>
+      <p style="margin-top:var(--space-2)"><b>Qué hicimos.</b> Mantenimiento evolutivo inteligente con gestión preventiva: menos incidencia repetida, más capacidad para lo evolutivo.</p>
+      <p style="margin-top:var(--space-2)"><b>Resultado.</b> +40% de cumplimiento de SLA.</p>
+      <p style="margin-top:var(--space-2);font-style:italic">«En la Agencia Estatal de Investigación el cumplimiento de SLA subió un 40% — con el mismo contrato y el mismo presupuesto.»</p>
+      <div class="chips" style="margin-top:var(--space-2)"><span class="chip is-revisar">+40% de cumplimiento de SLA · cifra en verificación</span></div>
+    </div>
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>referencia</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Software Development</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-validacion">con validación</span> <span class="footer-note">interno</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-vigente">🟢 vigente · jul 2026</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Jorge <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Citabilidad</b><div>citable · sign-off Jorge (PM del área) · jul 2026</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Sector</b><div>Sector público</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>Aportar prueba</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-pi-deck" hidden><p class="eyebrow">deck</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Deck · Process Intelligence</h3>
+    <p style="color:var(--color-text-secondary)">En preparación · dueño: Carmen · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>deck</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Process Intelligence</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-pendiente">⏳ pendiente</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Carmen <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>En la reunión</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-pi-onepager" hidden><p class="eyebrow">one-pager</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">One-pager · Process Intelligence</h3>
+    <p style="color:var(--color-text-secondary)">En preparación · dueño: Carmen · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>one-pager</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Process Intelligence</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-pendiente">⏳ pendiente</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Carmen <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>En la reunión</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-pi-ficha" hidden><p class="eyebrow">ficha</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Ficha de servicio · Process Intelligence</h3>
+    <p style="color:var(--color-text-secondary)">En preparación · dueño: Carmen · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>ficha</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Process Intelligence</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-pendiente">⏳ pendiente</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Carmen <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>Para dejar al cliente</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-dataai-deck" hidden><p class="eyebrow">deck</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Deck · Data &amp; AI</h3>
+    <p style="color:var(--color-text-secondary)">En preparación · dueño: Daniela · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>deck</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Data &amp; AI</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-pendiente">⏳ pendiente</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Daniela <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>En la reunión</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-dataai-onepager" hidden><p class="eyebrow">one-pager</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">One-pager · Data &amp; AI</h3>
+    <p style="color:var(--color-text-secondary)">En preparación · dueño: Daniela · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>one-pager</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Data &amp; AI</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-pendiente">⏳ pendiente</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Daniela <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>En la reunión</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-dataai-ficha" hidden><p class="eyebrow">ficha</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Ficha de servicio · Data &amp; AI</h3>
+    <p style="color:var(--color-text-secondary)">En preparación · dueño: Daniela · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>ficha</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Data &amp; AI</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-pendiente">⏳ pendiente</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Daniela <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>Para dejar al cliente</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-so-deck" hidden><p class="eyebrow">deck</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Deck · Smart Operations</h3>
+    <p style="color:var(--color-text-secondary)">En preparación · dueño: Amador · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>deck</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Smart Operations</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-pendiente">⏳ pendiente</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Amador <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>En la reunión</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-so-onepager-workplace" hidden><p class="eyebrow">one-pager</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">One-pager · Puesto de trabajo</h3>
+    <p style="color:var(--color-text-secondary)">En preparación · dueño: Amador · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>one-pager</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Smart Operations</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-pendiente">⏳ pendiente</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Amador <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>En la reunión</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-so-onepager-infra" hidden><p class="eyebrow">one-pager</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">One-pager · Infraestructura crítica</h3>
+    <p style="color:var(--color-text-secondary)">En preparación · dueño: Amador · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>one-pager</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Smart Operations</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-pendiente">⏳ pendiente</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Amador <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>En la reunión</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-dc-deck" hidden><p class="eyebrow">deck</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">Deck · IA + Digital Change</h3>
+    <p style="color:var(--color-text-secondary)">En preparación · dueño: Alfredo · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>deck</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>IA + Digital Change</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-pendiente">⏳ pendiente</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Alfredo <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>En la reunión</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-dc-onepager-iability" hidden><p class="eyebrow">one-pager</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">One-pager · IAbility</h3>
+    <p style="color:var(--color-text-secondary)">En preparación · dueño: Alfredo · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>one-pager</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>IA + Digital Change</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-pendiente">⏳ pendiente</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Alfredo <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>En la reunión</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div>
+<div class="mat-tpl" id="tpl-dc-onepager-preservia" hidden><p class="eyebrow">one-pager</p>
+    <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">One-pager · PreservIA</h3>
+    <p style="color:var(--color-text-secondary)">En preparación · dueño: Alfredo · fecha objetivo: sept 2026. Localización y validación en el hub del área pendientes.</p>
+    
+    <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>one-pager</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>IA + Digital Change</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Estado</b><div><span class="chip is-pendiente">⏳ pendiente</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Alfredo <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>En la reunión</div></div></div>
+    <p style="margin-top:var(--space-4)"><span class="chip">enlace pendiente</span></p></div></div>
+</main>
+<footer class="site-footer">
+  <div class="crm-band"><div class="wrap">El CRM sigue siendo el registro único. <b>Hipatia lo alimenta, no lo sustituye ni lo duplica.</b></div></div>
+  <div class="footer-main"><div class="wrap">
+    <div><img src="/assets/entelgy-logo-white.png" alt="Entelgy"><p class="footer-note" style="margin-top:var(--space-2)">Portal comercial interno · acceso Entelgy</p></div>
+    <nav class="footer-note" aria-label="Pie"><a href="/practicas/">Prácticas</a> · <a href="/materiales/">Materiales</a> · <a href="/contactos/">Contactos</a> · <a href="/lo-que-viene/">Lo que viene</a></nav>
+  </div></div>
+</footer>
+<div class="modal" data-modal hidden role="dialog" aria-modal="true">
+    <div class="modal-panel"><button type="button" class="btn btn-ghost modal-close" data-modal-close aria-label="Cerrar">Cerrar ✕</button><div data-modal-body></div></div>
+  </div>
+<script src="/app.js" defer></script>
+</body>
+</html>
