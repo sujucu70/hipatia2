@@ -27,12 +27,12 @@
 | /practicas/software-development/modernizacion/ | 1 |
 | /practicas/software-development/mantenimiento/ | 1 |
 | /practicas/software-development/asistencia-tecnica/ | 1 |
-| /practicas/data-ai/data-ai/ | 1 |
+| /practicas/data-intelligence/data-intelligence/ | 1 |
 | /practicas/smart-operations/smartops-workplace/ | 1 |
 | /practicas/smart-operations/smartops-infra/ | 1 |
-| /practicas/ia-digital-change/iability/ | 1 |
-| /practicas/ia-digital-change/preservia/ | 1 |
-| /practicas/ia-digital-change/ogh-ia/ | 1 |
+| /practicas/digital-change/iability/ | 1 |
+| /practicas/digital-change/preservia/ | 1 |
+| /practicas/digital-change/ogh-ia/ | 1 |
 
 ## Peso por página (HTML + CSS + JS)
 
@@ -40,16 +40,16 @@
 |---|---|
 | /materiales | 147 |
 | /modernizacion/materiales | 62 |
-| /modernizacion/materiales | 45 |
+| /modernizacion/materiales | 46 |
 | /practicas/software-development/modernizacion | 44 |
-| /autodiagnostico/grupo-lantia | 42 |
+| /autodiagnostico/grupo-lantia | 43 |
 | / | 38 |
+| /practicas/digital-change | 34 |
 | /practicas/software-development | 34 |
-| /practicas/ia-digital-change | 33 |
-| /entelgy | 32 |
-| /practicas/data-ai | 32 |
-| /practicas/process-intelligence | 32 |
-| /practicas/smart-operations | 32 |
+| /entelgy | 33 |
+| /practicas/data-intelligence/data-intelligence | 33 |
+| /practicas/data-intelligence | 33 |
+| /practicas/process-intelligence | 33 |
 
 (máximo 147 KB de 114 páginas; imágenes aparte)
 
