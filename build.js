@@ -349,7 +349,8 @@ function practicasIndex(practicas) {
 // =====================================================================
 const NOMBRE_PRACTICA = {
   "process-intelligence": "Process Intelligence", "software-development": "Software Development",
-  "data-intelligence": "Data Intelligence", "smart-operations": "Smart Operations", "digital-change": "Digital Change"
+  "data-intelligence": "Data Intelligence", "smart-operations": "Smart Operations", "digital-change": "Digital Change",
+  "corporativo": "Corporativo"
 };
 function fichaBody(m) {
   const fila = (k, v) => v ? `<div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>${esc(k)}</b><div>${v}</div></div>` : "";
@@ -410,7 +411,7 @@ function materialesIndex() {
       data-practica="${esc(m.practica)}" data-uso="${esc(m.sale_al_cliente)}" data-tipo="${esc(m.tipo)}" data-estado="${esc(m.estado)}"
       data-search="${esc([m.titulo, m.tipo, m.nota_de_uso, (m.sector || []).join(" "), NOMBRE_PRACTICA[m.practica]].join(" "))}"
       style="padding:var(--space-4)">
-      <p class="eyebrow">${esc(m.tipo)} · ${esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
+      <p class="eyebrow">${m.practica === "corporativo" ? esc(m.tipo) : esc(m.tipo) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
       <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
       <div class="chips" style="margin-top:var(--space-3)">${m.tipo === "referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(m.dueno)}</span></div>
@@ -518,7 +519,7 @@ function portadaPage(corp, practicas) {
       ? `<a class="btn" href="${esc(m.url_documento)}">Abrir el documento ↗</a>`
       : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`;
     return `<article class="card" style="padding:var(--space-4)">
-      <p class="eyebrow">${esc(m.tipo)} · ${esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
+      <p class="eyebrow">${m.practica === "corporativo" ? esc(m.tipo) : esc(m.tipo) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
       <h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h4>
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
       <div class="chips" style="margin-top:var(--space-3)">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}</div>
