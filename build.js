@@ -126,6 +126,8 @@ const MOMENTOS = [
 function materialLink(m) {
   if (!m) return "";
   if (m.url_documento) return `<a class="btn" href="${esc(m.url_documento)}">Abrir el documento ↗</a>`;
+  // una referencia sin documento es autocontenida (su texto citable es el entregable), no un enlace por llegar
+  if (m.tipo === "referencia") return `<span class="chip">sin documento aparte</span>`;
   return `<span class="chip">enlace pendiente</span>`;
 }
 function materialMini(m) {
