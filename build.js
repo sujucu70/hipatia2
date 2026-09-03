@@ -409,7 +409,7 @@ function materialesIndex() {
 
   const cards = materiales.map((m) => `<article class="card" data-material
       data-practica="${esc(m.practica)}" data-uso="${esc(m.sale_al_cliente)}" data-tipo="${esc(m.tipo)}" data-estado="${esc(m.estado)}"
-      data-search="${esc([m.titulo, m.tipo, (m.sector || []).join(" "), NOMBRE_PRACTICA[m.practica]].join(" "))}"
+      ${(m.sector && m.sector.length) ? `data-search="${esc(m.sector.join(" "))}"` : ""}
       style="padding:var(--space-4)">
       <p class="eyebrow">${m.practica === "corporativo" ? esc(m.tipo) : esc(m.tipo) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
       <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>

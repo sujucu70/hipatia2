@@ -58,7 +58,7 @@
       });
       var shown = 0;
       items.forEach(function (it) {
-        var okText = !q || norm(it.getAttribute("data-search") || it.textContent).indexOf(q) !== -1;
+        var okText = !q || norm((it.getAttribute("data-search") || "") + " " + it.textContent).indexOf(q) !== -1;
         var okFilters = Object.keys(active).every(function (dim) {
           var val = it.getAttribute("data-" + dim) || "";
           var vals = val.split(/\s+/);
