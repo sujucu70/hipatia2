@@ -92,6 +92,19 @@ function chipUso(uso) {
   const map = { si: "is-cliente", no: "is-interno", con_validacion: "is-validacion" };
   return `<span class="chip ${map[uso] || ""}">${esc(USO[uso] || uso)}</span>`;
 }
+// Fecha corta para pantalla: "2026-07-16" → "jul 2026". Passthrough si ya es corta.
+const MESES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+function fechaCorta(f) {
+  if (!f) return "";
+  const m = /^(\d{4})-(\d{2})-\d{2}$/.exec(f);
+  return m ? `${MESES[parseInt(m[2], 10) - 1]} ${m[1]}` : f;
+}
+// Chip de citabilidad (referencias): «citable · sign-off jul 2026» o «confirmar por cuenta».
+function chipCitable(m) {
+  if (m.citable === "citable" && m.sign_off) return `<span class="chip is-citable">citable · sign-off ${esc(fechaCorta(m.sign_off.fecha))}</span>`;
+  return `<span class="chip">confirmar por cuenta</span>`;
+}
+const LEYENDA_CITA = "Citable en presentación · el envío formal al cliente se autoriza por cuenta.";
 function pendingBox(p, defOwner) {
   if (!p) return "";
   const dueno = (p.dueno || defOwner || "por asignar");
@@ -117,11 +130,14 @@ function materialLink(m) {
 }
 function materialMini(m) {
   if (!m) return "";
+  const esRef = m.tipo === "referencia";
+  const chipPrincipal = esRef ? chipCitable(m) : chipUso(m.sale_al_cliente);
+  const nota = esRef && m.citable === "citable" ? LEYENDA_CITA : (m.nota_de_uso || "");
   return `<article class="card" style="padding:var(--space-4)">
     <p class="eyebrow">${esc(m.tipo)}</p>
     <h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h4>
-    <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
-    <div class="chips" style="margin-top:var(--space-3)">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}</div>
+    <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(nota)}</p>
+    <div class="chips" style="margin-top:var(--space-3)">${chipPrincipal}${chipVigencia(m.estado, m.fecha_revision)}</div>
     <div style="margin-top:var(--space-3)">${materialLink(m)}</div>
   </article>`;
 }
@@ -192,7 +208,7 @@ function solucionPage(pr, s) {
         <h3 style="font-size:var(--font-size-xl)">${esc(r.titulo)}</h3>
         <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm);margin:var(--space-2) 0">${esc(r.resultado || "")}</p>
         <p style="font-style:italic">«${esc(r.frase_reunion || "")}»</p>
-        <div class="chips" style="margin-top:var(--space-3)">${r.citable === "citable" ? `<span class="chip is-citable">citable · sign-off ${esc(r.sign_off ? r.sign_off.fecha : "")}</span>` : `<span class="chip">confirmar por cuenta</span>`}</div>
+        <div class="chips" style="margin-top:var(--space-3)">${chipCitable(r)}</div>
       </article>`).join("") + `</div>
       <p class="footer-note" style="margin-top:var(--space-3);color:var(--color-text-secondary)">Elige la referencia por parecido de situación, no por notoriedad. Citable en presentación; el envío formal al cliente se autoriza por cuenta.</p>`;
   } else {
@@ -337,13 +353,19 @@ const NOMBRE_PRACTICA = {
 };
 function fichaBody(m) {
   const fila = (k, v) => v ? `<div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>${esc(k)}</b><div>${v}</div></div>` : "";
+  const esRef = m.tipo === "referencia";
   let meta = "";
   meta += fila("Tipo", esc(m.tipo));
   meta += fila("Práctica", esc(NOMBRE_PRACTICA[m.practica] || m.practica));
-  meta += fila("Uso", chipUso(m.sale_al_cliente) + ` <span class="footer-note">${esc(m.confidencialidad || "")}</span>`);
+  if (esRef) {
+    // La referencia encabeza por su citabilidad (con sign-off), no por «con validación».
+    meta += fila("Citabilidad", chipCitable(m) + (m.citable === "citable" && m.sign_off ? ` <span class="footer-note">${esc(m.sign_off.quien)} · ${esc(fechaCorta(m.sign_off.fecha))}</span>` : ""));
+    meta += fila("Envío al cliente", `<span class="footer-note">${esc(LEYENDA_CITA)}</span>`);
+  } else {
+    meta += fila("Uso", chipUso(m.sale_al_cliente) + ` <span class="footer-note">${esc(m.confidencialidad || "")}</span>`);
+  }
   meta += fila("Estado", chipVigencia(m.estado, m.fecha_revision));
   meta += fila("Dueño", esc(m.dueno) + (m.mantenida_por ? ` <span class="footer-note">(${m.mantenida_por === "agente" ? "🤖 agente" : "✍️ SM"})</span>` : ""));
-  if (m.citable && m.citable !== "no_aplica") meta += fila("Citabilidad", m.citable === "citable" ? `citable · sign-off ${esc(m.sign_off ? m.sign_off.quien + " · " + m.sign_off.fecha : "")}` : "confirmar por cuenta");
   if (m.sector && m.sector.length) meta += fila("Sector", esc(m.sector.join(" · ")));
   if (m.momento_comercial) meta += fila("Momento", esc({ primer_contacto: "Primer contacto", reunion: "En la reunión", para_dejar: "Para dejar al cliente" }[m.momento_comercial] || m.momento_comercial));
   let ref = "";
@@ -391,7 +413,7 @@ function materialesIndex() {
       <p class="eyebrow">${esc(m.tipo)} · ${esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
       <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
-      <div class="chips" style="margin-top:var(--space-3)">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(m.dueno)}</span></div>
+      <div class="chips" style="margin-top:var(--space-3)">${m.tipo === "referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(m.dueno)}</span></div>
       <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
         <a class="btn btn-ghost" href="/materiales/${esc(m.id)}/" data-open-modal-url="/materiales/${esc(m.id)}/" data-modal-label="${esc(m.titulo)}">Ver ficha</a>
         ${materialLink(m)}
