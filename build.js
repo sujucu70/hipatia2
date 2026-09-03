@@ -279,7 +279,7 @@ function practicaPage(pr) {
   let main = `<div>
     <p class="eyebrow">Práctica</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0">${esc(pr.nombre)}</h1>
-    <p class="lede">${esc(pr.propuesta)}</p>
+    <p class="lede">${esc(pr.propuesta_portada || pr.propuesta)}</p>
     <p style="margin-top:var(--space-2);color:var(--color-text-secondary);font-size:var(--font-size-sm)">Responsable: <b>${esc(pr.responsable)}</b></p>`;
 
   main += `<section class="section" id="que-cubre"><h2 style="font-size:var(--font-size-2xl)">Qué cubre y qué no</h2>
@@ -330,7 +330,7 @@ function practicasIndex(practicas) {
     return `<article class="card">
       <p class="eyebrow">${esc(pr.orden)} · ${esc(pr.responsable)}</p>
       <h2 style="font-size:var(--font-size-2xl);margin:var(--space-2) 0"><a style="text-decoration:none" href="/practicas/${esc(pr.id)}/">${esc(pr.nombre)}</a></h2>
-      <p style="color:var(--color-text-secondary)">${esc(pr.propuesta)}</p>
+      <p style="color:var(--color-text-secondary)">${esc(pr.propuesta_portada || pr.propuesta)}</p>
       <div class="chips" style="margin-top:var(--space-3)">${sols}</div>
       <p style="margin-top:var(--space-3)"><a class="text-link" href="/practicas/${esc(pr.id)}/">Ver práctica →</a></p>
     </article>`;
