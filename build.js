@@ -482,7 +482,7 @@ function portadaPage(corp, practicas) {
       <div><p class="eyebrow">La oferta</p><h2 style="font-size:var(--font-size-3xl);margin-top:var(--space-1)">Cinco prácticas. Entra por la que necesite tu cliente.</h2></div>
       <span class="footer-note">Entra en la práctica o directamente en una de sus soluciones.</span>
     </div>
-    <div class="grid" style="grid-template-columns:repeat(5,minmax(0,1fr));margin-top:var(--space-5)">${cards}</div>
+    <div class="grid grid-5" style="margin-top:var(--space-5)">${cards}</div>
   </div></section>`;
 
   // Regla de portada (§6.3 · rev 5): una pieza por práctica + el deck corporativo.
