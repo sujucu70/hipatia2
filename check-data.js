@@ -16,7 +16,7 @@ const DATA = path.join(__dirname, "data");
 const DOCS = path.join(__dirname, "docs");
 const read = (f) => JSON.parse(fs.readFileSync(path.join(DATA, f), "utf8"));
 
-const PRACTICAS = ["process-intelligence", "software-development", "data-ai", "smart-operations", "ia-digital-change"];
+const PRACTICAS = ["process-intelligence", "software-development", "data-intelligence", "smart-operations", "digital-change"];
 const errores = [];
 const avisos = [];
 const pendientes = []; // {practica, solucion, que, dueno, fecha}
@@ -100,7 +100,7 @@ materiales.filter((p) => p.estado === "pendiente").forEach((p) => {
 let md = "# Pendientes por solución · Hipatia v3\n\n";
 md += "> Generado por `check-data.js`. Lo que aún no tiene contenido validado, con dueño y fecha objetivo. ";
 md += "Ninguna fecha es inventada: donde no la hay, dice «sin fecha».\n\n";
-md += "**Taxonomía (decisión 3 sep):** 5 prácticas · **11 soluciones** — Data & AI se presenta como una única solución global, sin subprácticas (decisión de Susana). Software Development mantiene tres soluciones (provisional, pendiente de Jorge · §10.9).\n\n";
+md += "**Taxonomía (revisión 5, 3 sep):** 5 prácticas · **11 soluciones** (PI 2 · SD 3 · DI 1 · SO 2 · DC 3). «Data & AI» pasa a **Data Intelligence** (una única solución con el nombre de la práctica y sus cuatro capacidades dentro) y «IA + Digital Change» pasa a **Digital Change**. Software Development mantiene tres soluciones (provisional, pendiente de Jorge · §10.9).\n\n";
 const porPractica = {};
 pendientes.forEach((p) => { (porPractica[p.practica] = porPractica[p.practica] || []).push(p); });
 Object.keys(porPractica).forEach((prac) => {

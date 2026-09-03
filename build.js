@@ -13,7 +13,7 @@ const ROOT = __dirname;
 const DATA = path.join(ROOT, "data");
 const PUB = path.join(ROOT, "public");
 const read = (f) => JSON.parse(fs.readFileSync(path.join(DATA, f), "utf8"));
-const PRACTICAS = ["process-intelligence", "software-development", "data-ai", "smart-operations", "ia-digital-change"];
+const PRACTICAS = ["process-intelligence", "software-development", "data-intelligence", "smart-operations", "digital-change"];
 
 function esc(v) {
   return String(v == null ? "" : v).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -160,6 +160,16 @@ function solucionPage(pr, s) {
         <p style="color:var(--color-slate-200)">${esc(pp.nota || "")}</p>
       </div>` : ""}
   </div></section>`;
+
+  // 2 bis · Capacidades (solo en la solución única, p. ej. Data Intelligence · §revisión 5)
+  if (s.es_solucion_unica && (pr.capacidades || []).length) {
+    const caps = pr.capacidades.map((c) => `<article class="card"><p class="eyebrow">${esc(c.paso)}</p><h3 style="font-size:var(--font-size-xl);margin:var(--space-1) 0 var(--space-2)">${esc(c.titulo)}</h3><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(c.texto)}</p></article>`).join("");
+    body += `<section class="section"><div class="wrap">
+      <p class="eyebrow">Lo que hacemos</p>
+      <h2 style="font-size:var(--font-size-2xl);margin:var(--space-2) 0 var(--space-4)">Capacidades</h2>
+      <div class="grid grid-2">${caps}</div>
+    </div></section>`;
+  }
 
   // 3 · Material para el cliente (por momento)
   const mats = (s.materiales || []).map((id) => MAT[id]).filter((m) => m && m.sale_al_cliente !== "no");
@@ -323,7 +333,7 @@ function practicasIndex(practicas) {
 // =====================================================================
 const NOMBRE_PRACTICA = {
   "process-intelligence": "Process Intelligence", "software-development": "Software Development",
-  "data-ai": "Data & AI", "smart-operations": "Smart Operations", "ia-digital-change": "IA + Digital Change"
+  "data-intelligence": "Data Intelligence", "smart-operations": "Smart Operations", "digital-change": "Digital Change"
 };
 function fichaBody(m) {
   const fila = (k, v) => v ? `<div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>${esc(k)}</b><div>${v}</div></div>` : "";
@@ -426,14 +436,21 @@ function portadaPage(corp, practicas) {
   </section>`;
 
   const cards = practicas.map((pr) => {
-    const chips = (pr.soluciones || []).map((s) => `<a class="chip" style="text-decoration:none" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">${esc(s.nombre)}</a>`).join("");
+    const solUnica = (pr.soluciones || []).length === 1 && pr.soluciones[0].es_solucion_unica;
+    // Solución única (Data Intelligence · rev 5): sin cajitas y enlace directo a la solución.
+    const cajitas = solUnica ? "" :
+      `<div class="sol-boxes">${(pr.soluciones || []).map((s) => `<a class="sol-box" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">${esc(s.nombre)}</a>`).join("")}</div>`;
+    const enlace = solUnica
+      ? `<a class="text-link" href="/practicas/${esc(pr.id)}/${esc(pr.soluciones[0].id)}/">Ver la solución →</a>`
+      : `<a class="text-link" href="/practicas/${esc(pr.id)}/">Ver práctica →</a>`;
+    const propuestaCorta = pr.propuesta_portada || pr.propuesta;
     return `<article class="card" style="display:flex;flex-direction:column;gap:var(--space-2)">
       <span class="footer-note">${esc(pr.orden)}</span>
       <h3 style="font-size:var(--font-size-xl)"><a style="text-decoration:none" href="/practicas/${esc(pr.id)}/">${esc(pr.nombre)}</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);flex-grow:1">${esc(pr.propuesta)}</p>
-      <div class="chips">${chips}</div>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);flex-grow:1">${esc(propuestaCorta)}</p>
+      ${cajitas}
       <div style="display:flex;justify-content:space-between;align-items:center;gap:var(--space-2);padding-top:var(--space-3);border-top:1px solid var(--color-border-subtle);font-size:var(--font-size-sm);color:var(--color-text-secondary)">
-        <span>${esc(pr.responsable)}</span><a class="text-link" href="/practicas/${esc(pr.id)}/">Ver práctica →</a>
+        <span>${esc(pr.responsable)}</span>${enlace}
       </div>
     </article>`;
   }).join("");

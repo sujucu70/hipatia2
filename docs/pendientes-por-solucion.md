@@ -2,7 +2,7 @@
 
 > Generado por `check-data.js`. Lo que aún no tiene contenido validado, con dueño y fecha objetivo. Ninguna fecha es inventada: donde no la hay, dice «sin fecha».
 
-**Taxonomía (decisión 3 sep):** 5 prácticas · **11 soluciones** — Data & AI se presenta como una única solución global, sin subprácticas (decisión de Susana). Software Development mantiene tres soluciones (provisional, pendiente de Jorge · §10.9).
+**Taxonomía (revisión 5, 3 sep):** 5 prácticas · **11 soluciones** (PI 2 · SD 3 · DI 1 · SO 2 · DC 3). «Data & AI» pasa a **Data Intelligence** (una única solución con el nombre de la práctica y sus cuatro capacidades dentro) y «IA + Digital Change» pasa a **Digital Change**. Software Development mantiene tres soluciones (provisional, pendiente de Jorge · §10.9).
 
 ## Process Intelligence
 
@@ -19,11 +19,11 @@
 | **Asistencia técnica aumentada** · Tarjeta completa, casos y materiales de esta solución | Jorge | sept 2026 |
 | **modernizacion** · Material: Business case tipo · Modernización | Jorge / producto | sept 2026 |
 
-## Data & AI
+## Data Intelligence
 
 | Qué falta | Dueño | Fecha objetivo |
 |---|---|---|
-| **Data & AI** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Daniela | sept 2026 |
+| **Data Intelligence** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Daniela | sept 2026 |
 
 ## Smart Operations
 
@@ -32,7 +32,7 @@
 | **Puesto de trabajo** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Amador | sept 2026 |
 | **Infraestructura crítica** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Amador | sept 2026 |
 
-## IA + Digital Change
+## Digital Change
 
 | Qué falta | Dueño | Fecha objetivo |
 |---|---|---|

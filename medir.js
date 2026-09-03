@@ -96,7 +96,7 @@ function bfs(start) {
 }
 const dist = bfs("/");
 const dataDir = path.join(ROOT, "data");
-const PRACS = ["process-intelligence", "software-development", "data-ai", "smart-operations", "ia-digital-change"];
+const PRACS = ["process-intelligence", "software-development", "data-intelligence", "smart-operations", "digital-change"];
 const soluciones = [];
 PRACS.forEach((id) => { const pr = JSON.parse(fs.readFileSync(path.join(dataDir, id + ".json"))); (pr.soluciones || []).forEach((s) => soluciones.push(`/practicas/${id}/${s.id}/`)); });
 const materiales = JSON.parse(fs.readFileSync(path.join(dataDir, "materiales.json"))).materiales;
@@ -136,7 +136,7 @@ async function withBrowser() {
   try { browser = await pw.chromium.launch({ executablePath: fs.existsSync(exe) ? exe : undefined, headless: true, args: ["--no-sandbox"] }); }
   catch (e) { try { browser = await pw.chromium.launch({ headless: true, args: ["--no-sandbox"] }); } catch (e2) { return { skipped: "no se pudo lanzar Chromium: " + e2.message }; } }
   const consola = []; const contraste = [];
-  const sample = ["/", "/entelgy/", "/practicas/", "/practicas/software-development/", "/practicas/software-development/modernizacion/", "/practicas/data-ai/data-ai/", "/materiales/", "/contactos/", "/punto-de-partida/", "/lo-que-viene/"];
+  const sample = ["/", "/entelgy/", "/practicas/", "/practicas/software-development/", "/practicas/software-development/modernizacion/", "/practicas/data-intelligence/data-intelligence/", "/materiales/", "/contactos/", "/punto-de-partida/", "/lo-que-viene/"];
   const targets = ALL ? routes : sample;
   for (const width of [1440, 390]) {
     const ctx = await browser.newContext({ viewport: { width, height: width === 1440 ? 900 : 780 } });

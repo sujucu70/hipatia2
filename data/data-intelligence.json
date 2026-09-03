@@ -1,6 +1,6 @@
 {
-  "id": "data-ai",
-  "nombre": "Data & AI",
+  "id": "data-intelligence",
+  "nombre": "Data Intelligence",
   "orden": "03",
   "responsable": "Daniela",
   "propuesta": "Convertimos datos y capacidades de IA en decisiones, productos y operaciones gobernadas y útiles para el negocio.",
@@ -41,8 +41,8 @@
   },
   "soluciones": [
     {
-      "id": "data-ai",
-      "nombre": "Data & AI",
+      "id": "data-intelligence",
+      "nombre": "Data Intelligence",
       "una_linea": "Datos, analítica e IA gobernados al servicio de una decisión.",
       "especialista": "Daniela",
       "estado": "en_preparacion",
@@ -96,10 +96,11 @@
         "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
         "dueno": "Daniela",
         "fecha_objetivo": "sept 2026"
-      }
+      },
+      "es_solucion_unica": true
     }
   ],
-  "solucion_global_nota": "Decisión de Susana (3 sep): Data & AI se presenta de momento como una única solución global, sin subprácticas ni puertas de entrada. Cuando Daniela valide el desglose, se abre en soluciones.",
+  "solucion_global_nota": "Data Intelligence es una única solución con el nombre de la práctica (revisión 5, 3 sep): sus cuatro capacidades —gobernar el dato, gobernar los modelos, decidir con analítica, predecir y operar— viven dentro de la página de solución. Cuando Daniela valide el desglose, se abre en soluciones.",
   "material_comun": [
     "dataai-producto",
     "dataai-onepager",

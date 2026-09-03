@@ -30,8 +30,8 @@
     {
       "nombre": "Daniela",
       "rol": "Responsable de práctica",
-      "practica": "data-ai",
-      "solucion": "data-ai",
+      "practica": "data-intelligence",
+      "solucion": "data-intelligence",
       "orden": 1,
       "canal": "Teams · canal del área (pendiente de enlace)",
       "estado": "validado"
@@ -48,7 +48,7 @@
     {
       "nombre": "Alfredo",
       "rol": "Responsable de práctica",
-      "practica": "ia-digital-change",
+      "practica": "digital-change",
       "solucion": null,
       "orden": 1,
       "canal": "Teams · canal del área (pendiente de enlace)",
@@ -122,8 +122,8 @@
     {
       "nombre": "Daniela",
       "rol": "Especialista de solución",
-      "practica": "data-ai",
-      "solucion": "data-ai",
+      "practica": "data-intelligence",
+      "solucion": "data-intelligence",
       "orden": 1,
       "canal": "Teams · canal del área (pendiente de enlace)",
       "estado": "validado"
@@ -131,7 +131,7 @@
     {
       "nombre": null,
       "rol": "Segundo contacto",
-      "practica": "data-ai",
+      "practica": "data-intelligence",
       "solucion": null,
       "orden": 2,
       "canal": null,
@@ -169,7 +169,7 @@
     {
       "nombre": "Alfredo",
       "rol": "Especialista de solución",
-      "practica": "ia-digital-change",
+      "practica": "digital-change",
       "solucion": "iability",
       "orden": 1,
       "canal": "Teams · canal del área (pendiente de enlace)",
@@ -178,7 +178,7 @@
     {
       "nombre": "Alfredo",
       "rol": "Especialista de solución",
-      "practica": "ia-digital-change",
+      "practica": "digital-change",
       "solucion": "preservia",
       "orden": 1,
       "canal": "Teams · canal del área (pendiente de enlace)",
@@ -187,7 +187,7 @@
     {
       "nombre": "Alfredo",
       "rol": "Especialista de solución",
-      "practica": "ia-digital-change",
+      "practica": "digital-change",
       "solucion": "ogh-ia",
       "orden": 1,
       "canal": "Teams · canal del área (pendiente de enlace)",
@@ -196,7 +196,7 @@
     {
       "nombre": null,
       "rol": "Segundo contacto",
-      "practica": "ia-digital-change",
+      "practica": "digital-change",
       "solucion": null,
       "orden": 2,
       "canal": null,
