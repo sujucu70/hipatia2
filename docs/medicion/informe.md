@@ -43,7 +43,7 @@
 | /modernizacion/materiales | 46 |
 | /practicas/software-development/modernizacion | 44 |
 | /autodiagnostico/grupo-lantia | 43 |
-| / | 38 |
+| / | 36 |
 | /practicas/digital-change | 34 |
 | /practicas/software-development | 34 |
 | /entelgy | 33 |
