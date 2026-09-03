@@ -552,7 +552,6 @@ function entelgyPage(corp) {
   const entradas = (r.entradas || []).map((e) => `<article class="card"><p class="eyebrow">${esc(e.eyebrow)}</p><h3 style="font-size:var(--font-size-xl);margin:var(--space-2) 0">${esc(e.titulo)}</h3><p style="color:var(--color-text-secondary);font-size:var(--font-size-sm)">${esc(e.texto)}</p></article>`).join("");
   const metodo = (r.metodo && r.metodo.pasos || []).map((p) => `<article class="card"><p class="eyebrow">${esc(p.paso)}</p><h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)">${esc(p.titulo)}</h4><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(p.texto)}</p></article>`).join("");
   const otg = r.otg ? `<section class="section"><h2 style="font-size:var(--font-size-2xl)">${esc(r.otg.titulo)}</h2><p class="lede" style="margin:var(--space-2) 0 var(--space-4)">${esc(r.otg.texto)}</p><div class="grid grid-3">${(r.otg.fases || []).map((f) => `<article class="card"><p class="eyebrow">${esc(f.paso)}</p><h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)">${esc(f.titulo)}</h4><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(f.texto)}</p></article>`).join("")}</div></section>` : "";
-  const latam = corp.mercados && corp.mercados.latam;
   const body = `<section class="section"><div class="wrap">
     <p class="eyebrow">Relato corporativo</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0">Entelgy, en una conversación</h1>
@@ -565,14 +564,6 @@ function entelgyPage(corp) {
       <div class="grid" style="grid-template-columns:repeat(5,minmax(0,1fr))">${metodo}</div></section>
 
     ${otg}
-
-    <section class="section"><h2 style="font-size:var(--font-size-2xl)">Mercados</h2>
-      <div class="grid grid-2" style="margin-top:var(--space-3)">
-        <article class="card"><p class="eyebrow">${esc(corp.mercados.general.label)}</p><p style="margin-top:var(--space-2);color:var(--color-text-secondary);font-size:var(--font-size-sm)">El relato común, método y cinco prácticas.</p></article>
-        ${latam ? `<article class="card"><p class="eyebrow">${esc(latam.label)}</p><p style="margin:var(--space-2) 0;color:var(--color-text-secondary);font-size:var(--font-size-sm)">${esc(latam.texto)}</p><div class="chips">${chipVigencia("revisar", null)}<span class="chip">${esc(latam.capacidad_regional)}</span></div><p class="footer-note" style="margin-top:var(--space-2)">${esc(latam.nota)}</p></article>` : ""}
-      </div></section>
-
-    <p class="pending" style="margin-top:var(--space-5)"><b>Pruebas de capacidad.</b> ${esc(r.pruebas ? r.pruebas.nota : "")} · dueño: ${esc(r.pruebas ? r.pruebas.dueno : "Corporativo")}.</p>
   </div></section>`;
   return page({ title: "Entelgy · Relato corporativo · Hipatia", desc: r.sesenta_segundos, active: "entelgy", body });
 }
