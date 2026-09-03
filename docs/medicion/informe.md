@@ -12,7 +12,7 @@
 | 5 | Uso/estado/dueño, citable⇒sign_off, sin enlaces rotos | 🟢 (rotos: 0) |
 | 6 | Ninguna pantalla afirma agente/envío/integración | 🟢 |
 | 7 | URL propia y buscador en todas | 🟢 |
-| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 150 KB) |
+| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 144 KB) |
 | 9 | Reconocible por quien usó hipatia2 | ⚪ cualitativo |
 
 ## Clics desde la portada
@@ -38,7 +38,7 @@
 
 | Ruta | KB |
 |---|---|
-| /materiales | 150 |
+| /materiales | 144 |
 | /modernizacion/materiales | 62 |
 | /modernizacion/materiales | 46 |
 | /practicas/software-development/modernizacion | 44 |
@@ -51,7 +51,7 @@
 | /practicas/data-intelligence | 33 |
 | /practicas/process-intelligence | 33 |
 
-(máximo 150 KB de 114 páginas; imágenes aparte)
+(máximo 144 KB de 114 páginas; imágenes aparte)
 
 ## Navegador
 
