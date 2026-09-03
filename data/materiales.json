@@ -42,7 +42,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "primer_contacto",
-      "nota_de_uso": "Herramienta de 10 preguntas para enviar al cliente; devuelve un índice de exposición y el siguiente paso. Ejemplo cargado: Grupo Lantia (78). Pendiente el sign-off de Jorge de P0–P5.",
+      "nota_de_uso": "Herramienta de 10 preguntas para enviar al cliente; devuelve un índice de exposición y el siguiente paso. Ejemplo cargado: Grupo Lantia (78). Pendiente de que Jorge valide las diez preguntas y el índice.",
       "url_documento": "/autodiagnostico/grupo-lantia/",
       "origen": "autodiagnostico/grupo-lantia/index.html"
     },
