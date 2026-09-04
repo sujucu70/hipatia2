@@ -12,7 +12,7 @@
 | 5 | Uso/estado/dueño, citable⇒sign_off, sin enlaces rotos | 🟢 (rotos: 0) |
 | 6 | Ninguna pantalla afirma agente/envío/integración | 🟢 |
 | 7 | URL propia y buscador en todas | 🟢 |
-| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 141 KB) |
+| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 147 KB) |
 | 9 | Reconocible por quien usó hipatia2 | ⚪ cualitativo |
 
 ## Clics desde la portada
@@ -38,20 +38,24 @@
 
 | Ruta | KB |
 |---|---|
-| /materiales/todo/ | 141 |
-| /materiales/ | 107 |
-| /modernizacion/materiales/ficha-modernizacion.html | 74 |
-| /practicas/data-intelligence/data-intelligence/ | 58 |
-| /practicas/smart-operations/smartops-workplace/ | 58 |
-| /modernizacion/materiales/onepager-modernizacion.html | 57 |
-| /practicas/software-development/modernizacion/ | 57 |
-| /practicas/smart-operations/smartops-infra/ | 55 |
-| /autodiagnostico/grupo-lantia/ | 53 |
-| /practicas/process-intelligence/process-mining/ | 53 |
-| /practicas/software-development/mantenimiento/ | 53 |
-| /practicas/process-intelligence/process-automation-ai/ | 52 |
+| /materiales/todo/ | 147 |
+| /materiales/ | 112 |
+| /modernizacion/materiales/ficha-modernizacion.html | 78 |
+| /modernizacion/materiales/onepager-modernizacion.html | 62 |
+| /practicas/data-intelligence/data-intelligence/ | 62 |
+| /practicas/smart-operations/smartops-workplace/ | 62 |
+| /practicas/software-development/modernizacion/ | 61 |
+| /practicas/smart-operations/smartops-infra/ | 59 |
+| /autodiagnostico/grupo-lantia/ | 58 |
+| /practicas/process-intelligence/process-mining/ | 57 |
+| /practicas/software-development/mantenimiento/ | 57 |
+| /practicas/digital-change/iability/ | 56 |
 
-(máximo 141 KB de 139 páginas; imágenes aparte)
+(máximo 147 KB de 139 páginas; imágenes aparte)
+
+## Bloques opcionales de práctica
+
+- «Lo que presiona al CIO»: /practicas/smart-operations/
 
 ## Navegador
 
