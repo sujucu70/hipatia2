@@ -280,13 +280,14 @@ function llevatelo(m) {
     ${fila("Adaptar", adap ? `<a class="text-link" href="${esc(adap.url)}">${esc(DESCARGA_LABEL[adap.formato])}</a>` : pedir(), adap && adap.nota)}
   </div>`;
 }
-function materialMini(m) {
+function materialMini(m, solucionNombre) {
   if (!m) return "";
   const esRef = m.tipo === "Referencia";
   const chipPrincipal = esRef ? chipCitable(m) : chipUso(m.sale_al_cliente);
   const nota = esRef && m.citable === "citable" ? LEYENDA_CITA : (m.nota_de_uso || "");
+  // BE · cuando la pieza viene de una solución (carril sin pieza común), el eyebrow la nombra.
   return `<article class="card" style="padding:var(--space-4)">
-    <p class="eyebrow">${esc(m.tipo)}</p>
+    <p class="eyebrow">${esc(m.tipo)}${solucionNombre ? " · " + esc(solucionNombre) : ""}</p>
     <h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h4>
     <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(nota)}</p>
     <div class="chips" style="margin-top:var(--space-3)">${chipPrincipal}${chipVigencia(m.estado, m.fecha_revision)}</div>
@@ -492,7 +493,18 @@ function practicaPage(pr) {
   const comun = (pr.material_comun || []).map((id) => MAT[id]).filter((m) => m && m.sale_al_cliente !== "no");
   const cols = MOMENTOS.map((mo) => {
     const items = comun.filter((m) => m.momento_comercial === mo.key);
-    const inner = items.length ? items.map(materialMini).join("") : `<p class="pending">Sin pieza para este momento todavía.</p>`;
+    let inner;
+    if (items.length) inner = items.map((m) => materialMini(m)).join("");
+    else {
+      // BE · sin pieza común: el carril toma la mejor pieza de sus soluciones para ese momento
+      // (sale al cliente, vigente, no referencia; si hay varias, la de la primera solución en orden).
+      let prestada = null, solNombre = null;
+      for (const s of (pr.soluciones || [])) {
+        const cand = (s.materiales || []).map((id) => MAT[id]).find((m) => m && m.sale_al_cliente === "si" && m.estado === "vigente" && m.tipo !== "Referencia" && m.momento_comercial === mo.key);
+        if (cand) { prestada = cand; solNombre = s.nombre; break; }
+      }
+      inner = prestada ? materialMini(prestada, solNombre) : `<p class="pending">Sin pieza para este momento todavía.</p>`;
+    }
     return `<div><p class="eyebrow" style="margin-bottom:var(--space-2)">${esc(mo.label)}</p>${inner}</div>`;
   }).join("");
   main += `<section class="section" id="materiales"><h2 style="font-size:var(--font-size-2xl);margin-bottom:var(--space-4)">Material común para cliente</h2>
