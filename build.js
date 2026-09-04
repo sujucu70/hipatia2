@@ -148,6 +148,19 @@ function nombreCompleto(texto) {
   });
   return out;
 }
+// correo del dueño por nombre de pila (para «pídeselo a …» de Llévatelo, BC)
+const CORREO_MAP = (() => {
+  const map = {};
+  (read("personas.json").personas || []).forEach((p) => {
+    if (p.nombre && p.correo) { const first = p.nombre.split(" ")[0]; if (!map[first]) map[first] = p.correo; }
+  });
+  return map;
+})();
+function correoDe(nombre) {
+  if (!nombre) return null;
+  const first = String(nombre).trim().split(" ")[0];
+  return CORREO_MAP[first] || null;
+}
 
 const MOMENTOS = [
   { key: "primer_contacto", label: "Primer contacto" },
@@ -179,10 +192,34 @@ function sectionHead(eyebrow, h2, nota) {
 
 function materialLink(m) {
   if (!m) return "";
-  if (m.url_documento) return `<a class="btn" href="${esc(m.url_documento)}">Abrir el documento ↗</a>`;
+  if (m.url_documento) return `<a class="btn" href="${esc(m.url_documento)}">Abrir en pantalla ↗</a>`;
   // una referencia sin documento es autocontenida (su texto citable es el entregable), no un enlace por llegar
   if (m.tipo === "Referencia") return `<span class="chip">sin documento aparte</span>`;
   return `<span class="chip">enlace pendiente</span>`;
+}
+// BC · descargas por formato (presentar en pantalla, enviar PDF, adaptar PPT/Word/Excel)
+const DESCARGA_LABEL = { pdf: "PDF ↓", pptx: "PPT ↓", docx: "Word ↓", xlsx: "Excel ↓" };
+const DESCARGA_ORDEN = ["pdf", "pptx", "docx", "xlsx"];
+function descargasMini(m) {
+  return (m.descargas || []).slice().sort((a, b) => DESCARGA_ORDEN.indexOf(a.formato) - DESCARGA_ORDEN.indexOf(b.formato))
+    .map((d) => ` <a class="text-link llev-mini" href="${esc(d.url)}">${esc(DESCARGA_LABEL[d.formato] || d.formato.toUpperCase() + " ↓")}</a>`).join("");
+}
+// Bloque «Llévatelo» de la ficha: presentar / enviar / adaptar. Las referencias no lo llevan.
+function llevatelo(m) {
+  const byFmt = {}; (m.descargas || []).forEach((d) => { if (!byFmt[d.formato]) byFmt[d.formato] = d; });
+  const pedir = () => {
+    const correo = correoDe(m.dueno); const quien = esc(nombreCompleto(m.dueno) || "su dueño");
+    return correo ? `<a class="text-link" href="mailto:${esc(correo)}">pídeselo a ${quien}</a>` : `pídeselo a ${quien}`;
+  };
+  const fila = (uso, accion, nota) => `<div class="llev-fila"><span class="llev-uso">${esc(uso)}</span><span class="llev-accion">${accion}</span></div>${nota ? `<p class="footer-note llev-nota">${esc(nota)}</p>` : ""}`;
+  const presentar = m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}">Abrir en pantalla ↗</a>` : `<span class="footer-note">enlace pendiente</span>`;
+  const pdf = byFmt.pdf;
+  const adap = byFmt.pptx || byFmt.docx || byFmt.xlsx;
+  return `<div class="llevatelo"><p class="eyebrow">Llévatelo</p>
+    ${fila("Presentar", presentar)}
+    ${fila("Enviar", pdf ? `<a class="text-link" href="${esc(pdf.url)}">${DESCARGA_LABEL.pdf}</a>` : pedir(), pdf && pdf.nota)}
+    ${fila("Adaptar", adap ? `<a class="text-link" href="${esc(adap.url)}">${esc(DESCARGA_LABEL[adap.formato])}</a>` : pedir(), adap && adap.nota)}
+  </div>`;
 }
 function materialMini(m) {
   if (!m) return "";
@@ -473,10 +510,10 @@ function fichaBody(m) {
   }
   return `<p class="eyebrow">${esc(eyebrowTipo(m))}</p>
     <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">${esc(m.titulo)}</h3>
-    <p style="color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
     ${ref}
     <div style="margin-top:var(--space-4)">${meta}</div>
-    <p style="margin-top:var(--space-4)">${materialLink(m)}</p>`;
+    ${esRef ? `<p style="margin-top:var(--space-4)">${materialLink(m)}</p>` : llevatelo(m)}
+    <p style="margin-top:var(--space-4);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>`;
 }
 function materialFicha(m) {
   const body = `<section class="section"><div class="wrap" style="max-width:760px">
@@ -538,7 +575,7 @@ function materialCard(m) {
       <p class="eyebrow">${m.practica === "corporativo" ? esc(eyebrowTipo(m)) : esc(eyebrowTipo(m)) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
       <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
-      <div class="ed-mat-foot"><div class="chips">${m.tipo === "Referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(nombreCompleto(m.dueno))}</span></div><a class="ver-ficha" href="/materiales/${esc(m.id)}/">Ver ficha →</a></div>
+      <div class="ed-mat-foot"><div class="chips">${m.tipo === "Referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(nombreCompleto(m.dueno))}</span></div><span>${descargasMini(m)}<a class="ver-ficha" href="/materiales/${esc(m.id)}/">Ver ficha →</a></span></div>
     </article>`;
 }
 
@@ -604,7 +641,7 @@ function portadaPage(corp, practicas) {
       <p style="margin-top:var(--space-3)"><a class="text-link" href="/practicas/${esc(pr.id)}/">Ver la práctica →</a></p>
     </article>`;
     const enlace = m.url_documento
-      ? `<a class="${featured ? "text-link" : "text-link"}" href="${esc(m.url_documento)}">Abrir el documento ↗</a>`
+      ? `<a class="text-link" href="${esc(m.url_documento)}">Abrir en pantalla ↗</a>${descargasMini(m)}`
       : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`;
     return `<article class="${cls}">
       <p class="eyebrow">${m.practica === "corporativo" ? esc(eyebrowTipo(m)) : esc(eyebrowTipo(m)) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
@@ -694,7 +731,7 @@ function entelgyPage(corp, practicas) {
     <p class="eyebrow">${esc(eyebrowTipo(m))}</p>
     <h3 style="font-size:28px;margin:10px 0 8px"><a style="text-decoration:none;color:#fff" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
     <p style="max-width:44ch">${esc(m.nota_de_uso || "")}</p>
-    <div class="ed-mat-foot"><div class="chips">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}</div>${m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}">Abrir el documento ↗</a>` : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`}</div>
+    <div class="ed-mat-foot"><div class="chips">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}</div>${m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}">Abrir en pantalla ↗</a>${descargasMini(m)}` : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`}</div>
   </article>`;
   const matCards = (mat.ids || []).map((id, i) => MAT[id] ? (i === 0 ? deckFeat(MAT[id]) : materialCard(MAT[id])) : "").join("");
   const material = (mat.ids && mat.ids.length) ? `<section class="section">

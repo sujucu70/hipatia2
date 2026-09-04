@@ -27,6 +27,7 @@ function warn(m) { avisos.push(m); }
 // ---- Materiales ----
 // Vocabulario cerrado de tipos (revisión 14 · §6.5).
 const TIPOS_OK = new Set(["Deck", "One-pager", "Ficha", "Referencia", "Guía de discovery", "Guía interna", "Plantilla", "Herramienta", "Archivo"]);
+const DESCARGA_FORMATOS = new Set(["pdf", "pptx", "docx", "xlsx"]);
 const materiales = read("materiales.json").materiales;
 const idsPieza = new Set();
 materiales.forEach((p) => {
@@ -42,6 +43,14 @@ materiales.forEach((p) => {
   if (p.url_documento === null && p.estado !== "pendiente" && p.tipo !== "referencia") {
     // material vigente/revisar sin URL: debe entenderse como enlace pendiente, no roto
     warn(`pieza ${p.id} (${p.estado}) sin url_documento → se mostrará «enlace pendiente»`);
+  }
+  // BC · descargas por formato (opcional): formato del vocabulario y URL http(s)
+  if (p.descargas !== undefined) {
+    if (!Array.isArray(p.descargas)) err(`pieza ${p.id}: descargas debe ser una lista`);
+    else p.descargas.forEach((d, i) => {
+      if (!DESCARGA_FORMATOS.has(d.formato)) err(`pieza ${p.id}: descarga ${i} con formato inválido (${d.formato})`);
+      if (!/^https?:\/\//.test(d.url || "")) err(`pieza ${p.id}: descarga ${i} sin URL http(s)`);
+    });
   }
 });
 console.log(`Materiales: ${materiales.length} piezas`);
