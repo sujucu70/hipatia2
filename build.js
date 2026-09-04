@@ -660,7 +660,13 @@ function entelgyPage(corp, practicas) {
 
   // Cuando el relato necesita una pieza
   const mat = r.material || {};
-  const matCards = (mat.ids || []).map((id, i) => MAT[id] ? `<div class="${i === 0 ? "card-featured" : ""}">${materialCard(MAT[id])}</div>` : "").join("");
+  const deckFeat = (m) => `<article class="card-featured ed-mat">
+    <p class="eyebrow">${esc(eyebrowTipo(m))}</p>
+    <h3 style="font-size:28px;margin:10px 0 8px"><a style="text-decoration:none;color:#fff" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
+    <p style="max-width:44ch">${esc(m.nota_de_uso || "")}</p>
+    <div class="ed-mat-foot"><div class="chips">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}</div>${m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}">Abrir el documento ↗</a>` : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`}</div>
+  </article>`;
+  const matCards = (mat.ids || []).map((id, i) => MAT[id] ? (i === 0 ? deckFeat(MAT[id]) : materialCard(MAT[id])) : "").join("");
   const material = (mat.ids && mat.ids.length) ? `<section class="section">
     <p class="eyebrow">${esc(mat.eyebrow || "")}</p>
     <div class="grid grid-2" style="margin-top:var(--space-3)">${matCards}</div>
