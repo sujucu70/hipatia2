@@ -196,7 +196,6 @@
    de cada pantalla. Contraste AA. Sin animaciones.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Barlow+Condensed:wght@500;600;700&display=swap');
 
 :root{
   /* Sustitutos web de la familia display (DIN no está en la web);
@@ -280,7 +279,8 @@ img{ max-width:100%; display:block; }
 .grid-3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
 .grid-5{ grid-template-columns:repeat(5,minmax(0,1fr)); }
 .grid-2{ grid-template-columns:repeat(2,minmax(0,1fr)); }
-.eyebrow{ font-family:var(--font-family-mono); font-size:var(--font-size-xs); letter-spacing:var(--letter-spacing-wide); text-transform:uppercase; color:var(--color-text-accent); }
+.eyebrow{ display:inline-flex; align-items:center; gap:10px; font-family:var(--font-family-mono); font-size:var(--font-size-xs); letter-spacing:.08em; text-transform:uppercase; color:var(--color-purple-700); }
+.eyebrow::before{ content:""; width:28px; height:1px; background:currentColor; flex:0 0 auto; }
 
 /* ---------- Plegables «para prepararte» ---------- */
 details.fold{ border:1px solid var(--color-border-default); border-radius:var(--radius-lg); background:var(--color-surface); }
@@ -345,4 +345,72 @@ details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
   .card,details.fold{ border-color:#bbb; break-inside:avoid; }
   details.fold[open]>.fold-body,details.fold>.fold-body{ display:block; }
   a[href]::after{ content:""; }
+}
+
+/* ============================================================
+   Capa editorial (revisión 14 · E1–E9) · composición sobre tokens
+   ============================================================ */
+/* E1 · escala de titulares */
+.hero h1{ font-size:60px; line-height:1; letter-spacing:-.02em; }
+.section-head h2{ font-size:var(--font-size-4xl); line-height:1.02; letter-spacing:-.02em; margin-top:var(--space-1); }
+
+/* eyebrow sobre fondo oscuro */
+.hero .eyebrow, .band .eyebrow, .card-featured .eyebrow, .sol-nav .eyebrow{ color:var(--color-purple-300); }
+
+/* E7 · hero navy con arcos concéntricos (el paréntesis del logo) */
+.hero{ position:relative; overflow:hidden; background:var(--color-brand-navy); color:#fff; }
+.hero .wrap{ position:relative; z-index:1; }
+.hero h1{ color:#fff; }
+.hero .lede{ color:var(--color-slate-200); }
+.hero::before, .hero::after{ content:""; position:absolute; border-radius:50%; border:1px solid rgba(255,255,255,.14); pointer-events:none; z-index:0; }
+.hero::before{ width:760px; height:760px; right:-180px; top:-420px; box-shadow:0 0 0 70px rgba(255,255,255,.035), 0 0 0 150px rgba(255,255,255,.02); }
+.hero::after{ width:260px; height:260px; right:12%; bottom:-140px; border-color:rgba(133,90,198,.35); }
+
+/* E3 · bandas (una navy por página además del hero) */
+.band{ background:var(--color-brand-navy); color:#fff; }
+.band-slate{ background:var(--color-brand-slate); color:#fff; }
+.band h1, .band h2, .band h3, .band h4{ color:#fff; }
+.band p{ color:var(--color-slate-200); }
+.band .footer-note{ color:var(--color-slate-300); }
+
+/* E4 · cabecera de sección a dos columnas */
+.section-head{ display:grid; grid-template-columns:1.25fr .75fr; gap:32px; align-items:end; margin-bottom:var(--space-4); }
+.section-head p{ color:var(--color-text-secondary); font-size:var(--font-size-sm); }
+
+/* E6 · borde superior morado en tarjetas de contenido y de pieza */
+.card{ border-top:3px solid var(--color-brand-purple); }
+/* E5 · numeración en fantasma donde hay secuencia */
+.card-num{ position:relative; overflow:hidden; padding-bottom:56px; }
+.card-num > *{ position:relative; z-index:1; }
+.card-num .num{ position:absolute; right:14px; bottom:-14px; z-index:0; font-family:var(--font-family-display); font-weight:700; font-size:96px; line-height:1; color:var(--color-purple-100); letter-spacing:-.04em; }
+
+/* E6 · tarjeta destacada con sombra dura (una por página) */
+.card-featured{ position:relative; overflow:hidden; background:var(--color-brand-navy); color:#fff; border:0; border-radius:var(--radius-lg); padding:var(--space-5); box-shadow:8px 8px 0 var(--color-purple-300); }
+.card-featured h1, .card-featured h2, .card-featured h3, .card-featured h4{ color:#fff; }
+.card-featured p{ color:var(--color-slate-200); }
+.card-featured::after{ content:""; position:absolute; right:-60px; bottom:-90px; width:220px; height:220px; border-radius:50%; border:1px solid rgba(255,255,255,.18); pointer-events:none; }
+.card-featured > *{ position:relative; z-index:1; }
+
+/* método · «Evita:» separado y en mono */
+.evita{ margin-top:var(--space-2); font-family:var(--font-family-mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--color-purple-700); }
+
+/* Oficina · fases como lista con borde izquierdo morado */
+.fases{ list-style:none; padding:0; margin:var(--space-3) 0 0; display:grid; gap:10px; }
+.fases li{ background:var(--color-surface); border:1px solid var(--color-border-subtle); border-left:3px solid var(--color-brand-purple); padding:var(--space-3) var(--space-4); font-size:var(--font-size-sm); }
+
+/* «Dónde entramos» · columnas de práctica sobre navy */
+.band .grid-5{ border-top:1px solid rgba(255,255,255,.16); border-bottom:1px solid rgba(255,255,255,.16); gap:0; }
+.sol-nav{ background:transparent; border:0; border-top:0; border-radius:0; border-right:1px solid rgba(255,255,255,.16); color:#fff; padding:22px 18px; }
+.sol-nav:last-child{ border-right:0; }
+.sol-nav h3{ color:#fff; }
+.sol-nav p{ color:var(--color-slate-300); font-size:var(--font-size-sm); }
+.sol-nav .num{ font-family:var(--font-family-mono); font-size:11px; color:var(--color-purple-300); letter-spacing:.06em; }
+.sol-nav .footer-note{ color:var(--color-slate-300); }
+.sol-nav .text-link{ color:var(--color-purple-300); }
+
+@media (max-width:900px){
+  .hero h1{ font-size:44px; }
+  .section-head{ grid-template-columns:1fr; gap:var(--space-2); }
+  .band .grid-5{ border:0; }
+  .sol-nav{ border-right:0; border-bottom:1px solid rgba(255,255,255,.16); }
 }
