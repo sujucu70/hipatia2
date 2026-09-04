@@ -1,8 +1,19 @@
 /* ============================================================
    Hipatia v3 · styles.css
+   Bloque 0: fuentes servidas desde el portal (woff2, subconjunto latin, OFL 1.1)
    Bloque 1: tokens de entelgy-design-tokens.css (tal cual, sin brand-refresh)
    Bloque 2: componentes del catálogo (cabecera, pie, tarjetas, chips, modal, impresión)
    ============================================================ */
+
+/* ---- Fuentes locales · copiadas por scripts/fonts.js desde @fontsource ---- */
+@font-face{ font-family:'Barlow Condensed'; font-style:normal; font-weight:500; font-display:swap; src:url("/assets/fonts/barlow-condensed-500.woff2") format("woff2"); }
+@font-face{ font-family:'Barlow Condensed'; font-style:normal; font-weight:600; font-display:swap; src:url("/assets/fonts/barlow-condensed-600.woff2") format("woff2"); }
+@font-face{ font-family:'Barlow Condensed'; font-style:normal; font-weight:700; font-display:swap; src:url("/assets/fonts/barlow-condensed-700.woff2") format("woff2"); }
+@font-face{ font-family:'Roboto'; font-style:normal; font-weight:400; font-display:swap; src:url("/assets/fonts/roboto-400.woff2") format("woff2"); }
+@font-face{ font-family:'Roboto'; font-style:normal; font-weight:500; font-display:swap; src:url("/assets/fonts/roboto-500.woff2") format("woff2"); }
+@font-face{ font-family:'Roboto'; font-style:normal; font-weight:700; font-display:swap; src:url("/assets/fonts/roboto-700.woff2") format("woff2"); }
+@font-face{ font-family:'JetBrains Mono'; font-style:normal; font-weight:400; font-display:swap; src:url("/assets/fonts/jetbrains-mono-400.woff2") format("woff2"); }
+@font-face{ font-family:'JetBrains Mono'; font-style:normal; font-weight:500; font-display:swap; src:url("/assets/fonts/jetbrains-mono-500.woff2") format("woff2"); }
 
 /* ============================================================
    ENTELGY DESIGN SYSTEM — tokens.css

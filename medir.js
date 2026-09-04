@@ -156,16 +156,7 @@ async function withBrowser() {
     for (const route of targets) {
       const page = await ctx.newPage();
       const errs = [];
-      page.on("console", (m) => {
-        if (m.type() !== "error") return;
-        const url = (m.location() && m.location().url) || "";
-        // El sandbox de medición no tiene red: las fuentes externas (Google Fonts)
-        // fallan con net::ERR_CONNECTION_RESET. No es un error de código de la página
-        // —en la build desplegada cargan—, así que no cuenta como error de consola.
-        // Cualquier otro recurso roto (local, 404) sí se registra.
-        if (/fonts\.(googleapis|gstatic)\.com/.test(url) || /fonts\.(googleapis|gstatic)\.com/.test(m.text())) return;
-        errs.push(m.text());
-      });
+      page.on("console", (m) => { if (m.type() === "error") errs.push(m.text()); });
       page.on("pageerror", (e) => errs.push(String(e)));
       await page.goto(`http://localhost:${PORT}${route}`, { waitUntil: "networkidle" }).catch(() => {});
       if (width === 1440) {
@@ -229,7 +220,6 @@ function tick(ok) { return ok ? "🟢" : "🔴"; }
     md += `- Errores de consola: **${nav.consola.length}** ${nav.consola.length ? "→ " + nav.consola.map((x) => x.route).join(", ") : ""}\n`;
     md += `- Rutas con posible bajo contraste: **${nav.contraste.length}** ${nav.contraste.length ? "" : "(ninguna en la muestra)"}\n\n`;
     if (nav.contraste.length) { md += "| Ruta | Texto | Ratio | Mín |\n|---|---|---|---|\n"; nav.contraste.forEach((r) => r.bad.forEach((b) => { md += `| ${r.route} | ${b.t} | ${b.ratio} | ${b.min} |\n`; })); md += "\n"; }
-    md += `> Nota sobre las fuentes: este entorno de medición no tiene salida a la red, así que Barlow Condensed y Roboto (cargadas por \`<link>\` desde Google Fonts) no bajan y las capturas salen con la tipografía de respaldo del sistema. En la build desplegada, con red, las fuentes cargan y el H1 sale en Barlow Condensed. Este fallo de red de las fuentes externas no cuenta como error de consola.\n\n`;
   }
   fs.writeFileSync(path.join(OUT, "informe.md"), md, "utf8");
   console.log("Escrito docs/medicion/informe.md");
