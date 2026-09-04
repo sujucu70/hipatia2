@@ -678,8 +678,10 @@ function portadaPage(corp, practicas) {
       <div class="sol-nav-foot"><span class="footer-note">${esc(nombreCompleto(pr.responsable))}</span><a class="text-link" href="${dest}">${solUnica ? "Ver la solución →" : "Ver práctica →"}</a></div>
     </article>`;
   }).join("");
-  const oferta = `<div class="wrap"><section class="section">${sectionHead("La oferta", "Cinco prácticas. Entra por la que necesite tu cliente.", "Entra en la práctica o directamente en una de sus soluciones.")}</section></div>
-    <section class="band band-navy" style="padding:40px 0 44px"><div class="wrap"><div class="grid grid-5 tira">${cols}</div></div></section>`;
+  const oferta = `<section class="section band band-navy oferta" style="padding:48px 0"><div class="wrap">
+      ${sectionHead("La oferta", "Cinco prácticas. Entra por la que necesite tu cliente.", "Entra en la práctica o directamente en una de sus soluciones.")}
+      <div class="grid grid-5 tira" style="margin-top:var(--space-5)">${cols}</div>
+    </div></section>`;
 
   // Regla de portada (§6.3 · rev 5): una pieza por práctica + el deck corporativo.
   // Pieza = sale al cliente, vigente, no referencia; momento «reunión» preferente; a
