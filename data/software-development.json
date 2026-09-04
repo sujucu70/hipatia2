@@ -50,30 +50,30 @@
       "dueno": "Jorge",
       "fecha_objetivo": null,
       "propuesta": {
-        "que_es": "Cogemos las aplicaciones legacy que ya frenan al negocio y las modernizamos con enfoque Spec-Driven e IA, sin parar la operación.",
+        "que_es": "Cogemos las aplicaciones legacy que ya frenan al negocio y las modernizamos sin parar la operación, con el método Spec-Driven: la IA documenta y traduce el código que ya existe, y el equipo de Entelgy gobierna y valida cada paso.",
         "a_quien": "Empresas con +5 años de stack propio y un core que se usa a diario. Hablas con el CIO o el director de desarrollo; por el coste, antes o después aparece el CFO.",
         "senal": "Una aplicación que nadie quiere tocar porque quien la construyó ya no está. Ahí hay caso.",
-        "por_que_nosotros": "El mercado moderniza por horas y pidiendo partida nueva. Entelgy mide con Foreworth la productividad que recupera en el mantenimiento y reinvierte esa eficiencia en modernizar las mismas aplicaciones, sin aumento neto del presupuesto ya comprometido. Que lo mida un externo es lo que aguanta delante del CFO.",
+        "por_que_nosotros": "El mercado moderniza por horas y pidiendo partida nueva. Entelgy mide la productividad que recupera en el mantenimiento con Foreworth, una medición externa, y reinvierte esa eficiencia en modernizar las mismas aplicaciones sin aumentar el presupuesto ya comprometido. Que lo mida un tercero es lo que aguanta delante del CFO.",
         "diferenciador": "Reinvertir la eficiencia del mantenimiento en modernizar, sin presupuesto nuevo y medido por un externo.",
         "objecion_principal": {
           "texto": "Funciona. ¿Para qué tocarlo?",
-          "respuesta": "Funciona hoy. El día que se rompa, quien lo construyó ya no está — y cada año que sigue ahí cuesta más sostenerlo. El primer paso solo mide: el Assessment dice qué tocar y qué dejar, sin comprometer al cliente a nada."
+          "respuesta": "Funciona hoy. El día que se rompa, quien lo construyó ya no está, y cada año que sigue ahí cuesta más sostenerlo. El primer paso solo mide: el Assessment dice qué tocar y qué dejar, y no obliga al cliente a seguir con nosotros después."
         },
         "como_abres": "«¿Qué % del gasto IT de este año financia sistemas que vas a necesitar dentro de tres?»",
         "primer_paso": {
           "titulo": "Assessment de modernización",
           "plazo": "dos semanas",
-          "nota": "Primer contrato. Entrega el triaje del portfolio (qué se moderniza, qué no, qué va a mantenimiento) y el business case para Dirección. La estrategia, el gobierno y el método se quedan en Entelgy; sin precio en este punto."
+          "nota": "Primer contrato. Entrega el triaje del portfolio (qué se moderniza, qué no, qué pasa a mantenimiento) y el business case para Dirección. El método y el plan de gobierno no se entregan sueltos: forman parte del proyecto que viene después. Precio: por cuenta, con Jorge."
         }
       },
       "kit": {
         "frases_cuenta": {
-          "nota": "Muestra a partir del escenario Grupo Lantia (aseguradora sintética: core de pólizas Java de 11 años, sin arquitecto cloud, deuda ~1,8 M€/año, DORA encima). En una futura fase las genera un agente por cuenta.",
+          "nota": "Ejemplo sobre una cuenta ficticia, Grupo Lantia (aseguradora: core de pólizas Java de 11 años, sin arquitecto cloud, deuda técnica de unos 1,8 M€ al año, DORA encima). Cambia los datos por los de tu cuenta.",
           "frases": [
             {
               "angulo": "Por la regulación",
               "cuando": "abre con la Dir. de Sistemas / CIO",
-              "texto": "DORA ya os pide demostrar la resiliencia del core de pólizas, y el AI Act pone fecha: diciembre de 2027. Documentar ese core deja de ser opcional — lo que os propongo es que salga del mantenimiento que ya pagáis, no de un proyecto extra."
+              "texto": "DORA ya os pide demostrar la resiliencia del core de pólizas; y si ese core decide precio o riesgo con IA, el AI Act le pone fecha: diciembre de 2027. Documentar ese core deja de ser opcional, y lo que os propongo es que salga del mantenimiento que ya pagáis, no de un proyecto extra."
             },
             {
               "angulo": "Por el dinero",
@@ -86,7 +86,7 @@
               "texto": "Un core Java de 11 años sin arquitecto cloud significa que el conocimiento vive en dos o tres cabezas. En Navarra documentamos 1.000 horas de carga funcional en una semana — el conocimiento se recupera del código antes de que se vaya con la gente."
             }
           ],
-          "regla": "Estas frases abren la conversación y cualifican; no la sostienen entera. Si el cliente muerde, el siguiente paso es traer al especialista del área — no improvisar profundidad técnica."
+          "regla": "Estas frases abren y cualifican; no sostienen la reunión entera. Cuando el cliente muerde, el siguiente paso es traer a Jorge."
         },
         "pitch_por_rol": [
           {
@@ -107,22 +107,22 @@
           {
             "rol": "Dir. Ops",
             "pregunta": "¿Cuántos pilotos llevan +1 año sin producción?",
-            "le_mueve": "productividad certificada por Foreworth."
+            "le_mueve": "salir del piloto con una entrega que se mide (Foreworth), no otro piloto."
           }
         ],
-        "pitch_nota": "El presupuesto lo mueven CFO/CCO. Entra por ahí siempre que puedas.",
+        "pitch_nota": "El presupuesto suele moverlo el CFO o el CCO.",
         "objeciones": [
           {
             "texto": "Ya tenemos proveedor de desarrollo.",
-            "respuesta": "No pedimos cambiarlo. Complementamos en la pieza que más duele, con métricas auditables. ¿Tu proveedor puede decirte qué productividad entregó el mes pasado, certificada por un tercero?"
+            "respuesta": "No pedimos cambiarlo. Complementamos en la pieza que más duele, con métricas auditables. ¿Tu proveedor puede decirte qué productividad entregó el mes pasado, medida por un tercero?"
           },
           {
             "texto": "No vemos urgencia ahora mismo.",
-            "respuesta": "La deuda técnica crece sola (Gartner: 20–40% del valor de los activos). Y el AI Act obliga en sistemas de alto riesgo en diciembre de 2027."
+            "respuesta": "La deuda técnica no espera: cada año cuesta más sostener lo mismo y queda menos gente que lo conozca. Y el AI Act pone fecha a los sistemas de alto riesgo: diciembre de 2027. Quien empieza ahora llega con margen; quien espera, con semanas."
           },
           {
             "texto": "Esto nos lo hace cualquier proveedor.",
-            "respuesta": "Pídeles que firmen lo que firmamos nosotros: reinvertir la eficiencia recuperada en el propio mantenimiento, sin subir el presupuesto, con la productividad medida por un tercero (Foreworth). Esa firma no la encuentras en otra propuesta."
+            "respuesta": "Pídeles que firmen lo que firmamos nosotros: reinvertir la eficiencia recuperada en el propio mantenimiento, sin subir el presupuesto, con la productividad medida por un tercero (Foreworth). Nosotros lo ponemos por escrito."
           }
         ],
         "preguntas_cualificacion": [

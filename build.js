@@ -212,7 +212,7 @@ function solucionPage(pr, s) {
         <p style="font-style:italic">«${esc(r.frase_reunion || "")}»</p>
         <div class="chips" style="margin-top:var(--space-3)">${chipCitable(r)}</div>
       </article>`).join("") + `</div>
-      <p class="footer-note" style="margin-top:var(--space-3);color:var(--color-text-secondary)">Elige la referencia por parecido de situación, no por notoriedad. Citable en presentación; el envío formal al cliente se autoriza por cuenta.</p>`;
+      <p class="footer-note" style="margin-top:var(--space-3);color:var(--color-text-secondary)">Citable en presentación. El envío formal de la referencia al cliente se autoriza por cuenta.</p>`;
   } else {
     refsHtml = `<p class="pending">Sin referencia autorizada para esta solución · pídesela a <b>${esc(s.especialista)}</b>.</p>`;
   }
