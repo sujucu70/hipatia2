@@ -5,8 +5,8 @@
   "responsable": "Jorge",
   "propuesta": "Acompañamos el ciclo de vida de las aplicaciones para que evolucionen con criterio de negocio, calidad y operación: desde el legado y la especificación hasta la entrega, la calidad y la operación.",
   "que_cubre": "Modernizar aplicaciones críticas, sostener y evolucionar lo que está en producción, y aumentar la capacidad de los equipos con especialistas y método (Spec-Driven, Centros de Excelencia).",
-  "que_no_prometer": "No se promete una modernización, migración o plazo cerrado sin evaluar la aplicación, sus dependencias y su criticidad. No es solo desarrollo de funcionalidades: la conversación incluye sostenibilidad, calidad y capacidad de cambio.",
-  "pregunta_comun": "¿Qué aplicación o parte del ciclo está limitando ahora la capacidad de cambiar con seguridad?",
+  "que_no_prometer": "No cerramos plazo ni alcance de una modernización sin haber visto la aplicación, sus dependencias y lo crítica que es. Tampoco es solo hacer funcionalidades: hablamos de sostener el sistema, de su calidad y de cuánto cuesta cambiarlo.",
+  "pregunta_comun": "¿Qué aplicación os frena hoy más de lo que os ayuda?",
   "capacidades": [
     {
       "paso": "01",
@@ -29,7 +29,7 @@
       "texto": "Activar equipos técnicos aumentados desde los Centros de Excelencia, con una entrega que se puede medir."
     }
   ],
-  "capacidades_nota": "Spec-Driven Development y Factoría SEAS son capacidades de la práctica (Especificar, Aumentar), no soluciones.",
+  "capacidades_nota": "Si te preguntan por Spec-Driven o por la Factoría SEAS: no son soluciones aparte, van dentro de estas tres.",
   "discovery": [
     "¿Qué parte de vuestro portfolio da más miedo tocar?",
     "¿Qué proporción del presupuesto se va en sostener lo existente, en vez de construir lo que necesitáis?",

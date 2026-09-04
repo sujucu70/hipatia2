@@ -305,8 +305,7 @@ function practicaPage(pr) {
       <div class="chips">${s.estado === "vigente" ? chipVigencia("vigente", null) : chipVigencia("pendiente", s.fecha_objetivo)}<span class="chip">${esc(s.especialista)}</span></div>
     </a>`).join("");
   main += `<section class="section" id="soluciones"><h2 style="font-size:var(--font-size-2xl);margin-bottom:var(--space-4)">Soluciones</h2>
-    <div class="grid grid-2">${solCards}</div>
-    ${pr.solucion_global_nota ? `<p class="footer-note" style="margin-top:var(--space-3);color:var(--color-text-secondary)">${esc(pr.solucion_global_nota)}</p>` : ""}</section>`;
+    <div class="grid grid-2">${solCards}</div></section>`;
 
   const comun = (pr.material_comun || []).map((id) => MAT[id]).filter(Boolean);
   main += `<section class="section" id="materiales"><h2 style="font-size:var(--font-size-2xl);margin-bottom:var(--space-4)">Material común para cliente</h2>
@@ -315,12 +314,12 @@ function practicaPage(pr) {
 
   const asunto = encodeURIComponent(`Hipatia · ${pr.nombre}: consulta`);
   main += `<section class="section" id="responsable"><h2 style="font-size:var(--font-size-2xl)">A quién llamar</h2>
-    <p style="margin-top:var(--space-2)">Responsable de la práctica: <b>${esc(pr.responsable)}</b>. Especialista por solución en cada ficha. <a class="text-link" href="/contactos/">Ver contactos</a>.</p>
+    <p style="margin-top:var(--space-2)">Responsable de la práctica: <b>${esc(pr.responsable)}</b>. Cada solución lleva su especialista. <a class="text-link" href="/contactos/">Ver contactos</a>.</p>
     <p style="margin-top:var(--space-3)"><a class="btn btn-cta" href="mailto:?subject=${asunto}">¿Falta algo? Escribe al responsable</a></p></section>`;
 
   main += `</div>`;
   const body = `<section class="section"><div class="wrap"><div class="with-aside">${aside}<div>${main}</div></div></div></section>`;
-  return page({ title: `${pr.nombre} · Hipatia`, desc: pr.propuesta, active: "practicas", body });
+  return page({ title: `${pr.nombre} · Hipatia`, desc: pr.propuesta_portada || pr.propuesta, active: "practicas", body });
 }
 
 // =====================================================================
@@ -340,7 +339,7 @@ function practicasIndex(practicas) {
   const body = `<section class="section"><div class="wrap">
     <p class="eyebrow">Catálogo</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-4)">Prácticas</h1>
-    <p class="lede" style="margin-bottom:var(--space-6)">Cinco prácticas, una misma forma de transformar. Entra por la que responde a la tensión que tiene delante el cliente.</p>
+    <p class="lede" style="margin-bottom:var(--space-6)">Cinco prácticas, un mismo método. Entra por la que responde al problema que tiene delante tu cliente.</p>
     <div class="grid grid-2">${cards}</div>
   </div></section>`;
   return page({ title: "Prácticas · Hipatia", desc: "Las cinco prácticas de Entelgy y sus soluciones.", active: "practicas", body });

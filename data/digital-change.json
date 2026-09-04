@@ -4,14 +4,14 @@
   "orden": "05",
   "responsable": "Alfredo",
   "propuesta": "Conseguimos que la IA y las nuevas capacidades digitales se adopten, se gobiernen y dejen impacto real en las personas y la organización.",
-  "que_cubre": "Acompañar el cambio de extremo a extremo, convertir el despliegue en uso sostenido y activar cultura, conocimiento y gobierno humano de la IA.",
-  "que_no_prometer": "No se presenta como una campaña de comunicación ni como formación desconectada de un cambio operativo concreto. La adopción de IA requiere revisar propósito, personas, procesos y reglas de uso; habilitar una herramienta no basta.",
-  "pregunta_comun": "¿Qué tendría que cambiar en el trabajo real de las personas para que esta iniciativa genere el impacto que esperáis?",
+  "que_cubre": "Llevar el cambio de principio a fin: convertir el despliegue en uso sostenido y activar cultura, conocimiento y gobierno humano de la IA.",
+  "que_no_prometer": "No es una campaña de comunicación ni una formación suelta: va pegada a un cambio concreto en cómo se trabaja. Adoptar IA obliga a revisar para qué, con quién, en qué procesos y con qué reglas; dar acceso a una herramienta no basta.",
+  "pregunta_comun": "¿Qué tendría que cambiar en el día a día de la gente para que esto se use de verdad?",
   "capacidades": [
     {
       "paso": "01",
       "titulo": "Transformar",
-      "texto": "Acompañar un cambio grande de extremo a extremo, conectando tecnología, formas de trabajar y resultados buscados."
+      "texto": "Llevar un cambio grande de principio a fin, conectando tecnología, formas de trabajar y el resultado que se busca."
     },
     {
       "paso": "02",

@@ -4,9 +4,9 @@
   "orden": "03",
   "responsable": "Daniela",
   "propuesta": "Convertimos datos y capacidades de IA en decisiones, productos y operaciones gobernadas y útiles para el negocio.",
-  "que_cubre": "Gobierno del dato y de los modelos, analítica para decidir e IA aplicada, conectando calidad, gobierno, analítica e IA para que el dato sirva a una decisión real.",
-  "que_no_prometer": "No se vende IA como fin en sí mismo ni se prometen resultados sin revisar datos, gobierno, riesgos y adopción. La disponibilidad de datos no equivale por sí sola a calidad, permiso de uso o preparación para un caso de IA.",
-  "pregunta_comun": "¿Qué decisión, operación o experiencia queréis mejorar y qué os impide hoy usar los datos con suficiente confianza?",
+  "que_cubre": "Gobierno del dato y de los modelos, analítica para decidir e IA aplicada, conectados para que el dato sirva a una decisión real.",
+  "que_no_prometer": "No vendemos IA porque sí ni prometemos resultados sin revisar antes datos, gobierno, riesgos y adopción. Tener datos no significa que sean de calidad, que se puedan usar o que sirvan para un caso de IA.",
+  "pregunta_comun": "¿Qué decisión tomáis hoy sin fiaros del todo del dato que tenéis?",
   "capacidades": [
     {
       "paso": "01",
@@ -37,7 +37,7 @@
   "primer_avance": {
     "titulo": "Assessment de conformidad y estado del dato",
     "plazo": null,
-    "nota": "Primer avance para contrastar caso de uso, datos implicados, gobierno y condiciones de producción. Plazo y alcance se validan con la especialista."
+    "nota": "Contrasta caso de uso, datos implicados, gobierno y condiciones de producción. Plazo y alcance se validan con la especialista."
   },
   "soluciones": [
     {
@@ -55,7 +55,7 @@
         "por_que_nosotros": "El valor del dato y la IA aparece cuando están ligados a una decisión u operación concreta, no cuando se acumulan capacidades sin uso; gobierno, analítica e IA avanzan con negocio y operación.",
         "diferenciador": null,
         "objecion_principal": null,
-        "como_abres": "«¿Qué decisión, operación o experiencia queréis mejorar y qué os impide hoy usar los datos con suficiente confianza?»",
+        "como_abres": "«¿Qué decisión tomáis hoy sin fiaros del todo del dato que tenéis?»",
         "primer_paso": {
           "titulo": "Assessment de conformidad y estado del dato",
           "plazo": null,
@@ -100,11 +100,11 @@
       "es_solucion_unica": true
     }
   ],
-  "solucion_global_nota": "Data Intelligence es una única solución con el nombre de la práctica (revisión 5, 3 sep): sus cuatro capacidades —gobernar el dato, gobernar los modelos, decidir con analítica, predecir y operar— viven dentro de la página de solución. Cuando Daniela valide el desglose, se abre en soluciones.",
   "material_comun": [
     "dataai-producto",
     "dataai-onepager",
     "dataai-ficha"
   ],
-  "propuesta_portada": "Que el dato sirva para decidir: gobierno de datos y modelos, analítica e IA en producción."
+  "propuesta_portada": "Que el dato sirva para decidir: gobierno de datos y modelos, analítica e IA en producción.",
+  "nota_interna": "Data Intelligence es una única solución con el nombre de la práctica (revisión 5, 3 sep): sus cuatro capacidades —gobernar el dato, gobernar los modelos, decidir con analítica, predecir y operar— viven dentro de la página de solución. Cuando Daniela valide el desglose, se abre en soluciones."
 }
