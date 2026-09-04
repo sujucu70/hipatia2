@@ -87,6 +87,14 @@
           if (f.getAttribute("data-filter") === "uso") f.checked = false;
         });
       }
+      var tip = params.get("tipo");
+      if (tip) {
+        filters.forEach(function (f) {
+          if (f.getAttribute("data-filter") === "tipo") f.checked = (f.value === tip);
+          // al entrar por un tipo desde la portada, no restringir por uso
+          if (f.getAttribute("data-filter") === "uso") f.checked = false;
+        });
+      }
     } catch (e) {}
     apply();
   }

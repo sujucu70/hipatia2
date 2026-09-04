@@ -25,11 +25,14 @@ function err(m) { errores.push(m); }
 function warn(m) { avisos.push(m); }
 
 // ---- Materiales ----
+// Vocabulario cerrado de tipos (revisión 14 · §6.5).
+const TIPOS_OK = new Set(["Deck", "One-pager", "Ficha", "Referencia", "Guía de discovery", "Guía interna", "Plantilla", "Herramienta", "Archivo"]);
 const materiales = read("materiales.json").materiales;
 const idsPieza = new Set();
 materiales.forEach((p) => {
   if (idsPieza.has(p.id)) err(`pieza duplicada: ${p.id}`);
   idsPieza.add(p.id);
+  if (p.tipo && !TIPOS_OK.has(p.tipo)) err(`pieza ${p.id} con tipo fuera del vocabulario (rev14): ${p.tipo}`);
   if (!p.dueno) err(`pieza ${p.id} sin dueño`);
   if (!p.estado) err(`pieza ${p.id} sin estado`);
   if (!p.sale_al_cliente) err(`pieza ${p.id} sin uso (sale_al_cliente)`);

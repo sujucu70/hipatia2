@@ -321,6 +321,8 @@ Regla de carga (de P2, `arquitectura-de-contenido.md`): una pieza no se publica 
 | Confianza | hecho (fuente · fecha) · hipótesis · borrador de Hipatia | espacio de oportunidad |
 | Acreditación | acreditado en el área (fecha) | cabecera de práctica |
 
+Tipo de pieza (revisión 14): Deck · One-pager · Ficha · Referencia · Guía de discovery · Guía interna · Plantilla · Herramienta · Archivo; `subtipo` libre, se pinta y se busca, no filtra.
+
 ### 6.6 Identidad visual
 
 Tokens de `entelgy-design-tokens.css` sin capa de refresco encima: navy #041C2C para fondos oscuros y titulares, slate para texto secundario, morado #855AC6 para chips de estado y acentos, naranja #E05730 solo en el CTA principal de cada pantalla. DIN para titulares, Roboto para cuerpo, mono solo para etiquetas pequeñas. Contraste mínimo AA en todo texto; prohibido texto de color sobre fondo del mismo color con opacidad. Logotipo Entelgy de los ficheros `entelgy-logo-*.png` de `entelgychat`. Nada de morado #7C4DBC ni Hanken Grotesk de P1.

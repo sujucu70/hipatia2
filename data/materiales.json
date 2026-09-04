@@ -3,7 +3,7 @@
     {
       "id": "mod-correo-apertura",
       "titulo": "Correo de apertura",
-      "tipo": "plantilla de correo",
+      "tipo": "Plantilla",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "cliente",
@@ -22,12 +22,13 @@
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "En preparación · dueño: Jorge · fecha objetivo: sept 2026. Correo de apertura con enlace al autodiagnóstico; primero para el sector Financiero.",
       "url_documento": null,
-      "origen": "recorrido/index.html · P0-3"
+      "origen": "recorrido/index.html · P0-3",
+      "subtipo": "Correo de apertura"
     },
     {
       "id": "mod-autodiagnostico",
       "titulo": "Autodiagnóstico de modernización",
-      "tipo": "herramienta",
+      "tipo": "Herramienta",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "cliente",
@@ -44,12 +45,13 @@
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Diez preguntas que el cliente responde solo: le devuelven cuánto le expone su legacy y cuál es el siguiente paso. Lo que abre hoy es el ejemplo de Grupo Lantia, una cuenta ficticia. Antes de enviárselo a una cuenta real, Jorge tiene que validar las preguntas y el índice.",
       "url_documento": "/autodiagnostico/grupo-lantia/",
-      "origen": "autodiagnostico/grupo-lantia/index.html"
+      "origen": "autodiagnostico/grupo-lantia/index.html",
+      "subtipo": "Autodiagnóstico"
     },
     {
       "id": "mod-deck-ejecutivo",
       "titulo": "Deck ejecutivo C-Suite · Modernización",
-      "tipo": "deck",
+      "tipo": "Deck",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "cliente",
@@ -66,12 +68,13 @@
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck de la práctica para la reunión introductoria (v3, jul 2026). Jorge tiene tres cambios pendientes: la slide de Asistencia Técnica, la de referencias y un anexo de créditos. Sirve para preparar la reunión; no lo envíes hasta la versión corregida.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/decks/entelgy-ciclo-software.html",
-      "origen": "estatus-v1 · índice de materiales"
+      "origen": "estatus-v1 · índice de materiales",
+      "subtipo": "Práctica"
     },
     {
       "id": "mod-onepager",
       "titulo": "One-pager · Modernización",
-      "tipo": "one-pager",
+      "tipo": "One-pager",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "cliente",
@@ -93,7 +96,7 @@
     {
       "id": "mod-ficha-servicio",
       "titulo": "Ficha de servicio · Modernización",
-      "tipo": "ficha",
+      "tipo": "Ficha",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "cliente",
@@ -110,12 +113,13 @@
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Ficha de dos caras para dejar al cliente; valida ante IT y compras. V1 provisional: menciona el reparto del 40% del ahorro y Jorge aún tiene que confirmar que puede ir en un documento público. Si el cliente pregunta por esa cifra, remite a Jorge.",
       "url_documento": "/modernizacion/materiales/ficha-modernizacion.html",
-      "origen": "modernizacion/materiales/ficha-modernizacion.html"
+      "origen": "modernizacion/materiales/ficha-modernizacion.html",
+      "subtipo": "De servicio"
     },
     {
       "id": "mod-presentacion-spec",
       "titulo": "Presentación técnica · Spec-Driven",
-      "tipo": "deck",
+      "tipo": "Deck",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "cliente",
@@ -132,12 +136,13 @@
       "momento_comercial": "reunion",
       "nota_de_uso": "En preparación · dueño: Jorge · fecha objetivo: sept 2026. Deck técnico Spec-Driven para la reunión avanzada.",
       "url_documento": null,
-      "origen": "estatus-v1 · índice de materiales"
+      "origen": "estatus-v1 · índice de materiales",
+      "subtipo": "Técnico"
     },
     {
       "id": "mod-business-case",
       "titulo": "Business case tipo · Modernización",
-      "tipo": "plantilla",
+      "tipo": "Plantilla",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "cliente",
@@ -154,12 +159,13 @@
       "momento_comercial": "reunion",
       "nota_de_uso": "En preparación · dueño: Jorge / producto · fecha objetivo: sept 2026. Plantilla para armar el business case tras el assessment. Uso interno hasta decidir qué cifras de productividad (Foreworth) pueden salir al cliente.",
       "url_documento": null,
-      "origen": "paquete-jorge/06-indice-materiales.md"
+      "origen": "paquete-jorge/06-indice-materiales.md",
+      "subtipo": "Business case"
     },
     {
       "id": "mod-mensajes-clave",
       "titulo": "Mensajes clave del área",
-      "tipo": "guía interna",
+      "tipo": "Guía interna",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "conocer",
@@ -176,12 +182,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Las cuatro keynotes por dolor, como recordatorio interno. No sale al cliente.",
       "url_documento": null,
-      "origen": "paquete-jorge/04-mensajes-clave.md"
+      "origen": "paquete-jorge/04-mensajes-clave.md",
+      "subtipo": "Mensajes clave"
     },
     {
       "id": "mod-objeciones",
       "titulo": "Objeciones y respuestas · completa",
-      "tipo": "guía interna",
+      "tipo": "Guía interna",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "conocer",
@@ -198,12 +205,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Pieza completa a consolidar desde el Argumentario UCE (trabajo de forma, no de fondo). En el portal está la versión resumida (3 objeciones).",
       "url_documento": null,
-      "origen": "paquete-jorge/06-indice-materiales.md"
+      "origen": "paquete-jorge/06-indice-materiales.md",
+      "subtipo": "Objeciones"
     },
     {
       "id": "mod-benchmark",
       "titulo": "Benchmark + mercado español",
-      "tipo": "análisis interno",
+      "tipo": "Guía interna",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "conocer",
@@ -220,12 +228,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Análisis interno (10 players + monográfico GFT Wynxx). Curar antes de exponer: qué afirmaciones sobre competidores se sostienen por escrito.",
       "url_documento": null,
-      "origen": "paquete-jorge/06-indice-materiales.md"
+      "origen": "paquete-jorge/06-indice-materiales.md",
+      "subtipo": "Análisis de competencia"
     },
     {
       "id": "mod-mapa-dolores",
       "titulo": "Mapa de dolores del sector",
-      "tipo": "guía de discovery",
+      "tipo": "Guía de discovery",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "conocer",
@@ -247,7 +256,7 @@
     {
       "id": "mod-argumentario",
       "titulo": "Argumentario UCE",
-      "tipo": "guía interna",
+      "tipo": "Guía interna",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "conocer",
@@ -264,12 +273,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Argumentario UCE (12 págs), base de la pieza de objeciones. Uso interno.",
       "url_documento": null,
-      "origen": "paquete-jorge/06-indice-materiales.md"
+      "origen": "paquete-jorge/06-indice-materiales.md",
+      "subtipo": "Argumentario"
     },
     {
       "id": "mod-rolplay",
       "titulo": "ROL-PLAY Servicios AM",
-      "tipo": "formación",
+      "tipo": "Guía interna",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "conocer",
@@ -286,12 +296,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Vídeo de visita simulada con diálogo completo, para entrenar la reunión. Interno.",
       "url_documento": null,
-      "origen": "estatus-v1 · índice de materiales"
+      "origen": "estatus-v1 · índice de materiales",
+      "subtipo": "Rol-play"
     },
     {
       "id": "mod-caso-nasertic",
       "titulo": "NASERTIC · Gobierno de Navarra",
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "referencias",
@@ -336,7 +347,7 @@
     {
       "id": "mod-caso-uned",
       "titulo": "UNED",
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "referencias",
@@ -374,7 +385,7 @@
     {
       "id": "mod-caso-dgoj",
       "titulo": "DGOJ · Dirección General de Ordenación del Juego",
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "referencias",
@@ -411,7 +422,7 @@
     {
       "id": "mod-caso-aesa",
       "titulo": "AESA · Agencia Estatal de Seguridad Aérea",
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "referencias",
@@ -448,7 +459,7 @@
     {
       "id": "mod-caso-h10",
       "titulo": "H10 Hotels",
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "referencias",
@@ -485,7 +496,7 @@
     {
       "id": "mod-caso-miciu",
       "titulo": "Ministerio de Ciencia · AEI",
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "referencias",
@@ -522,7 +533,7 @@
     {
       "id": "corp-exec-global",
       "titulo": "Entelgy Executive Deck",
-      "tipo": "Deck corporativo",
+      "tipo": "Deck",
       "practica": "corporativo",
       "solucion": null,
       "zona": "cliente",
@@ -539,12 +550,13 @@
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck corporativo v6 (jul 2026): el que presentas en reunión. Las cifras de resultados por cliente y los logos siguen pendientes de autorización: preséntalo, no lo envíes en frío.",
       "url_documento": "https://entelgy.guberna.es/corporativo/decks/Entelgy_Executive_Deck.html",
-      "origen": "corporativo/decks/Entelgy_Executive_Deck.html"
+      "origen": "corporativo/decks/Entelgy_Executive_Deck.html",
+      "subtipo": "Corporativo"
     },
     {
       "id": "corp-portfolio",
       "titulo": "Diagrama de portfolio Entelgy",
-      "tipo": "Mapa corporativo",
+      "tipo": "Guía interna",
       "practica": "corporativo",
       "solucion": null,
       "zona": "conocer",
@@ -561,12 +573,13 @@
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Ayuda a explicar la relación entre capacidades sin convertir la conversación en un catálogo.",
       "url_documento": null,
-      "origen": "corporativo/diagrama-portfolio-entelgy.html"
+      "origen": "corporativo/diagrama-portfolio-entelgy.html",
+      "subtipo": "Diagrama de portfolio"
     },
     {
       "id": "smartops-resumen",
       "titulo": "SmartOPS · Resumen Ejecutivo Global 2026",
-      "tipo": "Deck ejecutivo",
+      "tipo": "Deck",
       "practica": "smart-operations",
       "solucion": null,
       "zona": "cliente",
@@ -583,7 +596,8 @@
       "momento_comercial": "reunion",
       "nota_de_uso": "Visión global para la reunión introductoria a dirección: un motor, dos territorios, seis fuerzas del CIO con fuente, casos y diagnóstico. Los decks de cada vertical van después.",
       "url_documento": "https://entelgy.guberna.es/digital-workplace/decks/SmartOPS_Resumen_Ejecutivo_Global_2026.html",
-      "origen": "digital-workplace/decks/SmartOPS_Resumen_Ejecutivo_Global_2026.html"
+      "origen": "digital-workplace/decks/SmartOPS_Resumen_Ejecutivo_Global_2026.html",
+      "subtipo": "Ejecutivo"
     },
     {
       "id": "smartops-workplace",
@@ -605,7 +619,8 @@
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck de 22 láminas para la reunión: seis frentes del CIO, motor SmartOPS, cuatro piezas, IA por fase del ticket con porcentajes, SmartHelp, casos y modelo de relación en tres fases. Ojo: la lámina 10 lleva los niveles invertidos y la 14 publica horquillas de precio; hasta que Amador lo corrija, sáltalas en pantalla y no lo envíes.",
       "url_documento": "https://entelgy.guberna.es/digital-workplace/decks/SmartOPS_Workplace_2026.html",
-      "origen": "digital-workplace/decks/SmartOPS_Workplace_2026.html"
+      "origen": "digital-workplace/decks/SmartOPS_Workplace_2026.html",
+      "subtipo": "Vertical"
     },
     {
       "id": "smartops-infra",
@@ -627,7 +642,8 @@
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck de 13 láminas más apéndices para la reunión: resumen ejecutivo en una página, cinco fuerzas, el precio de esperar, tres piezas, casos y modelo de relación con salida sin operación. Apéndices de AIOps, modelo N0–N3, cumplimiento y alianzas para cuando la conversación lo pide. Lleva una horquilla de precio en la lámina 12: no lo envíes hasta que Amador decida si se queda.",
       "url_documento": "https://entelgy.guberna.es/digital-workplace/decks/SmartOPS_for_Infra_2026.html",
-      "origen": "digital-workplace/decks/SmartOPS_for_Infra_2026.html"
+      "origen": "digital-workplace/decks/SmartOPS_for_Infra_2026.html",
+      "subtipo": "Vertical"
     },
     {
       "id": "smartops-onepager-workplace",
@@ -676,7 +692,7 @@
     {
       "id": "smartops-case-ejie",
       "titulo": "EJIE · Gobierno Vasco · Dispositivo como servicio",
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "practica": "smart-operations",
       "solucion": "smartops-workplace",
       "zona": "referencias",
@@ -726,7 +742,7 @@
     {
       "id": "software-mantenimiento-ficha",
       "titulo": "Ficha de servicio · Mantenimiento Evolutivo",
-      "tipo": "Ficha de servicio",
+      "tipo": "Ficha",
       "practica": "software-development",
       "solucion": "mantenimiento",
       "zona": "cliente",
@@ -743,7 +759,8 @@
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para quien lo valida dentro (CIO, compras): las tres capas, la medición en la factura y las cláusulas. Los porcentajes de las capas y el reparto del ahorro están en revisión con Jorge; cita el mecanismo, no el número.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/ficha-mantenimiento.html",
-      "origen": "ciclo-software/fichas/ficha-mantenimiento.html"
+      "origen": "ciclo-software/fichas/ficha-mantenimiento.html",
+      "subtipo": "De servicio"
     },
     {
       "id": "software-asistencia-onepager",
@@ -770,7 +787,7 @@
     {
       "id": "software-asistencia-ficha",
       "titulo": "Ficha de servicio · Asistencia Técnica",
-      "tipo": "Ficha de servicio",
+      "tipo": "Ficha",
       "practica": "software-development",
       "solucion": "asistencia-tecnica",
       "zona": "cliente",
@@ -787,12 +804,13 @@
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para quien lo valida dentro (CIO, compras). Mismo aviso: modelo de julio, pendiente de la versión con créditos de modernización.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/ficha-asistencia.html",
-      "origen": "ciclo-software/fichas/ficha-asistencia.html"
+      "origen": "ciclo-software/fichas/ficha-asistencia.html",
+      "subtipo": "De servicio"
     },
     {
       "id": "process-deck",
       "titulo": "Process Intelligence",
-      "tipo": "Deck ejecutivo",
+      "tipo": "Deck",
       "practica": "process-intelligence",
       "solucion": null,
       "zona": "cliente",
@@ -809,7 +827,8 @@
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck cliente de Process Intelligence para la reunión introductoria: del proceso real, con datos, a la automatización y los agentes.",
       "url_documento": "https://entelgy.guberna.es/process-mining/DECKS/Process_Intelligence.html",
-      "origen": "process-mining/DECKS/Process_Intelligence.html"
+      "origen": "process-mining/DECKS/Process_Intelligence.html",
+      "subtipo": "Ejecutivo"
     },
     {
       "id": "process-onepager",
@@ -836,7 +855,7 @@
     {
       "id": "process-ficha",
       "titulo": "Ficha de servicio · Process Intelligence",
-      "tipo": "Ficha de servicio",
+      "tipo": "Ficha",
       "practica": "process-intelligence",
       "solucion": null,
       "zona": "cliente",
@@ -853,7 +872,8 @@
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para quien lo valida dentro (IT, compras): qué incluye el servicio y cómo se contrata.",
       "url_documento": "https://entelgy.guberna.es/process-mining/fichas/ficha-process-intelligence.html",
-      "origen": "process-mining/fichas/ficha-process-intelligence.html"
+      "origen": "process-mining/fichas/ficha-process-intelligence.html",
+      "subtipo": "De servicio"
     },
     {
       "id": "process-pains",
@@ -875,12 +895,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Material interno de entendimiento de la práctica.",
       "url_documento": null,
-      "origen": "process-mining/previo-process-intelligence.html"
+      "origen": "process-mining/previo-process-intelligence.html",
+      "subtipo": "Mapa de pains"
     },
     {
       "id": "digital-change-deck",
       "titulo": "Digital Change",
-      "tipo": "Deck ejecutivo",
+      "tipo": "Deck",
       "practica": "digital-change",
       "solucion": null,
       "zona": "cliente",
@@ -897,7 +918,8 @@
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck de Comité de 11 láminas: el oficio, las cuatro fugas, prêt-à-porter, un reto y una solución por lámina, urgencia del AI Act, por qué Entelgy y cierre. Ojo: lleva 150/9 (las piezas dicen 151/15/9), Bahía de Bizkaia sin firma y una cifra de MAPFRE (−82%) que no está en la ficha.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/decks/digital-change-deck.html",
-      "origen": "ia-digital-change/decks/digital-change-deck.html"
+      "origen": "ia-digital-change/decks/digital-change-deck.html",
+      "subtipo": "Ejecutivo"
     },
     {
       "id": "iability-onepager",
@@ -924,7 +946,7 @@
     {
       "id": "iability-ficha",
       "titulo": "Ficha · IAbility",
-      "tipo": "Ficha de servicio",
+      "tipo": "Ficha",
       "practica": "digital-change",
       "solucion": "iability",
       "zona": "cliente",
@@ -941,12 +963,13 @@
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para dejar a IT, seguridad y compras: las cuatro fases con lo que te llevas de cada una, qué gana el negocio, por qué creernos, y seguridad y cumplimiento con el art. 4 explicado. Sin precio. Cierra en diagnóstico. Dice «Oficina de Gobierno de la IA» en dos sitios; el nombre bueno es Gobernanza Humana.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/Ficha_IAbility.html",
-      "origen": "ia-digital-change/fichas/Ficha_IAbility.html"
+      "origen": "ia-digital-change/fichas/Ficha_IAbility.html",
+      "subtipo": "De servicio"
     },
     {
       "id": "preservia-publico",
       "titulo": "One-pager · PreservIA · Sector público",
-      "tipo": "One-pager sectorial",
+      "tipo": "One-pager",
       "practica": "digital-change",
       "solucion": "preservia",
       "zona": "cliente",
@@ -963,12 +986,13 @@
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Una cara para abrir la puerta: la misma pieza en dos versiones, banca y seguros (40% senior en 2030) y sector público (43.000 funcionarios se jubilan en cinco años), con MAPFRE como prueba y cierre en 30 minutos. Elige la del sector de la cuenta; el resto es igual.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/PreservIA-onepager-sectorpublico.html",
-      "origen": "ia-digital-change/fichas/PreservIA-onepager-sectorpublico.html"
+      "origen": "ia-digital-change/fichas/PreservIA-onepager-sectorpublico.html",
+      "subtipo": "Sector público"
     },
     {
       "id": "preservia-privado",
       "titulo": "One-pager · PreservIA · Sector privado",
-      "tipo": "One-pager sectorial",
+      "tipo": "One-pager",
       "practica": "digital-change",
       "solucion": "preservia",
       "zona": "cliente",
@@ -985,12 +1009,13 @@
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Una cara para abrir la puerta: la misma pieza en dos versiones, banca y seguros (40% senior en 2030) y sector público (43.000 funcionarios se jubilan en cinco años), con MAPFRE como prueba y cierre en 30 minutos. Elige la del sector de la cuenta; el resto es igual.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/PreservIA-onepager-sectorprivado.html",
-      "origen": "ia-digital-change/fichas/PreservIA-onepager-sectorprivado.html"
+      "origen": "ia-digital-change/fichas/PreservIA-onepager-sectorprivado.html",
+      "subtipo": "Sector privado"
     },
     {
       "id": "preservia-ficha",
       "titulo": "Ficha · PreservIA",
-      "tipo": "Ficha de servicio",
+      "tipo": "Ficha",
       "practica": "digital-change",
       "solucion": "preservia",
       "zona": "cliente",
@@ -1007,7 +1032,8 @@
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para dejar a operaciones, IT y compras: qué es, las tres fases con su resultado, MAPFRE con cifras, el piloto detallado (alcance, qué necesitamos, cómo se mide, precio) e integración y seguridad. Cierra en diseñar el piloto. Lleva el precio del piloto: úsala sabiendo que es el importe que va a leer compras.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/Ficha_PreservIA_standalone.html",
-      "origen": "ia-digital-change/fichas/Ficha_PreservIA_standalone.html"
+      "origen": "ia-digital-change/fichas/Ficha_PreservIA_standalone.html",
+      "subtipo": "De servicio"
     },
     {
       "id": "ogh-onepager",
@@ -1034,7 +1060,7 @@
     {
       "id": "ogh-ficha",
       "titulo": "Ficha · OGH-IA",
-      "tipo": "Ficha de servicio",
+      "tipo": "Ficha",
       "practica": "digital-change",
       "solucion": "ogh-ia",
       "zona": "cliente",
@@ -1051,7 +1077,8 @@
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para dejar a Legal, Compliance, IT y compras: qué es y qué no es, el modelo en tres capas, qué gana el negocio, tres formas de entrar, por qué creernos y el AI Act por fases con las sanciones. Sin precio ni plazo: el modelo es flexible hasta que Alfredo cierre el arranque. Cierra en diagnóstico.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/Ficha_OGH-IA.html",
-      "origen": "ia-digital-change/fichas/Ficha_OGH-IA.html"
+      "origen": "ia-digital-change/fichas/Ficha_OGH-IA.html",
+      "subtipo": "De servicio"
     },
     {
       "id": "digital-change-pains",
@@ -1073,12 +1100,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Material interno para ordenar conversación y adopción.",
       "url_documento": null,
-      "origen": "ia-digital-change/mapa-pains-digital-change.html"
+      "origen": "ia-digital-change/mapa-pains-digital-change.html",
+      "subtipo": "Mapa de pains"
     },
     {
       "id": "dataai-producto",
       "titulo": "Data Intelligence · Producto",
-      "tipo": "Deck ejecutivo",
+      "tipo": "Deck",
       "practica": "data-intelligence",
       "solucion": null,
       "zona": "cliente",
@@ -1095,12 +1123,13 @@
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck de producto para la reunión introductoria (junio): cinco capacidades, seguridad y cumplimiento, y seis casos en anexo. Los anexos nombran tres clientes que en el resto del material van anonimizados: úsalo en pantalla, no lo envíes. Se rehace en octubre con la propuesta de valor ampliada.",
       "url_documento": "https://entelgy.guberna.es/data-intelligence/decks/entelgy-dataai-producto.html",
-      "origen": "data-intelligence/decks/entelgy-dataai-producto.html"
+      "origen": "data-intelligence/decks/entelgy-dataai-producto.html",
+      "subtipo": "Ejecutivo"
     },
     {
       "id": "dataai-mutua",
       "titulo": "Data Intelligence · Mutua",
-      "tipo": "Deck cliente",
+      "tipo": "Deck",
       "practica": "data-intelligence",
       "solucion": null,
       "zona": "referencias",
@@ -1117,7 +1146,8 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Ejemplo de deck de primer contacto a una cuenta objetivo (Mutua), con su nombre dentro: sirve para ver cómo se entra por el reloj regulatorio del sector; no se enseña a otro cliente.",
       "url_documento": "https://entelgy.guberna.es/data-intelligence/entelgy-dataai-mutua.html",
-      "origen": "data-intelligence/entelgy-dataai-mutua.html"
+      "origen": "data-intelligence/entelgy-dataai-mutua.html",
+      "subtipo": "Primer contacto · Mutua"
     },
     {
       "id": "dataai-onepager",
@@ -1144,7 +1174,7 @@
     {
       "id": "dataai-ficha",
       "titulo": "Ficha de servicio · Data Intelligence",
-      "tipo": "Ficha de servicio",
+      "tipo": "Ficha",
       "practica": "data-intelligence",
       "solucion": null,
       "zona": "cliente",
@@ -1161,7 +1191,8 @@
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye Data Intelligence y cómo se contrata.",
       "url_documento": "https://entelgy.guberna.es/data-intelligence/fichas/ficha-dataai.html",
-      "origen": "data-intelligence/fichas/ficha-dataai.html"
+      "origen": "data-intelligence/fichas/ficha-dataai.html",
+      "subtipo": "De servicio"
     },
     {
       "id": "dataai-pains",
@@ -1183,12 +1214,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Material interno de preparación comercial.",
       "url_documento": null,
-      "origen": "data-intelligence/mapa-pains-data-ai.html"
+      "origen": "data-intelligence/mapa-pains-data-ai.html",
+      "subtipo": "Mapa de pains"
     },
     {
       "id": "automation-deck",
       "titulo": "Automatización de procesos",
-      "tipo": "Deck cliente",
+      "tipo": "Deck",
       "practica": "process-intelligence",
       "solucion": "process-automation-ai",
       "zona": "cliente",
@@ -1205,7 +1237,8 @@
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck para la reunión introductoria: del proceso a la automatización y los agentes, con criterio de negocio.",
       "url_documento": "https://entelgy.guberna.es/automatizacion/decks/deck_cliente.html",
-      "origen": "automatizacion/decks/deck_cliente.html"
+      "origen": "automatizacion/decks/deck_cliente.html",
+      "subtipo": "Cliente"
     },
     {
       "id": "automation-onepager",
@@ -1232,7 +1265,7 @@
     {
       "id": "automation-ficha",
       "titulo": "Ficha de servicio · Automatización de procesos",
-      "tipo": "Ficha de servicio",
+      "tipo": "Ficha",
       "practica": "process-intelligence",
       "solucion": "process-automation-ai",
       "zona": "cliente",
@@ -1249,12 +1282,13 @@
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye la automatización de procesos y cómo se contrata. El contacto está sin rellenar y aún dice «hiperautomatización»: pídele a Carla la versión corregida antes de enviarlo.",
       "url_documento": "https://entelgy.guberna.es/automatizacion/fichas/ficha-automatizacion-procesos.html",
-      "origen": "automatizacion/fichas/ficha-automatizacion-procesos.html"
+      "origen": "automatizacion/fichas/ficha-automatizacion-procesos.html",
+      "subtipo": "De servicio"
     },
     {
       "id": "corp-exec-latam",
       "titulo": "Entelgy Executive Deck · LATAM",
-      "tipo": "Deck corporativo regional",
+      "tipo": "Deck",
       "practica": "corporativo",
       "solucion": null,
       "zona": "cliente",
@@ -1271,12 +1305,13 @@
       "momento_comercial": "reunion",
       "nota_de_uso": "Edición LATAM del deck corporativo. Pendiente la lectura de Omar sobre edición y referencias antes de usarla con un cliente.",
       "url_documento": "https://entelgy.guberna.es/corporativo/decks/Entelgy_Executive_Deck_LATAM.html",
-      "origen": "corporativo/decks/Entelgy_Executive_Deck_LATAM.html"
+      "origen": "corporativo/decks/Entelgy_Executive_Deck_LATAM.html",
+      "subtipo": "Corporativo · LATAM"
     },
     {
       "id": "software-modernizacion-tarjeta",
       "titulo": "Tarjeta de entrada · Modernización",
-      "tipo": "Tarjeta comercial",
+      "tipo": "Guía interna",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "conocer",
@@ -1293,12 +1328,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Patrón de señal, diferenciador y pregunta. Validar el contenido antes de reutilizarlo fuera del portal.",
       "url_documento": null,
-      "origen": "ciclo-software/tarjeta-entrada-modernizacion.html"
+      "origen": "ciclo-software/tarjeta-entrada-modernizacion.html",
+      "subtipo": "Tarjeta de entrada"
     },
     {
       "id": "software-modernizacion-sector-banca",
       "titulo": "Ficha comercial · Modernización · Banca",
-      "tipo": "Ficha comercial sectorial",
+      "tipo": "Ficha",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "cliente",
@@ -1317,12 +1353,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Familiar de trabajo de Modernización; no equivale al deck corporativo de Banca retirado. Confirmar su vigencia y condición de uso.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/ficha-comercial-modernizacion-banca.html",
-      "origen": "ciclo-software/ficha-comercial-modernizacion-banca.html"
+      "origen": "ciclo-software/ficha-comercial-modernizacion-banca.html",
+      "subtipo": "Sectorial · Banca"
     },
     {
       "id": "software-modernizacion-sector-aapp",
       "titulo": "Ficha comercial · Modernización · Administración pública",
-      "tipo": "Ficha comercial sectorial",
+      "tipo": "Ficha",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "cliente",
@@ -1341,12 +1378,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Familiar de trabajo de Modernización. Confirmar vigencia, referencias y condición de uso antes de compartir.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/ficha-comercial-modernizacion-aapp.html",
-      "origen": "ciclo-software/ficha-comercial-modernizacion-aapp.html"
+      "origen": "ciclo-software/ficha-comercial-modernizacion-aapp.html",
+      "subtipo": "Sectorial · AAPP"
     },
     {
       "id": "software-modernizacion-sector-industria",
       "titulo": "Ficha comercial · Modernización · Industria",
-      "tipo": "Ficha comercial sectorial",
+      "tipo": "Ficha",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "cliente",
@@ -1365,12 +1403,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Familiar de trabajo de Modernización. Confirmar vigencia, referencias y condición de uso antes de compartir.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/ficha-comercial-modernizacion-industria.html",
-      "origen": "ciclo-software/ficha-comercial-modernizacion-industria.html"
+      "origen": "ciclo-software/ficha-comercial-modernizacion-industria.html",
+      "subtipo": "Sectorial · Industria"
     },
     {
       "id": "software-modernizacion-sector-telco",
       "titulo": "Ficha comercial · Modernización · Telco",
-      "tipo": "Ficha comercial sectorial",
+      "tipo": "Ficha",
       "practica": "software-development",
       "solucion": "modernizacion",
       "zona": "cliente",
@@ -1389,7 +1428,8 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Familiar de trabajo de Modernización. Confirmar vigencia, referencias y condición de uso antes de compartir.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/ficha-comercial-modernizacion-telco.html",
-      "origen": "ciclo-software/ficha-comercial-modernizacion-telco.html"
+      "origen": "ciclo-software/ficha-comercial-modernizacion-telco.html",
+      "subtipo": "Sectorial · Telco"
     },
     {
       "id": "software-pains-mantenimiento",
@@ -1411,7 +1451,8 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Material interno para escuchar y contrastar; no diagnostica una situación sin evidencia.",
       "url_documento": null,
-      "origen": "ciclo-software/mapa-pains-mantenimiento.html"
+      "origen": "ciclo-software/mapa-pains-mantenimiento.html",
+      "subtipo": "Mapa de pains"
     },
     {
       "id": "software-pains-asistencia",
@@ -1433,12 +1474,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Material interno para estructurar discovery antes de hablar de capacidad o alcance.",
       "url_documento": null,
-      "origen": "ciclo-software/mapa-pains-asistencia-tecnica.html"
+      "origen": "ciclo-software/mapa-pains-asistencia-tecnica.html",
+      "subtipo": "Mapa de pains"
     },
     {
       "id": "software-referencias-jorge",
       "titulo": "Repositorio interno · referencias Software Engineering",
-      "tipo": "Repositorio de referencias",
+      "tipo": "Guía interna",
       "practica": "software-development",
       "solucion": null,
       "zona": "referencias",
@@ -1455,12 +1497,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Distingue uso en presentación, envío formal, cifras internas y condiciones por caso. No es un activo para cliente.",
       "url_documento": null,
-      "origen": "automatizacion/jorge/referencias-jorge-herrero.md"
+      "origen": "automatizacion/jorge/referencias-jorge-herrero.md",
+      "subtipo": "Repositorio de referencias"
     },
     {
       "id": "dataai-mutua-preread",
       "titulo": "Data Intelligence · Mutua · pre-read",
-      "tipo": "Pre-read",
+      "tipo": "Deck",
       "practica": "data-intelligence",
       "solucion": null,
       "zona": "referencias",
@@ -1477,7 +1520,8 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Ejemplo de pre-read de primer contacto a una cuenta objetivo (Mutua), con su nombre dentro: sirve para ver cómo se entra por el reloj regulatorio del sector; no se enseña a otro cliente.",
       "url_documento": "https://entelgy.guberna.es/data-intelligence/decks/entelgy-dataai-mutua-preread.html",
-      "origen": "data-intelligence/decks/entelgy-dataai-mutua-preread.html"
+      "origen": "data-intelligence/decks/entelgy-dataai-mutua-preread.html",
+      "subtipo": "Pre-read · Mutua"
     },
     {
       "id": "dataai-previo",
@@ -1499,12 +1543,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Contexto editorial para preparar la conversación; no es una pieza cliente.",
       "url_documento": null,
-      "origen": "data-intelligence/previo-datos.html"
+      "origen": "data-intelligence/previo-datos.html",
+      "subtipo": "Previo del área"
     },
     {
       "id": "dataai-analisis-competencia",
       "titulo": "Data Intelligence · análisis de competencia y comunicación",
-      "tipo": "Análisis interno",
+      "tipo": "Guía interna",
       "practica": "data-intelligence",
       "solucion": null,
       "zona": "conocer",
@@ -1521,12 +1566,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Uso interno para afinar el posicionamiento; no debe enviarse ni citarse ante cliente.",
       "url_documento": null,
-      "origen": "data-intelligence/analisis-competencia-comunicacion.html"
+      "origen": "data-intelligence/analisis-competencia-comunicacion.html",
+      "subtipo": "Análisis de competencia"
     },
     {
       "id": "smartops-workplace-ficha",
       "titulo": "Ficha de servicio · SmartOPS Workplace",
-      "tipo": "Ficha de servicio",
+      "tipo": "Ficha",
       "practica": "smart-operations",
       "solucion": "smartops-workplace",
       "zona": "cliente",
@@ -1543,12 +1589,13 @@
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para dejar a IT o compras: qué es, las cuatro piezas con alcance, cómo trabajamos, por qué Entelgy, dos casos anonimizados, beneficios, partners y el diagnóstico. Sin importes. Es la pieza que cierra en diagnóstico.",
       "url_documento": "https://entelgy.guberna.es/digital-workplace/fichas/ficha-smartops-desktop.html",
-      "origen": "digital-workplace/fichas/ficha-smartops-desktop.html"
+      "origen": "digital-workplace/fichas/ficha-smartops-desktop.html",
+      "subtipo": "De servicio"
     },
     {
       "id": "smartops-infra-ficha",
       "titulo": "Ficha de servicio · SmartOPS Infra",
-      "tipo": "Ficha de servicio",
+      "tipo": "Ficha",
       "practica": "smart-operations",
       "solucion": "smartops-infra",
       "zona": "cliente",
@@ -1565,7 +1612,8 @@
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para dejar a IT o compras: qué es, tres piezas con alcance, cómo trabajamos, por qué Entelgy, Telefónica Tech e IZENPE, beneficios, alianzas y el diagnóstico. Sin importes. Cierra en diagnóstico.",
       "url_documento": "https://entelgy.guberna.es/digital-workplace/fichas/ficha-smartops-infra.html",
-      "origen": "digital-workplace/fichas/ficha-smartops-infra.html"
+      "origen": "digital-workplace/fichas/ficha-smartops-infra.html",
+      "subtipo": "De servicio"
     },
     {
       "id": "smartops-pains-infra",
@@ -1587,12 +1635,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Guía interna de discovery. Sirve para contrastar señales, no para diagnosticar sin evidencia.",
       "url_documento": "https://entelgy.guberna.es/digital-workplace/mapa-pains-infra.html",
-      "origen": "digital-workplace/mapa-pains-infra.html"
+      "origen": "digital-workplace/mapa-pains-infra.html",
+      "subtipo": "Mapa de pains"
     },
     {
       "id": "smartops-case-navantia",
       "titulo": "Navantia · Servicios gestionados de soporte y atención al usuario",
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "practica": "smart-operations",
       "solucion": "smartops-workplace",
       "zona": "referencias",
@@ -1620,7 +1669,7 @@
     {
       "id": "smartops-case-moodle-profuturo",
       "titulo": "Moodle · Telefónica Educación Digital (ProFuturo)",
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "practica": "smart-operations",
       "solucion": null,
       "zona": "referencias",
@@ -1646,7 +1695,7 @@
     {
       "id": "smartops-case-izenpe",
       "titulo": "IZENPE · Plataforma de identidad digital y firma electrónica",
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "practica": "smart-operations",
       "solucion": "smartops-infra",
       "zona": "referencias",
@@ -1674,7 +1723,7 @@
     {
       "id": "smartops-case-educacion-ejie",
       "titulo": "EJIE · Gobierno Vasco · CAU de centros educativos",
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "practica": "smart-operations",
       "solucion": "smartops-workplace",
       "zona": "referencias",
@@ -1703,7 +1752,7 @@
     {
       "id": "process-mining-legacy-entry",
       "titulo": "Entrada editorial · Process Mining",
-      "tipo": "Entrada de práctica",
+      "tipo": "Archivo",
       "practica": "process-intelligence",
       "solucion": "process-mining",
       "zona": "conocer",
@@ -1720,12 +1769,13 @@
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Entrada histórica de Hipatia2. Sirve para recuperar contexto editorial, no como pieza de envío.",
       "url_documento": null,
-      "origen": "process-mining/index.html"
+      "origen": "process-mining/index.html",
+      "subtipo": "Entrada editorial de hipatia2"
     },
     {
       "id": "process-mining-legacy-competition",
       "titulo": "Análisis de competencia · Process Intelligence",
-      "tipo": "Análisis interno",
+      "tipo": "Guía interna",
       "practica": "process-intelligence",
       "solucion": "process-mining",
       "zona": "conocer",
@@ -1742,12 +1792,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Contexto editorial interno. No debe compartirse ni citarse ante cliente.",
       "url_documento": null,
-      "origen": "process-mining/analisis-competencia-comunicacion.html"
+      "origen": "process-mining/analisis-competencia-comunicacion.html",
+      "subtipo": "Análisis de competencia"
     },
     {
       "id": "process-automation-legacy-entry",
       "titulo": "Entrada editorial · Automatización de procesos",
-      "tipo": "Entrada de subpráctica",
+      "tipo": "Archivo",
       "practica": "process-intelligence",
       "solucion": "process-automation-ai",
       "zona": "conocer",
@@ -1764,7 +1815,8 @@
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Entrada histórica de Hipatia2. Recupera el contexto de Carla sin convertir Automatización en una sexta práctica.",
       "url_documento": null,
-      "origen": "automatizacion/index.html"
+      "origen": "automatizacion/index.html",
+      "subtipo": "Entrada editorial de hipatia2"
     },
     {
       "id": "process-automation-legacy-preview",
@@ -1786,12 +1838,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Preparación editorial interna; no es una pieza para cliente.",
       "url_documento": null,
-      "origen": "automatizacion/previo-automatizacion.html"
+      "origen": "automatizacion/previo-automatizacion.html",
+      "subtipo": "Previo del área"
     },
     {
       "id": "process-automation-legacy-competition",
       "titulo": "Análisis de competencia · Automatización",
-      "tipo": "Análisis interno",
+      "tipo": "Guía interna",
       "practica": "process-intelligence",
       "solucion": "process-automation-ai",
       "zona": "conocer",
@@ -1808,7 +1861,8 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Contexto editorial interno. No debe compartirse ni citarse ante cliente.",
       "url_documento": null,
-      "origen": "automatizacion/analisis-competencia-automatizacion.html"
+      "origen": "automatizacion/analisis-competencia-automatizacion.html",
+      "subtipo": "Análisis de competencia"
     },
     {
       "id": "software-legacy-preview",
@@ -1830,12 +1884,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Contexto editorial de la práctica. No es una pieza de envío.",
       "url_documento": null,
-      "origen": "ciclo-software/previo-software-engineering.html"
+      "origen": "ciclo-software/previo-software-engineering.html",
+      "subtipo": "Previo del área"
     },
     {
       "id": "data-legacy-entry",
       "titulo": "Entrada editorial · Data Intelligence",
-      "tipo": "Entrada de práctica",
+      "tipo": "Archivo",
       "practica": "data-intelligence",
       "solucion": null,
       "zona": "conocer",
@@ -1852,12 +1907,13 @@
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Entrada histórica de Hipatia2 para preservar el contexto de la práctica.",
       "url_documento": null,
-      "origen": "data-intelligence/index.html"
+      "origen": "data-intelligence/index.html",
+      "subtipo": "Entrada editorial de hipatia2"
     },
     {
       "id": "smart-legacy-entry",
       "titulo": "Entrada editorial · Digital Workplace",
-      "tipo": "Entrada de práctica",
+      "tipo": "Archivo",
       "practica": "smart-operations",
       "solucion": null,
       "zona": "conocer",
@@ -1874,7 +1930,8 @@
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Entrada histórica de Hipatia2. Conserva el marco editorial de Smart Operations.",
       "url_documento": null,
-      "origen": "digital-workplace/index.html"
+      "origen": "digital-workplace/index.html",
+      "subtipo": "Entrada editorial de hipatia2"
     },
     {
       "id": "smart-legacy-preview",
@@ -1896,12 +1953,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Contexto editorial interno de Workplace e Infraestructura.",
       "url_documento": null,
-      "origen": "digital-workplace/previo-DWP-infra.html"
+      "origen": "digital-workplace/previo-DWP-infra.html",
+      "subtipo": "Previo del área"
     },
     {
       "id": "smart-legacy-competition",
       "titulo": "Análisis de competencia · Digital Workplace",
-      "tipo": "Análisis interno",
+      "tipo": "Guía interna",
       "practica": "smart-operations",
       "solucion": null,
       "zona": "conocer",
@@ -1918,7 +1976,8 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Material interno para afinar posición comercial; no se comparte con cliente.",
       "url_documento": null,
-      "origen": "digital-workplace/analisis-competencia-comunicacion.html"
+      "origen": "digital-workplace/analisis-competencia-comunicacion.html",
+      "subtipo": "Análisis de competencia"
     },
     {
       "id": "smartops-workplace-legacy-deck",
@@ -1940,7 +1999,8 @@
       "momento_comercial": "reunion",
       "nota_de_uso": "Versión heredada localizada. Confirmar edición y condición de uso antes de emplearla.",
       "url_documento": null,
-      "origen": "digital-workplace/SmartOPS-Workplace-Deck-2026.html"
+      "origen": "digital-workplace/SmartOPS-Workplace-Deck-2026.html",
+      "subtipo": "Versión anterior"
     },
     {
       "id": "smartops-infra-legacy-onepager",
@@ -1962,12 +2022,13 @@
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Versión heredada localizada. Confirmar edición y condición de uso antes de emplearla.",
       "url_documento": null,
-      "origen": "digital-workplace/smartops-infra-onepager.html"
+      "origen": "digital-workplace/smartops-infra-onepager.html",
+      "subtipo": "Versión anterior"
     },
     {
       "id": "digital-change-legacy-entry",
       "titulo": "Entrada editorial · Digital Change",
-      "tipo": "Entrada de práctica",
+      "tipo": "Archivo",
       "practica": "digital-change",
       "solucion": null,
       "zona": "conocer",
@@ -1984,7 +2045,8 @@
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Entrada histórica de Hipatia2 para preservar el contexto editorial de la práctica.",
       "url_documento": null,
-      "origen": "ia-digital-change/index.html"
+      "origen": "ia-digital-change/index.html",
+      "subtipo": "Entrada editorial de hipatia2"
     },
     {
       "id": "digital-change-legacy-preview",
@@ -2006,12 +2068,13 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Contexto editorial interno; no se usa como pieza cliente.",
       "url_documento": null,
-      "origen": "ia-digital-change/previo-digital-change.html"
+      "origen": "ia-digital-change/previo-digital-change.html",
+      "subtipo": "Previo del área"
     },
     {
       "id": "digital-change-legacy-competition",
       "titulo": "Análisis de competencia · Digital Change",
-      "tipo": "Análisis interno",
+      "tipo": "Guía interna",
       "practica": "digital-change",
       "solucion": null,
       "zona": "conocer",
@@ -2028,7 +2091,8 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "Contexto editorial interno. No debe compartirse ni citarse ante cliente.",
       "url_documento": null,
-      "origen": "ia-digital-change/analisis-competencia-comunicacion.html"
+      "origen": "ia-digital-change/analisis-competencia-comunicacion.html",
+      "subtipo": "Análisis de competencia"
     },
     {
       "id": "corp-cio-case-guide",
@@ -2050,7 +2114,8 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "No es una pieza de conversación ni de envío. Se conserva para preparar casos ejecutivos cuando exista un uso definido.",
       "url_documento": null,
-      "origen": "corporativo/guia-slides-caso-exito-cio.md"
+      "origen": "corporativo/guia-slides-caso-exito-cio.md",
+      "subtipo": "Versión anterior"
     },
     {
       "id": "corp-exec-banca",
@@ -2072,10 +2137,11 @@
       "momento_comercial": "preparar",
       "nota_de_uso": "La versión verticalizada corporativa no está terminada ni validada como pieza vigente.",
       "url_documento": null,
-      "origen": "corporativo/Entelgy Executive Deck_larga_banca.html"
+      "origen": "corporativo/Entelgy Executive Deck_larga_banca.html",
+      "subtipo": "Versión anterior"
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2124,7 +2190,7 @@
       "nota_de_uso": "Nombre y cifras autorizados por el cliente. Citable en presentación; el envío formal se autoriza por cuenta."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2155,7 +2221,7 @@
       "nota_de_uso": "Cifras autorizadas sin identificar al cliente: nunca el nombre y las cifras juntos."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2181,7 +2247,7 @@
       "nota_de_uso": "Confirmar con Carmen antes de nombrar al cliente. Las cifras son citables sin nombre."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2210,7 +2276,7 @@
       "nota_de_uso": "Adjudicación pública (BOE / PLACSP). Cifras del hub y del deck; Carla confirma alcance antes de citarlas con nombre."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2238,7 +2304,7 @@
       "nota_de_uso": "Sin nombre hasta que el cliente autorice. La historia sí se puede contar."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2266,7 +2332,7 @@
       "nota_de_uso": "Referencia bajo NDA. No es Spec-Driven: es capacidad con asistentes de IA. No atribuirla al método."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2295,7 +2361,7 @@
       "nota_de_uso": "Referencia bajo NDA. Foreworth es contraste de mercado, no certificador."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2326,7 +2392,7 @@
       "nota_de_uso": "Nombre autorizado por escrito. Importes y puntuaciones de adjudicación no se citan. Falta acotar con Daniela en qué materiales vale el permiso."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2357,7 +2423,7 @@
       "nota_de_uso": "Nombre autorizado por escrito."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2389,7 +2455,7 @@
       "nota_de_uso": "Nombre autorizado por escrito. El deck lo marca como versión prudente pendiente de validación de Daniela."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2417,7 +2483,7 @@
       "nota_de_uso": "Anonimizado hasta autorización escrita."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2445,7 +2511,7 @@
       "nota_de_uso": "Anonimizado hasta autorización escrita."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2473,7 +2539,7 @@
       "nota_de_uso": "Anonimizado hasta autorización escrita."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2501,7 +2567,7 @@
       "nota_de_uso": "Entidad exacta del contrato pendiente (Amador): es Workplace, no Telefónica Tech. Hasta entonces, sin nombre en material escrito."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2529,7 +2595,7 @@
       "nota_de_uso": "Cifras del PDF de Servicios CAU (feb-2026). La ficha lo publica anonimizado como «Sector AAPP · Educación»: nombre solo con permiso. Confirmar con Amador que es este caso."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2558,7 +2624,7 @@
       "nota_de_uso": "La ficha lo publica anonimizado como «Sector Servicios». Nombre solo con permiso; confirmar con Amador que es este caso."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2586,7 +2652,7 @@
       "nota_de_uso": "Cifras del PDF de Servicios CAU. Dice «200.000 usuarios»: confirmar con Amador si son ciudadanos o empleados antes de citarlo."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2615,7 +2681,7 @@
       "nota_de_uso": "Cifras del PDF de Servicios CAU (feb-2026). El −40% de MTTD y el «Foreworth certificado» de las piezas no tienen documento de origen: no se citan hasta que Amador fije el juego de datos. Nombre en material escrito solo con permiso."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2660,10 +2726,11 @@
       "momento_comercial": "preparar",
       "url_documento": "https://entelgy.guberna.es/digital-workplace/mapa-pains.html",
       "origen": "digital-workplace/mapa-pains.html",
-      "nota_de_uso": "Guía de discovery interna (30-abr, 22 pains), gemela de la de Infraestructura. Para preparar, no sale al cliente."
+      "nota_de_uso": "Guía de discovery interna (30-abr, 22 pains), gemela de la de Infraestructura. Para preparar, no sale al cliente.",
+      "subtipo": "Mapa de pains"
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2692,7 +2759,7 @@
       "nota_de_uso": "Reconciliar 151/15/9 (ficha) con 150/9 (deck) antes de usarlo por escrito."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2720,7 +2787,7 @@
       "nota_de_uso": "Con nombre en ficha y one-pager, pero sin autorización escrita registrada. Confirmar con Alfredo antes de citarlo fuera de la reunión."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",
@@ -2748,7 +2815,7 @@
       "nota_de_uso": "Pendiente del modelo de consentimiento (Marketing). Sin texto hasta la firma."
     },
     {
-      "tipo": "referencia",
+      "tipo": "Referencia",
       "zona": "referencias",
       "confidencialidad": "interno",
       "audiencia": "Comercial",

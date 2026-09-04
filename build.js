@@ -123,16 +123,21 @@ const MOMENTOS = [
   { key: "para_dejar", label: "Para dejar al cliente" }
 ];
 
+// Vocabulario cerrado de tipos (revisión 14 · N1). El filtro de Materiales usa este orden fijo.
+const TIPOS_FILTRO = ["Deck", "One-pager", "Ficha", "Referencia", "Guía de discovery", "Guía interna", "Plantilla", "Herramienta", "Archivo"];
+// El eyebrow pinta el tipo y, si hay, el subtipo (texto libre que se busca pero no filtra).
+function eyebrowTipo(m) { return m.subtipo ? `${m.tipo} · ${m.subtipo}` : m.tipo; }
+
 function materialLink(m) {
   if (!m) return "";
   if (m.url_documento) return `<a class="btn" href="${esc(m.url_documento)}">Abrir el documento ↗</a>`;
   // una referencia sin documento es autocontenida (su texto citable es el entregable), no un enlace por llegar
-  if (m.tipo === "referencia") return `<span class="chip">sin documento aparte</span>`;
+  if (m.tipo === "Referencia") return `<span class="chip">sin documento aparte</span>`;
   return `<span class="chip">enlace pendiente</span>`;
 }
 function materialMini(m) {
   if (!m) return "";
-  const esRef = m.tipo === "referencia";
+  const esRef = m.tipo === "Referencia";
   const chipPrincipal = esRef ? chipCitable(m) : chipUso(m.sale_al_cliente);
   const nota = esRef && m.citable === "citable" ? LEYENDA_CITA : (m.nota_de_uso || "");
   return `<article class="card" style="padding:var(--space-4)">
@@ -366,9 +371,9 @@ const NOMBRE_PRACTICA = {
 };
 function fichaBody(m) {
   const fila = (k, v) => v ? `<div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>${esc(k)}</b><div>${v}</div></div>` : "";
-  const esRef = m.tipo === "referencia";
+  const esRef = m.tipo === "Referencia";
   let meta = "";
-  meta += fila("Tipo", esc(m.tipo));
+  meta += fila("Tipo", esc(eyebrowTipo(m)));
   meta += fila("Práctica", esc(NOMBRE_PRACTICA[m.practica] || m.practica));
   if (esRef) {
     // La referencia encabeza por su citabilidad (con sign-off), no por «con validación».
@@ -382,7 +387,7 @@ function fichaBody(m) {
   if (m.sector && m.sector.length) meta += fila("Sector", esc(m.sector.join(" · ")));
   if (m.momento_comercial) meta += fila("Momento", esc({ primer_contacto: "Primer contacto", reunion: "En la reunión", para_dejar: "Para dejar al cliente" }[m.momento_comercial] || m.momento_comercial));
   let ref = "";
-  if (m.tipo === "referencia") {
+  if (m.tipo === "Referencia") {
     ref = `<div style="margin-top:var(--space-4)">
       ${m.contexto ? `<p><b>Contexto.</b> ${esc(m.contexto)}</p>` : ""}
       ${m.que_hicimos ? `<p style="margin-top:var(--space-2)"><b>Qué hicimos.</b> ${esc(m.que_hicimos)}</p>` : ""}
@@ -391,7 +396,7 @@ function fichaBody(m) {
       ${(m.cifras && m.cifras.length) ? `<div class="chips" style="margin-top:var(--space-2)">${m.cifras.map((c) => `<span class="chip ${c.verificada ? "is-vigente" : "is-revisar"}">${esc(c.valor)}${c.verificada ? "" : " · cifra en verificación"}</span>`).join("")}</div>` : ""}
     </div>`;
   }
-  return `<p class="eyebrow">${esc(m.tipo)}</p>
+  return `<p class="eyebrow">${esc(eyebrowTipo(m))}</p>
     <h3 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-3)">${esc(m.titulo)}</h3>
     <p style="color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
     ${ref}
@@ -409,7 +414,6 @@ function materialesIndex(scope) {
   const todo = scope === "todo";
   const items = todo ? materiales : materiales.filter((m) => m.sale_al_cliente !== "no" && m.tipo !== "Archivo");
   const practicasVals = [...new Set(materiales.map((m) => m.practica))];
-  const tipos = [...new Set(materiales.map((m) => m.tipo))].sort();
   const estados = ["vigente", "revisar", "pendiente"];
   const usos = todo
     ? [["si", "Para cliente"], ["con_validacion", "Con validación"], ["no", "Interno"]]
@@ -423,7 +427,7 @@ function materialesIndex(scope) {
   const filters = `<form class="filters" aria-label="Filtros">
     ${usoGroup}
     ${group("practica", "Práctica", practicasVals.map((p) => [p, NOMBRE_PRACTICA[p] || p]))}
-    ${group("tipo", "Tipo", tipos.map((t) => [t, t[0].toUpperCase() + t.slice(1)]))}
+    ${group("tipo", "Tipo", TIPOS_FILTRO.map((t) => [t, t]))}
     ${group("estado", "Estado", estados.map((e) => [e, VIG[e]]))}
   </form>`;
 
@@ -458,10 +462,10 @@ function materialCard(m) {
       data-practica="${esc(m.practica)}" data-uso="${esc(m.sale_al_cliente)}" data-tipo="${esc(m.tipo)}" data-estado="${esc(m.estado)}"
       data-search="${esc([(m.sector || []).join(" "), m.subtipo || ""].filter(Boolean).join(" "))}"
       style="padding:var(--space-4)">
-      <p class="eyebrow">${m.practica === "corporativo" ? esc(m.tipo) : esc(m.tipo) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
+      <p class="eyebrow">${m.practica === "corporativo" ? esc(eyebrowTipo(m)) : esc(eyebrowTipo(m)) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
       <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
-      <div class="chips" style="margin-top:var(--space-3)">${m.tipo === "referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(m.dueno)}</span></div>
+      <div class="chips" style="margin-top:var(--space-3)">${m.tipo === "Referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(m.dueno)}</span></div>
       <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
         <a class="btn btn-ghost" href="/materiales/${esc(m.id)}/" data-open-modal-url="/materiales/${esc(m.id)}/" data-modal-label="${esc(m.titulo)}">Ver ficha</a>
         ${materialLink(m)}
@@ -524,14 +528,14 @@ function portadaPage(corp, practicas) {
     return 0;
   }
   function piezaPortada(pid) {
-    const cand = materiales.filter((m) => m.practica === pid && m.sale_al_cliente === "si" && m.estado === "vigente" && m.tipo !== "referencia");
+    const cand = materiales.filter((m) => m.practica === pid && m.sale_al_cliente === "si" && m.estado === "vigente" && m.tipo !== "Referencia");
     if (!cand.length) return null;
     const reunion = cand.filter((m) => m.momento_comercial === "reunion");
     const pool = reunion.length ? reunion : cand;
     return pool.slice().sort((a, b) => fechaKey(b) - fechaKey(a))[0];
   }
   function deckCorporativo() {
-    const cand = materiales.filter((m) => m.practica === "corporativo" && m.sale_al_cliente === "si" && /deck corporativo/i.test(m.tipo));
+    const cand = materiales.filter((m) => m.id === "corp-exec-global");
     if (!cand.length) return null;
     return cand.slice().sort((a, b) => (a.estado === "vigente" ? -1 : 0) - (b.estado === "vigente" ? -1 : 0) || fechaKey(b) - fechaKey(a))[0];
   }
@@ -556,7 +560,7 @@ function portadaPage(corp, practicas) {
   const usados = practicas.map((pr) => tarjetaPortada(piezaPortada(pr.id), pr));
   usados.push(tarjetaPortada(deckCorporativo(), { id: "", nombre: "Corporativo", responsable: "Corporativo" }));
   const accesos = (corp.portada.accesos_rapidos || []).map((a) =>
-    `<a class="chip" style="text-decoration:none" href="/materiales/">${esc(a.label)}</a>`).join("");
+    `<a class="chip" style="text-decoration:none" href="/materiales/${a.filtro && a.filtro.tipo ? "?tipo=" + encodeURIComponent(a.filtro.tipo) : ""}">${esc(a.label)}</a>`).join("");
   const material = `<section class="section"><div class="wrap">
     <div style="display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-4);flex-wrap:wrap">
       <div><p class="eyebrow">Material para el cliente</p><h2 style="font-size:var(--font-size-3xl);margin-top:var(--space-1)">Lo que puedes enseñar o enviar hoy.</h2></div>

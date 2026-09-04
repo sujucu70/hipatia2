@@ -92,26 +92,25 @@
       {
         "label": "Decks para cliente",
         "filtro": {
-          "tipo": "deck",
-          "uso": "cliente"
+          "tipo": "Deck"
         }
       },
       {
         "label": "One-pagers",
         "filtro": {
-          "tipo": "one-pager"
+          "tipo": "One-pager"
         }
       },
       {
-        "label": "Fichas de servicio",
+        "label": "Fichas",
         "filtro": {
-          "tipo": "ficha"
+          "tipo": "Ficha"
         }
       },
       {
-        "label": "Casos",
+        "label": "Referencias",
         "filtro": {
-          "tipo": "referencia"
+          "tipo": "Referencia"
         }
       }
     ],
