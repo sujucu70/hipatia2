@@ -11,10 +11,14 @@ const DEST = path.join(ROOT, "public", "assets", "fonts");
 const NM = path.join(ROOT, "node_modules", "@fontsource");
 
 // [paquete, familia-fontsource, pesos, prefijo-destino]
+// Barlow Condensed / Roboto (400-700) / JetBrains Mono (400-500): el portal v3 (styles.css).
+// Barlow / Roboto 300 / JetBrains Mono 700: las dos fichas de julio de Modernización
+// (public/modernizacion/materiales/*.html), servidas también desde el portal (revisión 15).
 const FAMILIAS = [
   ["barlow-condensed", "barlow-condensed", [500, 600, 700], "barlow-condensed"],
-  ["roboto", "roboto", [400, 500, 700], "roboto"],
-  ["jetbrains-mono", "jetbrains-mono", [400, 500], "jetbrains-mono"],
+  ["barlow", "barlow", [300, 400, 600, 700, 800], "barlow"],
+  ["roboto", "roboto", [300, 400, 500, 700], "roboto"],
+  ["jetbrains-mono", "jetbrains-mono", [400, 500, 700], "jetbrains-mono"],
 ];
 
 fs.mkdirSync(DEST, { recursive: true });

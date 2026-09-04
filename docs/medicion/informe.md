@@ -12,7 +12,7 @@
 | 5 | Uso/estado/dueño, citable⇒sign_off, sin enlaces rotos | 🟢 (rotos: 0) |
 | 6 | Ninguna pantalla afirma agente/envío/integración | 🟢 |
 | 7 | URL propia y buscador en todas | 🟢 |
-| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 139 KB) |
+| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 141 KB) |
 | 9 | Reconocible por quien usó hipatia2 | ⚪ cualitativo |
 
 ## Clics desde la portada
@@ -38,27 +38,25 @@
 
 | Ruta | KB |
 |---|---|
-| /materiales/todo | 139 |
-| /materiales | 105 |
-| /modernizacion/materiales | 70 |
-| /practicas/data-intelligence/data-intelligence | 55 |
-| /practicas/smart-operations/smartops-workplace | 55 |
-| /practicas/software-development/modernizacion | 55 |
-| /modernizacion/materiales | 53 |
-| /practicas/smart-operations/smartops-infra | 53 |
-| /autodiagnostico/grupo-lantia | 51 |
-| /practicas/process-intelligence/process-mining | 51 |
-| /practicas/process-intelligence/process-automation-ai | 50 |
-| /practicas/software-development/asistencia-tecnica | 50 |
+| /materiales/todo/ | 141 |
+| /materiales/ | 107 |
+| /modernizacion/materiales/ficha-modernizacion.html | 74 |
+| /practicas/data-intelligence/data-intelligence/ | 58 |
+| /practicas/smart-operations/smartops-workplace/ | 58 |
+| /modernizacion/materiales/onepager-modernizacion.html | 57 |
+| /practicas/software-development/modernizacion/ | 57 |
+| /practicas/smart-operations/smartops-infra/ | 55 |
+| /autodiagnostico/grupo-lantia/ | 53 |
+| /practicas/process-intelligence/process-mining/ | 53 |
+| /practicas/software-development/mantenimiento/ | 53 |
+| /practicas/process-intelligence/process-automation-ai/ | 52 |
 
-(máximo 139 KB de 139 páginas; imágenes aparte)
+(máximo 141 KB de 139 páginas; imágenes aparte)
 
 ## Navegador
 
-Capturas a 1440 y 390 px (10 rutas, muestra) en `docs/medicion/`.
+Capturas a 1440 y 390 px (139 rutas, todas) en `docs/medicion/`.
 
 - Errores de consola: **0** 
 - Rutas con posible bajo contraste: **0** (ninguna en la muestra)
-
-> Nota sobre las fuentes: este entorno de medición no tiene salida a la red, así que Barlow Condensed y Roboto (cargadas por `<link>` desde Google Fonts) no bajan y las capturas salen con la tipografía de respaldo del sistema. En la build desplegada, con red, las fuentes cargan y el H1 sale en Barlow Condensed. Este fallo de red de las fuentes externas no cuenta como error de consola.
 
