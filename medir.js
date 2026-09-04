@@ -55,7 +55,7 @@ const routes = htmlFiles.map(rutaDe);
 
 // ---- checks sin navegador ----
 const CSS = fs.readFileSync(path.join(PUB, "styles.css")); const JS = fs.readFileSync(path.join(PUB, "app.js"));
-const results = { pesos: [], enlacesRotos: [], bloques: [], honestidad: [], sinBuscador: [], sinURL: [] };
+const results = { pesos: [], enlacesRotos: [], bloques: [], honestidad: [], sinBuscador: [], sinURL: [], opcionales: {} };
 const BLOQUES_SOL = ["La propuesta", "Material para el cliente", "Referencias", "Para prepararte", "¿Falta algo?"];
 htmlFiles.forEach((f) => {
   const html = fs.readFileSync(f, "utf8");
@@ -71,6 +71,8 @@ htmlFiles.forEach((f) => {
   }
   // buscador presente en las pantallas del catálogo (las que usan la plantilla v3)
   if (/site-header/.test(html) && !/data-header-search/.test(html)) results.sinBuscador.push(route);
+  // bloques opcionales de práctica (revisión 16): «Lo que presiona al CIO» y línea de pruebas
+  if (/id="presion"/.test(html)) (results.opcionales.presion ||= []).push(route);
   // bloques en orden en páginas de solución
   if (/\/practicas\/[^/]+\/[^/]+$/.test(path.dirname(f))) {
     const idxs = BLOQUES_SOL.map((b) => html.indexOf(b));
@@ -226,6 +228,10 @@ function tick(ok) { return ok ? "🟢" : "🔴"; }
   if (results.enlacesRotos.length) md += "## Enlaces rotos\n\n" + results.enlacesRotos.map((b) => `- ${b.route} → ${b.href}`).join("\n") + "\n\n";
   if (results.bloques.length) md += "## Bloques fuera de orden\n\n" + results.bloques.map((b) => `- ${b.route}`).join("\n") + "\n\n";
   if (results.honestidad.length) md += "## Honestidad (revisar)\n\n" + results.honestidad.map((r) => `- ${r}`).join("\n") + "\n\n";
+
+  // bloques opcionales de práctica (rev 16): no rompen el criterio 3; se listan quiénes los tienen
+  if (results.opcionales.presion && results.opcionales.presion.length)
+    md += "## Bloques opcionales de práctica\n\n- «Lo que presiona al CIO»: " + results.opcionales.presion.join(", ") + "\n\n";
 
   md += "## Navegador\n\n";
   if (nav.skipped) md += `🟡 Sin navegador: ${nav.skipped}. Peso, enlaces, bloques, honestidad y clics sí se han medido. Contraste, consola y capturas requieren Chromium.\n\n`;

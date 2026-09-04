@@ -358,7 +358,19 @@ function practicaPage(pr) {
       <div class="card"><p class="eyebrow">Qué cubre</p><p style="margin-top:var(--space-2);font-size:var(--font-size-sm)">${esc(pr.que_cubre)}</p></div>
       <div class="card"><p class="eyebrow">Qué no prometemos</p><p style="margin-top:var(--space-2);font-size:var(--font-size-sm)">${esc(pr.que_no_prometer)}</p></div>
       <div class="card"><p class="eyebrow">La pregunta que abre</p><p style="margin-top:var(--space-2)">${esc(pr.pregunta_comun)}</p></div>
-    </div></section>`;
+    </div>
+    ${pr.pruebas_linea ? `<p class="footer-note" style="margin-top:var(--space-3);font-family:var(--font-family-mono)">${esc(pr.pruebas_linea)}${pr.pruebas_fuente ? ` · Fuente: ${esc(pr.pruebas_fuente)}` : ""}</p>` : ""}
+    </section>`;
+
+  // BA.7 · «Lo que presiona al CIO» (bloque opcional; hoy solo Smart Operations)
+  if (pr.presion) {
+    const pz = pr.presion;
+    const fuerzas = (pz.fuerzas || []).map((f) => `<article class="card fuerza"><p class="eyebrow">${esc(f.ambito)}</p><p class="cifra">${esc(f.cifra)}</p><p style="font-size:var(--font-size-sm)">${esc(f.texto)}</p><p class="footer-note">${esc(f.fuente)}</p></article>`).join("");
+    const relojes = (pz.relojes || []).map((r) => `<div class="reloj"><b>${esc(r.fecha)}</b><span>${esc(r.texto)}</span></div>`).join("");
+    main += `<section class="section" id="presion">${sectionHead("Lo que presiona al CIO", pz.titulo, pz.texto)}
+      <div class="grid grid-5" style="margin-top:var(--space-3)">${fuerzas}</div>
+      <div class="relojes">${relojes}</div></section>`;
+  }
 
   const caps = (pr.capacidades || []).map((c) => `<article class="card card-num" data-num="${esc(c.paso)}"><h3 style="font-size:var(--font-size-xl);margin:var(--space-1) 0 var(--space-2)">${esc(c.titulo)}</h3><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(c.texto)}</p></article>`).join("");
   const pa = pr.primer_avance || {};
