@@ -655,7 +655,7 @@ function materialCard(m) {
 // =====================================================================
 function portadaPage(corp, practicas) {
   // Hero editorial (frase de MA a 68 px, subtitular y único CTA)
-  const band = `<section class="section hero" style="padding:76px 0 68px"><div class="wrap hero-grid">
+  const band = `<section class="section hero" style="padding:44px 0 40px"><div class="wrap hero-grid">
     <div>
       <p class="eyebrow">Entelgy en una frase</p>
       <h1 class="hero-h1">${esc(corp.portada.titular || corp.entelgy_una_frase)}</h1>
