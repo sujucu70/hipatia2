@@ -713,7 +713,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "primer_contacto",
-      "nota_de_uso": "Una cara para dejar tras la primera reunión: un mantenimiento que paga la evolución, y por qué Entelgy.",
+      "nota_de_uso": "Una cara para abrir la primera reunión: el run deja de devorar el change, y por qué Entelgy. Dice «tercero certificador» donde Jorge ya dice contraste de mercado: cuéntalo tú bien.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/onepager-mantenimiento.html",
       "origen": "ciclo-software/fichas/onepager-mantenimiento.html"
     },
@@ -735,7 +735,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye el mantenimiento evolutivo y cómo se contrata.",
+      "nota_de_uso": "Dos caras para quien lo valida dentro (CIO, compras): las tres capas, la medición en la factura y las cláusulas. Los porcentajes de las capas y el reparto del ahorro están en revisión con Jorge; cita el mecanismo, no el número.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/ficha-mantenimiento.html",
       "origen": "ciclo-software/fichas/ficha-mantenimiento.html"
     },
@@ -757,7 +757,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "primer_contacto",
-      "nota_de_uso": "Una cara para dejar tras la primera reunión: especialistas con una entrega que se mide, y por qué Entelgy.",
+      "nota_de_uso": "Una cara para abrir la primera reunión: contratas entrega, no currículums. Va con el modelo de julio (UCE); Jorge lo cambió a créditos de modernización: sirve para la conversación, no lo envíes hasta la versión corregida.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/onepager-asistencia.html",
       "origen": "ciclo-software/fichas/onepager-asistencia.html"
     },
@@ -779,7 +779,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye la asistencia técnica aumentada y cómo se contrata.",
+      "nota_de_uso": "Dos caras para quien lo valida dentro (CIO, compras). Mismo aviso: modelo de julio, pendiente de la versión con créditos de modernización.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/ficha-asistencia.html",
       "origen": "ciclo-software/fichas/ficha-asistencia.html"
     },
@@ -2207,6 +2207,63 @@
       "resultado": "Menos riesgo operativo y una base estable para escalar.",
       "frase_reunion": "Una energética en Colombia tenía 150 flujos que solo una persona sabía mantener. Documentamos el parque, quitamos duplicados y dejamos una base gobernada sobre la que escalar. Es lo que hace la oficina de gobierno.",
       "nota_de_uso": "Sin nombre hasta que el cliente autorice. La historia sí se puede contar."
+    },
+    {
+      "tipo": "referencia",
+      "zona": "referencias",
+      "confidencialidad": "interno",
+      "audiencia": "Comercial",
+      "estado": "vigente",
+      "fecha_revision": "sep 2026",
+      "mantenida_por": "sm",
+      "dueno": "Jorge",
+      "momento_comercial": "Aportar prueba",
+      "url_documento": null,
+      "origen": "docs/contenido-v3-software-development.md",
+      "practica": "software-development",
+      "solucion": "asistencia-tecnica",
+      "sale_al_cliente": "con_validacion",
+      "citable": "confirmar_por_cuenta",
+      "sign_off": null,
+      "id": "at-caso-banca-latam",
+      "titulo": "Banca y servicios financieros · fábrica sobre core crítico",
+      "sector": [
+        "Banca y servicios financieros"
+      ],
+      "contexto": "Entidad financiera con fábrica de software sobre un core crítico, en España, Perú y Chile.",
+      "que_hicimos": "Equipos adscritos a la fábrica, con la capacidad medida y sustituible por contrato y uso aumentado de asistentes de IA.",
+      "resultado": "Más de 250 profesionales en la cuenta, en tres países.",
+      "frase_reunion": "En una entidad financiera tenemos más de 250 personas sobre su core crítico, en tres países, con la capacidad medida y sustituible por contrato. El nombre te lo confirmo por cuenta.",
+      "nota_de_uso": "Referencia bajo NDA. No es Spec-Driven: es capacidad con asistentes de IA. No atribuirla al método."
+    },
+    {
+      "tipo": "referencia",
+      "zona": "referencias",
+      "confidencialidad": "interno",
+      "audiencia": "Comercial",
+      "estado": "vigente",
+      "fecha_revision": "sep 2026",
+      "mantenida_por": "sm",
+      "dueno": "Jorge",
+      "momento_comercial": "Aportar prueba",
+      "url_documento": null,
+      "origen": "docs/contenido-v3-software-development.md",
+      "practica": "software-development",
+      "solucion": "asistencia-tecnica",
+      "sale_al_cliente": "con_validacion",
+      "citable": "confirmar_por_cuenta",
+      "sign_off": null,
+      "id": "at-caso-industria-energia",
+      "titulo": "Industria y energía · productividad medida",
+      "sector": [
+        "Industria",
+        "Energía"
+      ],
+      "contexto": "Capacidad de desarrollo sobre el stack del cliente.",
+      "que_hicimos": "Capacidad de desarrollo con la productividad medida en el código, no en las horas, y contrastada con el mercado (Foreworth).",
+      "resultado": "Productividad medida por un tercero; cifras bajo NDA.",
+      "frase_reunion": "En una industrial la productividad del equipo se mide en el código y se contrasta con un tercero, no se declara. Las cifras las vemos por cuenta.",
+      "nota_de_uso": "Referencia bajo NDA. Foreworth es contraste de mercado, no certificador."
     }
   ]
 }

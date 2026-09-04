@@ -29,7 +29,7 @@
       "texto": "Activar equipos técnicos aumentados desde los Centros de Excelencia, con una entrega que se puede medir."
     }
   ],
-  "capacidades_nota": "Si te preguntan por Spec-Driven o por la Factoría SEAS: no son soluciones aparte, van dentro de estas tres.",
+  "capacidades_nota": "Si te preguntan cómo respondemos del resultado: en Mantenimiento y Modernización se contrata capacidad de entrega (UCE) y cada mes van en la factura dos índices, el IGE (lo entregado) y el ISA (la salud del aplicativo), calculados sobre las herramientas del cliente. La Asistencia técnica sigue otro modelo, el de créditos de modernización. Spec-Driven y la Factoría SEAS van dentro de las tres soluciones.",
   "discovery": [
     "¿Qué parte de vuestro portfolio da más miedo tocar?",
     "¿Qué proporción del presupuesto se va en sostener lo existente, en vez de construir lo que necesitáis?",
@@ -53,8 +53,8 @@
         "que_es": "Cogemos las aplicaciones legacy que ya frenan al negocio y las modernizamos sin parar la operación, con el método Spec-Driven: la IA documenta y traduce el código que ya existe, y el equipo de Entelgy gobierna y valida cada paso.",
         "a_quien": "Empresas con +5 años de stack propio y un core que se usa a diario. Hablas con el CIO o el director de desarrollo; por el coste, antes o después aparece el CFO.",
         "senal": "Una aplicación que nadie quiere tocar porque quien la construyó ya no está. Ahí hay caso.",
-        "por_que_nosotros": "El mercado moderniza por horas y pidiendo partida nueva. Entelgy mide la productividad que recupera en el mantenimiento con Foreworth, una medición externa, y reinvierte esa eficiencia en modernizar las mismas aplicaciones sin aumentar el presupuesto ya comprometido. Que lo mida un tercero es lo que aguanta delante del CFO.",
-        "diferenciador": "Reinvertir la eficiencia del mantenimiento en modernizar, sin presupuesto nuevo y medido por un externo.",
+        "por_que_nosotros": "El mercado moderniza por horas y pidiendo partida nueva. Entelgy mide la productividad que recupera en el mantenimiento sobre tus propias herramientas (IGE de entrega, ISA de salud del aplicativo), la contrasta con el mercado (Foreworth) y reinvierte esa eficiencia en modernizar las mismas aplicaciones, sin aumento neto del presupuesto ya comprometido. Que se mida sobre tu propio código es lo que aguanta delante del CFO.",
+        "diferenciador": "Reinvertir la eficiencia del mantenimiento en modernizar, sin presupuesto nuevo y medido sobre tu propio código.",
         "objecion_principal": {
           "texto": "Funciona. ¿Para qué tocarlo?",
           "respuesta": "Funciona hoy. El día que se rompa, quien lo construyó ya no está, y cada año que sigue ahí cuesta más sostenerlo. El primer paso solo mide: el Assessment dice qué tocar y qué dejar, y no obliga al cliente a seguir con nosotros después."
@@ -78,7 +78,7 @@
             {
               "angulo": "Por el dinero",
               "cuando": "si está el CFO o sale el presupuesto",
-              "texto": "Vuestro core se lleva del orden de 1,8 millones al año en deuda técnica. No os pido partida nueva: recuperamos eficiencia del propio mantenimiento y la reinvertimos en modernizar, con la productividad medida por un externo. En un regulador estatal esa diferencia fue del 40 al 60%."
+              "texto": "Vuestro core se lleva del orden de 1,8 millones al año en deuda técnica. No os pido partida nueva: recuperamos eficiencia del propio mantenimiento y la reinvertimos en modernizar, con la productividad medida sobre vuestras propias herramientas. En un regulador estatal esa diferencia fue del 40 al 60%."
             },
             {
               "angulo": "Por el riesgo de conocimiento",
@@ -107,14 +107,14 @@
           {
             "rol": "Dir. Ops",
             "pregunta": "¿Cuántos pilotos llevan +1 año sin producción?",
-            "le_mueve": "salir del piloto con una entrega que se mide (Foreworth), no otro piloto."
+            "le_mueve": "salir del piloto con una entrega que se mide sobre tus herramientas, no otro piloto."
           }
         ],
         "pitch_nota": "El presupuesto suele moverlo el CFO o el CCO.",
         "objeciones": [
           {
             "texto": "Ya tenemos proveedor de desarrollo.",
-            "respuesta": "No pedimos cambiarlo. Complementamos en la pieza que más duele, con métricas auditables. ¿Tu proveedor puede decirte qué productividad entregó el mes pasado, medida por un tercero?"
+            "respuesta": "No pedimos cambiarlo. Complementamos en la pieza que más duele, con métricas auditables. ¿Tu proveedor puede decirte qué productividad entregó el mes pasado, medida sobre vuestras propias herramientas?"
           },
           {
             "texto": "No vemos urgencia ahora mismo.",
@@ -122,7 +122,7 @@
           },
           {
             "texto": "Esto nos lo hace cualquier proveedor.",
-            "respuesta": "Pídeles que firmen lo que firmamos nosotros: reinvertir la eficiencia recuperada en el propio mantenimiento, sin subir el presupuesto, con la productividad medida por un tercero (Foreworth). Nosotros lo ponemos por escrito."
+            "respuesta": "Pídeles que firmen lo que firmamos nosotros: reinvertir la eficiencia recuperada en el propio mantenimiento, sin subir el presupuesto, con la productividad medida sobre tu propio código y contrastada con el mercado (Foreworth). Nosotros lo ponemos por escrito."
           }
         ],
         "preguntas_cualificacion": [
@@ -148,7 +148,7 @@
       "keynotes": [
         {
           "dolor": "En enero ya tengo el 80% del presupuesto comprometido en mantener lo que hay. No me queda margen para nada nuevo.",
-          "frase": "No vengo a pedirte partida nueva. La modernización se financia con el mantenimiento que ya pagas: recuperamos eficiencia con IA y esa diferencia se reinvierte en modernizar — mismo importe, más valor, y lo mide un tercero, no nosotros.",
+          "frase": "No vengo a pedirte partida nueva. La modernización se financia con el mantenimiento que ya pagas: recuperamos eficiencia con IA y esa diferencia se reinvierte en modernizar — mismo importe, más valor, medido sobre tus propias herramientas.",
           "prueba": "DGOJ: entre un 40 y un 60% menos de coste de mantenimiento — esa diferencia financia la modernización.",
           "paso": "¿Quieres ver cómo se calcula en tu caso? Eso es una conversación de 45 minutos con el especialista del área."
         },
@@ -262,23 +262,27 @@
     {
       "id": "mantenimiento",
       "nombre": "Mantenimiento evolutivo",
-      "una_linea": "Mantener producción y pagar la evolución con la eficiencia que el mantenimiento recupera.",
+      "una_linea": "El run deja de devorar el change: lo que ahorras en sostener se reinvierte en evolucionar.",
       "especialista": "Jorge",
       "estado": "vigente",
       "dueno": "Jorge",
       "fecha_objetivo": "sept 2026",
       "propuesta": {
-        "que_es": "Convertimos el mantenimiento evolutivo en una capacidad que sostiene la operación y mejora la productividad, la calidad y el ritmo de cambio.",
-        "a_quien": null,
-        "senal": "La mayor parte del esfuerzo se consume en sostener producción y queda poco margen para evolucionar; backlog, incidencias y tiempos de entrega sin una lectura compartida.",
-        "por_que_nosotros": "La eficiencia que la IA recupera en el mantenimiento diario se reinvierte en modernizar las mismas aplicaciones, sin partida nueva y medida por un tercero. En un regulador estatal el mantenimiento cuesta hoy entre un 40 y un 60% menos.",
-        "diferenciador": null,
+        "que_es": "Reorganizamos el mantenimiento en un solo servicio sobre la misma maquinaria que moderniza: sostenemos lo crítico, bajamos la deuda que frena dentro del propio mantenimiento y dejamos que la IA analice el código, anticipe la incidencia y automatice el evolutivo. La incidencia que evitamos no se factura: se redirige a evolución. Y la entrega y la salud del aplicativo van en cada factura.",
+        "a_quien": "Quien tiene una cartera en producción con contrato de mantenimiento por horas o por ticket y una lista de evolutivos que negocio pide y no salen. Entras por el CIO o el responsable de aplicaciones; el CFO entra en cuanto se habla de presupuesto. Donde ya operamos así: banca y servicios financieros, sector público, telco, industria y energía.",
+        "senal": "El presupuesto de IT se va en sostener lo que ya existe. Cada cambio tarda meses. El proveedor cobra por incidencia. DORA o NIS2 piden demostrar resiliencia sobre lo que está en producción.",
+        "por_que_nosotros": "El resto cobra por incidencia; nosotros la convertimos en evolución: las horas que dejan de ir a incidencias pasan a evolutivos en el mismo contrato. La entrega (IGE) y la salud del aplicativo (ISA) van en cada factura, calculadas sobre tu propio Jira y SonarQube; si la entrega cae del umbral, la factura se ajusta. Una parte medida del ahorro que trae la IA baja tu precio cada año, en el contrato. En un regulador estatal el mantenimiento cuesta hoy entre un 40 y un 60% menos.",
+        "diferenciador": "La incidencia evitada se convierte en evolución, la entrega se mide en la factura y el ahorro por IA se reparte en el contrato.",
         "objecion_principal": {
           "texto": "¿Es solo apagar fuegos?",
-          "respuesta": "No se plantea como una bolsa de horas ni como respuesta a incidencias: se acuerda con una línea base, responsabilidades y métricas de servicio, y la eficiencia recuperada financia la evolución."
+          "respuesta": "No. Es sostener, modernizar poco a poco e innovar con IA en un solo servicio. La incidencia que evitamos no se factura, se reinvierte en evolutivo, y lo ves cada mes en la factura con dos índices: lo entregado y la salud de tu aplicativo. Arrancas igual o por debajo de lo que pagas hoy."
         },
-        "como_abres": "«¿Qué parte del esfuerzo de mantenimiento os está impidiendo evolucionar el servicio o entregar lo que negocio necesita?»",
-        "primer_paso": null
+        "como_abres": "«¿Cuánto del presupuesto de mantenimiento se va en apagar fuegos, y cuánto en lo que negocio pide?»",
+        "primer_paso": {
+          "titulo": "Sprint de calibración",
+          "plazo": "4–6 semanas",
+          "nota": "Medimos tu aplicativo sobre tu propio código y fijamos la línea base y la unidad de capacidad. Después, tres meses en paralelo con los dos modelos: pasas a capacidad de entrega solo si el paralelo te convence, y si vuelves, tres meses en paralelo sin penalización. Antes, si hace falta ordenar la cartera, el diagnóstico de 10–15 días a precio cerrado. Precio, con Jorge."
+        }
       },
       "limites": [
         "No es una bolsa de horas ni respuesta a incidencias sin entender servicio, backlog y condiciones de operación.",
@@ -290,26 +294,129 @@
         "El cliente necesita continuidad sin renunciar a mejorar el sistema que ya está en producción."
       ],
       "kit": {
-        "frases_cuenta": null,
-        "pitch_por_rol": [],
-        "objeciones": [],
-        "preguntas_cualificacion": [],
-        "referencias_destacadas": [],
-        "material_interno": [],
-        "dossier_imprimible": false
+        "frases_cuenta": {
+          "nota": "Frases por dolor, sacadas de la ficha, el one-pager y el deck de julio. Elige la que responde a lo que te han dicho.",
+          "frases": [
+            {
+              "angulo": "Por el presupuesto que ya está comprometido",
+              "cuando": "si el CIO dice que en enero ya no le queda margen",
+              "texto": "No vengo a pedir partida nueva. Lo que hoy se va en sostener se reinvierte en evolucionar: la incidencia que evitamos pasa a evolutivo en el mismo contrato, y arrancas igual o por debajo de lo que pagas hoy."
+            },
+            {
+              "angulo": "Por negocio que espera",
+              "cuando": "si negocio pide y el sistema dice que en seis meses",
+              "texto": "El mantenimiento es la puerta cerrada por la que negocio no pasa. Con el sistema documentado y gobernado con especificaciones, tocar deja de dar miedo, y en la Agencia Estatal de Investigación el cumplimiento de SLA subió un 40% con el mismo contrato."
+            },
+            {
+              "angulo": "Por el proveedor que cobra la incidencia",
+              "cuando": "si el contrato actual es por ticket o por horas",
+              "texto": "A tu proveedor le interesa que haya incidencias: su ingreso sube con cada una. A nosotros nos interesa evitarlas: las horas que dejan de ir a incidencias pasan a evolutivos, y si la entrega cae del umbral, la factura se ajusta. Está en el contrato."
+            },
+            {
+              "angulo": "Por la regulación sobre la cartera viva",
+              "cuando": "si aparecen DORA o NIS2",
+              "texto": "La resiliencia hay que demostrarla sobre lo que está en producción, no solo sobre lo nuevo. La evidencia técnica la genera el propio trabajo de mantenimiento, no una auditoría aparte."
+            }
+          ],
+          "regla": "Estas frases abren y cualifican. Si la conversación va a modernizar una aplicación concreta, es Modernización; si va a reforzar el equipo, Asistencia técnica. Cuando el cliente muerde, el siguiente paso es traer a Jorge."
+        },
+        "pitch_por_rol": [
+          {
+            "rol": "CIO",
+            "pregunta": "¿Qué parte del presupuesto de IT se va en sostener lo que ya existe?",
+            "le_mueve": "que el run deje de comerse el change; la incidencia evitada pasa a evolutivo."
+          },
+          {
+            "rol": "Responsable de aplicaciones",
+            "pregunta": "¿Cuánto tarda hoy una petición de negocio en llegar a producción?",
+            "le_mueve": "especificaciones vivas y un evolutivo que se financia con lo que se deja de gastar en corregir."
+          },
+          {
+            "rol": "CFO",
+            "pregunta": "¿Cerráis el presupuesto de mantenimiento por horas o por lo que se entrega?",
+            "le_mueve": "mismo importe, más valor; una parte medida del ahorro por IA baja el precio, en el contrato."
+          },
+          {
+            "rol": "CISO / Compliance",
+            "pregunta": "¿Podéis demostrar resiliencia (DORA) sobre la cartera en producción?",
+            "le_mueve": "la evidencia técnica que pide el regulador, generada mientras se mantiene."
+          }
+        ],
+        "pitch_nota": "Se entra por el CIO o por aplicaciones; el CFO decide en cuanto hay número.",
+        "objeciones": [
+          {
+            "texto": "Ya tenemos un contrato de mantenimiento con otro proveedor.",
+            "respuesta": "No pedimos cambiarlo de golpe. Diagnóstico de cartera, sprint de calibración y tres meses en paralelo con los dos modelos; pasas a capacidad de entrega solo si el paralelo te convence. Y si vuelves, tres meses en paralelo sin penalización."
+          },
+          {
+            "texto": "Esto es subir el precio del mantenimiento.",
+            "respuesta": "Arrancas igual o por debajo de lo que pagas hoy, con tolerancia del ±10% y un suelo de precio. La evolución se financia con lo que se deja de gastar en corregir, no con partida nueva."
+          },
+          {
+            "texto": "Nuestro proveedor ya usa IA.",
+            "respuesta": "La pregunta es quién se queda con el ahorro. En un contrato por horas, el proveedor. Aquí una parte medida baja tu precio cada año, en el contrato."
+          },
+          {
+            "texto": "¿Y si la IA mete más deuda?",
+            "respuesta": "Sin control, sobre deuda previa la IA mete más deuda (Google, State of DevOps 2025). Por eso la salud del aplicativo (ISA) va en cada factura: ves si tu software mejora o solo aguanta."
+          }
+        ],
+        "preguntas_cualificacion": [
+          "¿Qué porcentaje del presupuesto de IT va a mantener lo que ya existe?",
+          "¿Cuántas incidencias al mes, y quién cobra por ellas?",
+          "¿Hay una lista de evolutivos que negocio pide y no salen?",
+          "¿Os aplica DORA o NIS2 sobre sistemas que ya están en producción?"
+        ],
+        "referencias_destacadas": [
+          "mod-caso-dgoj",
+          "mod-caso-miciu"
+        ],
+        "material_interno": [
+          "software-pains-mantenimiento",
+          "mod-argumentario"
+        ],
+        "material_interno_nota": "El 40% del ahorro está en la ficha y pendiente de confirmar para documento público; las cifras económicas del modelo (€/UCE, tabla de equivalencias, reparto interno) no salen a cliente.",
+        "dossier_imprimible": true
       },
-      "keynotes": [],
+      "keynotes": [
+        {
+          "dolor": "En enero ya tengo el 80% del presupuesto comprometido en mantener lo que hay.",
+          "frase": "Lo que se va en sostener se reinvierte en evolucionar: la incidencia evitada pasa a evolutivo en el mismo contrato.",
+          "prueba": "DGOJ: entre un 40 y un 60% menos de coste de mantenimiento.",
+          "paso": "Un sprint de calibración de cuatro a seis semanas sobre tu propio código. Te presento a Jorge."
+        },
+        {
+          "dolor": "Negocio pide y el sistema dice que en seis meses.",
+          "frase": "El mantenimiento es la puerta cerrada del negocio que va lento; con especificaciones vivas, tocar deja de dar miedo.",
+          "prueba": "Agencia Estatal de Investigación: +40% de cumplimiento de SLA con el mismo contrato.",
+          "paso": "Diagnóstico de cartera de diez a quince días: por dónde empezar."
+        },
+        {
+          "dolor": "Cada incidencia me la cobran.",
+          "frase": "El resto cobra por incidencia; nosotros la convertimos en evolución, y si la entrega cae del umbral la factura se ajusta.",
+          "prueba": "IGE e ISA en cada factura, calculados sobre tu Jira y tu SonarQube.",
+          "paso": "Tres meses en paralelo con los dos modelos; decides con datos."
+        },
+        {
+          "dolor": "DORA me pide demostrar resiliencia sobre lo que ya está en producción.",
+          "frase": "La evidencia técnica la genera el propio trabajo de mantenimiento.",
+          "prueba": "Ya operamos así en banca, sector público, telco, industria y energía.",
+          "paso": "Empezamos por la cartera regulada."
+        }
+      ],
       "referencias": [
-        "mod-caso-dgoj"
+        "mod-caso-dgoj",
+        "mod-caso-miciu",
+        "mod-caso-h10"
       ],
       "materiales": [
         "software-mantenimiento-onepager",
-        "software-mantenimiento-ficha",
-        "software-pains-mantenimiento"
+        "mod-deck-ejecutivo",
+        "software-mantenimiento-ficha"
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Propuesta completa, casos y materiales de esta solución",
+        "texto": "Lectura de Jorge: reparto del ahorro (20 o 40%) y si sale en documento público, Foreworth como contraste, casos DGOJ, MICIU y H10 colgados aquí.",
         "dueno": "Jorge",
         "fecha_objetivo": "sept 2026"
       }
@@ -317,24 +424,27 @@
     {
       "id": "asistencia-tecnica",
       "nombre": "Asistencia técnica aumentada",
-      "una_linea": "Especialistas de los Centros de Excelencia dentro de tu equipo, con una entrega que se mide.",
+      "una_linea": "Contratas entrega, no currículums: capacidad medida y sustituible por contrato.",
       "especialista": "Jorge",
       "estado": "vigente",
       "dueno": "Jorge",
       "fecha_objetivo": "sept 2026",
       "propuesta": {
-        "que_es": "Aportamos capacidad técnica especializada desde los Centros de Excelencia, conectada a una entrega medible y al contexto real del equipo del cliente.",
-        "a_quien": null,
-        "senal": "Falta capacidad o conocimiento especializado para desbloquear una prioridad concreta; una iniciativa con demanda técnica variable que necesita un encaje operativo más claro.",
-        "por_que_nosotros": null,
-        "diferenciador": null,
+        "que_es": "Reforzamos tu equipo de desarrollo con capacidad medida, no con horas atadas a un nombre. Cada perfil entra adscrito a un Centro de Excelencia, su entrega se mide sobre tus propias herramientas y el conocimiento del sistema queda en la especificación, no en una persona que puede irse. Y el ahorro de eficiencia que trae la IA no se pierde: se convierte en créditos de modernización que gastas en tu propia cartera.",
+        "a_quien": "Quien tiene perfiles externos dentro del equipo (asistencias técnicas, nearshore, fábrica) y no encuentra o no retiene talento. Entras por el CIO o el director de aplicaciones; Compras aparece en cuanto se habla de tarifa, y conviene tenerlo dentro desde el principio. Foco: banca, sector público e industria.",
+        "senal": "Perfiles clave que se van y se llevan el conocimiento. Contratos por hora-perfil donde nadie mide lo que entrega cada persona. Meses con asistentes de IA en el equipo sin saber qué producen. Compras que solo compara tarifa.",
+        "por_que_nosotros": "El nearshore vende perfiles; nosotros firmamos capacidad: contratas entrega, no currículums. Cada perfil viene con un Centro de Excelencia detrás (España y LATAM, con red de especialistas y capacidad flotante), su entrega se mide sobre tu Jira y tu SonarQube y va en la factura, y si rota, el conocimiento se queda en la especificación. El ahorro de eficiencia de la IA vuelve a tu cartera como créditos de modernización, con un catálogo cerrado de servicios donde gastarlos.",
+        "diferenciador": "Capacidad sustituible por contrato, el conocimiento en la especificación y el ahorro de la IA devuelto como créditos de modernización.",
         "objecion_principal": {
           "texto": "¿Esto es solo poner perfiles?",
-          "respuesta": "No se presenta como cobertura de perfiles: se conecta con una prioridad, una entrega y un modelo de coordinación claros, con un resultado que se pueda comprobar."
+          "respuesta": "No. Tres cosas que no están en un contrato de horas: la unidad es la entrega y se mide sobre vuestras herramientas; cada persona tiene un Centro de Excelencia detrás, así que nunca dependes de un nombre; y el conocimiento queda en la especificación cuando alguien rota. Y si quieres volver, tres meses en paralelo sin penalización."
         },
-        "como_abres": "«¿Qué entrega o capacidad técnica os está frenando ahora y qué tendría que quedar resuelto para considerar que el apoyo ha funcionado?»",
-        "primer_paso": null,
-        "planteamiento": "La asistencia técnica aporta más cuando se vincula a una entrega y una responsabilidad, no a una presencia aislada: especialización, contexto de negocio y una forma de medir el avance."
+        "como_abres": "«¿Cuántas personas externas tenéis en el equipo, y qué sabéis de lo que entrega cada una?»",
+        "primer_paso": {
+          "titulo": "Un primer tramo de capacidad",
+          "plazo": "medido desde el primer mes",
+          "nota": "La capacidad justa, adscrita a un Centro de Excelencia y medida sobre vuestras herramientas desde el día uno. Escalas o la sustituyes por contrato. El modelo de créditos de modernización lo presenta Jorge (anexo 3 del deck); no lo cuentes con cifras."
+        }
       },
       "limites": [
         "No se compromete un equipo antes de concretar necesidades, responsabilidades y forma de trabajar.",
@@ -346,24 +456,127 @@
         "Una iniciativa con demanda técnica variable necesita un encaje operativo más claro."
       ],
       "kit": {
-        "frases_cuenta": null,
-        "pitch_por_rol": [],
-        "objeciones": [],
-        "preguntas_cualificacion": [],
-        "referencias_destacadas": [],
-        "material_interno": [],
-        "dossier_imprimible": false
+        "frases_cuenta": {
+          "nota": "Frases por dolor, sacadas de la ficha, el one-pager y el anexo 3 del deck. El modelo de créditos lo cuenta Jorge; tú abres.",
+          "frases": [
+            {
+              "angulo": "Por el talento que no llega",
+              "cuando": "si no encuentran o no retienen perfiles",
+              "texto": "El talento dejó de cerrarse contratando. Contratas entrega, no currículums: cada perfil viene con un Centro de Excelencia detrás y es sustituible por contrato, sin que el conocimiento se vaya con la persona."
+            },
+            {
+              "angulo": "Por las horas que no sabes qué producen",
+              "cuando": "si llevan meses con asistentes de IA",
+              "texto": "Los equipos creen que van un 20% más rápido y miden que van un 19% más lento (METR, 2025). Aquí la entrega de cada perfil se mide sobre vuestro Jira y vuestro SonarQube y va en la factura."
+            },
+            {
+              "angulo": "Por Compras",
+              "cuando": "si la conversación se va a la tarifa hora",
+              "texto": "La conversación deja de ser cuántas horas y pasa a ser cuánto entregas. Y el ahorro de eficiencia que trae la IA no se lo queda el proveedor: vuelve a vuestra cartera como créditos de modernización."
+            },
+            {
+              "angulo": "Por el que se va mañana",
+              "cuando": "si dependen de una persona externa",
+              "texto": "Cuando el perfil rota, el sistema no se queda ciego: el conocimiento vive en la especificación, auditable, y detrás hay nodo ancla, red de especialistas y capacidad flotante."
+            }
+          ],
+          "regla": "Estas frases abren. El modelo de créditos de modernización y el índice SDPI los explica Jorge; no lo cuentes con cifras. Si la necesidad es una aplicación concreta, es Modernización; si es la cartera en producción, Mantenimiento."
+        },
+        "pitch_por_rol": [
+          {
+            "rol": "CIO",
+            "pregunta": "¿Cuánto conocimiento de vuestros sistemas vive en gente externa que puede irse mañana?",
+            "le_mueve": "capacidad sustituible y el conocimiento en la especificación."
+          },
+          {
+            "rol": "Director de aplicaciones",
+            "pregunta": "¿Cuántos perfiles externos tenéis, y qué mide cada uno?",
+            "le_mueve": "la entrega de cada perfil en la factura y un CoE detrás."
+          },
+          {
+            "rol": "Compras",
+            "pregunta": "¿Compráis horas o compráis entregas?",
+            "le_mueve": "capacidad sustituible por contrato, tolerancia del ±10% y salida a tres meses sin penalización."
+          },
+          {
+            "rol": "CFO",
+            "pregunta": "¿Dónde va el ahorro que la IA le está dando a vuestros proveedores?",
+            "le_mueve": "créditos de modernización sobre su propia cartera, sin nueva licitación."
+          }
+        ],
+        "pitch_nota": "Se entra por el CIO o por aplicaciones; Compras decide, mételo pronto.",
+        "objeciones": [
+          {
+            "texto": "Ya tenemos proveedor de perfiles, y el nearshore es más barato.",
+            "respuesta": "El nearshore vende perfiles; nosotros firmamos capacidad medida. Cuando el perfil rota, el conocimiento se queda en la especificación y el riesgo deja de ser tuyo. Compara entrega, no tarifa."
+          },
+          {
+            "texto": "Solo necesitamos dos personas.",
+            "respuesta": "Empezamos por el tramo justo, adscrito a un Centro de Excelencia y medido desde el primer mes. Escalas o sustituyes por contrato, sin fricción."
+          },
+          {
+            "texto": "Compras solo mira la tarifa hora.",
+            "respuesta": "Por eso conviene que esté en la mesa: la unidad es la entrega, se mide sobre vuestras herramientas y va en la factura; y el ahorro de eficiencia vuelve como créditos de modernización para vuestra propia cartera."
+          },
+          {
+            "texto": "Esto es staff augmentation con otro nombre.",
+            "respuesta": "Tres cosas que un contrato de horas no tiene: la unidad es la entrega, hay un CoE detrás de cada persona y el conocimiento queda en la especificación cuando alguien rota."
+          }
+        ],
+        "preguntas_cualificacion": [
+          "¿Cuántos perfiles externos tenéis en el equipo y con qué contrato?",
+          "¿Qué pasa con el conocimiento del sistema cuando uno rota?",
+          "¿Se mide la entrega de cada perfil o solo las horas?",
+          "¿Tenéis asistentes de IA en el equipo, y sabéis qué producen?"
+        ],
+        "referencias_destacadas": [
+          "at-caso-banca-latam"
+        ],
+        "material_interno": [
+          "software-pains-asistencia",
+          "mod-argumentario"
+        ],
+        "material_interno_nota": "Targets de piloto (Wolters Kluwer, UNED, Randstad) solo internos y pendientes de autorización; la «sustitución en 5 días» no es compromiso oficial; los factores del modelo de créditos no se prometen.",
+        "dossier_imprimible": true
       },
-      "keynotes": [],
-      "referencias": [],
+      "keynotes": [
+        {
+          "dolor": "No encuentro perfiles, y los que tengo se van.",
+          "frase": "Contratas entrega, no currículums: la capacidad es sustituible y el conocimiento queda en la especificación.",
+          "prueba": "Más de 250 personas sobre el core de una entidad financiera, en tres países (por cuenta).",
+          "paso": "Un primer tramo de capacidad, medido desde el primer mes. Te presento a Jorge."
+        },
+        {
+          "dolor": "Pago horas y no sé qué producen.",
+          "frase": "La entrega de cada perfil se mide sobre vuestras herramientas y va en la factura.",
+          "prueba": "METR 2025: creen que van un 20% más rápido, miden un 19% más lento. Sin medir, no hay retorno.",
+          "paso": "Medimos desde el día uno; el modelo lo enseña Jorge."
+        },
+        {
+          "dolor": "Compras solo mira la tarifa.",
+          "frase": "Cuánto entregas, no cuántas horas; y el ahorro de la IA vuelve como créditos de modernización.",
+          "prueba": "Está en el deck (anexo 3); Jorge lo cuenta.",
+          "paso": "Reunión con Compras dentro, no después."
+        },
+        {
+          "dolor": "Cuando el técnico externo rota, el sistema se queda ciego.",
+          "frase": "Cada perfil entra adscrito a un Centro de Excelencia: nodo ancla, red de especialistas y capacidad flotante detrás.",
+          "prueba": "El conocimiento vive en la especificación, versionada y auditable.",
+          "paso": "Empezamos por el sistema que hoy depende de una persona."
+        }
+      ],
+      "referencias": [
+        "at-caso-banca-latam",
+        "at-caso-industria-energia"
+      ],
       "materiales": [
         "software-asistencia-onepager",
-        "software-asistencia-ficha",
-        "software-pains-asistencia"
+        "mod-deck-ejecutivo",
+        "software-asistencia-ficha"
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Propuesta completa, casos y materiales de esta solución",
+        "texto": "Lectura de Jorge: ficha y one-pager venden UCE y el modelo ahora es de créditos (piezas en revisar), referencias anónimas de banca LATAM e industria y energía por confirmar.",
         "dueno": "Jorge",
         "fecha_objetivo": "sept 2026"
       }
