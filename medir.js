@@ -79,6 +79,12 @@ htmlFiles.forEach((f) => {
   if (/Security/.test(html)) canon.push("Security");
   if (/§\s*\d/.test(html)) canon.push("§ + dígito");
   if (/no se abre[^<]{0,40}%|%[^<]{0,40}no se abre/i.test(html)) canon.push("métrica de uso");
+  // revisión 12: notas de revisión, «acompañar» y «Demo a Dirección» — salvo /autodiagnostico/ (página de julio, no se toca)
+  if (!route.startsWith("/autodiagnostico")) {
+    if (/revisión\s*\d/i.test(html)) canon.push("nota de revisión");
+    if (/acompañ/i.test(html)) canon.push("acompañar");
+    if (/Demo a Dirección/i.test(html)) canon.push("Demo a Dirección");
+  }
   if (canon.length) results.honestidad.push(`${route} (canon: ${canon.join(", ")})`);
 });
 
