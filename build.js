@@ -87,11 +87,21 @@ ${modal || ""}
 // ---------- Helpers de estado (§6.5) ----------
 const VIG = { vigente: "vigente", revisar: "revisar", pendiente: "pendiente" };
 const USO = { si: "sale al cliente", no: "interno", con_validacion: "con validación" };
-function chipVigencia(estado, fecha) {
+function chipEstado(estado, fecha) {
   const label = (VIG[estado] || estado) + (fecha ? " · " + fecha : "");
   return `<span class="chip is-${esc(estado)}">${esc(label)}</span>`;
 }
+// E8 · el chip solo pinta la excepción: «vigente» es el caso normal y no lleva chip.
+function chipVigencia(estado, fecha) {
+  return estado === "vigente" ? "" : chipEstado(estado, fecha);
+}
+// E8 · «sale al cliente» es el caso normal y no lleva chip.
 function chipUso(uso) {
+  if (uso === "si") return "";
+  return chipUsoSiempre(uso);
+}
+// Siempre pinta (fila «Uso» de la ficha de pieza, donde el dato completo sí importa).
+function chipUsoSiempre(uso) {
   const map = { si: "is-cliente", no: "is-interno", con_validacion: "is-validacion" };
   return `<span class="chip ${map[uso] || ""}">${esc(USO[uso] || uso)}</span>`;
 }
@@ -151,6 +161,10 @@ const MOMENTOS = [
 const TIPOS_FILTRO = ["Deck", "One-pager", "Ficha", "Referencia", "Guía de discovery", "Guía interna", "Plantilla", "Herramienta", "Archivo"];
 // El eyebrow pinta el tipo y, si hay, el subtipo (texto libre que se busca pero no filtra).
 function eyebrowTipo(m) { return m.subtipo ? `${m.tipo} · ${m.subtipo}` : m.tipo; }
+// E4 · cabecera de sección a dos columnas (eyebrow + H2 a la izquierda, contexto a la derecha).
+function sectionHead(eyebrow, h2, nota) {
+  return `<div class="section-head"><div>${eyebrow ? `<p class="eyebrow">${esc(eyebrow)}</p>` : ""}<h2>${esc(h2)}</h2></div>${nota ? `<p>${esc(nota)}</p>` : ""}</div>`;
+}
 
 function materialLink(m) {
   if (!m) return "";
@@ -405,9 +419,9 @@ function fichaBody(m) {
     meta += fila("Citabilidad", chipCitable(m) + (m.citable === "citable" && m.sign_off ? ` <span class="footer-note">${esc(m.sign_off.quien)} · ${esc(fechaCorta(m.sign_off.fecha))}</span>` : ""));
     meta += fila("Envío al cliente", `<span class="footer-note">${esc(LEYENDA_CITA)}</span>`);
   } else {
-    meta += fila("Uso", chipUso(m.sale_al_cliente) + ` <span class="footer-note">${esc(m.confidencialidad || "")}</span>`);
+    meta += fila("Uso", chipUsoSiempre(m.sale_al_cliente) + ` <span class="footer-note">${esc(m.confidencialidad || "")}</span>`);
   }
-  meta += fila("Estado", chipVigencia(m.estado, m.fecha_revision));
+  meta += fila("Vigencia", chipEstado(m.estado, m.fecha_revision));
   meta += fila("Dueño", esc(nombreCompleto(m.dueno)) + (m.mantenida_por ? ` <span class="footer-note">(${m.mantenida_por === "agente" ? "🤖 agente" : "✍️ SM"})</span>` : ""));
   if (m.sector && m.sector.length) meta += fila("Sector", esc(m.sector.join(" · ")));
   if (m.momento_comercial) meta += fila("Momento", esc({ primer_contacto: "Primer contacto", reunion: "En la reunión", para_dejar: "Para dejar al cliente" }[m.momento_comercial] || m.momento_comercial));
@@ -502,44 +516,32 @@ function materialCard(m) {
 // PORTADA (§6.3 · una pantalla)
 // =====================================================================
 function portadaPage(corp, practicas) {
-  const cta = corp.relato && corp.relato.entradas ? "Cómo presentar Entelgy →" : "Entelgy →";
-  const band = `<section style="background:var(--color-brand-navy);color:#fff">
-    <div class="wrap" style="padding:var(--space-7) var(--space-5);display:flex;gap:var(--space-6);align-items:flex-end;justify-content:space-between;flex-wrap:wrap">
-      <div style="max-width:60ch">
-        <p class="eyebrow" style="color:var(--color-slate-300)">Entelgy en una frase</p>
-        <p class="h" style="font-family:var(--font-family-display);font-weight:700;font-size:var(--font-size-4xl);line-height:1.1;margin:var(--space-3) 0 var(--space-3)">${esc(corp.portada.titular || corp.entelgy_una_frase)}</p>
-        <p style="color:var(--color-slate-200);font-size:var(--font-size-lg);max-width:64ch">${esc(corp.portada.subtitular || "")}</p>
-      </div>
-      <a class="btn btn-cta" href="/entelgy/">${esc(cta)}</a>
+  // Hero editorial (frase de MA a 68 px, subtitular y único CTA)
+  const band = `<section class="section hero" style="padding:76px 0 68px"><div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Entelgy en una frase</p>
+      <h1 class="hero-h1">${esc(corp.portada.titular || corp.entelgy_una_frase)}</h1>
+      <p class="lede">${esc(corp.portada.subtitular || "")}</p>
     </div>
-  </section>`;
+    <a class="btn btn-cta hero-cta" href="/entelgy/">Cómo presentar Entelgy →</a>
+  </div></section>`;
 
-  const cards = practicas.map((pr) => {
+  // La oferta · tira de prácticas sobre banda navy (cajas de solución que envuelven el texto)
+  const cols = practicas.map((pr) => {
     const solUnica = (pr.soluciones || []).length === 1 && pr.soluciones[0].es_solucion_unica;
-    // Solución única (Data Intelligence · rev 5): sin cajitas y enlace directo a la solución.
-    const cajitas = solUnica ? "" :
-      `<div class="sol-boxes">${(pr.soluciones || []).map((s) => `<a class="sol-box" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">${esc(s.nombre)}</a>`).join("")}</div>`;
-    const enlace = solUnica
-      ? `<a class="text-link" href="/practicas/${esc(pr.id)}/${esc(pr.soluciones[0].id)}/">Ver la solución →</a>`
-      : `<a class="text-link" href="/practicas/${esc(pr.id)}/">Ver práctica →</a>`;
-    const propuestaCorta = pr.propuesta_portada || pr.propuesta;
-    return `<article class="card" style="display:flex;flex-direction:column;gap:var(--space-2)">
-      <span class="footer-note">${esc(pr.orden)}</span>
-      <h3 style="font-size:var(--font-size-xl)"><a style="text-decoration:none" href="/practicas/${esc(pr.id)}/">${esc(pr.nombre)}</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);flex-grow:1">${esc(propuestaCorta)}</p>
-      ${cajitas}
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:var(--space-2);padding-top:var(--space-3);border-top:1px solid var(--color-border-subtle);font-size:var(--font-size-sm);color:var(--color-text-secondary)">
-        <span>${esc(nombreCompleto(pr.responsable))}</span>${enlace}
-      </div>
+    const dest = solUnica ? `/practicas/${esc(pr.id)}/${esc(pr.soluciones[0].id)}/` : `/practicas/${esc(pr.id)}/`;
+    const boxes = solUnica
+      ? `<div class="sol-boxes"><a class="sol-box" href="${dest}">Data Intelligence · una sola solución</a></div>`
+      : `<div class="sol-boxes">${(pr.soluciones || []).map((s) => `<a class="sol-box" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">${esc(s.nombre)}</a>`).join("")}</div>`;
+    return `<article class="sol-nav"><p class="num">${esc(pr.orden)}</p>
+      <h3>${esc(pr.nombre)}</h3>
+      <p>${esc(pr.propuesta_portada || pr.propuesta)}</p>
+      ${boxes}
+      <div class="sol-nav-foot"><span class="footer-note">${esc(nombreCompleto(pr.responsable))}</span><a class="text-link" href="${dest}">${solUnica ? "Ver la solución →" : "Ver práctica →"}</a></div>
     </article>`;
   }).join("");
-  const oferta = `<section class="section"><div class="wrap">
-    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-4);flex-wrap:wrap">
-      <div><p class="eyebrow">La oferta</p><h2 style="font-size:var(--font-size-3xl);margin-top:var(--space-1)">Cinco prácticas. Entra por la que necesite tu cliente.</h2></div>
-      <span class="footer-note">Entra en la práctica o directamente en una de sus soluciones.</span>
-    </div>
-    <div class="grid grid-5" style="margin-top:var(--space-5)">${cards}</div>
-  </div></section>`;
+  const oferta = `<div class="wrap"><section class="section">${sectionHead("La oferta", "Cinco prácticas. Entra por la que necesite tu cliente.", "Entra en la práctica o directamente en una de sus soluciones.")}</section></div>
+    <section class="band band-navy" style="padding:40px 0 44px"><div class="wrap"><div class="grid grid-5 tira">${cols}</div></div></section>`;
 
   // Regla de portada (§6.3 · rev 5): una pieza por práctica + el deck corporativo.
   // Pieza = sale al cliente, vigente, no referencia; momento «reunión» preferente; a
@@ -564,37 +566,33 @@ function portadaPage(corp, practicas) {
     if (!cand.length) return null;
     return cand.slice().sort((a, b) => (a.estado === "vigente" ? -1 : 0) - (b.estado === "vigente" ? -1 : 0) || fechaKey(b) - fechaKey(a))[0];
   }
-  function tarjetaPortada(m, pr) {
-    if (!m) return `<article class="card" style="padding:var(--space-4)">
+  function tarjetaPortada(m, pr, featured) {
+    const cls = featured ? "card-featured ed-mat" : "card ed-mat";
+    if (!m) return `<article class="card ed-mat">
       <p class="eyebrow">${esc(pr.nombre)}</p>
       <p class="pending" style="margin-top:var(--space-2)">Material para cliente en preparación · dueño: ${esc(nombreCompleto(pr.responsable))}.</p>
       <p style="margin-top:var(--space-3)"><a class="text-link" href="/practicas/${esc(pr.id)}/">Ver la práctica →</a></p>
     </article>`;
-    // 2 chips (uso + vigencia); sin chip «enlace pendiente» en tarjeta (solo en la ficha).
     const enlace = m.url_documento
-      ? `<a class="btn" href="${esc(m.url_documento)}">Abrir el documento ↗</a>`
+      ? `<a class="${featured ? "text-link" : "text-link"}" href="${esc(m.url_documento)}">Abrir el documento ↗</a>`
       : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`;
-    return `<article class="card" style="padding:var(--space-4)">
-      <p class="eyebrow">${m.practica === "corporativo" ? esc(m.tipo) : esc(m.tipo) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
-      <h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h4>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
-      <div class="chips" style="margin-top:var(--space-3)">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}</div>
-      <div style="margin-top:var(--space-3)">${enlace}</div>
+    return `<article class="${cls}">
+      <p class="eyebrow">${m.practica === "corporativo" ? esc(eyebrowTipo(m)) : esc(eyebrowTipo(m)) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
+      <h4 style="font-size:var(--font-size-2xl);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h4>
+      <p style="font-size:var(--font-size-sm)">${esc(m.nota_de_uso || "")}</p>
+      <div class="ed-mat-foot"><div class="chips">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}</div>${enlace}</div>
     </article>`;
   }
-  const usados = practicas.map((pr) => tarjetaPortada(piezaPortada(pr.id), pr));
-  usados.push(tarjetaPortada(deckCorporativo(), { id: "", nombre: "Corporativo", responsable: "Corporativo" }));
+  const piezas = [tarjetaPortada(deckCorporativo(), { id: "", nombre: "Corporativo", responsable: "Corporativo" }, true)]
+    .concat(practicas.map((pr) => tarjetaPortada(piezaPortada(pr.id), pr)));
   const accesos = (corp.portada.accesos_rapidos || []).map((a) =>
-    `<a class="chip" style="text-decoration:none" href="/materiales/${a.filtro && a.filtro.tipo ? "?tipo=" + encodeURIComponent(a.filtro.tipo) : ""}">${esc(a.label)}</a>`).join("");
-  const material = `<section class="section"><div class="wrap">
-    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-4);flex-wrap:wrap">
-      <div><p class="eyebrow">Material para el cliente</p><h2 style="font-size:var(--font-size-3xl);margin-top:var(--space-1)">Lo que puedes enseñar o enviar hoy.</h2></div>
-      <a class="text-link" href="/materiales/">Ver todos los materiales →</a>
-    </div>
-    <div class="chips" style="margin:var(--space-4) 0">${accesos}</div>
-    <p class="eyebrow" style="margin-bottom:var(--space-3)">Lo más reciente, por práctica</p>
-    <div class="grid grid-3">${usados.join("")}</div>
-  </div></section>`;
+    `<a class="quick-chip" href="/materiales/${a.filtro && a.filtro.tipo ? "?tipo=" + encodeURIComponent(a.filtro.tipo) : ""}">${esc(a.label)}</a>`).join("");
+  const material = `<div class="wrap"><section class="section">
+    ${sectionHead("Material para el cliente", "Lo que puedes enseñar o enviar hoy.", "Una pieza por práctica, la más reciente que sale al cliente, y el deck corporativo. Lo demás está en Materiales.")}
+    <div class="quick">${accesos}</div>
+    <div class="grid grid-3 ed-mats">${piezas.join("")}</div>
+    <p style="margin-top:var(--space-5)"><a class="text-link" href="/materiales/">Ver todos los materiales →</a></p>
+  </section></div>`;
 
   const body = band + oferta + material;
   return page({ title: "Hipatia · Catálogo comercial de Entelgy", desc: "Qué vende Entelgy en cada práctica y qué puedes enseñar o enviar a un cliente.", active: "inicio", body });
@@ -606,9 +604,6 @@ function portadaPage(corp, practicas) {
 function entelgyPage(corp, practicas) {
   const r = corp.relato || {};
   const pq = r.por_que || {};
-  const sectionHead = (eyebrow, h2, nota) => `<div class="section-head">
-    <div>${eyebrow ? `<p class="eyebrow">${esc(eyebrow)}</p>` : ""}<h2 style="font-size:var(--font-size-2xl);margin-top:var(--space-1)">${esc(h2)}</h2></div>
-    ${nota ? `<p class="footer-note">${esc(nota)}</p>` : ""}</div>`;
 
   // Por qué Entelgy (banda slate + tres diferenciadores)
   const pilares = (pq.pilares || []).map((p) => `<span class="chip">${esc(p)}</span>`).join("");

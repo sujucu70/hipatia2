@@ -414,3 +414,26 @@ details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
   .band .grid-5{ border:0; }
   .sol-nav{ border-right:0; border-bottom:1px solid rgba(255,255,255,.16); }
 }
+
+/* ---- Portada editorial (revisión 14 · AU.2) ---- */
+.hero-grid{ display:grid; grid-template-columns:1.4fr .6fr; gap:40px; align-items:end; }
+.hero-h1{ font-size:68px; line-height:1; letter-spacing:-.02em; max-width:17ch; margin:14px 0 20px; color:#fff; }
+.hero-cta{ justify-self:end; }
+.sol-nav{ display:flex; flex-direction:column; }
+.sol-nav h3{ font-size:24px; line-height:1.02; margin:14px 0 10px; }
+.sol-nav > p{ min-height:70px; }
+.sol-nav .sol-boxes{ flex-direction:column; gap:6px; margin-top:16px; }
+.sol-nav .sol-box{ display:block; color:#fff; background:transparent; border-color:rgba(255,255,255,.28); overflow-wrap:break-word; }
+.sol-nav .sol-box:hover{ border-color:#fff; color:#fff; }
+.sol-nav-foot{ margin-top:auto; padding-top:18px; display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap; }
+.quick{ display:flex; gap:8px; flex-wrap:wrap; margin:0 0 18px; }
+.quick-chip{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-purple-700); text-decoration:none; padding:7px 10px; border:1px solid var(--color-border-default); border-radius:var(--radius-sm); background:var(--color-surface); }
+.quick-chip:hover{ border-color:var(--color-brand-purple); }
+.ed-mat{ display:flex; flex-direction:column; }
+.ed-mat-foot{ margin-top:auto; padding-top:18px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; }
+@media (max-width:900px){
+  .hero-grid{ grid-template-columns:1fr; gap:22px; }
+  .hero-h1{ font-size:42px; max-width:none; }
+  .hero-cta{ justify-self:start; }
+  .sol-nav > p{ min-height:0; }
+}
