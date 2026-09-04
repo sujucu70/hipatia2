@@ -395,6 +395,24 @@ details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
 .card-num > *{ position:relative; z-index:1; }
 .card-num[data-num]::before{ content:attr(data-num); position:absolute; right:14px; bottom:-14px; z-index:0; font-family:var(--font-family-display); font-weight:700; font-size:96px; line-height:1; color:var(--color-purple-100); letter-spacing:-.04em; pointer-events:none; }
 
+/* E10 · la prosa no pasa de ~72 caracteres por línea */
+.prop-cuerpo{ max-width:72ch; }
+/* BB · «La propuesta» a dos columnas; diferenciador como cita, objeción como diálogo */
+.propuesta-cols{ display:grid; grid-template-columns:1fr; gap:var(--space-6); }
+.prop-bloque + .prop-bloque{ margin-top:var(--space-5); }
+.cita-slate{ background:var(--color-brand-slate); color:#fff; border-radius:var(--radius-lg); padding:var(--space-5); margin-top:var(--space-5); }
+.cita-slate .eyebrow{ color:var(--color-purple-300); }
+.cita-slate .cita-frase{ font-family:var(--font-family-display); font-size:28px; line-height:1.15; color:#fff; margin-top:var(--space-2); }
+.dialogo{ margin-top:var(--space-5); display:grid; gap:var(--space-3); }
+.dialogo .dia-card{ border-left:3px solid var(--color-brand-purple); background:var(--color-surface); border-radius:var(--radius-md); padding:var(--space-3) var(--space-4); }
+.abre-paso{ display:grid; grid-template-columns:1fr; gap:var(--space-4); margin-top:var(--space-5); }
+.cita-abre{ border-top:3px solid var(--color-brand-purple); }
+.cita-abre .abre-pregunta{ font-family:var(--font-family-display); font-size:var(--font-size-2xl); line-height:1.1; margin-top:var(--space-2); }
+@media (min-width:1024px){
+  .propuesta-cols{ grid-template-columns:1.1fr .9fr; }
+  .abre-paso{ grid-template-columns:1fr 1.4fr; }
+}
+
 /* BA.7 · «Lo que presiona al CIO»: cinco fuerzas (cifra en display) y cuatro relojes */
 .fuerza .cifra{ font-family:var(--font-family-display); font-weight:700; font-size:var(--font-size-5xl); line-height:1; margin:var(--space-1) 0; letter-spacing:-.02em; }
 .relojes{ display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-4); margin-top:var(--space-4); background:var(--color-surface); border-left:3px solid var(--color-brand-purple); border-radius:var(--radius-md); padding:var(--space-4); }

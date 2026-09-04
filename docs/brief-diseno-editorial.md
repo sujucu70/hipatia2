@@ -29,6 +29,7 @@ La v3 tiene la identidad correcta y se ve como un panel de administración: todo
 | E7 | Geometría: dos arcos concéntricos en la esquina superior derecha de cada hero (`::before`/`::after`, borde 1 px blanco al 14 %, anillos al 3 %), un círculo en la tarjeta destacada. Nada más. | Heros y tarjeta destacada |
 | E8 | Chips: mono 11 px mayúscula, `radius-sm`. Solo se pinta la excepción: «revisar», «pendiente», «con validación», «confirmar por cuenta», «interno». «Sale al cliente · vigente» es el caso normal y no lleva chip. Los estados conservan el punto. | Todas |
 | E9 | Biblioteca: barra de filtros sobre navy con etiqueta mono sobre cada campo, los nueve tipos (N1) en una línea, «88 piezas visibles» debajo; tarjetas con eyebrow de tipo, titular a 24, nota, excepción y «Ver ficha →». Dueño con nombre y apellido (N2). | /materiales |
+| E10 | Prosa: ningún párrafo pasa de 72 caracteres por línea (`max-width: 72ch`) en solución, práctica y pieza. Lo que necesite el ancho entero va a dos columnas (p. ej. «La propuesta»: 1.1fr/.9fr a partir de 1024 px). | Solución, práctica, pieza |
 
 ## Cómo se aplica a cada página
 

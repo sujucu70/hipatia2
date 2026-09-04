@@ -212,29 +212,34 @@ function solucionPage(pr, s) {
     <p style="margin-top:var(--space-2);color:var(--color-text-secondary);font-size:var(--font-size-sm)">Especialista: <b>${esc(nombreCompleto(s.especialista))}</b>${s.estado === "en_preparacion" ? " · " + chipVigencia("pendiente", s.fecha_objetivo) : ""}</p>
   </div></section>`;
 
-  // 2 · La propuesta (qué vendemos y por qué Entelgy)
-  const filaProp = (k, v) => v ? `<div class="grid-2" style="gap:var(--space-3);padding:var(--space-3) 0;border-top:1px solid var(--color-border-subtle)"><b>${esc(k)}</b><div>${v}</div></div>` : "";
-  let propHtml = "";
-  propHtml += filaProp("Qué es", esc(prop.que_es));
-  propHtml += filaProp("A quién / la señal", esc([prop.a_quien, prop.senal].filter(Boolean).join(" ")));
-  propHtml += prop.por_que_nosotros
-    ? filaProp("Por qué Entelgy", esc(prop.por_que_nosotros))
+  // 2 · La propuesta (BB · dos columnas; el diferenciador como cita, la objeción como diálogo,
+  // la apertura junto al primer paso). Sin cambios de datos.
+  const prosa = (t) => t ? `<p>${esc(t)}</p>` : "";
+  const bloqueProp = (label, contenido) => contenido ? `<div class="prop-bloque"><p class="eyebrow">${esc(label)}</p><div class="prop-cuerpo">${contenido}</div></div>` : "";
+  const quesEs = bloqueProp("Qué es", prosa(prop.que_es));
+  const porQue = prop.por_que_nosotros
+    ? bloqueProp("Por qué Entelgy", prosa(prop.por_que_nosotros))
     : (s.estado === "en_preparacion"
-        ? filaProp("Por qué Entelgy", `<p class="pending" style="margin:0">En preparación · dueño: ${esc(nombreCompleto(s.dueno || "por asignar"))} · fecha objetivo: ${esc(s.fecha_objetivo || "sin fecha")}</p>`)
+        ? bloqueProp("Por qué Entelgy", `<p class="pending" style="margin:0">En preparación · dueño: ${esc(nombreCompleto(s.dueno || "por asignar"))} · fecha objetivo: ${esc(s.fecha_objetivo || "sin fecha")}</p>`)
         : "");
-  if (prop.diferenciador) propHtml += filaProp("El diferenciador", esc(prop.diferenciador));
-  if (prop.objecion_principal) propHtml += filaProp("La objeción que más vas a oír", `<i>«${esc(prop.objecion_principal.texto)}»</i><br>${esc(prop.objecion_principal.respuesta)}`);
-  if (prop.como_abres) propHtml += filaProp("Cómo abres", esc(prop.como_abres));
+  const aQuien = bloqueProp("A quién / la señal", prosa([prop.a_quien, prop.senal].filter(Boolean).join(" ")));
+  const difer = prop.diferenciador ? `<div class="cita-slate"><p class="eyebrow">El diferenciador</p><p class="cita-frase">${esc(prop.diferenciador)}</p></div>` : "";
+  const obj = prop.objecion_principal ? `<div class="dialogo"><div class="dia-card"><p class="eyebrow">Te dirán</p><p><i>${esc(prop.objecion_principal.texto)}</i></p></div><div class="dia-card"><p class="eyebrow">Respondes</p><p>${esc(prop.objecion_principal.respuesta)}</p></div></div>` : "";
   const pp = prop.primer_paso;
-  body += `<section class="section"><div class="wrap">
-    <p class="eyebrow">Qué vendemos y por qué Entelgy</p>
-    <h2 style="font-size:var(--font-size-2xl);margin:var(--space-2) 0 var(--space-4)">La propuesta</h2>
-    <div>${propHtml}</div>
-    ${pp && pp.titulo ? `<div class="card-featured" style="margin-top:var(--space-5)">
+  const citaAbre = prop.como_abres ? `<div class="card cita-abre"><p class="eyebrow">Cómo abres</p><p class="abre-pregunta">${esc(prop.como_abres)}</p></div>` : "";
+  const pasoCard = (pp && pp.titulo) ? `<div class="card-featured">
         <p class="eyebrow" style="color:var(--color-orange-300)">El primer paso que se vende</p>
         <h3 style="color:#fff;font-size:var(--font-size-2xl);margin:var(--space-2) 0">${esc(pp.titulo)}${pp.plazo ? ` · ${esc(pp.plazo)}` : ""}</h3>
         <p style="color:var(--color-slate-200)">${esc(pp.nota || "")}</p>
-      </div>` : ""}
+      </div>` : "";
+  body += `<section class="section"><div class="wrap">
+    <p class="eyebrow">Qué vendemos y por qué Entelgy</p>
+    <h2 style="font-size:var(--font-size-2xl);margin:var(--space-2) 0 var(--space-4)">La propuesta</h2>
+    <div class="propuesta-cols">
+      <div>${quesEs}${porQue}</div>
+      <div>${aQuien}${difer}${obj}</div>
+    </div>
+    ${(citaAbre || pasoCard) ? `<div class="abre-paso">${citaAbre}${pasoCard}</div>` : ""}
   </div></section>`;
 
   // 2 bis · Capacidades (solo en la solución única, p. ej. Data Intelligence · §revisión 5)
