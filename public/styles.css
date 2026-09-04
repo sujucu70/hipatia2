@@ -348,7 +348,7 @@ details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
 }
 
 /* ============================================================
-   Capa editorial (revisión 14 · E1–E9) · composición sobre tokens
+   Capa editorial (rev 14 · E1–E9) · composición sobre tokens
    ============================================================ */
 /* E1 · escala de titulares */
 .hero h1{ font-size:60px; line-height:1; letter-spacing:-.02em; }
@@ -415,7 +415,7 @@ details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
   .sol-nav{ border-right:0; border-bottom:1px solid rgba(255,255,255,.16); }
 }
 
-/* ---- Portada editorial (revisión 14 · AU.2) ---- */
+/* ---- Portada editorial (rev 14 · AU.2) ---- */
 .hero-grid{ display:grid; grid-template-columns:1.4fr .6fr; gap:40px; align-items:end; }
 .hero-h1{ font-size:68px; line-height:1; letter-spacing:-.02em; max-width:17ch; margin:14px 0 20px; color:#fff; }
 .hero-cta{ justify-self:end; }
@@ -441,7 +441,7 @@ details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
 .grid-auto{ display:grid; gap:var(--space-4); grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); }
 @media (max-width:640px){ .grid-auto{ grid-template-columns:1fr; } }
 
-/* ---- Biblioteca editorial (revisión 14 · AU.6 · E9) ---- */
+/* ---- Biblioteca editorial (rev 14 · AU.6 · E9) ---- */
 .filters-panel{ background:var(--color-brand-navy); border-radius:var(--radius-lg); padding:var(--space-5); }
 .filters-panel .filter-group b{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-purple-300); }
 .filters-panel .filter-group label{ color:var(--color-slate-200); }
