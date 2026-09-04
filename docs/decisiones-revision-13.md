@@ -100,3 +100,21 @@
 - **Daniela**: nombre del servicio gestionado («oficina del dato»); versión definitiva de UNED; alcance del permiso de CNMV; Gartner como nota de prensa; título «Head of Data»; Luis Sanz como segundo contacto; Mutua como interno.
 - **Amador**: juego de datos de Telefónica Tech (−40% MTTD, Foreworth); +3.000 clientes y −30% con documento; +200 agentes (entidad); MEFPD y Valoriza como los casos anonimizados; Móstoles («usuarios»); cifras del DaaS de EJIE; niveles invertidos en el deck de Workplace; precios; permisos de nombres y logos; MAPFRE remite a PreservIA.
 - **Alfredo**: puerta de entrada (Readiness); plazos de OGH-IA; 151/15/9 o 150/9; Admiral y Bahía de Bizkaia (consentimiento); una cifra de uso en la sombra con fuente; 78% u 88%; «Oficina de Gobierno» → «Gobernanza Humana» en la ficha de IAbility; WEF retirado de la ficha pública; MAPFRE con un solo juego de cifras (con Amador); Cristina como segundo contacto.
+
+
+## 8 · Decisiones de la tarde (biblioteca, dueños, `/entelgy/` y capa editorial) · para la revisión 14
+
+| # | Decisión |
+|---|---|
+| V1 | **Biblioteca: nueve tipos cerrados** (Deck · One-pager · Ficha · Referencia · Guía de discovery · Guía interna · Plantilla · Herramienta · Archivo) **más `subtipo`** libre que se pinta y se busca pero no filtra. Filtro con orden fijo; `check-data.js` avisa de tipos fuera de la lista. Mapeo en `notas-susana-v3.md` N1. |
+| V2 | **Dueños con nombre y apellido en todo el portal, resueltos por el build** desde `personas.json` (`nombreCompleto()`); los JSON siguen con el nombre de pila. |
+| V3 | **`/entelgy/`: línea de tensión del deck v6** («Desplegar tecnología es fácil. Que mueva tu cuenta de resultados, no.»); la de MA (D3) se le enseña el 8. |
+| V4 | **Credenciales plegadas con las cifras del deck v6** (20+ años · 2.000 · 100% capital propio · >95% renueva · ISO 27001/27701 · ENS Alto · SOC 2) y sectores sin recuento. |
+| V5 ◆ | **La lista de funciones de la Oficina entra ya** (PMO/SMO, arquitectura, auditoría, apoyo CISO, agilidad, QMO, productividad, FinOps), aunque salga de la v2 y no del deck. |
+| V6 | **Los bloques nuevos de `/entelgy/` y el plegable de tres preguntas en las prácticas entran en la 14**, con lo visual. |
+| V7 | **El brief y los mocks son insumo de la 14** (otro hilo), no una revisión aparte. |
+| V8 ◆ | **Toda la capa editorial antes del 10**, en las cinco páginas. |
+| V9 | **Tira de prácticas de portada sobre navy** con las cajas de solución dentro, con prueba a 390 px. |
+| V10 | **Chips solo para la excepción**; «sale al cliente · vigente» sin chip. |
+| V11 | **Barlow Condensed con `<link>` en cabecera**, comprobada en producción. |
+| V12 | **Data Intelligence en portada con una caja** «Data Intelligence · una sola solución». |
