@@ -23,7 +23,7 @@
 ## Resumen
 
 - Errores duros: **0**
-- Avisos: **70**
+- Avisos: **68**
 - Pendientes registrados: **4**
 
 Modernización (Software Development) es la única solución con contenido íntegro validado (tarjeta, 6 casos con sign-off jul 2026, materiales por momento, «para prepararte»). El resto muestra su propuesta auditada del Executive Deck y marca casos y materiales «en preparación».

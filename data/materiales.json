@@ -1586,7 +1586,7 @@
       "sector": [],
       "momento_comercial": "preparar",
       "nota_de_uso": "Guía interna de discovery. Sirve para contrastar señales, no para diagnosticar sin evidencia.",
-      "url_documento": null,
+      "url_documento": "https://entelgy.guberna.es/digital-workplace/mapa-pains-infra.html",
       "origen": "digital-workplace/mapa-pains-infra.html"
     },
     {
@@ -2658,7 +2658,7 @@
       "mantenida_por": "sm",
       "citable": "no_aplica",
       "momento_comercial": "preparar",
-      "url_documento": null,
+      "url_documento": "https://entelgy.guberna.es/digital-workplace/mapa-pains.html",
       "origen": "digital-workplace/mapa-pains.html",
       "nota_de_uso": "Guía de discovery interna (30-abr, 22 pains), gemela de la de Infraestructura. Para preparar, no sale al cliente."
     },

@@ -252,6 +252,7 @@ function solucionPage(pr, s) {
     if (ints.length) prep += `<h4>Material interno · no sale al cliente</h4><ul>` +
       ints.map((m) => `<li><a href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a> — ${esc(m.tipo)} ${chipUso(m.sale_al_cliente)}</li>`).join("") + `</ul>`;
   }
+  if (kit.material_interno_nota) prep += `<p class="footer-note">${esc(kit.material_interno_nota)}</p>`;
   if (s.estado === "vigente" && s.pendiente && s.pendiente.texto) {
     prep += `<p class="pending"><b>En revisión por el área.</b> ${esc(s.pendiente.texto)} · dueño: ${esc(s.pendiente.dueno || s.dueno || "por asignar")} · fecha objetivo: ${esc(s.pendiente.fecha_objetivo || s.fecha_objetivo || "sin fecha")}.</p>`;
   }
@@ -404,43 +405,43 @@ function materialFicha(m) {
   </div></section>`;
   return page({ title: `${m.titulo} · Materiales · Hipatia`, desc: m.nota_de_uso, active: "materiales", body });
 }
-function materialesIndex() {
+function materialesIndex(scope) {
+  const todo = scope === "todo";
+  const items = todo ? materiales : materiales.filter((m) => m.sale_al_cliente !== "no" && m.tipo !== "Archivo");
   const practicasVals = [...new Set(materiales.map((m) => m.practica))];
   const tipos = [...new Set(materiales.map((m) => m.tipo))].sort();
   const estados = ["vigente", "revisar", "pendiente"];
-  const usos = [["si", "Para cliente"], ["con_validacion", "Con validación"]];
+  const usos = todo
+    ? [["si", "Para cliente"], ["con_validacion", "Con validación"], ["no", "Interno"]]
+    : [["si", "Para cliente"], ["con_validacion", "Con validación"]];
   const group = (dim, title, opts, checkedVal) => `<div class="filter-group"><b>${esc(title)}</b>${opts.map(([v, l]) =>
     `<label><input type="checkbox" data-filter="${esc(dim)}" value="${esc(v)}"${v === checkedVal ? " checked" : ""}> ${esc(l)}</label>`).join("")}</div>`;
+  // El «Uso» del índice de cliente lleva «Interno» como enlace al índice completo, no como casilla.
+  const usoGroup = `<div class="filter-group"><b>Uso</b>${usos.map(([v, l]) =>
+    `<label><input type="checkbox" data-filter="uso" value="${esc(v)}"${(!todo && v === "si") ? " checked" : ""}> ${esc(l)}</label>`).join("")}` +
+    (todo ? `<a class="text-link" href="/materiales/">Solo lo que sale al cliente →</a>` : `<a class="text-link" href="/materiales/todo/">Interno →</a>`) + `</div>`;
   const filters = `<form class="filters" aria-label="Filtros">
-    ${group("uso", "Uso", usos, "si")}
+    ${usoGroup}
     ${group("practica", "Práctica", practicasVals.map((p) => [p, NOMBRE_PRACTICA[p] || p]))}
     ${group("tipo", "Tipo", tipos.map((t) => [t, t[0].toUpperCase() + t.slice(1)]))}
     ${group("estado", "Estado", estados.map((e) => [e, VIG[e]]))}
   </form>`;
 
-  const cards = materiales.filter((m) => m.sale_al_cliente !== "no" && m.tipo !== "Archivo").map((m) => `<article class="card" data-material
-      data-practica="${esc(m.practica)}" data-uso="${esc(m.sale_al_cliente)}" data-tipo="${esc(m.tipo)}" data-estado="${esc(m.estado)}"
-      ${(m.sector && m.sector.length) ? `data-search="${esc(m.sector.join(" "))}"` : ""}
-      style="padding:var(--space-4)">
-      <p class="eyebrow">${m.practica === "corporativo" ? esc(m.tipo) : esc(m.tipo) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
-      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
-      <div class="chips" style="margin-top:var(--space-3)">${m.tipo === "referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(m.dueno)}</span></div>
-      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
-        <a class="btn btn-ghost" href="/materiales/${esc(m.id)}/" data-open-modal-url="/materiales/${esc(m.id)}/" data-modal-label="${esc(m.titulo)}">Ver ficha</a>
-        ${materialLink(m)}
-      </div>
-    </article>`).join("");
+  const cards = items.map(materialCard).join("");
 
+  const lede = todo
+    ? "Todo lo que hay, interno incluido. Lo que sale al cliente lleva su chip; lo demás es para prepararte."
+    : "El material que puedes enseñar o dejar al cliente, con su uso, estado y dueño a la vista. Las piezas internas están en Materiales · todo.";
+  const h1 = todo ? "Materiales · todo" : "Materiales";
   const body = `<section class="section"><div class="wrap">
     <p class="eyebrow">Catálogo</p>
-    <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-4)">Materiales</h1>
-    <p class="lede">El material que puedes enseñar o dejar al cliente, con su uso, estado y dueño a la vista. Las guías internas de cada solución están en su «Para prepararte». «Para cliente» viene marcado por defecto.</p>
+    <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-4)">${esc(h1)}</h1>
+    <p class="lede">${esc(lede)}</p>
     <div style="margin-top:var(--space-5)"><input type="search" data-materials-search placeholder="Buscar materiales…" aria-label="Buscar materiales" style="width:100%;max-width:520px;font:inherit;padding:var(--space-3);border:1px solid var(--color-border-default);border-radius:var(--radius-md)"></div>
     <div class="with-aside" style="margin-top:var(--space-5)">
       <div>${filters}</div>
       <div>
-        <p class="footer-note" style="margin-bottom:var(--space-3)"><b data-materials-count>0</b> materiales</p>
+        <p class="footer-note" style="margin-bottom:var(--space-3)"><b data-materials-count>0</b> piezas visibles</p>
         <div class="grid grid-2" data-materials-list>${cards}</div>
       </div>
     </div>
@@ -450,7 +451,22 @@ function materialesIndex() {
   const modal = `<div class="modal" data-modal hidden role="dialog" aria-modal="true">
     <div class="modal-panel"><button type="button" class="btn btn-ghost modal-close" data-modal-close aria-label="Cerrar">Cerrar ✕</button><div data-modal-body></div></div>
   </div>`;
-  return page({ title: "Materiales · Hipatia", desc: "Buscador y filtros del material comercial de Entelgy.", active: "materiales", body, modal });
+  return page({ title: todo ? "Materiales · todo · Hipatia" : "Materiales · Hipatia", desc: "Buscador y filtros del material comercial de Entelgy.", active: "materiales", body, modal });
+}
+function materialCard(m) {
+  return `<article class="card" data-material
+      data-practica="${esc(m.practica)}" data-uso="${esc(m.sale_al_cliente)}" data-tipo="${esc(m.tipo)}" data-estado="${esc(m.estado)}"
+      data-search="${esc([(m.sector || []).join(" "), m.subtipo || ""].filter(Boolean).join(" "))}"
+      style="padding:var(--space-4)">
+      <p class="eyebrow">${m.practica === "corporativo" ? esc(m.tipo) : esc(m.tipo) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
+      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
+      <div class="chips" style="margin-top:var(--space-3)">${m.tipo === "referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(m.dueno)}</span></div>
+      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
+        <a class="btn btn-ghost" href="/materiales/${esc(m.id)}/" data-open-modal-url="/materiales/${esc(m.id)}/" data-modal-label="${esc(m.titulo)}">Ver ficha</a>
+        ${materialLink(m)}
+      </div>
+    </article>`;
 }
 
 // =====================================================================
@@ -665,7 +681,8 @@ function build() {
       nSol++;
     });
   });
-  write("materiales", materialesIndex());
+  write("materiales", materialesIndex("cliente"));
+  write(path.join("materiales", "todo"), materialesIndex("todo"));
   materiales.forEach((m) => write(path.join("materiales", m.id), materialFicha(m)));
   console.log(`Generadas: / · /entelgy · /punto-de-partida · /lo-que-viene · /contactos · /practicas + ${practicas.length} prácticas + ${nSol} soluciones · /materiales + ${materiales.length} fichas`);
 }
