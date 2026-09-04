@@ -20,7 +20,7 @@
         "Financiero"
       ],
       "momento_comercial": "primer_contacto",
-      "nota_de_uso": "En preparación · dueño: Jorge · fecha objetivo: sept 2026. Correo de apertura con enlace al autodiagnóstico; primero para el sector Financiero.",
+      "nota_de_uso": "Correo de apertura con enlace al autodiagnóstico; primero para el sector Financiero.",
       "url_documento": null,
       "origen": "recorrido/index.html · P0-3",
       "subtipo": "Correo de apertura"
@@ -134,7 +134,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "En preparación · dueño: Jorge · fecha objetivo: sept 2026. Deck técnico Spec-Driven para la reunión avanzada.",
+      "nota_de_uso": "Deck técnico Spec-Driven para la reunión avanzada.",
       "url_documento": null,
       "origen": "estatus-v1 · índice de materiales",
       "subtipo": "Técnico"
@@ -157,7 +157,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "En preparación · dueño: Jorge / producto · fecha objetivo: sept 2026. Plantilla para armar el business case tras el assessment. Uso interno hasta decidir qué cifras de productividad (Foreworth) pueden salir al cliente.",
+      "nota_de_uso": "Plantilla para armar el business case tras el assessment. Uso interno hasta decidir qué cifras de productividad (Foreworth) pueden salir al cliente.",
       "url_documento": null,
       "origen": "paquete-jorge/06-indice-materiales.md",
       "subtipo": "Business case"

@@ -66,8 +66,10 @@
       "nota": "Lo que se mide alimenta un nuevo diagnóstico: el servicio no termina con la entrega."
     },
     "otg": {
-      "titulo": "Cuando el cambio no cabe en un proyecto: la Oficina de Transformación y Gobernanza",
-      "texto": "Es el mismo método, operado desde dentro del cliente cuando hay que sostener el cambio en el tiempo. No se vende aparte ni hace falta en cada proyecto: se activa cuando la situación lo pide. Diagnosticamos qué hay que gobernar, asumimos esa función con roles y backlog acordados, y se la devolvemos al equipo del cliente a medida que puede llevarla.",
+      "eyebrow": "Cuando el cambio no cabe en un proyecto",
+      "titulo": "La Oficina de Transformación y Gobernanza",
+      "contexto": "Es el mismo método, operado desde dentro del cliente cuando hay que sostener el cambio en el tiempo.",
+      "texto": "No se vende aparte ni hace falta en cada proyecto: se activa cuando la situación lo pide. Diagnosticamos qué hay que gobernar, asumimos esa función con roles y backlog acordados, y se la devolvemos al equipo del cliente a medida que puede llevarla.",
       "fases": [
         {
           "paso": "01",

@@ -456,6 +456,19 @@ details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
 
 /* ---- Biblioteca editorial (rev 14 · AU.6 · E9) ---- */
 .filters-panel{ background:var(--color-brand-navy); border-radius:var(--radius-lg); padding:var(--space-5); }
+/* AY.3 · panel de filtros plegado en móvil (<768px); el buscador queda fuera y visible */
+.filters-fold{ border:0; }
+.filters-fold>summary{ list-style:none; cursor:pointer; font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-purple-700); padding:var(--space-3) var(--space-4); border:1px solid var(--color-border-default); border-radius:var(--radius-md); background:var(--color-surface); display:flex; justify-content:space-between; align-items:center; }
+.filters-fold>summary::-webkit-details-marker{ display:none; }
+.filters-fold>summary::after{ content:"+"; color:var(--color-text-accent); font-size:var(--font-size-lg); }
+.filters-fold[open]>summary::after{ content:"\2212"; }
+@media (min-width:768px){
+  .filters-fold>summary{ display:none; }
+  /* el <details> cerrado oculta su contenido con content-visibility en ::details-content;
+     en escritorio lo forzamos visible para que el panel salga como hasta ahora */
+  .filters-fold::details-content{ content-visibility:visible; }
+  .filters-fold>.filters-panel{ display:block; }
+}
 .filters-panel .filter-group b{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-purple-300); }
 .filters-panel .filter-group label{ color:var(--color-slate-200); }
 .filters-panel .text-link{ color:var(--color-purple-300); font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; text-decoration:none; }

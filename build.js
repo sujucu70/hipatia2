@@ -157,6 +157,19 @@ const MOMENTOS = [
 
 // Vocabulario cerrado de tipos (revisión 14 · N1). El filtro de Materiales usa este orden fijo.
 const TIPOS_FILTRO = ["Deck", "One-pager", "Ficha", "Referencia", "Guía de discovery", "Guía interna", "Plantilla", "Herramienta", "Archivo"];
+// AY.4 · orden fijo de los dos índices: el Executive Deck primero; luego por estado
+// (vigente, revisar, pendiente), orden de práctica de la portada (corporativo primero)
+// y orden de los nueve tipos. Estable dentro de cada grupo (conserva el de materiales.json).
+const ORDEN_PRACTICA = ["corporativo", ...PRACTICAS];
+const ORDEN_ESTADO = ["vigente", "revisar", "pendiente"];
+function ordenMaterial(a, b) {
+  if (a.id === "corp-exec-global" || b.id === "corp-exec-global") {
+    return (a.id === "corp-exec-global" ? 0 : 1) - (b.id === "corp-exec-global" ? 0 : 1);
+  }
+  const de = ORDEN_ESTADO.indexOf(a.estado) - ORDEN_ESTADO.indexOf(b.estado); if (de) return de;
+  const dp = ORDEN_PRACTICA.indexOf(a.practica) - ORDEN_PRACTICA.indexOf(b.practica); if (dp) return dp;
+  return TIPOS_FILTRO.indexOf(a.tipo) - TIPOS_FILTRO.indexOf(b.tipo);
+}
 // El eyebrow pinta el tipo y, si hay, el subtipo (texto libre que se busca pero no filtra).
 function eyebrowTipo(m) { return m.subtipo ? `${m.tipo} · ${m.subtipo}` : m.tipo; }
 // E4 · cabecera de sección a dos columnas (eyebrow + H2 a la izquierda, contexto a la derecha).
@@ -476,7 +489,7 @@ function materialesIndex(scope) {
     ${group("estado", "Estado", estados.map((e) => [e, VIG[e]]))}
   </form>`;
 
-  const cards = items.map(materialCard).join("");
+  const cards = items.slice().sort(ordenMaterial).map(materialCard).join("");
 
   const lede = todo
     ? "Todo lo que hay, interno incluido. Lo que sale al cliente lleva su chip; lo demás es para prepararte."
@@ -488,7 +501,7 @@ function materialesIndex(scope) {
     <p class="lede">${esc(lede)}</p>
     <div style="margin-top:var(--space-5)"><input type="search" data-materials-search placeholder="Buscar materiales…" aria-label="Buscar materiales" style="width:100%;max-width:520px;font:inherit;padding:var(--space-3);border:1px solid var(--color-border-default);border-radius:var(--radius-md)"></div>
     <div class="with-aside" style="margin-top:var(--space-5)">
-      <div class="filters-panel">${filters}</div>
+      <details class="filters-fold"><summary>Filtros</summary><div class="filters-panel">${filters}</div></details>
       <div>
         <p class="footer-note" style="margin-bottom:var(--space-3)"><b data-materials-count>0</b> piezas visibles</p>
         <div class="grid grid-2" data-materials-list>${cards}</div>
@@ -642,7 +655,7 @@ function entelgyPage(corp, practicas) {
 
   // La Oficina
   const otg = r.otg ? `<section class="section">
-    <h2 style="font-size:var(--font-size-2xl)">${esc(r.otg.titulo)}</h2>
+    ${sectionHead(r.otg.eyebrow, r.otg.titulo, r.otg.contexto)}
     <p class="lede" style="margin:var(--space-2) 0 var(--space-4)">${esc(r.otg.texto)}</p>
     <ol class="fases">${(r.otg.fases || []).map((f) => `<li><b>${esc(f.titulo)}</b> — ${esc(f.texto)}</li>`).join("")}</ol>
     ${r.otg.funciones ? `<p class="footer-note" style="margin-top:var(--space-3)">${esc(r.otg.funciones)}</p>` : ""}

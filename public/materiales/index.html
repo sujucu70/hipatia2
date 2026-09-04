@@ -6,9 +6,7 @@
 <title>Materiales · Hipatia</title>
 <meta name="description" content="Buscador y filtros del material comercial de Entelgy.">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Barlow+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/barlow-condensed-700.woff2">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -38,49 +36,109 @@
     <p class="lede">El material que puedes enseñar o dejar al cliente, con su uso, estado y dueño a la vista. Las piezas internas están en Materiales · todo.</p>
     <div style="margin-top:var(--space-5)"><input type="search" data-materials-search placeholder="Buscar materiales…" aria-label="Buscar materiales" style="width:100%;max-width:520px;font:inherit;padding:var(--space-3);border:1px solid var(--color-border-default);border-radius:var(--radius-md)"></div>
     <div class="with-aside" style="margin-top:var(--space-5)">
-      <div class="filters-panel"><form class="filters" aria-label="Filtros">
+      <details class="filters-fold"><summary>Filtros</summary><div class="filters-panel"><form class="filters" aria-label="Filtros">
     <div class="filter-group"><b>Uso</b><label><input type="checkbox" data-filter="uso" value="si" checked> Para cliente</label><label><input type="checkbox" data-filter="uso" value="con_validacion"> Con validación</label><a class="text-link" href="/materiales/todo/">Interno →</a></div>
     <div class="filter-group"><b>Práctica</b><label><input type="checkbox" data-filter="practica" value="software-development"> Software Development</label><label><input type="checkbox" data-filter="practica" value="corporativo"> Corporativo</label><label><input type="checkbox" data-filter="practica" value="smart-operations"> Smart Operations</label><label><input type="checkbox" data-filter="practica" value="process-intelligence"> Process Intelligence</label><label><input type="checkbox" data-filter="practica" value="digital-change"> Digital Change</label><label><input type="checkbox" data-filter="practica" value="data-intelligence"> Data Intelligence</label></div>
     <div class="filter-group"><b>Tipo</b><label><input type="checkbox" data-filter="tipo" value="Deck"> Deck</label><label><input type="checkbox" data-filter="tipo" value="One-pager"> One-pager</label><label><input type="checkbox" data-filter="tipo" value="Ficha"> Ficha</label><label><input type="checkbox" data-filter="tipo" value="Referencia"> Referencia</label><label><input type="checkbox" data-filter="tipo" value="Guía de discovery"> Guía de discovery</label><label><input type="checkbox" data-filter="tipo" value="Guía interna"> Guía interna</label><label><input type="checkbox" data-filter="tipo" value="Plantilla"> Plantilla</label><label><input type="checkbox" data-filter="tipo" value="Herramienta"> Herramienta</label><label><input type="checkbox" data-filter="tipo" value="Archivo"> Archivo</label></div>
     <div class="filter-group"><b>Estado</b><label><input type="checkbox" data-filter="estado" value="vigente"> vigente</label><label><input type="checkbox" data-filter="estado" value="revisar"> revisar</label><label><input type="checkbox" data-filter="estado" value="pendiente"> pendiente</label></div>
-  </form></div>
+  </form></div></details>
       <div>
         <p class="footer-note" style="margin-bottom:var(--space-3)"><b data-materials-count>0</b> piezas visibles</p>
-        <div class="grid grid-2" data-materials-list><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="Plantilla" data-estado="pendiente" data-search="Financiero Correo de apertura">
-      <p class="eyebrow">Plantilla · Correo de apertura · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-correo-apertura/">Correo de apertura</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Jorge · fecha objetivo: sept 2026. Correo de apertura con enlace al autodiagnóstico; primero para el sector Financiero.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-pendiente">pendiente</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/mod-correo-apertura/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="Herramienta" data-estado="revisar" data-search="Autodiagnóstico">
-      <p class="eyebrow">Herramienta · Autodiagnóstico · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-autodiagnostico/">Autodiagnóstico de modernización</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Diez preguntas que el cliente responde solo: le devuelven cuánto le expone su legacy y cuál es el siguiente paso. Lo que abre hoy es el ejemplo de Grupo Lantia, una cuenta ficticia. Antes de enviárselo a una cuenta real, Jorge tiene que validar las preguntas y el índice.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar · sep 2026</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/mod-autodiagnostico/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="Deck" data-estado="revisar" data-search="Práctica">
-      <p class="eyebrow">Deck · Práctica · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-deck-ejecutivo/">Deck ejecutivo C-Suite · Modernización</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck de la práctica para la reunión introductoria (v3, jul 2026). Jorge tiene tres cambios pendientes: la slide de Asistencia Técnica, la de referencias y un anexo de créditos. Sirve para preparar la reunión; no lo envíes hasta la versión corregida.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar · sep 2026</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/mod-deck-ejecutivo/">Ver ficha →</a></div>
+        <div class="grid grid-2" data-materials-list><article class="card lib" data-material data-practica="corporativo" data-uso="si" data-tipo="Deck" data-estado="revisar" data-search="Corporativo">
+      <p class="eyebrow">Deck · Corporativo</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/corp-exec-global/">Entelgy Executive Deck</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck corporativo v6 (jul 2026): el que presentas en reunión. Las cifras de resultados por cliente y los logos siguen pendientes de autorización: preséntalo, no lo envíes en frío.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar</span><span class="chip">Corporativo</span></div><a class="ver-ficha" href="/materiales/corp-exec-global/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="si" data-tipo="Deck" data-estado="vigente" data-search="Ejecutivo">
+      <p class="eyebrow">Deck · Ejecutivo · Process Intelligence</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/process-deck/">Process Intelligence</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck cliente de Process Intelligence para la reunión introductoria: del proceso real, con datos, a la automatización y los agentes.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Carmen Rode</span></div><a class="ver-ficha" href="/materiales/process-deck/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="si" data-tipo="Deck" data-estado="vigente" data-search="Cliente">
+      <p class="eyebrow">Deck · Cliente · Process Intelligence</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/automation-deck/">Automatización de procesos</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck para la reunión introductoria: del proceso a la automatización y los agentes, con criterio de negocio.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Carla González</span></div><a class="ver-ficha" href="/materiales/automation-deck/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="si" data-tipo="One-pager" data-estado="vigente">
+      <p class="eyebrow">One-pager · Process Intelligence</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/process-onepager/">One-pager · Process Intelligence</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para dejar tras la primera reunión: qué es Process Intelligence y por qué Entelgy.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Carmen Rode</span></div><a class="ver-ficha" href="/materiales/process-onepager/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="si" data-tipo="One-pager" data-estado="vigente">
+      <p class="eyebrow">One-pager · Process Intelligence</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/automation-onepager/">One-pager · Automatización de procesos</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para abrir la primera reunión: qué automatizamos y por qué Entelgy. El contacto está sin rellenar y aún dice «hiperautomatización»: pídele a Carla la versión corregida antes de enviarlo.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Carla González</span></div><a class="ver-ficha" href="/materiales/automation-onepager/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
+      <p class="eyebrow">Ficha · De servicio · Process Intelligence</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/process-ficha/">Ficha de servicio · Process Intelligence</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para quien lo valida dentro (IT, compras): qué incluye el servicio y cómo se contrata.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Carmen Rode</span></div><a class="ver-ficha" href="/materiales/process-ficha/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
+      <p class="eyebrow">Ficha · De servicio · Process Intelligence</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/automation-ficha/">Ficha de servicio · Automatización de procesos</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para quien lo valida dentro: qué incluye la automatización de procesos y cómo se contrata. El contacto está sin rellenar y aún dice «hiperautomatización»: pídele a Carla la versión corregida antes de enviarlo.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Carla González</span></div><a class="ver-ficha" href="/materiales/automation-ficha/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Sector público">
+      <p class="eyebrow">Referencia · Process Intelligence</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/pi-caso-lanbide/">Lanbide · Servicio Vasco de Empleo</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Nombre y cifras autorizados por el cliente. Citable en presentación; el envío formal se autoriza por cuenta.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-citable">citable · sign-off ago 2026</span><span class="chip">Carmen Rode</span></div><a class="ver-ficha" href="/materiales/pi-caso-lanbide/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Educación">
+      <p class="eyebrow">Referencia · Process Intelligence</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/pi-caso-universidad-latam/">Universidad · LATAM</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Cifras autorizadas sin identificar al cliente: nunca el nombre y las cifras juntos.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-citable">citable · sign-off ago 2026</span><span class="chip">Carmen Rode</span></div><a class="ver-ficha" href="/materiales/pi-caso-universidad-latam/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente">
+      <p class="eyebrow">Referencia · Process Intelligence</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/pi-cartera-sectores/">Cartera · Banca, Seguros, Industria y Distribución</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Confirmar con Carmen antes de nombrar al cliente. Las cifras son citables sin nombre.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Carmen Rode</span></div><a class="ver-ficha" href="/materiales/pi-cartera-sectores/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Sector público Educación">
+      <p class="eyebrow">Referencia · Process Intelligence</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/pa-caso-uned/">UNED · Oficina de automatización</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Adjudicación pública (BOE / PLACSP). Cifras del hub y del deck; Carla confirma alcance antes de citarlas con nombre.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Carla González</span></div><a class="ver-ficha" href="/materiales/pa-caso-uned/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Energía">
+      <p class="eyebrow">Referencia · Process Intelligence</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/pa-caso-energetica-colombia/">Energética · Colombia</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Sin nombre hasta que el cliente autorice. La historia sí se puede contar.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Carla González</span></div><a class="ver-ficha" href="/materiales/pa-caso-energetica-colombia/">Ver ficha →</a></div>
     </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="One-pager" data-estado="vigente">
       <p class="eyebrow">One-pager · Software Development</p>
       <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-onepager/">One-pager · Modernización</a></h3>
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para la reunión introductoria: qué es modernizar con IA y por qué Entelgy. V1; el equipo de Jorge la revisa en septiembre.</p>
       <div class="ed-mat-foot"><div class="chips"><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/mod-onepager/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="Ficha" data-estado="revisar" data-search="De servicio">
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="One-pager" data-estado="vigente">
+      <p class="eyebrow">One-pager · Software Development</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-mantenimiento-onepager/">One-pager · Mantenimiento Evolutivo</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para abrir la primera reunión: el run deja de devorar el change, y por qué Entelgy. Dice «tercero certificador» donde Jorge ya dice contraste de mercado: cuéntalo tú bien.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-mantenimiento-onepager/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
       <p class="eyebrow">Ficha · De servicio · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-ficha-servicio/">Ficha de servicio · Modernización</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Ficha de dos caras para dejar al cliente; valida ante IT y compras. V1 provisional: menciona el reparto del 40% del ahorro y Jorge aún tiene que confirmar que puede ir en un documento público. Si el cliente pregunta por esa cifra, remite a Jorge.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar · sep 2026</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/mod-ficha-servicio/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="Deck" data-estado="pendiente" data-search="Técnico">
-      <p class="eyebrow">Deck · Técnico · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-presentacion-spec/">Presentación técnica · Spec-Driven</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Jorge · fecha objetivo: sept 2026. Deck técnico Spec-Driven para la reunión avanzada.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-pendiente">pendiente</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/mod-presentacion-spec/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="software-development" data-uso="con_validacion" data-tipo="Plantilla" data-estado="pendiente" data-search="Business case">
-      <p class="eyebrow">Plantilla · Business case · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-business-case/">Business case tipo · Modernización</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">En preparación · dueño: Jorge / producto · fecha objetivo: sept 2026. Plantilla para armar el business case tras el assessment. Uso interno hasta decidir qué cifras de productividad (Foreworth) pueden salir al cliente.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-validacion">con validación</span><span class="chip is-pendiente">pendiente</span><span class="chip">Jorge Herrero / producto</span></div><a class="ver-ficha" href="/materiales/mod-business-case/">Ver ficha →</a></div>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-mantenimiento-ficha/">Ficha de servicio · Mantenimiento Evolutivo</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para quien lo valida dentro (CIO, compras): las tres capas, la medición en la factura y las cláusulas. Los porcentajes de las capas y el reparto del ahorro están en revisión con Jorge; cita el mecanismo, no el número.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-mantenimiento-ficha/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="con_validacion" data-tipo="Ficha" data-estado="vigente" data-search="Banca Sectorial · Banca">
+      <p class="eyebrow">Ficha · Sectorial · Banca · Software Development</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-modernizacion-sector-banca/">Ficha comercial · Modernización · Banca</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Familiar de trabajo de Modernización; no equivale al deck corporativo de Banca retirado. Confirmar su vigencia y condición de uso.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-validacion">con validación</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-modernizacion-sector-banca/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="con_validacion" data-tipo="Ficha" data-estado="vigente" data-search="Administración pública Sectorial · AAPP">
+      <p class="eyebrow">Ficha · Sectorial · AAPP · Software Development</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-modernizacion-sector-aapp/">Ficha comercial · Modernización · Administración pública</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Familiar de trabajo de Modernización. Confirmar vigencia, referencias y condición de uso antes de compartir.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-validacion">con validación</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-modernizacion-sector-aapp/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="con_validacion" data-tipo="Ficha" data-estado="vigente" data-search="Industria Sectorial · Industria">
+      <p class="eyebrow">Ficha · Sectorial · Industria · Software Development</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-modernizacion-sector-industria/">Ficha comercial · Modernización · Industria</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Familiar de trabajo de Modernización. Confirmar vigencia, referencias y condición de uso antes de compartir.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-validacion">con validación</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-modernizacion-sector-industria/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="con_validacion" data-tipo="Ficha" data-estado="vigente" data-search="Telecomunicaciones Sectorial · Telco">
+      <p class="eyebrow">Ficha · Sectorial · Telco · Software Development</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-modernizacion-sector-telco/">Ficha comercial · Modernización · Telco</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Familiar de trabajo de Modernización. Confirmar vigencia, referencias y condición de uso antes de compartir.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-validacion">con validación</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-modernizacion-sector-telco/">Ver ficha →</a></div>
     </article><article class="card lib" data-material data-practica="software-development" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Sector público">
       <p class="eyebrow">Referencia · Software Development</p>
       <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-caso-nasertic/">NASERTIC · Gobierno de Navarra</a></h3>
@@ -111,116 +169,16 @@
       <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-caso-miciu/">Ministerio de Ciencia · AEI</a></h3>
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.</p>
       <div class="ed-mat-foot"><div class="chips"><span class="chip is-citable">citable · sign-off jul 2026</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/mod-caso-miciu/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="corporativo" data-uso="si" data-tipo="Deck" data-estado="revisar" data-search="Corporativo">
-      <p class="eyebrow">Deck · Corporativo</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/corp-exec-global/">Entelgy Executive Deck</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck corporativo v6 (jul 2026): el que presentas en reunión. Las cifras de resultados por cliente y los logos siguen pendientes de autorización: preséntalo, no lo envíes en frío.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar</span><span class="chip">Corporativo</span></div><a class="ver-ficha" href="/materiales/corp-exec-global/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="si" data-tipo="Deck" data-estado="vigente" data-search="Ejecutivo">
-      <p class="eyebrow">Deck · Ejecutivo · Smart Operations</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-resumen/">SmartOPS · Resumen Ejecutivo Global 2026</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Visión global para la reunión introductoria a dirección: un motor, dos territorios, seis fuerzas del CIO con fuente, casos y diagnóstico. Los decks de cada vertical van después.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-resumen/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="si" data-tipo="Deck" data-estado="revisar" data-search="Vertical">
-      <p class="eyebrow">Deck · Vertical · Smart Operations</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-workplace/">SmartOPS Workplace 2026</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck de 22 láminas para la reunión: seis frentes del CIO, motor SmartOPS, cuatro piezas, IA por fase del ticket con porcentajes, SmartHelp, casos y modelo de relación en tres fases. Ojo: la lámina 10 lleva los niveles invertidos y la 14 publica horquillas de precio; hasta que Amador lo corrija, sáltalas en pantalla y no lo envíes.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar · sep 2026</span><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-workplace/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="si" data-tipo="Deck" data-estado="revisar" data-search="Vertical">
-      <p class="eyebrow">Deck · Vertical · Smart Operations</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-infra/">SmartOPS for Infra 2026</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck de 13 láminas más apéndices para la reunión: resumen ejecutivo en una página, cinco fuerzas, el precio de esperar, tres piezas, casos y modelo de relación con salida sin operación. Apéndices de AIOps, modelo N0–N3, cumplimiento y alianzas para cuando la conversación lo pide. Lleva una horquilla de precio en la lámina 12: no lo envíes hasta que Amador decida si se queda.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar · sep 2026</span><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-infra/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="si" data-tipo="One-pager" data-estado="vigente">
-      <p class="eyebrow">One-pager · Smart Operations</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-onepager-workplace/">One-pager SmartOPS Workplace</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para abrir la puerta al CIO: dos enemigos (modelo por horas, regulación en el puesto), qué hacemos, Telefónica y Navantia como prueba y cierre en conversación de 30 minutos. Nombra dos clientes: úsalo cuando la cuenta lo permita. Lleva los huecos {{cliente}} y {{contacto}} para personalizar.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-onepager-workplace/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="si" data-tipo="One-pager" data-estado="vigente">
-      <p class="eyebrow">One-pager · Smart Operations</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-onepager-infra/">One-pager SmartOPS Infra</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para el CIO: dos enemigos (coste que se dispara con Broadcom, cloud waste y Windows Server 2016; regulación con tu nombre en el contrato), qué hacemos, Telefónica Tech e IZENPE como prueba y cierre en conversación de 30 minutos. Las cifras de Telefónica Tech están en validación: en pantalla sí, por escrito espera al sign-off.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-onepager-infra/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Sector público">
-      <p class="eyebrow">Referencia · Smart Operations</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-case-ejie/">EJIE · Gobierno Vasco · Dispositivo como servicio</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Es un contrato distinto del de Educación (EJIE-078-2021): no mezclar cifras. Las cifras salen de la lámina 20 del deck de Workplace y están sin verificar; confirmar con Amador que son las del DaaS.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-case-ejie/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="One-pager" data-estado="vigente">
-      <p class="eyebrow">One-pager · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-mantenimiento-onepager/">One-pager · Mantenimiento Evolutivo</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para abrir la primera reunión: el run deja de devorar el change, y por qué Entelgy. Dice «tercero certificador» donde Jorge ya dice contraste de mercado: cuéntalo tú bien.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-mantenimiento-onepager/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
-      <p class="eyebrow">Ficha · De servicio · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-mantenimiento-ficha/">Ficha de servicio · Mantenimiento Evolutivo</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para quien lo valida dentro (CIO, compras): las tres capas, la medición en la factura y las cláusulas. Los porcentajes de las capas y el reparto del ahorro están en revisión con Jorge; cita el mecanismo, no el número.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-mantenimiento-ficha/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="One-pager" data-estado="revisar">
-      <p class="eyebrow">One-pager · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-asistencia-onepager/">One-pager · Asistencia Técnica</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para abrir la primera reunión: contratas entrega, no currículums. Va con el modelo de julio (UCE); Jorge lo cambió a créditos de modernización: sirve para la conversación, no lo envíes hasta la versión corregida.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar · sep 2026</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-asistencia-onepager/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="Ficha" data-estado="revisar" data-search="De servicio">
-      <p class="eyebrow">Ficha · De servicio · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-asistencia-ficha/">Ficha de servicio · Asistencia Técnica</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para quien lo valida dentro (CIO, compras). Mismo aviso: modelo de julio, pendiente de la versión con créditos de modernización.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar · sep 2026</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-asistencia-ficha/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="si" data-tipo="Deck" data-estado="vigente" data-search="Ejecutivo">
-      <p class="eyebrow">Deck · Ejecutivo · Process Intelligence</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/process-deck/">Process Intelligence</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck cliente de Process Intelligence para la reunión introductoria: del proceso real, con datos, a la automatización y los agentes.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Carmen Rode</span></div><a class="ver-ficha" href="/materiales/process-deck/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="si" data-tipo="One-pager" data-estado="vigente">
-      <p class="eyebrow">One-pager · Process Intelligence</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/process-onepager/">One-pager · Process Intelligence</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para dejar tras la primera reunión: qué es Process Intelligence y por qué Entelgy.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Carmen Rode</span></div><a class="ver-ficha" href="/materiales/process-onepager/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
-      <p class="eyebrow">Ficha · De servicio · Process Intelligence</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/process-ficha/">Ficha de servicio · Process Intelligence</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para quien lo valida dentro (IT, compras): qué incluye el servicio y cómo se contrata.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Carmen Rode</span></div><a class="ver-ficha" href="/materiales/process-ficha/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="Deck" data-estado="vigente" data-search="Ejecutivo">
-      <p class="eyebrow">Deck · Ejecutivo · Digital Change</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/digital-change-deck/">Digital Change</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck de Comité de 11 láminas: el oficio, las cuatro fugas, prêt-à-porter, un reto y una solución por lámina, urgencia del AI Act, por qué Entelgy y cierre. Ojo: lleva 150/9 (las piezas dicen 151/15/9), Bahía de Bizkaia sin firma y una cifra de MAPFRE (−82%) que no está en la ficha.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/digital-change-deck/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="One-pager" data-estado="vigente">
-      <p class="eyebrow">One-pager · Digital Change</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/iability-onepager/">One-pager · IAbility</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para abrir la puerta al CFO o a negocio: la factura que no rinde, el uso sin gobierno, el marco SER, las cuatro fases y dos pruebas (Entelgy en casa, Admiral). Cierra en conversación de 30 minutos. Admiral va con nombre: úsalo cuando la cuenta lo permita. Lleva el hueco [contacto Entelgy].</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/iability-onepager/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
-      <p class="eyebrow">Ficha · De servicio · Digital Change</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/iability-ficha/">Ficha · IAbility</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para dejar a IT, seguridad y compras: las cuatro fases con lo que te llevas de cada una, qué gana el negocio, por qué creernos, y seguridad y cumplimiento con el art. 4 explicado. Sin precio. Cierra en diagnóstico. Dice «Oficina de Gobierno de la IA» en dos sitios; el nombre bueno es Gobernanza Humana.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/iability-ficha/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="One-pager" data-estado="vigente" data-search="Sector público">
-      <p class="eyebrow">One-pager · Sector público · Digital Change</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/preservia-publico/">One-pager · PreservIA · Sector público</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para abrir la puerta: la misma pieza en dos versiones, banca y seguros (40% senior en 2030) y sector público (43.000 funcionarios se jubilan en cinco años), con MAPFRE como prueba y cierre en 30 minutos. Elige la del sector de la cuenta; el resto es igual.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/preservia-publico/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="One-pager" data-estado="vigente" data-search="Sector privado">
-      <p class="eyebrow">One-pager · Sector privado · Digital Change</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/preservia-privado/">One-pager · PreservIA · Sector privado</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para abrir la puerta: la misma pieza en dos versiones, banca y seguros (40% senior en 2030) y sector público (43.000 funcionarios se jubilan en cinco años), con MAPFRE como prueba y cierre en 30 minutos. Elige la del sector de la cuenta; el resto es igual.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/preservia-privado/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
-      <p class="eyebrow">Ficha · De servicio · Digital Change</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/preservia-ficha/">Ficha · PreservIA</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para dejar a operaciones, IT y compras: qué es, las tres fases con su resultado, MAPFRE con cifras, el piloto detallado (alcance, qué necesitamos, cómo se mide, precio) e integración y seguridad. Cierra en diseñar el piloto. Lleva el precio del piloto: úsala sabiendo que es el importe que va a leer compras.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/preservia-ficha/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="One-pager" data-estado="vigente">
-      <p class="eyebrow">One-pager · Digital Change</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/ogh-onepager/">One-pager · OGH-IA</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para Dirección, Legal o el CISO: lo que ya está pasando, el coste de esperar (fechas del AI Act, sanciones, BOSCO), cómo se gobierna en tres capas y por qué Entelgy. Cierra en 30 minutos. Sin caso de cliente: la prueba es la autoaplicación.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/ogh-onepager/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
-      <p class="eyebrow">Ficha · De servicio · Digital Change</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/ogh-ficha/">Ficha · OGH-IA</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para dejar a Legal, Compliance, IT y compras: qué es y qué no es, el modelo en tres capas, qué gana el negocio, tres formas de entrar, por qué creernos y el AI Act por fases con las sanciones. Sin precio ni plazo: el modelo es flexible hasta que Alfredo cierre el arranque. Cierra en diagnóstico.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/ogh-ficha/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Banca y servicios financieros">
+      <p class="eyebrow">Referencia · Software Development</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/at-caso-banca-latam/">Banca y servicios financieros · fábrica sobre core crítico</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Referencia bajo NDA. No es Spec-Driven: es capacidad con asistentes de IA. No atribuirla al método.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/at-caso-banca-latam/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Industria Energía">
+      <p class="eyebrow">Referencia · Software Development</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/at-caso-industria-energia/">Industria y energía · productividad medida</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Referencia bajo NDA. Foreworth es contraste de mercado, no certificador.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/at-caso-industria-energia/">Ver ficha →</a></div>
     </article><article class="card lib" data-material data-practica="data-intelligence" data-uso="si" data-tipo="Deck" data-estado="vigente" data-search="Ejecutivo">
       <p class="eyebrow">Deck · Ejecutivo · Data Intelligence</p>
       <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/dataai-producto/">Data Intelligence · Producto</a></h3>
@@ -236,111 +194,6 @@
       <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/dataai-ficha/">Ficha de servicio · Data Intelligence</a></h3>
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para quien lo valida dentro: qué incluye Data Intelligence y cómo se contrata.</p>
       <div class="ed-mat-foot"><div class="chips"><span class="chip">Daniela Ongaro</span></div><a class="ver-ficha" href="/materiales/dataai-ficha/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="si" data-tipo="Deck" data-estado="vigente" data-search="Cliente">
-      <p class="eyebrow">Deck · Cliente · Process Intelligence</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/automation-deck/">Automatización de procesos</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck para la reunión introductoria: del proceso a la automatización y los agentes, con criterio de negocio.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Carla González</span></div><a class="ver-ficha" href="/materiales/automation-deck/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="si" data-tipo="One-pager" data-estado="vigente">
-      <p class="eyebrow">One-pager · Process Intelligence</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/automation-onepager/">One-pager · Automatización de procesos</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para abrir la primera reunión: qué automatizamos y por qué Entelgy. El contacto está sin rellenar y aún dice «hiperautomatización»: pídele a Carla la versión corregida antes de enviarlo.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Carla González</span></div><a class="ver-ficha" href="/materiales/automation-onepager/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
-      <p class="eyebrow">Ficha · De servicio · Process Intelligence</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/automation-ficha/">Ficha de servicio · Automatización de procesos</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para quien lo valida dentro: qué incluye la automatización de procesos y cómo se contrata. El contacto está sin rellenar y aún dice «hiperautomatización»: pídele a Carla la versión corregida antes de enviarlo.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Carla González</span></div><a class="ver-ficha" href="/materiales/automation-ficha/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="corporativo" data-uso="si" data-tipo="Deck" data-estado="revisar" data-search="Corporativo · LATAM">
-      <p class="eyebrow">Deck · Corporativo · LATAM</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/corp-exec-latam/">Entelgy Executive Deck · LATAM</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Edición LATAM del deck corporativo. Pendiente la lectura de Omar sobre edición y referencias antes de usarla con un cliente.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar</span><span class="chip">Corporativo</span></div><a class="ver-ficha" href="/materiales/corp-exec-latam/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="software-development" data-uso="con_validacion" data-tipo="Ficha" data-estado="vigente" data-search="Banca Sectorial · Banca">
-      <p class="eyebrow">Ficha · Sectorial · Banca · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-modernizacion-sector-banca/">Ficha comercial · Modernización · Banca</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Familiar de trabajo de Modernización; no equivale al deck corporativo de Banca retirado. Confirmar su vigencia y condición de uso.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-validacion">con validación</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-modernizacion-sector-banca/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="software-development" data-uso="con_validacion" data-tipo="Ficha" data-estado="vigente" data-search="Administración pública Sectorial · AAPP">
-      <p class="eyebrow">Ficha · Sectorial · AAPP · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-modernizacion-sector-aapp/">Ficha comercial · Modernización · Administración pública</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Familiar de trabajo de Modernización. Confirmar vigencia, referencias y condición de uso antes de compartir.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-validacion">con validación</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-modernizacion-sector-aapp/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="software-development" data-uso="con_validacion" data-tipo="Ficha" data-estado="vigente" data-search="Industria Sectorial · Industria">
-      <p class="eyebrow">Ficha · Sectorial · Industria · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-modernizacion-sector-industria/">Ficha comercial · Modernización · Industria</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Familiar de trabajo de Modernización. Confirmar vigencia, referencias y condición de uso antes de compartir.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-validacion">con validación</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-modernizacion-sector-industria/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="software-development" data-uso="con_validacion" data-tipo="Ficha" data-estado="vigente" data-search="Telecomunicaciones Sectorial · Telco">
-      <p class="eyebrow">Ficha · Sectorial · Telco · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-modernizacion-sector-telco/">Ficha comercial · Modernización · Telco</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Familiar de trabajo de Modernización. Confirmar vigencia, referencias y condición de uso antes de compartir.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-validacion">con validación</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-modernizacion-sector-telco/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
-      <p class="eyebrow">Ficha · De servicio · Smart Operations</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-workplace-ficha/">Ficha de servicio · SmartOPS Workplace</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para dejar a IT o compras: qué es, las cuatro piezas con alcance, cómo trabajamos, por qué Entelgy, dos casos anonimizados, beneficios, partners y el diagnóstico. Sin importes. Es la pieza que cierra en diagnóstico.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-workplace-ficha/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
-      <p class="eyebrow">Ficha · De servicio · Smart Operations</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-infra-ficha/">Ficha de servicio · SmartOPS Infra</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para dejar a IT o compras: qué es, tres piezas con alcance, cómo trabajamos, por qué Entelgy, Telefónica Tech e IZENPE, beneficios, alianzas y el diagnóstico. Sin importes. Cierra en diagnóstico.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-infra-ficha/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Industria">
-      <p class="eyebrow">Referencia · Smart Operations</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-case-navantia/">Navantia · Servicios gestionados de soporte y atención al usuario</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Licitación confirmada como existente; importe (2,6 M€/año), reparto y adjudicatario sin verificar en abierto. Pliego vía Nacho (preventa). No citar cifras hasta tenerlo.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-case-navantia/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente">
-      <p class="eyebrow">Referencia · Smart Operations</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-case-moodle-profuturo/">Moodle · Telefónica Educación Digital (ProFuturo)</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">No es SmartOPS: es soporte N3 y desarrollo Moodle 8×5 para Telefónica Educación Digital (ProFuturo), área de Jorge. No cuelga de ninguna solución hasta decidir su encaje.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-case-moodle-profuturo/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Sector público">
-      <p class="eyebrow">Referencia · Smart Operations</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-case-izenpe/">IZENPE · Plataforma de identidad digital y firma electrónica</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Servicio confirmado; importe y expediente sin verificar. No usar «riesgo 0».</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-case-izenpe/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Sector público Educación">
-      <p class="eyebrow">Referencia · Smart Operations</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-case-educacion-ejie/">EJIE · Gobierno Vasco · CAU de centros educativos</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Licitación pública verificada (EJIE-078-2021, DOUE 2021/S 143-380604): lo adjudicado se puede citar; importe y puntuación, no. Es el contrato de Educación; el DaaS de EJIE es otro contrato, sin verificar.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-case-educacion-ejie/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Sector público">
-      <p class="eyebrow">Referencia · Process Intelligence</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/pi-caso-lanbide/">Lanbide · Servicio Vasco de Empleo</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Nombre y cifras autorizados por el cliente. Citable en presentación; el envío formal se autoriza por cuenta.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-citable">citable · sign-off ago 2026</span><span class="chip">Carmen Rode</span></div><a class="ver-ficha" href="/materiales/pi-caso-lanbide/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Educación">
-      <p class="eyebrow">Referencia · Process Intelligence</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/pi-caso-universidad-latam/">Universidad · LATAM</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Cifras autorizadas sin identificar al cliente: nunca el nombre y las cifras juntos.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip is-citable">citable · sign-off ago 2026</span><span class="chip">Carmen Rode</span></div><a class="ver-ficha" href="/materiales/pi-caso-universidad-latam/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente">
-      <p class="eyebrow">Referencia · Process Intelligence</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/pi-cartera-sectores/">Cartera · Banca, Seguros, Industria y Distribución</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Confirmar con Carmen antes de nombrar al cliente. Las cifras son citables sin nombre.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Carmen Rode</span></div><a class="ver-ficha" href="/materiales/pi-cartera-sectores/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Sector público Educación">
-      <p class="eyebrow">Referencia · Process Intelligence</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/pa-caso-uned/">UNED · Oficina de automatización</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Adjudicación pública (BOE / PLACSP). Cifras del hub y del deck; Carla confirma alcance antes de citarlas con nombre.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Carla González</span></div><a class="ver-ficha" href="/materiales/pa-caso-uned/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="process-intelligence" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Energía">
-      <p class="eyebrow">Referencia · Process Intelligence</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/pa-caso-energetica-colombia/">Energética · Colombia</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Sin nombre hasta que el cliente autorice. La historia sí se puede contar.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Carla González</span></div><a class="ver-ficha" href="/materiales/pa-caso-energetica-colombia/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="software-development" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Banca y servicios financieros">
-      <p class="eyebrow">Referencia · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/at-caso-banca-latam/">Banca y servicios financieros · fábrica sobre core crítico</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Referencia bajo NDA. No es Spec-Driven: es capacidad con asistentes de IA. No atribuirla al método.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/at-caso-banca-latam/">Ver ficha →</a></div>
-    </article><article class="card lib" data-material data-practica="software-development" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Industria Energía">
-      <p class="eyebrow">Referencia · Software Development</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/at-caso-industria-energia/">Industria y energía · productividad medida</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Referencia bajo NDA. Foreworth es contraste de mercado, no certificador.</p>
-      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/at-caso-industria-energia/">Ver ficha →</a></div>
     </article><article class="card lib" data-material data-practica="data-intelligence" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Sector público">
       <p class="eyebrow">Referencia · Data Intelligence</p>
       <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/di-caso-cnmv/">CNMV · Gobierno del dato para la supervisión con IA</a></h3>
@@ -371,6 +224,56 @@
       <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/di-caso-automocion/">Gran planta de automoción · Planificación de días a minutos</a></h3>
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Anonimizado hasta autorización escrita.</p>
       <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Daniela Ongaro</span></div><a class="ver-ficha" href="/materiales/di-caso-automocion/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="si" data-tipo="Deck" data-estado="vigente" data-search="Ejecutivo">
+      <p class="eyebrow">Deck · Ejecutivo · Smart Operations</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-resumen/">SmartOPS · Resumen Ejecutivo Global 2026</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Visión global para la reunión introductoria a dirección: un motor, dos territorios, seis fuerzas del CIO con fuente, casos y diagnóstico. Los decks de cada vertical van después.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-resumen/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="si" data-tipo="One-pager" data-estado="vigente">
+      <p class="eyebrow">One-pager · Smart Operations</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-onepager-workplace/">One-pager SmartOPS Workplace</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para abrir la puerta al CIO: dos enemigos (modelo por horas, regulación en el puesto), qué hacemos, Telefónica y Navantia como prueba y cierre en conversación de 30 minutos. Nombra dos clientes: úsalo cuando la cuenta lo permita. Lleva los huecos {{cliente}} y {{contacto}} para personalizar.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-onepager-workplace/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="si" data-tipo="One-pager" data-estado="vigente">
+      <p class="eyebrow">One-pager · Smart Operations</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-onepager-infra/">One-pager SmartOPS Infra</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para el CIO: dos enemigos (coste que se dispara con Broadcom, cloud waste y Windows Server 2016; regulación con tu nombre en el contrato), qué hacemos, Telefónica Tech e IZENPE como prueba y cierre en conversación de 30 minutos. Las cifras de Telefónica Tech están en validación: en pantalla sí, por escrito espera al sign-off.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-onepager-infra/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
+      <p class="eyebrow">Ficha · De servicio · Smart Operations</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-workplace-ficha/">Ficha de servicio · SmartOPS Workplace</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para dejar a IT o compras: qué es, las cuatro piezas con alcance, cómo trabajamos, por qué Entelgy, dos casos anonimizados, beneficios, partners y el diagnóstico. Sin importes. Es la pieza que cierra en diagnóstico.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-workplace-ficha/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
+      <p class="eyebrow">Ficha · De servicio · Smart Operations</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-infra-ficha/">Ficha de servicio · SmartOPS Infra</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para dejar a IT o compras: qué es, tres piezas con alcance, cómo trabajamos, por qué Entelgy, Telefónica Tech e IZENPE, beneficios, alianzas y el diagnóstico. Sin importes. Cierra en diagnóstico.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-infra-ficha/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Sector público">
+      <p class="eyebrow">Referencia · Smart Operations</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-case-ejie/">EJIE · Gobierno Vasco · Dispositivo como servicio</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Es un contrato distinto del de Educación (EJIE-078-2021): no mezclar cifras. Las cifras salen de la lámina 20 del deck de Workplace y están sin verificar; confirmar con Amador que son las del DaaS.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-case-ejie/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Industria">
+      <p class="eyebrow">Referencia · Smart Operations</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-case-navantia/">Navantia · Servicios gestionados de soporte y atención al usuario</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Licitación confirmada como existente; importe (2,6 M€/año), reparto y adjudicatario sin verificar en abierto. Pliego vía Nacho (preventa). No citar cifras hasta tenerlo.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-case-navantia/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente">
+      <p class="eyebrow">Referencia · Smart Operations</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-case-moodle-profuturo/">Moodle · Telefónica Educación Digital (ProFuturo)</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">No es SmartOPS: es soporte N3 y desarrollo Moodle 8×5 para Telefónica Educación Digital (ProFuturo), área de Jorge. No cuelga de ninguna solución hasta decidir su encaje.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-case-moodle-profuturo/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Sector público">
+      <p class="eyebrow">Referencia · Smart Operations</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-case-izenpe/">IZENPE · Plataforma de identidad digital y firma electrónica</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Servicio confirmado; importe y expediente sin verificar. No usar «riesgo 0».</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-case-izenpe/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Sector público Educación">
+      <p class="eyebrow">Referencia · Smart Operations</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-case-educacion-ejie/">EJIE · Gobierno Vasco · CAU de centros educativos</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Licitación pública verificada (EJIE-078-2021, DOUE 2021/S 143-380604): lo adjudicado se puede citar; importe y puntuación, no. Es el contrato de Educación; el DaaS de EJIE es otro contrato, sin verificar.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-case-educacion-ejie/">Ver ficha →</a></div>
     </article><article class="card lib" data-material data-practica="smart-operations" data-uso="con_validacion" data-tipo="Referencia" data-estado="vigente" data-search="Telco">
       <p class="eyebrow">Referencia · Smart Operations</p>
       <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/so-caso-telefonica-cau/">Telefónica · Atención al usuario de un único cliente a gran escala</a></h3>
@@ -401,6 +304,46 @@
       <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/so-caso-telefonica-global-solutions/">Telefónica Global Solutions · Operación de red internacional 7×24×365</a></h3>
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Solo aparece en el deck de Infra; sin documento de origen en el proyecto. Confirmar con Amador antes de citarlo. Ojo: Network quedó fuera del alcance vendible el 7-may.</p>
       <div class="ed-mat-foot"><div class="chips"><span class="chip">confirmar por cuenta</span><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/so-caso-telefonica-global-solutions/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="Deck" data-estado="vigente" data-search="Ejecutivo">
+      <p class="eyebrow">Deck · Ejecutivo · Digital Change</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/digital-change-deck/">Digital Change</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck de Comité de 11 láminas: el oficio, las cuatro fugas, prêt-à-porter, un reto y una solución por lámina, urgencia del AI Act, por qué Entelgy y cierre. Ojo: lleva 150/9 (las piezas dicen 151/15/9), Bahía de Bizkaia sin firma y una cifra de MAPFRE (−82%) que no está en la ficha.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/digital-change-deck/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="One-pager" data-estado="vigente">
+      <p class="eyebrow">One-pager · Digital Change</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/iability-onepager/">One-pager · IAbility</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para abrir la puerta al CFO o a negocio: la factura que no rinde, el uso sin gobierno, el marco SER, las cuatro fases y dos pruebas (Entelgy en casa, Admiral). Cierra en conversación de 30 minutos. Admiral va con nombre: úsalo cuando la cuenta lo permita. Lleva el hueco [contacto Entelgy].</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/iability-onepager/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="One-pager" data-estado="vigente" data-search="Sector público">
+      <p class="eyebrow">One-pager · Sector público · Digital Change</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/preservia-publico/">One-pager · PreservIA · Sector público</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para abrir la puerta: la misma pieza en dos versiones, banca y seguros (40% senior en 2030) y sector público (43.000 funcionarios se jubilan en cinco años), con MAPFRE como prueba y cierre en 30 minutos. Elige la del sector de la cuenta; el resto es igual.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/preservia-publico/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="One-pager" data-estado="vigente" data-search="Sector privado">
+      <p class="eyebrow">One-pager · Sector privado · Digital Change</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/preservia-privado/">One-pager · PreservIA · Sector privado</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para abrir la puerta: la misma pieza en dos versiones, banca y seguros (40% senior en 2030) y sector público (43.000 funcionarios se jubilan en cinco años), con MAPFRE como prueba y cierre en 30 minutos. Elige la del sector de la cuenta; el resto es igual.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/preservia-privado/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="One-pager" data-estado="vigente">
+      <p class="eyebrow">One-pager · Digital Change</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/ogh-onepager/">One-pager · OGH-IA</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para Dirección, Legal o el CISO: lo que ya está pasando, el coste de esperar (fechas del AI Act, sanciones, BOSCO), cómo se gobierna en tres capas y por qué Entelgy. Cierra en 30 minutos. Sin caso de cliente: la prueba es la autoaplicación.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/ogh-onepager/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
+      <p class="eyebrow">Ficha · De servicio · Digital Change</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/iability-ficha/">Ficha · IAbility</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para dejar a IT, seguridad y compras: las cuatro fases con lo que te llevas de cada una, qué gana el negocio, por qué creernos, y seguridad y cumplimiento con el art. 4 explicado. Sin precio. Cierra en diagnóstico. Dice «Oficina de Gobierno de la IA» en dos sitios; el nombre bueno es Gobernanza Humana.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/iability-ficha/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
+      <p class="eyebrow">Ficha · De servicio · Digital Change</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/preservia-ficha/">Ficha · PreservIA</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para dejar a operaciones, IT y compras: qué es, las tres fases con su resultado, MAPFRE con cifras, el piloto detallado (alcance, qué necesitamos, cómo se mide, precio) e integración y seguridad. Cierra en diseñar el piloto. Lleva el precio del piloto: úsala sabiendo que es el importe que va a leer compras.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/preservia-ficha/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="Ficha" data-estado="vigente" data-search="De servicio">
+      <p class="eyebrow">Ficha · De servicio · Digital Change</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/ogh-ficha/">Ficha · OGH-IA</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para dejar a Legal, Compliance, IT y compras: qué es y qué no es, el modelo en tres capas, qué gana el negocio, tres formas de entrar, por qué creernos y el AI Act por fases con las sanciones. Sin precio ni plazo: el modelo es flexible hasta que Alfredo cierre el arranque. Cierra en diagnóstico.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/ogh-ficha/">Ver ficha →</a></div>
     </article><article class="card lib" data-material data-practica="digital-change" data-uso="si" data-tipo="Referencia" data-estado="vigente">
       <p class="eyebrow">Referencia · Digital Change</p>
       <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/dc-caso-entelgy-labs/">Entelgy · IAbility en su propia casa</a></h3>
@@ -416,6 +359,61 @@
       <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/dc-caso-mapfre/">MAPFRE · Conocimiento puesto donde se trabaja</a></h3>
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Única referencia autorizada del área; se cuenta una sola vez, bajo PreservIA. En Smart Operations el mismo caso se cuenta como SmartHelp: un solo juego de cifras para las dos prácticas.</p>
       <div class="ed-mat-foot"><div class="chips"><span class="chip is-citable">citable · sign-off jul 2026</span><span class="chip">Alfredo Zurdo</span></div><a class="ver-ficha" href="/materiales/dc-caso-mapfre/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="corporativo" data-uso="si" data-tipo="Deck" data-estado="revisar" data-search="Corporativo · LATAM">
+      <p class="eyebrow">Deck · Corporativo · LATAM</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/corp-exec-latam/">Entelgy Executive Deck · LATAM</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Edición LATAM del deck corporativo. Pendiente la lectura de Omar sobre edición y referencias antes de usarla con un cliente.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar</span><span class="chip">Corporativo</span></div><a class="ver-ficha" href="/materiales/corp-exec-latam/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="Deck" data-estado="revisar" data-search="Práctica">
+      <p class="eyebrow">Deck · Práctica · Software Development</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-deck-ejecutivo/">Deck ejecutivo C-Suite · Modernización</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck de la práctica para la reunión introductoria (v3, jul 2026). Jorge tiene tres cambios pendientes: la slide de Asistencia Técnica, la de referencias y un anexo de créditos. Sirve para preparar la reunión; no lo envíes hasta la versión corregida.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar · sep 2026</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/mod-deck-ejecutivo/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="One-pager" data-estado="revisar">
+      <p class="eyebrow">One-pager · Software Development</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-asistencia-onepager/">One-pager · Asistencia Técnica</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Una cara para abrir la primera reunión: contratas entrega, no currículums. Va con el modelo de julio (UCE); Jorge lo cambió a créditos de modernización: sirve para la conversación, no lo envíes hasta la versión corregida.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar · sep 2026</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-asistencia-onepager/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="Ficha" data-estado="revisar" data-search="De servicio">
+      <p class="eyebrow">Ficha · De servicio · Software Development</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-ficha-servicio/">Ficha de servicio · Modernización</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Ficha de dos caras para dejar al cliente; valida ante IT y compras. V1 provisional: menciona el reparto del 40% del ahorro y Jorge aún tiene que confirmar que puede ir en un documento público. Si el cliente pregunta por esa cifra, remite a Jorge.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar · sep 2026</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/mod-ficha-servicio/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="Ficha" data-estado="revisar" data-search="De servicio">
+      <p class="eyebrow">Ficha · De servicio · Software Development</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/software-asistencia-ficha/">Ficha de servicio · Asistencia Técnica</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Dos caras para quien lo valida dentro (CIO, compras). Mismo aviso: modelo de julio, pendiente de la versión con créditos de modernización.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar · sep 2026</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/software-asistencia-ficha/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="Herramienta" data-estado="revisar" data-search="Autodiagnóstico">
+      <p class="eyebrow">Herramienta · Autodiagnóstico · Software Development</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-autodiagnostico/">Autodiagnóstico de modernización</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Diez preguntas que el cliente responde solo: le devuelven cuánto le expone su legacy y cuál es el siguiente paso. Lo que abre hoy es el ejemplo de Grupo Lantia, una cuenta ficticia. Antes de enviárselo a una cuenta real, Jorge tiene que validar las preguntas y el índice.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar · sep 2026</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/mod-autodiagnostico/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="si" data-tipo="Deck" data-estado="revisar" data-search="Vertical">
+      <p class="eyebrow">Deck · Vertical · Smart Operations</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-workplace/">SmartOPS Workplace 2026</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck de 22 láminas para la reunión: seis frentes del CIO, motor SmartOPS, cuatro piezas, IA por fase del ticket con porcentajes, SmartHelp, casos y modelo de relación en tres fases. Ojo: la lámina 10 lleva los niveles invertidos y la 14 publica horquillas de precio; hasta que Amador lo corrija, sáltalas en pantalla y no lo envíes.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar · sep 2026</span><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-workplace/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="smart-operations" data-uso="si" data-tipo="Deck" data-estado="revisar" data-search="Vertical">
+      <p class="eyebrow">Deck · Vertical · Smart Operations</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/smartops-infra/">SmartOPS for Infra 2026</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck de 13 láminas más apéndices para la reunión: resumen ejecutivo en una página, cinco fuerzas, el precio de esperar, tres piezas, casos y modelo de relación con salida sin operación. Apéndices de AIOps, modelo N0–N3, cumplimiento y alianzas para cuando la conversación lo pide. Lleva una horquilla de precio en la lámina 12: no lo envíes hasta que Amador decida si se queda.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-revisar">revisar · sep 2026</span><span class="chip">Amador Sobrino</span></div><a class="ver-ficha" href="/materiales/smartops-infra/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="Deck" data-estado="pendiente" data-search="Técnico">
+      <p class="eyebrow">Deck · Técnico · Software Development</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-presentacion-spec/">Presentación técnica · Spec-Driven</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Deck técnico Spec-Driven para la reunión avanzada.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-pendiente">pendiente</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/mod-presentacion-spec/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="si" data-tipo="Plantilla" data-estado="pendiente" data-search="Financiero Correo de apertura">
+      <p class="eyebrow">Plantilla · Correo de apertura · Software Development</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-correo-apertura/">Correo de apertura</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Correo de apertura con enlace al autodiagnóstico; primero para el sector Financiero.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-pendiente">pendiente</span><span class="chip">Jorge Herrero</span></div><a class="ver-ficha" href="/materiales/mod-correo-apertura/">Ver ficha →</a></div>
+    </article><article class="card lib" data-material data-practica="software-development" data-uso="con_validacion" data-tipo="Plantilla" data-estado="pendiente" data-search="Business case">
+      <p class="eyebrow">Plantilla · Business case · Software Development</p>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/mod-business-case/">Business case tipo · Modernización</a></h3>
+      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">Plantilla para armar el business case tras el assessment. Uso interno hasta decidir qué cifras de productividad (Foreworth) pueden salir al cliente.</p>
+      <div class="ed-mat-foot"><div class="chips"><span class="chip is-validacion">con validación</span><span class="chip is-pendiente">pendiente</span><span class="chip">Jorge Herrero / producto</span></div><a class="ver-ficha" href="/materiales/mod-business-case/">Ver ficha →</a></div>
     </article></div>
       </div>
     </div>
