@@ -333,23 +333,26 @@ function practicaPage(pr) {
   ];
   const aside = `<nav class="side-index" aria-label="En esta página">${idx.map(([a, l]) => `<a href="#${a}">${esc(l)}</a>`).join("")}</nav>`;
 
-  let main = `<div>
+  // Hero navy de práctica
+  const hero = `<section class="section hero" style="padding:56px 0"><div class="wrap">
     <p class="eyebrow">Práctica</p>
-    <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0">${esc(pr.nombre)}</h1>
+    <h1 style="font-size:60px;line-height:1;letter-spacing:-.02em;margin:14px 0 16px">${esc(pr.nombre)}</h1>
     <p class="lede">${esc(pr.propuesta_portada || pr.propuesta)}</p>
-    <p style="margin-top:var(--space-2);color:var(--color-text-secondary);font-size:var(--font-size-sm)">Responsable: <b>${esc(nombreCompleto(pr.responsable))}</b></p>`;
+    <p style="margin-top:var(--space-3);color:var(--color-slate-300);font-size:var(--font-size-sm)">Responsable: <b style="color:#fff">${esc(nombreCompleto(pr.responsable))}</b> · <a class="text-link" href="#materiales" style="color:var(--color-purple-300)">Material para cliente ↓</a></p>
+  </div></section>`;
 
+  let main = `<div>`;
   main += `<section class="section" id="que-cubre"><h2 style="font-size:var(--font-size-2xl)">Qué cubre y qué no</h2>
-    <div class="grid grid-2" style="margin-top:var(--space-3)">
-      <div class="card"><p class="eyebrow">Qué cubre</p><p style="margin-top:var(--space-2)">${esc(pr.que_cubre)}</p></div>
-      <div class="card"><p class="eyebrow">Qué no prometemos</p><p style="margin-top:var(--space-2)">${esc(pr.que_no_prometer)}</p></div>
-    </div>
-    <p style="margin-top:var(--space-3)"><b>La pregunta que abre:</b> ${esc(pr.pregunta_comun)}</p></section>`;
+    <div class="grid grid-3" style="margin-top:var(--space-3)">
+      <div class="card"><p class="eyebrow">Qué cubre</p><p style="margin-top:var(--space-2);font-size:var(--font-size-sm)">${esc(pr.que_cubre)}</p></div>
+      <div class="card"><p class="eyebrow">Qué no prometemos</p><p style="margin-top:var(--space-2);font-size:var(--font-size-sm)">${esc(pr.que_no_prometer)}</p></div>
+      <div class="card"><p class="eyebrow">La pregunta que abre</p><p style="margin-top:var(--space-2)">${esc(pr.pregunta_comun)}</p></div>
+    </div></section>`;
 
-  const caps = (pr.capacidades || []).map((c) => `<article class="card"><p class="eyebrow">${esc(c.paso)}</p><h3 style="font-size:var(--font-size-xl);margin:var(--space-1) 0 var(--space-2)">${esc(c.titulo)}</h3><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(c.texto)}</p></article>`).join("");
+  const caps = (pr.capacidades || []).map((c) => `<article class="card card-num"><p class="num">${esc(c.paso)}</p><h3 style="font-size:var(--font-size-xl);margin:var(--space-1) 0 var(--space-2)">${esc(c.titulo)}</h3><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(c.texto)}</p></article>`).join("");
   const pa = pr.primer_avance || {};
   main += `<section class="section" id="capacidades"><h2 style="font-size:var(--font-size-2xl);margin-bottom:var(--space-4)">Capacidades</h2>
-    <div class="grid grid-2">${caps}</div>
+    <div class="grid grid-auto">${caps}</div>
     ${pa.titulo ? `<p style="margin-top:var(--space-4)"><b>Primer avance:</b> ${esc(pa.titulo)}${pa.plazo ? " · " + esc(pa.plazo) : ""}. ${esc(pa.nota || "")}</p>` : ""}
     ${pr.capacidades_nota ? `<p class="footer-note" style="margin-top:var(--space-3);color:var(--color-text-secondary)">${esc(pr.capacidades_nota)}</p>` : ""}
     ${(pr.discovery && pr.discovery.length) ? `<details class="fold" style="margin-top:var(--space-4)"><summary>Tres preguntas para abrir</summary><div class="fold-body"><p class="footer-note">Señales para escuchar, no un guion.</p><ul>${pr.discovery.map((q) => `<li>${esc(q)}</li>`).join("")}</ul></div></details>` : ""}</section>`;
@@ -357,14 +360,19 @@ function practicaPage(pr) {
   const solCards = (pr.soluciones || []).map((s) => `<a class="card" style="text-decoration:none;display:block" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">
       <h3 style="font-size:var(--font-size-xl)">${esc(s.nombre)}</h3>
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin:var(--space-2) 0">${esc(s.una_linea)}</p>
-      <div class="chips">${s.estado === "vigente" ? chipVigencia("vigente", null) : chipVigencia("pendiente", s.fecha_objetivo)}<span class="chip">${esc(nombreCompleto(s.especialista))}</span></div>
+      <div class="chips">${s.estado === "vigente" ? "" : chipVigencia("pendiente", s.fecha_objetivo)}<span class="chip">${esc(nombreCompleto(s.especialista))}</span></div>
     </a>`).join("");
   main += `<section class="section" id="soluciones"><h2 style="font-size:var(--font-size-2xl);margin-bottom:var(--space-4)">Soluciones</h2>
     <div class="grid grid-2">${solCards}</div></section>`;
 
-  const comun = (pr.material_comun || []).map((id) => MAT[id]).filter(Boolean);
+  const comun = (pr.material_comun || []).map((id) => MAT[id]).filter((m) => m && m.sale_al_cliente !== "no");
+  const cols = MOMENTOS.map((mo) => {
+    const items = comun.filter((m) => m.momento_comercial === mo.key);
+    const inner = items.length ? items.map(materialMini).join("") : `<p class="pending">Sin pieza para este momento todavía.</p>`;
+    return `<div><p class="eyebrow" style="margin-bottom:var(--space-2)">${esc(mo.label)}</p>${inner}</div>`;
+  }).join("");
   main += `<section class="section" id="materiales"><h2 style="font-size:var(--font-size-2xl);margin-bottom:var(--space-4)">Material común para cliente</h2>
-    <div class="grid grid-3">${comun.map(materialMini).join("")}</div>
+    <div class="grid grid-3">${cols}</div>
     <p style="margin-top:var(--space-4)"><a class="btn" href="/materiales/?practica=${esc(pr.id)}">Ver todo en Materiales</a></p></section>`;
 
   const asunto = encodeURIComponent(`Hipatia · ${pr.nombre}: consulta`);
@@ -373,7 +381,7 @@ function practicaPage(pr) {
     <p style="margin-top:var(--space-3)"><a class="btn btn-cta" href="mailto:?subject=${asunto}">¿Falta algo? Escribe al responsable</a></p></section>`;
 
   main += `</div>`;
-  const body = `<section class="section"><div class="wrap"><div class="with-aside">${aside}<div>${main}</div></div></div></section>`;
+  const body = hero + `<section class="section"><div class="wrap"><div class="with-aside">${aside}<div>${main}</div></div></div></section>`;
   return page({ title: `${pr.nombre} · Hipatia`, desc: pr.propuesta_portada || pr.propuesta, active: "practicas", body });
 }
 

@@ -437,3 +437,6 @@ details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
   .hero-cta{ justify-self:start; }
   .sol-nav > p{ min-height:0; }
 }
+
+.grid-auto{ display:grid; gap:var(--space-4); grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); }
+@media (max-width:640px){ .grid-auto{ grid-template-columns:1fr; } }
