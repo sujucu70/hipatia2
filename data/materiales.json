@@ -42,7 +42,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "primer_contacto",
-      "nota_de_uso": "Herramienta de 10 preguntas para enviar al cliente; devuelve un índice de exposición y el siguiente paso. Ejemplo cargado: Grupo Lantia (78). Pendiente de que Jorge valide las diez preguntas y el índice.",
+      "nota_de_uso": "Diez preguntas que el cliente responde solo: le devuelven cuánto le expone su legacy y cuál es el siguiente paso. Lo que abre hoy es el ejemplo de Grupo Lantia, una cuenta ficticia. Antes de enviárselo a una cuenta real, Jorge tiene que validar las preguntas y el índice.",
       "url_documento": "/autodiagnostico/grupo-lantia/",
       "origen": "autodiagnostico/grupo-lantia/index.html"
     },
@@ -64,7 +64,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Deck de la práctica para la reunión introductoria (v3, jul 2026). Jorge pidió tres cambios que esperan su documento de AT: la slide de AT, la de referencias y un anexo de créditos. Sirve para preparar la reunión; no lo envíes hasta la versión corregida.",
+      "nota_de_uso": "Deck de la práctica para la reunión introductoria (v3, jul 2026). Jorge tiene tres cambios pendientes: la slide de Asistencia Técnica, la de referencias y un anexo de créditos. Sirve para preparar la reunión; no lo envíes hasta la versión corregida.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/decks/entelgy-ciclo-software.html",
       "origen": "estatus-v1 · índice de materiales"
     },
@@ -108,7 +108,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Ficha de dos caras para dejar al cliente; valida ante IT y compras. V1 provisional. Pendiente confirmar con Jorge la mención del 40% en documento público.",
+      "nota_de_uso": "Ficha de dos caras para dejar al cliente; valida ante IT y compras. V1 provisional: menciona el reparto del 40% del ahorro y Jorge aún tiene que confirmar que puede ir en un documento público. Si el cliente pregunta por esa cifra, remite a Jorge.",
       "url_documento": "/modernizacion/materiales/ficha-modernizacion.html",
       "origen": "modernizacion/materiales/ficha-modernizacion.html"
     },
@@ -152,7 +152,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "En preparación · dueño: Jorge / producto · fecha objetivo: sept 2026. Salida interna con guardarraíl Foreworth; no material cliente hasta decidirlo.",
+      "nota_de_uso": "En preparación · dueño: Jorge / producto · fecha objetivo: sept 2026. Plantilla para armar el business case tras el assessment. Uso interno hasta decidir qué cifras de productividad (Foreworth) pueden salir al cliente.",
       "url_documento": null,
       "origen": "paquete-jorge/06-indice-materiales.md"
     },
@@ -471,7 +471,7 @@
       "nota_de_uso": "Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.",
       "url_documento": null,
       "origen": "paquete-jorge/03-casos-repositorio.md",
-      "contexto": "Cadena hotelera. Entrada por un assessment como primer contrato — el mismo movimiento que propone el kit de visita.",
+      "contexto": "Cadena hotelera. Entró por un assessment como primer contrato, el mismo primer paso que propone Modernización.",
       "que_hicimos": "Adopción del método Spec-Driven en su ciclo de desarrollo, empezando por la documentación: la IA reconstruye y mantiene la documentación del sistema.",
       "resultado": "~−90% del tiempo de documentación.",
       "frase_reunion": "H10 empezó con un assessment — el mismo que te propongo — y hoy documentar les cuesta una décima parte del tiempo. Es el sector privado validando el mismo camino.",
@@ -647,7 +647,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Síntesis cliente de Digital Workplace.",
+      "nota_de_uso": "Una cara para dejar tras la primera reunión: el puesto de trabajo como un solo servicio y por qué Entelgy.",
       "url_documento": "https://entelgy.guberna.es/digital-workplace/fichas/onepager-smartops-desktop.html",
       "origen": "digital-workplace/fichas/onepager-smartops-desktop.html"
     },
@@ -669,7 +669,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Síntesis cliente de infraestructura.",
+      "nota_de_uso": "Una cara para dejar tras la primera reunión: infraestructura crítica operada con previsión y por qué Entelgy.",
       "url_documento": "https://entelgy.guberna.es/digital-workplace/fichas/onepager-smartops-infra.html",
       "origen": "digital-workplace/fichas/onepager-smartops-infra.html"
     },
@@ -713,7 +713,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Pieza cliente de Mantenimiento Evolutivo Inteligente.",
+      "nota_de_uso": "Una cara para dejar tras la primera reunión: un mantenimiento que paga la evolución, y por qué Entelgy.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/onepager-mantenimiento.html",
       "origen": "ciclo-software/fichas/onepager-mantenimiento.html"
     },
@@ -735,7 +735,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Ficha de apoyo a la conversación de servicio.",
+      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye el mantenimiento evolutivo y cómo se contrata.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/ficha-mantenimiento.html",
       "origen": "ciclo-software/fichas/ficha-mantenimiento.html"
     },
@@ -757,7 +757,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Pieza cliente de Asistencia Técnica Aumentada.",
+      "nota_de_uso": "Una cara para dejar tras la primera reunión: especialistas con una entrega que se mide, y por qué Entelgy.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/onepager-asistencia.html",
       "origen": "ciclo-software/fichas/onepager-asistencia.html"
     },
@@ -779,7 +779,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Ficha de detalle de Asistencia Técnica.",
+      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye la asistencia técnica aumentada y cómo se contrata.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/ficha-asistencia.html",
       "origen": "ciclo-software/fichas/ficha-asistencia.html"
     },
@@ -823,7 +823,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Síntesis cliente de la práctica.",
+      "nota_de_uso": "Una cara para dejar tras la primera reunión: qué es Process Intelligence y por qué Entelgy.",
       "url_documento": "https://entelgy.guberna.es/process-mining/fichas/onepager-process-intelligence.html",
       "origen": "process-mining/fichas/onepager-process-intelligence.html"
     },
@@ -845,7 +845,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Ficha de detalle de servicio.",
+      "nota_de_uso": "Dos caras para quien lo valida dentro (IT, compras): qué incluye el servicio y cómo se contrata.",
       "url_documento": "https://entelgy.guberna.es/process-mining/fichas/ficha-process-intelligence.html",
       "origen": "process-mining/fichas/ficha-process-intelligence.html"
     },
@@ -911,7 +911,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Pieza de entrada para IAbility.",
+      "nota_de_uso": "Una cara para abrir una primera reunión: qué es IAbility y qué cambia en la gente que lo usa.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/onepager-iability.html",
       "origen": "ia-digital-change/fichas/onepager-iability.html"
     },
@@ -933,7 +933,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Ficha cliente de IAbility.",
+      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye IAbility y cómo se contrata.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/Ficha_IAbility.html",
       "origen": "ia-digital-change/fichas/Ficha_IAbility.html"
     },
@@ -955,7 +955,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Versión sector público.",
+      "nota_de_uso": "Una cara para abrir una primera reunión en una administración: PreservIA contado para el sector público.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/PreservIA-onepager-sectorpublico.html",
       "origen": "ia-digital-change/fichas/PreservIA-onepager-sectorpublico.html"
     },
@@ -977,7 +977,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Versión sector privado.",
+      "nota_de_uso": "Una cara para abrir una primera reunión en una empresa: PreservIA contado para el sector privado.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/PreservIA-onepager-sectorprivado.html",
       "origen": "ia-digital-change/fichas/PreservIA-onepager-sectorprivado.html"
     },
@@ -999,7 +999,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Ficha de detalle de PreservIA.",
+      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye PreservIA y cómo se contrata. Se deja tras la primera visita.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/Ficha_PreservIA_standalone.html",
       "origen": "ia-digital-change/fichas/Ficha_PreservIA_standalone.html"
     },
@@ -1021,7 +1021,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Pieza de entrada para OGH-IA.",
+      "nota_de_uso": "Una cara para abrir una primera reunión: qué decide una Oficina de Gobernanza Humana de la IA y por qué hace falta.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/OnePager_OGH-IA.html",
       "origen": "ia-digital-change/fichas/OnePager_OGH-IA.html"
     },
@@ -1043,7 +1043,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Ficha de detalle de OGH-IA.",
+      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye la Oficina de Gobernanza Humana de la IA y cómo se contrata.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/Ficha_OGH-IA.html",
       "origen": "ia-digital-change/fichas/Ficha_OGH-IA.html"
     },
@@ -1131,7 +1131,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Síntesis cliente de Data Intelligence.",
+      "nota_de_uso": "Una cara para dejar tras la primera reunión: qué es Data Intelligence y por qué Entelgy.",
       "url_documento": "https://entelgy.guberna.es/data-intelligence/fichas/onepager-dataai.html",
       "origen": "data-intelligence/fichas/onepager-dataai.html"
     },
@@ -1153,7 +1153,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Ficha de detalle de servicio.",
+      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye Data Intelligence y cómo se contrata.",
       "url_documento": "https://entelgy.guberna.es/data-intelligence/fichas/ficha-dataai.html",
       "origen": "data-intelligence/fichas/ficha-dataai.html"
     },
@@ -1197,7 +1197,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Presentación de consultoría de procesos y automatización.",
+      "nota_de_uso": "Deck para la reunión introductoria: del proceso a la automatización y los agentes, con criterio de negocio.",
       "url_documento": "https://entelgy.guberna.es/automatizacion/decks/deck_cliente.html",
       "origen": "automatizacion/decks/deck_cliente.html"
     },
@@ -1219,7 +1219,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Síntesis cliente de automatización.",
+      "nota_de_uso": "Una cara para dejar tras la primera reunión: qué automatizamos y por qué Entelgy.",
       "url_documento": "https://entelgy.guberna.es/automatizacion/fichas/onepager-automatizacion-procesos.html",
       "origen": "automatizacion/fichas/onepager-automatizacion-procesos.html"
     },
@@ -1241,7 +1241,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Ficha de detalle de automatización.",
+      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye la automatización de procesos y cómo se contrata.",
       "url_documento": "https://entelgy.guberna.es/automatizacion/fichas/ficha-automatizacion-procesos.html",
       "origen": "automatizacion/fichas/ficha-automatizacion-procesos.html"
     },
