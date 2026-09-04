@@ -1219,7 +1219,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "primer_contacto",
-      "nota_de_uso": "Una cara para dejar tras la primera reunión: qué automatizamos y por qué Entelgy.",
+      "nota_de_uso": "Una cara para abrir la primera reunión: qué automatizamos y por qué Entelgy. El contacto está sin rellenar y aún dice «hiperautomatización»: pídele a Carla la versión corregida antes de enviarlo.",
       "url_documento": "https://entelgy.guberna.es/automatizacion/fichas/onepager-automatizacion-procesos.html",
       "origen": "automatizacion/fichas/onepager-automatizacion-procesos.html"
     },
@@ -1241,7 +1241,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye la automatización de procesos y cómo se contrata.",
+      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye la automatización de procesos y cómo se contrata. El contacto está sin rellenar y aún dice «hiperautomatización»: pídele a Carla la versión corregida antes de enviarlo.",
       "url_documento": "https://entelgy.guberna.es/automatizacion/fichas/ficha-automatizacion-procesos.html",
       "origen": "automatizacion/fichas/ficha-automatizacion-procesos.html"
     },
@@ -2044,6 +2044,169 @@
       "nota_de_uso": "La versión verticalizada corporativa no está terminada ni validada como pieza vigente.",
       "url_documento": null,
       "origen": "corporativo/Entelgy Executive Deck_larga_banca.html"
+    },
+    {
+      "tipo": "referencia",
+      "zona": "referencias",
+      "confidencialidad": "interno",
+      "audiencia": "Comercial",
+      "estado": "vigente",
+      "fecha_revision": "sep 2026",
+      "mantenida_por": "sm",
+      "momento_comercial": "Aportar prueba",
+      "url_documento": null,
+      "origen": "docs/contenido-v3-process-intelligence.md",
+      "id": "pi-caso-lanbide",
+      "titulo": "Lanbide · Servicio Vasco de Empleo",
+      "practica": "process-intelligence",
+      "solucion": "process-mining",
+      "dueno": "Carmen",
+      "sale_al_cliente": "con_validacion",
+      "citable": "citable",
+      "sign_off": {
+        "quien": "Carmen Rode",
+        "fecha": "2026-08-21"
+      },
+      "sector": [
+        "Sector público"
+      ],
+      "contexto": "Administración pública. Gestión del Ingreso Mínimo Vital con cinco meses de atasco y aplicativos que no dejaban ver dónde se frenaba el trabajo.",
+      "que_hicimos": "Minería sobre los registros del proceso y la aplicación del IMV; detección y subsanación de incoherencias; paneles de priorización y seguimiento del expediente. En tres meses, en uso diario del personal tramitador.",
+      "resultado": "23.000 horas al año liberadas, −84% de esfuerzo manual, +500 usuarios a diario.",
+      "frase_reunion": "En Lanbide la gestión del Ingreso Mínimo Vital tenía cinco meses de atasco. Vimos el proceso real desde sus propios registros, corregimos las incoherencias y en tres meses 500 tramitadores lo usaban a diario: 23.000 horas al año que ya no se pierden.",
+      "cifras": [
+        {
+          "valor": "23.000 h/año liberadas",
+          "verificada": true
+        },
+        {
+          "valor": "−84% de esfuerzo manual",
+          "verificada": true
+        },
+        {
+          "valor": "+500 usuarios a diario",
+          "verificada": true
+        },
+        {
+          "valor": "3 meses a producción",
+          "verificada": true
+        }
+      ],
+      "nota_de_uso": "Nombre y cifras autorizados por el cliente. Citable en presentación; el envío formal se autoriza por cuenta."
+    },
+    {
+      "tipo": "referencia",
+      "zona": "referencias",
+      "confidencialidad": "interno",
+      "audiencia": "Comercial",
+      "estado": "vigente",
+      "fecha_revision": "sep 2026",
+      "mantenida_por": "sm",
+      "momento_comercial": "Aportar prueba",
+      "url_documento": null,
+      "origen": "docs/contenido-v3-process-intelligence.md",
+      "id": "pi-caso-universidad-latam",
+      "titulo": "Universidad · LATAM",
+      "practica": "process-intelligence",
+      "solucion": "process-mining",
+      "dueno": "Carmen",
+      "sale_al_cliente": "con_validacion",
+      "citable": "citable",
+      "sign_off": {
+        "quien": "Carmen Rode",
+        "fecha": "2026-08-21"
+      },
+      "sector": [
+        "Educación"
+      ],
+      "contexto": "Institución educativa grande, entre España y Chile, que no quería escalar a ciegas.",
+      "que_hicimos": "Capturamos dos procesos reales desde sus registros, medimos desvíos, bucles y puntos de fuga, y comparamos tres herramientas (Celonis, Signavio, Inverbis-GBTEC) en su cuenta real.",
+      "resultado": "30% de matrículas recuperables detectadas, −60% de errores y bucles de tipificación. La decisión de escalar se tomó sobre datos.",
+      "frase_reunion": "Una universidad grande en Latinoamérica no quería escalar a ciegas. Capturamos dos procesos desde sus registros, comparamos tres herramientas en su cuenta real, y la decisión de escalar se tomó con un 30% de matrículas recuperables encima de la mesa.",
+      "nota_de_uso": "Cifras autorizadas sin identificar al cliente: nunca el nombre y las cifras juntos."
+    },
+    {
+      "tipo": "referencia",
+      "zona": "referencias",
+      "confidencialidad": "interno",
+      "audiencia": "Comercial",
+      "estado": "vigente",
+      "fecha_revision": "sep 2026",
+      "mantenida_por": "sm",
+      "momento_comercial": "Aportar prueba",
+      "url_documento": null,
+      "origen": "docs/contenido-v3-process-intelligence.md",
+      "id": "pi-cartera-sectores",
+      "titulo": "Cartera · Banca, Seguros, Industria y Distribución",
+      "practica": "process-intelligence",
+      "solucion": "process-mining",
+      "dueno": "Carmen",
+      "sale_al_cliente": "con_validacion",
+      "citable": "confirmar_por_cuenta",
+      "sign_off": null,
+      "sector": [],
+      "contexto": "Cifras de proyectos reales del área, anonimizadas en el deck.",
+      "que_hicimos": null,
+      "resultado": "Entidad financiera: 283 K€ de ahorro en consolidación de créditos. Industrial: 256 K€ de retorno en siete meses en cobro y recuperación. Gran distribución: 500 K€ anuales recuperados en facturas impagadas. Aseguradora: detección temprana de irregularidades en pólizas y siniestros.",
+      "frase_reunion": "En una entidad financiera el proceso de consolidación de créditos ahorró 283.000 euros; en una industrial, el cobro devolvió 256.000 en siete meses. Son cifras del área: el nombre lo confirmo contigo por cuenta.",
+      "nota_de_uso": "Confirmar con Carmen antes de nombrar al cliente. Las cifras son citables sin nombre."
+    },
+    {
+      "tipo": "referencia",
+      "zona": "referencias",
+      "confidencialidad": "interno",
+      "audiencia": "Comercial",
+      "estado": "vigente",
+      "fecha_revision": "sep 2026",
+      "mantenida_por": "sm",
+      "momento_comercial": "Aportar prueba",
+      "url_documento": null,
+      "origen": "docs/contenido-v3-process-intelligence.md",
+      "id": "pa-caso-uned",
+      "titulo": "UNED · Oficina de automatización",
+      "practica": "process-intelligence",
+      "solucion": "process-automation-ai",
+      "dueno": "Carla",
+      "sale_al_cliente": "con_validacion",
+      "citable": "confirmar_por_cuenta",
+      "sign_off": null,
+      "sector": [
+        "Sector público",
+        "Educación"
+      ],
+      "contexto": "Universidad pública. Oficina de automatización sobre Blue Prism, por contratación pública.",
+      "que_hicimos": "Detección y levantamiento de oportunidades área por área y robotización con roadmap.",
+      "resultado": "95 procesos levantados en 18 meses; los 26 primeros robots en producción en 6 meses; 9 áreas, más de 30 usuarios y más de 400 horas al año liberadas a trabajo de más valor.",
+      "frase_reunion": "En la UNED levantamos 95 procesos en año y medio y en seis meses ya había 26 robots en producción. La adjudicación es pública; las horas liberadas te las confirmo por cuenta.",
+      "nota_de_uso": "Adjudicación pública (BOE / PLACSP). Cifras del hub y del deck; Carla confirma alcance antes de citarlas con nombre."
+    },
+    {
+      "tipo": "referencia",
+      "zona": "referencias",
+      "confidencialidad": "interno",
+      "audiencia": "Comercial",
+      "estado": "vigente",
+      "fecha_revision": "sep 2026",
+      "mantenida_por": "sm",
+      "momento_comercial": "Aportar prueba",
+      "url_documento": null,
+      "origen": "docs/contenido-v3-process-intelligence.md",
+      "id": "pa-caso-energetica-colombia",
+      "titulo": "Energética · Colombia",
+      "practica": "process-intelligence",
+      "solucion": "process-automation-ai",
+      "dueno": "Carla",
+      "sale_al_cliente": "con_validacion",
+      "citable": "confirmar_por_cuenta",
+      "sign_off": null,
+      "sector": [
+        "Energía"
+      ],
+      "contexto": "Empresa energética con unos 150 flujos de automatización que solo su autor sabía mantener.",
+      "que_hicimos": "Documentamos el parque entero, quitamos duplicidades y diseñamos una arquitectura con base de datos unificada.",
+      "resultado": "Menos riesgo operativo y una base estable para escalar.",
+      "frase_reunion": "Una energética en Colombia tenía 150 flujos que solo una persona sabía mantener. Documentamos el parque, quitamos duplicados y dejamos una base gobernada sobre la que escalar. Es lo que hace la oficina de gobierno.",
+      "nota_de_uso": "Sin nombre hasta que el cliente autorice. La historia sí se puede contar."
     }
   ]
 }
