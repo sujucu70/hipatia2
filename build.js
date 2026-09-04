@@ -884,7 +884,7 @@ function contactosPage(practicas, personas) {
     <p class="eyebrow">Las personas</p>
     <h2 style="font-size:var(--font-size-2xl);margin:var(--space-2) 0 var(--space-4)">${personas.length} personas, todo lo que llevan</h2>
     <div class="grid grid-3">${tarjetas}</div>
-    <p class="footer-note" style="margin-top:var(--space-4)">Los canales de Teams se enlazan cuando estén validados. Los datos que faltan (teléfono, título, técnico de cada solución) los piden los SM después del 8.</p>
+    <p class="footer-note" style="margin-top:var(--space-4)">Los canales de Teams se enlazan cuando estén validados. Los datos que faltan (teléfono, título y técnico de cada solución) se están pidiendo a cada responsable.</p>
   </div></section>`;
   return page({ title: "Contactos · Hipatia", desc: "A quién llamar por solución: comercial y técnico.", active: "contactos", body });
 }

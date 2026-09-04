@@ -4,7 +4,7 @@
   "orden": "04",
   "responsable": "Amador",
   "propuesta": "Un mismo motor operativo para los dos territorios críticos del CIO, el puesto de trabajo y la infraestructura, con IA en producción y gobierno regulatorio dentro.",
-  "que_cubre": "SmartOPS es el motor operativo de Entelgy, no un catálogo de servicios: un modelo N0–N3 que deja el volumen a la máquina y el criterio al equipo, dimensionamiento sobre datos reales, reporting en Power BI sobre un data lake del servicio, IA operativa en producción desde 2018 y gobierno ISO 20000, 27001 y ENS alto en el diseño del servicio. Ese motor se sirve a dos territorios con la misma disciplina, el mismo gobierno y el mismo reporting: el puesto de trabajo (soporte, dispositivo y experiencia del empleado) y la infraestructura crítica (sistemas, redes y cloud, 24×7). Desde centros propios en Madrid, São Paulo y Miami.",
+  "que_cubre": "SmartOPS es el motor operativo de Entelgy, no un catálogo de servicios: modelo N0–N3 (el volumen a la máquina, el criterio al equipo), dimensionamiento sobre datos reales, reporting en Power BI, IA en producción desde 2018 y gobierno ISO 20000, 27001 y ENS alto en el diseño del servicio. El mismo motor sirve a dos territorios: el puesto de trabajo (soporte, dispositivo y experiencia del empleado) y la infraestructura crítica (sistemas, redes y cloud, 24×7). Desde centros propios en Madrid, São Paulo y Miami.",
   "que_no_prometer": "No planteamos herramienta, plataforma ni cambio operativo sin haber leído el servicio actual, los colectivos y las restricciones de operación. No vendemos horas ni paquetes cerrados: cada pieza se contrata sola o combinada. Y no prometemos un ahorro antes del diagnóstico: la cifra la da el propio assessment sobre vuestros datos, no el comercial.",
   "pregunta_comun": "¿Qué os cuesta más hoy: que la gente pueda trabajar sin fricción o que la infraestructura no falle?",
   "capacidades": [
@@ -67,7 +67,7 @@
         "primer_paso": {
           "titulo": "Diagnóstico del puesto de trabajo",
           "plazo": "desde 10 días",
-          "nota": "Precio cerrado, sin compromiso posterior, sobre el servicio real: volumetría del CAU, estado del parque y ventana de Windows 11, mapa de experiencia del empleado y cuántas incidencias evitaría el N0, con ahorro estimado por usuario. El resultado es del cliente decida lo que decida. Alcance con Amador."
+          "nota": "Precio cerrado, sin compromiso posterior, sobre el servicio real: volumetría del CAU, estado del parque y ventana de Windows 11, mapa de experiencia del empleado y cuántas incidencias evitaría el N0, con ahorro estimado por usuario. El resultado es del cliente decida lo que decida. Alcance con Amador Sobrino."
         }
       },
       "limites": [
@@ -254,7 +254,7 @@
         "primer_paso": {
           "titulo": "Diagnóstico de infraestructura",
           "plazo": "desde 10 días",
-          "nota": "Precio cerrado (orientativo 30–50 K€ según alcance), sin compromiso posterior, sobre el entorno real: cloud waste recuperable con cifras, hueco NIS2/DORA/AI Act, evaluación Broadcom con TCO por camino y quick wins a 90 días. Después, piloto de 90 días en el dominio de más riesgo con solape con el proveedor actual; al terminar, operación continua u obra cerrada. Alcance con Amador."
+          "nota": "Precio cerrado (orientativo 30–50 K€ según alcance), sin compromiso posterior, sobre el entorno real: cloud waste recuperable con cifras, hueco NIS2/DORA/AI Act, evaluación Broadcom con TCO por camino y mejoras ejecutables en 90 días. Después, piloto de 90 días en el dominio de más riesgo con solape con el proveedor actual; al terminar, operación continua u obra cerrada. Alcance con Amador Sobrino."
         },
         "planteamiento": "Una infraestructura crítica aporta valor cuando permite sostener el servicio y anticipar decisiones, no solo reaccionar; cloud, observabilidad, FinOps y resiliencia se conectan para gobernar mejor."
       },
@@ -427,19 +427,19 @@
     "texto": "Puesto e infraestructura bajo presión a la vez, mientras los plazos regulatorios y de soporte se cierran y dejan de ser negociables.",
     "fuerzas": [
       {
-        "ambito": "Puesto de trabajo",
-        "cifra": "14 /sem",
+        "ambito": "Puesto",
+        "cifra": "14",
         "texto": "fricciones por empleado y semana fuera del SLA: 470.000 horas al año en una empresa media.",
         "fuente": "Nexthink, DEX Report 2026"
       },
       {
-        "ambito": "Coste cloud",
+        "ambito": "Cloud",
         "cifra": "29%",
         "texto": "del gasto cloud es desperdicio recuperable, al alza empujado por la IA.",
         "fuente": "Flexera, State of the Cloud 2026"
       },
       {
-        "ambito": "Disponibilidad",
+        "ambito": "Caídas",
         "cifra": "54%",
         "texto": "de las caídas cuestan más de 100.000 $. Un incidente es un evento financiero.",
         "fuente": "Uptime Institute, Outage Analysis 2026"
@@ -451,7 +451,7 @@
         "fuente": "Reglamento (UE) 2024/1689, art. 99"
       },
       {
-        "ambito": "IA sin retorno",
+        "ambito": "IA",
         "cifra": "80%",
         "texto": "no ve impacto medible en el EBIT de su IA. Sin datos ni gobierno, no escala.",
         "fuente": "McKinsey, The State of AI 2026"

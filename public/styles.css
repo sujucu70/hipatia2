@@ -441,6 +441,9 @@ details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
 
 /* BA.7 · «Lo que presiona al CIO»: cinco fuerzas (cifra en display) y cuatro relojes */
 .fuerza .cifra{ font-family:var(--font-family-display); font-weight:700; font-size:var(--font-size-5xl); line-height:1; margin:var(--space-1) 0; letter-spacing:-.02em; }
+/* rev17 · el eyebrow de las tarjetas de fuerza va sin la regla de 28 px (se come el ancho) */
+.fuerza .eyebrow{ gap:0; }
+.fuerza .eyebrow::before{ content:none; }
 .relojes{ display:grid; grid-template-columns:repeat(4,1fr); gap:var(--space-4); margin-top:var(--space-4); background:var(--color-surface); border-left:3px solid var(--color-brand-purple); border-radius:var(--radius-md); padding:var(--space-4); }
 .relojes .reloj{ display:flex; flex-direction:column; gap:4px; font-size:var(--font-size-sm); }
 .relojes .reloj b{ font-weight:var(--font-weight-bold); }

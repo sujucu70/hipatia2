@@ -37,7 +37,7 @@
   "primer_avance": {
     "titulo": "Un diagnóstico sobre un proceso real",
     "plazo": "6–8 semanas",
-    "nota": "Con minería si el proceso deja rastro en los sistemas (Carmen) y a mano si no lo deja (Carla). Baseline medida en horas y tareas, mejoras priorizadas y retorno estimado. Precio cerrado: 15–20 K€ en el diagnóstico de entrada de Inteligencia de procesos; el de Automatización se cierra con Carla."
+    "nota": "Con minería si el proceso deja rastro en los sistemas (Carmen) y a mano si no lo deja (Carla). Baseline medida en horas y tareas, mejoras priorizadas y retorno estimado. Precio cerrado: 15–20 K€ en el diagnóstico de entrada de Inteligencia de procesos; el de Automatización se cierra con Carla González."
   },
   "soluciones": [
     {
@@ -62,7 +62,7 @@
         "primer_paso": {
           "titulo": "Diagnóstico de entrada",
           "plazo": "6–8 semanas",
-          "nota": "15–20 K€, precio cerrado, sin comité de inversión. Baseline cuantificada del proceso que más pesa, en horas y tareas, y mejoras priorizadas con retorno estimado. Es la puerta, no el techo: después vienen Operativo (Celonis en producción, 6–12 meses) y Despliegue (varios procesos, CoE), o las tres fases en suscripción. Cierra alcance y disponibilidad con Carmen."
+          "nota": "15–20 K€, precio cerrado, sin comité de inversión. Baseline cuantificada del proceso que más pesa, en horas y tareas, y mejoras priorizadas con retorno estimado. Es la puerta, no el techo: después vienen Operativo (Celonis en producción, 6–12 meses) y Despliegue (varios procesos, CoE), o las tres fases en suscripción. Cierra alcance y disponibilidad con Carmen Rode."
         }
       },
       "limites": [
@@ -228,7 +228,7 @@
         "primer_paso": {
           "titulo": "Diagnóstico de automatización",
           "plazo": "6–8 semanas",
-          "nota": "Precio cerrado, sin compromiso de continuidad. Levantamiento del proceso real área por área, priorización costeada por coste, riesgo y volumen, y plan con el carril correcto (RPA, RPA con IA o agentes) y el retorno estimado. Un primer proceso medio o simple que se mueva y se vea. Al final el cliente decide qué automatizar primero, con números delante. Precio y alcance, con Carla."
+          "nota": "Precio cerrado, sin compromiso de continuidad. Levantamiento del proceso real área por área, priorización costeada por coste, riesgo y volumen, y plan con el carril correcto (RPA, RPA con IA o agentes) y el retorno estimado. Un primer proceso medio o simple que se mueva y se vea. Al final el cliente decide qué automatizar primero, con números delante. Precio y alcance, con Carla González."
         }
       },
       "limites": [
