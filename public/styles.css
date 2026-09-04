@@ -382,12 +382,14 @@ details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
 /* E5 · numeración en fantasma donde hay secuencia */
 .card-num{ position:relative; overflow:hidden; padding-bottom:56px; }
 .card-num > *{ position:relative; z-index:1; }
-.card-num .num{ position:absolute; right:14px; bottom:-14px; z-index:0; font-family:var(--font-family-display); font-weight:700; font-size:96px; line-height:1; color:var(--color-purple-100); letter-spacing:-.04em; }
+.card-num[data-num]::before{ content:attr(data-num); position:absolute; right:14px; bottom:-14px; z-index:0; font-family:var(--font-family-display); font-weight:700; font-size:96px; line-height:1; color:var(--color-purple-100); letter-spacing:-.04em; pointer-events:none; }
 
 /* E6 · tarjeta destacada con sombra dura (una por página) */
 .card-featured{ position:relative; overflow:hidden; background:var(--color-brand-navy); color:#fff; border:0; border-radius:var(--radius-lg); padding:var(--space-5); box-shadow:8px 8px 0 var(--color-purple-300); }
 .card-featured h1, .card-featured h2, .card-featured h3, .card-featured h4{ color:#fff; }
 .card-featured p{ color:var(--color-slate-200); }
+.card-featured .text-link, .band .text-link{ color:var(--color-purple-300); }
+.band .section-head p{ color:var(--color-slate-200); }
 .card-featured::after{ content:""; position:absolute; right:-60px; bottom:-90px; width:220px; height:220px; border-radius:50%; border:1px solid rgba(255,255,255,.18); pointer-events:none; }
 .card-featured > *{ position:relative; z-index:1; }
 

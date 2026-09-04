@@ -349,7 +349,7 @@ function practicaPage(pr) {
       <div class="card"><p class="eyebrow">La pregunta que abre</p><p style="margin-top:var(--space-2)">${esc(pr.pregunta_comun)}</p></div>
     </div></section>`;
 
-  const caps = (pr.capacidades || []).map((c) => `<article class="card card-num"><p class="num">${esc(c.paso)}</p><h3 style="font-size:var(--font-size-xl);margin:var(--space-1) 0 var(--space-2)">${esc(c.titulo)}</h3><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(c.texto)}</p></article>`).join("");
+  const caps = (pr.capacidades || []).map((c) => `<article class="card card-num" data-num="${esc(c.paso)}"><h3 style="font-size:var(--font-size-xl);margin:var(--space-1) 0 var(--space-2)">${esc(c.titulo)}</h3><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(c.texto)}</p></article>`).join("");
   const pa = pr.primer_avance || {};
   main += `<section class="section" id="capacidades"><h2 style="font-size:var(--font-size-2xl);margin-bottom:var(--space-4)">Capacidades</h2>
     <div class="grid grid-auto">${caps}</div>
@@ -609,7 +609,7 @@ function entelgyPage(corp, practicas) {
 
   // Por qué Entelgy (banda slate + tres diferenciadores)
   const pilares = (pq.pilares || []).map((p) => `<span class="chip">${esc(p)}</span>`).join("");
-  const difs = (pq.diferenciadores || []).map((d) => `<article class="card card-num"><p class="num">${esc(d.num)}</p><h3 style="font-size:var(--font-size-xl);margin:var(--space-2) 0">${esc(d.titulo)}</h3><p style="color:var(--color-text-secondary);font-size:var(--font-size-sm)">${esc(d.texto)}</p></article>`).join("");
+  const difs = (pq.diferenciadores || []).map((d) => `<article class="card card-num" data-num="${esc(d.num)}"><h3 style="font-size:var(--font-size-xl);margin:var(--space-2) 0">${esc(d.titulo)}</h3><p style="color:var(--color-text-secondary);font-size:var(--font-size-sm)">${esc(d.texto)}</p></article>`).join("");
   const porQue = pq.linea ? `<section class="section">
     <div class="band band-slate"><div class="wrap">
       <p class="eyebrow">Por qué Entelgy</p>
@@ -628,7 +628,7 @@ function entelgyPage(corp, practicas) {
     const idx = p.texto.indexOf("Evita:");
     const main = idx >= 0 ? p.texto.slice(0, idx).trim() : p.texto;
     const evita = idx >= 0 ? p.texto.slice(idx).trim() : "";
-    return `<article class="card card-num"><p class="num">${esc(p.paso)}</p><h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)">${esc(p.titulo)}</h4><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(main)}</p>${evita ? `<p class="evita">${esc(evita)}</p>` : ""}</article>`;
+    return `<article class="card card-num" data-num="${esc(p.paso)}"><h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)">${esc(p.titulo)}</h4><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(main)}</p>${evita ? `<p class="evita">${esc(evita)}</p>` : ""}</article>`;
   }).join("");
 
   // Dónde entramos (banda navy · cinco prácticas)
