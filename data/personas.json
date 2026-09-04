@@ -28,7 +28,9 @@
       "estado": "validado"
     },
     {
-      "nombre": "Daniela",
+      "nombre": "Daniela Ongaro",
+      "titulo": "Head of Data",
+      "correo": "daniela.ongaro@entelgy.com",
       "rol": "Responsable de práctica",
       "practica": "data-intelligence",
       "solucion": "data-intelligence",
@@ -37,7 +39,9 @@
       "estado": "validado"
     },
     {
-      "nombre": "Amador",
+      "nombre": "Amador Sobrino",
+      "titulo": "Solution Manager · Smart Operations",
+      "correo": "amador.sobrino@entelgy.com",
       "rol": "Responsable de práctica",
       "practica": "smart-operations",
       "solucion": null,
@@ -47,6 +51,8 @@
     },
     {
       "nombre": "Alfredo Zurdo",
+      "titulo": "Head of Digital Change",
+      "correo": "alfredo.zurdo@entelgy.com",
       "rol": "Responsable de práctica",
       "practica": "digital-change",
       "solucion": null,
@@ -120,7 +126,9 @@
       "pendiente": "en preparación · dueño: los SM · sept 2026"
     },
     {
-      "nombre": "Daniela",
+      "nombre": "Daniela Ongaro",
+      "titulo": "Head of Data",
+      "correo": "daniela.ongaro@entelgy.com",
       "rol": "Especialista de solución",
       "practica": "data-intelligence",
       "solucion": "data-intelligence",
@@ -129,17 +137,19 @@
       "estado": "validado"
     },
     {
-      "nombre": null,
+      "nombre": "Luis Sanz",
+      "titulo": "Technical Lead · Data Intelligence",
       "rol": "Segundo contacto",
       "practica": "data-intelligence",
       "solucion": null,
       "orden": 2,
       "canal": null,
-      "estado": "en_preparacion",
-      "pendiente": "en preparación · dueño: los SM · sept 2026"
+      "estado": "validado"
     },
     {
-      "nombre": "Amador",
+      "nombre": "Amador Sobrino",
+      "titulo": "Solution Manager · Smart Operations",
+      "correo": "amador.sobrino@entelgy.com",
       "rol": "Especialista de solución",
       "practica": "smart-operations",
       "solucion": "smartops-workplace",
@@ -148,7 +158,9 @@
       "estado": "validado"
     },
     {
-      "nombre": "Amador",
+      "nombre": "Amador Sobrino",
+      "titulo": "Solution Manager · Smart Operations",
+      "correo": "amador.sobrino@entelgy.com",
       "rol": "Especialista de solución",
       "practica": "smart-operations",
       "solucion": "smartops-infra",
@@ -168,6 +180,8 @@
     },
     {
       "nombre": "Alfredo Zurdo",
+      "titulo": "Head of Digital Change",
+      "correo": "alfredo.zurdo@entelgy.com",
       "rol": "Especialista de solución",
       "practica": "digital-change",
       "solucion": "iability",
@@ -177,6 +191,8 @@
     },
     {
       "nombre": "Alfredo Zurdo",
+      "titulo": "Head of Digital Change",
+      "correo": "alfredo.zurdo@entelgy.com",
       "rol": "Especialista de solución",
       "practica": "digital-change",
       "solucion": "preservia",
@@ -186,6 +202,8 @@
     },
     {
       "nombre": "Alfredo Zurdo",
+      "titulo": "Head of Digital Change",
+      "correo": "alfredo.zurdo@entelgy.com",
       "rol": "Especialista de solución",
       "practica": "digital-change",
       "solucion": "ogh-ia",
@@ -194,14 +212,26 @@
       "estado": "validado"
     },
     {
-      "nombre": null,
+      "nombre": "Cristina Aparicio",
+      "titulo": "Digital Change",
+      "correo": "cristina.aparicio@entelgy.com",
+      "rol": "Especialista de solución",
+      "practica": "digital-change",
+      "solucion": "ogh-ia",
+      "orden": 2,
+      "canal": "Teams · canal del área (pendiente de enlace)",
+      "estado": "validado"
+    },
+    {
+      "nombre": "Cristina Aparicio",
+      "titulo": "Digital Change",
+      "correo": "cristina.aparicio@entelgy.com",
       "rol": "Segundo contacto",
       "practica": "digital-change",
       "solucion": null,
       "orden": 2,
       "canal": null,
-      "estado": "en_preparacion",
-      "pendiente": "en preparación · dueño: los SM · sept 2026"
+      "estado": "validado"
     }
   ]
 }

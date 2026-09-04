@@ -243,10 +243,17 @@ function solucionPage(pr, s) {
   if (kit.preguntas_cualificacion && kit.preguntas_cualificacion.length) {
     prep += `<h4>Preguntas de cualificación</h4><ul>` + kit.preguntas_cualificacion.map((q) => `<li>${esc(q)}</li>`).join("") + `</ul>`;
   }
+  if (s.keynotes && s.keynotes.length) {
+    prep += `<h4>Mensajes clave por dolor</h4><ul>` +
+      s.keynotes.map((k) => `<li><b>${esc(k.dolor)}</b><br>${esc(k.frase)}<br><span class="footer-note">Prueba: ${esc(k.prueba)} · Siguiente paso: ${esc(k.paso)}</span></li>`).join("") + `</ul>`;
+  }
   if (kit.material_interno && kit.material_interno.length) {
     const ints = kit.material_interno.map((id) => MAT[id]).filter(Boolean);
     if (ints.length) prep += `<h4>Material interno · no sale al cliente</h4><ul>` +
       ints.map((m) => `<li><a href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a> — ${esc(m.tipo)} ${chipUso(m.sale_al_cliente)}</li>`).join("") + `</ul>`;
+  }
+  if (s.estado === "vigente" && s.pendiente && s.pendiente.texto) {
+    prep += `<p class="pending"><b>En revisión por el área.</b> ${esc(s.pendiente.texto)} · dueño: ${esc(s.pendiente.dueno || s.dueno || "por asignar")} · fecha objetivo: ${esc(s.pendiente.fecha_objetivo || s.fecha_objetivo || "sin fecha")}.</p>`;
   }
   if (!prep) prep = pendingBox(s.pendiente, s.dueno) || `<p class="pending">Material de preparación en preparación.</p>`;
   const dossierCta = (kit.dossier_imprimible)
@@ -300,7 +307,6 @@ function practicaPage(pr) {
   main += `<section class="section" id="capacidades"><h2 style="font-size:var(--font-size-2xl);margin-bottom:var(--space-4)">Capacidades</h2>
     <div class="grid grid-2">${caps}</div>
     ${pa.titulo ? `<p style="margin-top:var(--space-4)"><b>Primer avance:</b> ${esc(pa.titulo)}${pa.plazo ? " · " + esc(pa.plazo) : ""}. ${esc(pa.nota || "")}</p>` : ""}
-    ${(pr.capacidades_ia || []).length ? `<div class="grid grid-3" style="margin-top:var(--space-4)">${pr.capacidades_ia.map((c) => `<article class="card"><h4 style="font-size:var(--font-size-lg)">${esc(c.titulo)}</h4><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-top:var(--space-2)">${esc(c.texto)}</p></article>`).join("")}</div>` : ""}
     ${pr.capacidades_nota ? `<p class="footer-note" style="margin-top:var(--space-3);color:var(--color-text-secondary)">${esc(pr.capacidades_nota)}</p>` : ""}</section>`;
 
   const solCards = (pr.soluciones || []).map((s) => `<a class="card" style="text-decoration:none;display:block" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">
@@ -402,7 +408,7 @@ function materialesIndex() {
   const practicasVals = [...new Set(materiales.map((m) => m.practica))];
   const tipos = [...new Set(materiales.map((m) => m.tipo))].sort();
   const estados = ["vigente", "revisar", "pendiente"];
-  const usos = [["si", "Para cliente"], ["con_validacion", "Con validación"], ["no", "Interno"]];
+  const usos = [["si", "Para cliente"], ["con_validacion", "Con validación"]];
   const group = (dim, title, opts, checkedVal) => `<div class="filter-group"><b>${esc(title)}</b>${opts.map(([v, l]) =>
     `<label><input type="checkbox" data-filter="${esc(dim)}" value="${esc(v)}"${v === checkedVal ? " checked" : ""}> ${esc(l)}</label>`).join("")}</div>`;
   const filters = `<form class="filters" aria-label="Filtros">
@@ -412,7 +418,7 @@ function materialesIndex() {
     ${group("estado", "Estado", estados.map((e) => [e, VIG[e]]))}
   </form>`;
 
-  const cards = materiales.map((m) => `<article class="card" data-material
+  const cards = materiales.filter((m) => m.sale_al_cliente !== "no" && m.tipo !== "Archivo").map((m) => `<article class="card" data-material
       data-practica="${esc(m.practica)}" data-uso="${esc(m.sale_al_cliente)}" data-tipo="${esc(m.tipo)}" data-estado="${esc(m.estado)}"
       ${(m.sector && m.sector.length) ? `data-search="${esc(m.sector.join(" "))}"` : ""}
       style="padding:var(--space-4)">
@@ -429,7 +435,7 @@ function materialesIndex() {
   const body = `<section class="section"><div class="wrap">
     <p class="eyebrow">Catálogo</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-4)">Materiales</h1>
-    <p class="lede">Todo el material comercial, con su uso, estado y dueño a la vista. «Para cliente» viene marcado por defecto.</p>
+    <p class="lede">El material que puedes enseñar o dejar al cliente, con su uso, estado y dueño a la vista. Las guías internas de cada solución están en su «Para prepararte». «Para cliente» viene marcado por defecto.</p>
     <div style="margin-top:var(--space-5)"><input type="search" data-materials-search placeholder="Buscar materiales…" aria-label="Buscar materiales" style="width:100%;max-width:520px;font:inherit;padding:var(--space-3);border:1px solid var(--color-border-default);border-radius:var(--radius-md)"></div>
     <div class="with-aside" style="margin-top:var(--space-5)">
       <div>${filters}</div>
@@ -578,7 +584,6 @@ function entelgyPage(corp) {
 // =====================================================================
 function puntoPartidaPage(corp) {
   const pp = corp.punto_de_partida || {};
-  const caps = (pp.as_is.capturas || []).map((src) => `<img src="${esc(src)}" alt="As-is de Hipatia" style="border:1px solid var(--color-border-default);border-radius:var(--radius-lg)">`).join("");
   const body = `<section class="section"><div class="wrap" style="max-width:900px">
     <p class="eyebrow">Por qué Hipatia</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-4)">Punto de partida</h1>
@@ -586,7 +591,6 @@ function puntoPartidaPage(corp) {
       <div class="card"><h2 style="font-size:var(--font-size-2xl)">${esc(pp.as_is.titulo)}</h2><p style="margin-top:var(--space-2);color:var(--color-text-secondary)">${esc(pp.as_is.texto)}</p></div>
       <div class="card" style="background:var(--color-brand-navy);color:#fff;border:0"><h2 style="color:#fff;font-size:var(--font-size-2xl)">${esc(pp.to_be.titulo)}</h2><p style="margin-top:var(--space-2);color:var(--color-slate-200)">${esc(pp.to_be.texto)}</p></div>
     </div>
-    <div class="grid grid-2" style="margin-top:var(--space-4)">${caps}</div>
   </div></section>`;
   return page({ title: "Punto de partida · Hipatia", desc: "De dónde parte Hipatia y a dónde va.", active: "", body });
 }
@@ -614,14 +618,15 @@ function contactosPage(practicas, personas) {
     const especialistas = gente.filter((g) => g.rol === "Especialista de solución");
     const segundo = gente.find((g) => g.rol === "Segundo contacto");
     const asunto = encodeURIComponent(`Hipatia · ${pr.nombre}: falta algo`);
+    const correoLink = (g) => g.correo ? ` · <a class="text-link" href="mailto:${esc(g.correo)}">${esc(g.correo)}</a>` : "";
     let filas = "";
-    if (responsable) filas += `<li><b>${esc(responsable.nombre)}</b> — Responsable de la práctica <span class="footer-note">· ${esc(responsable.canal || "")}</span></li>`;
+    if (responsable) filas += `<li><b>${esc(responsable.nombre)}</b> — Responsable de la práctica <span class="footer-note">${responsable.titulo ? "· " + esc(responsable.titulo) + " " : ""}· ${esc(responsable.canal || "")}</span>${correoLink(responsable)}</li>`;
     especialistas.forEach((e) => {
       const sol = (pr.soluciones || []).find((s) => s.id === e.solucion);
-      filas += `<li><b>${esc(e.nombre)}</b> — Especialista${sol ? " · " + esc(sol.nombre) : ""}</li>`;
+      filas += `<li><b>${esc(e.nombre)}</b> — Especialista${sol ? " · " + esc(sol.nombre) : ""}${e.titulo ? ` <span class="footer-note">· ${esc(e.titulo)}</span>` : ""}${correoLink(e)}</li>`;
     });
     filas += segundo && segundo.nombre
-      ? `<li>${esc(segundo.nombre)} — Segundo contacto</li>`
+      ? `<li>${esc(segundo.nombre)} — Segundo contacto${segundo.titulo ? ` <span class="footer-note">· ${esc(segundo.titulo)}</span>` : ""}${correoLink(segundo)}</li>`
       : `<li class="footer-note">Segundo contacto: en preparación · dueño: los SM · sept 2026</li>`;
     return `<section class="section"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-4);flex-wrap:wrap">
         <h2 style="font-size:var(--font-size-2xl)">${esc(pr.nombre)}</h2>

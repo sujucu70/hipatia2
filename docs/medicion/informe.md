@@ -1,6 +1,6 @@
 # Medición · Hipatia v3
 
-> Generado por `medir.js` el 2026-09-04. Rutas medidas: 114.
+> Generado por `medir.js` el 2026-09-04. Rutas medidas: 138.
 
 ## Criterios de aceptación (§6.8)
 
@@ -12,7 +12,7 @@
 | 5 | Uso/estado/dueño, citable⇒sign_off, sin enlaces rotos | 🟢 (rotos: 0) |
 | 6 | Ninguna pantalla afirma agente/envío/integración | 🟢 |
 | 7 | URL propia y buscador en todas | 🟢 |
-| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 139 KB) |
+| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 129 KB) |
 | 9 | Reconocible por quien usó hipatia2 | ⚪ cualitativo |
 
 ## Clics desde la portada
@@ -38,20 +38,20 @@
 
 | Ruta | KB |
 |---|---|
-| /materiales | 139 |
+| /materiales | 129 |
 | /modernizacion/materiales | 62 |
+| /practicas/data-intelligence/data-intelligence | 47 |
+| /practicas/smart-operations/smartops-workplace | 47 |
+| /practicas/software-development/modernizacion | 47 |
 | /modernizacion/materiales | 46 |
-| /practicas/software-development/modernizacion | 45 |
+| /practicas/smart-operations/smartops-infra | 45 |
 | /autodiagnostico/grupo-lantia | 43 |
-| / | 38 |
-| /practicas/digital-change | 34 |
-| /practicas/software-development | 34 |
-| /practicas/data-intelligence/data-intelligence | 33 |
-| /practicas/data-intelligence | 33 |
-| /practicas/process-intelligence | 33 |
-| /practicas/smart-operations | 33 |
+| /practicas/process-intelligence/process-mining | 43 |
+| /practicas/software-development/mantenimiento | 43 |
+| /practicas/process-intelligence/process-automation-ai | 42 |
+| /practicas/software-development/asistencia-tecnica | 42 |
 
-(máximo 139 KB de 114 páginas; imágenes aparte)
+(máximo 129 KB de 138 páginas; imágenes aparte)
 
 ## Navegador
 

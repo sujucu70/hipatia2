@@ -4,50 +4,26 @@
 
 **Taxonomía (revisión 5, 3 sep):** 5 prácticas · **11 soluciones** (PI 2 · SD 3 · DI 1 · SO 2 · DC 3). «Data & AI» pasa a **Data Intelligence** (una única solución con el nombre de la práctica y sus cuatro capacidades dentro) y «IA + Digital Change» pasa a **Digital Change**. Software Development mantiene tres soluciones (provisional, pendiente de Jorge · §10.9).
 
-## Process Intelligence
-
-| Qué falta | Dueño | Fecha objetivo |
-|---|---|---|
-| **Inteligencia de procesos** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Carmen | sept 2026 |
-| **Automatización de procesos y agentes IA** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Carla | sept 2026 |
-
 ## Software Development
 
 | Qué falta | Dueño | Fecha objetivo |
 |---|---|---|
-| **Mantenimiento evolutivo** · Propuesta completa, casos y materiales de esta solución | Jorge | sept 2026 |
-| **Asistencia técnica aumentada** · Propuesta completa, casos y materiales de esta solución | Jorge | sept 2026 |
 | **modernizacion** · Material: Correo de apertura | Jorge | sept 2026 |
 | **modernizacion** · Material: Presentación técnica · Spec-Driven | Jorge | sept 2026 |
 | **modernizacion** · Material: Business case tipo · Modernización | Jorge / producto | sept 2026 |
-
-## Data Intelligence
-
-| Qué falta | Dueño | Fecha objetivo |
-|---|---|---|
-| **Data Intelligence** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Daniela | sept 2026 |
-
-## Smart Operations
-
-| Qué falta | Dueño | Fecha objetivo |
-|---|---|---|
-| **Puesto de trabajo** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Amador | sept 2026 |
-| **Infraestructura crítica** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Amador | sept 2026 |
 
 ## Digital Change
 
 | Qué falta | Dueño | Fecha objetivo |
 |---|---|---|
-| **IAbility** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Alfredo | sept 2026 |
-| **PreservIA** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Alfredo | sept 2026 |
-| **Oficina de Gobernanza Humana de la IA** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Alfredo | sept 2026 |
+| **iability** · Material: Bahía de Bizkaia Electricidad · Primera referencia de IAbility | Alfredo | sept 2026 |
 
 ---
 
 ## Resumen
 
 - Errores duros: **0**
-- Avisos: **106**
-- Pendientes registrados: **13**
+- Avisos: **70**
+- Pendientes registrados: **4**
 
 Modernización (Software Development) es la única solución con contenido íntegro validado (tarjeta, 6 casos con sign-off jul 2026, materiales por momento, «para prepararte»). El resto muestra su propuesta auditada del Executive Deck y marca casos y materiales «en preparación».

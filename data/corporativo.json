@@ -66,7 +66,7 @@
       "nota": "Lo que se mide alimenta un nuevo diagnóstico: el servicio no termina con la entrega."
     },
     "otg": {
-      "titulo": "Cuando el cambio no cabe en un proyecto: la Oficina de Transformación y Gobierno",
+      "titulo": "Cuando el cambio no cabe en un proyecto: la Oficina de Transformación y Gobernanza",
       "texto": "Es el mismo método, operado desde dentro del cliente cuando hay que sostener el cambio en el tiempo. No se vende aparte ni hace falta en cada proyecto: se activa cuando la situación lo pide. Diagnosticamos qué hay que gobernar, asumimos esa función con roles y backlog acordados, y se la devolvemos al equipo del cliente a medida que puede llevarla.",
       "fases": [
         {
@@ -132,10 +132,7 @@
     "as_is": {
       "titulo": "De dónde partimos",
       "texto": "Hoy el material comercial está repartido en un SharePoint que funciona como archivo: se guarda bien, pero cuesta saber cuál es la pieza buena, si está vigente y si puede salir a cliente.",
-      "capturas": [
-        "/assets/asis-hipatia-1.jpg",
-        "/assets/asis-hipatia-2.jpg"
-      ]
+      "capturas": []
     },
     "to_be": {
       "titulo": "A dónde vamos",
