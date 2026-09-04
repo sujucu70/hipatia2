@@ -226,6 +226,10 @@
         "texto": "Lectura de Amador: entidad del «+200 agentes» de Telefónica, MEFPD y Valoriza como los casos anonimizados de la ficha, «usuarios» de Móstoles, cifras del DaaS de EJIE, niveles invertidos en el deck, permisos de nombres y logos, sign-off de las cifras del área con MA.",
         "dueno": "Amador",
         "fecha_objetivo": "sept 2026"
+      },
+      "contactos": {
+        "comercial": "amador-sobrino",
+        "tecnico": null
       }
     },
     {
@@ -405,6 +409,10 @@
         "texto": "Lectura de Amador: juego de datos de Telefónica Tech (−40% MTTD, Foreworth), +3.000 clientes y −30% con documento, alcance real de redes, precio del diagnóstico, sign-off con MA.",
         "dueno": "Amador",
         "fecha_objetivo": "sept 2026"
+      },
+      "contactos": {
+        "comercial": "amador-sobrino",
+        "tecnico": null
       }
     }
   ],
@@ -467,5 +475,6 @@
         "texto": "Renovación Broadcom-VMware: la ventana se cierra con cada contrato que vence."
       }
     ]
-  }
+  },
+  "responsable_id": "amador-sobrino"
 }

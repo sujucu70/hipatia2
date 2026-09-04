@@ -129,11 +129,15 @@ const MAT = {};
 materiales.forEach((m) => (MAT[m.id] = m));
 
 // ---------- Nombre completo (revisión 14 · AS) ----------
-// personas.json es la única fuente de nombres; los JSON de datos siguen con el nombre de pila.
-// El build resuelve el completo: mapa nombre de pila → nombre (primera entrada de cada persona).
+// personas.json es la única fuente de personas: una entrada por persona con id (rev16 · BD).
+// Los JSON de datos siguen con el nombre de pila en dueño/especialista/responsable; el build
+// resuelve el completo por nombre de pila y, donde hay id (contactos), resuelve por id.
+const PERSONAS = read("personas.json");
+const PERSONA_POR_ID = Object.fromEntries(PERSONAS.map((p) => [p.id, p]));
+function personaPorId(id) { return id ? PERSONA_POR_ID[id] || null : null; }
 const NOMBRE_MAP = (() => {
   const map = {};
-  (read("personas.json").personas || []).forEach((p) => {
+  PERSONAS.forEach((p) => {
     if (p.nombre) { const first = p.nombre.split(" ")[0]; if (!map[first]) map[first] = p.nombre; }
   });
   return map;
@@ -151,7 +155,7 @@ function nombreCompleto(texto) {
 // correo del dueño por nombre de pila (para «pídeselo a …» de Llévatelo, BC)
 const CORREO_MAP = (() => {
   const map = {};
-  (read("personas.json").personas || []).forEach((p) => {
+  PERSONAS.forEach((p) => {
     if (p.nombre && p.correo) { const first = p.nombre.split(" ")[0]; if (!map[first]) map[first] = p.correo; }
   });
   return map;
@@ -160,6 +164,61 @@ function correoDe(nombre) {
   if (!nombre) return null;
   const first = String(nombre).trim().split(" ")[0];
   return CORREO_MAP[first] || null;
+}
+// BD · avatar (foto o inicial en círculo navy) y datos de contacto de una persona
+function avatar(p, size) {
+  const s = size || 32;
+  if (p && p.foto) return `<img class="avatar" src="${esc(p.foto)}" alt="" style="width:${s}px;height:${s}px">`;
+  const ini = (p && p.nombre) ? p.nombre.trim()[0] : "?";
+  return `<span class="avatar" style="width:${s}px;height:${s}px;font-size:${Math.round(s * 0.42)}px" aria-hidden="true">${esc(ini)}</span>`;
+}
+function datosContacto(p) {
+  const l = [];
+  if (p.correo) l.push(`<a class="text-link" href="mailto:${esc(p.correo)}">${esc(p.correo)}</a>`);
+  if (p.telefono) l.push(`<a class="text-link" href="tel:${esc(p.telefono.replace(/\s+/g, ""))}">${esc(p.telefono)}</a>`);
+  if (p.teams) l.push(`<a class="text-link" href="${esc(p.teams)}">Teams</a>`);
+  return l;
+}
+// «Lo que lleva» de una persona, generado desde los datos de prácticas y soluciones.
+function rolesDe(id, practicas) {
+  const bits = [];
+  const resp = practicas.filter((pr) => [].concat(pr.responsable_id || []).includes(id)).map((pr) => pr.nombre);
+  if (resp.length) bits.push("Responsable de " + resp.join(", "));
+  const comercial = [], tecnico = [];
+  practicas.forEach((pr) => (pr.soluciones || []).forEach((s) => {
+    if (s.contactos && s.contactos.comercial === id) comercial.push(s.nombre);
+    if (s.contactos && s.contactos.tecnico === id) tecnico.push(s.nombre);
+  }));
+  if (comercial.length) bits.push("Comercial en " + comercial.join(", "));
+  if (tecnico.length) bits.push("Técnico en " + tecnico.join(", "));
+  return bits.join(" · ");
+}
+// BD · celda de persona en la tabla «A quién llamo» (avatar, nombre enlazado a su tarjeta, datos)
+function celdaPersona(id) {
+  const p = personaPorId(id);
+  if (!p) return "";
+  const datos = datosContacto(p);
+  return `<div class="dir-persona">${avatar(p, 32)}<div><a class="text-link" href="/contactos/#${esc(p.id)}"><b>${esc(p.nombre)}</b></a>${p.titulo ? `<span class="footer-note">${esc(p.titulo)}</span>` : ""}${datos.length ? `<span class="footer-note">${datos.join(" · ")}</span>` : ""}</div></div>`;
+}
+function celdaTecnico(s) {
+  const t = s.contactos && s.contactos.tecnico;
+  if (t) return celdaPersona(t);
+  const com = personaPorId(s.contactos && s.contactos.comercial);
+  return `<span class="footer-note dir-pendiente">por confirmar · lo pide Susana a ${esc(com ? com.nombre : "el comercial")}</span>`;
+}
+// Tabla «A quién llamo» de una práctica: una fila por solución (Solución · Comercial · Técnico).
+function tablaContactos(pr) {
+  const resp = [].concat(pr.responsable_id || []).map((id) => personaPorId(id)).filter(Boolean).map((p) => p.nombre).join(" y ");
+  const filas = (pr.soluciones || []).map((s) => `<div class="dir-fila">
+      <div class="dir-sol"><span class="rol-movil">Solución</span><a class="text-link" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">${esc(s.nombre)}</a></div>
+      <div><span class="rol-movil">Comercial</span>${celdaPersona(s.contactos && s.contactos.comercial)}</div>
+      <div><span class="rol-movil">Técnico</span>${celdaTecnico(s)}</div>
+    </div>`).join("");
+  return `<div class="dir-tabla">
+      <div class="dir-cab">${esc(pr.nombre)}${resp ? ` <span class="footer-note">· Responsable: ${esc(resp)}</span>` : ""}</div>
+      <div class="dir-cols"><span>Solución</span><span>Comercial</span><span>Técnico</span></div>
+      ${filas}
+    </div>`;
 }
 
 const MOMENTOS = [
@@ -246,7 +305,7 @@ function solucionPage(pr, s) {
     <p class="eyebrow"><a href="/practicas/${esc(pr.id)}/" style="color:inherit">${esc(pr.nombre)}</a> · Solución</p>
     <h1 style="font-size:var(--font-size-5xl);line-height:1.02;letter-spacing:-.02em;margin:var(--space-2) 0">${esc(s.nombre)}</h1>
     <p class="lede">${esc(s.una_linea)}</p>
-    <p style="margin-top:var(--space-2);color:var(--color-text-secondary);font-size:var(--font-size-sm)">Especialista: <b>${esc(nombreCompleto(s.especialista))}</b>${s.estado === "en_preparacion" ? " · " + chipVigencia("pendiente", s.fecha_objetivo) : ""}</p>
+    <p style="margin-top:var(--space-2);color:var(--color-text-secondary);font-size:var(--font-size-sm)">Comercial: <b>${esc((personaPorId(s.contactos && s.contactos.comercial) || {}).nombre || nombreCompleto(s.especialista))}</b> · Técnico: ${personaPorId(s.contactos && s.contactos.tecnico) ? `<b>${esc(personaPorId(s.contactos.tecnico).nombre)}</b>` : `<span class="chip">por confirmar</span>`}${s.estado === "en_preparacion" ? " · " + chipVigencia("pendiente", s.fecha_objetivo) : ""}</p>
   </div></section>`;
 
   // 2 · La propuesta (BB · dos columnas; el diferenciador como cita, la objeción como diálogo,
@@ -441,9 +500,9 @@ function practicaPage(pr) {
     <p style="margin-top:var(--space-4)"><a class="btn" href="/materiales/?practica=${esc(pr.id)}">Ver todo en Materiales</a></p></section>`;
 
   const asunto = encodeURIComponent(`Hipatia · ${pr.nombre}: consulta`);
-  main += `<section class="section" id="responsable"><h2 style="font-size:var(--font-size-2xl)">A quién llamar</h2>
-    <p style="margin-top:var(--space-2)">Responsable de la práctica: <b>${esc(nombreCompleto(pr.responsable))}</b>. Cada solución lleva su especialista. <a class="text-link" href="/contactos/">Ver contactos</a>.</p>
-    <p style="margin-top:var(--space-3)"><a class="btn btn-cta" href="mailto:?subject=${asunto}">¿Falta algo? Escribe al responsable</a></p></section>`;
+  main += `<section class="section" id="responsable"><h2 style="font-size:var(--font-size-2xl);margin-bottom:var(--space-3)">A quién llamar</h2>
+    ${tablaContactos(pr)}
+    <p style="margin-top:var(--space-3)"><a class="text-link" href="/contactos/">Ver todo el directorio →</a></p></section>`;
 
   main += `</div>`;
   const body = hero + `<section class="section"><div class="wrap"><div class="with-aside">${aside}<div>${main}</div></div></div></section>`;
@@ -791,38 +850,31 @@ function loQueVienePage(corp) {
 // CONTACTOS (§6.3)
 // =====================================================================
 function contactosPage(practicas, personas) {
-  const byPractica = {};
-  personas.forEach((p) => { (byPractica[p.practica] = byPractica[p.practica] || []).push(p); });
-  const secciones = practicas.map((pr) => {
-    const gente = byPractica[pr.id] || [];
-    const responsable = gente.find((g) => g.rol.startsWith("Responsable"));
-    const especialistas = gente.filter((g) => g.rol === "Especialista de solución");
-    const segundo = gente.find((g) => g.rol === "Segundo contacto");
-    const asunto = encodeURIComponent(`Hipatia · ${pr.nombre}: falta algo`);
-    const correoLink = (g) => g.correo ? ` · <a class="text-link" href="mailto:${esc(g.correo)}">${esc(g.correo)}</a>` : "";
-    let filas = "";
-    if (responsable) filas += `<li><b>${esc(responsable.nombre)}</b> — Responsable de la práctica <span class="footer-note">${responsable.titulo ? "· " + esc(responsable.titulo) + " " : ""}· ${esc(responsable.canal || "")}</span>${correoLink(responsable)}</li>`;
-    especialistas.forEach((e) => {
-      const sol = (pr.soluciones || []).find((s) => s.id === e.solucion);
-      filas += `<li><b>${esc(e.nombre)}</b> — Especialista${sol ? " · " + esc(sol.nombre) : ""}${e.titulo ? ` <span class="footer-note">· ${esc(e.titulo)}</span>` : ""}${correoLink(e)}</li>`;
-    });
-    filas += segundo && segundo.nombre
-      ? `<li>${esc(segundo.nombre)} — Segundo contacto${segundo.titulo ? ` <span class="footer-note">· ${esc(segundo.titulo)}</span>` : ""}${correoLink(segundo)}</li>`
-      : `<li class="footer-note">Segundo contacto: en preparación · dueño: los SM · sept 2026</li>`;
-    return `<section class="section"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-4);flex-wrap:wrap">
-        <h2 style="font-size:var(--font-size-2xl)">${esc(pr.nombre)}</h2>
-        <a class="text-link" href="mailto:?subject=${asunto}">¿Falta algo? Escribe al responsable</a>
-      </div>
-      <ul style="margin-top:var(--space-3);line-height:1.9">${filas}</ul></section>`;
+  // Vista 1 · «A quién llamo»: una tabla por práctica (Solución · Comercial · Técnico).
+  const tablas = practicas.map(tablaContactos).join("");
+  // Vista 2 · «Las personas»: una tarjeta por persona (ocho), con lo que lleva generado de los datos.
+  const tarjetas = personas.map((p) => {
+    const datos = datosContacto(p);
+    const lleva = rolesDe(p.id, practicas);
+    return `<article class="card persona-card" id="${esc(p.id)}">
+      <div class="persona-cab">${avatar(p, 48)}<div><h3 style="font-size:var(--font-size-2xl);margin:0">${esc(p.nombre)}</h3>${p.titulo ? `<p class="footer-note">${esc(p.titulo)}</p>` : ""}</div></div>
+      ${datos.length ? `<p style="margin-top:var(--space-2);font-size:var(--font-size-sm)">${datos.join(" · ")}</p>` : ""}
+      ${lleva ? `<p class="footer-note" style="margin-top:var(--space-2)">${esc(lleva)}</p>` : ""}
+    </article>`;
   }).join("");
-  const body = `<section class="section"><div class="wrap" style="max-width:820px">
+  const body = `<section class="section"><div class="wrap">
     <p class="eyebrow">Directorio</p>
-    <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-2)">Contactos</h1>
-    <p class="lede">Por práctica: responsable, especialista por solución y canal de Teams.</p>
-    ${secciones}
-    <p class="footer-note" style="margin-top:var(--space-4)">Los canales de Teams se enlazan cuando estén validados. Nada de lo que escribas en «¿falta algo?» se guarda: abre un correo al responsable.</p>
+    <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-2)">A quién llamo</h1>
+    <p class="lede">Por solución: quien la vende y quien la sostiene. Donde falta el técnico, se dice quién lo está pidiendo.</p>
+    <div style="margin-top:var(--space-5);display:grid;gap:var(--space-5)">${tablas}</div>
+  </div></section>
+  <section class="section"><div class="wrap">
+    <p class="eyebrow">Las personas</p>
+    <h2 style="font-size:var(--font-size-2xl);margin:var(--space-2) 0 var(--space-4)">${personas.length} personas, todo lo que llevan</h2>
+    <div class="grid grid-3">${tarjetas}</div>
+    <p class="footer-note" style="margin-top:var(--space-4)">Los canales de Teams se enlazan cuando estén validados. Los datos que faltan (teléfono, título, técnico de cada solución) los piden los SM después del 8.</p>
   </div></section>`;
-  return page({ title: "Contactos · Hipatia", desc: "Responsables y especialistas por práctica.", active: "contactos", body });
+  return page({ title: "Contactos · Hipatia", desc: "A quién llamar por solución: comercial y técnico.", active: "contactos", body });
 }
 
 // =====================================================================
@@ -830,7 +882,7 @@ function contactosPage(practicas, personas) {
 // =====================================================================
 function build() {
   const corp = read("corporativo.json");
-  const personas = read("personas.json").personas;
+  const personas = PERSONAS;
   const practicas = PRACTICAS.map((id) => read(id + ".json"));
   write("", portadaPage(corp, practicas));
   write("entelgy", entelgyPage(corp, practicas));

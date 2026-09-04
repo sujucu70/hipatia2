@@ -257,7 +257,11 @@
           "validada": true
         }
       ],
-      "acreditacion_nota": "Fuera de la interfaz de la v3 (§6.9). Se conservan las cinco preguntas validadas para una futura «formación»."
+      "acreditacion_nota": "Fuera de la interfaz de la v3 (§6.9). Se conservan las cinco preguntas validadas para una futura «formación».",
+      "contactos": {
+        "comercial": "jorge-herrero",
+        "tecnico": null
+      }
     },
     {
       "id": "mantenimiento",
@@ -419,6 +423,10 @@
         "texto": "Lectura de Jorge: reparto del ahorro (20 o 40%) y si sale en documento público, Foreworth como contraste, casos DGOJ, MICIU y H10 colgados aquí.",
         "dueno": "Jorge",
         "fecha_objetivo": "sept 2026"
+      },
+      "contactos": {
+        "comercial": "jorge-herrero",
+        "tecnico": null
       }
     },
     {
@@ -579,6 +587,10 @@
         "texto": "Lectura de Jorge: ficha y one-pager venden UCE y el modelo ahora es de créditos (piezas en revisar), referencias anónimas de banca LATAM e industria y energía por confirmar.",
         "dueno": "Jorge",
         "fecha_objetivo": "sept 2026"
+      },
+      "contactos": {
+        "comercial": "jorge-herrero",
+        "tecnico": null
       }
     }
   ],
@@ -587,5 +599,6 @@
     "mod-onepager",
     "mod-ficha-servicio"
   ],
-  "propuesta_portada": "Modernizar y mantener aplicaciones críticas sin parar el negocio ni pedir partida nueva."
+  "propuesta_portada": "Modernizar y mantener aplicaciones críticas sin parar el negocio ni pedir partida nueva.",
+  "responsable_id": "jorge-herrero"
 }

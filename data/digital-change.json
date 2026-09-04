@@ -218,6 +218,10 @@
         "texto": "Lectura de Alfredo: puerta de entrada del área, permiso escrito de Admiral y Bahía de Bizkaia, una cifra de uso en la sombra con fuente, 151/15/9 o 150/9, «Oficina de Gobierno» → «Gobernanza Humana» en su ficha.",
         "dueno": "Alfredo",
         "fecha_objetivo": "sept 2026"
+      },
+      "contactos": {
+        "comercial": "alfredo-zurdo",
+        "tecnico": null
       }
     },
     {
@@ -371,6 +375,10 @@
         "texto": "Lectura de Alfredo: un solo juego de cifras de MAPFRE (con Amador), fuente del 80% tácito, precio del piloto en el portal.",
         "dueno": "Alfredo",
         "fecha_objetivo": "sept 2026"
+      },
+      "contactos": {
+        "comercial": "alfredo-zurdo",
+        "tecnico": null
       }
     },
     {
@@ -543,11 +551,16 @@
         "texto": "Lectura de Alfredo: plazos del arranque (flexible o 3–4 meses a precio cerrado), 78% u 88%, y una referencia de cliente autorizada.",
         "dueno": "Alfredo",
         "fecha_objetivo": "sept 2026"
+      },
+      "contactos": {
+        "comercial": "alfredo-zurdo",
+        "tecnico": "cristina-aparicio"
       }
     }
   ],
   "material_comun": [
     "digital-change-deck"
   ],
-  "propuesta_portada": "La tecnología ya está comprada; el retorno, no. Cultura, conocimiento y gobierno de la IA."
+  "propuesta_portada": "La tecnología ya está comprada; el retorno, no. Cultura, conocimiento y gobierno de la IA.",
+  "responsable_id": "alfredo-zurdo"
 }

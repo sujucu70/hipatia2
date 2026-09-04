@@ -55,6 +55,17 @@ materiales.forEach((p) => {
 });
 console.log(`Materiales: ${materiales.length} piezas`);
 
+// ---- Personas (rev16 · BD): una entrada por persona con id, sin duplicados ----
+const personas = read("personas.json");
+if (!Array.isArray(personas)) err("personas.json debe ser una lista (una entrada por persona)");
+const idsPersona = new Set();
+(Array.isArray(personas) ? personas : []).forEach((p) => {
+  if (!p.id) err(`persona sin id (${p.nombre || "?"})`);
+  else if (idsPersona.has(p.id)) err(`persona con id duplicado: ${p.id}`);
+  else idsPersona.add(p.id);
+  if (!p.nombre) err(`persona ${p.id || "?"} sin nombre`);
+});
+
 // ---- Prácticas y soluciones ----
 let totalSoluciones = 0;
 const nombrePractica = {};
@@ -67,8 +78,15 @@ PRACTICAS.forEach((id) => {
   if (!Array.isArray(pr.capacidades) || pr.capacidades.length === 0) err(`práctica ${id} sin capacidades`);
   if (!pr.primer_avance || !pr.primer_avance.titulo) err(`práctica ${id} sin primer_avance`);
   if (!Array.isArray(pr.soluciones) || pr.soluciones.length === 0) err(`práctica ${id} sin soluciones`);
+  [].concat(pr.responsable_id || []).forEach((rid) => {
+    if (rid && !idsPersona.has(rid)) err(`práctica ${id} responsable_id inexistente: ${rid}`);
+  });
   (pr.soluciones || []).forEach((s) => {
     totalSoluciones++;
+    if (s.contactos) ["comercial", "tecnico"].forEach((rol) => {
+      const v = s.contactos[rol];
+      if (v && !idsPersona.has(v)) err(`solución ${id}/${s.id} contacto ${rol} inexistente: ${v}`);
+    });
     ["id", "nombre", "una_linea", "especialista", "estado", "dueno"].forEach((k) => {
       if (!s[k]) err(`solución ${id}/${s.id || "?"} sin ${k}`);
     });
@@ -95,13 +113,6 @@ PRACTICAS.forEach((id) => {
   });
 });
 console.log(`Prácticas: ${PRACTICAS.length} · Soluciones: ${totalSoluciones}`);
-
-// ---- Personas ----
-const personas = read("personas.json").personas;
-personas.forEach((p) => {
-  if (!p.estado) err(`persona sin estado (${p.rol} · ${p.practica})`);
-  if (p.estado === "en_preparacion" && p.nombre) warn(`persona ${p.practica}/${p.rol} en_preparacion pero con nombre`);
-});
 
 // ---- Materiales cliente sin dueño en piezas pendientes ----
 materiales.filter((p) => p.estado === "pendiente").forEach((p) => {

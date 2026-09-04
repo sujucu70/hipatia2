@@ -200,6 +200,10 @@
         "texto": "Lectura de Carmen: Celonis Gold e Inverbis-GBTEC en «Por qué Entelgy», precios visibles en el portal interno, ficha de Universidad LATAM.",
         "dueno": "Carmen",
         "fecha_objetivo": "sept 2026"
+      },
+      "contactos": {
+        "comercial": "carmen-rode",
+        "tecnico": null
       }
     },
     {
@@ -360,6 +364,10 @@
         "texto": "Lectura de Carla: diagnóstico de 6–8 semanas y corrección de la ficha, F1 de UNED y de la energética, «hiperautomatización» y «Task Intelligence» fuera de sus piezas, contacto sin rellenar.",
         "dueno": "Carla",
         "fecha_objetivo": "sept 2026"
+      },
+      "contactos": {
+        "comercial": "carla-gonzalez",
+        "tecnico": null
       }
     }
   ],
@@ -368,5 +376,9 @@
     "process-onepager",
     "process-ficha"
   ],
-  "propuesta_portada": "Ver dónde se pierde coste, tiempo o control en un proceso antes de rediseñarlo y automatizarlo."
+  "propuesta_portada": "Ver dónde se pierde coste, tiempo o control en un proceso antes de rediseñarlo y automatizarlo.",
+  "responsable_id": [
+    "carmen-rode",
+    "carla-gonzalez"
+  ]
 }
