@@ -490,7 +490,7 @@ function materialesIndex(scope) {
     <p class="lede">${esc(lede)}</p>
     <div style="margin-top:var(--space-5)"><input type="search" data-materials-search placeholder="Buscar materiales…" aria-label="Buscar materiales" style="width:100%;max-width:520px;font:inherit;padding:var(--space-3);border:1px solid var(--color-border-default);border-radius:var(--radius-md)"></div>
     <div class="with-aside" style="margin-top:var(--space-5)">
-      <div>${filters}</div>
+      <div class="filters-panel">${filters}</div>
       <div>
         <p class="footer-note" style="margin-bottom:var(--space-3)"><b data-materials-count>0</b> piezas visibles</p>
         <div class="grid grid-2" data-materials-list>${cards}</div>
@@ -505,18 +505,12 @@ function materialesIndex(scope) {
   return page({ title: todo ? "Materiales · todo · Hipatia" : "Materiales · Hipatia", desc: "Buscador y filtros del material comercial de Entelgy.", active: "materiales", body, modal });
 }
 function materialCard(m) {
-  return `<article class="card" data-material
-      data-practica="${esc(m.practica)}" data-uso="${esc(m.sale_al_cliente)}" data-tipo="${esc(m.tipo)}" data-estado="${esc(m.estado)}"
-      data-search="${esc([(m.sector || []).join(" "), m.subtipo || ""].filter(Boolean).join(" "))}"
-      style="padding:var(--space-4)">
+  const ds = esc([(m.sector || []).join(" "), m.subtipo || ""].filter(Boolean).join(" "));
+  return `<article class="card lib" data-material data-practica="${esc(m.practica)}" data-uso="${esc(m.sale_al_cliente)}" data-tipo="${esc(m.tipo)}" data-estado="${esc(m.estado)}"${ds ? ` data-search="${ds}"` : ""}>
       <p class="eyebrow">${m.practica === "corporativo" ? esc(eyebrowTipo(m)) : esc(eyebrowTipo(m)) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
-      <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
+      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
-      <div class="chips" style="margin-top:var(--space-3)">${m.tipo === "Referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(nombreCompleto(m.dueno))}</span></div>
-      <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
-        <a class="btn btn-ghost" href="/materiales/${esc(m.id)}/" data-open-modal-url="/materiales/${esc(m.id)}/" data-modal-label="${esc(m.titulo)}">Ver ficha</a>
-        ${materialLink(m)}
-      </div>
+      <div class="ed-mat-foot"><div class="chips">${m.tipo === "Referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(nombreCompleto(m.dueno))}</span></div><a class="ver-ficha" href="/materiales/${esc(m.id)}/">Ver ficha →</a></div>
     </article>`;
 }
 
