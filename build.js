@@ -243,10 +243,17 @@ function solucionPage(pr, s) {
   if (kit.preguntas_cualificacion && kit.preguntas_cualificacion.length) {
     prep += `<h4>Preguntas de cualificación</h4><ul>` + kit.preguntas_cualificacion.map((q) => `<li>${esc(q)}</li>`).join("") + `</ul>`;
   }
+  if (s.keynotes && s.keynotes.length) {
+    prep += `<h4>Mensajes clave por dolor</h4><ul>` +
+      s.keynotes.map((k) => `<li><b>${esc(k.dolor)}</b><br>${esc(k.frase)}<br><span class="footer-note">Prueba: ${esc(k.prueba)} · Siguiente paso: ${esc(k.paso)}</span></li>`).join("") + `</ul>`;
+  }
   if (kit.material_interno && kit.material_interno.length) {
     const ints = kit.material_interno.map((id) => MAT[id]).filter(Boolean);
     if (ints.length) prep += `<h4>Material interno · no sale al cliente</h4><ul>` +
       ints.map((m) => `<li><a href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a> — ${esc(m.tipo)} ${chipUso(m.sale_al_cliente)}</li>`).join("") + `</ul>`;
+  }
+  if (s.estado === "vigente" && s.pendiente && s.pendiente.texto) {
+    prep += `<p class="pending"><b>En revisión por el área.</b> ${esc(s.pendiente.texto)} · dueño: ${esc(s.pendiente.dueno || s.dueno || "por asignar")} · fecha objetivo: ${esc(s.pendiente.fecha_objetivo || s.fecha_objetivo || "sin fecha")}.</p>`;
   }
   if (!prep) prep = pendingBox(s.pendiente, s.dueno) || `<p class="pending">Material de preparación en preparación.</p>`;
   const dossierCta = (kit.dossier_imprimible)
@@ -300,7 +307,6 @@ function practicaPage(pr) {
   main += `<section class="section" id="capacidades"><h2 style="font-size:var(--font-size-2xl);margin-bottom:var(--space-4)">Capacidades</h2>
     <div class="grid grid-2">${caps}</div>
     ${pa.titulo ? `<p style="margin-top:var(--space-4)"><b>Primer avance:</b> ${esc(pa.titulo)}${pa.plazo ? " · " + esc(pa.plazo) : ""}. ${esc(pa.nota || "")}</p>` : ""}
-    ${(pr.capacidades_ia || []).length ? `<div class="grid grid-3" style="margin-top:var(--space-4)">${pr.capacidades_ia.map((c) => `<article class="card"><h4 style="font-size:var(--font-size-lg)">${esc(c.titulo)}</h4><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-top:var(--space-2)">${esc(c.texto)}</p></article>`).join("")}</div>` : ""}
     ${pr.capacidades_nota ? `<p class="footer-note" style="margin-top:var(--space-3);color:var(--color-text-secondary)">${esc(pr.capacidades_nota)}</p>` : ""}</section>`;
 
   const solCards = (pr.soluciones || []).map((s) => `<a class="card" style="text-decoration:none;display:block" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">
@@ -612,14 +618,15 @@ function contactosPage(practicas, personas) {
     const especialistas = gente.filter((g) => g.rol === "Especialista de solución");
     const segundo = gente.find((g) => g.rol === "Segundo contacto");
     const asunto = encodeURIComponent(`Hipatia · ${pr.nombre}: falta algo`);
+    const correoLink = (g) => g.correo ? ` · <a class="text-link" href="mailto:${esc(g.correo)}">${esc(g.correo)}</a>` : "";
     let filas = "";
-    if (responsable) filas += `<li><b>${esc(responsable.nombre)}</b> — Responsable de la práctica <span class="footer-note">· ${esc(responsable.canal || "")}</span></li>`;
+    if (responsable) filas += `<li><b>${esc(responsable.nombre)}</b> — Responsable de la práctica <span class="footer-note">${responsable.titulo ? "· " + esc(responsable.titulo) + " " : ""}· ${esc(responsable.canal || "")}</span>${correoLink(responsable)}</li>`;
     especialistas.forEach((e) => {
       const sol = (pr.soluciones || []).find((s) => s.id === e.solucion);
-      filas += `<li><b>${esc(e.nombre)}</b> — Especialista${sol ? " · " + esc(sol.nombre) : ""}</li>`;
+      filas += `<li><b>${esc(e.nombre)}</b> — Especialista${sol ? " · " + esc(sol.nombre) : ""}${e.titulo ? ` <span class="footer-note">· ${esc(e.titulo)}</span>` : ""}${correoLink(e)}</li>`;
     });
     filas += segundo && segundo.nombre
-      ? `<li>${esc(segundo.nombre)} — Segundo contacto</li>`
+      ? `<li>${esc(segundo.nombre)} — Segundo contacto${segundo.titulo ? ` <span class="footer-note">· ${esc(segundo.titulo)}</span>` : ""}${correoLink(segundo)}</li>`
       : `<li class="footer-note">Segundo contacto: en preparación · dueño: los SM · sept 2026</li>`;
     return `<section class="section"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-4);flex-wrap:wrap">
         <h2 style="font-size:var(--font-size-2xl)">${esc(pr.nombre)}</h2>

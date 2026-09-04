@@ -264,7 +264,7 @@
       "nombre": "Mantenimiento evolutivo",
       "una_linea": "Mantener producción y pagar la evolución con la eficiencia que el mantenimiento recupera.",
       "especialista": "Jorge",
-      "estado": "en_preparacion",
+      "estado": "vigente",
       "dueno": "Jorge",
       "fecha_objetivo": "sept 2026",
       "propuesta": {
@@ -319,7 +319,7 @@
       "nombre": "Asistencia técnica aumentada",
       "una_linea": "Especialistas de los Centros de Excelencia dentro de tu equipo, con una entrega que se mide.",
       "especialista": "Jorge",
-      "estado": "en_preparacion",
+      "estado": "vigente",
       "dueno": "Jorge",
       "fecha_objetivo": "sept 2026",
       "propuesta": {

@@ -45,7 +45,7 @@
       "nombre": "Inteligencia de procesos",
       "una_linea": "Ver cómo funciona el proceso real antes de decidir qué mejorar.",
       "especialista": "Carmen",
-      "estado": "en_preparacion",
+      "estado": "vigente",
       "dueno": "Carmen",
       "fecha_objetivo": "sept 2026",
       "propuesta": {
@@ -98,7 +98,7 @@
       "nombre": "Automatización de procesos y agentes IA",
       "una_linea": "Rediseñar, automatizar y asistir el trabajo repetitivo con criterio de negocio.",
       "especialista": "Carla",
-      "estado": "en_preparacion",
+      "estado": "vigente",
       "dueno": "Carla",
       "fecha_objetivo": "sept 2026",
       "propuesta": {

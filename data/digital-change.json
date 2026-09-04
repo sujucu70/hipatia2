@@ -54,7 +54,7 @@
       "nombre": "IAbility",
       "una_linea": "Activar una cultura de uso responsable de la IA.",
       "especialista": "Alfredo",
-      "estado": "en_preparacion",
+      "estado": "vigente",
       "dueno": "Alfredo",
       "fecha_objetivo": "sept 2026",
       "propuesta": {
@@ -108,7 +108,7 @@
       "nombre": "PreservIA",
       "una_linea": "Capturar el conocimiento de los expertos antes de que se vaya con ellos, y ponerlo donde se usa.",
       "especialista": "Alfredo",
-      "estado": "en_preparacion",
+      "estado": "vigente",
       "dueno": "Alfredo",
       "fecha_objetivo": "sept 2026",
       "propuesta": {
@@ -163,7 +163,7 @@
       "nombre": "Oficina de Gobernanza Humana de la IA",
       "una_linea": "Decidir qué IA avanza, cuál se frena y quién responde de cada decisión.",
       "especialista": "Alfredo",
-      "estado": "en_preparacion",
+      "estado": "vigente",
       "dueno": "Alfredo",
       "fecha_objetivo": "sept 2026",
       "propuesta": {
