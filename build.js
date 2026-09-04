@@ -50,7 +50,7 @@ function header(active) {
 }
 function footer() {
   return `<footer class="site-footer">
-  <div class="crm-band"><div class="wrap">El CRM sigue siendo el registro único. <b>Hipatia lo alimenta, no lo sustituye ni lo duplica.</b></div></div>
+  <div class="crm-band"><div class="wrap">Hipatia alimenta al CRM, que sigue siendo el registro único.</div></div>
   <div class="footer-main"><div class="wrap">
     <div><img src="/assets/entelgy-logo-white.png" alt="Entelgy"><p class="footer-note" style="margin-top:var(--space-2)">Portal comercial interno · acceso Entelgy</p></div>
     <nav class="footer-note" aria-label="Pie"><a href="/practicas/">Prácticas</a> · <a href="/materiales/">Materiales</a> · <a href="/contactos/">Contactos</a> · <a href="/lo-que-viene/">Lo que viene</a></nav>
@@ -580,22 +580,21 @@ function puntoPartidaPage(corp) {
   const pp = corp.punto_de_partida || {};
   const caps = (pp.as_is.capturas || []).map((src) => `<img src="${esc(src)}" alt="As-is de Hipatia" style="border:1px solid var(--color-border-default);border-radius:var(--radius-lg)">`).join("");
   const body = `<section class="section"><div class="wrap" style="max-width:900px">
-    <p class="eyebrow">Demo a Dirección · fuera del menú</p>
+    <p class="eyebrow">Por qué Hipatia</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-4)">Punto de partida</h1>
     <div class="grid grid-2">
       <div class="card"><h2 style="font-size:var(--font-size-2xl)">${esc(pp.as_is.titulo)}</h2><p style="margin-top:var(--space-2);color:var(--color-text-secondary)">${esc(pp.as_is.texto)}</p></div>
       <div class="card" style="background:var(--color-brand-navy);color:#fff;border:0"><h2 style="color:#fff;font-size:var(--font-size-2xl)">${esc(pp.to_be.titulo)}</h2><p style="margin-top:var(--space-2);color:var(--color-slate-200)">${esc(pp.to_be.texto)}</p></div>
     </div>
     <div class="grid grid-2" style="margin-top:var(--space-4)">${caps}</div>
-    <p class="footer-note" style="margin-top:var(--space-3)">${esc(pp.nota || "")}</p>
   </div></section>`;
-  return page({ title: "Punto de partida · Hipatia", desc: "As-is y to-be para la demo a Dirección.", active: "", body });
+  return page({ title: "Punto de partida · Hipatia", desc: "De dónde parte Hipatia y a dónde va.", active: "", body });
 }
 function loQueVienePage(corp) {
   const lv = corp.lo_que_viene || {};
   const items = (lv.items || []).map((i) => `<article class="card"><div class="chips" style="margin-bottom:var(--space-2)">${chipVigencia("pendiente", null)}</div><h3 style="font-size:var(--font-size-xl)">${esc(i.titulo)}</h3><p style="margin:var(--space-2) 0;color:var(--color-text-secondary);font-size:var(--font-size-sm)">${esc(i.texto)}</p><p class="footer-note">Dueño: ${esc(i.dueno)}</p></article>`).join("");
   const body = `<section class="section"><div class="wrap">
-    <p class="eyebrow">Fuera del menú</p>
+    <p class="eyebrow">Hoja de ruta</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-3)">Lo que viene</h1>
     <p class="lede" style="margin-bottom:var(--space-5)">${esc(lv.intro || "")}</p>
     <div class="grid grid-3">${items}</div>
@@ -633,7 +632,7 @@ function contactosPage(practicas, personas) {
   const body = `<section class="section"><div class="wrap" style="max-width:820px">
     <p class="eyebrow">Directorio</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-2)">Contactos</h1>
-    <p class="lede">Por práctica: responsable, especialista por solución y canal de Teams. Donde no hay dato validado, se dice «en preparación».</p>
+    <p class="lede">Por práctica: responsable, especialista por solución y canal de Teams.</p>
     ${secciones}
     <p class="footer-note" style="margin-top:var(--space-4)">Los canales de Teams se enlazan cuando estén validados. Nada de lo que escribas en «¿falta algo?» se guarda: abre un correo al responsable.</p>
   </div></section>`;

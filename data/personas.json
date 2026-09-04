@@ -1,7 +1,7 @@
 {
   "personas": [
     {
-      "nombre": "Carmen",
+      "nombre": "Carmen Rode",
       "rol": "Responsable de práctica",
       "practica": "process-intelligence",
       "solucion": null,
@@ -10,7 +10,7 @@
       "estado": "validado"
     },
     {
-      "nombre": "Carla",
+      "nombre": "Carla González",
       "rol": "Especialista · Automatización y agentes IA",
       "practica": "process-intelligence",
       "solucion": "process-automation-ai",
@@ -19,7 +19,7 @@
       "estado": "validado"
     },
     {
-      "nombre": "Jorge",
+      "nombre": "Jorge Herrero",
       "rol": "Responsable de práctica",
       "practica": "software-development",
       "solucion": null,
@@ -46,7 +46,7 @@
       "estado": "validado"
     },
     {
-      "nombre": "Alfredo",
+      "nombre": "Alfredo Zurdo",
       "rol": "Responsable de práctica",
       "practica": "digital-change",
       "solucion": null,
@@ -55,7 +55,7 @@
       "estado": "validado"
     },
     {
-      "nombre": "Carmen",
+      "nombre": "Carmen Rode",
       "rol": "Especialista de solución",
       "practica": "process-intelligence",
       "solucion": "process-mining",
@@ -64,7 +64,7 @@
       "estado": "validado"
     },
     {
-      "nombre": "Carla",
+      "nombre": "Carla González",
       "rol": "Especialista de solución",
       "practica": "process-intelligence",
       "solucion": "process-automation-ai",
@@ -83,7 +83,7 @@
       "pendiente": "en preparación · dueño: los SM · sept 2026"
     },
     {
-      "nombre": "Jorge",
+      "nombre": "Jorge Herrero",
       "rol": "Especialista de solución",
       "practica": "software-development",
       "solucion": "modernizacion",
@@ -92,7 +92,7 @@
       "estado": "validado"
     },
     {
-      "nombre": "Jorge",
+      "nombre": "Jorge Herrero",
       "rol": "Especialista de solución",
       "practica": "software-development",
       "solucion": "mantenimiento",
@@ -101,7 +101,7 @@
       "estado": "validado"
     },
     {
-      "nombre": "Jorge",
+      "nombre": "Jorge Herrero",
       "rol": "Especialista de solución",
       "practica": "software-development",
       "solucion": "asistencia-tecnica",
@@ -167,7 +167,7 @@
       "pendiente": "en preparación · dueño: los SM · sept 2026"
     },
     {
-      "nombre": "Alfredo",
+      "nombre": "Alfredo Zurdo",
       "rol": "Especialista de solución",
       "practica": "digital-change",
       "solucion": "iability",
@@ -176,7 +176,7 @@
       "estado": "validado"
     },
     {
-      "nombre": "Alfredo",
+      "nombre": "Alfredo Zurdo",
       "rol": "Especialista de solución",
       "practica": "digital-change",
       "solucion": "preservia",
@@ -185,7 +185,7 @@
       "estado": "validado"
     },
     {
-      "nombre": "Alfredo",
+      "nombre": "Alfredo Zurdo",
       "rol": "Especialista de solución",
       "practica": "digital-change",
       "solucion": "ogh-ia",

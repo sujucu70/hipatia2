@@ -131,7 +131,7 @@
     "fuera_del_menu": true,
     "as_is": {
       "titulo": "De dónde partimos",
-      "texto": "Hoy el material comercial vive disperso en un SharePoint tipo repositorio. Buscar una pieza, saber si está vigente y si puede salir a cliente cuesta más que preparar la reunión.",
+      "texto": "Hoy el material comercial está repartido en un SharePoint que funciona como archivo: se guarda bien, pero cuesta saber cuál es la pieza buena, si está vigente y si puede salir a cliente.",
       "capturas": [
         "/assets/asis-hipatia-1.jpg",
         "/assets/asis-hipatia-2.jpg"
@@ -145,18 +145,18 @@
   },
   "lo_que_viene": {
     "fuera_del_menu": true,
-    "intro": "Lo que la v3 deja fuera a propósito y llegaría cuando el uso del catálogo lo justifique. Nada de esto se simula hoy.",
+    "intro": "Lo que Hipatia deja fuera a propósito por ahora y llegará cuando el uso lo justifique. Nada de esto se simula hoy.",
     "items": [
       {
         "titulo": "Espacio de oportunidad por señales",
-        "texto": "Marcar las señales oídas en una cuenta y que Hipatia proponga la solución y su kit.",
+        "texto": "Marcar las señales oídas en una cuenta y que Hipatia proponga la solución y su material.",
         "dueno": "Corporativo",
         "estado": "pendiente"
       },
       {
         "titulo": "Asistente de preparación de visita",
-        "texto": "El agente que ya existe (Digital Change), integrado con cuatro salidas por escenario.",
-        "dueno": "Digital Change",
+        "texto": "Un asistente sencillo que arma la visita a partir de la cuenta y la solución.",
+        "dueno": "por asignar",
         "estado": "pendiente"
       },
       {
@@ -167,14 +167,14 @@
       },
       {
         "titulo": "Autodiagnóstico como patrón",
-        "texto": "Generalizar la herramienta de Lantia a más soluciones.",
+        "texto": "Llevar el autodiagnóstico de Modernización a más soluciones.",
         "dueno": "por asignar",
         "estado": "pendiente"
       },
       {
         "titulo": "Visión sectorial y competencia",
-        "texto": "La lectura de mercado que pidió el Menti, más allá del benchmark por solución.",
-        "dueno": "con MA y Jorge",
+        "texto": "La lectura de mercado y competencia que pidió el equipo comercial en junio, más allá del benchmark por solución.",
+        "dueno": "Corporativo · Jorge",
         "estado": "pendiente"
       }
     ]
