@@ -196,7 +196,7 @@ function solucionPage(pr, s) {
   // 1 · Cabecera
   let body = `<section class="section"><div class="wrap">
     <p class="eyebrow"><a href="/practicas/${esc(pr.id)}/" style="color:inherit">${esc(pr.nombre)}</a> · Solución</p>
-    <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0">${esc(s.nombre)}</h1>
+    <h1 style="font-size:var(--font-size-5xl);line-height:1.02;letter-spacing:-.02em;margin:var(--space-2) 0">${esc(s.nombre)}</h1>
     <p class="lede">${esc(s.una_linea)}</p>
     <p style="margin-top:var(--space-2);color:var(--color-text-secondary);font-size:var(--font-size-sm)">Especialista: <b>${esc(nombreCompleto(s.especialista))}</b>${s.estado === "en_preparacion" ? " · " + chipVigencia("pendiente", s.fecha_objetivo) : ""}</p>
   </div></section>`;
@@ -219,7 +219,7 @@ function solucionPage(pr, s) {
     <p class="eyebrow">Qué vendemos y por qué Entelgy</p>
     <h2 style="font-size:var(--font-size-2xl);margin:var(--space-2) 0 var(--space-4)">La propuesta</h2>
     <div>${propHtml}</div>
-    ${pp && pp.titulo ? `<div class="card" style="margin-top:var(--space-5);background:var(--color-brand-navy);color:#fff;border:0">
+    ${pp && pp.titulo ? `<div class="card-featured" style="margin-top:var(--space-5)">
         <p class="eyebrow" style="color:var(--color-orange-300)">El primer paso que se vende</p>
         <h3 style="color:#fff;font-size:var(--font-size-2xl);margin:var(--space-2) 0">${esc(pp.titulo)}${pp.plazo ? ` · ${esc(pp.plazo)}` : ""}</h3>
         <p style="color:var(--color-slate-200)">${esc(pp.nota || "")}</p>
