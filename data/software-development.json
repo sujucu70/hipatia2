@@ -262,7 +262,7 @@
     {
       "id": "mantenimiento",
       "nombre": "Mantenimiento evolutivo",
-      "una_linea": "Sostener y evolucionar producción con calidad y continuidad.",
+      "una_linea": "Mantener producción y pagar la evolución con la eficiencia que el mantenimiento recupera.",
       "especialista": "Jorge",
       "estado": "en_preparacion",
       "dueno": "Jorge",
@@ -271,7 +271,7 @@
         "que_es": "Convertimos el mantenimiento evolutivo en una capacidad que sostiene la operación y mejora la productividad, la calidad y el ritmo de cambio.",
         "a_quien": null,
         "senal": "La mayor parte del esfuerzo se consume en sostener producción y queda poco margen para evolucionar; backlog, incidencias y tiempos de entrega sin una lectura compartida.",
-        "por_que_nosotros": "Sostener no es solo resolver: es hacer que el sistema siga siendo útil, fiable y más fácil de cambiar, uniendo operación diaria, calidad y capacidad de evolución.",
+        "por_que_nosotros": "La eficiencia que la IA recupera en el mantenimiento diario se reinvierte en modernizar las mismas aplicaciones, sin partida nueva y medida por un tercero. En un regulador estatal el mantenimiento cuesta hoy entre un 40 y un 60% menos.",
         "diferenciador": null,
         "objecion_principal": {
           "texto": "¿Es solo apagar fuegos?",
@@ -299,7 +299,9 @@
         "dossier_imprimible": false
       },
       "keynotes": [],
-      "referencias": [],
+      "referencias": [
+        "mod-caso-dgoj"
+      ],
       "materiales": [
         "software-mantenimiento-onepager",
         "software-mantenimiento-ficha",
@@ -307,7 +309,7 @@
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Tarjeta completa, casos y materiales de esta solución",
+        "texto": "Propuesta completa, casos y materiales de esta solución",
         "dueno": "Jorge",
         "fecha_objetivo": "sept 2026"
       }
@@ -315,7 +317,7 @@
     {
       "id": "asistencia-tecnica",
       "nombre": "Asistencia técnica aumentada",
-      "una_linea": "Capacidad experta conectada a una entrega medible.",
+      "una_linea": "Especialistas de los Centros de Excelencia dentro de tu equipo, con una entrega que se mide.",
       "especialista": "Jorge",
       "estado": "en_preparacion",
       "dueno": "Jorge",
@@ -324,14 +326,15 @@
         "que_es": "Aportamos capacidad técnica especializada desde los Centros de Excelencia, conectada a una entrega medible y al contexto real del equipo del cliente.",
         "a_quien": null,
         "senal": "Falta capacidad o conocimiento especializado para desbloquear una prioridad concreta; una iniciativa con demanda técnica variable que necesita un encaje operativo más claro.",
-        "por_que_nosotros": "La asistencia técnica aporta más cuando se vincula a una entrega y una responsabilidad, no a una presencia aislada: especialización, contexto de negocio y una forma de medir el avance.",
+        "por_que_nosotros": null,
         "diferenciador": null,
         "objecion_principal": {
           "texto": "¿Esto es solo poner perfiles?",
           "respuesta": "No se presenta como cobertura de perfiles: se conecta con una prioridad, una entrega y un modelo de coordinación claros, con un resultado que se pueda comprobar."
         },
         "como_abres": "«¿Qué entrega o capacidad técnica os está frenando ahora y qué tendría que quedar resuelto para considerar que el apoyo ha funcionado?»",
-        "primer_paso": null
+        "primer_paso": null,
+        "planteamiento": "La asistencia técnica aporta más cuando se vincula a una entrega y una responsabilidad, no a una presencia aislada: especialización, contexto de negocio y una forma de medir el avance."
       },
       "limites": [
         "No se compromete un equipo antes de concretar necesidades, responsabilidades y forma de trabajar.",
@@ -360,7 +363,7 @@
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Tarjeta completa, casos y materiales de esta solución",
+        "texto": "Propuesta completa, casos y materiales de esta solución",
         "dueno": "Jorge",
         "fecha_objetivo": "sept 2026"
       }

@@ -52,7 +52,7 @@
         "que_es": "Convertimos trazas operativas en una lectura compartida de cómo funciona el proceso, dónde se pierde valor y qué merece priorizarse — con evidencia, no con intuición.",
         "a_quien": null,
         "senal": "El proceso se describe de formas distintas según quién lo cuente; hay cuellos de botella, reprocesos o poca visibilidad de extremo a extremo.",
-        "por_que_nosotros": "La tecnología aporta cuando se apoya en cómo opera realmente la organización, no solo en cómo debería operar sobre un diagrama.",
+        "por_que_nosotros": "Partner Gold de Celonis, con más de cincuenta proyectos y pruebas de valor en España, Chile y Colombia, y un método que mira el proceso real antes de proponer IA, automatización o agentes.",
         "diferenciador": null,
         "objecion_principal": null,
         "como_abres": "«¿Qué proceso relevante se gestiona hoy con más intuición que evidencia?»",
@@ -88,7 +88,7 @@
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "texto": "Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
         "dueno": "Carmen",
         "fecha_objetivo": "sept 2026"
       }
@@ -105,7 +105,7 @@
         "que_es": "Diseñamos la automatización y el uso de agentes IA alrededor de procesos concretos para liberar capacidad, reforzar consistencia y mejorar el servicio.",
         "a_quien": null,
         "senal": "Hay tareas repetitivas, traspasos manuales o decisiones sencillas que consumen tiempo operativo; se explora automatización o agentes pero falta llevarlos a un proceso con control.",
-        "por_que_nosotros": "La automatización aporta más cuando resuelve una fricción operativa concreta y tiene un responsable claro; los agentes IA deben integrarse en un proceso con límites y supervisión.",
+        "por_que_nosotros": null,
         "diferenciador": null,
         "objecion_principal": null,
         "como_abres": "«¿Qué tarea o decisión del proceso os gustaría simplificar primero sin perder control, calidad o trazabilidad?»",
@@ -113,7 +113,8 @@
           "titulo": "Diagnóstico del proceso a automatizar",
           "plazo": null,
           "nota": "Confirma volumen, excepciones y criterio de valor con Carla antes de decidir el enfoque."
-        }
+        },
+        "planteamiento": "La automatización aporta más cuando resuelve una fricción operativa concreta y tiene un responsable claro; los agentes IA deben integrarse en un proceso con límites y supervisión."
       },
       "limites": [
         "No se promete automatización total ni autonomía de agentes sin revisar excepciones, controles, datos y responsables.",
@@ -145,7 +146,7 @@
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "texto": "Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
         "dueno": "Carla",
         "fecha_objetivo": "sept 2026"
       }

@@ -163,7 +163,11 @@ function solucionPage(pr, s) {
   let propHtml = "";
   propHtml += filaProp("Qué es", esc(prop.que_es));
   propHtml += filaProp("A quién / la señal", esc([prop.a_quien, prop.senal].filter(Boolean).join(" ")));
-  propHtml += filaProp("Por qué Entelgy", esc(prop.por_que_nosotros));
+  propHtml += prop.por_que_nosotros
+    ? filaProp("Por qué Entelgy", esc(prop.por_que_nosotros))
+    : (s.estado === "en_preparacion"
+        ? filaProp("Por qué Entelgy", `<p class="pending" style="margin:0">En preparación · dueño: ${esc(s.dueno || "por asignar")} · fecha objetivo: ${esc(s.fecha_objetivo || "sin fecha")}</p>`)
+        : "");
   if (prop.diferenciador) propHtml += filaProp("El diferenciador", esc(prop.diferenciador));
   if (prop.objecion_principal) propHtml += filaProp("La objeción que más vas a oír", `<i>«${esc(prop.objecion_principal.texto)}»</i><br>${esc(prop.objecion_principal.respuesta)}`);
   if (prop.como_abres) propHtml += filaProp("Cómo abres", esc(prop.como_abres));

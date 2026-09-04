@@ -8,15 +8,15 @@
 
 | Qué falta | Dueño | Fecha objetivo |
 |---|---|---|
-| **Inteligencia de procesos** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Carmen | sept 2026 |
-| **Automatización de procesos y agentes IA** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Carla | sept 2026 |
+| **Inteligencia de procesos** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Carmen | sept 2026 |
+| **Automatización de procesos y agentes IA** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Carla | sept 2026 |
 
 ## Software Development
 
 | Qué falta | Dueño | Fecha objetivo |
 |---|---|---|
-| **Mantenimiento evolutivo** · Tarjeta completa, casos y materiales de esta solución | Jorge | sept 2026 |
-| **Asistencia técnica aumentada** · Tarjeta completa, casos y materiales de esta solución | Jorge | sept 2026 |
+| **Mantenimiento evolutivo** · Propuesta completa, casos y materiales de esta solución | Jorge | sept 2026 |
+| **Asistencia técnica aumentada** · Propuesta completa, casos y materiales de esta solución | Jorge | sept 2026 |
 | **modernizacion** · Material: Correo de apertura | Jorge | sept 2026 |
 | **modernizacion** · Material: Presentación técnica · Spec-Driven | Jorge | sept 2026 |
 | **modernizacion** · Material: Business case tipo · Modernización | Jorge / producto | sept 2026 |
@@ -25,22 +25,22 @@
 
 | Qué falta | Dueño | Fecha objetivo |
 |---|---|---|
-| **Data Intelligence** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Daniela | sept 2026 |
+| **Data Intelligence** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Daniela | sept 2026 |
 
 ## Smart Operations
 
 | Qué falta | Dueño | Fecha objetivo |
 |---|---|---|
-| **Puesto de trabajo** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Amador | sept 2026 |
-| **Infraestructura crítica** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Amador | sept 2026 |
+| **Puesto de trabajo** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Amador | sept 2026 |
+| **Infraestructura crítica** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Amador | sept 2026 |
 
 ## Digital Change
 
 | Qué falta | Dueño | Fecha objetivo |
 |---|---|---|
-| **IAbility** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Alfredo | sept 2026 |
-| **PreservIA** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Alfredo | sept 2026 |
-| **Oficina de Gobernanza Humana de la IA** · Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Alfredo | sept 2026 |
+| **IAbility** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Alfredo | sept 2026 |
+| **PreservIA** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Alfredo | sept 2026 |
+| **Oficina de Gobernanza Humana de la IA** · Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución | Alfredo | sept 2026 |
 
 ---
 

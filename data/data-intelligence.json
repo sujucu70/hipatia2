@@ -52,7 +52,7 @@
         "que_es": "Conectamos calidad, gobierno, analítica e IA para que el dato sirva a una decisión de negocio real: desde el gobierno del dato y de los modelos hasta la analítica para decidir y la IA aplicada.",
         "a_quien": null,
         "senal": "El negocio tiene datos pero no confía lo suficiente en ellos para decidir o automatizar; hay iniciativas de IA dispersas sin un criterio común de valor, gobierno o riesgo.",
-        "por_que_nosotros": "El valor del dato y la IA aparece cuando están ligados a una decisión u operación concreta, no cuando se acumulan capacidades sin uso; gobierno, analítica e IA avanzan con negocio y operación.",
+        "por_que_nosotros": null,
         "diferenciador": null,
         "objecion_principal": null,
         "como_abres": "«¿Qué decisión tomáis hoy sin fiaros del todo del dato que tenéis?»",
@@ -60,7 +60,8 @@
           "titulo": "Assessment de conformidad y estado del dato",
           "plazo": null,
           "nota": "Valida caso de uso, datos, gobierno y condiciones con Daniela."
-        }
+        },
+        "planteamiento": "El valor del dato y la IA aparece cuando están ligados a una decisión u operación concreta, no cuando se acumulan capacidades sin uso; gobierno, analítica e IA avanzan con negocio y operación."
       },
       "limites": [
         "No se vende IA como fin en sí mismo ni se prometen resultados sin revisar datos, gobierno, riesgos y adopción.",
@@ -93,7 +94,7 @@
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "texto": "Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
         "dueno": "Daniela",
         "fecha_objetivo": "sept 2026"
       },

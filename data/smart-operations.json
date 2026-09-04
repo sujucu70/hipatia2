@@ -43,7 +43,7 @@
     {
       "id": "smartops-workplace",
       "nombre": "Puesto de trabajo",
-      "una_linea": "Mejorar la experiencia digital del empleado de extremo a extremo.",
+      "una_linea": "Soporte, dispositivo y autoservicio como un solo servicio, medido en lo que nota el empleado.",
       "especialista": "Amador",
       "estado": "en_preparacion",
       "dueno": "Amador",
@@ -52,7 +52,7 @@
         "que_es": "Mejoramos la experiencia digital del empleado desde la atención y el dispositivo hasta el autoservicio, la automatización y la medición del servicio.",
         "a_quien": null,
         "senal": "Las personas encuentran fricción recurrente con herramientas, dispositivos o soporte; el equipo de soporte concentra tareas repetitivas y tiene poca visibilidad de la experiencia real.",
-        "por_que_nosotros": "El puesto de trabajo mejora cuando se conecta la experiencia del empleado con el modelo operativo que la hace posible; atención, ciclo de vida, autoservicio y analítica son un mismo servicio.",
+        "por_que_nosotros": null,
         "diferenciador": null,
         "objecion_principal": null,
         "como_abres": "«¿En qué momento de la experiencia digital —soporte, dispositivo, aplicaciones o acceso— se pierde hoy más tiempo o confianza?»",
@@ -60,7 +60,8 @@
           "titulo": "Assessment del puesto de trabajo",
           "plazo": null,
           "nota": "Contrasta servicio, colectivos, operación y métricas con Amador."
-        }
+        },
+        "planteamiento": "El puesto de trabajo mejora cuando se conecta la experiencia del empleado con el modelo operativo que la hace posible; atención, ciclo de vida, autoservicio y analítica son un mismo servicio."
       },
       "limites": [
         "No se plantea una herramienta o renovación de puesto sin entender servicio, usuarios y experiencia actual.",
@@ -88,7 +89,7 @@
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "texto": "Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
         "dueno": "Amador",
         "fecha_objetivo": "sept 2026"
       }
@@ -96,7 +97,7 @@
     {
       "id": "smartops-infra",
       "nombre": "Infraestructura crítica",
-      "una_linea": "Operar continuidad, capacidad y eficiencia con visión preventiva.",
+      "una_linea": "Operar infraestructura crítica y cloud viendo el fallo y el coste antes de que lleguen.",
       "especialista": "Amador",
       "estado": "en_preparacion",
       "dueno": "Amador",
@@ -105,7 +106,7 @@
         "que_es": "Aseguramos una operación preventiva de infraestructura crítica, cloud y plataformas para combinar continuidad, control, capacidad y eficiencia.",
         "a_quien": null,
         "senal": "La infraestructura o el cloud generan incertidumbre por disponibilidad, coste, capacidad o riesgo; la operación reacciona a incidencias con poca previsión.",
-        "por_que_nosotros": "Una infraestructura crítica aporta valor cuando permite sostener el servicio y anticipar decisiones, no solo reaccionar; cloud, observabilidad, FinOps y resiliencia se conectan para gobernar mejor.",
+        "por_que_nosotros": null,
         "diferenciador": null,
         "objecion_principal": null,
         "como_abres": "«¿Qué parte de la infraestructura, cloud u operación os quita más el sueño por continuidad, coste o capacidad de anticipar?»",
@@ -113,7 +114,8 @@
           "titulo": "Assessment de infraestructura",
           "plazo": null,
           "nota": "Lee continuidad, capacidad, coste y responsables con Amador antes de fijar una respuesta técnica."
-        }
+        },
+        "planteamiento": "Una infraestructura crítica aporta valor cuando permite sostener el servicio y anticipar decisiones, no solo reaccionar; cloud, observabilidad, FinOps y resiliencia se conectan para gobernar mejor."
       },
       "limites": [
         "No se compromete arquitectura, migración o nivel de servicio sin entender criticidad, capacidad, seguridad, coste y operación.",
@@ -142,7 +144,7 @@
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "texto": "Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
         "dueno": "Amador",
         "fecha_objetivo": "sept 2026"
       }

@@ -61,7 +61,7 @@
         "que_es": "Convertimos la IA en una capacidad que las personas incorporan con criterio, confianza y uso responsable en su trabajo diario.",
         "a_quien": null,
         "senal": "La organización ha desplegado IA pero el uso es irregular, superficial o genera dudas; los equipos necesitan criterio y confianza para incorporarla.",
-        "por_que_nosotros": "La IA genera impacto cuando las personas saben para qué usarla, cómo hacerlo y qué decisiones siguen siendo humanas; la adopción se diseña desde el principio, no como fase final.",
+        "por_que_nosotros": null,
         "diferenciador": null,
         "objecion_principal": null,
         "como_abres": "«¿Qué tendría que cambiar en el trabajo diario de las personas para que esta IA deje de ser una herramienta disponible y se convierta en una capacidad real?»",
@@ -69,7 +69,8 @@
           "titulo": "Primer recorrido de adopción",
           "plazo": null,
           "nota": "Alrededor de un caso de uso, sus colectivos y un cambio observable. Con Alfredo."
-        }
+        },
+        "planteamiento": "La IA genera impacto cuando las personas saben para qué usarla, cómo hacerlo y qué decisiones siguen siendo humanas; la adopción se diseña desde el principio, no como fase final."
       },
       "limites": [
         "No es una formación puntual ni una campaña desconectada de los casos de uso y el trabajo real.",
@@ -97,7 +98,7 @@
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "texto": "Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
         "dueno": "Alfredo",
         "fecha_objetivo": "sept 2026"
       }
@@ -105,7 +106,7 @@
     {
       "id": "preservia",
       "nombre": "PreservIA",
-      "una_linea": "Convertir el conocimiento experto en un activo vivo.",
+      "una_linea": "Capturar el conocimiento de los expertos antes de que se vaya con ellos, y ponerlo donde se usa.",
       "especialista": "Alfredo",
       "estado": "en_preparacion",
       "dueno": "Alfredo",
@@ -114,7 +115,7 @@
         "que_es": "Capturamos conocimiento experto y lo activamos donde hace falta, para que no dependa solo de personas, archivos o memoria organizativa.",
         "a_quien": null,
         "senal": "El conocimiento crítico reside en pocas personas o se pierde cuando cambian de rol; los equipos tardan demasiado en encontrar, contrastar o reutilizar experiencia existente.",
-        "por_que_nosotros": "El conocimiento crea valor cuando puede reutilizarse en el momento de trabajo, no cuando queda almacenado sin contexto; preservarlo combina tecnología, proceso, personas y reglas de actualización.",
+        "por_que_nosotros": null,
         "diferenciador": null,
         "objecion_principal": null,
         "como_abres": "«¿Qué conocimiento experto os cuesta más preservar o poner a disposición cuando el equipo lo necesita para decidir o actuar?»",
@@ -122,7 +123,8 @@
           "titulo": "Primer ámbito de conocimiento",
           "plazo": null,
           "nota": "Sus usuarios y su modelo de actualización, antes de diseñar la capacidad. Con Alfredo."
-        }
+        },
+        "planteamiento": "El conocimiento crea valor cuando puede reutilizarse en el momento de trabajo, no cuando queda almacenado sin contexto; preservarlo combina tecnología, proceso, personas y reglas de actualización."
       },
       "limites": [
         "No es un repositorio documental más: el conocimiento debe tener propósito, responsables y contexto de uso.",
@@ -151,7 +153,7 @@
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "texto": "Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
         "dueno": "Alfredo",
         "fecha_objetivo": "sept 2026"
       }
@@ -159,7 +161,7 @@
     {
       "id": "ogh-ia",
       "nombre": "Oficina de Gobernanza Humana de la IA",
-      "una_linea": "Decidir, priorizar y gobernar la IA con las personas en el centro.",
+      "una_linea": "Decidir qué IA avanza, cuál se frena y quién responde de cada decisión.",
       "especialista": "Alfredo",
       "estado": "en_preparacion",
       "dueno": "Alfredo",
@@ -168,7 +170,7 @@
         "que_es": "Diseñamos una Oficina de Gobernanza Humana de la IA para decidir qué iniciativas avanzan, bajo qué condiciones y con qué evidencias de valor, riesgo y adopción.",
         "a_quien": null,
         "senal": "Existen iniciativas de IA sin una forma común de priorizar valor, riesgos, responsables y condiciones de escalado; Dirección necesita saber qué debe avanzar y qué frenarse.",
-        "por_que_nosotros": "La gobernanza humana de la IA hace visible quién decide, con qué criterios y cómo se aprende de la operación; su función no es frenar la IA, sino que los casos valiosos avancen con confianza.",
+        "por_que_nosotros": null,
         "diferenciador": null,
         "objecion_principal": null,
         "como_abres": "«¿Quién decide hoy qué iniciativas de IA avanzan, qué evidencia necesitan y cómo se mantiene el equilibrio entre valor, riesgo y adopción?»",
@@ -176,7 +178,8 @@
           "titulo": "Primer perímetro de casos, roles y decisiones",
           "plazo": null,
           "nota": "Para diseñar una oficina proporcionada al ritmo y madurez de la organización. Con Alfredo."
-        }
+        },
+        "planteamiento": "La gobernanza humana de la IA hace visible quién decide, con qué criterios y cómo se aprende de la operación; su función no es frenar la IA, sino que los casos valiosos avancen con confianza."
       },
       "limites": [
         "No es una capa burocrática ni una aprobación aislada: debe permitir priorizar y acompañar casos con decisiones claras.",
@@ -204,7 +207,7 @@
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Tarjeta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "texto": "Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
         "dueno": "Alfredo",
         "fecha_objetivo": "sept 2026"
       }
