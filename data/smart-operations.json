@@ -4,29 +4,29 @@
   "orden": "04",
   "responsable": "Amador",
   "propuesta": "Hacemos que el puesto de trabajo digital, la infraestructura y la operación tecnológica respondan mejor al negocio y a las personas.",
-  "que_cubre": "Mejorar la experiencia digital del empleado de extremo a extremo y operar una infraestructura crítica con continuidad, control, capacidad y eficiencia.",
-  "que_no_prometer": "No proponemos una herramienta ni un cambio de operación sin entender antes el servicio que hay, quién lo usa y con qué restricciones se opera. Tampoco es arreglar la infraestructura por su cuenta: el resultado depende de la experiencia, de los procesos y de que la gente lo adopte.",
+  "que_cubre": "Operamos el puesto de trabajo de punta a punta, soporte, dispositivo y experiencia del empleado, con IA en el flujo del servicio; y la infraestructura crítica 24×7, sistemas, redes y cloud, con AIOps preventiva, FinOps y el cumplimiento regulatorio dentro. Un mismo motor para los dos territorios: modelo N0–N3, dimensionamiento sobre datos reales, reporting en Power BI y gobierno ISO 20000, 27001 y ENS alto, desde centros propios en Madrid, São Paulo y Miami.",
+  "que_no_prometer": "No planteamos herramienta, plataforma ni cambio operativo sin haber leído el servicio actual, los colectivos y las restricciones de operación. No vendemos horas ni paquetes cerrados: cada pieza se contrata sola o combinada. Y no prometemos un ahorro antes del diagnóstico: la cifra la da el propio assessment sobre vuestros datos, no el comercial.",
   "pregunta_comun": "¿Qué os cuesta más hoy: que la gente pueda trabajar sin fricción o que la infraestructura no falle?",
   "capacidades": [
     {
       "paso": "01",
-      "titulo": "Entender el servicio",
-      "texto": "Delimitar servicio, colectivos, operación y métricas antes de proponer un cambio."
+      "titulo": "Modelo N0–N3",
+      "texto": "El volumen lo absorbe la máquina; el equipo va donde hace falta criterio. N0 preventivo (autoservicio, automatización, AIOps) filtra antes de que exista la incidencia; N1 atiende, N2 especializa, N3 escala a fabricante."
     },
     {
       "paso": "02",
-      "titulo": "Mejorar la experiencia",
-      "texto": "Atención, dispositivo, autoservicio y automatización del puesto de trabajo leídos como un mismo servicio."
+      "titulo": "Dimensionar sobre datos",
+      "texto": "Volumetría real por tramo horario, parque, alertas y fricción antes de dimensionar un equipo o firmar un nivel de servicio. Se paga por resultado, no por horas."
     },
     {
       "paso": "03",
-      "titulo": "Operar con previsión",
-      "texto": "Infraestructura, cloud y continuidad con observabilidad, FinOps y resiliencia, no solo disponibilidad."
+      "titulo": "IA en el flujo del servicio",
+      "texto": "En el CAU clasifica, prioriza, deduplica y redacta la respuesta; en la infraestructura suprime ruido, correlaciona y propone la causa raíz. Con porcentaje por iniciativa, en producción."
     },
     {
       "paso": "04",
-      "titulo": "Sostener",
-      "texto": "Dejar la operación medida y gobernada, con capacidad de anticipar en lugar de reaccionar."
+      "titulo": "Gobierno dentro",
+      "texto": "ISO 20000, 27001 y ENS alto en el diseño del servicio; NIS2, DORA y AI Act como procedimiento (24 h, 72 h, 30 días), con reporting en Power BI que entienden el CIO y el CFO."
     }
   ],
   "discovery": [
@@ -35,33 +35,35 @@
     "¿Cuánto de vuestro coste operativo cuesta justificar cada año sin saber si es el correcto?"
   ],
   "primer_avance": {
-    "titulo": "Assessment del puesto de trabajo o de infraestructura",
-    "plazo": null,
-    "nota": "Primera lectura de servicio, experiencia/continuidad, operación y métricas antes de proponer un cambio. Plazo y alcance con el especialista."
+    "titulo": "Diagnóstico sobre datos reales",
+    "plazo": "desde 10 días",
+    "nota": "Precio cerrado, sin compromiso posterior, sobre el servicio real: en el puesto, volumetría del CAU, estado del parque y cuántas incidencias evitaría el N0; en infraestructura, cloud waste recuperable, hueco NIS2/DORA/AI Act y TCO por camino frente a Broadcom. El resultado es del cliente decida lo que decida. Alcance con Amador."
   },
   "soluciones": [
     {
       "id": "smartops-workplace",
       "nombre": "Puesto de trabajo",
-      "una_linea": "Soporte, dispositivo y autoservicio como un solo servicio, medido en lo que nota el empleado.",
+      "una_linea": "Operamos el puesto de trabajo entero y respondemos del resultado, no de las horas.",
       "especialista": "Amador",
       "estado": "vigente",
       "dueno": "Amador",
       "fecha_objetivo": "sept 2026",
       "propuesta": {
-        "que_es": "Mejoramos la experiencia digital del empleado desde la atención y el dispositivo hasta el autoservicio, la automatización y la medición del servicio.",
-        "a_quien": null,
-        "senal": "Las personas encuentran fricción recurrente con herramientas, dispositivos o soporte; el equipo de soporte concentra tareas repetitivas y tiene poca visibilidad de la experiencia real.",
-        "por_que_nosotros": null,
-        "diferenciador": null,
-        "objecion_principal": null,
-        "como_abres": "«¿En qué momento de la experiencia digital —soporte, dispositivo, aplicaciones o acceso— se pierde hoy más tiempo o confianza?»",
-        "primer_paso": {
-          "titulo": "Assessment del puesto de trabajo",
-          "plazo": null,
-          "nota": "Contrasta servicio, colectivos, operación y métricas con Amador."
+        "que_es": "Operamos el soporte al usuario, el dispositivo y la experiencia digital del empleado, de la primera llamada a la gestión del parque, con una capa de IA en el flujo del servicio que clasifica, prioriza y, cuando puede, resuelve antes de que la incidencia llegue a un técnico. Cuatro piezas que se contratan solas o combinadas: CAU base, Workplace (parque, MDM, parcheo, seguridad del puesto), DaaS (dispositivo como servicio, por dispositivo y mes) y Servicios de valor (autoservicio, automatización, SmartHelp, experiencia medida con XLA).",
+        "a_quien": "Entras por el CIO con el coste por usuario y los relojes (Windows 10 con ESU, NIS2, AI Act). El CFO decide en DaaS y en el pago por resultado; COO o CHRO entran cuando la conversación es de experiencia y retención; CISO o Compliance, con NIS2 en el endpoint. Plantillas grandes, reguladas y distribuidas: sector público, industria, servicios, banca, seguros y energía.",
+        "senal": "El puesto cuesta más cada año y la experiencia no mejora: crece el parque, sube la factura del proveedor por horas y el soporte sigue interrumpiendo. El SLA se cumple al 97% y la gente se queja igual. Hay parque en Windows 10 pagando ESU o sin fecha para Windows 11. Y NIS2 y el AI Act han metido el dispositivo, los datos y a los proveedores en lo que firma el CIO.",
+        "por_que_nosotros": "La mayoría da soporte; nosotros operamos la experiencia. Nadie renueva al 95% por inercia: más de 400.000 usuarios atendidos hoy, 97% de cumplimiento de ANS y una de las rotaciones de equipo más bajas del sector. IA en producción, no en demo: el clasificador entrenado sobre más de 5.500 incidencias reales acierta el 80% de las incidencias y el 92% de las peticiones, y el cambio de contraseña se resuelve solo en el 90% de los casos. El volumen lo absorbe el N0; el técnico se queda con lo que pide criterio. Y las cuatro piezas se combinan a la carta, sin paquete cerrado.",
+        "diferenciador": "Soporte, dispositivo y experiencia bajo un solo proveedor, con IA en el flujo del servicio en producción y piezas que se contratan a la carta.",
+        "objecion_principal": {
+          "texto": "Ya tenemos el CAU externalizado y funciona.",
+          "respuesta": "Funciona y interrumpe: el SLA sale al 97% y cada empleado pierde 14 fricciones a la semana que no entran en ningún informe. No te pedimos cambiar de proveedor: el diagnóstico de diez días dice, sobre tu volumetría, cuántas incidencias no llegarían a un técnico y qué cuesta cada usuario. Si sale, el piloto arranca con solape con el proveedor actual."
         },
-        "planteamiento": "El puesto de trabajo mejora cuando se conecta la experiencia del empleado con el modelo operativo que la hace posible; atención, ciclo de vida, autoservicio y analítica son un mismo servicio."
+        "como_abres": "«¿Cuánto os cuesta hoy cada usuario al mes, y cuántas de las incidencias que paga un técnico podrían no llegar a él?»",
+        "primer_paso": {
+          "titulo": "Diagnóstico del puesto de trabajo",
+          "plazo": "desde 10 días",
+          "nota": "Precio cerrado, sin compromiso posterior, sobre el servicio real: volumetría del CAU, estado del parque y ventana de Windows 11, mapa de experiencia del empleado y cuántas incidencias evitaría el N0, con ahorro estimado por usuario. El resultado es del cliente decida lo que decida. Alcance con Amador."
+        }
       },
       "limites": [
         "No se plantea una herramienta o renovación de puesto sin entender servicio, usuarios y experiencia actual.",
@@ -73,23 +75,149 @@
         "El ciclo de vida de puestos, software o licencias necesita más orden y automatización."
       ],
       "kit": {
-        "frases_cuenta": null,
-        "pitch_por_rol": [],
-        "objeciones": [],
-        "preguntas_cualificacion": [],
-        "referencias_destacadas": [],
-        "material_interno": [],
-        "dossier_imprimible": false
+        "frases_cuenta": {
+          "nota": "Frases por dolor, sacadas de las tres piezas. Elige la que responde a lo que te han dicho.",
+          "frases": [
+            {
+              "angulo": "Por el coste por usuario",
+              "cuando": "si el presupuesto del puesto sube cada año",
+              "texto": "El modelo por horas dejó de cuadrar: crece el parque, sube la factura y la experiencia se queda igual. Nosotros cobramos por resultado: el N0 absorbe el volumen y el técnico se queda con lo que pide criterio."
+            },
+            {
+              "angulo": "Por el SLA que se cumple y nadie está contento",
+              "cuando": "si IT enseña un boletín verde y negocio se queja",
+              "texto": "El SLA mide la operación; la experiencia la miden las 14 fricciones a la semana que cada empleado sufre fuera del informe (Nexthink, 2025). Medimos con XLA lo que nota la gente, y el comité deja de leer incidencias para decidir mejoras."
+            },
+            {
+              "angulo": "Por Windows 10",
+              "cuando": "si tienen parque sin migrar",
+              "texto": "Cada año más en Windows 10 duplica el ESU: 61, 122, 244 dólares por dispositivo. El diagnóstico te da el estado del parque y la ventana a Windows 11 con el coste por camino."
+            },
+            {
+              "angulo": "Por la regulación",
+              "cuando": "si aparecen NIS2, el AI Act o el CISO",
+              "texto": "NIS2 y el AI Act han metido el dispositivo, los datos y a los proveedores en lo que firma el CIO en persona. El gobierno va dentro del servicio: ENS alto, ISO 27001, cadena de suministro auditada y plazos 24/72 horas como procedimiento."
+            },
+            {
+              "angulo": "Por la IA que la gente usa por su cuenta",
+              "cuando": "si hay shadow AI o pilotos sin retorno",
+              "texto": "SmartHelp es la IA sancionada que el empleado sí usa: lee el contexto, nunca el dato, y entrega el procedimiento antes de que lo pida. En producción desde 2018."
+            }
+          ],
+          "regla": "Estas frases abren y cualifican. Si la conversación se va a automatizar procesos de negocio, es Carla; si va a que la gente adopte la IA, es Alfredo. Cuando el cliente muerde, el siguiente paso es traer a Amador con el diagnóstico."
+        },
+        "pitch_por_rol": [
+          {
+            "rol": "CIO",
+            "pregunta": "¿Cuánto os cuesta cada usuario al mes y cuántas incidencias no deberían llegar a un técnico?",
+            "le_mueve": "coste por usuario a la baja y un solo proveedor para puesto e infraestructura."
+          },
+          {
+            "rol": "CFO",
+            "pregunta": "¿Cuánto del presupuesto del puesto es fijo aunque baje el volumen?",
+            "le_mueve": "pago por resultado y DaaS por dispositivo y mes, sin parque en balance."
+          },
+          {
+            "rol": "COO / CHRO",
+            "pregunta": "¿Cuántas horas pierde vuestra gente esperando a IT que no entran en ningún informe?",
+            "le_mueve": "experiencia medida con XLA, no solo SLA."
+          },
+          {
+            "rol": "CISO / Compliance",
+            "pregunta": "¿Quién responde hoy del endpoint y de la cadena de proveedores ante NIS2?",
+            "le_mueve": "gobierno dentro del servicio, con plazos como procedimiento."
+          },
+          {
+            "rol": "Responsable de soporte / Dir. IT",
+            "pregunta": "¿Qué porcentaje de tickets se resuelve sin tocar a un técnico?",
+            "le_mueve": "IA por fase del ticket con porcentajes, no una demo."
+          }
+        ],
+        "pitch_nota": "Se entra por el CIO; el CFO decide en DaaS y en el modelo por resultado, y COO o CHRO cuando la conversación es de experiencia.",
+        "objeciones": [
+          {
+            "texto": "Ya tenemos el CAU externalizado y funciona.",
+            "respuesta": "Funciona y interrumpe: el SLA al 97% y 14 fricciones por empleado y semana. El diagnóstico de diez días te dice cuántas incidencias sobran y qué cuesta cada usuario; si sale, piloto con solape con tu proveedor."
+          },
+          {
+            "texto": "Los grandes lo hacen igual y más barato.",
+            "respuesta": "Los grandes te fuerzan el paquete. Aquí contratas solo el CAU, solo el parque o DaaS, y sumas piezas cuando toca. Y cobramos por resultado, no por horas."
+          },
+          {
+            "texto": "La IA en soporte es una demo.",
+            "respuesta": "Cambio de contraseña resuelto solo en el 90% de los casos, clasificación al 80–92% sobre más de 5.500 incidencias reales, SmartHelp en producción desde 2018. Son porcentajes de servicios en operación, no de laboratorio."
+          },
+          {
+            "texto": "Cambiar de proveedor es un riesgo.",
+            "respuesta": "Por eso empezamos con diez días de diagnóstico y un piloto en un dominio, con director de servicio nombrado y solape con el incumbente. El compromiso es el de la primera fase."
+          },
+          {
+            "texto": "¿Cuánto cuesta?",
+            "respuesta": "El diagnóstico tiene precio cerrado y el resultado es tuyo decidas lo que decidas. El precio del servicio sale de tu volumetría real, no de una tarifa por horas."
+          }
+        ],
+        "preguntas_cualificacion": [
+          "¿Cuántos usuarios y dispositivos, en cuántas sedes y países?",
+          "¿Quién opera hoy el CAU y cuándo vence el contrato?",
+          "¿Qué parque queda en Windows 10 y con qué plan?",
+          "¿Medís algo de experiencia además del SLA?",
+          "¿Estáis en el ámbito de NIS2 o del AI Act de alto riesgo?"
+        ],
+        "referencias_destacadas": [
+          "smartops-case-educacion-ejie",
+          "smartops-case-navantia"
+        ],
+        "material_interno": [
+          "smart-legacy-competition",
+          "smart-legacy-preview",
+          "smartops-pains-workplace"
+        ],
+        "material_interno_nota": "Horquillas orientativas del deck de Workplace hasta que Amador cierre costes: CAU base 15–25 €/usuario/mes · Workplace 10–20 €/usuario/mes · DaaS 30–60 €/dispositivo/mes · Servicios de valor a medida. No van en documento cliente. SmartHelp es la capa de contexto de PreservIA en MAPFRE: el caso se cuenta con las cifras de Digital Change (15.000 puestos, 3.500 tickets menos al mes, 45 € por ticket), no con las del deck de Workplace (25.000 puestos, 157.500 €/mes).",
+        "dossier_imprimible": true
       },
-      "keynotes": [],
-      "referencias": [],
+      "keynotes": [
+        {
+          "dolor": "El puesto nos cuesta más cada año.",
+          "frase": "Respondemos del resultado, no de las horas: el N0 absorbe el volumen y el técnico se queda con lo que pide criterio.",
+          "prueba": "Más de 400.000 usuarios atendidos y un 95% que renueva.",
+          "paso": "Diagnóstico de diez días con el coste por usuario y las incidencias que sobran."
+        },
+        {
+          "dolor": "El SLA sale verde y la gente se queja.",
+          "frase": "El SLA mide la operación; la experiencia se mide con XLA.",
+          "prueba": "14 fricciones por empleado y semana fuera del informe (Nexthink, DEX Report 2025).",
+          "paso": "Mapa de experiencia del empleado dentro del diagnóstico."
+        },
+        {
+          "dolor": "Tenemos parque en Windows 10 y la migración sin fecha.",
+          "frase": "Cada año más duplica el ESU.",
+          "prueba": "61 → 122 → 244 dólares por dispositivo (Microsoft).",
+          "paso": "Estado del parque y ventana de Windows 11 con coste por camino."
+        },
+        {
+          "dolor": "NIS2 y el AI Act me ponen a mí en el contrato.",
+          "frase": "El gobierno va dentro del servicio, como procedimiento.",
+          "prueba": "ENS alto, ISO 20000 y 27001, +174 certificaciones Microsoft; plazos 24/72 horas documentados.",
+          "paso": "Hueco regulatorio NIS2/AI Act dentro del diagnóstico."
+        }
+      ],
+      "referencias": [
+        "smartops-case-educacion-ejie",
+        "smartops-case-navantia",
+        "so-caso-telefonica-cau",
+        "so-caso-mefpd",
+        "so-caso-valoriza",
+        "smartops-case-ejie",
+        "so-caso-mostoles"
+      ],
       "materiales": [
-        "smartops-workplace-ficha",
-        "smartops-workplace-legacy-deck"
+        "smartops-onepager-workplace",
+        "smartops-workplace",
+        "smartops-workplace-ficha"
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "texto": "Lectura de Amador: entidad del «+200 agentes» de Telefónica, MEFPD y Valoriza como los casos anonimizados de la ficha, «usuarios» de Móstoles, cifras del DaaS de EJIE, niveles invertidos en el deck, permisos de nombres y logos, sign-off de las cifras del área con MA.",
         "dueno": "Amador",
         "fecha_objetivo": "sept 2026"
       }
@@ -97,23 +225,26 @@
     {
       "id": "smartops-infra",
       "nombre": "Infraestructura crítica",
-      "una_linea": "Operar infraestructura crítica y cloud viendo el fallo y el coste antes de que lleguen.",
+      "una_linea": "Operamos la infraestructura 24×7 y respondemos del coste y del cumplimiento, no de horas.",
       "especialista": "Amador",
       "estado": "vigente",
       "dueno": "Amador",
       "fecha_objetivo": "sept 2026",
       "propuesta": {
-        "que_es": "Aseguramos una operación preventiva de infraestructura crítica, cloud y plataformas para combinar continuidad, control, capacidad y eficiencia.",
-        "a_quien": null,
-        "senal": "La infraestructura o el cloud generan incertidumbre por disponibilidad, coste, capacidad o riesgo; la operación reacciona a incidencias con poca previsión.",
-        "por_que_nosotros": null,
-        "diferenciador": null,
-        "objecion_principal": null,
-        "como_abres": "«¿Qué parte de la infraestructura, cloud u operación os quita más el sueño por continuidad, coste o capacidad de anticipar?»",
+        "que_es": "Mantenemos disponible y bajo control la infraestructura crítica, sistemas, redes y cloud, con un modelo preventivo: AIOps que suprime el ruido y detecta antes del incidente, FinOps dentro de la operación diaria y NIS2, DORA y AI Act como procedimiento. Tres piezas que se contratan solas o combinadas: Continuidad (operación 24×7 N0–N3 desde Madrid, São Paulo y Miami), Modernización (assessment, migración a cloud y aterrizaje Broadcom-VMware con TCO por camino) y Control económico (FinOps as a service: tagging, rightsizing, forecast y coste por servicio). Y al final del piloto el cliente elige: operamos nosotros o entregamos y se lo queda.",
+        "a_quien": "Entras por el CIO o el director de infraestructura con Broadcom, las alertas y la continuidad. El CFO entra por FinOps y el TCO por camino; CISO, Compliance o el Consejo, por NIS2 y DORA, donde responde el firmante; el CTO, cuando quieren desplegar IA en local. Sectores donde aprieta la regulación: banca y seguros, sector público, utilities, industria crítica y telco.",
+        "senal": "La renovación de VMware llega con el precio de Broadcom y sin plan. Hay Windows Server 2016 en producción con fin de soporte en enero de 2027. La factura cloud sube y nadie sabe qué parte es desperdicio. El equipo vive enterrado en alertas y se entera del incidente cuando lo nota el usuario. NIS2 o DORA piden al proveedor como perímetro auditable. Y el negocio quiere IA en local sin saber si la infraestructura la aguanta.",
+        "por_que_nosotros": "La mayoría implanta tecnología; nosotros la operamos, con el cambio y los procesos dentro. AIOps y FinOps están en el catálogo de todos; la diferencia es tenerlos en producción hoy: para Telefónica Tech operamos 25.000 elementos en 24×7 desde Madrid y Lima, con 27.000 alarmas y 12.000 tickets al mes, el SLA al 98% y una rotación de equipo por debajo del 5%. Modelamos el impacto antes de tocar la arquitectura: lectura de cargas y TCO por camino antes de mover una pieza. Gobierno dentro: ISO 20000, 27001 y ENS alto, más de 174 certificaciones Microsoft, NIS2, DORA y AI Act como procedimiento. Y cuando termina el piloto, el cliente decide si operamos nosotros o si se lo queda. Más de 3.000 clientes operados hoy y hasta un 30% menos de inversión en infraestructura con IA (datos Entelgy SmartOPS, en validación).",
+        "diferenciador": "AIOps y FinOps en producción, no en catálogo, con el gobierno regulatorio dentro y el impacto modelado antes de tocar la arquitectura.",
+        "objecion_principal": {
+          "texto": "La infraestructura la operamos nosotros y va bien.",
+          "respuesta": "Va bien hasta la renovación de Broadcom o hasta el primer incidente que se detectó tarde. No te pedimos cambiar la operación: el diagnóstico de diez días dice qué desperdicio cloud es recuperable, cuál es tu hueco NIS2/DORA y cuánto cuesta cada camino frente a VMware. El resultado es tuyo decidas lo que decidas."
+        },
+        "como_abres": "«¿Sabéis hoy qué parte de la factura cloud es desperdicio, y cuánto os va a costar renovar VMware?»",
         "primer_paso": {
-          "titulo": "Assessment de infraestructura",
-          "plazo": null,
-          "nota": "Lee continuidad, capacidad, coste y responsables con Amador antes de fijar una respuesta técnica."
+          "titulo": "Diagnóstico de infraestructura",
+          "plazo": "desde 10 días",
+          "nota": "Precio cerrado (orientativo 30–50 K€ según alcance), sin compromiso posterior, sobre el entorno real: cloud waste recuperable con cifras, hueco NIS2/DORA/AI Act, evaluación Broadcom con TCO por camino y quick wins a 90 días. Después, piloto de 90 días en el dominio de más riesgo con solape con el proveedor actual; al terminar, operación continua u obra cerrada. Alcance con Amador."
         },
         "planteamiento": "Una infraestructura crítica aporta valor cuando permite sostener el servicio y anticipar decisiones, no solo reaccionar; cloud, observabilidad, FinOps y resiliencia se conectan para gobernar mejor."
       },
@@ -127,33 +258,152 @@
         "Hay una migración, crecimiento o cambio de servicio que necesita proteger la continuidad."
       ],
       "kit": {
-        "frases_cuenta": null,
-        "pitch_por_rol": [],
-        "objeciones": [],
-        "preguntas_cualificacion": [],
-        "referencias_destacadas": [],
-        "material_interno": [],
-        "dossier_imprimible": false
+        "frases_cuenta": {
+          "nota": "Frases por dolor, sacadas del deck y de las dos piezas. Elige la que responde a lo que te han dicho.",
+          "frases": [
+            {
+              "angulo": "Por Broadcom",
+              "cuando": "si tienen VMware y renovación a la vista",
+              "texto": "Broadcom ha subido la renovación de VMware entre un 200% y un 1.500%, con cero días de aviso. El primer movimiento no es migrar, es decidir con datos: evaluamos los cinco caminos (mantener, Nutanix, Azure/Hyper-V, Proxmox, Huawei) con TCO por opción, y operamos el que elijas."
+            },
+            {
+              "angulo": "Por la factura cloud",
+              "cuando": "si el CFO pregunta por el cloud",
+              "texto": "El 29% del gasto cloud es desperdicio recuperable (Flexera, State of the Cloud 2026). FinOps va dentro de la operación diaria, no como auditoría puntual: etiquetar, redimensionar, prever y reportar en un Power BI que el CFO entiende."
+            },
+            {
+              "angulo": "Por las alertas",
+              "cuando": "si el equipo vive apagando fuegos",
+              "texto": "El 82% de las alertas no requieren acción (Forrester, 2025) y el incidente real queda enterrado. AIOps suprime el ruido, correlaciona y propone la causa raíz; el equipo se queda con lo que pide criterio."
+            },
+            {
+              "angulo": "Por la regulación",
+              "cuando": "si aparecen NIS2, DORA o el Consejo",
+              "texto": "NIS2 y DORA convierten al proveedor en perímetro auditable, y responde el firmante. Plazos 24 h / 72 h / 30 días como procedimiento documentado, ISO 20000, 27001 y ENS alto, y audit logs de cada decisión del agente para el AI Act."
+            },
+            {
+              "angulo": "Por el legacy",
+              "cuando": "si hay Windows Server 2016 o aplicaciones que frenan",
+              "texto": "Windows Server 2016 se queda sin soporte el 12 de enero de 2027. Leemos las cargas antes de mover nada: qué mover, qué modernizar, qué retener, y si la infraestructura aguanta la IA en local."
+            },
+            {
+              "angulo": "Por el miedo al lock-in",
+              "cuando": "si no quieren atarse a un operador",
+              "texto": "Al terminar el piloto decides: operamos nosotros con mejora continua, o hacemos la migración como obra cerrada y te la quedas. El proyecto termina con la entrega."
+            }
+          ],
+          "regla": "Estas frases abren y cualifican. Modernización y FinOps se hacen con partner especialista: no lo cuentes como capacidad propia hasta que Amador lo autorice. Cuando el cliente muerde, el siguiente paso es traer a Amador con el diagnóstico."
+        },
+        "pitch_por_rol": [
+          {
+            "rol": "CIO / Dir. Infraestructura",
+            "pregunta": "¿Cuándo os toca renovar VMware, y con qué precio contáis?",
+            "le_mueve": "continuidad sin sorpresas y un camino Broadcom decidido con datos."
+          },
+          {
+            "rol": "CFO",
+            "pregunta": "¿Qué parte de la factura cloud sabéis a qué servicio pertenece?",
+            "le_mueve": "FinOps dentro de la operación y TCO por camino."
+          },
+          {
+            "rol": "CISO / Compliance / Consejo",
+            "pregunta": "¿Quién responde ante NIS2 o DORA cuando el proveedor es el perímetro?",
+            "le_mueve": "plazos como procedimiento y cadena de suministro auditada."
+          },
+          {
+            "rol": "CTO",
+            "pregunta": "¿Aguanta vuestra infraestructura las cargas de IA que negocio quiere en local?",
+            "le_mueve": "lectura de cargas, GPU y latencia antes de comprar."
+          }
+        ],
+        "pitch_nota": "Se entra por el CIO; el CFO decide en FinOps y Broadcom, y Compliance o el Consejo cuando la regulación es el disparador.",
+        "objeciones": [
+          {
+            "texto": "La operamos nosotros y va bien.",
+            "respuesta": "Hasta Broadcom o hasta el incidente que se detectó tarde. El diagnóstico de diez días no toca tu operación: te dice el desperdicio cloud, el hueco NIS2/DORA y el coste de cada camino VMware."
+          },
+          {
+            "texto": "AIOps lo prometen todos.",
+            "respuesta": "Y pocos lo tienen en producción. Para Telefónica Tech tratamos 27.000 alarmas al mes con el SLA al 98%; el −82% de alertas sin acción es lo que hace la supresión de ruido en un entorno real."
+          },
+          {
+            "texto": "No queremos atarnos a un operador.",
+            "respuesta": "Por eso el modelo tiene salida: al terminar el piloto eliges operación continua u obra cerrada. Si eliges la obra, el proyecto termina con la entrega y tú mantienes el control."
+          },
+          {
+            "texto": "Ya tenemos FinOps.",
+            "respuesta": "¿Dentro de la operación diaria o como auditoría puntual? Lo que recupera dinero es etiquetar, redimensionar y prever cada mes, con accountability por servicio. El assessment lo cuantifica en días."
+          },
+          {
+            "texto": "¿Cuánto cuesta?",
+            "respuesta": "El diagnóstico tiene precio cerrado y el resultado es tuyo decidas lo que decidas. El servicio se dimensiona sobre tu inventario y tus alertas, no por horas."
+          }
+        ],
+        "preguntas_cualificacion": [
+          "¿Qué plataforma de virtualización tenéis y cuándo vence la renovación?",
+          "¿Cuánto gastáis al mes en cloud público y quién lo etiqueta?",
+          "¿Cuántas alertas recibís al día y cuántas acaban en incidente?",
+          "¿Estáis en el ámbito de NIS2, DORA o ENS?",
+          "¿Hay cargas de IA previstas en local?"
+        ],
+        "referencias_destacadas": [
+          "so-caso-telefonica-tech",
+          "smartops-case-izenpe"
+        ],
+        "material_interno": [
+          "smartops-pains-infra",
+          "smart-legacy-competition",
+          "smart-legacy-preview"
+        ],
+        "material_interno_nota": "Modernización y FinOps con partner; el criterio de aterrizaje Broadcom sigue pendiente con Amador (la campaña sin nombrarlo tuvo poca respuesta); el precio orientativo del diagnóstico (30–50 K€, deck) no se dice por escrito.",
+        "dossier_imprimible": true
       },
-      "keynotes": [],
-      "referencias": [],
+      "keynotes": [
+        {
+          "dolor": "Nos toca renovar VMware y no hay plan.",
+          "frase": "El primer movimiento no es migrar; es decidir con datos.",
+          "prueba": "Renovaciones un 200–1.500% más caras (Broadcom pricing, Q4 2024); cinco caminos con TCO por opción.",
+          "paso": "Evaluación Broadcom dentro del diagnóstico."
+        },
+        {
+          "dolor": "La factura cloud sube y nadie sabe por qué.",
+          "frase": "FinOps dentro de la operación, no como auditoría.",
+          "prueba": "El 29% del gasto cloud es desperdicio recuperable (Flexera, State of the Cloud 2026).",
+          "paso": "Cloud waste con cifras en los primeros días del assessment."
+        },
+        {
+          "dolor": "Nos enteramos del incidente cuando lo nota el usuario.",
+          "frase": "La máquina absorbe el ruido; el equipo va donde hace falta criterio.",
+          "prueba": "Telefónica Tech: 27.000 alarmas al mes en 24×7 con el SLA al 98%.",
+          "paso": "Piloto de 90 días en el dominio de más riesgo."
+        },
+        {
+          "dolor": "NIS2 y DORA me ponen a mí en el contrato.",
+          "frase": "El proveedor es perímetro auditable, y lo tratamos como procedimiento.",
+          "prueba": "ISO 20000, 27001, ENS alto; plazos 24/72 horas documentados; más de 17 años operando la plataforma de firma del Gobierno Vasco.",
+          "paso": "Hueco NIS2/DORA mapeado en el diagnóstico."
+        }
+      ],
+      "referencias": [
+        "so-caso-telefonica-tech",
+        "smartops-case-izenpe",
+        "so-caso-telefonica-global-solutions"
+      ],
       "materiales": [
-        "smartops-infra-ficha",
-        "smartops-pains-infra",
-        "smartops-infra-legacy-onepager"
+        "smartops-onepager-infra",
+        "smartops-infra",
+        "smartops-infra-ficha"
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Propuesta completa, pitch por rol, objeciones, referencias y materiales de esta solución",
+        "texto": "Lectura de Amador: juego de datos de Telefónica Tech (−40% MTTD, Foreworth), +3.000 clientes y −30% con documento, alcance real de redes, precio del diagnóstico, sign-off con MA.",
         "dueno": "Amador",
         "fecha_objetivo": "sept 2026"
       }
     }
   ],
   "material_comun": [
-    "smartops-resumen",
-    "smartops-onepager-workplace",
-    "smartops-onepager-infra"
+    "smartops-resumen"
   ],
   "propuesta_portada": "Operamos puesto de trabajo e infraestructura y respondemos del resultado, no de las horas."
 }
