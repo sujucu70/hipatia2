@@ -408,7 +408,7 @@ function materialesIndex() {
   const practicasVals = [...new Set(materiales.map((m) => m.practica))];
   const tipos = [...new Set(materiales.map((m) => m.tipo))].sort();
   const estados = ["vigente", "revisar", "pendiente"];
-  const usos = [["si", "Para cliente"], ["con_validacion", "Con validación"], ["no", "Interno"]];
+  const usos = [["si", "Para cliente"], ["con_validacion", "Con validación"]];
   const group = (dim, title, opts, checkedVal) => `<div class="filter-group"><b>${esc(title)}</b>${opts.map(([v, l]) =>
     `<label><input type="checkbox" data-filter="${esc(dim)}" value="${esc(v)}"${v === checkedVal ? " checked" : ""}> ${esc(l)}</label>`).join("")}</div>`;
   const filters = `<form class="filters" aria-label="Filtros">
@@ -418,7 +418,7 @@ function materialesIndex() {
     ${group("estado", "Estado", estados.map((e) => [e, VIG[e]]))}
   </form>`;
 
-  const cards = materiales.map((m) => `<article class="card" data-material
+  const cards = materiales.filter((m) => m.sale_al_cliente !== "no" && m.tipo !== "Archivo").map((m) => `<article class="card" data-material
       data-practica="${esc(m.practica)}" data-uso="${esc(m.sale_al_cliente)}" data-tipo="${esc(m.tipo)}" data-estado="${esc(m.estado)}"
       ${(m.sector && m.sector.length) ? `data-search="${esc(m.sector.join(" "))}"` : ""}
       style="padding:var(--space-4)">
@@ -435,7 +435,7 @@ function materialesIndex() {
   const body = `<section class="section"><div class="wrap">
     <p class="eyebrow">Catálogo</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-4)">Materiales</h1>
-    <p class="lede">Todo el material comercial, con su uso, estado y dueño a la vista. «Para cliente» viene marcado por defecto.</p>
+    <p class="lede">El material que puedes enseñar o dejar al cliente, con su uso, estado y dueño a la vista. Las guías internas de cada solución están en su «Para prepararte». «Para cliente» viene marcado por defecto.</p>
     <div style="margin-top:var(--space-5)"><input type="search" data-materials-search placeholder="Buscar materiales…" aria-label="Buscar materiales" style="width:100%;max-width:520px;font:inherit;padding:var(--space-3);border:1px solid var(--color-border-default);border-radius:var(--radius-md)"></div>
     <div class="with-aside" style="margin-top:var(--space-5)">
       <div>${filters}</div>
