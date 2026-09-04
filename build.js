@@ -107,7 +107,7 @@ function chipCitable(m) {
 const LEYENDA_CITA = "Citable en presentación · el envío formal al cliente se autoriza por cuenta.";
 function pendingBox(p, defOwner) {
   if (!p) return "";
-  const dueno = (p.dueno || defOwner || "por asignar");
+  const dueno = nombreCompleto(p.dueno || defOwner || "por asignar");
   const fecha = p.fecha_objetivo || "sin fecha";
   return `<p class="pending"><b>En preparación.</b> ${esc(p.texto || "Contenido en preparación")} · dueño: ${esc(dueno)} · fecha objetivo: ${esc(fecha)}.</p>`;
 }
@@ -116,6 +116,27 @@ function pendingBox(p, defOwner) {
 const materiales = read("materiales.json").materiales;
 const MAT = {};
 materiales.forEach((m) => (MAT[m.id] = m));
+
+// ---------- Nombre completo (revisión 14 · AS) ----------
+// personas.json es la única fuente de nombres; los JSON de datos siguen con el nombre de pila.
+// El build resuelve el completo: mapa nombre de pila → nombre (primera entrada de cada persona).
+const NOMBRE_MAP = (() => {
+  const map = {};
+  (read("personas.json").personas || []).forEach((p) => {
+    if (p.nombre) { const first = p.nombre.split(" ")[0]; if (!map[first]) map[first] = p.nombre; }
+  });
+  return map;
+})();
+function nombreCompleto(texto) {
+  if (texto == null) return texto;
+  let out = String(texto);
+  Object.keys(NOMBRE_MAP).forEach((first) => {
+    // sustituye el nombre de pila como palabra entera, salvo si ya lleva apellido detrás
+    const re = new RegExp("\\b" + first + "\\b(?!\\s+[A-ZÁÉÍÓÚÑ])", "g");
+    out = out.replace(re, NOMBRE_MAP[first]);
+  });
+  return out;
+}
 
 const MOMENTOS = [
   { key: "primer_contacto", label: "Primer contacto" },
@@ -160,7 +181,7 @@ function solucionPage(pr, s) {
     <p class="eyebrow"><a href="/practicas/${esc(pr.id)}/" style="color:inherit">${esc(pr.nombre)}</a> · Solución</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0">${esc(s.nombre)}</h1>
     <p class="lede">${esc(s.una_linea)}</p>
-    <p style="margin-top:var(--space-2);color:var(--color-text-secondary);font-size:var(--font-size-sm)">Especialista: <b>${esc(s.especialista)}</b>${s.estado === "en_preparacion" ? " · " + chipVigencia("pendiente", s.fecha_objetivo) : ""}</p>
+    <p style="margin-top:var(--space-2);color:var(--color-text-secondary);font-size:var(--font-size-sm)">Especialista: <b>${esc(nombreCompleto(s.especialista))}</b>${s.estado === "en_preparacion" ? " · " + chipVigencia("pendiente", s.fecha_objetivo) : ""}</p>
   </div></section>`;
 
   // 2 · La propuesta (qué vendemos y por qué Entelgy)
@@ -171,7 +192,7 @@ function solucionPage(pr, s) {
   propHtml += prop.por_que_nosotros
     ? filaProp("Por qué Entelgy", esc(prop.por_que_nosotros))
     : (s.estado === "en_preparacion"
-        ? filaProp("Por qué Entelgy", `<p class="pending" style="margin:0">En preparación · dueño: ${esc(s.dueno || "por asignar")} · fecha objetivo: ${esc(s.fecha_objetivo || "sin fecha")}</p>`)
+        ? filaProp("Por qué Entelgy", `<p class="pending" style="margin:0">En preparación · dueño: ${esc(nombreCompleto(s.dueno || "por asignar"))} · fecha objetivo: ${esc(s.fecha_objetivo || "sin fecha")}</p>`)
         : "");
   if (prop.diferenciador) propHtml += filaProp("El diferenciador", esc(prop.diferenciador));
   if (prop.objecion_principal) propHtml += filaProp("La objeción que más vas a oír", `<i>«${esc(prop.objecion_principal.texto)}»</i><br>${esc(prop.objecion_principal.respuesta)}`);
@@ -223,7 +244,7 @@ function solucionPage(pr, s) {
       </article>`).join("") + `</div>
       <p class="footer-note" style="margin-top:var(--space-3);color:var(--color-text-secondary)">Citable en presentación. El envío formal de la referencia al cliente se autoriza por cuenta.</p>`;
   } else {
-    refsHtml = `<p class="pending">Sin referencia autorizada para esta solución · pídesela a <b>${esc(s.especialista)}</b>.</p>`;
+    refsHtml = `<p class="pending">Sin referencia autorizada para esta solución · pídesela a <b>${esc(nombreCompleto(s.especialista))}</b>.</p>`;
   }
   body += `<section class="section"><div class="wrap">
     <h2 style="font-size:var(--font-size-2xl);margin:0 0 var(--space-4)">Referencias</h2>
@@ -259,7 +280,7 @@ function solucionPage(pr, s) {
   }
   if (kit.material_interno_nota) prep += `<p class="footer-note">${esc(kit.material_interno_nota)}</p>`;
   if (s.estado === "vigente" && s.pendiente && s.pendiente.texto) {
-    prep += `<p class="pending"><b>En revisión por el área.</b> ${esc(s.pendiente.texto)} · dueño: ${esc(s.pendiente.dueno || s.dueno || "por asignar")} · fecha objetivo: ${esc(s.pendiente.fecha_objetivo || s.fecha_objetivo || "sin fecha")}.</p>`;
+    prep += `<p class="pending"><b>En revisión por el área.</b> ${esc(s.pendiente.texto)} · dueño: ${esc(nombreCompleto(s.pendiente.dueno || s.dueno || "por asignar"))} · fecha objetivo: ${esc(s.pendiente.fecha_objetivo || s.fecha_objetivo || "sin fecha")}.</p>`;
   }
   if (!prep) prep = pendingBox(s.pendiente, s.dueno) || `<p class="pending">Material de preparación en preparación.</p>`;
   const dossierCta = (kit.dossier_imprimible)
@@ -273,7 +294,7 @@ function solucionPage(pr, s) {
   const asunto = encodeURIComponent(`Hipatia · ${pr.nombre} · ${s.nombre}: falta algo`);
   body += `<section class="section"><div class="wrap">
     <h2 style="font-size:var(--font-size-xl);margin-bottom:var(--space-2)">¿Falta algo?</h2>
-    <p>¿Echas en falta un material o una referencia para esta solución? <a class="text-link" href="mailto:?subject=${asunto}">Escríbele al responsable (${esc(s.especialista)})</a>. Nada se guarda.</p>
+    <p>¿Echas en falta un material o una referencia para esta solución? <a class="text-link" href="mailto:?subject=${asunto}">Escríbele al responsable (${esc(nombreCompleto(s.especialista))})</a>. Nada se guarda.</p>
   </div></section>`;
 
   return page({
@@ -299,7 +320,7 @@ function practicaPage(pr) {
     <p class="eyebrow">Práctica</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0">${esc(pr.nombre)}</h1>
     <p class="lede">${esc(pr.propuesta_portada || pr.propuesta)}</p>
-    <p style="margin-top:var(--space-2);color:var(--color-text-secondary);font-size:var(--font-size-sm)">Responsable: <b>${esc(pr.responsable)}</b></p>`;
+    <p style="margin-top:var(--space-2);color:var(--color-text-secondary);font-size:var(--font-size-sm)">Responsable: <b>${esc(nombreCompleto(pr.responsable))}</b></p>`;
 
   main += `<section class="section" id="que-cubre"><h2 style="font-size:var(--font-size-2xl)">Qué cubre y qué no</h2>
     <div class="grid grid-2" style="margin-top:var(--space-3)">
@@ -318,7 +339,7 @@ function practicaPage(pr) {
   const solCards = (pr.soluciones || []).map((s) => `<a class="card" style="text-decoration:none;display:block" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">
       <h3 style="font-size:var(--font-size-xl)">${esc(s.nombre)}</h3>
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin:var(--space-2) 0">${esc(s.una_linea)}</p>
-      <div class="chips">${s.estado === "vigente" ? chipVigencia("vigente", null) : chipVigencia("pendiente", s.fecha_objetivo)}<span class="chip">${esc(s.especialista)}</span></div>
+      <div class="chips">${s.estado === "vigente" ? chipVigencia("vigente", null) : chipVigencia("pendiente", s.fecha_objetivo)}<span class="chip">${esc(nombreCompleto(s.especialista))}</span></div>
     </a>`).join("");
   main += `<section class="section" id="soluciones"><h2 style="font-size:var(--font-size-2xl);margin-bottom:var(--space-4)">Soluciones</h2>
     <div class="grid grid-2">${solCards}</div></section>`;
@@ -330,7 +351,7 @@ function practicaPage(pr) {
 
   const asunto = encodeURIComponent(`Hipatia · ${pr.nombre}: consulta`);
   main += `<section class="section" id="responsable"><h2 style="font-size:var(--font-size-2xl)">A quién llamar</h2>
-    <p style="margin-top:var(--space-2)">Responsable de la práctica: <b>${esc(pr.responsable)}</b>. Cada solución lleva su especialista. <a class="text-link" href="/contactos/">Ver contactos</a>.</p>
+    <p style="margin-top:var(--space-2)">Responsable de la práctica: <b>${esc(nombreCompleto(pr.responsable))}</b>. Cada solución lleva su especialista. <a class="text-link" href="/contactos/">Ver contactos</a>.</p>
     <p style="margin-top:var(--space-3)"><a class="btn btn-cta" href="mailto:?subject=${asunto}">¿Falta algo? Escribe al responsable</a></p></section>`;
 
   main += `</div>`;
@@ -345,7 +366,7 @@ function practicasIndex(practicas) {
   const cards = practicas.map((pr) => {
     const sols = (pr.soluciones || []).map((s) => `<a class="chip" style="text-decoration:none" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">${esc(s.nombre)}</a>`).join(" ");
     return `<article class="card">
-      <p class="eyebrow">${esc(pr.orden)} · ${esc(pr.responsable)}</p>
+      <p class="eyebrow">${esc(pr.orden)} · ${esc(nombreCompleto(pr.responsable))}</p>
       <h2 style="font-size:var(--font-size-2xl);margin:var(--space-2) 0"><a style="text-decoration:none" href="/practicas/${esc(pr.id)}/">${esc(pr.nombre)}</a></h2>
       <p style="color:var(--color-text-secondary)">${esc(pr.propuesta_portada || pr.propuesta)}</p>
       <div class="chips" style="margin-top:var(--space-3)">${sols}</div>
@@ -383,7 +404,7 @@ function fichaBody(m) {
     meta += fila("Uso", chipUso(m.sale_al_cliente) + ` <span class="footer-note">${esc(m.confidencialidad || "")}</span>`);
   }
   meta += fila("Estado", chipVigencia(m.estado, m.fecha_revision));
-  meta += fila("Dueño", esc(m.dueno) + (m.mantenida_por ? ` <span class="footer-note">(${m.mantenida_por === "agente" ? "🤖 agente" : "✍️ SM"})</span>` : ""));
+  meta += fila("Dueño", esc(nombreCompleto(m.dueno)) + (m.mantenida_por ? ` <span class="footer-note">(${m.mantenida_por === "agente" ? "🤖 agente" : "✍️ SM"})</span>` : ""));
   if (m.sector && m.sector.length) meta += fila("Sector", esc(m.sector.join(" · ")));
   if (m.momento_comercial) meta += fila("Momento", esc({ primer_contacto: "Primer contacto", reunion: "En la reunión", para_dejar: "Para dejar al cliente" }[m.momento_comercial] || m.momento_comercial));
   let ref = "";
@@ -465,7 +486,7 @@ function materialCard(m) {
       <p class="eyebrow">${m.practica === "corporativo" ? esc(eyebrowTipo(m)) : esc(eyebrowTipo(m)) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
       <h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
-      <div class="chips" style="margin-top:var(--space-3)">${m.tipo === "Referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(m.dueno)}</span></div>
+      <div class="chips" style="margin-top:var(--space-3)">${m.tipo === "Referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(nombreCompleto(m.dueno))}</span></div>
       <div style="margin-top:var(--space-3);display:flex;gap:var(--space-2);flex-wrap:wrap">
         <a class="btn btn-ghost" href="/materiales/${esc(m.id)}/" data-open-modal-url="/materiales/${esc(m.id)}/" data-modal-label="${esc(m.titulo)}">Ver ficha</a>
         ${materialLink(m)}
@@ -504,7 +525,7 @@ function portadaPage(corp, practicas) {
       <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary);flex-grow:1">${esc(propuestaCorta)}</p>
       ${cajitas}
       <div style="display:flex;justify-content:space-between;align-items:center;gap:var(--space-2);padding-top:var(--space-3);border-top:1px solid var(--color-border-subtle);font-size:var(--font-size-sm);color:var(--color-text-secondary)">
-        <span>${esc(pr.responsable)}</span>${enlace}
+        <span>${esc(nombreCompleto(pr.responsable))}</span>${enlace}
       </div>
     </article>`;
   }).join("");
@@ -542,7 +563,7 @@ function portadaPage(corp, practicas) {
   function tarjetaPortada(m, pr) {
     if (!m) return `<article class="card" style="padding:var(--space-4)">
       <p class="eyebrow">${esc(pr.nombre)}</p>
-      <p class="pending" style="margin-top:var(--space-2)">Material para cliente en preparación · dueño: ${esc(pr.responsable)}.</p>
+      <p class="pending" style="margin-top:var(--space-2)">Material para cliente en preparación · dueño: ${esc(nombreCompleto(pr.responsable))}.</p>
       <p style="margin-top:var(--space-3)"><a class="text-link" href="/practicas/${esc(pr.id)}/">Ver la práctica →</a></p>
     </article>`;
     // 2 chips (uso + vigencia); sin chip «enlace pendiente» en tarjeta (solo en la ficha).
@@ -616,7 +637,7 @@ function puntoPartidaPage(corp) {
 }
 function loQueVienePage(corp) {
   const lv = corp.lo_que_viene || {};
-  const items = (lv.items || []).map((i) => `<article class="card"><div class="chips" style="margin-bottom:var(--space-2)">${chipVigencia("pendiente", null)}</div><h3 style="font-size:var(--font-size-xl)">${esc(i.titulo)}</h3><p style="margin:var(--space-2) 0;color:var(--color-text-secondary);font-size:var(--font-size-sm)">${esc(i.texto)}</p><p class="footer-note">Dueño: ${esc(i.dueno)}</p></article>`).join("");
+  const items = (lv.items || []).map((i) => `<article class="card"><div class="chips" style="margin-bottom:var(--space-2)">${chipVigencia("pendiente", null)}</div><h3 style="font-size:var(--font-size-xl)">${esc(i.titulo)}</h3><p style="margin:var(--space-2) 0;color:var(--color-text-secondary);font-size:var(--font-size-sm)">${esc(i.texto)}</p><p class="footer-note">Dueño: ${esc(nombreCompleto(i.dueno))}</p></article>`).join("");
   const body = `<section class="section"><div class="wrap">
     <p class="eyebrow">Hoja de ruta</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-3)">Lo que viene</h1>
