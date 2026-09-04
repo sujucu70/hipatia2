@@ -35,9 +35,9 @@
     }
   ],
   "discovery": [
-    "¿Qué decisión importante sigue dependiendo de datos tardíos, dispersos o poco fiables?",
-    "¿Cuántas iniciativas de IA tenéis en marcha y cuántas han llegado de verdad a producción?",
-    "¿Quién responde hoy por la calidad, el acceso y el uso de un dato crítico?"
+    "¿Qué decisión tomáis hoy sin fiaros del todo del dato que tenéis?",
+    "¿Existe un catálogo del dato y quién es dueño de cada dominio?",
+    "¿Cuántos modelos o iniciativas de IA tenéis en producción, y quién los inventaría para el AI Act?"
   ],
   "primer_avance": {
     "titulo": "Servicio gestionado de gobierno del dato",

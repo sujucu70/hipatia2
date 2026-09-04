@@ -334,7 +334,8 @@ function practicaPage(pr) {
   main += `<section class="section" id="capacidades"><h2 style="font-size:var(--font-size-2xl);margin-bottom:var(--space-4)">Capacidades</h2>
     <div class="grid grid-2">${caps}</div>
     ${pa.titulo ? `<p style="margin-top:var(--space-4)"><b>Primer avance:</b> ${esc(pa.titulo)}${pa.plazo ? " · " + esc(pa.plazo) : ""}. ${esc(pa.nota || "")}</p>` : ""}
-    ${pr.capacidades_nota ? `<p class="footer-note" style="margin-top:var(--space-3);color:var(--color-text-secondary)">${esc(pr.capacidades_nota)}</p>` : ""}</section>`;
+    ${pr.capacidades_nota ? `<p class="footer-note" style="margin-top:var(--space-3);color:var(--color-text-secondary)">${esc(pr.capacidades_nota)}</p>` : ""}
+    ${(pr.discovery && pr.discovery.length) ? `<details class="fold" style="margin-top:var(--space-4)"><summary>Tres preguntas para abrir</summary><div class="fold-body"><p class="footer-note">Señales para escuchar, no un guion.</p><ul>${pr.discovery.map((q) => `<li>${esc(q)}</li>`).join("")}</ul></div></details>` : ""}</section>`;
 
   const solCards = (pr.soluciones || []).map((s) => `<a class="card" style="text-decoration:none;display:block" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">
       <h3 style="font-size:var(--font-size-xl)">${esc(s.nombre)}</h3>
@@ -599,24 +600,92 @@ function portadaPage(corp, practicas) {
 // =====================================================================
 // RELATO CORPORATIVO (/entelgy)
 // =====================================================================
-function entelgyPage(corp) {
+function entelgyPage(corp, practicas) {
   const r = corp.relato || {};
+  const pq = r.por_que || {};
+  const sectionHead = (eyebrow, h2, nota) => `<div class="section-head">
+    <div>${eyebrow ? `<p class="eyebrow">${esc(eyebrow)}</p>` : ""}<h2 style="font-size:var(--font-size-2xl);margin-top:var(--space-1)">${esc(h2)}</h2></div>
+    ${nota ? `<p class="footer-note">${esc(nota)}</p>` : ""}</div>`;
+
+  // Por qué Entelgy (banda slate + tres diferenciadores)
+  const pilares = (pq.pilares || []).map((p) => `<span class="chip">${esc(p)}</span>`).join("");
+  const difs = (pq.diferenciadores || []).map((d) => `<article class="card card-num"><p class="num">${esc(d.num)}</p><h3 style="font-size:var(--font-size-xl);margin:var(--space-2) 0">${esc(d.titulo)}</h3><p style="color:var(--color-text-secondary);font-size:var(--font-size-sm)">${esc(d.texto)}</p></article>`).join("");
+  const porQue = pq.linea ? `<section class="section">
+    <div class="band band-slate"><div class="wrap">
+      <p class="eyebrow">Por qué Entelgy</p>
+      <p class="h" style="font-family:var(--font-family-display);font-size:var(--font-size-3xl);line-height:1.05;margin:var(--space-2) 0 var(--space-3);max-width:24ch">${esc(pq.linea)}</p>
+      <p style="max-width:62ch">${esc(pq.texto)}</p>
+      <div class="chips" style="margin-top:var(--space-3)">${pilares}</div>
+    </div></div>
+    <div class="grid grid-3" style="margin-top:var(--space-4)">${difs}</div>
+  </section>` : "";
+
+  // Cuatro entradas
   const entradas = (r.entradas || []).map((e) => `<article class="card"><p class="eyebrow">${esc(e.eyebrow)}</p><h3 style="font-size:var(--font-size-xl);margin:var(--space-2) 0">${esc(e.titulo)}</h3><p style="color:var(--color-text-secondary);font-size:var(--font-size-sm)">${esc(e.texto)}</p></article>`).join("");
-  const metodo = (r.metodo && r.metodo.pasos || []).map((p) => `<article class="card"><p class="eyebrow">${esc(p.paso)}</p><h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)">${esc(p.titulo)}</h4><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(p.texto)}</p></article>`).join("");
-  const otg = r.otg ? `<section class="section"><h2 style="font-size:var(--font-size-2xl)">${esc(r.otg.titulo)}</h2><p class="lede" style="margin:var(--space-2) 0 var(--space-4)">${esc(r.otg.texto)}</p><div class="grid grid-3">${(r.otg.fases || []).map((f) => `<article class="card"><p class="eyebrow">${esc(f.paso)}</p><h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)">${esc(f.titulo)}</h4><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(f.texto)}</p></article>`).join("")}</div></section>` : "";
-  const body = `<section class="section"><div class="wrap">
+
+  // El método (Evita separado, en mono)
+  const metodo = (r.metodo && r.metodo.pasos || []).map((p) => {
+    const idx = p.texto.indexOf("Evita:");
+    const main = idx >= 0 ? p.texto.slice(0, idx).trim() : p.texto;
+    const evita = idx >= 0 ? p.texto.slice(idx).trim() : "";
+    return `<article class="card card-num"><p class="num">${esc(p.paso)}</p><h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)">${esc(p.titulo)}</h4><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(main)}</p>${evita ? `<p class="evita">${esc(evita)}</p>` : ""}</article>`;
+  }).join("");
+
+  // Dónde entramos (banda navy · cinco prácticas)
+  const de = r.donde_entramos || {};
+  const cols = (practicas || []).map((pr) => {
+    const dest = pr.id === "data-intelligence" ? `/practicas/data-intelligence/data-intelligence/` : `/practicas/${esc(pr.id)}/`;
+    return `<article class="card sol-nav"><p class="num">${esc(pr.orden)}</p><h3 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)">${esc(pr.nombre)}</h3><p style="font-size:var(--font-size-sm)">${esc(pr.propuesta_portada || pr.propuesta)}</p><p class="footer-note" style="margin-top:var(--space-2)">${esc(nombreCompleto(pr.responsable))}</p><a class="text-link" href="${dest}">Ver práctica →</a></article>`;
+  }).join("");
+  const donde = de.titulo ? `<section class="section band band-navy"><div class="wrap">
+    ${sectionHead("Dónde entramos", de.titulo, de.texto)}
+    <div class="grid grid-5" style="margin-top:var(--space-4)">${cols}</div>
+  </div></section>` : "";
+
+  // La Oficina
+  const otg = r.otg ? `<section class="section">
+    <h2 style="font-size:var(--font-size-2xl)">${esc(r.otg.titulo)}</h2>
+    <p class="lede" style="margin:var(--space-2) 0 var(--space-4)">${esc(r.otg.texto)}</p>
+    <ol class="fases">${(r.otg.fases || []).map((f) => `<li><b>${esc(f.titulo)}</b> — ${esc(f.texto)}</li>`).join("")}</ol>
+    ${r.otg.funciones ? `<p class="footer-note" style="margin-top:var(--space-3)">${esc(r.otg.funciones)}</p>` : ""}
+  </section>` : "";
+
+  // Pruebas (plegado)
+  const pr2 = r.pruebas || {};
+  const pruebas = pr2.titulo ? `<section class="section"><details class="fold"><summary>${esc(pr2.titulo)}</summary><div class="fold-body">
+    <p class="footer-note">${esc(pr2.nota || "")}</p>
+    <div class="grid grid-2">${(pr2.quienes || []).map((q) => `<p><b style="font-size:var(--font-size-2xl)">${esc(q.cifra)}</b> ${esc(q.texto)}</p>`).join("")}</div>
+    <p style="margin-top:var(--space-3)"><b>Certificaciones.</b> ${esc(pr2.certificaciones || "")}</p>
+    <div style="margin-top:var(--space-3)">${(pr2.sectores || []).map((s) => `<p style="margin-top:var(--space-2)"><b>${esc(s.nombre)}.</b> ${esc(s.texto)}</p>`).join("")}</div>
+    <p class="footer-note" style="margin-top:var(--space-3)">${esc(pr2.regla || "")} · Fuente: ${esc(pr2.fuente || "")}</p>
+  </div></details></section>` : "";
+
+  // Cuando el relato necesita una pieza
+  const mat = r.material || {};
+  const matCards = (mat.ids || []).map((id, i) => MAT[id] ? `<div class="${i === 0 ? "card-featured" : ""}">${materialCard(MAT[id])}</div>` : "").join("");
+  const material = (mat.ids && mat.ids.length) ? `<section class="section">
+    <p class="eyebrow">${esc(mat.eyebrow || "")}</p>
+    <div class="grid grid-2" style="margin-top:var(--space-3)">${matCards}</div>
+  </section>` : "";
+
+  const body = `<section class="section hero"><div class="wrap">
     <p class="eyebrow">Cómo presentar Entelgy</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0">Entelgy, en una conversación</h1>
     <p class="lede">${esc(r.sesenta_segundos || corp.entelgy_una_frase)}</p>
-
-    <section class="section"><p class="eyebrow">Cuatro entradas al mismo relato</p><div class="grid grid-2" style="margin-top:var(--space-3)">${entradas}</div></section>
-
-    <section class="section"><h2 style="font-size:var(--font-size-2xl);margin-bottom:var(--space-2)">El método</h2>
-      <p class="footer-note" style="margin-bottom:var(--space-4)">${esc(r.metodo && r.metodo.nota || "")} Transversal: ${esc((r.metodo && r.metodo.transversal || []).join(" · "))}.</p>
-      <div class="grid grid-5">${metodo}</div></section>
-
+  </div></section>
+  <div class="wrap">
+    ${porQue}
+    <section class="section">${sectionHead("Cuatro entradas al mismo relato", "Empieza por la pregunta que tienes delante.", "No son cuatro respuestas desconectadas ni un guion: son cuatro formas naturales de entrar en la misma propuesta.")}
+      <div class="grid grid-2" style="margin-top:var(--space-3)">${entradas}</div></section>
+    <section class="section">${sectionHead("El método", "Cada fase evita una forma conocida de perder el impacto.", (r.metodo && r.metodo.nota || "") + " Transversal: " + (r.metodo && r.metodo.transversal || []).join(" · ") + ".")}
+      <div class="grid grid-5" style="margin-top:var(--space-4)">${metodo}</div></section>
+  </div>
+  ${donde}
+  <div class="wrap">
     ${otg}
-  </div></section>`;
+    ${pruebas}
+    ${material}
+  </div>`;
   return page({ title: "Cómo presentar Entelgy · Hipatia", desc: r.sesenta_segundos, active: "entelgy", body });
 }
 
@@ -693,7 +762,7 @@ function build() {
   const personas = read("personas.json").personas;
   const practicas = PRACTICAS.map((id) => read(id + ".json"));
   write("", portadaPage(corp, practicas));
-  write("entelgy", entelgyPage(corp));
+  write("entelgy", entelgyPage(corp, practicas));
   write("punto-de-partida", puntoPartidaPage(corp));
   write("lo-que-viene", loQueVienePage(corp));
   write("contactos", contactosPage(practicas, personas));

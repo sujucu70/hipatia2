@@ -84,6 +84,84 @@
           "titulo": "Transferencia",
           "texto": "Se la devolvemos al equipo del cliente, función a función."
         }
+      ],
+      "funciones": "Funciones que puede asumir: PMO/SMO, arquitectura, auditoría, apoyo CISO, agilidad, QMO, productividad, FinOps."
+    },
+    "por_que": {
+      "linea": "Desplegar tecnología es fácil. Que mueva tu cuenta de resultados, no.",
+      "texto": "El impacto se pierde cuando la solución no encaja con el proceso que debe mejorar, con la gente que tiene que usarla o con la cultura que debe sostenerla. Entelgy trabaja los cuatro a la vez.",
+      "pilares": [
+        "Tecnología",
+        "Procesos",
+        "Personas",
+        "Cultura"
+      ],
+      "diferenciadores": [
+        {
+          "num": "01",
+          "titulo": "Organizaciones en marcha",
+          "texto": "Trabajamos donde el cambio tiene que funcionar mientras el negocio sigue: continuidad, regulación y operación no esperan al final del proyecto."
+        },
+        {
+          "num": "02",
+          "titulo": "Las cuatro variables",
+          "texto": "Tecnología cruzada con procesos, personas y cultura. Adopción, rediseño y gobierno no son añadidos: forman parte de lo que se diseña y se lleva a producción."
+        },
+        {
+          "num": "03",
+          "titulo": "Respondemos del resultado",
+          "texto": "Nos comprometemos con el impacto, no solo con la entrega: menos coste de operar, productividad real, riesgo bajo control y valor que se queda cuando el proyecto termina."
+        }
+      ]
+    },
+    "donde_entramos": {
+      "titulo": "El método es común; la puerta depende de lo que tenga delante el cliente.",
+      "texto": "Cinco prácticas, una sola forma de trabajar. Entra por la que responde al problema que tiene delante."
+    },
+    "pruebas": {
+      "titulo": "Pruebas, para cuando hagan falta",
+      "nota": "Estos datos sostienen el relato; no lo abren.",
+      "quienes": [
+        {
+          "cifra": "20+",
+          "texto": "años en organizaciones complejas y entornos críticos"
+        },
+        {
+          "cifra": "2.000",
+          "texto": "profesionales de delivery en España, Latinoamérica y Estados Unidos"
+        },
+        {
+          "cifra": "100%",
+          "texto": "capital propio: no respondemos a ningún fabricante"
+        },
+        {
+          "cifra": ">95%",
+          "texto": "de los clientes renueva"
+        }
+      ],
+      "certificaciones": "ISO 27001 · ISO 27701 · ENS Alto · SOC 2",
+      "fuente": "Executive Deck v6 (jul 2026)",
+      "sectores": [
+        {
+          "nombre": "Financiero",
+          "texto": "Banca, seguros y mercados: procesos críticos, regulación (DORA) y cores que no se pueden parar."
+        },
+        {
+          "nombre": "Sector público",
+          "texto": "Administración y educación: continuidad, ENS y transparencia sobre sistemas que deciden sobre personas."
+        },
+        {
+          "nombre": "Gran empresa y corporación",
+          "texto": "Industria, telco, energía y retail."
+        }
+      ],
+      "regla": "Los clientes se nombran cuando su ficha de referencia lo autoriza."
+    },
+    "material": {
+      "eyebrow": "Cuando el relato necesita una pieza",
+      "ids": [
+        "corp-exec-global",
+        "corp-exec-latam"
       ]
     }
   },
