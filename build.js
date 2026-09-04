@@ -31,7 +31,7 @@ function header(active) {
   return `<a class="visually-hidden" href="#main">Saltar al contenido</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/assets/entelgy-logo-white.png" alt="Entelgy"><b>Hipatia</b></a>
+    <a class="brand" href="/"><img src="/assets/entelgy-logo-white.png" alt="Entelgy"><span class="brand-div" aria-hidden="true"></span><span class="brand-name"><b>Hipatia</b><span class="brand-sub">Habilitación comercial</span></span></a>
     <button class="btn btn-ghost menu-toggle" data-menu-toggle aria-expanded="false" aria-label="Menú">Menú</button>
     <nav class="nav" aria-label="Principal">
       ${item("/", "inicio", "Inicio")}
@@ -644,8 +644,8 @@ function materialCard(m) {
   const ds = esc([(m.sector || []).join(" "), m.subtipo || ""].filter(Boolean).join(" "));
   return `<article class="card lib" data-material data-practica="${esc(m.practica)}" data-uso="${esc(m.sale_al_cliente)}" data-tipo="${esc(m.tipo)}" data-estado="${esc(m.estado)}"${ds ? ` data-search="${ds}"` : ""}>
       <p class="eyebrow">${m.practica === "corporativo" ? esc(eyebrowTipo(m)) : esc(eyebrowTipo(m)) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
-      <h3 style="font-size:var(--font-size-2xl);line-height:1.08;margin:var(--space-1) 0 var(--space-2)"><a style="text-decoration:none" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
-      <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(m.nota_de_uso || "")}</p>
+      <h3><a href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
+      <p>${esc(m.nota_de_uso || "")}</p>
       <div class="ed-mat-foot"><div class="chips">${m.tipo === "Referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(nombreCompleto(m.dueno))}</span></div><span>${descargasMini(m)}<a class="ver-ficha" href="/materiales/${esc(m.id)}/">Ver ficha →</a></span></div>
     </article>`;
 }
@@ -664,24 +664,33 @@ function portadaPage(corp, practicas) {
     <a class="btn btn-cta hero-cta" href="/entelgy/">Cómo presentar Entelgy →</a>
   </div></section>`;
 
-  // La oferta · tira de prácticas sobre banda navy (cajas de solución que envuelven el texto)
-  const cols = practicas.map((pr) => {
+  // La oferta · maestro-detalle: lista de prácticas (claro) + panel navy con la pregunta.
+  // Interacción sin JS: radios + CSS (:checked). Por defecto, la primera práctica.
+  const respDe = (pr) => [].concat(pr.responsable_id || []).map((id) => (personaPorId(id) || {}).nombre).filter(Boolean).map((n) => n.split(" ")[0]);
+  const radios = practicas.map((pr, i) => `<input class="of-radio" type="radio" name="oferta" id="of-${i}"${i === 0 ? " checked" : ""}>`).join("");
+  const filas = practicas.map((pr, i) => {
+    const resp = respDe(pr);
+    return `<label class="of-row" for="of-${i}"><span class="of-n">${String(i + 1).padStart(2, "0")}</span><span class="of-name">${esc(pr.nombre)}</span>${resp.length ? `<span class="of-resp">${esc(resp.join(" · "))}</span>` : ""}</label>`;
+  }).join("");
+  const paneles = practicas.map((pr) => {
+    const resp = respDe(pr);
     const solUnica = (pr.soluciones || []).length === 1 && pr.soluciones[0].es_solucion_unica;
     const dest = solUnica ? `/practicas/${esc(pr.id)}/${esc(pr.soluciones[0].id)}/` : `/practicas/${esc(pr.id)}/`;
-    const boxes = solUnica
-      ? `<div class="sol-boxes"><a class="sol-box" href="${dest}">Data Intelligence · una sola solución</a></div>`
-      : `<div class="sol-boxes">${(pr.soluciones || []).map((s) => `<a class="sol-box" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">${esc(s.nombre)}</a>`).join("")}</div>`;
-    return `<article class="sol-nav"><p class="num">${esc(pr.orden)}</p>
-      <h3>${esc(pr.nombre)}</h3>
-      <p>${esc(pr.propuesta_portada || pr.propuesta)}</p>
-      ${boxes}
-      <div class="sol-nav-foot"><span class="footer-note">${esc(nombreCompleto(pr.responsable))}</span><a class="text-link" href="${dest}">${solUnica ? "Ver la solución →" : "Ver práctica →"}</a></div>
-    </article>`;
+    const boxes = (pr.soluciones || []).map((s) => `<a class="sol-box" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">${esc(s.nombre)}</a>`).join("");
+    return `<article class="of-panel">
+        <p class="eyebrow">${esc([...resp, "Práctica"].join(" · "))}</p>
+        <h3 class="of-h">${esc(pr.nombre)}</h3>
+        <p class="of-desc">${esc(pr.propuesta_portada || pr.propuesta)}</p>
+        ${pr.pregunta_comun ? `<p class="of-pregunta">«${esc(pr.pregunta_comun)}»</p>` : ""}
+        <div class="of-foot"><div class="sol-boxes">${boxes}</div><a class="btn btn-cta" href="${dest}">${solUnica ? "Abrir la solución →" : "Abrir práctica →"}</a></div>
+      </article>`;
   }).join("");
-  const oferta = `<section class="section band band-navy oferta" style="padding:48px 0"><div class="wrap">
-      ${sectionHead("La oferta", "Cinco prácticas. Entra por la que necesite tu cliente.", "Entra en la práctica o directamente en una de sus soluciones.")}
-      <div class="grid grid-5 tira" style="margin-top:var(--space-5)">${cols}</div>
+  const oferta = `<section class="section oferta" style="padding:48px 0"><div class="wrap">
+      ${sectionHead("La oferta", "Cinco prácticas. Una forma de elegir por dónde empezar.", "No es un recorrido obligatorio ni un catálogo de silos. Parte de la necesidad y entra por la práctica que puede trabajarla.")}
+      <div class="oferta-md" style="margin-top:var(--space-5)">${radios}<div class="of-list">${filas}</div><div class="of-panels">${paneles}</div></div>
     </div></section>`;
+  // separador entre «La oferta» y «Materiales» (mosaico de píxeles de la marca)
+  const separador = `<div class="wrap"><div class="separador" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div></div>`;
 
   // Regla de portada (§6.3 · rev 5): una pieza por práctica + el deck corporativo.
   // Pieza = sale al cliente, vigente, no referencia; momento «reunión» preferente; a
@@ -734,7 +743,7 @@ function portadaPage(corp, practicas) {
     <p style="margin-top:var(--space-5)"><a class="text-link" href="/materiales/">Ver todos los materiales →</a></p>
   </section></div>`;
 
-  const body = band + oferta + material;
+  const body = band + oferta + separador + material;
   return page({ title: "Hipatia · Catálogo comercial de Entelgy", desc: "Qué vende Entelgy en cada práctica y qué puedes enseñar o enviar a un cliente.", active: "inicio", body });
 }
 
