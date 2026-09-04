@@ -895,7 +895,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "reunion",
-      "nota_de_uso": "Deck de Digital Change para la reunión introductoria: el oficio de adopción y los tres productos, IAbility, PreservIA y OGH-IA.",
+      "nota_de_uso": "Deck de Comité de 11 láminas: el oficio, las cuatro fugas, prêt-à-porter, un reto y una solución por lámina, urgencia del AI Act, por qué Entelgy y cierre. Ojo: lleva 150/9 (las piezas dicen 151/15/9), Bahía de Bizkaia sin firma y una cifra de MAPFRE (−82%) que no está en la ficha.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/decks/digital-change-deck.html",
       "origen": "ia-digital-change/decks/digital-change-deck.html"
     },
@@ -917,7 +917,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "primer_contacto",
-      "nota_de_uso": "Una cara para abrir una primera reunión: qué es IAbility y qué cambia en la gente que lo usa.",
+      "nota_de_uso": "Una cara para abrir la puerta al CFO o a negocio: la factura que no rinde, el uso sin gobierno, el marco SER, las cuatro fases y dos pruebas (Entelgy en casa, Admiral). Cierra en conversación de 30 minutos. Admiral va con nombre: úsalo cuando la cuenta lo permita. Lleva el hueco [contacto Entelgy].",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/onepager-iability.html",
       "origen": "ia-digital-change/fichas/onepager-iability.html"
     },
@@ -939,7 +939,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye IAbility y cómo se contrata.",
+      "nota_de_uso": "Dos caras para dejar a IT, seguridad y compras: las cuatro fases con lo que te llevas de cada una, qué gana el negocio, por qué creernos, y seguridad y cumplimiento con el art. 4 explicado. Sin precio. Cierra en diagnóstico. Dice «Oficina de Gobierno de la IA» en dos sitios; el nombre bueno es Gobernanza Humana.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/Ficha_IAbility.html",
       "origen": "ia-digital-change/fichas/Ficha_IAbility.html"
     },
@@ -961,7 +961,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "primer_contacto",
-      "nota_de_uso": "Una cara para abrir una primera reunión en una administración: PreservIA contado para el sector público.",
+      "nota_de_uso": "Una cara para abrir la puerta: la misma pieza en dos versiones, banca y seguros (40% senior en 2030) y sector público (43.000 funcionarios se jubilan en cinco años), con MAPFRE como prueba y cierre en 30 minutos. Elige la del sector de la cuenta; el resto es igual.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/PreservIA-onepager-sectorpublico.html",
       "origen": "ia-digital-change/fichas/PreservIA-onepager-sectorpublico.html"
     },
@@ -983,7 +983,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "primer_contacto",
-      "nota_de_uso": "Una cara para abrir una primera reunión en una empresa: PreservIA contado para el sector privado.",
+      "nota_de_uso": "Una cara para abrir la puerta: la misma pieza en dos versiones, banca y seguros (40% senior en 2030) y sector público (43.000 funcionarios se jubilan en cinco años), con MAPFRE como prueba y cierre en 30 minutos. Elige la del sector de la cuenta; el resto es igual.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/PreservIA-onepager-sectorprivado.html",
       "origen": "ia-digital-change/fichas/PreservIA-onepager-sectorprivado.html"
     },
@@ -1005,7 +1005,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye PreservIA y cómo se contrata. Se deja tras la primera visita.",
+      "nota_de_uso": "Dos caras para dejar a operaciones, IT y compras: qué es, las tres fases con su resultado, MAPFRE con cifras, el piloto detallado (alcance, qué necesitamos, cómo se mide, precio) e integración y seguridad. Cierra en diseñar el piloto. Lleva el precio del piloto: úsala sabiendo que es el importe que va a leer compras.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/Ficha_PreservIA_standalone.html",
       "origen": "ia-digital-change/fichas/Ficha_PreservIA_standalone.html"
     },
@@ -1027,7 +1027,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "primer_contacto",
-      "nota_de_uso": "Una cara para abrir una primera reunión: qué decide una Oficina de Gobernanza Humana de la IA y por qué hace falta.",
+      "nota_de_uso": "Una cara para Dirección, Legal o el CISO: lo que ya está pasando, el coste de esperar (fechas del AI Act, sanciones, BOSCO), cómo se gobierna en tres capas y por qué Entelgy. Cierra en 30 minutos. Sin caso de cliente: la prueba es la autoaplicación.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/OnePager_OGH-IA.html",
       "origen": "ia-digital-change/fichas/OnePager_OGH-IA.html"
     },
@@ -1049,7 +1049,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye la Oficina de Gobernanza Humana de la IA y cómo se contrata.",
+      "nota_de_uso": "Dos caras para dejar a Legal, Compliance, IT y compras: qué es y qué no es, el modelo en tres capas, qué gana el negocio, tres formas de entrar, por qué creernos y el AI Act por fases con las sanciones. Sin precio ni plazo: el modelo es flexible hasta que Alfredo cierre el arranque. Cierra en diagnóstico.",
       "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/Ficha_OGH-IA.html",
       "origen": "ia-digital-change/fichas/Ficha_OGH-IA.html"
     },
@@ -2661,6 +2661,122 @@
       "url_documento": null,
       "origen": "digital-workplace/mapa-pains.html",
       "nota_de_uso": "Guía de discovery interna (30-abr, 22 pains), gemela de la de Infraestructura. Para preparar, no sale al cliente."
+    },
+    {
+      "tipo": "referencia",
+      "zona": "referencias",
+      "confidencialidad": "interno",
+      "audiencia": "Comercial",
+      "estado": "vigente",
+      "fecha_revision": "sep 2026",
+      "mantenida_por": "sm",
+      "dueno": "Alfredo",
+      "momento_comercial": "Aportar prueba",
+      "url_documento": null,
+      "origen": "docs/contenido-v3-digital-change.md",
+      "practica": "digital-change",
+      "id": "dc-caso-entelgy-labs",
+      "titulo": "Entelgy · IAbility en su propia casa",
+      "solucion": "iability",
+      "sale_al_cliente": "si",
+      "citable": "citable",
+      "sign_off": {
+        "quien": "Alfredo Zurdo",
+        "fecha": "2026-07-09"
+      },
+      "sector": [],
+      "contexto": "Entelgy pasó su plantilla por el programa antes de venderlo: cinco células de innovación con más de 30 personas.",
+      "que_hicimos": "Las cuatro fases sobre la propia organización, con Labs por área.",
+      "resultado": "151 ideas generadas, 15 casos de uso priorizados, 9 prototipos funcionales, y la base del comité de gobernanza de IA de la compañía, por el que pasan consejeros y directivos.",
+      "frase_reunion": "Lo que te proponemos ya lo hemos hecho en nuestra casa: 151 ideas, 9 prototipos en producción y un comité de gobernanza que funciona. No eres el experimento.",
+      "nota_de_uso": "Reconciliar 151/15/9 (ficha) con 150/9 (deck) antes de usarlo por escrito."
+    },
+    {
+      "tipo": "referencia",
+      "zona": "referencias",
+      "confidencialidad": "interno",
+      "audiencia": "Comercial",
+      "estado": "vigente",
+      "fecha_revision": "sep 2026",
+      "mantenida_por": "sm",
+      "dueno": "Alfredo",
+      "momento_comercial": "Aportar prueba",
+      "url_documento": null,
+      "origen": "docs/contenido-v3-digital-change.md",
+      "practica": "digital-change",
+      "id": "dc-caso-admiral",
+      "titulo": "Admiral Europe Tech · Labs en equipos de desarrollo",
+      "solucion": "iability",
+      "sale_al_cliente": "con_validacion",
+      "citable": "confirmar_por_cuenta",
+      "sign_off": null,
+      "sector": [
+        "Seguros"
+      ],
+      "contexto": "Aseguradora que integra IA, GitHub Copilot incluido, en sus equipos de desarrollo.",
+      "que_hicimos": "IAbility Labs en 12 equipos, con métrica híbrida: análisis de código para ver qué cambió en el producto y evaluación ADKAR para ver si la gente cambió con él.",
+      "resultado": "Premios Computing 2025, IA y productividad. El porcentaje de productividad no es público.",
+      "frase_reunion": "En Admiral medimos dos cosas a la vez: el código dice qué cambió en el producto y ADKAR, si la gente cambió con él. Doce equipos, y un premio Computing.",
+      "nota_de_uso": "Con nombre en ficha y one-pager, pero sin autorización escrita registrada. Confirmar con Alfredo antes de citarlo fuera de la reunión."
+    },
+    {
+      "tipo": "referencia",
+      "zona": "referencias",
+      "confidencialidad": "interno",
+      "audiencia": "Comercial",
+      "estado": "pendiente",
+      "fecha_revision": "sep 2026",
+      "mantenida_por": "sm",
+      "dueno": "Alfredo",
+      "momento_comercial": "Aportar prueba",
+      "url_documento": null,
+      "origen": "docs/contenido-v3-digital-change.md",
+      "practica": "digital-change",
+      "id": "dc-caso-bahia-bizkaia",
+      "titulo": "Bahía de Bizkaia Electricidad · Primera referencia de IAbility",
+      "solucion": "iability",
+      "sale_al_cliente": "no",
+      "citable": "confirmar_por_cuenta",
+      "sign_off": null,
+      "sector": [
+        "Energía"
+      ],
+      "contexto": null,
+      "que_hicimos": null,
+      "resultado": null,
+      "frase_reunion": null,
+      "nota_de_uso": "Pendiente del modelo de consentimiento (Marketing). Sin texto hasta la firma."
+    },
+    {
+      "tipo": "referencia",
+      "zona": "referencias",
+      "confidencialidad": "interno",
+      "audiencia": "Comercial",
+      "estado": "vigente",
+      "fecha_revision": "sep 2026",
+      "mantenida_por": "sm",
+      "dueno": "Alfredo",
+      "momento_comercial": "Aportar prueba",
+      "url_documento": null,
+      "origen": "docs/contenido-v3-digital-change.md",
+      "practica": "digital-change",
+      "id": "dc-caso-mapfre",
+      "titulo": "MAPFRE · Conocimiento puesto donde se trabaja",
+      "solucion": "preservia",
+      "sale_al_cliente": "si",
+      "citable": "citable",
+      "sign_off": {
+        "quien": "Alfredo Zurdo",
+        "fecha": "2026-07-08"
+      },
+      "sector": [
+        "Seguros"
+      ],
+      "contexto": "Más de 15.000 puestos, un equipo de soporte funcional de 50 personas y 3.500 tickets al mes de preguntas sobre cómo se hacen las cosas.",
+      "que_hicimos": "Conocimiento capturado y activado en el puesto: el empleado recibe el procedimiento y la respuesta sin salir de la pantalla en la que trabaja (fase de activación de PreservIA).",
+      "resultado": "3.500 tickets de soporte menos al mes; apertura de incidencia de 5:30 a 1 minuto; 45 € de ahorro estimado por ticket; 71% de recurrencia de usuarios activos. Premio Computing 2021.",
+      "frase_reunion": "En MAPFRE, con 15.000 puestos, el conocimiento puesto en la pantalla evitó 3.500 tickets al mes y la apertura de una incidencia pasó de cinco minutos y medio a uno. Lo dice MAPFRE: «sin salir de la pantalla en la que trabajamos».",
+      "nota_de_uso": "Única referencia autorizada del área; se cuenta una sola vez, bajo PreservIA. En Smart Operations el mismo caso se cuenta como SmartHelp: un solo juego de cifras para las dos prácticas."
     }
   ]
 }

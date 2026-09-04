@@ -12,12 +12,18 @@
 | **modernizacion** · Material: Presentación técnica · Spec-Driven | Jorge | sept 2026 |
 | **modernizacion** · Material: Business case tipo · Modernización | Jorge / producto | sept 2026 |
 
+## Digital Change
+
+| Qué falta | Dueño | Fecha objetivo |
+|---|---|---|
+| **iability** · Material: Bahía de Bizkaia Electricidad · Primera referencia de IAbility | Alfredo | sept 2026 |
+
 ---
 
 ## Resumen
 
 - Errores duros: **0**
 - Avisos: **70**
-- Pendientes registrados: **3**
+- Pendientes registrados: **4**
 
 Modernización (Software Development) es la única solución con contenido íntegro validado (tarjeta, 6 casos con sign-off jul 2026, materiales por momento, «para prepararte»). El resto muestra su propuesta auditada del Executive Deck y marca casos y materiales «en preparación».
