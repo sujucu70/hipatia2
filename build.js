@@ -555,7 +555,7 @@ function entelgyPage(corp) {
   const metodo = (r.metodo && r.metodo.pasos || []).map((p) => `<article class="card"><p class="eyebrow">${esc(p.paso)}</p><h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)">${esc(p.titulo)}</h4><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(p.texto)}</p></article>`).join("");
   const otg = r.otg ? `<section class="section"><h2 style="font-size:var(--font-size-2xl)">${esc(r.otg.titulo)}</h2><p class="lede" style="margin:var(--space-2) 0 var(--space-4)">${esc(r.otg.texto)}</p><div class="grid grid-3">${(r.otg.fases || []).map((f) => `<article class="card"><p class="eyebrow">${esc(f.paso)}</p><h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)">${esc(f.titulo)}</h4><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(f.texto)}</p></article>`).join("")}</div></section>` : "";
   const body = `<section class="section"><div class="wrap">
-    <p class="eyebrow">Relato corporativo</p>
+    <p class="eyebrow">Cómo presentar Entelgy</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0">Entelgy, en una conversación</h1>
     <p class="lede">${esc(r.sesenta_segundos || corp.entelgy_una_frase)}</p>
 
@@ -567,7 +567,7 @@ function entelgyPage(corp) {
 
     ${otg}
   </div></section>`;
-  return page({ title: "Entelgy · Relato corporativo · Hipatia", desc: r.sesenta_segundos, active: "entelgy", body });
+  return page({ title: "Cómo presentar Entelgy · Hipatia", desc: r.sesenta_segundos, active: "entelgy", body });
 }
 
 // =====================================================================

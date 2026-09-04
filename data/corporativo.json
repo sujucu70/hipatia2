@@ -14,19 +14,19 @@
         "clave": "diferencia",
         "eyebrow": "Qué nos diferencia",
         "titulo": "Respondemos de que el cambio funcione, no solo de implantarlo.",
-        "texto": "La tecnología rara vez es el único problema. La diferencia está en trabajar también los procesos, las personas y la cultura que deciden si una transformación llega a resultados o se queda en la entrega."
+        "texto": "La tecnología es la parte fácil. Lo difícil es que una organización que ya está en marcha cambie cómo trabaja: procesos, personas y cultura deciden si la transformación llega a resultados o se queda en la entrega."
       },
       {
         "clave": "como",
         "eyebrow": "Cómo lo hacemos",
         "titulo": "Con un método que lleva el cambio hasta que se puede medir y operar.",
-        "texto": "Entendemos la situación real, diseñamos un futuro gobernado, implantamos de forma integrada, preparamos la adopción y medimos el impacto. Gobierno, seguridad y operación sostenible recorren todo el ciclo."
+        "texto": "Miramos cómo está la situación de verdad, diseñamos adónde ir y quién lo gobierna, lo implantamos sobre lo que ya existe, preparamos a la gente que lo va a usar y medimos el impacto. Gobierno, seguridad y operación sostenible van en todo el ciclo."
       },
       {
         "clave": "ayuda",
         "eyebrow": "En qué podemos ayudar",
-        "titulo": "Entramos por la tensión que tiene delante el cliente, no por un catálogo de silos.",
-        "texto": "Procesos, software, datos e IA, operaciones o cambio: las prácticas son puntos de entrada a una misma forma de transformar. Se activa la combinación que la situación justifica."
+        "titulo": "Entramos por el problema que el cliente tiene delante.",
+        "texto": "Procesos, software, datos e IA, operaciones o cambio: cada práctica es una entrada a la misma forma de trabajar, y se suman las que la situación pide."
       }
     ],
     "metodo": {
@@ -66,23 +66,23 @@
       "nota": "Lo que se mide alimenta un nuevo diagnóstico: el servicio no termina con la entrega."
     },
     "otg": {
-      "titulo": "Oficinas de Transformación y Gobierno (OTG)",
-      "texto": "No son una práctica adicional ni una condición para cada proyecto. Son el vehículo transversal para los clientes que necesitan sostener el cambio en el tiempo: diagnostican una función, asumen su operación con roles y backlog definidos, y transfieren capacidad de forma progresiva.",
+      "titulo": "Cuando el cambio no cabe en un proyecto: la Oficina de Transformación y Gobierno",
+      "texto": "Es el mismo método, operado desde dentro del cliente cuando hay que sostener el cambio en el tiempo. No se vende aparte ni hace falta en cada proyecto: se activa cuando la situación lo pide. Diagnosticamos qué hay que gobernar, asumimos esa función con roles y backlog acordados, y se la devolvemos al equipo del cliente a medida que puede llevarla.",
       "fases": [
         {
           "paso": "01",
           "titulo": "Diagnóstico",
-          "texto": "Identificamos qué debe gobernarse."
+          "texto": "Qué hay que gobernar y quién lo lleva hoy."
         },
         {
           "paso": "02",
-          "titulo": "Activación",
-          "texto": "Asumimos las funciones acordadas."
+          "titulo": "Operación",
+          "texto": "Asumimos las funciones acordadas, con roles y backlog."
         },
         {
           "paso": "03",
           "titulo": "Transferencia",
-          "texto": "Delegamos de forma progresiva."
+          "texto": "Se la devolvemos al equipo del cliente, función a función."
         }
       ]
     }
