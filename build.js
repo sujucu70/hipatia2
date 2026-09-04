@@ -578,7 +578,6 @@ function entelgyPage(corp) {
 // =====================================================================
 function puntoPartidaPage(corp) {
   const pp = corp.punto_de_partida || {};
-  const caps = (pp.as_is.capturas || []).map((src) => `<img src="${esc(src)}" alt="As-is de Hipatia" style="border:1px solid var(--color-border-default);border-radius:var(--radius-lg)">`).join("");
   const body = `<section class="section"><div class="wrap" style="max-width:900px">
     <p class="eyebrow">Por qué Hipatia</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-4)">Punto de partida</h1>
@@ -586,7 +585,6 @@ function puntoPartidaPage(corp) {
       <div class="card"><h2 style="font-size:var(--font-size-2xl)">${esc(pp.as_is.titulo)}</h2><p style="margin-top:var(--space-2);color:var(--color-text-secondary)">${esc(pp.as_is.texto)}</p></div>
       <div class="card" style="background:var(--color-brand-navy);color:#fff;border:0"><h2 style="color:#fff;font-size:var(--font-size-2xl)">${esc(pp.to_be.titulo)}</h2><p style="margin-top:var(--space-2);color:var(--color-slate-200)">${esc(pp.to_be.texto)}</p></div>
     </div>
-    <div class="grid grid-2" style="margin-top:var(--space-4)">${caps}</div>
   </div></section>`;
   return page({ title: "Punto de partida · Hipatia", desc: "De dónde parte Hipatia y a dónde va.", active: "", body });
 }
