@@ -20,6 +20,7 @@ Este repo publica hipatia2.guberna.es (Cloudflare Worker con assets estáticos e
 - Honestidad: nada simula un agente, un envío o una integración. Un hueco dice «en preparación · dueño · fecha», nunca lleva texto de relleno ni fecha inventada.
 - Cifras y casos: solo los que tengan `sign_off` en el JSON. Las cifras siempre como resultado de un caso, nunca como promesa. El Assessment de Modernización se cuenta como «dos semanas».
 - Software Development tiene tres soluciones (Modernización, Mantenimiento evolutivo, Asistencia técnica aumentada); Spec-Driven y Factoría SEAS son capacidades. Decisión provisional, pendiente de Jorge.
+- Nunca en pantalla: marca Guberna, Security América, métricas de uso de Hipatia, referencias a la spec (§), jerga de trabajo (P0, cableado, sign-off de Px), notas de revisión («revisión N»), «acompañar».
 
 ## Forma de trabajar
 - Un commit por tarea con el mensaje que indica el plan. Rama `v3`.

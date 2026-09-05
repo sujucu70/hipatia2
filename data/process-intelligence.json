@@ -1,0 +1,384 @@
+{
+  "id": "process-intelligence",
+  "nombre": "Process Intelligence",
+  "orden": "01",
+  "responsable": "Carmen · Carla",
+  "propuesta": "Ayudamos a entender cómo funciona realmente un proceso y a mejorar su ejecución, desde la evidencia hasta la automatización y los agentes IA.",
+  "que_cubre": "Ver el proceso que ejecutan de verdad tus sistemas, no el de los manuales, y decidir sobre ese dato dónde renta invertir. Después, automatizarlo: RPA donde repite, IA donde decide, rediseño donde el flujo no encaja. El mining descubre y prioriza sobre los registros; la automatización levanta a mano lo que no está en un sistema, lo ejecuta y lo deja en producción.",
+  "que_no_prometer": "No vendemos automatizar por automatizar ni sustituir equipos de golpe. Antes de proponer minería, automatización o agentes miramos el proceso, los datos y cómo se opera de verdad. Y no prometemos una mejora sin haberla medido antes: la baseline va delante de cualquier inversión.",
+  "pregunta_comun": "¿En qué parte del proceso se os va más tiempo, y cómo lo sabéis?",
+  "capacidades": [
+    {
+      "paso": "01",
+      "titulo": "Descubrir",
+      "texto": "Hacer visible el proceso real con datos —o con método tradicional cuando las trazas no bastan— para localizar variaciones, esperas y puntos de pérdida."
+    },
+    {
+      "paso": "02",
+      "titulo": "Priorizar",
+      "texto": "Elegir qué proceso merece inversión por coste, riesgo y volumen; no automatizar por automatizar."
+    },
+    {
+      "paso": "03",
+      "titulo": "Implantar",
+      "texto": "Rediseñar e implantar mejoras: módulos de sistema, RPA, IA, agentes y la preparación necesaria para que el equipo las adopte."
+    },
+    {
+      "paso": "04",
+      "titulo": "Gobernar",
+      "texto": "Dejar el proceso medido, orquestado y auditable, con seguimiento de eficiencia, retorno y evidencias."
+    }
+  ],
+  "discovery": [
+    "¿Qué proceso, si fallara mañana, os haría más daño en el negocio?",
+    "¿Dónde se os escapan horas, reprocesos o margen sin poder verlo con datos?",
+    "Si ese proceso sigue un año más como está, ¿qué os cuesta?"
+  ],
+  "primer_avance": {
+    "titulo": "Un diagnóstico sobre un proceso real",
+    "plazo": "6–8 semanas",
+    "nota": "Con minería si el proceso deja rastro en los sistemas (Carmen) y a mano si no lo deja (Carla). Baseline medida en horas y tareas, mejoras priorizadas y retorno estimado. Precio cerrado: 15–20 K€ en el diagnóstico de entrada de Inteligencia de procesos; el de Automatización se cierra con Carla González."
+  },
+  "soluciones": [
+    {
+      "id": "process-mining",
+      "nombre": "Inteligencia de procesos",
+      "una_linea": "Ver cómo funciona el proceso real antes de decidir qué mejorar.",
+      "especialista": "Carmen",
+      "estado": "vigente",
+      "dueno": "Carmen",
+      "fecha_objetivo": "sept 2026",
+      "propuesta": {
+        "que_es": "Reconstruimos cómo se ejecutan de verdad tus procesos desde los datos de tus propios sistemas, no desde los manuales, medimos dónde se pierde tiempo y esfuerzo, y convertimos esa foto en decisiones: dónde invertir en IA y automatización, y dónde no hace falta. No entregamos un informe y nos vamos: implementamos y dejamos el proceso funcionando.",
+        "a_quien": "Entras por el CIO: ocho de cada diez proyectos empiezan ahí, y se escala con negocio. El CFO cierra, no abre. Donde más casos hay: Administración Pública y Salud, Banca-Finanzas-Seguros e Industria.",
+        "senal": "Un proceso que cada área describe distinto y que cruza varios sistemas (SAP o no). Un atasco de expedientes, facturas o siniestros que nadie sabe dónde se frena. Un piloto de IA parado porque el modelo no entiende cómo trabaja el negocio. Una auditoría que pregunta quién decidió qué.",
+        "por_que_nosotros": "Muchos hacen el análisis y se van; nosotros dejamos el proceso funcionando. En Lanbide, más de 500 personas usan a diario lo que dejamos en producción. Somos Partner Gold de Celonis, con más de cincuenta proyectos en España, Chile y Colombia, y partner de Inverbis-GBTEC y de SAP Signavio: elegimos la herramienta que encaja con el caso, no la que nos conviene. Y la adopción va dentro del proyecto, que es la pieza que decide si funciona.",
+        "diferenciador": "Vemos el proceso real, decidimos sobre el dato dónde renta invertir y nos quedamos hasta que el proceso opera. Tres herramientas, un solo criterio: el del cliente.",
+        "objecion_principal": {
+          "texto": "¿Otra herramienta? Ya tenemos datos y cuadros de mando.",
+          "respuesta": "No vendemos la herramienta. Vemos el proceso que ejecutan tus sistemas, no el que dicen los manuales, y te decimos con números dónde renta invertir y dónde no hace falta. Empiezas con un diagnóstico de seis a ocho semanas sin comprar licencia; si escalas, la licencia es una decisión posterior, no un peaje de entrada."
+        },
+        "como_abres": "«¿Qué proceso relevante se gestiona hoy con más intuición que evidencia?»",
+        "primer_paso": {
+          "titulo": "Diagnóstico de entrada",
+          "plazo": "6–8 semanas",
+          "nota": "15–20 K€, precio cerrado, sin comité de inversión. Baseline cuantificada del proceso que más pesa, en horas y tareas, y mejoras priorizadas con retorno estimado. Es la puerta, no el techo: después vienen Operativo (Celonis en producción, 6–12 meses) y Despliegue (varios procesos, CoE), o las tres fases en suscripción. Cierra alcance y disponibilidad con Carmen Rode."
+        }
+      },
+      "limites": [
+        "No sustituye la conversación con quienes operan el proceso ni convierte un dato incompleto en conclusión automática.",
+        "No se afirma una mejora esperada sin validar calidad de datos, alcance y condiciones de implantación."
+      ],
+      "senales": [
+        "El proceso se conoce por percepción, no hay una visión común de su recorrido real.",
+        "Hay diferencias relevantes entre áreas, sedes o tipos de expediente.",
+        "Se quiere mejorar o automatizar, pero no está claro dónde está el mayor impacto."
+      ],
+      "kit": {
+        "frases_cuenta": {
+          "nota": "Frases por dolor, sacadas del deck y de la ficha. No son un guion: elige la que encaja con lo que te ha contado el cliente.",
+          "frases": [
+            {
+              "angulo": "Por el proceso opaco",
+              "cuando": "cuando cada área cuenta el proceso de una manera",
+              "texto": "Los sistemas han acabado dictando el proceso: hoy cruza decenas de herramientas y lo que veis es el de los manuales, no el que ejecutan de verdad. Lo reconstruimos desde vuestros propios registros y os decimos, en horas y tareas, dónde se pierde."
+            },
+            {
+              "angulo": "Por la IA que no llega",
+              "cuando": "si hay un piloto de IA parado o una iniciativa de agentes",
+              "texto": "Uno de cada veinte pilotos de IA llega a impacto en la cuenta de resultados, y el 58% de los directivos reconoce que sus procesos limitan lo que consiguen con IA. Antes de gastar en agentes, vemos sobre qué proceso van a trabajar y si renta."
+            },
+            {
+              "angulo": "Por la auditoría",
+              "cuando": "si aparece el AI Act, DORA o NIS2",
+              "texto": "El AI Act no os pide otra herramienta: os pide demostrar, sobre la ejecución real, qué decidió la persona y qué decidió la IA. Con el proceso minado, esa traza queda registrada desde el primer día."
+            },
+            {
+              "angulo": "Por el consultor que se fue",
+              "cuando": "si ya hicieron un análisis de procesos",
+              "texto": "Muchos hacen el análisis y se van. En Lanbide, tres meses después de empezar, 500 tramitadores usaban a diario lo que dejamos en producción. Nos quedamos hasta que el proceso opera."
+            }
+          ],
+          "regla": "Si la mejora que sale del diagnóstico es automatizar, la lleva Carla; si es IA o desarrollo, Jorge; la gestión del cambio va con Alfredo. Cuando el cliente muerde, el siguiente paso es traer a Carmen."
+        },
+        "pitch_por_rol": [
+          {
+            "rol": "CIO",
+            "pregunta": "¿Qué proceso os pide negocio mejorar y no sabéis por dónde empezar?",
+            "le_mueve": "abrir la puerta a la unidad de negocio con un diagnóstico de seis a ocho semanas que no pasa por comité."
+          },
+          {
+            "rol": "Director de negocio / operaciones",
+            "pregunta": "¿Cuántas horas se van al mes en tramitar, retrabajar o esperar?",
+            "le_mueve": "el valor liberado en horas y tareas, medido sobre su proceso real."
+          },
+          {
+            "rol": "CFO (cierra, no abre)",
+            "pregunta": "¿Con qué baseline justificáis hoy una inversión en automatización o IA?",
+            "le_mueve": "una baseline medida antes de invertir un euro y un business case defendible."
+          },
+          {
+            "rol": "Compliance / CISO",
+            "pregunta": "¿Podéis demostrar quién decidió qué en vuestros procesos de alto riesgo?",
+            "le_mueve": "trazabilidad de qué decide la IA y qué la persona, lista para el AI Act, DORA y NIS2."
+          }
+        ],
+        "pitch_nota": "Se entra por el CIO y se escala con negocio; el CFO cierra.",
+        "objeciones": [
+          {
+            "texto": "Ya tenemos Celonis / ya hicimos un piloto de process mining.",
+            "respuesta": "Entonces sobra la licencia y falta quien lo opere. Ponemos encima nuestro Centro de Excelencia rodado, con aceleradores por proceso, y nos quedamos hasta que el proceso funcione. Si la herramienta ya está, empezamos por el proceso que más pesa."
+          },
+          {
+            "texto": "La licencia es carísima.",
+            "respuesta": "Por eso no empiezas por ahí. El diagnóstico de entrada no lleva licencia y cuesta entre 15 y 20 mil euros. Si el proceso justifica escalar, elegimos la herramienta que encaja, y si no quieres comprar plataforma ni montar equipo, lo montamos como servicio."
+          },
+          {
+            "texto": "Nuestros datos no están limpios / no somos SAP.",
+            "respuesta": "La conexión no es intrusiva, funciona con SAP y sin SAP, y el dato se trata en vuestro entorno. Donde las trazas no bastan, levantamos el proceso a mano. Y parte del diagnóstico es precisamente decir qué dato sirve y qué no."
+          },
+          {
+            "texto": "Una consultora ya nos dejó un informe.",
+            "respuesta": "Nosotros no entregamos un informe y nos vamos: implementamos y dejamos el proceso funcionando, con la gestión del cambio dentro. En Lanbide son 500 personas usándolo a diario."
+          }
+        ],
+        "preguntas_cualificacion": [
+          "¿Qué proceso describe cada área de una manera distinta?",
+          "¿Ese proceso deja rastro en vuestros sistemas (SAP u otros) o vive en correos y hojas de cálculo?",
+          "¿Alguien mide hoy cuántas horas se van en tramitar o retrabajar?",
+          "¿Tenéis alguna iniciativa de IA o de agentes que no ha pasado del piloto?"
+        ],
+        "referencias_destacadas": [
+          "pi-caso-lanbide",
+          "pi-caso-universidad-latam"
+        ],
+        "material_interno": [
+          "process-pains",
+          "process-mining-legacy-competition"
+        ],
+        "material_interno_nota": "Escalera de compra de Carmen (deck, jun-2026): diagnóstico de entrada 15–20 K€ → proyecto de mining por proceso → oficina de procesos en continuo. Precios orientativos, para el comercial; no van en documento cliente.",
+        "dossier_imprimible": true
+      },
+      "keynotes": [
+        {
+          "dolor": "No sabemos cómo se ejecuta de verdad el proceso; cada sistema cuenta una cosa.",
+          "frase": "Los sistemas han acabado dictando el proceso. Lo reconstruimos desde vuestros registros y os enseñamos, en horas, dónde se pierde.",
+          "prueba": "Lanbide: cinco meses de atasco, 23.000 horas al año liberadas, en producción en tres meses.",
+          "paso": "Un diagnóstico de seis a ocho semanas sobre el proceso que más pesa. Te presento a Carmen."
+        },
+        {
+          "dolor": "Metimos IA y no ha pasado nada.",
+          "frase": "Uno de cada veinte pilotos llega a impacto; los que llegan tienen debajo un proceso que la IA entiende.",
+          "prueba": "Universidad LATAM: la decisión de escalar se tomó sobre datos, con un 30% de matrículas recuperables detectadas.",
+          "paso": "Antes de gastar en agentes, medimos el proceso donde van a trabajar."
+        },
+        {
+          "dolor": "Auditoría nos pregunta quién decide qué, y no lo tenemos.",
+          "frase": "El AI Act pide demostrar, sobre la ejecución real, qué decidió la persona y qué la IA. Con el proceso minado esa traza existe desde el día uno.",
+          "prueba": "Es la capa de procesos del gobierno de la IA; la Oficina de Gobernanza Humana pone después el sello.",
+          "paso": "Empezamos por el proceso de alto riesgo que más os preocupe."
+        },
+        {
+          "dolor": "Ya pagamos un análisis de procesos y sigue en un cajón.",
+          "frase": "Nosotros implementamos y nos quedamos hasta que el proceso opera, con la adopción dentro.",
+          "prueba": "Lanbide: 500 personas usándolo a diario.",
+          "paso": "Diagnóstico de entrada, sin comité de inversión."
+        }
+      ],
+      "referencias": [
+        "pi-caso-lanbide",
+        "pi-caso-universidad-latam",
+        "pi-cartera-sectores"
+      ],
+      "materiales": [
+        "process-onepager",
+        "process-deck",
+        "process-ficha"
+      ],
+      "acreditacion": [],
+      "pendiente": {
+        "texto": "Lectura de Carmen: Celonis Gold e Inverbis-GBTEC en «Por qué Entelgy», precios visibles en el portal interno, ficha de Universidad LATAM.",
+        "dueno": "Carmen",
+        "fecha_objetivo": "sept 2026"
+      },
+      "contactos": {
+        "comercial": "carmen-rode",
+        "tecnico": null
+      }
+    },
+    {
+      "id": "process-automation-ai",
+      "nombre": "Automatización de procesos y agentes IA",
+      "una_linea": "Automatizar el proceso que ya entiendes: RPA donde repite, IA donde lee, agentes donde decide.",
+      "especialista": "Carla",
+      "estado": "vigente",
+      "dueno": "Carla",
+      "fecha_objetivo": "sept 2026",
+      "propuesta": {
+        "que_es": "Automatizamos tus procesos de negocio de punta a punta y operamos el resultado. Arrancamos por lo que ya funciona, el RPA, subimos a RPA con IA cuando el dato llega sin ordenar (un documento, un correo) y ponemos agentes donde el proceso exige decidir. No entregamos un informe con 200 mejoras: operamos la automatización en tu casa, con un equipo certificado y el cambio dentro.",
+        "a_quien": "Quien tiene personas tramitando expedientes, facturas, reclamaciones o altas entre sistemas que no se hablan. Entras por el CIO o por quien lleva operaciones; si la conversación es de agentes, aparece el CDO; el CFO entra por el business case.",
+        "senal": "Robots sueltos que mantiene una sola persona. Un piloto de IA que no ha pasado de demo. Una consultora que dejó una lista de mejoras en un cajón. Tres empresas compradas y ninguna hace el proceso igual.",
+        "por_que_nosotros": "Un único responsable del diagnóstico a producción: donde la consultora tradicional entrega el plan y se va, el mismo equipo sigue operando lo que puso a funcionar. Un Centro de Expertos certificado en UiPath, Blue Prism y Microsoft, con más de 40 robots en producción, que elige la plataforma por tu problema y no por nuestra licencia. Y la gestión del cambio dentro de la operación, que es donde se decide si un piloto escala.",
+        "diferenciador": "Un único responsable, del diagnóstico al proceso en producción, y la IA encima del RPA que ya funciona, no en su lugar.",
+        "objecion_principal": {
+          "texto": "Queremos agentes de IA, no robots.",
+          "respuesta": "El 95% de los pilotos de IA no llega a producción (MIT, State of AI in Business 2025). Los que llegan tienen debajo un proceso ordenado y RPA rodado. Ponemos el agente donde el proceso exige decidir, encima de esa base y con una oficina de gobierno que registra qué hace cada robot y cada agente. Es lo que separa un agente que escala de uno caro e impredecible. (La gobernanza humana de la IA, quién decide qué avanza y qué se frena, es la Oficina de Gobernanza Humana de la IA, en Digital Change.)"
+        },
+        "como_abres": "«¿Qué automatización tenéis hoy suelta, sin escalar, y quién la mantiene?»",
+        "primer_paso": {
+          "titulo": "Diagnóstico de automatización",
+          "plazo": "6–8 semanas",
+          "nota": "Precio cerrado, sin compromiso de continuidad. Levantamiento del proceso real área por área, priorización costeada por coste, riesgo y volumen, y plan con el carril correcto (RPA, RPA con IA o agentes) y el retorno estimado. Un primer proceso medio o simple que se mueva y se vea. Al final el cliente decide qué automatizar primero, con números delante. Precio y alcance, con Carla González."
+        }
+      },
+      "limites": [
+        "No se promete automatización total ni autonomía de agentes sin revisar excepciones, controles, datos y responsables.",
+        "No sustituye el rediseño de un proceso que todavía no está suficientemente entendido o estabilizado."
+      ],
+      "senales": [
+        "Hay tareas repetitivas, traspasos manuales o decisiones sencillas que consumen tiempo.",
+        "El volumen, la variabilidad o los tiempos hacen difícil sostener el servicio.",
+        "Se exploran agentes IA, pero hay que llevarlos a un proceso y una operación con control."
+      ],
+      "kit": {
+        "frases_cuenta": {
+          "nota": "Frases por dolor, sacadas del deck y de la ficha. Elige la que responde a lo que te han dicho.",
+          "frases": [
+            {
+              "angulo": "Por los robots sueltos",
+              "cuando": "si ya tienen RPA",
+              "texto": "Automatizaciones aisladas por departamento, sin gobierno ni escalado, se vuelven deuda técnica. Montamos una oficina de gobierno dentro de vuestra casa para que RPA, RPA con IA y agentes convivan bajo una sola regla, trazable y lista para el AI Act."
+            },
+            {
+              "angulo": "Por el piloto que no escala",
+              "cuando": "si han probado IA",
+              "texto": "El 95% de los pilotos de IA no llega a producción. Los que llegan tienen un proceso ordenado y RPA por debajo. Empezamos por ahí, y el agente va encima solo donde el proceso exige decidir."
+            },
+            {
+              "angulo": "Por el informe en el cajón",
+              "cuando": "si ya pagaron una consultoría",
+              "texto": "Una lista de 200 mejoras no cambia nada. Recorremos el ciclo entero con el mismo equipo, del diagnóstico a producción, y seguimos operando lo que pusimos a funcionar."
+            },
+            {
+              "angulo": "Por el documento",
+              "cuando": "si el trabajo manual es leer PDF, correos o formularios",
+              "texto": "Donde el dato llega sin ordenar, el RPA con IA lee, clasifica y valida antes de ejecutar: facturas contra pedidos, expedientes escaneados, correos que hay que enrutar. Sin rehacer vuestras aplicaciones."
+            }
+          ],
+          "regla": "Si el cliente no sabe cómo funciona el proceso y deja rastro en sus sistemas, entra antes Carmen con minería. Cuando el cliente muerde, el siguiente paso es traer a Carla."
+        },
+        "pitch_por_rol": [
+          {
+            "rol": "CIO",
+            "pregunta": "¿Cuántos robots tenéis y quién responde cuando cambia el sistema que tocan?",
+            "le_mueve": "un Centro de Expertos que mantiene el robot vivo y una oficina de gobierno dentro de su casa."
+          },
+          {
+            "rol": "Director de operaciones / negocio",
+            "pregunta": "¿Qué tarea repetitiva se lleva más horas de vuestra gente cada semana?",
+            "le_mueve": "un primer proceso en producción en semanas, con retorno medible y el conocimiento del proceso devuelto a la organización."
+          },
+          {
+            "rol": "CFO",
+            "pregunta": "¿Qué automatización os ha dado retorno y cuál se quedó en piloto?",
+            "le_mueve": "priorización costeada por coste, riesgo y volumen, y seguimiento de que las mejoras se cumplen en euros y en horas."
+          },
+          {
+            "rol": "CDO / responsable de IA",
+            "pregunta": "¿Vuestros agentes tienen un proceso ordenado debajo?",
+            "le_mueve": "la base de RPA rodada que hace escalar a los agentes, y el gobierno que los hace auditables."
+          }
+        ],
+        "pitch_nota": "Se entra por el CIO o por quien sufre el proceso; el CFO cierra con el business case.",
+        "objeciones": [
+          {
+            "texto": "Ya tenemos robots.",
+            "respuesta": "Estupendo, entonces la pregunta es quién los mantiene y qué pasa cuando cambia el sistema que tocan. Un robot suelto se resiente; una cartera gobernada aguanta años. Empezamos por documentar lo que hay."
+          },
+          {
+            "texto": "Esto nos lo hace directamente el fabricante.",
+            "respuesta": "El fabricante vende su plataforma. Nosotros elegimos UiPath, Blue Prism o Microsoft por tu problema, y operamos el resultado en tu casa con un único responsable. La plataforma es una decisión posterior al diagnóstico."
+          },
+          {
+            "texto": "Una consultora ya nos dejó el plan.",
+            "respuesta": "Un plan sin implantación es una lista de buenas intenciones. Donde la consultora se va, nosotros seguimos: recorremos el ciclo entero con el mismo equipo y respondemos del resultado."
+          },
+          {
+            "texto": "Queremos ir directamente a agentes.",
+            "respuesta": "Los agentes son la mayor capacidad y la que más gobierno exige, porque deciden. Van encima de una base ordenada y bajo una oficina de gobierno; sin eso salen caros e impredecibles. El diagnóstico dice dónde pagan."
+          }
+        ],
+        "preguntas_cualificacion": [
+          "¿Qué tareas hacen hoy personas sobre PDF, correos o formularios que llegan sin ordenar?",
+          "¿Cuántos robots tenéis en producción y quién los mantiene?",
+          "¿Hay algún piloto de IA o de agentes que no haya llegado a producción? ¿Por qué?",
+          "¿Existe un registro de qué hace cada robot, o depende de una persona?"
+        ],
+        "referencias_destacadas": [
+          "pa-caso-uned",
+          "pa-caso-energetica-colombia"
+        ],
+        "material_interno": [
+          "process-automation-legacy-preview",
+          "process-automation-legacy-competition"
+        ],
+        "dossier_imprimible": true
+      },
+      "keynotes": [
+        {
+          "dolor": "Tenemos robots, pero el proceso sigue roto por debajo.",
+          "frase": "Automatizar el caos da soluciones ineficientes más rápido. Primero el proceso; después el robot.",
+          "prueba": "Una energética en Colombia: 150 flujos que solo su autor sabía mantener, hoy documentados y gobernados.",
+          "paso": "Un diagnóstico de seis a ocho semanas sobre un proceso real. Te presento a Carla."
+        },
+        {
+          "dolor": "Metimos IA y no ha pasado nada. No escala.",
+          "frase": "El 95% de los pilotos de IA no llega a producción; los que llegan tienen RPA rodado debajo.",
+          "prueba": "UNED: 95 procesos levantados, 26 robots en producción en seis meses.",
+          "paso": "Empezamos por el proceso ordenado; el agente va encima donde decide."
+        },
+        {
+          "dolor": "Una consultora nos dejó 200 mejoras. Siguen en un cajón.",
+          "frase": "Un único responsable del diagnóstico a producción: seguimos operando lo que pusimos a funcionar.",
+          "prueba": "Más de 40 robots en producción mantenidos por nuestro Centro de Expertos.",
+          "paso": "Un primer proceso que se mueva y se vea, con retorno medible."
+        },
+        {
+          "dolor": "Auditoría, AI Act, DORA: no sabemos qué hace cada robot.",
+          "frase": "Una oficina de gobierno dentro de vuestra casa: registro de qué hace cada robot y cada agente, trazable y auditable.",
+          "prueba": "Preparados para diciembre de 2027 y para DORA, ya en vigor.",
+          "paso": "Empezamos documentando la cartera que ya tenéis."
+        }
+      ],
+      "referencias": [
+        "pa-caso-uned",
+        "pa-caso-energetica-colombia"
+      ],
+      "materiales": [
+        "automation-onepager",
+        "automation-deck",
+        "automation-ficha"
+      ],
+      "acreditacion": [],
+      "pendiente": {
+        "texto": "Lectura de Carla: diagnóstico de 6–8 semanas y corrección de la ficha, F1 de UNED y de la energética, «hiperautomatización» y «Task Intelligence» fuera de sus piezas, contacto sin rellenar.",
+        "dueno": "Carla",
+        "fecha_objetivo": "sept 2026"
+      },
+      "contactos": {
+        "comercial": "carla-gonzalez",
+        "tecnico": null
+      }
+    }
+  ],
+  "material_comun": [
+    "process-deck",
+    "process-onepager",
+    "process-ficha"
+  ],
+  "propuesta_portada": "Ver dónde se pierde coste, tiempo o control en un proceso antes de rediseñarlo y automatizarlo.",
+  "responsable_id": [
+    "carmen-rode",
+    "carla-gonzalez"
+  ]
+}

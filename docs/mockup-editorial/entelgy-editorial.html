@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo presentar Entelgy · Hipatia · mock editorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Barlow+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>/* styles.css de la v3 (9135b6b), inline para que el mock sea autocontenido */
+/* ============================================================
+   Hipatia v3 · styles.css
+   Bloque 1: tokens de entelgy-design-tokens.css (tal cual, sin brand-refresh)
+   Bloque 2: componentes del catálogo (cabecera, pie, tarjetas, chips, modal, impresión)
+   ============================================================ */
+
+/* ============================================================
+   ENTELGY DESIGN SYSTEM — tokens.css
+   v1.0 · Human Driven Technology
+   ============================================================ */
+
+:root {
+  /* ----------------------------------------
+     COLOR · Brand (core)
+     ---------------------------------------- */
+  --color-brand-navy:   #041C2C;
+  --color-brand-slate:  #243947;
+  --color-brand-purple: #855AC6;
+  --color-brand-orange: #E05730;
+  --color-brand-white:  #FFFFFF;
+
+  /* ----------------------------------------
+     COLOR · Slate scale (neutrals)
+     ---------------------------------------- */
+  --color-slate-50:  #F5F7F9;
+  --color-slate-100: #E5EAEF;
+  --color-slate-200: #C8D2DA;
+  --color-slate-300: #9DAEB9;
+  --color-slate-400: #6E8493;
+  --color-slate-500: #4A6273;
+  --color-slate-600: #354A5A;
+  --color-slate-700: #243947;  /* brand */
+  --color-slate-800: #122734;
+  --color-slate-900: #041C2C;  /* brand */
+
+  /* ----------------------------------------
+     COLOR · Purple scale (visionary accent)
+     ---------------------------------------- */
+  --color-purple-100: #EDE3F7;
+  --color-purple-300: #B696DC;
+  --color-purple-500: #855AC6;  /* brand */
+  --color-purple-700: #5E3D9B;
+  --color-purple-900: #3A2566;
+
+  /* ----------------------------------------
+     COLOR · Orange scale (warm CTA accent)
+     ---------------------------------------- */
+  --color-orange-100: #FBE0D6;
+  --color-orange-300: #EE9277;
+  --color-orange-500: #E05730;  /* brand */
+  --color-orange-700: #B23E1D;
+  --color-orange-900: #6E2511;
+
+  /* ----------------------------------------
+     COLOR · Semantic
+     ---------------------------------------- */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error:   #DC2626;
+  --color-info:    var(--color-brand-purple);
+
+  /* ----------------------------------------
+     COLOR · Aliases (use these in components)
+     ---------------------------------------- */
+  /* Surfaces */
+  --color-bg-primary:    var(--color-brand-white);
+  --color-bg-secondary:  var(--color-slate-50);
+  --color-bg-inverse:    var(--color-brand-navy);
+  --color-surface:       var(--color-brand-white);
+  --color-surface-raised:var(--color-slate-50);
+
+  /* Text */
+  --color-text-primary:  var(--color-brand-navy);
+  --color-text-secondary:var(--color-slate-600);
+  --color-text-muted:    var(--color-slate-400);
+  --color-text-inverse:  var(--color-brand-white);
+  --color-text-accent:   var(--color-brand-purple);
+  --color-text-cta:      var(--color-brand-orange);
+
+  /* Borders */
+  --color-border-subtle:  var(--color-slate-100);
+  --color-border-default: var(--color-slate-200);
+  --color-border-strong:  var(--color-slate-400);
+
+  /* ----------------------------------------
+     TYPOGRAPHY
+     ---------------------------------------- */
+  --font-family-display: 'DIN Pro', 'DIN', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-body:    'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono:    'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  --font-weight-regular: 400;
+  --font-weight-medium:  500;
+  --font-weight-bold:    700;
+
+  /* Type scale (modular, ratio 1.25) */
+  --font-size-xs:   0.75rem;   /* 12 */
+  --font-size-sm:   0.875rem;  /* 14 */
+  --font-size-base: 1rem;      /* 16 */
+  --font-size-lg:   1.125rem;  /* 18 */
+  --font-size-xl:   1.25rem;   /* 20 */
+  --font-size-2xl:  1.5rem;    /* 24 */
+  --font-size-3xl:  1.875rem;  /* 30 */
+  --font-size-4xl:  2.25rem;   /* 36 */
+  --font-size-5xl:  3rem;      /* 48 */
+  --font-size-6xl:  3.75rem;   /* 60 */
+
+  --line-height-tight:   1.1;
+  --line-height-snug:    1.25;
+  --line-height-normal:  1.5;
+  --line-height-relaxed: 1.625;
+
+  --letter-spacing-tight:  -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide:   0.05em;
+
+  /* ----------------------------------------
+     SPACING (8px base)
+     ---------------------------------------- */
+  --space-0:  0;
+  --space-1:  0.25rem;  /*   4 */
+  --space-2:  0.5rem;   /*   8 */
+  --space-3:  0.75rem;  /*  12 */
+  --space-4:  1rem;     /*  16 */
+  --space-5:  1.5rem;   /*  24 */
+  --space-6:  2rem;     /*  32 */
+  --space-7:  3rem;     /*  48 */
+  --space-8:  4rem;     /*  64 */
+  --space-9:  6rem;     /*  96 */
+  --space-10: 8rem;     /* 128 */
+
+  /* ----------------------------------------
+     RADIUS (sleek / corporate-modern)
+     ---------------------------------------- */
+  --radius-none: 0;
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   8px;
+  --radius-xl:   12px;
+  --radius-full: 9999px;
+
+  /* ----------------------------------------
+     SHADOWS (subtle, editorial)
+     ---------------------------------------- */
+  --shadow-xs: 0 1px 2px   rgba(4, 28, 44, 0.04);
+  --shadow-sm: 0 2px 4px   rgba(4, 28, 44, 0.06);
+  --shadow-md: 0 4px 12px  rgba(4, 28, 44, 0.08);
+  --shadow-lg: 0 12px 28px rgba(4, 28, 44, 0.12);
+  --shadow-xl: 0 24px 48px rgba(4, 28, 44, 0.18);
+
+  /* ----------------------------------------
+     MOTION
+     ---------------------------------------- */
+  --duration-fast:   150ms;
+  --duration-normal: 250ms;
+  --duration-slow:   400ms;
+  --easing-standard:    cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-emphasized:  cubic-bezier(0.2, 0, 0, 1);
+
+  /* ----------------------------------------
+     Z-INDEX
+     ---------------------------------------- */
+  --z-base:     0;
+  --z-dropdown: 1000;
+  --z-sticky:   1020;
+  --z-modal:    1040;
+  --z-toast:    1060;
+
+  /* ----------------------------------------
+     BREAKPOINTS (reference values)
+     ---------------------------------------- */
+  /* sm: 640px · md: 768px · lg: 1024px · xl: 1280px · 2xl: 1536px */
+}
+
+/* ============================================================
+   DARK MODE (optional · apply [data-theme="dark"] on <html>)
+   ============================================================ */
+[data-theme="dark"] {
+  --color-bg-primary:     var(--color-brand-navy);
+  --color-bg-secondary:   var(--color-slate-800);
+  --color-surface:        var(--color-slate-800);
+  --color-surface-raised: var(--color-slate-700);
+
+  --color-text-primary:   var(--color-brand-white);
+  --color-text-secondary: var(--color-slate-200);
+  --color-text-muted:     var(--color-slate-400);
+
+  --color-border-subtle:  var(--color-slate-700);
+  --color-border-default: var(--color-slate-600);
+  --color-border-strong:  var(--color-slate-400);
+}
+
+/* ============================================================
+   Bloque 2 · Componentes del catálogo Hipatia v3
+   Reglas: naranja (--color-brand-orange) solo en el CTA principal
+   de cada pantalla. Contraste AA. Sin animaciones.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Barlow+Condensed:wght@500;600;700&display=swap');
+
+:root{
+  /* Sustitutos web de la familia display (DIN no está en la web);
+     Barlow Condensed mantiene el aire condensado de DIN. */
+  --font-family-display: 'Barlow Condensed','DIN Pro','DIN Next','Roboto Condensed','Arial Narrow',sans-serif;
+  --font-family-body: 'Roboto','Helvetica Neue',Arial,sans-serif;
+  --header-h: 60px;
+  --maxw: 1120px;
+}
+
+*{box-sizing:border-box}
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0;
+  font-family:var(--font-family-body);
+  font-size:var(--font-size-base);
+  line-height:var(--line-height-normal);
+  color:var(--color-text-primary);
+  background:var(--color-bg-secondary);
+}
+h1,h2,h3,h4{ font-family:var(--font-family-display); font-weight:var(--font-weight-bold); line-height:var(--line-height-tight); letter-spacing:var(--letter-spacing-tight); color:var(--color-text-primary); margin:0; }
+p{ margin:0; }
+a{ color:inherit; }
+img{ max-width:100%; display:block; }
+[hidden]{ display:none !important; }
+.wrap{ max-width:var(--maxw); margin:0 auto; padding:0 var(--space-5); }
+.visually-hidden{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+
+/* ---------- Cabecera única ---------- */
+.site-header{ position:sticky; top:0; z-index:var(--z-sticky); background:var(--color-brand-navy); color:var(--color-text-inverse); border-bottom:1px solid rgba(255,255,255,.10); }
+.site-header .wrap{ display:flex; align-items:center; gap:var(--space-5); min-height:var(--header-h); }
+.brand{ display:inline-flex; align-items:center; gap:var(--space-2); text-decoration:none; flex:0 0 auto; }
+.brand img{ height:22px; width:auto; }
+.brand b{ font-family:var(--font-family-display); font-size:var(--font-size-xl); letter-spacing:.02em; color:#fff; }
+.nav{ display:flex; gap:var(--space-1); flex:0 0 auto; }
+.nav a{ color:var(--color-slate-200); text-decoration:none; font-size:var(--font-size-sm); font-weight:var(--font-weight-medium); padding:var(--space-2) var(--space-3); border-radius:var(--radius-md); }
+.nav a:hover{ color:#fff; background:rgba(255,255,255,.08); }
+.nav a[aria-current="page"]{ color:#fff; background:rgba(255,255,255,.12); }
+.header-search{ flex:1 1 auto; display:flex; justify-content:flex-end; }
+.header-search form{ display:flex; width:100%; max-width:340px; }
+.header-search input{ width:100%; font:inherit; font-size:var(--font-size-sm); color:var(--color-text-primary); background:#fff; border:1px solid transparent; border-radius:var(--radius-md); padding:var(--space-2) var(--space-3); }
+.header-search input::placeholder{ color:var(--color-slate-500); }
+.site-header .menu-toggle{ display:none; color:#fff; border-color:rgba(255,255,255,.35); }
+
+/* ---------- CTA / botones ---------- */
+.btn{ display:inline-flex; align-items:center; gap:var(--space-2); font:inherit; font-weight:var(--font-weight-medium); font-size:var(--font-size-sm); text-decoration:none; cursor:pointer; padding:var(--space-2) var(--space-4); border-radius:var(--radius-md); border:1px solid var(--color-border-strong); background:var(--color-surface); color:var(--color-text-primary); }
+.btn:hover{ border-color:var(--color-slate-500); }
+/* Un único naranja por pantalla: reservado a .btn-cta */
+.btn-cta{ background:var(--color-brand-orange); border-color:var(--color-brand-orange); color:#fff; font-weight:var(--font-weight-bold); font-size:1.1875rem; line-height:1.2; padding:var(--space-3) var(--space-5); }
+.btn-cta:hover{ background:var(--color-orange-700); border-color:var(--color-orange-700); }
+.btn-ghost{ background:transparent; }
+.text-link{ background:none; border:0; padding:0; font:inherit; color:var(--color-purple-700); text-decoration:underline; text-underline-offset:2px; cursor:pointer; }
+
+/* ---------- Chips de estado ---------- */
+.chips{ display:flex; flex-wrap:wrap; gap:var(--space-2); }
+.chip{ display:inline-flex; align-items:center; gap:6px; font-family:var(--font-family-mono); font-size:var(--font-size-xs); line-height:1; padding:5px 9px; border-radius:var(--radius-full); border:1px solid var(--color-border-default); background:var(--color-surface); color:var(--color-text-secondary); }
+.chip::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--color-slate-400); }
+.chip.is-vigente::before{ background:var(--color-success); }
+.chip.is-revisar::before{ background:var(--color-warning); }
+.chip.is-pendiente::before{ background:var(--color-slate-400); }
+.chip.is-cliente{ color:var(--color-purple-700); border-color:var(--color-purple-300); }
+.chip.is-cliente::before{ background:var(--color-brand-purple); }
+.chip.is-interno::before{ background:var(--color-slate-500); }
+.chip.is-validacion::before{ background:var(--color-warning); }
+.chip.is-citable{ color:var(--color-purple-700); }
+.chip.is-citable::before{ background:var(--color-brand-purple); }
+
+/* Cajitas de solución en la tarjeta de portada · Roboto (no mono), dos por línea cuando quepan */
+.sol-boxes{ display:flex; flex-wrap:wrap; gap:var(--space-2); }
+.sol-box{ flex:1 1 auto; min-width:0; overflow-wrap:break-word; display:flex; align-items:center; min-height:34px; padding:6px 10px; font-family:var(--font-family-body); font-size:var(--font-size-xs); line-height:1.2; text-decoration:none; color:var(--color-text-primary); background:var(--color-surface); border:1px solid var(--color-border-default); border-radius:var(--radius-md); }
+.sol-box:hover{ border-color:var(--color-brand-purple); color:var(--color-purple-700); }
+
+/* ---------- Aviso "en preparación" ---------- */
+.pending{ border:1px dashed var(--color-border-strong); border-radius:var(--radius-lg); padding:var(--space-4); color:var(--color-text-secondary); background:var(--color-surface); font-size:var(--font-size-sm); }
+.pending b{ color:var(--color-text-primary); }
+
+/* ---------- Tarjetas ---------- */
+.card{ background:var(--color-surface); border:1px solid var(--color-border-subtle); border-radius:var(--radius-lg); padding:var(--space-5); }
+.card h3{ font-size:var(--font-size-2xl); }
+.grid{ display:grid; gap:var(--space-4); }
+.grid-3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+.grid-5{ grid-template-columns:repeat(5,minmax(0,1fr)); }
+.grid-2{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+.eyebrow{ font-family:var(--font-family-mono); font-size:var(--font-size-xs); letter-spacing:var(--letter-spacing-wide); text-transform:uppercase; color:var(--color-text-accent); }
+
+/* ---------- Plegables «para prepararte» ---------- */
+details.fold{ border:1px solid var(--color-border-default); border-radius:var(--radius-lg); background:var(--color-surface); }
+details.fold>summary{ list-style:none; cursor:pointer; padding:var(--space-4) var(--space-5); font-family:var(--font-family-display); font-size:var(--font-size-xl); display:flex; justify-content:space-between; align-items:center; gap:var(--space-4); }
+details.fold>summary::-webkit-details-marker{ display:none; }
+details.fold>summary::after{ content:"+"; color:var(--color-text-accent); font-size:var(--font-size-2xl); font-family:var(--font-family-body); }
+details.fold[open]>summary::after{ content:"\2212"; }
+details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
+
+/* ---------- Pie con banda del CRM ---------- */
+.site-footer{ background:var(--color-brand-navy); color:var(--color-slate-200); margin-top:var(--space-8); }
+.crm-band{ background:var(--color-slate-800); color:#fff; }
+.crm-band .wrap{ padding:var(--space-4) var(--space-5); font-size:var(--font-size-sm); }
+.crm-band b{ color:var(--color-orange-300); }
+.footer-main .wrap{ display:flex; justify-content:space-between; gap:var(--space-5); padding:var(--space-6) var(--space-5); flex-wrap:wrap; }
+.footer-main a{ color:var(--color-slate-200); }
+.footer-main img{ height:20px; }
+.footer-note{ font-size:var(--font-size-xs); color:var(--color-text-secondary); }
+.site-footer .footer-note{ color:var(--color-slate-300); }
+
+/* ---------- Buscador / filtros de materiales ---------- */
+.filters{ display:grid; gap:var(--space-4); }
+.filter-group{ display:grid; gap:var(--space-2); }
+.filter-group b{ font-size:var(--font-size-sm); }
+.filter-group label{ display:flex; align-items:center; gap:var(--space-2); font-size:var(--font-size-sm); color:var(--color-text-secondary); }
+
+/* ---------- Modal reutilizable ---------- */
+.modal[hidden]{ display:none !important; }
+.modal{ position:fixed; inset:0; z-index:var(--z-modal); display:flex; align-items:center; justify-content:center; padding:var(--space-5); background:rgba(4,28,44,.55); }
+.modal-panel{ background:var(--color-surface); border-radius:var(--radius-lg); max-width:640px; width:100%; max-height:86vh; overflow:auto; padding:var(--space-6); box-shadow:var(--shadow-xl); }
+.modal-close{ float:right; }
+
+/* ---------- Layout de práctica (índice lateral) ---------- */
+.with-aside{ display:grid; grid-template-columns:210px 1fr; gap:var(--space-6); align-items:start; }
+.side-index{ position:sticky; top:calc(var(--header-h) + var(--space-4)); display:grid; gap:2px; }
+.side-index a{ font-size:var(--font-size-sm); color:var(--color-text-secondary); text-decoration:none; padding:var(--space-2) var(--space-3); border-left:2px solid var(--color-border-subtle); }
+.side-index a:hover{ color:var(--color-text-primary); border-left-color:var(--color-brand-purple); }
+
+.section{ padding:var(--space-6) 0; }
+.section+.section{ border-top:1px solid var(--color-border-subtle); }
+.lede{ font-size:var(--font-size-lg); color:var(--color-text-secondary); max-width:70ch; }
+
+/* ---------- Responsive 390px ---------- */
+@media (max-width:900px){
+  .grid-3,.grid-5{ grid-template-columns:1fr 1fr; }
+  .with-aside{ grid-template-columns:1fr; }
+  .side-index{ position:static; grid-auto-flow:column; overflow:auto; }
+}
+@media (max-width:640px){
+  .site-header .wrap{ flex-wrap:wrap; min-height:0; padding-top:var(--space-2); padding-bottom:var(--space-2); gap:var(--space-3); }
+  .site-header .menu-toggle{ display:inline-flex; }
+  .nav{ order:3; width:100%; overflow:auto; }
+  .header-search{ order:2; }
+  .grid-3,.grid-2,.grid-5{ grid-template-columns:1fr; }
+  .footer-main .wrap{ flex-direction:column; }
+}
+
+/* ---------- Impresión (dossier) ---------- */
+@media print{
+  .site-header,.site-footer,.header-search,.no-print{ display:none !important; }
+  body{ background:#fff; color:#000; }
+  .card,details.fold{ border-color:#bbb; break-inside:avoid; }
+  details.fold[open]>.fold-body,details.fold>.fold-body{ display:block; }
+  a[href]::after{ content:""; }
+}
+
+</style>
+<style>
+/* ===== Capa editorial (mock) · solo composición; tokens Entelgy tal cual ===== */
+:root{ --maxw:1180px; }
+.ed-eyebrow{ display:flex; align-items:center; gap:10px; font-family:var(--font-family-mono); font-size:var(--font-size-xs); letter-spacing:.08em; text-transform:uppercase; color:var(--color-purple-300); }
+.ed-eyebrow::before{ content:""; width:28px; height:1px; background:currentColor; }
+.on-light .ed-eyebrow{ color:var(--color-purple-700); }
+.ed-hero{ position:relative; overflow:hidden; background:var(--color-brand-navy); color:#fff; padding:72px 0 64px; }
+.ed-hero::before,.ed-hero::after{ content:""; position:absolute; border-radius:50%; border:1px solid rgba(255,255,255,.14); pointer-events:none; }
+.ed-hero::before{ width:760px; height:760px; right:-180px; top:-420px; box-shadow:0 0 0 70px rgba(255,255,255,.035), 0 0 0 150px rgba(255,255,255,.02); }
+.ed-hero::after{ width:260px; height:260px; right:12%; bottom:-140px; border-color:rgba(133,90,198,.35); }
+.ed-hero .wrap{ position:relative; z-index:1; }
+.ed-hero h1{ color:#fff; font-size:72px; line-height:.98; letter-spacing:-.02em; max-width:12ch; margin:14px 0 22px; }
+.ed-hero .lede{ color:var(--color-slate-200); font-size:1.25rem; max-width:62ch; }
+.ed-band{ background:var(--color-brand-slate); color:#fff; padding:56px 0; }
+.ed-band .grid-2{ grid-template-columns:.9fr 1.1fr; gap:40px; align-items:end; }
+.ed-band h2{ color:#fff; font-size:44px; line-height:1.02; letter-spacing:-.02em; margin:12px 0 0; }
+.ed-band p{ color:var(--color-slate-200); font-size:1.0625rem; max-width:58ch; }
+.rail{ display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:22px; }
+.rail span{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; padding:8px 10px; border:1px solid rgba(255,255,255,.28); color:#fff; }
+.rail span:first-child{ border-color:var(--color-purple-300); color:var(--color-purple-300); }
+.rail i{ color:var(--color-purple-300); font-style:normal; font-size:18px; }
+.ed-cards{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:-28px; position:relative; z-index:2; }
+.ed-card{ position:relative; overflow:hidden; background:#fff; border:1px solid var(--color-border-subtle); border-top:3px solid var(--color-brand-purple); border-radius:var(--radius-md); padding:26px 24px 28px; }
+.ed-card{ padding-bottom:64px; }
+.ed-card .num{ position:absolute; right:14px; bottom:-14px; font-family:var(--font-family-display); font-weight:700; font-size:96px; line-height:1; color:var(--color-purple-100); letter-spacing:-.04em; z-index:0; }
+.ed-card h3{ font-size:26px; line-height:1.08; margin:10px 0 10px; position:relative; }
+.ed-card p{ color:var(--color-text-secondary); font-size:.9375rem; position:relative; }
+.ed-head{ display:grid; grid-template-columns:1.25fr .75fr; gap:32px; align-items:end; margin-bottom:22px; }
+.ed-head h2{ font-size:38px; line-height:1.02; letter-spacing:-.02em; margin-top:10px; }
+.ed-head p{ color:var(--color-text-secondary); font-size:.9375rem; }
+.ed-entry{ background:#fff; border:1px solid var(--color-border-subtle); border-radius:var(--radius-md); padding:24px; }
+.ed-entry h3{ font-size:24px; line-height:1.1; margin:10px 0 8px; }
+.ed-entry p{ color:var(--color-text-secondary); font-size:.9375rem; }
+.ed-steps{ display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px; }
+.ed-step{ position:relative; overflow:hidden; background:#fff; border:1px solid var(--color-border-subtle); border-radius:var(--radius-md); padding:20px 18px 24px; min-height:190px; }
+.ed-step .num{ font-family:var(--font-family-mono); color:var(--color-purple-700); font-size:12px; }
+.ed-step h3{ font-size:24px; margin:8px 0 8px; }
+.ed-step p{ font-size:.875rem; color:var(--color-text-secondary); }
+.ed-step em{ display:block; margin-top:10px; font-style:normal; font-family:var(--font-family-mono); font-size:11px; color:var(--color-purple-700); text-transform:uppercase; letter-spacing:.05em; }
+.ed-return{ margin-top:14px; display:flex; gap:12px; align-items:center; color:var(--color-text-secondary); font-size:.875rem; }
+.ed-return b{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-purple-700); }
+.ed-strip{ background:var(--color-brand-navy); color:#fff; padding:48px 0; }
+.ed-strip .cols{ display:grid; grid-template-columns:1.1fr repeat(5,1fr); gap:0; border-top:1px solid rgba(255,255,255,.16); border-bottom:1px solid rgba(255,255,255,.16); }
+.ed-strip .cols>div{ padding:22px 18px 24px; border-right:1px solid rgba(255,255,255,.16); }
+.ed-strip .cols>div:last-child{ border-right:0; }
+.ed-strip .intro h2{ color:#fff; font-size:32px; line-height:1.05; margin:10px 0 8px; }
+.ed-strip .intro p{ color:var(--color-slate-300); font-size:.875rem; max-width:24ch; }
+.ed-strip .p .num{ font-family:var(--font-family-mono); font-size:11px; color:var(--color-purple-300); }
+.ed-strip .p h3{ color:#fff; font-size:22px; line-height:1.05; margin:14px 0 8px; }
+.ed-strip .p p{ color:var(--color-slate-300); font-size:.8125rem; line-height:1.4; }
+.ed-strip .p a{ display:inline-block; margin-top:14px; font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-purple-300); text-decoration:none; }
+.ed-otg{ display:grid; grid-template-columns:1.1fr .9fr; gap:32px; align-items:start; }
+.ed-otg .fases{ display:grid; gap:10px; }
+.ed-otg .fase{ display:grid; grid-template-columns:44px 1fr; gap:12px; align-items:baseline; background:#fff; border:1px solid var(--color-border-subtle); border-left:3px solid var(--color-brand-purple); padding:14px 16px; }
+.ed-otg .fase b{ font-family:var(--font-family-mono); font-size:12px; color:var(--color-purple-700); }
+.ed-otg .fase h4{ font-size:18px; margin:0 0 2px; }
+.ed-otg .fase p{ font-size:.875rem; color:var(--color-text-secondary); }
+details.ed-fold{ background:#fff; border:1px solid var(--color-border-subtle); border-radius:var(--radius-md); }
+details.ed-fold>summary{ list-style:none; cursor:pointer; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; font-family:var(--font-family-display); font-weight:700; font-size:22px; }
+details.ed-fold>summary::after{ content:"+"; color:var(--color-purple-700); font-family:var(--font-family-body); font-size:24px; }
+details.ed-fold[open]>summary::after{ content:"–"; }
+.ed-fold .body{ padding:0 22px 24px; display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.ed-fold .body h4{ font-size:18px; margin:0 0 8px; }
+.ed-stat{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:10px; }
+.ed-stat div{ background:var(--color-slate-50); border-left:3px solid var(--color-brand-purple); padding:10px 12px; }
+.ed-stat b{ display:block; font-family:var(--font-family-display); font-size:30px; line-height:1; letter-spacing:-.02em; }
+.ed-stat span{ font-size:.8125rem; color:var(--color-text-secondary); }
+.ed-note{ font-size:.8125rem; color:var(--color-text-secondary); margin-top:14px; }
+.ed-deck{ display:grid; grid-template-columns:1.1fr .9fr; gap:16px; }
+.ed-deck .featured{ position:relative; overflow:hidden; background:var(--color-brand-navy); color:#fff; padding:26px; box-shadow:8px 8px 0 var(--color-purple-300); border-radius:var(--radius-md); }
+.ed-deck .featured::after{ content:""; position:absolute; right:-60px; bottom:-90px; width:220px; height:220px; border-radius:50%; border:1px solid rgba(255,255,255,.18); }
+.ed-deck .featured h3{ color:#fff; font-size:28px; margin:10px 0 8px; }
+.ed-deck .featured p{ color:var(--color-slate-200); font-size:.9375rem; max-width:44ch; }
+.ed-deck .featured .chips{ margin-top:16px; }
+.ed-deck .featured .chip{ background:transparent; color:#fff; border-color:rgba(255,255,255,.3); }
+.ed-deck .side{ background:#fff; border:1px solid var(--color-border-subtle); border-radius:var(--radius-md); padding:24px; color:var(--color-text-secondary); font-size:.9375rem; }
+.ed-deck .side h3{ font-size:22px; margin:8px 0 8px; color:var(--color-text-primary); }
+.ed-section{ padding:56px 0; }
+.ed-section+.ed-section{ border-top:1px solid var(--color-border-subtle); }
+.mock-tag{ position:fixed; left:16px; bottom:16px; z-index:99; font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; background:var(--color-brand-orange); color:#fff; padding:6px 10px; }
+@media (max-width:900px){
+  .ed-hero{ padding:44px 0 40px; } .ed-hero h1{ font-size:44px; max-width:none; } .ed-hero .lede{ font-size:1.0625rem; }
+  .ed-band .grid-2{ grid-template-columns:1fr; gap:18px; } .ed-band h2{ font-size:30px; }
+  .ed-cards{ grid-template-columns:1fr; margin-top:16px; } .ed-head{ grid-template-columns:1fr; gap:8px; } .ed-head h2{ font-size:30px; }
+  .grid-2{ grid-template-columns:1fr; } .ed-steps{ grid-template-columns:1fr; } .ed-step{ min-height:0; }
+  .ed-strip .cols{ grid-template-columns:1fr; } .ed-strip .cols>div{ border-right:0; border-bottom:1px solid rgba(255,255,255,.16); } .ed-strip .intro p{ max-width:none; }
+  .ed-otg{ grid-template-columns:1fr; } .ed-fold .body{ grid-template-columns:1fr; } .ed-deck{ grid-template-columns:1fr; } .ed-deck .featured{ box-shadow:6px 6px 0 var(--color-purple-300); }
+  .ed-section{ padding:36px 0; }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="data:image/png;base64,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" alt="Entelgy"><b>Hipatia</b></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#">Inicio</a><a href="#" aria-current="page">Entelgy</a><a href="#">Prácticas</a><a href="#">Materiales</a><a href="#">Contactos</a>
+    </nav>
+    <div class="header-search"><form role="search"><input type="search" placeholder="Buscar materiales…"></form></div>
+  </div>
+</header>
+<main>
+
+<section class="ed-hero"><div class="wrap">
+  <p class="ed-eyebrow">Cómo presentar Entelgy</p>
+  <h1>Entelgy, en una conversación</h1>
+  <p class="lede">La mayoría de las transformaciones no falla por la tecnología: falla porque tecnología, procesos, personas y cultura no avanzan juntos. Entelgy trabaja esos cuatro pilares con un método común para que el cambio llegue a resultados y se sostenga.</p>
+</div></section>
+
+<section class="ed-band"><div class="wrap">
+  <div class="grid-2">
+    <div>
+      <p class="ed-eyebrow">Por qué Entelgy</p>
+      <h2>Desplegar tecnología es fácil. Que mueva tu cuenta de resultados, no.</h2>
+    </div>
+    <div>
+      <p>El impacto se pierde cuando la solución no encaja con el proceso que debe mejorar, con la gente que tiene que usarla o con la cultura que debe sostenerla. Entelgy trabaja los cuatro a la vez.</p>
+      <div class="rail"><span>Tecnología</span><i>×</i><span>Procesos</span><i>×</i><span>Personas</span><i>×</i><span>Cultura</span></div>
+    </div>
+  </div>
+</div></section>
+<section class="on-light" style="padding-bottom:8px"><div class="wrap">
+  <div class="ed-cards">
+    <article class="ed-card"><p class="ed-eyebrow">01 · Organizaciones en marcha</p><h3>Trabajamos donde el cambio tiene que funcionar mientras el negocio sigue.</h3><p>Continuidad, regulación y operación no esperan al final del proyecto: el contexto real se trabaja desde el inicio.</p><span class="num">01</span></article>
+    <article class="ed-card"><p class="ed-eyebrow">02 · Las cuatro variables</p><h3>Tecnología cruzada con procesos, personas y cultura.</h3><p>Adopción, rediseño y gobierno no son añadidos: forman parte de lo que se diseña y se lleva a producción.</p><span class="num">02</span></article>
+    <article class="ed-card"><p class="ed-eyebrow">03 · Respondemos del resultado</p><h3>Nos comprometemos con el impacto, no solo con la entrega.</h3><p>Menos coste de operar, productividad real, riesgo bajo control y valor que se queda cuando el proyecto termina.</p><span class="num">03</span></article>
+  </div>
+</div></section>
+
+<section class="ed-section on-light"><div class="wrap">
+  <div class="ed-head">
+    <div><p class="ed-eyebrow">Cuatro entradas al mismo relato</p><h2>Empieza por la pregunta que tienes delante.</h2></div>
+    <p>No son cuatro respuestas desconectadas ni un guion: son cuatro formas naturales de entrar en la misma propuesta.</p>
+  </div>
+  <div class="grid grid-2">
+    <article class="ed-entry"><p class="ed-eyebrow">Qué hace Entelgy</p><h3>Hacemos que la tecnología cambie cómo una organización opera y decide.</h3><p>En entornos críticos, una solución solo vale si el proceso mejora, las personas la adoptan y la organización puede sostenerla. Por eso conectamos tecnología, procesos, personas y cultura desde el principio.</p></article>
+    <article class="ed-entry"><p class="ed-eyebrow">Qué nos diferencia</p><h3>Respondemos de que el cambio funcione, no solo de implantarlo.</h3><p>La tecnología es la parte fácil. Lo difícil es que una organización que ya está en marcha cambie cómo trabaja: procesos, personas y cultura deciden si la transformación llega a resultados o se queda en la entrega.</p></article>
+    <article class="ed-entry"><p class="ed-eyebrow">Cómo lo hacemos</p><h3>Con un método que lleva el cambio hasta que se puede medir y operar.</h3><p>Miramos cómo está la situación de verdad, diseñamos adónde ir y quién lo gobierna, lo implantamos sobre lo que ya existe, preparamos a la gente que lo va a usar y medimos el impacto. Gobierno, seguridad y operación sostenible van en todo el ciclo.</p></article>
+    <article class="ed-entry"><p class="ed-eyebrow">En qué podemos ayudar</p><h3>Entramos por el problema que el cliente tiene delante.</h3><p>Procesos, software, datos e IA, operaciones o cambio: cada práctica es una entrada a la misma forma de trabajar, y se suman las que la situación pide.</p></article>
+  </div>
+</div></section>
+
+<section class="ed-section on-light"><div class="wrap">
+  <div class="ed-head">
+    <div><p class="ed-eyebrow">El método</p><h2>Cada fase evita una forma conocida de perder el impacto.</h2></div>
+    <p>Gobierno, seguridad y operación sostenible van en todo el ciclo. Lo que se mide alimenta un nuevo diagnóstico: el servicio no termina con la entrega.</p>
+  </div>
+  <div class="ed-steps">
+    <article class="ed-step"><span class="num">01</span><h3>Entender</h3><p>Datos, sistemas, dependencias y riesgos tal como son.</p><em>Evita: diseñar sobre supuestos</em></article>
+    <article class="ed-step"><span class="num">02</span><h3>Diseñar</h3><p>Objetivo, arquitectura, caso de negocio y modelo de operación.</p><em>Evita: una solución sin gobierno</em></article>
+    <article class="ed-step"><span class="num">03</span><h3>Implantar</h3><p>Tecnología, integración, datos, seguridad y legado en producción.</p><em>Evita: entregar una capa aislada</em></article>
+    <article class="ed-step"><span class="num">04</span><h3>Adoptar</h3><p>Capacidades, comportamiento y resistencias que deciden el uso real.</p><em>Evita: que el cambio se quede sin personas</em></article>
+    <article class="ed-step"><span class="num">05</span><h3>Medir</h3><p>Indicadores ligados al proceso y a la decisión que se quería mejorar.</p><em>Evita: confundir actividad con impacto</em></article>
+  </div>
+  <p class="ed-return"><b>↺ Servicio continuo</b> Lo medido devuelve aprendizaje al siguiente diagnóstico.</p>
+</div></section>
+
+<section class="ed-strip"><div class="wrap">
+  <p class="ed-eyebrow">Dónde entramos</p>
+  <div class="cols" style="margin-top:16px">
+    <div class="intro"><h2>El método es común; la puerta depende del cliente.</h2><p>Cinco prácticas, una sola forma de trabajar. Entra por la que responde al problema que tiene delante.</p></div>
+    <div class="p"><span class="num">01</span><h3>Process Intelligence</h3><p>Ver dónde se pierde coste, tiempo o control en un proceso antes de rediseñarlo y automatizarlo.</p><a href="#">Ver práctica →</a></div>
+    <div class="p"><span class="num">02</span><h3>Software Development</h3><p>Modernizar y mantener aplicaciones críticas sin parar el negocio ni pedir partida nueva.</p><a href="#">Ver práctica →</a></div>
+    <div class="p"><span class="num">03</span><h3>Data Intelligence</h3><p>Datos que se pueden auditar: gobierno, ingeniería, analítica y modelos sobre dato fiable.</p><a href="#">Ver práctica →</a></div>
+    <div class="p"><span class="num">04</span><h3>Smart Operations</h3><p>Operamos puesto de trabajo e infraestructura y respondemos del resultado, no de las horas.</p><a href="#">Ver práctica →</a></div>
+    <div class="p"><span class="num">05</span><h3>Digital Change</h3><p>La tecnología ya está comprada; el retorno, no. Cultura, conocimiento y gobierno de la IA.</p><a href="#">Ver práctica →</a></div>
+  </div>
+</div></section>
+
+<section class="ed-section on-light"><div class="wrap">
+  <div class="ed-otg">
+    <div>
+      <p class="ed-eyebrow">Cuando el cambio no cabe en un proyecto</p>
+      <h2 style="font-size:36px;line-height:1.05;margin:10px 0 12px">La Oficina de Transformación y Gobernanza</h2>
+      <p style="color:var(--color-text-secondary)">Es el mismo método, operado desde dentro del cliente cuando hay que sostener el cambio en el tiempo. No se vende aparte ni hace falta en cada proyecto: se activa cuando la situación lo pide. Diagnosticamos qué hay que gobernar, asumimos esa función con roles y backlog acordados, y se la devolvemos al equipo del cliente a medida que puede llevarla.</p>
+    </div>
+    <div class="fases">
+      <div class="fase"><b>01</b><div><h4>Diagnóstico</h4><p>Qué hay que gobernar y quién lo lleva hoy.</p></div></div>
+      <div class="fase"><b>02</b><div><h4>Operación</h4><p>Asumimos las funciones acordadas, con roles y backlog.</p></div></div>
+      <div class="fase"><b>03</b><div><h4>Transferencia</h4><p>Se la devolvemos al equipo del cliente, función a función.</p></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ed-section on-light"><div class="wrap">
+  <details class="ed-fold" open>
+    <summary>Pruebas, para cuando hagan falta</summary>
+    <div class="body">
+      <div>
+        <h4>Quiénes somos</h4>
+        <p class="ed-note" style="margin-top:0">Estos datos sostienen el relato; no lo abren.</p>
+        <div class="ed-stat">
+          <div><b>20+</b><span>años en organizaciones complejas y entornos críticos</span></div>
+          <div><b>2.000</b><span>profesionales de delivery en España, Latinoamérica y EE. UU.</span></div>
+          <div><b>100%</b><span>capital propio: no respondemos a ningún fabricante</span></div>
+          <div><b>&gt;95%</b><span>de los clientes renueva</span></div>
+        </div>
+        <p class="ed-note">ISO 27001 · ISO 27701 · ENS Alto · SOC 2 · Fuente: Executive Deck v6 (jul 2026).</p>
+      </div>
+      <div>
+        <h4>Sectores</h4>
+        <p class="ed-note" style="margin-top:0"><b>Financiero.</b> Banca, seguros y mercados: procesos críticos, regulación (DORA) y cores que no se pueden parar.</p>
+        <p class="ed-note"><b>Sector público.</b> Administración y educación: continuidad, ENS y transparencia sobre sistemas que deciden sobre personas.</p>
+        <p class="ed-note"><b>Gran empresa y corporación.</b> Industria, telco, energía y retail.</p>
+        <p class="ed-note">Los clientes se nombran cuando su ficha de referencia lo autoriza.</p>
+      </div>
+    </div>
+  </details>
+</div></section>
+
+<section class="ed-section on-light"><div class="wrap">
+  <p class="ed-eyebrow" style="margin-bottom:14px">Cuando el relato necesita una pieza</p>
+  <div class="ed-deck">
+    <article class="featured"><p class="ed-eyebrow">Deck corporativo</p><h3>Entelgy Executive Deck</h3><p>Deck corporativo v6 (jul 2026): el que presentas en reunión. Las cifras de resultados por cliente y los logos siguen pendientes de autorización: preséntalo, no lo envíes en frío.</p><div class="chips"><span class="chip">sale al cliente</span><span class="chip is-revisar">revisar</span></div></article>
+    <article class="side"><p class="ed-eyebrow">Versión regional</p><h3>Executive Deck · LATAM</h3><p>Mismo relato, portfolio regional. En revisión hasta que Corporativo valide su uso externo.</p></article>
+  </div>
+</div></section>
+
+</main>
+<div class="crm-band"><div class="wrap" style="padding-top:14px;padding-bottom:14px">Hipatia alimenta al CRM, que sigue siendo el registro único.</div></div>
+<footer class="site-footer"><div class="wrap" style="padding:24px 0;display:flex;justify-content:space-between"><img src="data:image/png;base64,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" alt="Entelgy" style="height:20px"><span class="footer-note">Prácticas · Materiales · Contactos</span></div></footer>
+<div class="mock-tag">Mock · capa editorial · no es la build</div>
+</body>
+</html>

@@ -1,0 +1,258 @@
+{
+  "entelgy_una_frase": "Entelgy transforma entornos críticos conectando tecnología, procesos, personas y cultura: la tecnología sola no da resultado; el valor está en que se adopte, se opere y llegue a la cuenta de resultados.",
+  "promesa": "Human driven technology.",
+  "relato": {
+    "sesenta_segundos": "La mayoría de las transformaciones no falla por la tecnología: falla porque tecnología, procesos, personas y cultura no avanzan juntos. Entelgy trabaja esos cuatro pilares con un método común para que el cambio llegue a resultados y se sostenga.",
+    "entradas": [
+      {
+        "clave": "que",
+        "eyebrow": "Qué hace Entelgy",
+        "titulo": "Hacemos que la tecnología cambie cómo una organización opera y decide.",
+        "texto": "En entornos críticos, una solución solo vale si el proceso mejora, las personas la adoptan y la organización puede sostenerla. Por eso conectamos tecnología, procesos, personas y cultura desde el principio."
+      },
+      {
+        "clave": "diferencia",
+        "eyebrow": "Qué nos diferencia",
+        "titulo": "Respondemos de que el cambio funcione, no solo de implantarlo.",
+        "texto": "La tecnología es la parte fácil. Lo difícil es que una organización que ya está en marcha cambie cómo trabaja: procesos, personas y cultura deciden si la transformación llega a resultados o se queda en la entrega."
+      },
+      {
+        "clave": "como",
+        "eyebrow": "Cómo lo hacemos",
+        "titulo": "Con un método que lleva el cambio hasta que se puede medir y operar.",
+        "texto": "Miramos cómo está la situación de verdad, diseñamos adónde ir y quién lo gobierna, lo implantamos sobre lo que ya existe, preparamos a la gente que lo va a usar y medimos el impacto. Gobierno, seguridad y operación sostenible van en todo el ciclo."
+      },
+      {
+        "clave": "ayuda",
+        "eyebrow": "En qué podemos ayudar",
+        "titulo": "Entramos por el problema que el cliente tiene delante.",
+        "texto": "Procesos, software, datos e IA, operaciones o cambio: cada práctica es una entrada a la misma forma de trabajar, y se suman las que la situación pide."
+      }
+    ],
+    "metodo": {
+      "ciclico": true,
+      "pasos": [
+        {
+          "paso": "01",
+          "titulo": "Entender",
+          "texto": "Datos, sistemas, dependencias y riesgos tal como son. Evita: diseñar sobre supuestos."
+        },
+        {
+          "paso": "02",
+          "titulo": "Diseñar",
+          "texto": "Objetivo, arquitectura, caso de negocio y modelo de operación. Evita: una solución sin gobierno."
+        },
+        {
+          "paso": "03",
+          "titulo": "Implantar",
+          "texto": "Tecnología, integración, datos, seguridad y legado en producción. Evita: entregar una capa aislada."
+        },
+        {
+          "paso": "04",
+          "titulo": "Adoptar",
+          "texto": "Capacidades, comportamiento y resistencias que deciden el uso real. Evita: que el cambio se quede sin personas."
+        },
+        {
+          "paso": "05",
+          "titulo": "Medir",
+          "texto": "Indicadores ligados al proceso y a la decisión que se quería mejorar. Evita: confundir actividad con impacto."
+        }
+      ],
+      "transversal": [
+        "Gobierno",
+        "Seguridad",
+        "Operación sostenible"
+      ],
+      "nota": "Lo que se mide alimenta un nuevo diagnóstico: el servicio no termina con la entrega."
+    },
+    "otg": {
+      "eyebrow": "Cuando el cambio no cabe en un proyecto",
+      "titulo": "La Oficina de Transformación y Gobernanza",
+      "contexto": "Es el mismo método, operado desde dentro del cliente cuando hay que sostener el cambio en el tiempo.",
+      "texto": "No se vende aparte ni hace falta en cada proyecto: se activa cuando la situación lo pide. Diagnosticamos qué hay que gobernar, asumimos esa función con roles y backlog acordados, y se la devolvemos al equipo del cliente a medida que puede llevarla.",
+      "fases": [
+        {
+          "paso": "01",
+          "titulo": "Diagnóstico",
+          "texto": "Qué hay que gobernar y quién lo lleva hoy."
+        },
+        {
+          "paso": "02",
+          "titulo": "Operación",
+          "texto": "Asumimos las funciones acordadas, con roles y backlog."
+        },
+        {
+          "paso": "03",
+          "titulo": "Transferencia",
+          "texto": "Se la devolvemos al equipo del cliente, función a función."
+        }
+      ],
+      "funciones": "Funciones que puede asumir: PMO/SMO, arquitectura, auditoría, apoyo CISO, agilidad, QMO, productividad, FinOps."
+    },
+    "por_que": {
+      "linea": "Desplegar tecnología es fácil. Que mueva tu cuenta de resultados, no.",
+      "texto": "El impacto se pierde cuando la solución no encaja con el proceso que debe mejorar, con la gente que tiene que usarla o con la cultura que debe sostenerla. Entelgy trabaja los cuatro a la vez.",
+      "pilares": [
+        "Tecnología",
+        "Procesos",
+        "Personas",
+        "Cultura"
+      ],
+      "diferenciadores": [
+        {
+          "num": "01",
+          "titulo": "Organizaciones en marcha",
+          "texto": "Trabajamos donde el cambio tiene que funcionar mientras el negocio sigue: continuidad, regulación y operación no esperan al final del proyecto."
+        },
+        {
+          "num": "02",
+          "titulo": "Las cuatro variables",
+          "texto": "Tecnología cruzada con procesos, personas y cultura. Adopción, rediseño y gobierno no son añadidos: forman parte de lo que se diseña y se lleva a producción."
+        },
+        {
+          "num": "03",
+          "titulo": "Respondemos del resultado",
+          "texto": "Nos comprometemos con el impacto, no solo con la entrega: menos coste de operar, productividad real, riesgo bajo control y valor que se queda cuando el proyecto termina."
+        }
+      ]
+    },
+    "donde_entramos": {
+      "titulo": "El método es común; la puerta depende de lo que tenga delante el cliente.",
+      "texto": "Cinco prácticas, una sola forma de trabajar. Entra por la que responde al problema que tiene delante."
+    },
+    "pruebas": {
+      "titulo": "Pruebas, para cuando hagan falta",
+      "nota": "Estos datos sostienen el relato; no lo abren.",
+      "quienes": [
+        {
+          "cifra": "20+",
+          "texto": "años en organizaciones complejas y entornos críticos"
+        },
+        {
+          "cifra": "2.000",
+          "texto": "profesionales de delivery en España, Latinoamérica y Estados Unidos"
+        },
+        {
+          "cifra": "100%",
+          "texto": "capital propio: no respondemos a ningún fabricante"
+        },
+        {
+          "cifra": ">95%",
+          "texto": "de los clientes renueva"
+        }
+      ],
+      "certificaciones": "ISO 27001 · ISO 27701 · ENS Alto · SOC 2",
+      "fuente": "Executive Deck v6 (jul 2026)",
+      "sectores": [
+        {
+          "nombre": "Financiero",
+          "texto": "Banca, seguros y mercados: procesos críticos, regulación (DORA) y cores que no se pueden parar."
+        },
+        {
+          "nombre": "Sector público",
+          "texto": "Administración y educación: continuidad, ENS y transparencia sobre sistemas que deciden sobre personas."
+        },
+        {
+          "nombre": "Gran empresa y corporación",
+          "texto": "Industria, telco, energía y retail."
+        }
+      ],
+      "regla": "Los clientes se nombran cuando su ficha de referencia lo autoriza."
+    },
+    "material": {
+      "eyebrow": "Cuando el relato necesita una pieza",
+      "ids": [
+        "corp-exec-global",
+        "corp-exec-latam"
+      ]
+    }
+  },
+  "portada": {
+    "accesos_rapidos": [
+      {
+        "label": "Decks para cliente",
+        "filtro": {
+          "tipo": "Deck"
+        }
+      },
+      {
+        "label": "One-pagers",
+        "filtro": {
+          "tipo": "One-pager"
+        }
+      },
+      {
+        "label": "Fichas",
+        "filtro": {
+          "tipo": "Ficha"
+        }
+      },
+      {
+        "label": "Referencias",
+        "filtro": {
+          "tipo": "Referencia"
+        }
+      }
+    ],
+    "material_mas_usado": [
+      "mod-onepager",
+      "mod-ficha-servicio",
+      "mod-autodiagnostico",
+      "mod-caso-nasertic",
+      "mod-caso-uned",
+      "mod-caso-h10"
+    ],
+    "nota": "Seis piezas más usadas o recientes. Sin contadores de materiales no validados, sin cabecera de «demostrador».",
+    "titular": "Cuando la tecnología no basta, Entelgy responde.",
+    "subtitular": "Todo lo que necesitas para vender: qué ofrece Entelgy, por qué, y el material que puedes enseñar o enviar a un cliente."
+  },
+  "punto_de_partida": {
+    "fuera_del_menu": true,
+    "as_is": {
+      "titulo": "De dónde partimos",
+      "texto": "Hoy el material comercial está repartido en un SharePoint que funciona como archivo: se guarda bien, pero cuesta saber cuál es la pieza buena, si está vigente y si puede salir a cliente.",
+      "capturas": []
+    },
+    "to_be": {
+      "titulo": "A dónde vamos",
+      "texto": "Un catálogo comercial: entras por una práctica, ves qué vende Entelgy y por qué, y encuentras el material que puedes enseñar o dejar al cliente, con su estado y su dueño a la vista. El CRM sigue siendo el registro único; Hipatia lo alimenta."
+    },
+    "nota": "Pantalla para la demo a Dirección. Accesible por URL propia, fuera del menú."
+  },
+  "lo_que_viene": {
+    "fuera_del_menu": true,
+    "intro": "Lo que Hipatia deja fuera a propósito por ahora y llegará cuando el uso lo justifique. Nada de esto se simula hoy.",
+    "items": [
+      {
+        "titulo": "Espacio de oportunidad por señales",
+        "texto": "Marcar las señales oídas en una cuenta y que Hipatia proponga la solución y su material.",
+        "dueno": "Corporativo",
+        "estado": "pendiente"
+      },
+      {
+        "titulo": "Asistente de preparación de visita",
+        "texto": "Un asistente sencillo que arma la visita a partir de la cuenta y la solución.",
+        "dueno": "por asignar",
+        "estado": "pendiente"
+      },
+      {
+        "titulo": "CRM de lectura",
+        "texto": "Traer contexto de la cuenta desde el CRM, sin duplicarlo.",
+        "dueno": "por asignar",
+        "estado": "pendiente"
+      },
+      {
+        "titulo": "Autodiagnóstico como patrón",
+        "texto": "Llevar el autodiagnóstico de Modernización a más soluciones.",
+        "dueno": "por asignar",
+        "estado": "pendiente"
+      },
+      {
+        "titulo": "Visión sectorial y competencia",
+        "texto": "La lectura de mercado y competencia que pidió el equipo comercial en junio, más allá del benchmark por solución.",
+        "dueno": "Corporativo · Jorge",
+        "estado": "pendiente"
+      }
+    ]
+  }
+}
