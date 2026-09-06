@@ -90,6 +90,29 @@
   </div></div>
 </footer>
 
+<div class="pregunta" data-pregunta>
+  <button class="pregunta-tab" type="button" aria-expanded="false" aria-controls="pregunta-panel">
+    <span class="pregunta-dot" aria-hidden="true"></span>
+    <span class="pregunta-tab-full">Pregunta a Hipatia</span>
+    <span class="pregunta-tab-corto" aria-hidden="true">Pregunta</span>
+  </button>
+  <section class="pregunta-panel" id="pregunta-panel" role="dialog" aria-label="Pregunta a Hipatia" hidden>
+    <div class="pregunta-head">
+      <p class="pregunta-eyebrow">Pregunta a Hipatia</p>
+      <button class="pregunta-cerrar" type="button" aria-label="Cerrar el panel">cerrar ×</button>
+    </div>
+    <p class="pregunta-intro">Responde con lo que hay en el portal. Si no lo tiene, te lo dice.</p>
+    <div class="pregunta-sugerencias"><button class="pregunta-chip" type="button" data-q="qué le enseño a un cio de banca sobre modernización">CIO de banca · Modernización</button><button class="pregunta-chip" type="button" data-q="a quién llamo por infraestructura">A quién llamo · infra</button><button class="pregunta-chip" type="button" data-q="qué es process intelligence">Qué es Process Intelligence</button></div>
+    <div class="pregunta-respuesta" data-pregunta-respuesta aria-live="polite"></div>
+    <form class="pregunta-form" data-pregunta-form>
+      <label class="visually-hidden" for="pregunta-input">Escribe tu pregunta</label>
+      <input id="pregunta-input" class="pregunta-input" type="text" name="q" placeholder="Escribe tu pregunta" autocomplete="off">
+      <button class="btn pregunta-buscar" type="submit">Buscar</button>
+    </form>
+    <p class="pregunta-nota">No inventa: responde solo con lo que está en el portal.</p>
+  </section>
+</div>
 <script src="/app.js" defer></script>
+<script src="/pregunta.js" defer></script>
 </body>
 </html>

@@ -56,6 +56,38 @@ function footer() {
   </div></div>
 </footer>`;
 }
+// Widget «Pregunta a Hipatia» (revisión 18 · BJ.2). Se inyecta al final del
+// <body> de todas las páginas generadas. Pinta sin JS (pestaña cerrada); el
+// panel lo abre y responde pregunta.js. Sin iconos, avatar ni animación.
+function preguntaWidget() {
+  const sugerencias = [
+    ["CIO de banca · Modernización", "qué le enseño a un cio de banca sobre modernización"],
+    ["A quién llamo · infra", "a quién llamo por infraestructura"],
+    ["Qué es Process Intelligence", "qué es process intelligence"],
+  ].map(([label, q]) => `<button class="pregunta-chip" type="button" data-q="${esc(q)}">${esc(label)}</button>`).join("");
+  return `<div class="pregunta" data-pregunta>
+  <button class="pregunta-tab" type="button" aria-expanded="false" aria-controls="pregunta-panel">
+    <span class="pregunta-dot" aria-hidden="true"></span>
+    <span class="pregunta-tab-full">Pregunta a Hipatia</span>
+    <span class="pregunta-tab-corto" aria-hidden="true">Pregunta</span>
+  </button>
+  <section class="pregunta-panel" id="pregunta-panel" role="dialog" aria-label="Pregunta a Hipatia" hidden>
+    <div class="pregunta-head">
+      <p class="pregunta-eyebrow">Pregunta a Hipatia</p>
+      <button class="pregunta-cerrar" type="button" aria-label="Cerrar el panel">cerrar ×</button>
+    </div>
+    <p class="pregunta-intro">Responde con lo que hay en el portal. Si no lo tiene, te lo dice.</p>
+    <div class="pregunta-sugerencias">${sugerencias}</div>
+    <div class="pregunta-respuesta" data-pregunta-respuesta aria-live="polite"></div>
+    <form class="pregunta-form" data-pregunta-form>
+      <label class="visually-hidden" for="pregunta-input">Escribe tu pregunta</label>
+      <input id="pregunta-input" class="pregunta-input" type="text" name="q" placeholder="Escribe tu pregunta" autocomplete="off">
+      <button class="btn pregunta-buscar" type="submit">Buscar</button>
+    </form>
+    <p class="pregunta-nota">No inventa: responde solo con lo que está en el portal.</p>
+  </section>
+</div>`;
+}
 function page({ title, desc, active, body, modal }) {
   return `<!DOCTYPE html>
 <html lang="es">
@@ -75,7 +107,9 @@ ${body}
 </main>
 ${footer()}
 ${modal || ""}
+${preguntaWidget()}
 <script src="/app.js" defer></script>
+<script src="/pregunta.js" defer></script>
 </body>
 </html>
 `;

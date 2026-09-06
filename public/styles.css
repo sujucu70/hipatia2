@@ -587,3 +587,46 @@ details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
 .card.lib h3{ font-size:var(--font-size-2xl); line-height:1.08; margin:var(--space-1) 0 var(--space-2); }
 .card.lib h3 a{ text-decoration:none; color:inherit; }
 .card.lib > p:not(.eyebrow){ font-size:var(--font-size-sm); color:var(--color-text-secondary); }
+
+/* ===== Pregunta a Hipatia (revisión 18 · BJ.2) ===== */
+/* Capa entre la cabecera fija (--z-sticky) y el modal (--z-modal). */
+.pregunta{ position:fixed; right:var(--space-5); bottom:var(--space-5); z-index:1030; }
+.pregunta-tab{ display:inline-flex; align-items:center; gap:8px; font-family:var(--font-family-mono); font-size:var(--font-size-xs); letter-spacing:.08em; text-transform:uppercase; color:var(--color-text-inverse); background:var(--color-brand-navy); border:1px solid rgba(255,255,255,.14); border-radius:var(--radius-full); padding:10px 16px; cursor:pointer; box-shadow:var(--shadow-lg); }
+.pregunta-tab:hover{ background:var(--color-slate-800); }
+.pregunta-dot{ width:7px; height:7px; border-radius:50%; background:var(--color-orange-500); flex:0 0 auto; }
+.pregunta-tab-corto{ display:none; }
+.pregunta-panel{ position:absolute; right:0; bottom:0; width:380px; max-width:calc(100vw - 2*var(--space-4)); background:var(--color-surface); color:var(--color-text-primary); border-top:3px solid var(--color-brand-purple); border-radius:var(--radius-lg); box-shadow:var(--shadow-xl); padding:var(--space-5); }
+.pregunta-panel[hidden]{ display:none; }
+.pregunta-head{ display:flex; align-items:center; justify-content:space-between; gap:var(--space-3); }
+.pregunta-eyebrow{ display:inline-flex; align-items:center; gap:10px; margin:0; font-family:var(--font-family-mono); font-size:var(--font-size-xs); letter-spacing:.08em; text-transform:uppercase; color:var(--color-purple-700); }
+.pregunta-eyebrow::before{ content:""; width:28px; height:1px; background:currentColor; flex:0 0 auto; }
+.pregunta-cerrar{ font-family:var(--font-family-mono); font-size:var(--font-size-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--color-text-secondary); background:none; border:0; padding:4px; cursor:pointer; }
+.pregunta-cerrar:hover{ color:var(--color-purple-700); }
+.pregunta-intro{ margin:var(--space-3) 0; font-size:var(--font-size-sm); color:var(--color-text-secondary); }
+.pregunta-sugerencias{ display:flex; flex-wrap:wrap; gap:var(--space-2); margin-bottom:var(--space-3); }
+.pregunta-chip{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.04em; padding:5px 9px; border:1px solid var(--color-border-default); border-radius:var(--radius-sm); background:var(--color-surface); color:var(--color-text-secondary); cursor:pointer; }
+.pregunta-chip:hover{ border-color:var(--color-brand-purple); color:var(--color-purple-700); }
+.pregunta-respuesta{ font-size:var(--font-size-sm); line-height:1.5; max-height:46vh; overflow:auto; }
+.pregunta-respuesta:empty{ display:none; }
+.pregunta-respuesta > p{ margin:0 0 var(--space-3); }
+/* Anatomía de pieza dentro de la respuesta (principio 5 del brief) */
+.pregunta-item{ border-top:1px solid var(--color-border-subtle); padding-top:var(--space-3); margin-bottom:var(--space-3); }
+.pregunta-item-eyebrow{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-text-secondary); margin:0 0 4px; }
+.pregunta-item h4{ font-family:var(--font-family-display); font-weight:var(--font-weight-semibold); font-size:22px; line-height:1.12; margin:0 0 var(--space-2); }
+.pregunta-item h4 a{ color:inherit; text-decoration:none; }
+.pregunta-item h4 a:hover{ text-decoration:underline; }
+.pregunta-item-linea{ font-size:var(--font-size-sm); color:var(--color-text-secondary); margin:0 0 var(--space-2); }
+.pregunta-foot{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:var(--space-2); font-family:var(--font-family-mono); font-size:11px; letter-spacing:.04em; }
+.pregunta-tambien, .pregunta-prep{ margin-top:var(--space-3); }
+.pregunta-tambien .pregunta-eyebrow, .pregunta-prep .pregunta-eyebrow{ margin-bottom:var(--space-2); }
+.pregunta-lista{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px; }
+.pregunta-lista a{ font-size:var(--font-size-sm); color:var(--color-text-primary); text-decoration:none; }
+.pregunta-lista a:hover{ color:var(--color-purple-700); text-decoration:underline; }
+.pregunta-chip-inline{ display:inline-flex; align-items:center; font-family:var(--font-family-mono); font-size:10px; letter-spacing:.04em; text-transform:uppercase; color:var(--color-text-secondary); margin-left:6px; }
+@media (max-width:640px){
+  .pregunta{ right:12px; bottom:12px; left:12px; }
+  .pregunta-tab{ position:absolute; right:0; bottom:0; }
+  .pregunta-tab-full{ display:none; }
+  .pregunta-tab-corto{ display:inline; }
+  .pregunta-panel{ left:0; right:0; width:auto; max-width:none; }
+}
