@@ -900,6 +900,64 @@ function contactosPage(practicas, personas) {
 }
 
 // =====================================================================
+// Índice de «Pregunta a Hipatia» (revisión 18 · BJ.1)
+// JSON en una línea servido desde public/. No lleva notas de uso, kit,
+// keynotes, cifras ni precios: la respuesta enlaza a la ficha, no la repite.
+// =====================================================================
+// Dueño (nombre de pila en materiales) → id de persona. «Corporativo» → null.
+const DUENO_A_ID = Object.fromEntries(PERSONAS.map((p) => [p.nombre.split(" ")[0].toLowerCase(), p.id]));
+function duenoId(dueno) {
+  if (!dueno) return null;
+  const first = String(dueno).split("/")[0].trim().toLowerCase();
+  if (!first || first === "corporativo") return null;
+  return DUENO_A_ID[first] || null;
+}
+// Citabilidad de una referencia como la pinta la biblioteca (chipCitable), en texto.
+function citaLabel(m) {
+  if (m.citable === "citable" && m.sign_off) return "citable · sign-off " + fechaCorta(m.sign_off.fecha);
+  return "confirmar por cuenta";
+}
+function escribeIndicePregunta(practicas, personas) {
+  const piezas = materiales.map((m) => {
+    const fila = {
+      id: m.id, titulo: m.titulo, tipo: m.tipo, subtipo: m.subtipo || null,
+      practica: m.practica || null, solucion: m.solucion || null,
+      sector: m.sector || [], estado: m.estado, sale_al_cliente: m.sale_al_cliente,
+      momento: m.momento_comercial || null, abre: !!m.url_documento,
+      dueno: duenoId(m.dueno), url: `/materiales/${m.id}/`,
+    };
+    if (m.tipo === "Referencia") fila.citable = citaLabel(m);
+    return fila;
+  });
+  const entradas = [];
+  practicas.forEach((pr) => {
+    entradas.push({
+      id: pr.id, clase: "practica", nombre: pr.nombre, practica: pr.id,
+      linea: pr.propuesta_portada || pr.propuesta || null,
+      comercial: pr.responsable_id || null, tecnico: null,
+      url: `/practicas/${pr.id}/`,
+    });
+    (pr.soluciones || []).forEach((s) => {
+      entradas.push({
+        id: s.id, clase: "solucion", nombre: s.nombre, practica: pr.id,
+        linea: s.una_linea || null,
+        comercial: (s.contactos && s.contactos.comercial) || null,
+        tecnico: (s.contactos && s.contactos.tecnico) || null,
+        url: `/practicas/${pr.id}/${s.id}/`,
+      });
+    });
+  });
+  const pers = personas.map((p) => ({
+    id: p.id, nombre: p.nombre, correo: p.correo || null, titulo: p.titulo || null,
+    lleva: rolesDe(p.id, practicas),
+  }));
+  const indice = { piezas, entradas, personas: pers };
+  fs.writeFileSync(path.join(PUB, "indice-pregunta.json"), JSON.stringify(indice), "utf8");
+  const kb = Math.round(Buffer.byteLength(JSON.stringify(indice)) / 1024);
+  console.log(`Índice Pregunta a Hipatia: ${piezas.length} piezas · ${entradas.length} entradas · ${pers.length} personas · ${kb} KB`);
+}
+
+// =====================================================================
 // BUILD
 // =====================================================================
 function build() {
@@ -923,6 +981,7 @@ function build() {
   write("materiales", materialesIndex("cliente"));
   write(path.join("materiales", "todo"), materialesIndex("todo"));
   materiales.forEach((m) => write(path.join("materiales", m.id), materialFicha(m)));
+  escribeIndicePregunta(practicas, personas);
   console.log(`Generadas: / · /entelgy · /punto-de-partida · /lo-que-viene · /contactos · /practicas + ${practicas.length} prácticas + ${nSol} soluciones · /materiales + ${materiales.length} fichas`);
 }
 build();
