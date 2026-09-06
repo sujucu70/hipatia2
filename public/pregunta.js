@@ -167,6 +167,8 @@
     form.addEventListener("submit", function (e) { e.preventDefault(); responder(input.value); });
     Array.prototype.forEach.call(chipsEl, function (c) { c.addEventListener("click", function () { responder(c.getAttribute("data-q")); }); });
     document.addEventListener("keydown", function (e) { if (e.key !== "Escape" || !abierto()) return; var m = document.querySelector("[data-modal]"); if (m && !m.hidden) return; cerrarP(); });
+    // Cargado bajo demanda (al primer clic/foco en la pestaña): abre el panel solo.
+    if (!abierto()) abrir();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", wire); else wire();
 })(typeof self !== "undefined" ? self : this);

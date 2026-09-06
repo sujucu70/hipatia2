@@ -86,6 +86,7 @@ function preguntaWidget() {
     </form>
     <p class="pregunta-nota">No inventa: responde solo con lo que está en el portal.</p>
   </section>
+  <script>(function(){var w=document.currentScript.parentNode,t=w.querySelector(".pregunta-tab"),pedido=false;function cargar(){if(pedido)return;pedido=true;var s=document.createElement("script");s.src="/pregunta.js";s.onerror=function(){t.addEventListener("click",function(){location.href="/materiales/";});};document.head.appendChild(s);}t.addEventListener("click",cargar);t.addEventListener("focus",cargar);})();</script>
 </div>`;
 }
 function page({ title, desc, active, body, modal }) {
@@ -109,7 +110,6 @@ ${footer()}
 ${modal || ""}
 ${preguntaWidget()}
 <script src="/app.js" defer></script>
-<script src="/pregunta.js" defer></script>
 </body>
 </html>
 `;

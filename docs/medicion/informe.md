@@ -12,7 +12,7 @@
 | 5 | Uso/estado/dueño, citable⇒sign_off, sin enlaces rotos | 🟢 (rotos: 0) |
 | 6 | Ninguna pantalla afirma agente/envío/integración | 🟢 |
 | 7 | URL propia y buscador en todas | 🟢 |
-| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🔴 (peso máx 156 KB) |
+| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 137 KB) |
 | 9 | Reconocible por quien usó hipatia2 | ⚪ cualitativo |
 
 ## Clics desde la portada
@@ -34,28 +34,28 @@
 | /practicas/digital-change/preservia/ | 1 |
 | /practicas/digital-change/ogh-ia/ | 1 |
 
-## Peso por página (HTML + CSS + JS + pregunta.js)
+## Peso por página (HTML + CSS + JS)
 
 | Ruta | KB |
 |---|---|
-| /materiales/todo/ | 156 |
-| /materiales/ | 128 |
-| /modernizacion/materiales/ficha-modernizacion.html | 106 |
-| /practicas/data-intelligence/data-intelligence/ | 92 |
-| /practicas/smart-operations/smartops-workplace/ | 92 |
-| /practicas/software-development/modernizacion/ | 91 |
-| /modernizacion/materiales/onepager-modernizacion.html | 90 |
-| /practicas/smart-operations/smartops-infra/ | 89 |
-| /practicas/process-intelligence/process-mining/ | 87 |
-| /practicas/software-development/mantenimiento/ | 87 |
-| /autodiagnostico/grupo-lantia/ | 86 |
-| /practicas/digital-change/iability/ | 86 |
+| /materiales/todo/ | 137 |
+| /materiales/ | 109 |
+| /modernizacion/materiales/ficha-modernizacion.html | 87 |
+| /practicas/data-intelligence/data-intelligence/ | 73 |
+| /practicas/smart-operations/smartops-workplace/ | 73 |
+| /practicas/software-development/modernizacion/ | 73 |
+| /modernizacion/materiales/onepager-modernizacion.html | 71 |
+| /practicas/smart-operations/smartops-infra/ | 70 |
+| /practicas/process-intelligence/process-mining/ | 69 |
+| /practicas/process-intelligence/process-automation-ai/ | 68 |
+| /practicas/software-development/mantenimiento/ | 68 |
+| /autodiagnostico/grupo-lantia/ | 67 |
 
-(máximo 156 KB de 139 páginas; imágenes e índice de Pregunta aparte)
+(máximo 137 KB de 139 páginas; imágenes aparte)
 
 ## Pregunta a Hipatia
 
-- Índice 45 KB (objetivo ≤ 40) · pregunta.js 19 KB (≤ 12). El índice no cuenta en el peso de página, como las fuentes.
+- Índice 45 KB · pregunta.js 16 KB · los dos bajo demanda (se cargan al abrir el panel, no con la página; no cuentan en el peso).
 
 ## Bloques opcionales de práctica
 
