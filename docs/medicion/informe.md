@@ -1,6 +1,6 @@
 # Medición · Hipatia v3
 
-> Generado por `medir.js` el 2026-09-04. Rutas medidas: 139.
+> Generado por `medir.js` el 2026-09-06. Rutas medidas: 139.
 
 ## Criterios de aceptación (§6.8)
 
@@ -12,7 +12,7 @@
 | 5 | Uso/estado/dueño, citable⇒sign_off, sin enlaces rotos | 🟢 (rotos: 0) |
 | 6 | Ninguna pantalla afirma agente/envío/integración | 🟢 |
 | 7 | URL propia y buscador en todas | 🟢 |
-| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 130 KB) |
+| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🔴 (peso máx 156 KB) |
 | 9 | Reconocible por quien usó hipatia2 | ⚪ cualitativo |
 
 ## Clics desde la portada
@@ -34,24 +34,28 @@
 | /practicas/digital-change/preservia/ | 1 |
 | /practicas/digital-change/ogh-ia/ | 1 |
 
-## Peso por página (HTML + CSS + JS)
+## Peso por página (HTML + CSS + JS + pregunta.js)
 
 | Ruta | KB |
 |---|---|
-| /materiales/todo/ | 130 |
-| /materiales/ | 103 |
-| /modernizacion/materiales/ficha-modernizacion.html | 83 |
-| /practicas/smart-operations/smartops-workplace/ | 67 |
-| /modernizacion/materiales/onepager-modernizacion.html | 66 |
-| /practicas/data-intelligence/data-intelligence/ | 66 |
-| /practicas/software-development/modernizacion/ | 66 |
-| /practicas/smart-operations/smartops-infra/ | 64 |
-| /autodiagnostico/grupo-lantia/ | 62 |
-| /practicas/process-intelligence/process-mining/ | 62 |
-| /practicas/software-development/mantenimiento/ | 62 |
-| /practicas/process-intelligence/process-automation-ai/ | 61 |
+| /materiales/todo/ | 156 |
+| /materiales/ | 128 |
+| /modernizacion/materiales/ficha-modernizacion.html | 106 |
+| /practicas/data-intelligence/data-intelligence/ | 92 |
+| /practicas/smart-operations/smartops-workplace/ | 92 |
+| /practicas/software-development/modernizacion/ | 91 |
+| /modernizacion/materiales/onepager-modernizacion.html | 90 |
+| /practicas/smart-operations/smartops-infra/ | 89 |
+| /practicas/process-intelligence/process-mining/ | 87 |
+| /practicas/software-development/mantenimiento/ | 87 |
+| /autodiagnostico/grupo-lantia/ | 86 |
+| /practicas/digital-change/iability/ | 86 |
 
-(máximo 130 KB de 139 páginas; imágenes aparte)
+(máximo 156 KB de 139 páginas; imágenes e índice de Pregunta aparte)
+
+## Pregunta a Hipatia
+
+- Índice 45 KB (objetivo ≤ 40) · pregunta.js 19 KB (≤ 12). El índice no cuenta en el peso de página, como las fuentes.
 
 ## Bloques opcionales de práctica
 
