@@ -9,5 +9,9 @@
   { "pregunta": "one pager preservia sector público",
     "intencion": "material", "primero": "preservia-publico" },
   { "pregunta": "cuánto cuesta",
-    "intencion": "nada", "primero": null }
+    "intencion": "nada", "primero": null },
+  { "pregunta": "deck corporativo",
+    "intencion": "material", "primero": "corp-exec-global" },
+  { "pregunta": "qué es entelgy",
+    "intencion": "definicion", "primero": "corporativo" }
 ]

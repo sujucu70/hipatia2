@@ -10,7 +10,7 @@
   function esc(v) { return String(v == null ? "" : v).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
   function W(t) { return norm(t).replace(/-/g, " ").split(/[^a-z0-9]+/).filter(Boolean); }
 
-  var STOP = "a al del de el la lo los las un una unos unas y o u en con por para sobre sin que como cual le les me te se es son hay tengo tienes puedo quiero necesito hacer algo alguna algun sector practica solucion pieza piezas material materiales cliente entelgy hipatia portal".split(" ").reduce(function (o, w) { o[w] = 1; return o; }, {});
+  var STOP = "a al del de el la lo los las un una unos unas y o u en con por para sobre sin que como cual le les me te se es son hay tengo tienes puedo quiero necesito hacer algo alguna algun sector practica solucion pieza piezas material materiales cliente hipatia portal".split(" ").reduce(function (o, w) { o[w] = 1; return o; }, {});
   var SIN = "No tengo nada con esas palabras. Prueba con la práctica (Modernización, Smart Operations…) o el sector (banca, AAPP…). Si crees que debería existir, escríbeselo al responsable de la práctica → <a class=\"text-link\" href=\"/contactos/\">Contactos</a>.";
   // Sinónimos (en forma normalizada; los de varias palabras casan como frase consecutiva).
   var SIN_GRUPOS = [
@@ -62,6 +62,7 @@
 
   function respPersona(entrada, entradas, pById) {
     var coms = [].concat(entrada.comercial || []).map(function (id) { return pById[id]; }).filter(Boolean);
+    if (!coms.length) return { intencion: "nada", primero: null, tambien: [] }; // corporativo: no hay a quién llamar
     var tec = entrada.tecnico ? pById[entrada.tecnico] : null, otras = [];
     if (entrada.clase === "solucion" && coms.length) entradas.forEach(function (e) { if (e.clase === "solucion" && e.practica === entrada.practica && e.id !== entrada.id && [].concat(e.comercial || []).indexOf(coms[0].id) >= 0) otras.push(e.nombre); });
     return { intencion: "persona", primero: coms[0] ? coms[0].id : null, tambien: [], entrada: entrada, comerciales: coms, tecnico: tec, otras: otras };
@@ -96,7 +97,14 @@
     var tS = terms.filter(function (tm) { return !tA[tm]; });
     var vals = {}; piezas.forEach(function (p) { (p.sector || []).forEach(function (s) { vals[s] = 1; }); });
     var sector = mejorSector(Object.keys(vals), tS);
-    function belong(p) { return asunto ? (asunto.clase === "solucion" ? p.solucion === asunto.id : p.practica === asunto.id) : false; }
+    function soloUna(prac) { return entradas.filter(function (e) { return e.clase === "solucion" && e.practica === prac; }).length === 1; }
+    function belong(p) {
+      if (!asunto) return false;
+      if (asunto.clase === "practica") return p.practica === asunto.id;
+      if (p.solucion === asunto.id) return true;
+      // Piezas de la práctica de la solución (rev19 · BN.3): sin solución propia, o si la solución es la única de su práctica.
+      return p.practica === asunto.practica && (p.solucion == null || soloUna(asunto.practica));
+    }
     function punt(p) {
       var s = belong(p) ? 3 : 0;
       terms.forEach(function (tm) { if (casa(tm, W((p.sector || []).join(" ")))) s += 2; else if (casa(tm, W(p.tipo))) s += 2; else if (casa(tm, W((p.titulo || "") + " " + (p.subtipo || "")))) s += 1; });
@@ -117,11 +125,11 @@
   function eyebrow(p, pn) { var a = [p.tipo]; if (p.subtipo) a.push(p.subtipo); a.push(pn[p.practica] || p.practica); return a.map(esc).join(" · "); }
   function lineaDe(p, e) { if (p.solucion && e[p.solucion]) return e[p.solucion].linea; if (p.practica && e[p.practica]) return e[p.practica].linea; return null; }
   function duenoDe(p, pById) { if (!p.dueno) return "Corporativo"; var per = pById[p.dueno]; if (!per) return "Corporativo"; return per.correo ? esc(per.nombre) + ' · <a class="text-link" href="mailto:' + esc(per.correo) + '">escribir →</a>' : esc(per.nombre) + ' · <a class="text-link" href="/contactos/">ver en Contactos →</a>'; }
-  function itemFull(p, e, pById, pn) { var l = lineaDe(p, e); return '<div class="pregunta-item"><p class="pregunta-item-eyebrow">' + eyebrow(p, pn) + '</p><h4><a href="' + esc(p.url) + '">' + esc(p.titulo) + "</a> " + chips(p) + "</h4>" + (l ? '<p class="pregunta-item-linea">' + esc(l) + "</p>" : "") + '<p class="pregunta-foot"><a class="text-link" href="' + esc(p.url) + '">Ver ficha →</a><span>' + duenoDe(p, pById) + "</span></p></div>"; }
+  function itemFull(p, e, pById, pn) { var l = lineaDe(p, e); return '<div class="pregunta-item"><p class="pregunta-item-eyebrow">' + eyebrow(p, pn) + '</p><h4><a href="' + esc(p.url) + '">' + esc(p.titulo) + "</a> " + chips(p) + "</h4>" + (l ? '<p class="pregunta-item-linea">' + esc(l) + "</p>" : "") + '<p class="pregunta-foot"><a class="ver-ficha" href="' + esc(p.url) + '">Ver ficha →</a><span>' + duenoDe(p, pById) + "</span></p></div>"; }
   function itemCorto(p) { return '<li><a href="' + esc(p.url) + '">' + esc(p.tipo) + " · " + esc(p.titulo) + "</a> " + chips(p) + "</li>"; }
   function render(res) {
-    if (!res || res.intencion === "nada") return "<p>" + SIN + "</p>";
-    if (res.intencion === "definicion") { var e = res.entrada; return '<p>«' + esc(e.linea || "") + '» <a class="text-link" href="' + esc(e.url) + '">Ver la página →</a></p>'; }
+    if (!res || res.intencion === "nada") return '<p class="pregunta-sin">' + SIN + "</p>";
+    if (res.intencion === "definicion") { var e = res.entrada; return '<p class="pregunta-def">«' + esc(e.linea || "") + '»</p><p><a class="ver-ficha" href="' + esc(e.url) + '">Ver la página →</a></p>'; }
     if (res.intencion === "persona") {
       var out = "";
       res.comerciales.forEach(function (per) {
@@ -137,10 +145,10 @@
     if (a && res.sector) l1 = "Para " + esc(a.nombre) + " en " + esc(res.sector) + " tienes " + N + " " + pl + ". Empieza por esta.";
     else if (a) l1 = "Para " + esc(a.nombre) + " tienes " + N + " " + pl + ". Empieza por esta.";
     else l1 = "Con “" + esc(res.terms.join(" ")) + "” tengo " + N + " " + pl + ". Empieza por esta.";
-    var h = "<p>" + l1 + "</p>" + itemFull(res.principal[0], res.entById, res.pById, res.pracNom);
+    var h = '<p class="pregunta-linea1">' + l1 + "</p>" + itemFull(res.principal[0], res.entById, res.pById, res.pracNom);
     var mas = res.principal.slice(1, 4);
-    if (mas.length) h += '<div class="pregunta-tambien"><p class="pregunta-eyebrow">También</p><ul class="pregunta-lista">' + mas.map(itemCorto).join("") + "</ul></div>";
-    if (res.prep && res.prep.length) h += '<div class="pregunta-prep"><p class="pregunta-eyebrow">Para prepararte</p><ul class="pregunta-lista">' + res.prep.map(itemCorto).join("") + "</ul></div>";
+    if (mas.length) h += '<div class="pregunta-tambien"><p class="pregunta-mas">También:</p><ul class="pregunta-lista">' + mas.map(itemCorto).join("") + "</ul></div>";
+    if (res.prep && res.prep.length) h += '<div class="pregunta-prep"><p class="pregunta-prep-label">Para prepararte</p><ul class="pregunta-lista">' + res.prep.map(itemCorto).join("") + "</ul></div>";
     return h;
   }
 
@@ -154,7 +162,7 @@
     var wrap = document.querySelector("[data-pregunta]"); if (!wrap) return;
     var tab = wrap.querySelector(".pregunta-tab"), panel = wrap.querySelector("#pregunta-panel"), cerrar = wrap.querySelector(".pregunta-cerrar"),
       form = wrap.querySelector("[data-pregunta-form]"), input = wrap.querySelector(".pregunta-input"), resp = wrap.querySelector("[data-pregunta-respuesta]"),
-      chipsEl = wrap.querySelectorAll(".pregunta-chip"), KEY = "hipatia.pregunta", idx = null, cargando = null;
+      chipsEl = wrap.querySelectorAll(".pregunta-sug"), KEY = "hipatia.pregunta", idx = null, cargando = null;
     function cargar() { if (idx) return Promise.resolve(idx); if (cargando) return cargando; cargando = fetch("/indice-pregunta.json", { credentials: "same-origin" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (d) { idx = d; return d; }); return cargando; }
     function guarda(q) { try { sessionStorage.setItem(KEY, q); } catch (e) {} }
     function leer() { try { return sessionStorage.getItem(KEY) || ""; } catch (e) { return ""; } }

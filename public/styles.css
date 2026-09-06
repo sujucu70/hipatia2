@@ -588,45 +588,62 @@ details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
 .card.lib h3 a{ text-decoration:none; color:inherit; }
 .card.lib > p:not(.eyebrow){ font-size:var(--font-size-sm); color:var(--color-text-secondary); }
 
-/* ===== Pregunta a Hipatia (revisión 18 · BJ.2) ===== */
+/* ===== Pregunta a Hipatia (rev 18 · BJ.2; segunda pasada rev 19 · BO) ===== */
 /* Capa entre la cabecera fija (--z-sticky) y el modal (--z-modal). */
 .pregunta{ position:fixed; right:var(--space-5); bottom:var(--space-5); z-index:1030; }
+/* Pestaña cerrada (sin cambios) */
 .pregunta-tab{ display:inline-flex; align-items:center; gap:8px; font-family:var(--font-family-mono); font-size:var(--font-size-xs); letter-spacing:.08em; text-transform:uppercase; color:var(--color-text-inverse); background:var(--color-brand-navy); border:1px solid rgba(255,255,255,.14); border-radius:var(--radius-full); padding:10px 16px; cursor:pointer; box-shadow:var(--shadow-lg); }
 .pregunta-tab:hover{ background:var(--color-slate-800); }
 .pregunta-dot{ width:7px; height:7px; border-radius:50%; background:var(--color-orange-500); flex:0 0 auto; }
 .pregunta-tab-corto{ display:none; }
-.pregunta-panel{ position:absolute; right:0; bottom:0; width:380px; max-width:calc(100vw - 2*var(--space-4)); background:var(--color-surface); color:var(--color-text-primary); border-top:3px solid var(--color-brand-purple); border-radius:var(--radius-lg); box-shadow:var(--shadow-xl); padding:var(--space-5); }
+/* Panel: tarjeta de contenido del portal (E6). Una sola familia (Roboto); mono solo en metadatos. */
+.pregunta-panel{ position:absolute; right:0; bottom:0; width:400px; max-width:calc(100vw - 24px); display:flex; flex-direction:column; gap:16px; background:var(--color-surface); color:var(--color-text-primary); border-top:3px solid var(--color-brand-purple); border-radius:var(--radius-lg); box-shadow:var(--shadow-xl); padding:24px; font-family:var(--font-family-body); font-size:16px; line-height:1.5; }
 .pregunta-panel[hidden]{ display:none; }
-.pregunta-head{ display:flex; align-items:center; justify-content:space-between; gap:var(--space-3); }
-.pregunta-eyebrow{ display:inline-flex; align-items:center; gap:10px; margin:0; font-family:var(--font-family-mono); font-size:var(--font-size-xs); letter-spacing:.08em; text-transform:uppercase; color:var(--color-purple-700); }
+.pregunta-head{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.pregunta-eyebrow{ display:inline-flex; align-items:center; gap:10px; margin:0; font-family:var(--font-family-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--color-purple-700); }
 .pregunta-eyebrow::before{ content:""; width:28px; height:1px; background:currentColor; flex:0 0 auto; }
-.pregunta-cerrar{ font-family:var(--font-family-mono); font-size:var(--font-size-xs); letter-spacing:.06em; text-transform:uppercase; color:var(--color-text-secondary); background:none; border:0; padding:4px; cursor:pointer; }
+.pregunta-cerrar{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-text-secondary); background:none; border:0; padding:4px; cursor:pointer; }
 .pregunta-cerrar:hover{ color:var(--color-purple-700); }
-.pregunta-intro{ margin:var(--space-3) 0; font-size:var(--font-size-sm); color:var(--color-text-secondary); }
-.pregunta-sugerencias{ display:flex; flex-wrap:wrap; gap:var(--space-2); margin-bottom:var(--space-3); }
-.pregunta-chip{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.04em; padding:5px 9px; border:1px solid var(--color-border-default); border-radius:var(--radius-sm); background:var(--color-surface); color:var(--color-text-secondary); cursor:pointer; }
-.pregunta-chip:hover{ border-color:var(--color-brand-purple); color:var(--color-purple-700); }
-.pregunta-respuesta{ font-size:var(--font-size-sm); line-height:1.5; max-height:46vh; overflow:auto; }
-.pregunta-respuesta:empty{ display:none; }
-.pregunta-respuesta > p{ margin:0 0 var(--space-3); }
-/* Anatomía de pieza dentro de la respuesta (principio 5 del brief) */
-.pregunta-item{ border-top:1px solid var(--color-border-subtle); padding-top:var(--space-3); margin-bottom:var(--space-3); }
-.pregunta-item-eyebrow{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-text-secondary); margin:0 0 4px; }
-.pregunta-item h4{ font-family:var(--font-family-display); font-weight:var(--font-weight-semibold); font-size:22px; line-height:1.12; margin:0 0 var(--space-2); }
+/* Campo + Buscar como una sola pieza (misma altura, mismo radio) */
+.pregunta-form{ display:flex; gap:8px; }
+.pregunta-input{ flex:1 1 auto; min-width:0; height:44px; font-family:var(--font-family-body); font-size:16px; color:var(--color-text-primary); background:var(--color-surface); border:1px solid var(--color-border-strong); border-radius:var(--radius-md); padding:0 12px; }
+.pregunta-input::placeholder{ color:var(--color-slate-500); }
+.pregunta-input:focus{ outline:2px solid var(--color-brand-purple); outline-offset:0; border-color:var(--color-brand-purple); }
+.pregunta-buscar{ flex:0 0 auto; height:44px; padding:0 16px; font-family:var(--font-family-body); font-size:14px; font-weight:var(--font-weight-medium); color:var(--color-text-inverse); background:var(--color-brand-navy); border:0; border-radius:var(--radius-md); cursor:pointer; }
+.pregunta-buscar:hover{ background:var(--color-slate-800); }
+.pregunta-intro{ margin:0; font-size:14px; color:var(--color-text-secondary); }
+/* Sugerencias: enlaces de texto, una por línea, con «→» delante */
+.pregunta-sugerencias{ display:flex; flex-direction:column; align-items:flex-start; gap:8px; }
+.pregunta-sug{ font-family:var(--font-family-body); font-size:14px; text-align:left; background:none; border:0; padding:0; cursor:pointer; color:var(--color-purple-700); text-decoration:underline; text-underline-offset:2px; }
+.pregunta-sug::before{ content:"→ "; }
+.pregunta-sug:hover{ color:var(--color-purple-900); }
+/* Zona de respuesta: filete superior, min-height para que no salte */
+.pregunta-respuesta{ border-top:1px solid var(--color-border-subtle); padding-top:16px; min-height:96px; max-height:56vh; overflow:auto; font-size:14px; }
+.pregunta-linea1{ margin:0 0 16px; font-size:15px; color:var(--color-text-secondary); }
+.pregunta-sin{ margin:0; font-size:15px; }
+.pregunta-def{ margin:0 0 8px; font-size:16px; }
+/* Pieza como tarjeta ligera de biblioteca (E9); sin borde superior morado (ya lo lleva el panel) */
+.pregunta-item{ border:1px solid var(--color-border-subtle); border-radius:var(--radius-md); padding:16px; margin:0 0 16px; }
+.pregunta-item-eyebrow{ margin:0 0 4px; font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-text-secondary); }
+.pregunta-item h4{ margin:0 0 8px; font-family:var(--font-family-display); font-weight:var(--font-weight-semibold); font-size:24px; line-height:1.12; }
 .pregunta-item h4 a{ color:inherit; text-decoration:none; }
 .pregunta-item h4 a:hover{ text-decoration:underline; }
-.pregunta-item-linea{ font-size:var(--font-size-sm); color:var(--color-text-secondary); margin:0 0 var(--space-2); }
-.pregunta-foot{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:var(--space-2); font-family:var(--font-family-mono); font-size:11px; letter-spacing:.04em; }
-.pregunta-tambien, .pregunta-prep{ margin-top:var(--space-3); }
-.pregunta-tambien .pregunta-eyebrow, .pregunta-prep .pregunta-eyebrow{ margin-bottom:var(--space-2); }
-.pregunta-lista{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px; }
-.pregunta-lista a{ font-size:var(--font-size-sm); color:var(--color-text-primary); text-decoration:none; }
-.pregunta-lista a:hover{ color:var(--color-purple-700); text-decoration:underline; }
+.pregunta-item-linea{ margin:0 0 8px; font-size:14px; color:var(--color-text-secondary); }
+.pregunta-foot{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; margin:0; font-family:var(--font-family-mono); font-size:11px; letter-spacing:.04em; color:var(--color-text-secondary); }
+.pregunta-foot a{ color:var(--color-purple-700); }
+/* También / Para prepararte */
+.pregunta-tambien, .pregunta-prep{ margin:0 0 16px; }
+.pregunta-mas{ margin:0 0 8px; font-size:14px; color:var(--color-text-secondary); }
+.pregunta-prep-label{ margin:0 0 8px; font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-text-secondary); }
+.pregunta-lista{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+.pregunta-lista a{ font-size:14px; color:var(--color-purple-700); text-decoration:underline; text-underline-offset:2px; }
+.pregunta-lista a:hover{ color:var(--color-purple-900); }
 .pregunta-chip-inline{ display:inline-flex; align-items:center; font-family:var(--font-family-mono); font-size:10px; letter-spacing:.04em; text-transform:uppercase; color:var(--color-text-secondary); margin-left:6px; }
 @media (max-width:640px){
   .pregunta{ right:12px; bottom:12px; left:12px; }
   .pregunta-tab{ position:absolute; right:0; bottom:0; }
   .pregunta-tab-full{ display:none; }
   .pregunta-tab-corto{ display:inline; }
-  .pregunta-panel{ left:0; right:0; width:auto; max-width:none; }
+  .pregunta-panel{ left:0; right:0; width:auto; max-width:none; max-height:80vh; }
+  .pregunta-respuesta{ flex:1 1 auto; max-height:none; }
 }

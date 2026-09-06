@@ -60,11 +60,12 @@ function footer() {
 // <body> de todas las páginas generadas. Pinta sin JS (pestaña cerrada); el
 // panel lo abre y responde pregunta.js. Sin iconos, avatar ni animación.
 function preguntaWidget() {
+  // Una sugerencia por intención (rev19 · BN.1); lo que se ve es lo que se manda.
   const sugerencias = [
-    ["CIO de banca · Modernización", "qué le enseño a un cio de banca sobre modernización"],
-    ["A quién llamo · infra", "a quién llamo por infraestructura"],
-    ["Qué es Process Intelligence", "qué es process intelligence"],
-  ].map(([label, q]) => `<button class="pregunta-chip" type="button" data-q="${esc(q)}">${esc(label)}</button>`).join("");
+    "deck corporativo",
+    "a quién llamo por infraestructura",
+    "qué es process intelligence",
+  ].map((q) => `<button class="pregunta-sug" type="button" data-q="${esc(q)}">${esc(q)}</button>`).join("");
   return `<div class="pregunta" data-pregunta>
   <button class="pregunta-tab" type="button" aria-expanded="false" aria-controls="pregunta-panel">
     <span class="pregunta-dot" aria-hidden="true"></span>
@@ -76,15 +77,14 @@ function preguntaWidget() {
       <p class="pregunta-eyebrow">Pregunta a Hipatia</p>
       <button class="pregunta-cerrar" type="button" aria-label="Cerrar el panel">cerrar ×</button>
     </div>
-    <p class="pregunta-intro">Responde con lo que hay en el portal. Si no lo tiene, te lo dice.</p>
-    <div class="pregunta-sugerencias">${sugerencias}</div>
-    <div class="pregunta-respuesta" data-pregunta-respuesta aria-live="polite"></div>
     <form class="pregunta-form" data-pregunta-form>
       <label class="visually-hidden" for="pregunta-input">Escribe tu pregunta</label>
       <input id="pregunta-input" class="pregunta-input" type="text" name="q" placeholder="Escribe tu pregunta" autocomplete="off">
-      <button class="btn pregunta-buscar" type="submit">Buscar</button>
+      <button class="pregunta-buscar" type="submit">Buscar</button>
     </form>
-    <p class="pregunta-nota">No inventa: responde solo con lo que está en el portal.</p>
+    <p class="pregunta-intro">Responde con lo que hay en el portal. Si no lo tiene, te lo dice.</p>
+    <div class="pregunta-sugerencias">${sugerencias}</div>
+    <div class="pregunta-respuesta" data-pregunta-respuesta aria-live="polite"></div>
   </section>
   <script>(function(){var w=document.currentScript.parentNode,t=w.querySelector(".pregunta-tab"),pedido=false;function cargar(){if(pedido)return;pedido=true;var s=document.createElement("script");s.src="/pregunta.js";s.onerror=function(){t.addEventListener("click",function(){location.href="/materiales/";});};document.head.appendChild(s);}t.addEventListener("click",cargar);t.addEventListener("focus",cargar);})();</script>
 </div>`;
@@ -951,7 +951,7 @@ function citaLabel(m) {
   if (m.citable === "citable" && m.sign_off) return "citable · sign-off " + fechaCorta(m.sign_off.fecha);
   return "confirmar por cuenta";
 }
-function escribeIndicePregunta(practicas, personas) {
+function escribeIndicePregunta(practicas, personas, corp) {
   const piezas = materiales.map((m) => {
     const fila = {
       id: m.id, titulo: m.titulo, tipo: m.tipo, subtipo: m.subtipo || null,
@@ -964,6 +964,13 @@ function escribeIndicePregunta(practicas, personas) {
     return fila;
   });
   const entradas = [];
+  // Entrada corporativa (rev19 · BN.2): «qué es entelgy» y «deck corporativo» tienen asunto.
+  if (corp && corp.entelgy_una_frase) {
+    entradas.push({
+      id: "corporativo", clase: "practica", nombre: "Entelgy · corporativo", practica: "corporativo",
+      linea: corp.entelgy_una_frase, comercial: null, tecnico: null, url: "/entelgy/",
+    });
+  }
   practicas.forEach((pr) => {
     entradas.push({
       id: pr.id, clase: "practica", nombre: pr.nombre, practica: pr.id,
@@ -1015,7 +1022,7 @@ function build() {
   write("materiales", materialesIndex("cliente"));
   write(path.join("materiales", "todo"), materialesIndex("todo"));
   materiales.forEach((m) => write(path.join("materiales", m.id), materialFicha(m)));
-  escribeIndicePregunta(practicas, personas);
+  escribeIndicePregunta(practicas, personas, corp);
   console.log(`Generadas: / · /entelgy · /punto-de-partida · /lo-que-viene · /contactos · /practicas + ${practicas.length} prácticas + ${nSol} soluciones · /materiales + ${materiales.length} fichas`);
 }
 build();
