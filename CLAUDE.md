@@ -22,6 +22,13 @@ Este repo publica hipatia2.guberna.es (Cloudflare Worker con assets estáticos e
 - Software Development tiene tres soluciones (Modernización, Mantenimiento evolutivo, Asistencia técnica aumentada); Spec-Driven y Factoría SEAS son capacidades. Decisión provisional, pendiente de Jorge.
 - Nunca en pantalla: marca Guberna, Security América, métricas de uso de Hipatia, referencias a la spec (§), jerga de trabajo (P0, cableado, sign-off de Px), notas de revisión («revisión N»), «acompañar».
 
+## Pregunta a Hipatia (v4 · revisión 18)
+- La v4 (rama `claude/hipatia-v4-asistente`) es la v3 más una pestaña «Pregunta a Hipatia» en la esquina inferior derecha de todas las páginas generadas por `build.js`. Sin modelo, sin red, sin clave.
+- El índice (`public/indice-pregunta.json`, que emite el build) no lleva notas de uso, kit, keynotes, cifras ni precios: la respuesta enlaza a la ficha, no la repite.
+- El índice y `pregunta.js` se cargan **bajo demanda** (un `<script>` inline en la pestaña carga `pregunta.js` al primer clic/foco; este abre el panel y pide el índice): no se cargan con la página ni cuentan en su peso (Pregunta a Hipatia: índice 45 KB · pregunta.js 16 KB · los dos bajo demanda). Sin esbuild ni minificado en el build. Si el script no carga, la pestaña lleva a `/materiales/`.
+- El panel nunca se abre solo. Las respuestas salen de plantillas fijas de `pregunta.js` (tres intenciones por patrón: persona, definición, material) y enlazan a la ficha en vez de repetirla; cuando no hay nada, lo dice.
+- La prueba de aceptación es `data/preguntas.json` (la escribe Susana); la verifica `check-pregunta.js`. El widget no se inyecta en los HTML de Claude Design, las fichas de julio ni el autodiagnóstico.
+
 ## Forma de trabajar
 - Un commit por tarea con el mensaje que indica el plan. Rama `v3`.
 - Preguntar antes de: inventar contenido para una solución sin material, cambiar la taxonomía, añadir una página que no esté en §6.2, tocar `main`.

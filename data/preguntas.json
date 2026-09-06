@@ -1,0 +1,17 @@
+[
+  { "pregunta": "qué le enseño a un cio de banca sobre modernización",
+    "intencion": "material", "primero": "mod-deck-ejecutivo",
+    "tambien": ["software-modernizacion-sector-banca"] },
+  { "pregunta": "a quién llamo por infraestructura",
+    "intencion": "persona", "primero": "amador-sobrino" },
+  { "pregunta": "qué es process intelligence",
+    "intencion": "definicion", "primero": "process-intelligence" },
+  { "pregunta": "one pager preservia sector público",
+    "intencion": "material", "primero": "preservia-publico" },
+  { "pregunta": "cuánto cuesta",
+    "intencion": "nada", "primero": null },
+  { "pregunta": "deck corporativo",
+    "intencion": "material", "primero": "corp-exec-global" },
+  { "pregunta": "qué es entelgy",
+    "intencion": "definicion", "primero": "corporativo" }
+]

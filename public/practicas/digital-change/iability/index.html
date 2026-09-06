@@ -91,6 +91,28 @@
   </div></div>
 </footer>
 
+<div class="pregunta" data-pregunta>
+  <button class="pregunta-tab" type="button" aria-expanded="false" aria-controls="pregunta-panel">
+    <span class="pregunta-dot" aria-hidden="true"></span>
+    <span class="pregunta-tab-full">Pregunta a Hipatia</span>
+    <span class="pregunta-tab-corto" aria-hidden="true">Pregunta</span>
+  </button>
+  <section class="pregunta-panel" id="pregunta-panel" role="dialog" aria-label="Pregunta a Hipatia" hidden>
+    <div class="pregunta-head">
+      <p class="pregunta-eyebrow">Pregunta a Hipatia</p>
+      <button class="pregunta-cerrar" type="button" aria-label="Cerrar el panel">cerrar ×</button>
+    </div>
+    <form class="pregunta-form" data-pregunta-form>
+      <label class="visually-hidden" for="pregunta-input">Escribe tu pregunta</label>
+      <input id="pregunta-input" class="pregunta-input" type="text" name="q" placeholder="Escribe tu pregunta" autocomplete="off">
+      <button class="pregunta-buscar" type="submit">Buscar</button>
+    </form>
+    <p class="pregunta-intro">Responde con lo que hay en el portal. Si no lo tiene, te lo dice.</p>
+    <div class="pregunta-sugerencias"><button class="pregunta-sug" type="button" data-q="deck corporativo">deck corporativo</button><button class="pregunta-sug" type="button" data-q="a quién llamo por infraestructura">a quién llamo por infraestructura</button><button class="pregunta-sug" type="button" data-q="qué es process intelligence">qué es process intelligence</button></div>
+    <div class="pregunta-respuesta" data-pregunta-respuesta aria-live="polite"></div>
+  </section>
+  <script>(function(){var w=document.currentScript.parentNode,t=w.querySelector(".pregunta-tab"),pedido=false;function cargar(){if(pedido)return;pedido=true;var s=document.createElement("script");s.src="/pregunta.js";s.onerror=function(){t.addEventListener("click",function(){location.href="/materiales/";});};document.head.appendChild(s);}t.addEventListener("click",cargar);t.addEventListener("focus",cargar);})();</script>
+</div>
 <script src="/app.js" defer></script>
 </body>
 </html>
