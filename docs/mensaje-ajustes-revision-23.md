@@ -1,23 +1,24 @@
-Revisión 23 (7 sep). Dos cosas que llegan a la vez y van en dos commits.
-Primero, los datos de contacto que faltaban: Jorge Herrero (que en la 22 no
-habían llegado), Miguel Ángel Villacañas como técnico de las tres soluciones de
-Software Development, y las fichas de Carla, Daniela, Amador y Alfredo.
-Segundo, la lectura de Carla sobre Automatización: David Escribano entra como
-su técnico, UNED pasa a citable, y las dos piezas A4 siguen sin corregir, así
-que su aviso se queda en pie con fecha. Solo datos y notas.
+Revisión 23 (7 sep). OJO: el bloque de contactos se aplicó ya en el commit
+7d7ca15 con la información que había antes de que llegara el correo de Carla.
+Este mensaje está reescrito sobre ese estado: del bloque de contactos solo
+quedan tres cosas, y va entero el bloque de Automatización según Carla. Dos
+commits. Solo datos y notas.
 
-CX · CONTACTOS
+CX · CONTACTOS · LO QUE FALTA
 
-   `data/personas.json` sólo pinta un teléfono (`build.js` línea 211). Va el
-   MÓVIL en `telefono`; los fijos no se guardan, es decisión tomada.
+   Lo aplicado en 7d7ca15 está bien y no se toca: Miguel Ángel Villacañas
+   creado y asignado como técnico de las tres soluciones de Software
+   Development, y las fichas de Jorge, Daniela, Amador y Alfredo completas.
+   Quedan cuatro cosas.
 
-   1. Dos personas nuevas:
+   1. `carla-gonzalez` en `data/personas.json`. El título que se puso venía de
+      una suposición sobre su firma; su correo del 7-sep da el bueno.
+        - `titulo` → «Manager CoE Automatización» (hoy: «Responsable de
+          Automatización · Centro de Excelencia»).
+        - `foto` → «/assets/personas/carla-gonzalez.jpg». El fichero ya está en
+          el repo (400 × 400, 20 KB, commit 545e0b6); no lo regeneres.
 
-        { "id": "miguel-angel-villacanas", "nombre": "Miguel Ángel Villacañas",
-          "titulo": "Head of Digital Architecture & Devs",
-          "correo": "miguelangel.villacanas@entelgy.com",
-          "telefono": "+34 680 449 125", "teams": null,
-          "practica": "software-development", "foto": null }
+   2. Persona nueva en `data/personas.json`:
 
         { "id": "david-escribano", "nombre": "David Escribano",
           "titulo": "Líder Técnico CoE Automatización",
@@ -25,40 +26,16 @@ CX · CONTACTOS
           "telefono": null, "teams": null,
           "practica": "process-intelligence", "foto": null }
 
-   2. Asignaciones de técnico, hoy nulas:
-        - `data/software-development.json`: `contactos.tecnico` →
-          `miguel-angel-villacanas` en las TRES soluciones (Modernización de
-          aplicaciones, Mantenimiento evolutivo, Asistencia técnica aumentada).
-        - `data/process-intelligence.json`: en `process-automation-ai`,
-          `contactos.tecnico` → `david-escribano`.
+   3. En `data/process-intelligence.json`, solución `process-automation-ai`:
+      `contactos.tecnico` → `david-escribano` (hoy null). Es la última fila
+      «por confirmar» que se puede cerrar hoy.
 
-   3. Fichas que se completan en `data/personas.json` (no toques `id` ni
-      `practica`):
-        - `jorge-herrero`: `titulo` → «Solution Manager · Software Engineering ·
-          Head of Technology | AI Director»; `correo` →
-          «jorge.herrero@entelgy.com»; `telefono` → «+34 679 186 366».
-        - `carla-gonzalez`: `titulo` → «Manager CoE Automatización»; `correo` →
-          «carla.gonzalez@entelgy.com»; `telefono` → «+34 669 888 729»; `foto` →
-          «/assets/personas/carla-gonzalez.jpg».
-        - `daniela-ongaro`: `titulo` → «Data Intelligence Practice Manager»
-          (sustituye «Head of Data»); `telefono` → «+34 686 370 833». El correo
-          ya está bien.
-        - `amador-sobrino`: `telefono` → «+34 638 152 505». Título y correo ya
-          están bien.
-        - `alfredo-zurdo`: `titulo` → «Head of Digital Change | IAbility Product
-          Manager»; `telefono` → «+34 696 400 067». El correo ya está bien.
+   4. `data/preguntas.json` (hoy 9 filas): añade «a quién llamo por
+      automatización» → `carla-gonzalez`, intención de persona. Sube el
+      contador de `check-pregunta.js` a 10.
 
-   4. La foto de Carla ya está en el árbol de trabajo en
-      `public/assets/personas/carla-gonzalez.jpg` (400 × 400, 20 KB, mismo
-      recorte que la de Carmen). No la regeneres.
-
-   5. `data/preguntas.json`: añade «a quién llamo por automatización» →
-      `carla-gonzalez`. Sube el contador de `check-pregunta.js` a la cuenta que
-      quede.
-
-   Commit: «v4: contactos — Miguel Ángel Villacañas como técnico de Software
-   Development, David Escribano en Automatización, fichas de Jorge, Carla,
-   Daniela, Amador y Alfredo (revisión 23)».
+   Commit: «v4: contactos — David Escribano como técnico de Automatización,
+   título y foto de Carla (revisión 23)».
 
 CY · AUTOMATIZACIÓN SEGÚN CARLA
 
@@ -114,13 +91,15 @@ CY · AUTOMATIZACIÓN SEGÚN CARLA
       esperado» conservando el resto de cada frase y la atribución tal cual. Si
       no lo confirma, se quedan como están y no es un fallo del build.
 
-   Commit: «v4: Automatización según Carla: UNED citable, técnico asignado,
-   aviso de las piezas A4 con fecha (revisión 23)».
+   Commit: «v4: Automatización según Carla: UNED citable, aviso de las piezas A4
+   con fecha (revisión 23)».
 
 CZ · LO QUE NO TE PIDO
 
    - Ningún texto nuevo de pantalla en la página de Automatización. El copy lo
      ha dado por bueno; solo cambian datos y notas.
+   - No rehagas nada del commit 7d7ca15: Miguel Ángel y las fichas de Jorge,
+     Daniela, Amador y Alfredo están bien como están.
    - Nada en el repo `Entelgy`: la ficha y el one-pager de Automatización se
      corrigen fuera de hipatia2 y no son tuyos.
    - Nada sobre la Oficina de Gobernanza Humana de la IA. La frontera con
@@ -128,10 +107,12 @@ CZ · LO QUE NO TE PIDO
      `objecion_principal` que ya la menciona se queda como está.
    - Nada de Process Intelligence as a Service: sigue sin existir como
      contenido, y es de después del 10.
-   - Los fijos de Jorge, Alfredo y Miguel Ángel no se guardan.
+   - Los fijos de Jorge, Alfredo y Miguel Ángel no se guardan: `personas.json`
+     pinta un solo teléfono y es el móvil.
 
-Al terminar: build, `check-data.js` y `check-pregunta.js` sin errores; `medir
---all` en verde, sin dejar las capturas de ruta en el commit; capturas de
+Al terminar: build, `check-data.js` y `check-pregunta.js` (10/10) sin errores;
+`medir --all` en verde, sin dejar las capturas de ruta en el commit; capturas de
 `/contactos/` y de `/practicas/process-intelligence/process-automation-ai/` a
-1440 y 390, con la foto de Carla a 32 y 48 px y las tres filas de Software
-Development ya sin «por confirmar». Empuja y pásame la URL de la build.
+1440 y 390, con la foto de Carla a 32 y 48 px. En `/contactos/` deben quedar sin
+«por confirmar» las tres filas de Software Development y la de Automatización.
+Empuja y pásame la URL de la build.
