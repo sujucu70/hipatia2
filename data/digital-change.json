@@ -1,0 +1,566 @@
+{
+  "id": "digital-change",
+  "nombre": "Digital Change",
+  "orden": "05",
+  "responsable": "Alfredo",
+  "propuesta": "Conseguimos que la IA y las nuevas capacidades digitales se adopten, se gobiernen y dejen impacto real en las personas y la organización.",
+  "que_cubre": "El oficio de la gestión del cambio y la adopción, productizado: soluciones con el método (ADKAR, Prosci, HCMBOK) y buena parte del contenido ya resueltos, para hacer rendir la tecnología que ya has pagado. Tres retos y una solución para cada uno: que la gente use la IA, y bien (IAbility); que el saber no se marche (PreservIA); que alguien responda de la IA (OGH-IA). Se diseña al principio del proyecto, no al final.",
+  "que_no_prometer": "No vendemos plataforma, licencias ni cursos: vendemos soluciones con el cambio dentro, y la tecnología es la maquinaria que las acelera. No es una campaña de comunicación ni formación desconectada del trabajo real. Y no prometemos adopción sin medir el punto de partida: sin línea base no hay decisión de escalado.",
+  "pregunta_comun": "¿Cuánto de lo que ya pagáis en IA se está usando de verdad?",
+  "capacidades": [
+    {
+      "paso": "01",
+      "titulo": "Medir antes de mover",
+      "texto": "Punto de partida por persona y por área: radar de madurez, mapa de calor, línea base. Nada se decide, ni se escala, sin foto de salida y medición contra ella."
+    },
+    {
+      "paso": "02",
+      "titulo": "Cambiar comportamientos al por mayor",
+      "texto": "Narrativa inmersiva y lluvia fina (10 minutos a la semana), por oleadas de colectivo y en varios idiomas, sin parar la operación. No 200 personas: decenas de miles."
+    },
+    {
+      "paso": "03",
+      "titulo": "Capturar lo que no está escrito",
+      "texto": "El consultor sentado delante del experto mientras todavía está; la IA estructura; alguien con nombre valida lo que después responde el Mentor Virtual."
+    },
+    {
+      "paso": "04",
+      "titulo": "Gobernar con autoridad",
+      "texto": "Un comité del cliente que autoriza, condiciona, limita o retira, y una oficina que reúne evidencias y deja rastro. Frenar a tiempo también es retorno."
+    }
+  ],
+  "capacidades_ia": [
+    {
+      "titulo": "IAbility · Cultura",
+      "texto": "Activar una cultura de uso responsable de la IA, más allá de una formación aislada."
+    },
+    {
+      "titulo": "PreservIA · Conocimiento",
+      "texto": "Capturar conocimiento experto y activarlo donde hace falta, para que sea un activo vivo."
+    },
+    {
+      "titulo": "Oficina de Gobernanza Humana de la IA",
+      "texto": "Definir quién decide qué avanza, qué se frena y qué evidencias necesita la organización."
+    }
+  ],
+  "discovery": [
+    "¿Qué habéis desplegado que sobre el papel funciona, pero la gente no ha hecho suyo?",
+    "¿Cuánto pagasteis por esa tecnología que hoy se usa a medias?",
+    "¿Cuánto valor se queda encima de la mesa mientras la adopción no llega?"
+  ],
+  "primer_avance": {
+    "titulo": "Diagnóstico de madurez en IA",
+    "plazo": "~25 min por persona",
+    "nota": "Madurez por persona y por área, mapa de calor de resistencia e impulso y línea base para medir lo que venga. El alcance se cierra en una sesión de descubrimiento. Sin precio ni plazo del arranque hasta que Alfredo fije la puerta de entrada."
+  },
+  "soluciones": [
+    {
+      "id": "iability",
+      "nombre": "IAbility",
+      "una_linea": "Convierte los copilotos que ya pagas en hábitos de uso con criterio, medidos por persona.",
+      "especialista": "Alfredo",
+      "estado": "vigente",
+      "dueno": "Alfredo",
+      "fecha_objetivo": "sept 2026",
+      "propuesta": {
+        "que_es": "La capa de adopción humana: convertimos los copilotos y agentes que ya tienes en hábitos de uso seguro, ético y responsable, medidos por persona y por área. No formamos: cambiamos comportamientos. Cuatro fases, cada una requisito de la siguiente: evaluar (radar de madurez y mapa de calor), formar (toda la plantilla en el mismo punto), concienciar (la campaña narrativa de 12 semanas, 10 minutos a la semana) y adoptar (labs que sacan prototipos en días y asistencia contextual en el puesto). No es un curso, no sustituye al LMS y no es gobierno técnico de IA.",
+        "a_quien": "No entras por el CIO: le duele al CFO, que ve licencias sin usar, y a negocio, ventas y operaciones, que ven gente usando IA a su aire. RRHH y formación entran después. Se vende dentro de un proyecto (un despliegue de Copilot, un SAP) mucho mejor que suelto. Organizaciones grandes, reguladas, con plantilla distribuida y varios idiomas.",
+        "senal": "Hay licencias de IA pagadas y a medio usar; la gente usa IA personal en el trabajo y mete datos donde no debe; alguien ha dicho «prohibido» y no ha servido de nada. Hay un despliegue de Copilot o de agentes en marcha sin nadie que se ocupe de que la gente lo use. Y el art. 4 del AI Act obliga desde febrero de 2025, sin multa propia pero como agravante.",
+        "por_que_nosotros": "Gestionar el cambio es un oficio que cualquier consultora hace a medida. Lo nuestro es prêt-à-porter: el qué, el cómo y buena parte del contenido, ya resueltos. Una serie narrativa propia con un personaje por riesgo, años de producción detrás, que llega hecha y se viste con tu marca; un método de lluvia fina con un 73% de retención frente al 10–20% del e-learning; y la escala del predecesor, más de 140.000 personas en 40 países. Lo probamos en casa antes de venderlo: 151 ideas, 15 casos y 9 prototipos en producción, y de ahí salió nuestro comité de gobernanza de IA.",
+        "diferenciador": "Los activos, no las horas: una serie para adoptar la IA con criterio que producir lleva años y tú puedes tener mañana.",
+        "objecion_principal": {
+          "texto": "Ya tenemos formación en IA en el LMS.",
+          "respuesta": "Y la gente sigue usando la IA a su aire, porque un curso no cambia comportamientos. IAbility trabaja la capa que la formación no toca: hábitos medidos por persona, en 10 minutos a la semana, dentro y fuera del trabajo, que es donde nace el uso en la sombra. Convive con tu LMS. Empezamos midiendo dónde está cada área."
+        },
+        "como_abres": "«¿Cuánto de lo que ya pagáis en licencias de IA se está usando de verdad?»",
+        "primer_paso": {
+          "titulo": "Diagnóstico de madurez en IA",
+          "plazo": "~25 min por persona",
+          "nota": "Radar por persona, mapa de calor por áreas y línea base de riesgos y emociones, antes de decidir nada. El alcance se cierra en una sesión de descubrimiento. Sin precio en las piezas. Con Alfredo."
+        }
+      },
+      "limites": [
+        "No es una formación puntual ni una campaña desconectada de los casos de uso y el trabajo real.",
+        "La adopción tiene en cuenta roles, hábitos, riesgos y reglas de uso; habilitar una herramienta no basta."
+      ],
+      "senales": [
+        "La organización ha desplegado IA, pero el uso es irregular, superficial o genera dudas.",
+        "Los equipos necesitan confianza y criterio para incorporar nuevas capacidades de IA.",
+        "Hay valor esperado en la IA que no se materializa por falta de adopción sostenible."
+      ],
+      "kit": {
+        "frases_cuenta": {
+          "nota": "Frases por dolor, sacadas del deck y de las dos piezas. Elige la que responde a lo que te han dicho.",
+          "frases": [
+            {
+              "angulo": "Por la factura",
+              "cuando": "si han comprado Copilot o licencias y el uso es bajo",
+              "texto": "Un piano de 250.000 € no te hace pianista. Solo 5 de cada 100 pilotos de GenAI dejan impacto medible (MIT, The GenAI Divide, 2025). La adopción convierte esa factura en productividad, y se mide por persona y por área."
+            },
+            {
+              "angulo": "Por la IA en la sombra",
+              "cuando": "si hay gente usando IA por su cuenta",
+              "texto": "Prohibir no lo corrige; el criterio sí. IAbility trabaja el comportamiento dentro y fuera del trabajo, que es donde nace el uso en la sombra, en 10 minutos a la semana."
+            },
+            {
+              "angulo": "Por el art. 4",
+              "cuando": "si aparecen Legal, Compliance o el AI Act",
+              "texto": "El art. 4 obliga desde febrero de 2025 y no lleva multa propia: agrava cualquier otra. Dejamos el expediente de alfabetización documentado y auditado por Audens."
+            },
+            {
+              "angulo": "Por el proyecto que viene",
+              "cuando": "si están arrancando un despliegue de Copilot, agentes o un SAP",
+              "texto": "La gestión del cambio se diseña al principio del proyecto, no al final. Dentro del proyecto cuesta poco; después, cuando nadie lo usa, cuesta mucho más."
+            }
+          ],
+          "regla": "Estas frases abren y cualifican. Digital Change es la puerta por la que han entrado muchas cuentas nuevas; el dinero está en lo que viene después. Si la conversación se va a gobierno técnico de IA, es OGH-IA; si va a conocimiento que se jubila, PreservIA. Cuando el cliente muerde, trae a Alfredo con el diagnóstico."
+        },
+        "pitch_por_rol": [
+          {
+            "rol": "CFO",
+            "pregunta": "¿Cuánto de lo que ya pagáis en IA se está usando?",
+            "le_mueve": "la licencia que ya paga, en uso; retorno más cerca."
+          },
+          {
+            "rol": "Dirección de negocio / operaciones",
+            "pregunta": "¿Vuestra gente usa la IA con criterio o a su aire?",
+            "le_mueve": "comportamientos medidos por área, sin parar la operación."
+          },
+          {
+            "rol": "RRHH / Formación",
+            "pregunta": "¿Qué retención tiene vuestra formación en IA a los tres meses?",
+            "le_mueve": "73% de retención frente al 10–20% del e-learning; convive con el LMS."
+          },
+          {
+            "rol": "Legal / Compliance",
+            "pregunta": "¿Podéis demostrar que vuestra gente sabe usar la IA, como pide el art. 4?",
+            "le_mueve": "expediente auditado por Audens."
+          },
+          {
+            "rol": "CIO",
+            "pregunta": "¿Quién se ocupa de que el despliegue de Copilot se use?",
+            "le_mueve": "entra sin tocar código ni datos; despliegue por oleadas e idiomas."
+          }
+        ],
+        "pitch_nota": "Se entra por el CFO o por negocio; el CIO decide poco aquí, salvo el que pide ROI.",
+        "objeciones": [
+          {
+            "texto": "Ya tenemos formación en IA.",
+            "respuesta": "Un curso no cambia comportamientos; por eso la gente sigue usando la IA a su aire. IAbility trabaja la capa que la formación no toca y convive con tu LMS."
+          },
+          {
+            "texto": "Es una plataforma más.",
+            "respuesta": "No vendemos plataforma ni licencias: vendemos la solución con el método y el contenido dentro. La tecnología es lo que nos permite arrancar en 48 horas."
+          },
+          {
+            "texto": "Lo haremos cuando termine el despliegue.",
+            "respuesta": "Es la venta post-mortem: al cabo de un año llaman porque nadie lo usa. La gestión del cambio se diseña al principio, y dentro del proyecto cuesta una fracción."
+          },
+          {
+            "texto": "¿Cuánto cuesta?",
+            "respuesta": "El diagnóstico son 25 minutos por persona y sales con el mapa de calor de tu organización. El alcance del programa se cierra en la sesión de descubrimiento, por oleadas de colectivo."
+          }
+        ],
+        "preguntas_cualificacion": [
+          "¿Qué licencias de IA tenéis y qué uso real les dais?",
+          "¿Hay un despliegue de Copilot, agentes o un cambio grande en marcha?",
+          "¿Cuánta gente, en cuántos países e idiomas?",
+          "¿Quién responde hoy del art. 4 del AI Act?"
+        ],
+        "referencias_destacadas": [
+          "dc-caso-entelgy-labs",
+          "dc-caso-admiral"
+        ],
+        "material_interno": [
+          "digital-change-pains",
+          "digital-change-legacy-preview",
+          "digital-change-legacy-competition"
+        ],
+        "material_interno_nota": "Competencia real en España, Kymatio y Tier8 (no KnowBe4); Indra como «proyecto de horas»; TFWM solo en América; IAbility Secure fuera; no se sale con el conflicto Tier8–TFWM.",
+        "dossier_imprimible": true
+      },
+      "keynotes": [
+        {
+          "dolor": "Compramos Copilot y nadie lo usa.",
+          "frase": "La tecnología ya está comprada; el retorno, no. La adopción no venía incluida.",
+          "prueba": "Solo 5 de cada 100 pilotos de GenAI dejan impacto medible (MIT, The GenAI Divide, 2025).",
+          "paso": "Diagnóstico de madurez: 25 minutos por persona."
+        },
+        {
+          "dolor": "La gente usa IA por su cuenta y mete datos donde no debe.",
+          "frase": "Prohibir no lo corrige; el criterio sí.",
+          "prueba": "73% de retención del método frente al 10–20% del e-learning (datos Entelgy).",
+          "paso": "Campaña de 12 semanas, 10 minutos a la semana, por oleadas."
+        },
+        {
+          "dolor": "Legal pregunta por el art. 4.",
+          "frase": "Sin multa propia, pero agrava cualquier otra sanción.",
+          "prueba": "Expediente de alfabetización co-diseñado y auditado por Audens.",
+          "paso": "Línea base por área y expediente documentado."
+        },
+        {
+          "dolor": "Ya lo intentamos con un curso.",
+          "frase": "Una serie, no un curso: un personaje por riesgo, 12 semanas, medido.",
+          "prueba": "Entelgy en su casa: 151 ideas, 9 prototipos en producción y un comité de gobernanza que salió de ahí.",
+          "paso": "Labs en células de 8–10 personas por área."
+        }
+      ],
+      "referencias": [
+        "dc-caso-entelgy-labs",
+        "dc-caso-admiral"
+      ],
+      "materiales": [
+        "iability-onepager",
+        "iability-ficha"
+      ],
+      "acreditacion": [],
+      "pendiente": {
+        "texto": "Lectura de Alfredo: puerta de entrada del área, permiso escrito de Admiral y Bahía de Bizkaia, una cifra de uso en la sombra con fuente, 151/15/9 o 150/9, «Oficina de Gobierno» → «Gobernanza Humana» en su ficha.",
+        "dueno": "Alfredo",
+        "fecha_objetivo": "sept 2026"
+      },
+      "contactos": {
+        "comercial": "alfredo-zurdo",
+        "tecnico": null
+      }
+    },
+    {
+      "id": "preservia",
+      "nombre": "PreservIA",
+      "una_linea": "El conocimiento de tus expertos, después de tus expertos: capturado, validado y a un clic.",
+      "especialista": "Alfredo",
+      "estado": "vigente",
+      "dueno": "Alfredo",
+      "fecha_objetivo": "sept 2026",
+      "propuesta": {
+        "que_es": "Identificamos el conocimiento crítico de tu organización, lo extraemos con entrevistas al experto mientras todavía está, lo validamos con la propia organización y lo convertimos en respuestas disponibles en el puesto, 24/7. Tres fases con resultado propio: capturar (Knowledge Book), estructurar (Red de Conocimiento por momento de uso) y activar (Mentor Virtual a un clic en Microsoft 365 o en tu LMS). La IA hace el trabajo pesado; lo que responde el Mentor lo ha aprobado alguien con nombre.",
+        "a_quien": "Dirección de operaciones o de negocio con procesos críticos que dependen de tres personas: banca, seguros, industria. RRHH cuando hay plan de jubilaciones. En lo público, quien sufre el relevo por convocatoria. Y quien esté montando IA corporativa sobre documentos: sin el conocimiento tácito capturado, esa IA es cara y mediocre.",
+        "senal": "Un experto se jubila, rota o cambia de función y se lleva el criterio para resolver lo que ningún manual recoge. Hay procesos críticos que dependen de pocas personas y el soporte funcional vive de preguntas de «cómo se hace esto». Se está montando un asistente de IA sobre documentos que nadie mantiene. Y el relevo, cuando llega, no tiene a quién preguntar.",
+        "por_que_nosotros": "Rescatamos el conocimiento que todavía no existe como documento; lo demás solo encuentra lo ya escrito. La captura la hace una persona sentada delante de tu experto, y eso no viene en ninguna licencia. En MAPFRE, con más de 15.000 puestos y 3.500 tickets al mes de preguntas de uso, el conocimiento puesto donde se trabaja evitó 3.500 tickets al mes y bajó la apertura de incidencia de cinco minutos y medio a uno. Empezamos por un piloto de dos meses con línea base: sin ella no hay decisión de escalado.",
+        "diferenciador": "La parte difícil no es la conversación: es que lo que responde sea cierto. Personas validando en las tres fases.",
+        "objecion_principal": {
+          "texto": "Ya tenemos un buscador con IA sobre nuestra documentación.",
+          "respuesta": "Encuentra lo que está escrito, y lo que se va con el experto no lo está: el 80% de lo que sabe la casa vive en su cabeza. PreservIA lo captura en dos entrevistas, lo valida y lo pone en el mismo buscador o en M365. El piloto son dos meses, un área y un experto, con medición antes y después."
+        },
+        "como_abres": "«¿Qué conocimiento no os podéis permitir perder cuando se jubile quien lo tiene?»",
+        "primer_paso": {
+          "titulo": "Piloto Explorer",
+          "plazo": "2 meses",
+          "nota": "Un área, un experto y dos entrevistas, un Knowledge Book, hasta 30 usuarios activados; un mes de puesta en marcha y otro de uso, con línea base y decisión de escalado al cierre. Precio cerrado: 14.900 € sin IVA, 50% al arranque y 50% al cierre. Se diseña en una sesión de trabajo. Con Alfredo."
+        }
+      },
+      "limites": [
+        "No es un repositorio documental más: el conocimiento debe tener propósito, responsables y contexto de uso.",
+        "No se automatiza la transferencia sin revisar calidad, sensibilidad, permisos y cómo se mantiene vivo."
+      ],
+      "senales": [
+        "El conocimiento crítico reside en pocas personas o se pierde cuando cambian de rol.",
+        "Los equipos tardan demasiado en encontrar, contrastar o reutilizar experiencia existente.",
+        "Se quiere aplicar IA al conocimiento, pero con contexto y gobierno."
+      ],
+      "kit": {
+        "frases_cuenta": {
+          "nota": "Frases por dolor, sacadas de la ficha y de los dos one-pagers.",
+          "frases": [
+            {
+              "angulo": "Por la jubilación",
+              "cuando": "si hay expertos cerca del relevo",
+              "texto": "El 40% de los profesionales del sector serán senior en 2030 (Fundación Adecco, ManpowerGroup). Lo que se va con ellos no está en ningún manual: es el criterio para resolver lo que nunca se documentó. Lo capturamos mientras todavía están."
+            },
+            {
+              "angulo": "Por lo público",
+              "cuando": "si es administración",
+              "texto": "43.000 funcionarios se jubilan en España en cinco años (BEPSAP 2024, MTDFP 2025), y el relevo llega por convocatoria, con meses de retraso, cuando ya no queda nadie que le enseñe. El Mentor Virtual espera al relevo."
+            },
+            {
+              "angulo": "Por la IA que están montando",
+              "cuando": "si tienen un proyecto de GenAI sobre documentos",
+              "texto": "Una IA que solo lee documentos muertos es cara y mediocre. El 80% de lo que sabe la casa no está escrito. PreservIA es lo que alimenta a esa IA con lo que de verdad importa."
+            },
+            {
+              "angulo": "Por el soporte",
+              "cuando": "si un equipo vive contestando cómo se hace esto",
+              "texto": "En MAPFRE, 3.500 tickets al mes eran preguntas de uso. Con el conocimiento en la pantalla, 3.500 tickets menos al mes y 45 € por ticket."
+            }
+          ],
+          "regla": "MAPFRE se cuenta aquí y solo aquí. Si la conversación se va a que la gente adopte la IA, es IAbility; si va a quién gobierna la IA, OGH-IA. Cuando el cliente muerde, el siguiente paso es diseñar el piloto con Alfredo."
+        },
+        "pitch_por_rol": [
+          {
+            "rol": "Dirección de operaciones / negocio",
+            "pregunta": "¿Cuántos procesos críticos dependen hoy de tres personas?",
+            "le_mueve": "que el SLA no se caiga cuando falte el experto."
+          },
+          {
+            "rol": "RRHH",
+            "pregunta": "¿Cuántas jubilaciones tenéis en el plan de los próximos cinco años, y qué se va con ellas?",
+            "le_mueve": "relevo con Mentor Virtual; onboarding más rápido."
+          },
+          {
+            "rol": "CIO / responsable de IA",
+            "pregunta": "¿Sobre qué documentos está aprendiendo vuestra IA?",
+            "le_mueve": "el conocimiento tácito como prerrequisito de la IA corporativa."
+          },
+          {
+            "rol": "Responsable de soporte",
+            "pregunta": "¿Qué parte de vuestros tickets son preguntas de cómo se hace algo?",
+            "le_mueve": "MAPFRE: 3.500 tickets menos al mes."
+          }
+        ],
+        "pitch_nota": "Se entra por operaciones o RRHH, con la jubilación como disparador; el CIO entra cuando hay IA corporativa de por medio.",
+        "objeciones": [
+          {
+            "texto": "Ya tenemos buscador con IA.",
+            "respuesta": "Encuentra lo escrito. Lo que se va con el experto no está escrito. Lo capturamos y lo ponemos en tu mismo buscador."
+          },
+          {
+            "texto": "Nuestros expertos no tienen tiempo.",
+            "respuesta": "Dos entrevistas. Es el único esfuerzo que pedimos al experto, y es mientras está, que es cuando puede explicar y validar."
+          },
+          {
+            "texto": "¿Quién mantiene eso después?",
+            "respuesta": "La organización, con gobierno y caducidad del contenido definidos en el discovery técnico. Lo que responde el Mentor lo aprueba alguien con nombre."
+          },
+          {
+            "texto": "¿Cuánto cuesta?",
+            "respuesta": "El piloto tiene precio cerrado y dos meses; sales con una evaluación antes y después y decides el escalado. Sin compromiso hasta ver el resultado."
+          }
+        ],
+        "preguntas_cualificacion": [
+          "¿Qué expertos se jubilan o rotan en los próximos dos años?",
+          "¿Qué procesos dependen de pocas personas?",
+          "¿Tenéis un proyecto de IA sobre documentación corporativa?",
+          "¿Trabajáis en Microsoft 365 y qué LMS tenéis?"
+        ],
+        "referencias_destacadas": [
+          "dc-caso-mapfre"
+        ],
+        "material_interno": [
+          "digital-change-pains",
+          "digital-change-legacy-preview"
+        ],
+        "material_interno_nota": "PreservIA no es marca registrada (no lleva ®); WalkMe no compara; «Senior IT → Senior ID» como ángulo de sector público para otoño.",
+        "dossier_imprimible": true
+      },
+      "keynotes": [
+        {
+          "dolor": "Mi mejor experto se jubila.",
+          "frase": "Su conocimiento no tiene por qué hacerlo.",
+          "prueba": "El 40% de los profesionales del sector serán senior en 2030 (Fundación Adecco, ManpowerGroup).",
+          "paso": "Piloto de dos meses: un área, un experto, dos entrevistas."
+        },
+        {
+          "dolor": "La IA que montamos responde mal.",
+          "frase": "Una IA que solo lee documentos muertos es cara y mediocre.",
+          "prueba": "MAPFRE: 3.500 tickets menos al mes con el conocimiento tácito activo.",
+          "paso": "Un Knowledge Book sobre el proceso que más duele."
+        },
+        {
+          "dolor": "El relevo llega y no tiene a quién preguntar.",
+          "frase": "El Mentor Virtual espera al relevo, 24/7.",
+          "prueba": "43.000 funcionarios se jubilan en cinco años (BEPSAP 2024, MTDFP 2025).",
+          "paso": "Línea base de onboarding y medición a los dos meses."
+        }
+      ],
+      "referencias": [
+        "dc-caso-mapfre"
+      ],
+      "materiales": [
+        "preservia-privado",
+        "preservia-publico",
+        "preservia-ficha"
+      ],
+      "acreditacion": [],
+      "pendiente": {
+        "texto": "Lectura de Alfredo: un solo juego de cifras de MAPFRE (con Amador), fuente del 80% tácito, precio del piloto en el portal.",
+        "dueno": "Alfredo",
+        "fecha_objetivo": "sept 2026"
+      },
+      "contactos": {
+        "comercial": "alfredo-zurdo",
+        "tecnico": null
+      }
+    },
+    {
+      "id": "ogh-ia",
+      "nombre": "Oficina de Gobernanza Humana de la IA",
+      "una_linea": "Tu comité decide qué IA avanza y qué se para; nosotros ponemos el criterio y las manos.",
+      "especialista": "Alfredo",
+      "estado": "vigente",
+      "dueno": "Alfredo",
+      "fecha_objetivo": "sept 2026",
+      "propuesta": {
+        "que_es": "Un servicio gestionado, no un software: instalamos en tu organización la capacidad de decidir qué IA avanza, qué se corrige y qué se detiene, y la operamos contigo cada mes. Tres capas: tu comité gobierna, con autoridad formal para autorizar, condicionar, limitar o retirar; nuestro Responsable de Gobernanza de IA pone el criterio y prepara cada decisión con evidencias; y especialistas (datos, ciberseguridad, legal, cambio) se activan cuando hay que ejecutar. Cinco capacidades: ordenar, decidir, escalar, frenar y aprender. El mando nunca se cede y el modelo se queda en casa.",
+        "a_quien": "Es decisión de comité de dirección, no del CIO: lo que se paga es quién responde de la IA, el reskilling al automatizar, los derechos fundamentales en los proyectos de riesgo y quién aprieta el botón de parar. Entras por Dirección, Legal y Compliance o el CISO; el CIO y negocio se sientan en el comité. Donde hay multas detrás: banca, seguros, sector público, salud, cualquiera con sistemas que decidan sobre personas.",
+        "senal": "Copilots y agentes que cada área contrata por su cuenta, pilotos sin propietario y sin retorno medible, datos saliendo por aplicaciones que IT no ve. O el reverso: iniciativas valiosas paradas por miedo legal. Nadie sabe cuántos sistemas de IA hay ni cuáles serán de alto riesgo en diciembre de 2027. Y alguien ha preguntado quién firma.",
+        "por_que_nosotros": "No te dejamos un informe: te instalamos una capacidad. Traemos un modelo ya construido, roles, criterios, plantillas de decisión y controles, que se adapta a tu organización en meses donde diseñarlo desde cero consume cerca de un año. Lo operamos en casa: Entelgy tiene su propio comité de gobernanza de IA, toda la plantilla formada con IAbility y consejeros y directivos dentro. Y la gobernanza no llega sola: cultura y conocimiento del mismo equipo, para que lo gobernado se sostenga.",
+        "diferenciador": "La H de Humana: decide tu comité de dirección, no una herramienta, y frenar a tiempo también es retorno.",
+        "objecion_principal": {
+          "texto": "Ya tenemos una oficina de IA / lo lleva el CIO.",
+          "respuesta": "Las oficinas que llevan el conteo (casos de uso, formularios, clasificación de riesgo) resuelven lo de menos. Lo gordo es del comité de dirección: qué se automatiza y qué pasa con la gente, qué sistema decide sobre derechos, quién puede parar. Va a pasar como con el RGPD. El diagnóstico te dice qué IA tienes y quién responde de ella."
+        },
+        "como_abres": "«¿Sabéis hoy cuánta IA tenéis en la casa, y quién responde de ella si algo sale mal?»",
+        "primer_paso": {
+          "titulo": "Diagnóstico de gobernanza",
+          "plazo": null,
+          "nota": "Qué IA tienes, quién responde por ella y cuáles de tus iniciativas deberían avanzar: mapa de vacíos, inventario clasificado por riesgo, go/no-go por iniciativa y kit mínimo (política, roles, reglas de aprobación). El alcance se cierra en una sesión inicial sin compromiso. Los plazos del arranque los fija Alfredo."
+        }
+      },
+      "limites": [
+        "No es una capa burocrática ni una aprobación aislada: debe permitir priorizar y acompañar casos con decisiones claras.",
+        "No se declara gobernanza efectiva sin roles, mandato, criterios y relación con los equipos que crean y usan la IA."
+      ],
+      "senales": [
+        "Existen iniciativas de IA sin una forma común de priorizar valor, riesgos y responsables.",
+        "Dirección necesita saber qué debe avanzar, qué frenarse y quién decide.",
+        "Los equipos piden reglas claras para usar y llevar IA a operación sin perder agilidad."
+      ],
+      "kit": {
+        "frases_cuenta": {
+          "nota": "Frases por dolor, sacadas de la ficha, el one-pager y la voz de Alfredo.",
+          "frases": [
+            {
+              "angulo": "Por el descontrol",
+              "cuando": "si cada área ha contratado su IA",
+              "texto": "El 88% de las organizaciones ya usa IA y solo el 36% tiene un marco de gobernanza (McKinsey 2025; Pacific AI 2025). No te falta IA: te falta quién decida qué avanza, qué se corrige y qué se para."
+            },
+            {
+              "angulo": "Por la fecha",
+              "cuando": "si aparece el AI Act",
+              "texto": "Alto riesgo el 2 de diciembre de 2027, y las obligaciones de transparencia ya en agosto de 2026. Inventariar y clasificar lleva meses y no se acelera esperando."
+            },
+            {
+              "angulo": "Por el palo",
+              "cuando": "si hablan de riesgo o de multas",
+              "texto": "Hasta 15 M€ o el 3% para el alto riesgo, y no hace falta mala intención: al algoritmo BOSCO le bastó funcionar sin gobierno para acabar en el Supremo. Cuando un sistema decide sobre derechos, el secreto no se sostiene."
+            },
+            {
+              "angulo": "Por el piloto eterno",
+              "cuando": "si el CFO pregunta por el retorno de la IA",
+              "texto": "Una cartera de IA que solo aprueba no genera retorno: lo consume. Frenar a tiempo el piloto que quema presupuesto también es retorno, y hace falta legitimidad para decir no."
+            },
+            {
+              "angulo": "Por la gente",
+              "cuando": "si el comité teme la reacción de la plantilla",
+              "texto": "La H es de Humana: qué pasa con la gente cuando automatizas, qué sistema decide sobre derechos y quién puede parar. Eso no lo resuelve una herramienta de inventario."
+            }
+          ],
+          "regla": "Sin caso de cliente publicable: la prueba es que Entelgy lo opera en casa. No se cita a Arkea. Si la conversación se va a que la gente use la IA, es IAbility. Cuando el cliente muerde, trae a Alfredo o a Cristina con el diagnóstico."
+        },
+        "pitch_por_rol": [
+          {
+            "rol": "Dirección general / Consejo",
+            "pregunta": "¿Quién responde hoy de la IA de la casa si algo sale mal?",
+            "le_mueve": "un comité con autoridad y evidencias que aguantan una auditoría."
+          },
+          {
+            "rol": "Legal / Compliance / DPO",
+            "pregunta": "¿Tenéis inventario de sistemas de IA clasificado por riesgo?",
+            "le_mueve": "AI Act por fases, ISO 42001 y NIST AI RMF, con rastro."
+          },
+          {
+            "rol": "CISO",
+            "pregunta": "¿Cuánta IA usa vuestra gente fuera del control de IT?",
+            "le_mueve": "la IA no controlada aflora y se clasifica."
+          },
+          {
+            "rol": "CFO",
+            "pregunta": "¿Cuántos pilotos de IA llevan más de un año sin pasar a producción?",
+            "le_mueve": "el piloto eterno se acaba, y el OPEX que consumía, también."
+          },
+          {
+            "rol": "CIO",
+            "pregunta": "¿Quién aprueba hoy qué pasa a producción y con qué documentación?",
+            "le_mueve": "decisiones más rápidas con un marco predefinido; nada que instalar."
+          }
+        ],
+        "pitch_nota": "Se entra por Dirección o Legal; el CIO se sienta en el comité, no lo preside.",
+        "objeciones": [
+          {
+            "texto": "Ya lo lleva el CIO / tenemos una oficina de IA.",
+            "respuesta": "Las oficinas administrativas llevan el conteo. Lo que se paga en un comité de dirección es lo humano: reskilling, derechos, quién para. Eso es la H."
+          },
+          {
+            "texto": "Es burocracia que frena la innovación.",
+            "respuesta": "Carriles, no barreras: la gobernanza acelera lo que genera valor y detiene lo que expone. Un marco predefinido evita discutir desde cero quién aprueba cada vez."
+          },
+          {
+            "texto": "Lo haremos cuando llegue el alto riesgo.",
+            "respuesta": "Diciembre de 2027 es el hito, no el aviso. Las obligaciones de transparencia ya están en vigor y clasificar los sistemas lleva meses. Quien empieza hoy llega con margen."
+          },
+          {
+            "texto": "No queremos depender de un proveedor para gobernar.",
+            "respuesta": "El mando nunca se cede: decide tu comité. Puedes contratar solo el arranque y quedarte el modelo, o transferirlo cuando exista la estructura interna."
+          },
+          {
+            "texto": "¿Cuánto cuesta?",
+            "respuesta": "El diagnóstico se dimensiona en una sesión inicial sin compromiso. El arranque va a precio cerrado y el servicio en marcha tiene una parte fija y otra variable según los especialistas que actives."
+          }
+        ],
+        "preguntas_cualificacion": [
+          "¿Cuántos sistemas o iniciativas de IA tenéis, y quién los inventaría?",
+          "¿Existe un comité que decida sobre la IA, con autoridad para parar?",
+          "¿Alguno de vuestros sistemas decide sobre personas (crédito, empleo, acceso a servicios)?",
+          "¿Tenéis política de uso de IA y plan de alfabetización?"
+        ],
+        "referencias_destacadas": [
+          "dc-caso-entelgy-labs"
+        ],
+        "material_interno": [
+          "digital-change-pains",
+          "digital-change-legacy-preview"
+        ],
+        "material_interno_nota": "Sin plazos publicados hasta que Alfredo cierre el fork; Cristina Aparicio co-desarrolla; Joanna Ferrer es interna (delivery), no competencia; Arkea no se cita; tendrá componente de plataforma en construcción, no se vende.",
+        "dossier_imprimible": true
+      },
+      "keynotes": [
+        {
+          "dolor": "Cada área tiene su IA y nadie sabe cuánta hay.",
+          "frase": "No te falta IA. Te falta gobierno.",
+          "prueba": "88% usa IA; 36% tiene marco de gobernanza (McKinsey 2025; Pacific AI 2025).",
+          "paso": "Diagnóstico de gobernanza: inventario clasificado por riesgo y go/no-go."
+        },
+        {
+          "dolor": "El AI Act nos va a pillar.",
+          "frase": "Inventariar y clasificar no se hace más fácil por esperar.",
+          "prueba": "Alto riesgo el 2 de diciembre de 2027; transparencia desde agosto de 2026.",
+          "paso": "Arranque: comité, política, plan de alfabetización e inventario v1."
+        },
+        {
+          "dolor": "Tenemos pilotos que no acaban nunca.",
+          "frase": "Una cartera de IA que solo aprueba no genera retorno: lo consume.",
+          "prueba": "Frenar es el diferencial: legitimidad para decir no.",
+          "paso": "RGO-IA como servicio recurrente, con especialistas por mes."
+        },
+        {
+          "dolor": "¿Y si un sistema nuestro decide mal sobre alguien?",
+          "frase": "Cuando un sistema decide sobre derechos, el secreto no se sostiene.",
+          "prueba": "BOSCO: el Supremo obligó a abrir el código (STS 1119/2025).",
+          "paso": "Supervisión humana definida (art. 14) y evidencias documentadas."
+        }
+      ],
+      "referencias": [
+        "dc-caso-entelgy-labs"
+      ],
+      "materiales": [
+        "ogh-onepager",
+        "ogh-ficha"
+      ],
+      "acreditacion": [],
+      "pendiente": {
+        "texto": "Lectura de Alfredo: plazos del arranque (flexible o 3–4 meses a precio cerrado), 78% u 88%, y una referencia de cliente autorizada.",
+        "dueno": "Alfredo",
+        "fecha_objetivo": "sept 2026"
+      },
+      "contactos": {
+        "comercial": "alfredo-zurdo",
+        "tecnico": "cristina-aparicio"
+      }
+    }
+  ],
+  "material_comun": [
+    "digital-change-deck"
+  ],
+  "propuesta_portada": "La tecnología ya está comprada; el retorno, no. Cultura, conocimiento y gobierno de la IA.",
+  "responsable_id": "alfredo-zurdo"
+}

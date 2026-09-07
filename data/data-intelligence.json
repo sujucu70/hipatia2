@@ -1,0 +1,228 @@
+{
+  "id": "data-intelligence",
+  "nombre": "Data Intelligence",
+  "orden": "03",
+  "responsable": "Daniela",
+  "propuesta": "Convertimos datos y capacidades de IA en decisiones, productos y operaciones gobernadas y útiles para el negocio.",
+  "que_cubre": "Construir y operar la base de dato fiable (gobierno, ingeniería, analítica y modelos) para que la IA y la plataforma decidan sobre dato completo, trazable y auditable. Cinco pilares: gobierno del dato y de los modelos, ingeniería y plataforma, analítica y visualización con GenAI, analítica avanzada, y seguridad del dato e IA auditable.",
+  "que_no_prometer": "No vendemos IA porque sí ni prometemos resultados sin revisar antes datos, gobierno, riesgos y adopción. Tener datos no significa que sean de calidad, que se puedan usar o que sirvan para un caso de IA. Y no prometemos un euro antes del diagnóstico: el ahorro lo dice el propio assessment.",
+  "pregunta_comun": "¿Qué decisión tomáis hoy sin fiaros del todo del dato que tenéis?",
+  "capacidades": [
+    {
+      "paso": "01",
+      "titulo": "Gobierno del dato y de los modelos",
+      "texto": "Roles con mandato, calidad medida, catálogo vivo y linaje trazable bajo DAMA-DMBOK y DCAM. Incluye catalogar y clasificar los modelos y sus datasets de entrenamiento. El gobierno que un auditor recorre."
+    },
+    {
+      "paso": "02",
+      "titulo": "Ingeniería y plataforma del dato",
+      "texto": "Construimos y evolucionamos la plataforma y los procesos que la alimentan: ingesta, calidad e integración de origen a consumo, sobre AWS, Azure, Fabric, Databricks o Informatica, el que encaje."
+    },
+    {
+      "paso": "03",
+      "titulo": "Analítica, visualización y GenAI",
+      "texto": "Analítica en producción conectada al negocio, y «habla con tus datos»: consulta en lenguaje natural sobre dato gobernado, con respuesta trazable y sin cola de peticiones a IT."
+    },
+    {
+      "paso": "04",
+      "titulo": "Analítica avanzada y ciencia del dato",
+      "texto": "Modelos predictivos y ML orientados a caso de uso, de la identificación a la operación, con control de drift y sesgos y explicabilidad de cada resultado."
+    },
+    {
+      "paso": "05",
+      "titulo": "Seguridad del dato e IA auditable",
+      "texto": "Barreras para que la GenAI no exponga información sensible a quien no debe, y ciclo de vida del modelo auditable: cada decisión queda trazada para el auditor (RGPD, ENS, EU AI Act, ISO 42001, DORA)."
+    }
+  ],
+  "discovery": [
+    "¿Qué decisión tomáis hoy sin fiaros del todo del dato que tenéis?",
+    "¿Existe un catálogo del dato y quién es dueño de cada dominio?",
+    "¿Cuántos modelos o iniciativas de IA tenéis en producción, y quién los inventaría para el AI Act?"
+  ],
+  "primer_avance": {
+    "titulo": "Servicio gestionado de gobierno del dato",
+    "plazo": null,
+    "nota": "Una oficina del dato operada por Entelgy: roles con mandato, catálogo vivo, calidad medida y linaje trazable, en marcha cada mes. Se entra con un assessment de cuatro a seis semanas (dos perfiles senior, alcance acotado) que dice dónde está el valor, las brechas de calidad y la clasificación de sistemas frente al EU AI Act. Sin precio: el euro lo entrega el propio diagnóstico. Alcance con Daniela Ongaro."
+  },
+  "soluciones": [
+    {
+      "id": "data-intelligence",
+      "nombre": "Data Intelligence",
+      "una_linea": "Datos, analítica e IA gobernados al servicio de una decisión.",
+      "especialista": "Daniela",
+      "estado": "vigente",
+      "dueno": "Daniela",
+      "fecha_objetivo": "sept 2026",
+      "propuesta": {
+        "que_es": "Construimos y operamos la base de dato fiable (gobierno, ingeniería, analítica y modelos) para que la IA y la plataforma decidan sobre dato completo, trazable y auditable. Operamos el gobierno del dato y de los modelos, roles con mandato, catálogo vivo y linaje trazable, y sobre esa base construimos la plataforma, la analítica en producción, la GenAI sobre dato gobernado y los modelos con control de drift, sesgos y explicabilidad.",
+        "a_quien": "Entras por el CIO, con el reloj regulatorio del sector como apertura: quien ya tiene IA en producción es deployer del AI Act hoy. Detrás, el responsable de datos, Compliance o el DPO cuando se habla de qué dato usa cada modelo, y negocio cuando se habla de autoservicio. Donde hay caso: supervisores y sector público, banca, industria, movilidad y automoción.",
+        "senal": "Negocio no se fía del dato para decidir, o cada sistema dice una cosa. Hay iniciativas de IA o GenAI sin catálogo, sin dueño del dato y sin nadie que pueda decir qué dato usa cada modelo. Negocio hace cola en IT para conseguir un dato nuevo. Un auditor, un supervisor o el AI Act van a preguntar quién decidió qué.",
+        "por_que_nosotros": "La mayoría explota el dato; nosotros lo gobernamos y lo ponemos en producción. El dato de extremo a extremo bajo un mismo techo, que normalmente está repartido entre equipos o proveedores. Un gobierno que un auditor puede recorrer (DAMA-DMBOK y DCAM, RACI operativo, linaje en Purview), no un compliance de PowerPoint: en la CNMV es la base sobre la que sus modelos supervisan los mercados, y se adjudicó frente a las Big 4. IA auditable en producción, no en demo. Y el fabricante que encaje en cada capa, con más de 50 alianzas y sin stack impuesto.",
+        "diferenciador": "El dato gobernado de extremo a extremo, con un gobierno que un auditor recorre y una IA que se puede auditar en producción.",
+        "objecion_principal": {
+          "texto": "Ya tenemos plataforma de datos.",
+          "respuesta": "No vendemos plataforma: trabajamos sobre la que tenéis y elegimos contigo el fabricante en cada capa. Lo que suele faltar no es tecnología, es el gobierno que se opera día a día, roles con mandato, catálogo vivo y linaje, y sin eso el modelo hereda el error del dato. El assessment lo dice en cuatro a seis semanas."
+        },
+        "como_abres": "«¿Qué decisión tomáis hoy sin fiaros del todo del dato que tenéis?»",
+        "primer_paso": {
+          "titulo": "Servicio gestionado de gobierno del dato",
+          "plazo": null,
+          "nota": "Una oficina del dato operada por Entelgy: roles con mandato, catálogo vivo, calidad medida y linaje trazable, en marcha cada mes. Se entra con un assessment de cuatro a seis semanas (dos perfiles senior, alcance acotado) que dice dónde está el valor, las brechas de calidad y la clasificación de sistemas frente al EU AI Act. Sin precio: el euro lo entrega el propio diagnóstico. Alcance con Daniela Ongaro."
+        }
+      },
+      "limites": [
+        "No se vende IA como fin en sí mismo ni se prometen resultados sin revisar datos, gobierno, riesgos y adopción.",
+        "La disponibilidad de datos no equivale a calidad, permiso de uso o preparación para un caso de IA."
+      ],
+      "senales": [
+        "El negocio tiene datos pero no confía lo suficiente en ellos para decidir o automatizar.",
+        "Existen iniciativas de IA dispersas sin criterio común de valor, gobierno o riesgo.",
+        "Se necesita pasar de análisis aislados a una capacidad de datos mantenible."
+      ],
+      "kit": {
+        "frases_cuenta": {
+          "nota": "Frases por dolor, sacadas del deck y de las dos piezas. Elige la que responde a lo que te han dicho.",
+          "frases": [
+            {
+              "angulo": "Por la IA que no rinde",
+              "cuando": "si tienen modelos o GenAI en marcha",
+              "texto": "El modelo hereda el error del dato: decide sobre lo que le llega. El 60% de las organizaciones no captará el valor de su IA por un gobierno del dato deficiente (Gartner, nota de prensa, febrero de 2025). Antes de otro modelo, medimos el dato sobre el que va a decidir."
+            },
+            {
+              "angulo": "Por el auditor",
+              "cuando": "si aparecen el AI Act, DORA, un supervisor o el DPO",
+              "texto": "El AI Act pide saber qué dato usa cada modelo y por qué decidió lo que decidió, y responde quien firma. Montamos el gobierno que un auditor recorre y el ciclo de vida del modelo trazado. En la CNMV es la base de su supervisión."
+            },
+            {
+              "angulo": "Por la cola de IT",
+              "cuando": "si negocio se queja de que tarda en conseguir datos",
+              "texto": "El dato cerca de quien decide: capa semántica acordada, autoservicio gobernado y consulta en lenguaje natural con respuesta trazable. Menos cola de peticiones, sin perder el control."
+            },
+            {
+              "angulo": "Por los silos",
+              "cuando": "si cada sistema dice una cosa",
+              "texto": "Roles con mandato, catálogo vivo y linaje trazable de origen a consumo: el gobierno que se opera, no el que se archiva. En Bankinter es lo que sostiene la analítica en producción con negocio dentro."
+            }
+          ],
+          "regla": "Estas frases abren y cualifican. Si la conversación va a copilots y agentes en el ciclo de desarrollo, es Jorge; si va a que la gente use la IA, es Alfredo. Cuando el cliente muerde, el siguiente paso es traer a Daniela."
+        },
+        "pitch_por_rol": [
+          {
+            "rol": "CIO",
+            "pregunta": "¿Sobre qué dato están decidiendo hoy vuestros modelos, y quién responde de él?",
+            "le_mueve": "una base gobernada antes de más IA, sin abrir un frente regulatorio."
+          },
+          {
+            "rol": "Responsable de datos (CDO / Head of Data)",
+            "pregunta": "¿Tenéis catálogo, linaje y un RACI que un auditor pueda recorrer?",
+            "le_mueve": "gobierno como operación (DAMA-DMBOK, DCAM, Purview), no como archivo."
+          },
+          {
+            "rol": "Compliance / DPO / CISO",
+            "pregunta": "¿Podéis demostrar qué dato usa cada modelo y por qué decidió lo que decidió?",
+            "le_mueve": "IA auditable y clasificación de sistemas frente al AI Act."
+          },
+          {
+            "rol": "Dirección de negocio",
+            "pregunta": "¿Cuánto tarda negocio en conseguir un dato nuevo de IT?",
+            "le_mueve": "autoservicio gobernado y habla con tus datos."
+          }
+        ],
+        "pitch_nota": "Se entra por el CIO con el reloj regulatorio; el responsable de datos y Compliance deciden con él.",
+        "objeciones": [
+          {
+            "texto": "Ya tenemos plataforma de datos (Databricks, Fabric…).",
+            "respuesta": "No vendemos plataforma: trabajamos sobre la vuestra y elegimos contigo el fabricante en cada capa. Lo que suele faltar es el gobierno que se opera: roles, catálogo, linaje. Sin eso, la plataforma decide sobre dato que hereda errores."
+          },
+          {
+            "texto": "El gobierno del dato es burocracia.",
+            "respuesta": "El que se archiva, sí. El nuestro se opera día a día y un auditor lo puede recorrer: RACI operativo, catálogo vivo, linaje trazable. En la CNMV es la base sobre la que sus modelos supervisan los mercados."
+          },
+          {
+            "texto": "Vamos directos a GenAI.",
+            "respuesta": "Si la GenAI expone el dato que no debe, responde quien firma. Habla con tus datos va sobre dato gobernado, con respuesta trazable y barreras para el dato sensible. Primero la base; la GenAI va encima."
+          },
+          {
+            "texto": "¿Cuánto cuesta?",
+            "respuesta": "El assessment son cuatro a seis semanas con dos perfiles senior y alcance acotado, y sales sabiendo cuánto te cuesta tu dato. El euro lo da el propio diagnóstico; no lo prometemos antes."
+          }
+        ],
+        "preguntas_cualificacion": [
+          "¿Qué decisión tomáis hoy sin fiaros del todo del dato?",
+          "¿Existe un catálogo del dato y quién es dueño de cada dominio?",
+          "¿Cuántos modelos o iniciativas de IA tenéis en producción, y quién los inventaría para el AI Act?",
+          "¿Cuánto tarda negocio en obtener un dato nuevo de IT?"
+        ],
+        "referencias_destacadas": [
+          "di-caso-cnmv",
+          "di-caso-bankinter"
+        ],
+        "material_interno": [
+          "dataai-pains",
+          "dataai-previo",
+          "dataai-analisis-competencia"
+        ],
+        "material_interno_nota": "Nada de cifras económicas; los tres casos anónimos no se nombran; BPCE está autorizado pero sin caso escrito; la alianza nueva no se cuenta hasta que se procese el material.",
+        "dossier_imprimible": true
+      },
+      "keynotes": [
+        {
+          "dolor": "Metimos IA y el resultado no es fiable.",
+          "frase": "El modelo hereda el error del dato. Antes de otro modelo, medimos el dato sobre el que decide.",
+          "prueba": "Gartner (nota de prensa, febrero de 2025): el 60% de las organizaciones no captará el valor de su IA por un gobierno del dato deficiente.",
+          "paso": "Assessment de cuatro a seis semanas. Te presento a Daniela."
+        },
+        {
+          "dolor": "Auditoría, el supervisor o el AI Act van a preguntar quién decidió qué.",
+          "frase": "Un gobierno que un auditor recorre y un modelo cuya decisión queda trazada.",
+          "prueba": "CNMV: gobierno del dato como base de la supervisión con IA, adjudicado frente a las Big 4.",
+          "paso": "Empezamos por clasificar vuestros sistemas frente al AI Act."
+        },
+        {
+          "dolor": "Negocio hace cola en IT para conseguir un dato.",
+          "frase": "El dato cerca de quien decide: autoservicio gobernado y habla con tus datos, con respuesta trazable.",
+          "prueba": "Bankinter: analítica en producción con negocio dentro.",
+          "paso": "Un dominio primero; el resto sobre la misma base."
+        },
+        {
+          "dolor": "Cada sistema dice una cosa.",
+          "frase": "Roles con mandato, catálogo vivo y linaje de origen a consumo: el gobierno que se opera, no el que se archiva.",
+          "prueba": "Una gran planta de automoción replanifica en minutos lo que antes costaba días, sobre dato de proceso fiable.",
+          "paso": "El assessment dice qué dato sirve y qué no."
+        }
+      ],
+      "referencias": [
+        "di-caso-cnmv",
+        "di-caso-bankinter",
+        "di-caso-uned-dato",
+        "di-caso-industria",
+        "di-caso-movilidad-aerea",
+        "di-caso-automocion"
+      ],
+      "materiales": [
+        "dataai-onepager",
+        "dataai-producto",
+        "dataai-ficha"
+      ],
+      "acreditacion": [],
+      "pendiente": {
+        "texto": "Lectura de Daniela: nombre del servicio gestionado (oficina del dato), versión definitiva de UNED, alcance del permiso de CNMV, Gartner como nota de prensa, Luis Sanz como segundo contacto. El material del área se reescribe en septiembre-octubre con la propuesta de valor ampliada.",
+        "dueno": "Daniela",
+        "fecha_objetivo": "sept 2026"
+      },
+      "es_solucion_unica": true,
+      "contactos": {
+        "comercial": "daniela-ongaro",
+        "tecnico": "luis-sanz"
+      }
+    }
+  ],
+  "material_comun": [
+    "dataai-producto",
+    "dataai-onepager",
+    "dataai-ficha"
+  ],
+  "propuesta_portada": "Datos que se pueden auditar: gobierno, ingeniería, analítica y modelos sobre dato fiable.",
+  "nota_interna": "Data Intelligence es una única solución con el nombre de la práctica (revisión 5, 3 sep): sus cuatro capacidades —gobernar el dato, gobernar los modelos, decidir con analítica, predecir y operar— viven dentro de la página de solución. Cuando Daniela valide el desglose, se abre en soluciones.",
+  "responsable_id": "daniela-ongaro"
+}
