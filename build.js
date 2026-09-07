@@ -858,7 +858,7 @@ function entelgyPage(corp, practicas) {
   // (la apertura directa del deck sigue en la tarjeta de la sección de material). Naranja de marca:
   // es el único CTA de la pantalla /entelgy/.
   const deck0 = (mat.ids && mat.ids.length && MAT[mat.ids[0]]) ? MAT[mat.ids[0]] : null;
-  const heroDeck = deck0 ? `<p style="margin-top:var(--space-4)"><a class="btn btn-cta" href="#material">Ver la presentación corporativa ↓</a></p>` : "";
+  const heroDeck = deck0 ? `<p style="margin-top:var(--space-4);text-align:right"><a class="btn btn-cta" href="#material">Ver la presentación corporativa ↓</a></p>` : "";
   const body = `<section class="section hero"><div class="wrap">
     <p class="eyebrow">Cómo presentar Entelgy</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0">Entelgy, en una conversación</h1>
