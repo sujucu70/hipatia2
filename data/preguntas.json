@@ -12,6 +12,8 @@
     "intencion": "nada", "primero": null },
   { "pregunta": "deck corporativo",
     "intencion": "material", "primero": "corp-exec-global" },
+  { "pregunta": "última versión de la presentación corporativa",
+    "intencion": "material", "primero": "corp-exec-global" },
   { "pregunta": "qué es entelgy",
     "intencion": "definicion", "primero": "corporativo" }
 ]

@@ -10,7 +10,7 @@
   function esc(v) { return String(v == null ? "" : v).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
   function W(t) { return norm(t).replace(/-/g, " ").split(/[^a-z0-9]+/).filter(Boolean); }
 
-  var STOP = "a al del de el la lo los las un una unos unas y o u en con por para sobre sin que como cual le les me te se es son hay tengo tienes puedo quiero necesito hacer algo alguna algun sector practica solucion pieza piezas material materiales cliente hipatia portal".split(" ").reduce(function (o, w) { o[w] = 1; return o; }, {});
+  var STOP = "a al del de el la lo los las un una unos unas y o u en con por para sobre sin que como cual le les me te se es son hay tengo tienes puedo quiero necesito hacer algo alguna algun sector practica solucion pieza piezas material materiales cliente hipatia portal ultima ultimo version nueva nuevo actual vigente".split(" ").reduce(function (o, w) { o[w] = 1; return o; }, {});
   var SIN = "No tengo nada con esas palabras. Prueba con la práctica (Modernización, Smart Operations…) o el sector (banca, AAPP…). Si crees que debería existir, escríbeselo al responsable de la práctica → <a class=\"text-link\" href=\"/contactos/\">Contactos</a>.";
   // Sinónimos (en forma normalizada; los de varias palabras casan como frase consecutiva).
   var SIN_GRUPOS = [
@@ -23,7 +23,8 @@
     ["infra", "infraestructura", "infraestructuras", "cloud"],
     ["modernizacion", "modernizar", "legacy", "mainframe"],
     ["telco", "telecomunicaciones"],
-    ["process intelligence", "inteligencia de procesos", "process mining"]
+    ["process intelligence", "inteligencia de procesos", "process mining"],
+    ["deck", "decks", "presentacion", "presentaciones", "ppt", "powerpoint", "slides"]
   ];
   var TIPOS_ORDEN = ["Deck", "One-pager", "Ficha", "Referencia", "Guía de discovery", "Guía interna", "Plantilla", "Herramienta", "Archivo"];
   var ESTADO_ORDEN = ["vigente", "revisar", "pendiente"];
@@ -36,7 +37,10 @@
   var GRUPO = {};
   SIN_GRUPOS.forEach(function (g) { var ms = g.map(W); g.forEach(function (s, i) { if (ms[i].length === 1) GRUPO[ms[i][0]] = ms; }); });
 
-  function palCasa(term, pal) { return term.length < 5 ? pal === term : pal.indexOf(term.slice(0, 5)) === 0; }
+  // Casado por prefijo compartido (rev19b · BQ.3): dos palabras casan si comparten un prefijo de
+  // al menos cinco letras que cubre la más corta salvo, como mucho, sus dos últimas; las de menos
+  // de cinco casan enteras. Así «corporativa» casa «corporativo» pero «presentacion» no casa «preservia».
+  function palCasa(a, b) { if (a === b) return true; var n = a.length < b.length ? a.length : b.length; if (n < 5) return false; var p = 0; while (p < n && a.charAt(p) === b.charAt(p)) p++; return p >= 5 && p >= n - 2; }
   function fraseCasa(fr, ws) { for (var i = 0; i + fr.length <= ws.length; i++) { for (var j = 0, ok = 1; j < fr.length; j++) if (!palCasa(fr[j], ws[i + j])) { ok = 0; break; } if (ok) return true; } return false; }
   function casa(term, ws) { var g = GRUPO[term] || [[term]]; for (var k = 0; k < g.length; k++) { var m = g[k]; if (m.length === 1) { for (var i = 0; i < ws.length; i++) if (palCasa(m[0], ws[i])) return true; } else if (fraseCasa(m, ws)) return true; } return false; }
   function cuenta(terms, texto) { var ws = W(texto), n = 0; for (var i = 0; i < terms.length; i++) if (casa(terms[i], ws)) n++; return n; }

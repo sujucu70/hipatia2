@@ -62,7 +62,7 @@ function footer() {
 function preguntaWidget() {
   // Una sugerencia por intención (rev19 · BN.1); lo que se ve es lo que se manda.
   const sugerencias = [
-    "deck corporativo",
+    "última versión de la presentación corporativa",
     "a quién llamo por infraestructura",
     "qué es process intelligence",
   ].map((q) => `<button class="pregunta-sug" type="button" data-q="${esc(q)}">${esc(q)}</button>`).join("");
