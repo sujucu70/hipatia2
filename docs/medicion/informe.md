@@ -46,10 +46,10 @@
 | /practicas/smart-operations/smartops-workplace/ | 77 |
 | /practicas/software-development/modernizacion/ | 77 |
 | /modernizacion/materiales/onepager-modernizacion.html | 75 |
-| /practicas/smart-operations/smartops-infra/ | 75 |
-| /practicas/process-intelligence/process-mining/ | 73 |
+| /practicas/smart-operations/smartops-infra/ | 74 |
 | /practicas/process-intelligence/process-automation-ai/ | 72 |
-| /practicas/software-development/asistencia-tecnica/ | 72 |
+| /practicas/process-intelligence/process-mining/ | 72 |
+| /practicas/software-development/mantenimiento/ | 72 |
 
 (máximo 142 KB de 139 páginas; imágenes aparte)
 

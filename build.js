@@ -399,13 +399,16 @@ function solucionPage(pr, s) {
   const refs = (s.referencias || []).map((id) => MAT[id]).filter(Boolean);
   let refsHtml;
   if (refs.length) {
+    // la leyenda de citabilidad solo si todas las referencias del bloque lo son; si hay mezcla, manda el chip de cada tarjeta
+    const todasCitables = refs.every((r) => r.citable === "citable");
     refsHtml = `<div class="grid grid-2">` + refs.map((r) => `<article class="card">
         <h3 style="font-size:var(--font-size-xl)">${esc(r.titulo)}</h3>
         <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm);margin:var(--space-2) 0">${esc(r.resultado || "")}</p>
         <p style="font-style:italic">«${esc(r.frase_reunion || "")}»</p>
         <div class="chips" style="margin-top:var(--space-3)">${chipCitable(r)}</div>
-      </article>`).join("") + `</div>
-      <p class="footer-note" style="margin-top:var(--space-3);color:var(--color-text-secondary)">Citable en presentación. El envío formal de la referencia al cliente se autoriza por cuenta.</p>`;
+      </article>`).join("") + `</div>` + (todasCitables
+      ? `\n      <p class="footer-note" style="margin-top:var(--space-3);color:var(--color-text-secondary)">Citable en presentación. El envío formal de la referencia al cliente se autoriza por cuenta.</p>`
+      : "");
   } else {
     refsHtml = `<p class="pending">Sin referencia autorizada para esta solución · pídesela a <b>${esc(nombreCompleto(s.especialista))}</b>.</p>`;
   }
@@ -594,7 +597,7 @@ function fichaBody(m) {
   if (esRef) {
     // La referencia encabeza por su citabilidad (con sign-off), no por «con validación».
     meta += fila("Citabilidad", chipCitable(m) + (m.citable === "citable" && m.sign_off ? ` <span class="footer-note">${esc(m.sign_off.quien)} · ${esc(fechaCorta(m.sign_off.fecha))}</span>` : ""));
-    meta += fila("Envío al cliente", `<span class="footer-note">${esc(LEYENDA_CITA)}</span>`);
+    if (m.citable === "citable") meta += fila("Envío al cliente", `<span class="footer-note">${esc(LEYENDA_CITA)}</span>`);
   } else {
     meta += fila("Uso", chipUsoSiempre(m.sale_al_cliente) + ` <span class="footer-note">${esc(m.confidencialidad || "")}</span>`);
   }
