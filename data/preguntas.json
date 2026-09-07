@@ -17,5 +17,7 @@
   { "pregunta": "qué es entelgy",
     "intencion": "definicion", "primero": "corporativo" },
   { "pregunta": "a quién llamo por process intelligence",
-    "intencion": "persona", "primero": "carmen-rode" }
+    "intencion": "persona", "primero": "carmen-rode" },
+  { "pregunta": "a quién llamo por automatización",
+    "intencion": "persona", "primero": "carla-gonzalez" }
 ]

@@ -356,13 +356,13 @@
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Lectura de Carla: diagnóstico de 6–8 semanas y corrección de la ficha, F1 de UNED y de la energética, «hiperautomatización» y «Task Intelligence» fuera de sus piezas, contacto sin rellenar.",
+        "texto": "Lectura de Carla (7-sep): diagnóstico de 6–8 semanas confirmado, UNED citable y contacto técnico asignado. Queda la corrección de la ficha y el one-pager (plazo, vocabulario y hueco de contacto), que se hace fuera del portal.",
         "dueno": "Carla",
         "fecha_objetivo": "sept 2026"
       },
       "contactos": {
         "comercial": "carla-gonzalez",
-        "tecnico": null
+        "tecnico": "david-escribano"
       }
     }
   ],
