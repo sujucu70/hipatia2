@@ -37,7 +37,7 @@
   "primer_avance": {
     "titulo": "Un diagnóstico sobre un proceso real",
     "plazo": "6–8 semanas",
-    "nota": "Con minería si el proceso deja rastro en los sistemas (Carmen) y a mano si no lo deja (Carla). Baseline medida en horas y tareas, mejoras priorizadas y retorno estimado. Precio cerrado: 15–20 K€ en el diagnóstico de entrada de Inteligencia de procesos; el de Automatización se cierra con Carla González."
+    "nota": "Con minería si el proceso deja rastro en los sistemas (Carmen Rode) y a mano si no lo deja (Carla González). Baseline medida en horas y tareas, mejoras priorizadas y retorno estimado. Alcance y precio, con la responsable de cada solución."
   },
   "soluciones": [
     {
@@ -196,14 +196,9 @@
         "process-ficha"
       ],
       "acreditacion": [],
-      "pendiente": {
-        "texto": "Lectura de Carmen: Celonis Gold e Inverbis-GBTEC en «Por qué Entelgy», precios visibles en el portal interno, ficha de Universidad LATAM.",
-        "dueno": "Carmen",
-        "fecha_objetivo": "sept 2026"
-      },
       "contactos": {
         "comercial": "carmen-rode",
-        "tecnico": null
+        "tecnico": "raul-duque"
       }
     },
     {

@@ -15,5 +15,7 @@
   { "pregunta": "última versión de la presentación corporativa",
     "intencion": "material", "primero": "corp-exec-global" },
   { "pregunta": "qué es entelgy",
-    "intencion": "definicion", "primero": "corporativo" }
+    "intencion": "definicion", "primero": "corporativo" },
+  { "pregunta": "a quién llamo por process intelligence",
+    "intencion": "persona", "primero": "carmen-rode" }
 ]
