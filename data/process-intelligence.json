@@ -217,7 +217,7 @@
         "diferenciador": "Un único responsable, del diagnóstico al proceso en producción, y la IA encima del RPA que ya funciona, no en su lugar.",
         "objecion_principal": {
           "texto": "Queremos agentes de IA, no robots.",
-          "respuesta": "El 95% de los pilotos de IA no llega a producción (MIT, State of AI in Business 2025). Los que llegan tienen debajo un proceso ordenado y RPA rodado. Ponemos el agente donde el proceso exige decidir, encima de esa base y con una oficina de gobierno que registra qué hace cada robot y cada agente. Es lo que separa un agente que escala de uno caro e impredecible. (La gobernanza humana de la IA, quién decide qué avanza y qué se frena, es la Oficina de Gobernanza Humana de la IA, en Digital Change.)"
+          "respuesta": "El 95% de los pilotos de IA no consigue el retorno esperado (MIT, State of AI in Business 2025). Los que lo consiguen tienen debajo un proceso ordenado y RPA rodado. Ponemos el agente donde el proceso exige decidir, encima de esa base y con una oficina de gobierno que registra qué hace cada robot y cada agente. Es lo que separa un agente que escala de uno caro e impredecible. (La gobernanza humana de la IA, quién decide qué avanza y qué se frena, es la Oficina de Gobernanza Humana de la IA, en Digital Change.)"
         },
         "como_abres": "«¿Qué automatización tenéis hoy suelta, sin escalar, y quién la mantiene?»",
         "primer_paso": {
@@ -247,7 +247,7 @@
             {
               "angulo": "Por el piloto que no escala",
               "cuando": "si han probado IA",
-              "texto": "El 95% de los pilotos de IA no llega a producción. Los que llegan tienen un proceso ordenado y RPA por debajo. Empezamos por ahí, y el agente va encima solo donde el proceso exige decidir."
+              "texto": "El 95% de los pilotos de IA no consigue el retorno esperado. Los que lo consiguen tienen un proceso ordenado y RPA por debajo. Empezamos por ahí, y el agente va encima solo donde el proceso exige decidir."
             },
             {
               "angulo": "Por el informe en el cajón",
@@ -328,7 +328,7 @@
         },
         {
           "dolor": "Metimos IA y no ha pasado nada. No escala.",
-          "frase": "El 95% de los pilotos de IA no llega a producción; los que llegan tienen RPA rodado debajo.",
+          "frase": "El 95% de los pilotos de IA no consigue el retorno esperado; los que lo consiguen tienen RPA rodado debajo.",
           "prueba": "UNED: 95 procesos levantados, 26 robots en producción en seis meses.",
           "paso": "Empezamos por el proceso ordenado; el agente va encima donde decide."
         },
