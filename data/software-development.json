@@ -29,7 +29,7 @@
       "texto": "Activar equipos técnicos aumentados desde los Centros de Excelencia, con una entrega que se puede medir."
     }
   ],
-  "capacidades_nota": "Si te preguntan cómo respondemos del resultado: en Mantenimiento y Modernización se contrata capacidad de entrega (UCE) y cada mes van en la factura dos índices, el IGE (lo entregado) y el ISA (la salud del aplicativo), calculados sobre las herramientas del cliente. La Asistencia técnica sigue otro modelo, el de créditos de modernización. Spec-Driven y la Factoría SEAS van dentro de las tres soluciones.",
+  "capacidades_nota": "Si te preguntan cómo respondemos del resultado: en las tres soluciones se contrata capacidad de entrega (UCE) y cada mes van en la factura dos índices, el IGE (lo entregado) y el ISA (la salud del aplicativo), calculados sobre las herramientas del cliente. En la Asistencia técnica, además, el ahorro de eficiencia de la IA vuelve al cliente como créditos de modernización. Spec-Driven y la Factoría SEAS van dentro de las tres soluciones.",
   "discovery": [
     "¿Qué parte de vuestro portfolio da más miedo tocar?",
     "¿Qué proporción del presupuesto se va en sostener lo existente, en vez de construir lo que necesitáis?",
@@ -379,7 +379,7 @@
           "software-pains-mantenimiento",
           "mod-argumentario"
         ],
-        "material_interno_nota": "El 40% del ahorro está en la ficha y pendiente de confirmar para documento público; las cifras económicas del modelo (€/UCE, tabla de equivalencias, reparto interno) no salen a cliente.",
+        "material_interno_nota": "El reparto del ahorro no tiene cifra fija: se pacta con cada cliente según la productividad que se consiga, que depende de cuánto control deje tomar y cuánta tecnología se pueda aplicar (Jorge, 7-sep). La ficha (40 %) y el deck (20 %) siguen en revisar hasta que él los alinee; las cifras económicas del modelo (€/UCE, tabla de equivalencias, reparto interno) no salen a cliente.",
         "dossier_imprimible": true
       },
       "keynotes": [
@@ -419,11 +419,6 @@
         "software-mantenimiento-ficha"
       ],
       "acreditacion": [],
-      "pendiente": {
-        "texto": "Lectura de Jorge: reparto del ahorro (20 o 40%) y si sale en documento público, Foreworth como contraste, casos DGOJ, MICIU y H10 colgados aquí.",
-        "dueno": "Jorge",
-        "fecha_objetivo": "sept 2026"
-      },
       "contactos": {
         "comercial": "jorge-herrero",
         "tecnico": null
@@ -488,7 +483,7 @@
               "texto": "Cuando el perfil rota, el sistema no se queda ciego: el conocimiento vive en la especificación, auditable, y detrás hay nodo ancla, red de especialistas y capacidad flotante."
             }
           ],
-          "regla": "Estas frases abren. El modelo de créditos de modernización y el índice SDPI los explica Jorge; no lo cuentes con cifras. Si la necesidad es una aplicación concreta, es Modernización; si es la cartera en producción, Mantenimiento."
+          "regla": "El modelo UCE es una fortaleza para clientes con madurez en IA; en el primer contacto no entres a defenderlo. Estas frases abren. El modelo de créditos de modernización y el índice SDPI los explica Jorge; no lo cuentes con cifras. Si la necesidad es una aplicación concreta, es Modernización; si es la cartera en producción, Mantenimiento."
         },
         "pitch_por_rol": [
           {

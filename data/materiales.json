@@ -111,7 +111,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Ficha de dos caras para dejar al cliente; valida ante IT y compras. V1 provisional: menciona el reparto del 40% del ahorro y Jorge aún tiene que confirmar que puede ir en un documento público. Si el cliente pregunta por esa cifra, remite a Jorge.",
+      "nota_de_uso": "Ficha de dos caras para dejar al cliente; valida ante IT y compras. V1 provisional: menciona un reparto del 40 % del ahorro que Jorge no fija como cifra (se pacta con cada cliente según la productividad conseguida). Si el cliente pregunta por esa cifra, remite a Jorge.",
       "url_documento": "/modernizacion/materiales/ficha-modernizacion.html",
       "origen": "modernizacion/materiales/ficha-modernizacion.html",
       "subtipo": "De servicio"
@@ -322,13 +322,13 @@
         "Sector público"
       ],
       "momento_comercial": "Aportar prueba",
-      "nota_de_uso": "Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.",
+      "nota_de_uso": "Citable en presentación. Las llamadas de referencia se gestionan siempre a través del responsable de la cuenta (Jorge Herrero); el envío formal de la referencia al cliente se autoriza por cuenta.",
       "url_documento": null,
       "origen": "paquete-jorge/03-casos-repositorio.md",
       "contexto": "Empresa pública del Gobierno de Navarra. Migración de un core con una estimación clásica de 9 meses.",
       "que_hicimos": "El método del área: la IA documenta y traduce el sistema existente a especificaciones y el equipo gobierna y valida. En la primera semana quedaron documentadas 1.000 horas de carga funcional.",
       "resultado": "Entregado en 3 meses (frente a 9 estimados) con un 70% de ahorro sobre el esfuerzo previsto.",
-      "frase_reunion": "Un organismo público nos estimó la migración en 9 meses por el método tradicional. La entregamos en 3. Y si quieres, se lo preguntas a ellos: el cliente atiende llamadas de referencia.",
+      "frase_reunion": "Un organismo público nos estimó la migración en 9 meses por el método tradicional. La entregamos en 3. Y si quieres, se lo preguntas a ellos: NASERTIC atiende llamadas de referencia, a través del responsable de la cuenta.",
       "cifras": [
         {
           "valor": "1.000 h documentadas en 1 semana",
@@ -772,7 +772,7 @@
       "sale_al_cliente": "si",
       "confidencialidad": "compartible",
       "audiencia": "Cliente",
-      "estado": "revisar",
+      "estado": "vigente",
       "fecha_revision": "sep 2026",
       "dueno": "Jorge",
       "mantenida_por": "sm",
@@ -780,7 +780,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "primer_contacto",
-      "nota_de_uso": "Una cara para abrir la primera reunión: contratas entrega, no currículums. Va con el modelo de julio (UCE); Jorge lo cambió a créditos de modernización: sirve para la conversación, no lo envíes hasta la versión corregida.",
+      "nota_de_uso": "Una cara para abrir la primera reunión: contratas entrega, no currículums. Lleva el modelo UCE (capacidad de entrega), que Jorge mantiene: es una fortaleza para clientes con madurez en IA; en un primer contacto no entres a defenderlo, abre con la entrega medida y sustituible por contrato.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/onepager-asistencia.html",
       "origen": "ciclo-software/fichas/onepager-asistencia.html"
     },
@@ -794,7 +794,7 @@
       "sale_al_cliente": "si",
       "confidencialidad": "compartible",
       "audiencia": "Cliente",
-      "estado": "revisar",
+      "estado": "vigente",
       "fecha_revision": "sep 2026",
       "dueno": "Jorge",
       "mantenida_por": "sm",
@@ -802,7 +802,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Dos caras para quien lo valida dentro (CIO, compras). Mismo aviso: modelo de julio, pendiente de la versión con créditos de modernización.",
+      "nota_de_uso": "Dos caras para quien lo valida dentro (CIO, compras). Explica el modelo UCE, que Jorge mantiene; déjala cuando el cliente ya ha entendido que contrata entrega, no horas.",
       "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/ficha-asistencia.html",
       "origen": "ciclo-software/fichas/ficha-asistencia.html",
       "subtipo": "De servicio"
@@ -2329,7 +2329,7 @@
       "que_hicimos": "Equipos adscritos a la fábrica, con la capacidad medida y sustituible por contrato y uso aumentado de asistentes de IA.",
       "resultado": "Más de 250 profesionales en la cuenta, en tres países.",
       "frase_reunion": "En una entidad financiera tenemos más de 250 personas sobre su core crítico, en tres países, con la capacidad medida y sustituible por contrato. El nombre te lo confirmo por cuenta.",
-      "nota_de_uso": "Referencia bajo NDA. No es Spec-Driven: es capacidad con asistentes de IA. No atribuirla al método."
+      "nota_de_uso": "Referencia bajo NDA. No es Spec-Driven: es capacidad con asistentes de IA. No atribuirla al método. Pasar a citable depende de Dirección de Negocio (Jorge, 7-sep)."
     },
     {
       "tipo": "Referencia",
@@ -2358,7 +2358,7 @@
       "que_hicimos": "Capacidad de desarrollo con la productividad medida en el código, no en las horas, y contrastada con el mercado (Foreworth).",
       "resultado": "Productividad medida por un tercero; cifras bajo NDA.",
       "frase_reunion": "En una industrial la productividad del equipo se mide en el código y se contrasta con un tercero, no se declara. Las cifras las vemos por cuenta.",
-      "nota_de_uso": "Referencia bajo NDA. Foreworth es contraste de mercado, no certificador."
+      "nota_de_uso": "Referencia bajo NDA. Foreworth es contraste de mercado, no certificador. Pasar a citable depende de Dirección de Negocio (Jorge, 7-sep)."
     },
     {
       "tipo": "Referencia",
