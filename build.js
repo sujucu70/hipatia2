@@ -719,7 +719,7 @@ function portadaPage(corp, practicas) {
       </article>`;
   }).join("");
   const oferta = `<section class="section oferta" style="padding:48px 0"><div class="wrap">
-      ${sectionHead("La oferta", "Cinco prácticas. Una forma de elegir por dónde empezar.", "No es un recorrido obligatorio ni un catálogo de silos. Parte de la necesidad y entra por la práctica que puede trabajarla.")}
+      ${sectionHead("La oferta", "Un método, cinco prácticas. Elige por dónde empezar.", "No es un recorrido obligatorio ni un catálogo de silos. Parte de la necesidad y entra por la práctica que puede trabajarla.")}
       <div class="oferta-md" style="margin-top:var(--space-5)">${radios}<div class="of-list">${filas}</div><div class="of-panels">${paneles}</div></div>
     </div></section>`;
   // separador entre «La oferta» y «Materiales» (mosaico de píxeles de la marca)
@@ -849,15 +849,19 @@ function entelgyPage(corp, practicas) {
     <div class="ed-mat-foot"><div class="chips">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}</div>${m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}">Abrir en pantalla ↗</a>${descargasMini(m)}` : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`}</div>
   </article>`;
   const matCards = (mat.ids || []).map((id, i) => MAT[id] ? (i === 0 ? deckFeat(MAT[id]) : materialCard(MAT[id])) : "").join("");
-  const material = (mat.ids && mat.ids.length) ? `<section class="section">
+  const material = (mat.ids && mat.ids.length) ? `<section class="section" id="material">
     <p class="eyebrow">${esc(mat.eyebrow || "")}</p>
     <div class="grid grid-2" style="margin-top:var(--space-3)">${matCards}</div>
   </section>` : "";
 
+  // Presentación corporativa desde el hero (rev21 · BT.2): misma anatomía que la línea de las prácticas.
+  const deck0 = (mat.ids && mat.ids.length && MAT[mat.ids[0]]) ? MAT[mat.ids[0]] : null;
+  const heroDeck = deck0 ? `<p style="margin-top:var(--space-3);color:var(--color-slate-300);font-size:var(--font-size-sm)">Presentación corporativa: ${deck0.url_documento ? `<a class="text-link" href="${esc(deck0.url_documento)}" style="color:var(--color-purple-300)">Abrir en pantalla ↗</a> · ` : ""}<a class="text-link" href="#material" style="color:var(--color-purple-300)">Ver la pieza ↓</a></p>` : "";
   const body = `<section class="section hero"><div class="wrap">
     <p class="eyebrow">Cómo presentar Entelgy</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0">Entelgy, en una conversación</h1>
     <p class="lede">${esc(r.sesenta_segundos || corp.entelgy_una_frase)}</p>
+    ${heroDeck}
   </div></section>
   <div class="wrap">
     ${porQue}

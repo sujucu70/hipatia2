@@ -126,7 +126,8 @@
 
   // ---------- plantillas (HTML escapado) ----------
   function chips(p) { var c = []; if (p.estado === "revisar") c.push("revisar"); else if (p.estado === "pendiente") c.push("pendiente"); if (p.sale_al_cliente === "con_validacion") c.push("con validación"); if (p.tipo === "Referencia" && p.citable) c.push(p.citable); return c.map(function (x) { return '<span class="pregunta-chip-inline">' + esc(x) + "</span>"; }).join(""); }
-  function eyebrow(p, pn) { var a = [p.tipo]; if (p.subtipo) a.push(p.subtipo); a.push(pn[p.practica] || p.practica); return a.map(esc).join(" · "); }
+  // Eyebrow de pieza: tipo · subtipo · práctica. En corporativo (rev21 · BT.3) se omite la práctica (no repetir): «Deck · Corporativo».
+  function eyebrow(p, pn) { var a = [p.tipo]; if (p.subtipo) a.push(p.subtipo); if (p.practica !== "corporativo") a.push(pn[p.practica] || p.practica); return a.map(esc).join(" · "); }
   function lineaDe(p, e) { if (p.solucion && e[p.solucion]) return e[p.solucion].linea; if (p.practica && e[p.practica]) return e[p.practica].linea; return null; }
   function duenoDe(p, pById) { if (!p.dueno) return "Corporativo"; var per = pById[p.dueno]; if (!per) return "Corporativo"; return per.correo ? esc(per.nombre) + ' · <a class="text-link" href="mailto:' + esc(per.correo) + '">escribir →</a>' : esc(per.nombre) + ' · <a class="text-link" href="/contactos/">ver en Contactos →</a>'; }
   function itemFull(p, e, pById, pn) { var l = lineaDe(p, e); return '<div class="pregunta-item"><p class="pregunta-item-eyebrow">' + eyebrow(p, pn) + '</p><h4><a href="' + esc(p.url) + '">' + esc(p.titulo) + "</a> " + chips(p) + "</h4>" + (l ? '<p class="pregunta-item-linea">' + esc(l) + "</p>" : "") + '<p class="pregunta-foot"><a class="ver-ficha" href="' + esc(p.url) + '">Ver ficha →</a><span>' + duenoDe(p, pById) + "</span></p></div>"; }
