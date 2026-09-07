@@ -1,6 +1,6 @@
 # Medición · Hipatia v3
 
-> Generado por `medir.js` el 2026-09-06. Rutas medidas: 139.
+> Generado por `medir.js` el 2026-09-07. Rutas medidas: 139.
 
 ## Criterios de aceptación (§6.8)
 
@@ -12,7 +12,7 @@
 | 5 | Uso/estado/dueño, citable⇒sign_off, sin enlaces rotos | 🟢 (rotos: 0) |
 | 6 | Ninguna pantalla afirma agente/envío/integración | 🟢 |
 | 7 | URL propia y buscador en todas | 🟢 |
-| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 139 KB) |
+| 8 | Contraste AA · 0 errores consola · <150 KB · 390 px | 🟢 (peso máx 142 KB) |
 | 9 | Reconocible por quien usó hipatia2 | ⚪ cualitativo |
 
 ## Clics desde la portada
@@ -38,24 +38,24 @@
 
 | Ruta | KB |
 |---|---|
-| /materiales/todo/ | 139 |
-| /materiales/ | 111 |
-| /modernizacion/materiales/ficha-modernizacion.html | 89 |
-| /practicas/smart-operations/smartops-workplace/ | 75 |
-| /practicas/data-intelligence/data-intelligence/ | 74 |
-| /practicas/software-development/modernizacion/ | 74 |
-| /modernizacion/materiales/onepager-modernizacion.html | 72 |
-| /practicas/smart-operations/smartops-infra/ | 72 |
-| /practicas/process-intelligence/process-mining/ | 70 |
-| /practicas/software-development/mantenimiento/ | 70 |
-| /practicas/process-intelligence/process-automation-ai/ | 69 |
-| /practicas/software-development/asistencia-tecnica/ | 69 |
+| /materiales/todo/ | 142 |
+| /materiales/ | 114 |
+| /modernizacion/materiales/ficha-modernizacion.html | 91 |
+| /contactos/ | 77 |
+| /practicas/data-intelligence/data-intelligence/ | 77 |
+| /practicas/smart-operations/smartops-workplace/ | 77 |
+| /practicas/software-development/modernizacion/ | 77 |
+| /modernizacion/materiales/onepager-modernizacion.html | 75 |
+| /practicas/smart-operations/smartops-infra/ | 75 |
+| /practicas/process-intelligence/process-mining/ | 73 |
+| /practicas/process-intelligence/process-automation-ai/ | 72 |
+| /practicas/software-development/asistencia-tecnica/ | 72 |
 
-(máximo 139 KB de 139 páginas; imágenes aparte)
+(máximo 142 KB de 139 páginas; imágenes aparte)
 
 ## Pregunta a Hipatia
 
-- Índice 46 KB · pregunta.js 16 KB · los dos bajo demanda (se cargan al abrir el panel, no con la página; no cuentan en el peso).
+- Índice 47 KB · pregunta.js 17 KB · los dos bajo demanda (se cargan al abrir el panel, no con la página; no cuentan en el peso).
 
 ## Bloques opcionales de práctica
 

@@ -1258,7 +1258,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "primer_contacto",
-      "nota_de_uso": "Una cara para abrir la primera reunión: qué automatizamos y por qué Entelgy. El contacto está sin rellenar y aún dice «hiperautomatización»: pídele a Carla la versión corregida antes de enviarlo.",
+      "nota_de_uso": "Una cara para abrir la primera reunión: qué automatizamos y por qué Entelgy. La versión publicada lleva el contacto sin rellenar y dice todavía «hiperautomatización»: Carla dio los cambios el 7-sep y la corrección está en camino. Hasta entonces, pídesela antes de enviarlo.",
       "url_documento": "https://entelgy.guberna.es/automatizacion/fichas/onepager-automatizacion-procesos.html",
       "origen": "automatizacion/fichas/onepager-automatizacion-procesos.html"
     },
@@ -1280,7 +1280,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye la automatización de procesos y cómo se contrata. El contacto está sin rellenar y aún dice «hiperautomatización»: pídele a Carla la versión corregida antes de enviarlo.",
+      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye la automatización de procesos y cómo se contrata. La versión publicada lleva el contacto sin rellenar, el diagnóstico a 4–6 semanas y todavía «hiperautomatización»: Carla dio los cambios el 7-sep y la corrección está en camino. Hasta entonces, pídesela antes de enviarlo.",
       "url_documento": "https://entelgy.guberna.es/automatizacion/fichas/ficha-automatizacion-procesos.html",
       "origen": "automatizacion/fichas/ficha-automatizacion-procesos.html",
       "subtipo": "De servicio"
@@ -2263,8 +2263,11 @@
       "solucion": "process-automation-ai",
       "dueno": "Carla",
       "sale_al_cliente": "con_validacion",
-      "citable": "confirmar_por_cuenta",
-      "sign_off": null,
+      "citable": "citable",
+      "sign_off": {
+        "quien": "Carla González",
+        "fecha": "2026-09-07"
+      },
       "sector": [
         "Sector público",
         "Educación"
@@ -2272,8 +2275,8 @@
       "contexto": "Universidad pública. Oficina de automatización sobre Blue Prism, por contratación pública.",
       "que_hicimos": "Detección y levantamiento de oportunidades área por área y robotización con roadmap.",
       "resultado": "95 procesos levantados en 18 meses; los 26 primeros robots en producción en 6 meses; 9 áreas, más de 30 usuarios y más de 400 horas al año liberadas a trabajo de más valor.",
-      "frase_reunion": "En la UNED levantamos 95 procesos en año y medio y en seis meses ya había 26 robots en producción. La adjudicación es pública; las horas liberadas te las confirmo por cuenta.",
-      "nota_de_uso": "Adjudicación pública (BOE / PLACSP). Cifras del hub y del deck; Carla confirma alcance antes de citarlas con nombre."
+      "frase_reunion": "En la UNED levantamos 95 procesos en año y medio y en seis meses ya había 26 robots en producción. La adjudicación es pública y las cifras las confirma Carla.",
+      "nota_de_uso": "Adjudicación pública (BOE / PLACSP). Cifras confirmadas por Carla el 7-sep: citable con nombre en presentación."
     },
     {
       "tipo": "Referencia",
@@ -2301,7 +2304,7 @@
       "que_hicimos": "Documentamos el parque entero, quitamos duplicidades y diseñamos una arquitectura con base de datos unificada.",
       "resultado": "Menos riesgo operativo y una base estable para escalar.",
       "frase_reunion": "Una energética en Colombia tenía 150 flujos que solo una persona sabía mantener. Documentamos el parque, quitamos duplicados y dejamos una base gobernada sobre la que escalar. Es lo que hace la oficina de gobierno.",
-      "nota_de_uso": "Sin nombre hasta que el cliente autorice. La historia sí se puede contar."
+      "nota_de_uso": "Sin nombre hasta que el cliente autorice. La historia sí se puede contar. Carla la da por citable por su parte (7-sep); el nombre sigue pendiente de que autorice la cuenta."
     },
     {
       "tipo": "Referencia",
