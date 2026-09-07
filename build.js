@@ -854,9 +854,11 @@ function entelgyPage(corp, practicas) {
     <div class="grid grid-2" style="margin-top:var(--space-3)">${matCards}</div>
   </section>` : "";
 
-  // Presentación corporativa desde el hero (rev21 · BT.2): misma anatomía que la línea de las prácticas.
+  // Presentación corporativa desde el hero (rev21b): un único CTA visible que baja a la pieza
+  // (la apertura directa del deck sigue en la tarjeta de la sección de material). Naranja de marca:
+  // es el único CTA de la pantalla /entelgy/.
   const deck0 = (mat.ids && mat.ids.length && MAT[mat.ids[0]]) ? MAT[mat.ids[0]] : null;
-  const heroDeck = deck0 ? `<p style="margin-top:var(--space-3);color:var(--color-slate-300);font-size:var(--font-size-sm)">Presentación corporativa: ${deck0.url_documento ? `<a class="text-link" href="${esc(deck0.url_documento)}" style="color:var(--color-purple-300)">Abrir en pantalla ↗</a> · ` : ""}<a class="text-link" href="#material" style="color:var(--color-purple-300)">Ver la pieza ↓</a></p>` : "";
+  const heroDeck = deck0 ? `<p style="margin-top:var(--space-4)"><a class="btn btn-cta" href="#material">Ver la presentación corporativa ↓</a></p>` : "";
   const body = `<section class="section hero"><div class="wrap">
     <p class="eyebrow">Cómo presentar Entelgy</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0">Entelgy, en una conversación</h1>
