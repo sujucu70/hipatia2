@@ -31,30 +31,36 @@
     ],
     "metodo": {
       "ciclico": true,
+      "ciclo_linea": "Un ciclo de extremo a extremo, no un proyecto que acaba: cada vuelta consolida el avance.",
       "pasos": [
         {
           "paso": "01",
           "titulo": "Entender",
+          "sintesis": "As-Is real",
           "texto": "Datos, sistemas, dependencias y riesgos tal como son. Evita: diseñar sobre supuestos."
         },
         {
           "paso": "02",
           "titulo": "Diseñar",
+          "sintesis": "To-Be gobernado",
           "texto": "Objetivo, arquitectura, caso de negocio y modelo de operación. Evita: una solución sin gobierno."
         },
         {
           "paso": "03",
           "titulo": "Implantar",
+          "sintesis": "Solución integrada",
           "texto": "Tecnología, integración, datos, seguridad y legado en producción. Evita: entregar una capa aislada."
         },
         {
           "paso": "04",
           "titulo": "Adoptar",
+          "sintesis": "Personas preparadas",
           "texto": "Capacidades, comportamiento y resistencias que deciden el uso real. Evita: que el cambio se quede sin personas."
         },
         {
           "paso": "05",
           "titulo": "Medir",
+          "sintesis": "Impacto sostenido",
           "texto": "Indicadores ligados al proceso y a la decisión que se quería mejorar. Evita: confundir actividad con impacto."
         }
       ],

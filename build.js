@@ -811,6 +811,19 @@ function entelgyPage(corp, practicas) {
     return `<article class="card card-num" data-num="${esc(p.paso)}"><h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)">${esc(p.titulo)}</h4><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(main)}</p>${evita ? `<p class="evita">${esc(evita)}</p>` : ""}</article>`;
   }).join("");
 
+  // El método como ciclo (rev21d): banda que lo cuenta como servicio continuo, no proyecto que acaba.
+  const mp = (r.metodo && r.metodo.pasos) || [];
+  const cicloPasos = mp.map((p) => `<li class="ciclo-step"><span class="ciclo-h"><b class="ciclo-num">${esc(p.paso)}</b> ${esc(p.titulo)}</span><span class="ciclo-sintesis">${esc(p.sintesis || "")}</span><span class="ciclo-node" aria-hidden="true"></span></li>`).join("");
+  const cicloBand = (r.metodo && r.metodo.ciclico && mp.length) ? `<div class="ciclo">
+    <div class="ciclo-head">
+      <span class="ciclo-eyebrow">Método Entelgy</span>
+      <span class="ciclo-linea">${esc(r.metodo.ciclo_linea || "")}</span>
+      <a class="ciclo-detalle" href="#metodo-detalle">Ver detalle →</a>
+    </div>
+    <ol class="ciclo-track">${cicloPasos}</ol>
+    <div class="ciclo-loop"><span class="ciclo-loop-label">↻ Mejora continua</span></div>
+  </div>` : "";
+
   // Dónde entramos (banda navy · cinco prácticas)
   const de = r.donde_entramos || {};
   const cols = (practicas || []).map((pr) => {
@@ -870,7 +883,8 @@ function entelgyPage(corp, practicas) {
     <section class="section">${sectionHead("Cuatro entradas al mismo relato", "Empieza por la pregunta que tienes delante.", "No son cuatro respuestas desconectadas ni un guion: son cuatro formas naturales de entrar en la misma propuesta.")}
       <div class="grid grid-2" style="margin-top:var(--space-3)">${entradas}</div></section>
     <section class="section">${sectionHead("El método", "Cada fase evita una forma conocida de perder el impacto.", (r.metodo && r.metodo.nota || "") + " Transversal: " + (r.metodo && r.metodo.transversal || []).join(" · ") + ".")}
-      <div class="grid grid-5" style="margin-top:var(--space-4)">${metodo}</div></section>
+      ${cicloBand}
+      <div class="grid grid-5" id="metodo-detalle" style="margin-top:var(--space-4)">${metodo}</div></section>
   </div>
   ${donde}
   <div class="wrap">
