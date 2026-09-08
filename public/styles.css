@@ -609,6 +609,13 @@ details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
 /* la tabla se queda con dos columnas cuando un rol lo cubre la misma persona en toda la práctica */
 .dir-cols.dir-c2, .dir-fila.dir-c2{ grid-template-columns:1.2fr 1.6fr; }
 .dir-cols.dir-c3, .dir-fila.dir-c3{ grid-template-columns:1.2fr 1fr 1fr; }
+/* recursos de una solución: enlaces en una línea, peso ligero, al final de la página */
+.recursos{ display:grid; gap:var(--space-2); }
+.rec-fila{ display:grid; grid-template-columns:120px 1fr; gap:var(--space-3); align-items:baseline; }
+.rec-t{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-text-secondary); }
+.rec-l{ font-size:var(--font-size-sm); }
+.rec-sep{ color:var(--color-text-secondary); margin:0 var(--space-2); }
+@media (max-width:720px){ .rec-fila{ grid-template-columns:1fr; gap:var(--space-1); } }
 /* directorio a dos niveles: quien cubre la práctica entera, antes de la tabla */
 .dir-cross{ padding:var(--space-4); border-bottom:1px solid var(--color-border-subtle); background:var(--color-surface-subtle,#F7F8F9); }
 .dir-cross-t{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-text-secondary); }

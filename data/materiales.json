@@ -3026,7 +3026,8 @@
       "nota_de_uso": "Mismo contenido que la página de IAbility en entelgy.com, con una dirección que se puede dar de viva voz. Marca registrada de Entelgy; es la que se usa en las campañas de correo.",
       "url_documento": "https://iability.ai",
       "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
-      "subtipo": "Enlace corto"
+      "subtipo": "Enlace corto",
+      "bloque": "recursos"
     },
     {
       "id": "dc-iability-calculadora",
@@ -3049,7 +3050,9 @@
       "nota_de_uso": "Los cuatro paquetes con su precio: Freemium, Explorer, Growth y Corporate. Pide un código contra tu cuenta de correo. Lleva precios, así que no se enseña en pantalla al cliente. La copia que hay en el Hipatia antiguo está desactualizada.",
       "url_documento": "https://calculadora.iability.ai",
       "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
-      "subtipo": "Calculadora"
+      "subtipo": "Calculadora",
+      "bloque": "recursos",
+      "aviso": "La calculadora lleva precios: es interna y no se enseña en pantalla al cliente."
     },
     {
       "id": "dc-iability-podcast-youtube",
@@ -3072,7 +3075,8 @@
       "nota_de_uso": "Entrevistas sobre adopción y gobierno de la IA. Los comerciales lo comparten con clientes; es el mismo contenido que la versión en audio.",
       "url_documento": "https://www.youtube.com/watch?v=6nQhhkgenaU",
       "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
-      "subtipo": "Podcast"
+      "subtipo": "Podcast",
+      "bloque": "recursos"
     },
     {
       "id": "dc-iability-podcast-spotify",
@@ -3095,7 +3099,8 @@
       "nota_de_uso": "El mismo podcast en Spotify, para quien lo prefiera de fondo.",
       "url_documento": "https://open.spotify.com/show/4Nq774RdCEOZZ7NcPWYhp6",
       "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
-      "subtipo": "Podcast"
+      "subtipo": "Podcast",
+      "bloque": "recursos"
     },
     {
       "id": "dc-iability-teaser-es",
@@ -3118,7 +3123,8 @@
       "nota_de_uso": "Pieza corta para abrir una conversación o un correo.",
       "url_documento": "https://youtu.be/-ihYP2Lx-Ck",
       "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
-      "subtipo": "Vídeo"
+      "subtipo": "Vídeo",
+      "bloque": "recursos"
     },
     {
       "id": "dc-iability-teaser-en",
@@ -3141,7 +3147,8 @@
       "nota_de_uso": "La misma pieza corta, en inglés, para cuentas fuera de España.",
       "url_documento": "https://youtu.be/8zmY_mFWTl8",
       "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
-      "subtipo": "Vídeo"
+      "subtipo": "Vídeo",
+      "bloque": "recursos"
     },
     {
       "id": "dc-iability-trailer-es",
@@ -3164,7 +3171,8 @@
       "nota_de_uso": "Pieza larga: enseña el universo narrativo y cómo se vive el programa.",
       "url_documento": "https://youtu.be/iHf8szujoBI",
       "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
-      "subtipo": "Vídeo"
+      "subtipo": "Vídeo",
+      "bloque": "recursos"
     },
     {
       "id": "dc-iability-trailer-en",
@@ -3187,7 +3195,8 @@
       "nota_de_uso": "El trailer en inglés.",
       "url_documento": "https://youtu.be/Aoe4T8ai6A4",
       "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
-      "subtipo": "Vídeo"
+      "subtipo": "Vídeo",
+      "bloque": "recursos"
     },
     {
       "id": "dc-preservia-demo",
@@ -3210,7 +3219,9 @@
       "nota_de_uso": "Presentación general de la tecnología de soporte y conocimiento. El vídeo se grabó con el nombre Smart Help, retirado como etiqueta comercial: preséntalo como PreservIA.",
       "url_documento": "https://www.youtube.com/watch?v=Sq42DKPbef8",
       "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
-      "subtipo": "Vídeo"
+      "subtipo": "Vídeo",
+      "bloque": "recursos",
+      "aviso": "Los dos vídeos se grabaron con el nombre Smart Help, retirado como etiqueta comercial: preséntalos como PreservIA."
     },
     {
       "id": "dc-preservia-caso-financiero",
@@ -3233,7 +3244,8 @@
       "nota_de_uso": "El mismo recorrido aplicado a banca y seguros. Mismo aviso de nombre: es PreservIA.",
       "url_documento": "https://www.youtube.com/watch?v=zQKr7DQ9QEk",
       "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
-      "subtipo": "Vídeo"
+      "subtipo": "Vídeo",
+      "bloque": "recursos"
     }
   ]
 }

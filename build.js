@@ -435,7 +435,12 @@ function solucionPage(pr, s) {
   }
 
   // 3 · Material para el cliente (por momento)
-  const mats = (s.materiales || []).map((id) => MAT[id]).filter((m) => m && m.sale_al_cliente !== "no");
+  // Los recursos —vídeos, podcast, calculadora, enlaces— se sacan de aquí: son
+  // útiles, pero al tener el mismo peso visual que el deck, la ficha y el
+  // one-pager los enterraban. Van en una línea al final de la página.
+  const todos = (s.materiales || []).map((id) => MAT[id]).filter(Boolean);
+  const recursos = todos.filter((m) => m.bloque === "recursos");
+  const mats = todos.filter((m) => m.bloque !== "recursos" && m.sale_al_cliente !== "no");
   let cols = MOMENTOS.map((mo) => {
     const items = mats.filter((m) => m.momento_comercial === mo.key);
     const inner = items.length ? items.map(materialMini).join("") : `<p class="pending">Sin pieza para este momento todavía.</p>`;
@@ -507,6 +512,28 @@ function solucionPage(pr, s) {
   body += `<section class="section"><div class="wrap">
     <details class="fold"><summary>Para prepararte</summary><div class="fold-body">${prep}${dossierCta}</div></details>
   </div></section>`;
+
+  // 5b · Recursos: enlaces sueltos en una línea, agrupados por lo que son.
+  if (recursos.length) {
+    const ETIQUETA = { "Vídeo": "Vídeos", "Podcast": "Podcast", "Calculadora": "Herramientas", "Enlace corto": "Enlaces" };
+    const grupos = [];
+    recursos.forEach((r) => {
+      const k = ETIQUETA[r.subtipo] || r.subtipo || "Enlaces";
+      let g = grupos.find((x) => x[0] === k);
+      if (!g) { g = [k, []]; grupos.push(g); }
+      g[1].push(r);
+    });
+    // en la página de la solución sobra repetir su nombre en cada enlace
+    const corto = (t) => t.replace(/^[^·]+·\s*/, "");
+    const filas = grupos.map(([k, items]) => `<div class="rec-fila"><span class="rec-t">${esc(k)}</span><span class="rec-l">${
+      items.map((r) => `<a class="text-link" href="${esc(r.url_documento)}" ${NUEVA_PESTANA}${r.nota_de_uso ? ` title="${esc(r.nota_de_uso)}"` : ""}>${esc(corto(r.titulo))}</a>${r.sale_al_cliente === "no" ? ` <span class="chip">interna</span>` : ""}`).join('<span class="rec-sep">·</span>')
+    }</span></div>`).join("");
+    const avisos = recursos.filter((r) => r.aviso).map((r) => `<p class="footer-note" style="margin-top:var(--space-2)">${esc(r.aviso)}</p>`).join("");
+    body += `<section class="section"><div class="wrap">
+      <p class="eyebrow">Recursos</p>
+      <div class="recursos">${filas}</div>${avisos}
+    </div></section>`;
+  }
 
   // 6 · ¿Falta algo?
   const asunto = encodeURIComponent(`Hipatia · ${pr.nombre} · ${s.nombre}: falta algo`);
