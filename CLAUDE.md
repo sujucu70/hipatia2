@@ -29,6 +29,11 @@ Este repo publica hipatia2.guberna.es (Cloudflare Worker con assets estáticos e
 - El panel nunca se abre solo. Las respuestas salen de plantillas fijas de `pregunta.js` (tres intenciones por patrón: persona, definición, material) y enlazan a la ficha en vez de repetirla; cuando no hay nada, lo dice.
 - La prueba de aceptación es `data/preguntas.json` (la escribe Susana); la verifica `check-pregunta.js`. El widget no se inyecta en los HTML de Claude Design, las fichas de julio ni el autodiagnóstico.
 
+## Dónde se despliega (decidido el 8 de septiembre de 2026)
+**Solo se trabaja y se despliega en `hipatia-v4.guberna.es`**, salvo que Susana diga lo contrario. Es el portal que se presenta y el único vivo a efectos de trabajo. Lo sirve el Worker `hipatia-v4`, que es el `name` de `wrangler.jsonc` en esta rama.
+
+Hay otros dos Workers en la cuenta (`hipatia2` y `hipatia-v3`) sirviendo versiones anteriores. **No se despliega en ellos ni se cambia el `name` de `wrangler.jsonc`** sin que Susana lo pida. El despliegue no es automático: no hay CI, lo lanza ella con `npm run deploy` desde su máquina.
+
 ## Forma de trabajar
 - Un commit por tarea con el mensaje que indica el plan. Rama `v3`.
 - Preguntar antes de: inventar contenido para una solución sin material, cambiar la taxonomía, añadir una página que no esté en §6.2, tocar `main`.
