@@ -265,26 +265,26 @@
     {
       "id": "preservia",
       "nombre": "PreservIA",
-      "una_linea": "El conocimiento de tus expertos, después de tus expertos: capturado, validado y a un clic.",
+      "una_linea": "El conocimiento de tus expertos más allá de tus expertos: capturado, validado y a un clic.",
       "especialista": "Alfredo",
       "estado": "vigente",
       "dueno": "Alfredo",
       "fecha_objetivo": "sept 2026",
       "propuesta": {
-        "que_es": "Identificamos el conocimiento crítico de tu organización, lo extraemos con entrevistas al experto mientras todavía está, lo validamos con la propia organización y lo convertimos en respuestas disponibles en el puesto, 24/7. Tres fases con resultado propio: capturar (Knowledge Book), estructurar (Red de Conocimiento por momento de uso) y activar (Mentor Virtual a un clic en Microsoft 365 o en tu LMS). La IA hace el trabajo pesado; lo que responde el Mentor lo ha aprobado alguien con nombre.",
-        "a_quien": "Dirección de operaciones o de negocio con procesos críticos que dependen de tres personas: banca, seguros, industria. RRHH cuando hay plan de jubilaciones. En lo público, quien sufre el relevo por convocatoria. Y quien esté montando IA corporativa sobre documentos: sin el conocimiento tácito capturado, esa IA es cara y mediocre.",
+        "que_es": "Identificamos el conocimiento crítico de tu organización, lo extraemos con entrevistas estructuradas al experto mientras todavía está y con IA sobre sus correos y sus documentos en la nube, donde haya licencia para leerlos, lo validamos con la propia organización y lo convertimos en respuestas disponibles en el puesto, 24/7. Tres fases con resultado propio: capturar (Knowledge Book), estructurar (Red de Conocimiento por momento de uso) y activar (Mentor Virtual a un clic en Microsoft 365 o en tu LMS). La IA hace el trabajo pesado; lo que responde el Mentor lo ha aprobado alguien con nombre.",
+        "a_quien": "Dirección de operaciones o de negocio con procesos críticos que dependen de tres personas: banca, seguros, industria. RRHH cuando hay plan de jubilaciones. En lo público, quien sufre el relevo por convocatoria. También quien incorpora gente a ritmo alto y con rotación constante: ahí el experto no se va, pero vive interrumpido porque es el único que sabe. Y quien esté montando IA corporativa sobre documentos: sin el conocimiento tácito capturado, esa IA es cara y mediocre.",
         "senal": "Un experto se jubila, rota o cambia de función y se lleva el criterio para resolver lo que ningún manual recoge. Hay procesos críticos que dependen de pocas personas y el soporte funcional vive de preguntas de «cómo se hace esto». Se está montando un asistente de IA sobre documentos que nadie mantiene. Y el relevo, cuando llega, no tiene a quién preguntar.",
-        "por_que_nosotros": "Rescatamos el conocimiento que todavía no existe como documento; lo demás solo encuentra lo ya escrito. La captura la hace una persona sentada delante de tu experto, y eso no viene en ninguna licencia. En MAPFRE, con más de 15.000 puestos y 3.500 tickets al mes de preguntas de uso, el conocimiento puesto donde se trabaja evitó 3.500 tickets al mes y bajó la apertura de incidencia de cinco minutos y medio a uno. Empezamos por un piloto de dos meses con línea base: sin ella no hay decisión de escalado.",
+        "por_que_nosotros": "Rescatamos el conocimiento que todavía no existe como documento, porque nadie encuentra lo que nunca se ha escrito. La captura se hace con entrevistas estructuradas y técnicas de extracción que sacan la experiencia crítica en muy poco tiempo, y eso no viene en ninguna licencia. En MAPFRE, con más de 15.000 puestos y 3.500 tickets al mes de preguntas de uso, el conocimiento puesto donde se trabaja evitó esos 3.500 tickets y bajó la apertura de incidencia de cinco minutos y medio a uno. Empezamos por un piloto de dos meses con línea base: sin ella no hay decisión de escalado.",
         "diferenciador": "La parte difícil no es la conversación: es que lo que responde sea cierto. Personas validando en las tres fases.",
         "objecion_principal": {
           "texto": "Ya tenemos un buscador con IA sobre nuestra documentación.",
           "respuesta": "Encuentra lo que está escrito, y lo que se va con el experto no lo está: el 80% de lo que sabe la casa vive en su cabeza. PreservIA lo captura en dos entrevistas, lo valida y lo pone en el mismo buscador o en M365. El piloto son dos meses, un área y un experto, con medición antes y después."
         },
-        "como_abres": "«¿Qué conocimiento no os podéis permitir perder cuando se jubile quien lo tiene?»",
+        "como_abres": "«¿Qué conocimiento no os podéis permitir perder cuando se jubile o rote quien lo tiene?»",
         "primer_paso": {
           "titulo": "Piloto Explorer",
           "plazo": "2 meses",
-          "nota": "Un área, un experto y dos entrevistas, un Knowledge Book, hasta 30 usuarios activados; un mes de puesta en marcha y otro de uso, con línea base y decisión de escalado al cierre. Precio cerrado: 14.900 € sin IVA, 50% al arranque y 50% al cierre. Se diseña en una sesión de trabajo. Con Alfredo."
+          "nota": "Un área, un experto y dos entrevistas, un Knowledge Book, hasta 30 usuarios activados; un mes de puesta en marcha y otro de uso, con línea base y decisión de escalado al cierre. Precio cerrado: 14.900 € sin IVA, 50% al arranque y 50% al cierre. Se diseña en una sesión de trabajo."
         }
       },
       "limites": [
@@ -365,7 +365,9 @@
           }
         ],
         "preguntas_cualificacion": [
-          "¿Qué expertos se jubilan o rotan en los próximos dos años?",
+          "¿Consideras que el conocimiento es un activo de tu organización?",
+        "¿Dónde está el conocimiento de tu casa: en las personas o lo tiene la organización?",
+        "¿Qué expertos se jubilan o rotan en los próximos dos años?",
           "¿Qué procesos dependen de pocas personas?",
           "¿Tenéis un proyecto de IA sobre documentación corporativa?",
           "¿Trabajáis en Microsoft 365 y qué LMS tenéis?"
@@ -454,7 +456,7 @@
       "dueno": "Alfredo",
       "fecha_objetivo": "sept 2026",
       "propuesta": {
-        "que_es": "Un servicio gestionado, no un software: instalamos en tu organización la capacidad de decidir qué IA avanza, qué se corrige y qué se detiene, y la operamos contigo cada mes. Tres capas: tu comité gobierna, con autoridad formal para autorizar, condicionar, limitar o retirar; nuestro Responsable de Gobernanza de IA pone el criterio y prepara cada decisión con evidencias; y especialistas (datos, ciberseguridad, legal, cambio) se activan cuando hay que ejecutar. Cinco capacidades: ordenar, decidir, escalar, frenar y aprender. El mando nunca se cede y el modelo se queda en casa.",
+        "que_es": "Un servicio gestionado, no un software: instalamos en tu organización la capacidad de decidir qué IA avanza, qué se corrige y qué se detiene, y la operamos contigo cada mes. Tres capas: tu comité gobierna, con autoridad formal para autorizar, condicionar, limitar o retirar; nuestro Responsable de Gobernanza de IA pone el criterio y prepara cada decisión con evidencias; y especialistas (datos, ciberseguridad, legal, cambio) se activan cuando hay que ejecutar. Cinco capacidades: registrar, decidir, escalar, frenar, y asegurar y mejorar. El mando nunca se cede y el modelo se queda en casa.",
         "a_quien": "Es decisión de comité de dirección, no del CIO: lo que se paga es quién responde de la IA, el reskilling al automatizar, los derechos fundamentales en los proyectos de riesgo y quién aprieta el botón de parar. Entras por Dirección, Legal y Compliance o el CISO; el CIO y negocio se sientan en el comité. Donde hay multas detrás: banca, seguros, sector público, salud, cualquiera con sistemas que decidan sobre personas.",
         "senal": "Copilots y agentes que cada área contrata por su cuenta, pilotos sin propietario y sin retorno medible, datos saliendo por aplicaciones que IT no ve. O el reverso: iniciativas valiosas paradas por miedo legal. Nadie sabe cuántos sistemas de IA hay ni cuáles serán de alto riesgo en diciembre de 2027. Y alguien ha preguntado quién firma.",
         "por_que_nosotros": "No te dejamos un informe: te instalamos una capacidad. Traemos un modelo ya construido, roles, criterios, plantillas de decisión y controles, que se adapta a tu organización en meses donde diseñarlo desde cero consume cerca de un año. Lo operamos en casa: Entelgy tiene su propio comité de gobernanza de IA, toda la plantilla formada con IAbility y consejeros y directivos dentro. Y la gobernanza no llega sola: cultura y conocimiento del mismo equipo, para que lo gobernado se sostenga.",

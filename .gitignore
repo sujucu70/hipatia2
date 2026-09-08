@@ -4,3 +4,12 @@ node_modules/
 .DS_Store
 Claude outputs/
 _to_delete/
+
+# Material en bruto que mandan los Solution Managers: se lee y se extrae, no se
+# versiona. GitHub rechaza cualquier fichero de más de 100 MB, y la presentación
+# de IAbility de septiembre pesaba 215 MB. Lo que sí se versiona son las notas y
+# los análisis en .md, que es donde queda lo extraído.
+Alfredo/*.pptx
+Alfredo/*.docx
+Alfredo/*.xlsx
+Alfredo/*.pdf
