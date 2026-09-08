@@ -259,8 +259,8 @@
       ],
       "acreditacion_nota": "Fuera de la interfaz de la v3 (§6.9). Se conservan las cinco preguntas validadas para una futura «formación».",
       "contactos": {
-        "comercial": "jorge-herrero",
-        "tecnico": "miguel-angel-villacanas"
+        "responsable": "jorge-herrero",
+        "apoyo": "miguel-angel-villacanas"
       }
     },
     {
@@ -420,8 +420,8 @@
       ],
       "acreditacion": [],
       "contactos": {
-        "comercial": "jorge-herrero",
-        "tecnico": "miguel-angel-villacanas"
+        "responsable": "jorge-herrero",
+        "apoyo": "miguel-angel-villacanas"
       }
     },
     {
@@ -584,8 +584,8 @@
         "fecha_objetivo": "sept 2026"
       },
       "contactos": {
-        "comercial": "jorge-herrero",
-        "tecnico": "miguel-angel-villacanas"
+        "responsable": "jorge-herrero",
+        "apoyo": "miguel-angel-villacanas"
       }
     }
   ],
@@ -595,5 +595,6 @@
     "mod-ficha-servicio"
   ],
   "propuesta_portada": "Modernizar y mantener aplicaciones críticas sin parar el negocio ni pedir partida nueva.",
-  "responsable_id": "jorge-herrero"
+  "responsable_id": "jorge-herrero",
+  "contactos_area": []
 }

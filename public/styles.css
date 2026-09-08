@@ -606,6 +606,17 @@ details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
 .filters-panel .filter-group label{ color:var(--color-slate-200); }
 .filters-panel .text-link{ color:var(--color-purple-300); font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; text-decoration:none; }
 /* acciones del pie de la tarjeta de material: descargas + ver, sin apelotonarse */
+/* la tabla se queda con dos columnas cuando un rol lo cubre la misma persona en toda la práctica */
+.dir-cols.dir-c2, .dir-fila.dir-c2{ grid-template-columns:1.2fr 1.6fr; }
+.dir-cols.dir-c3, .dir-fila.dir-c3{ grid-template-columns:1.2fr 1fr 1fr; }
+/* directorio a dos niveles: quien cubre la práctica entera, antes de la tabla */
+.dir-cross{ padding:var(--space-4); border-bottom:1px solid var(--color-border-subtle); background:var(--color-surface-subtle,#F7F8F9); }
+.dir-cross-t{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-text-secondary); }
+.dir-cross-l{ margin-top:var(--space-3); display:flex; flex-wrap:wrap; gap:var(--space-5) var(--space-6); }
+.dir-cross-p{ display:flex; gap:var(--space-3); align-items:flex-start; min-width:260px; }
+.dir-cross-p .footer-note{ display:block; }
+.dir-fila.dir-solo{ display:flex; gap:var(--space-3); align-items:baseline; }
+@media (max-width:720px){ .dir-cross-l{ gap:var(--space-4); } .dir-cross-p{ min-width:0; } }
 .mat-acciones{ display:inline-flex; align-items:center; gap:12px; flex-wrap:wrap; }
 .mat-acciones .llev-mini{ margin:0; }
 .ver-ficha{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-purple-700); text-decoration:none; white-space:nowrap; }

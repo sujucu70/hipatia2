@@ -217,13 +217,16 @@ function rolesDe(id, practicas) {
   const bits = [];
   const resp = practicas.filter((pr) => [].concat(pr.responsable_id || []).includes(id)).map((pr) => pr.nombre);
   if (resp.length) bits.push("Responsable de " + resp.join(", "));
-  const comercial = [], tecnico = [];
-  practicas.forEach((pr) => (pr.soluciones || []).forEach((s) => {
-    if (s.contactos && s.contactos.comercial === id) comercial.push(s.nombre);
-    if (s.contactos && s.contactos.tecnico === id) tecnico.push(s.nombre);
-  }));
-  if (comercial.length) bits.push("Comercial en " + comercial.join(", "));
-  if (tecnico.length) bits.push("Técnico en " + tecnico.join(", "));
+  const resp2 = [], apoyo = [];
+  practicas.forEach((pr) => {
+    (pr.soluciones || []).forEach((s) => {
+      if (s.contactos && s.contactos.responsable === id) resp2.push(s.nombre);
+      if (s.contactos && s.contactos.apoyo === id) apoyo.push(s.nombre);
+    });
+    (pr.contactos_area || []).forEach((c) => { if (c.persona === id) bits.push(c.rol + " en " + pr.nombre); });
+  });
+  if (resp2.length) bits.push("Responsable de la oferta en " + resp2.join(", "));
+  if (apoyo.length) bits.push("Apoyo en preventa en " + apoyo.join(", "));
   return bits.join(" · ");
 }
 // BD · celda de persona en la tabla «A quién llamo» (avatar, nombre enlazado a su tarjeta, datos)
@@ -233,24 +236,62 @@ function celdaPersona(id) {
   const datos = datosContacto(p);
   return `<div class="dir-persona">${avatar(p, 32)}<div><a class="text-link" href="/contactos/#${esc(p.id)}"><b>${esc(p.nombre)}</b></a>${p.titulo ? `<span class="footer-note">${esc(p.titulo)}</span>` : ""}${datos.length ? `<span class="footer-note">${datos.join(" · ")}</span>` : ""}</div></div>`;
 }
-function celdaTecnico(s) {
-  const t = s.contactos && s.contactos.tecnico;
+function celdaApoyo(s) {
+  const t = s.contactos && s.contactos.apoyo;
   if (t) return celdaPersona(t);
-  const com = personaPorId(s.contactos && s.contactos.comercial);
-  return `<span class="footer-note dir-pendiente">por confirmar · lo pide Susana a ${esc(com ? com.nombre : "el comercial")}</span>`;
+  const r = personaPorId(s.contactos && s.contactos.responsable);
+  return `<span class="footer-note dir-pendiente">por confirmar · lo pide Susana a ${esc(r ? r.nombre : "su responsable")}</span>`;
 }
-// Tabla «A quién llamo» de una práctica: una fila por solución (Solución · Comercial · Técnico).
+// Bloque «A quién llamo» de una práctica, a dos niveles: arriba quien cubre el
+// área entera (no se repite en cada fila) y abajo solo lo que cambia de una
+// solución a otra. Los nombres de los roles son los de Alfredo (8-sep): quien
+// responde de la oferta y quien entra contigo en preventa; ninguno es «el
+// comercial», que es quien está usando el portal.
+function fichaCross(id, rol) {
+  const p = personaPorId(id);
+  if (!p) return "";
+  const datos = datosContacto(p);
+  return `<div class="dir-cross-p">${avatar(p, 32)}<div><a class="text-link" href="/contactos/#${esc(p.id)}"><b>${esc(p.nombre)}</b></a><span class="footer-note">${esc(rol)}</span>${datos.length ? `<span class="footer-note">${datos.join(" · ")}</span>` : ""}</div></div>`;
+}
 function tablaContactos(pr) {
+  const sols = pr.soluciones || [];
   const resp = [].concat(pr.responsable_id || []).map((id) => personaPorId(id)).filter(Boolean).map((p) => p.nombre).join(" y ");
-  const filas = (pr.soluciones || []).map((s) => `<div class="dir-fila">
+  // alguien «cubre el área» cuando sale en todas las soluciones, no solo en alguna
+  const enTodas = (rol) => {
+    if (sols.length < 2) return null;
+    const v = sols[0].contactos && sols[0].contactos[rol];
+    if (!v) return null;
+    return sols.every((s) => s.contactos && s.contactos[rol] === v) ? v : null;
+  };
+  const respComun = enTodas("responsable"), apoyoComun = enTodas("apoyo");
+  const cross = [], vistos = new Set();
+  if (respComun) { vistos.add(respComun); cross.push([respComun, "Responsable de la oferta · las " + sols.length + " soluciones"]); }
+  if (apoyoComun && !vistos.has(apoyoComun)) { vistos.add(apoyoComun); cross.push([apoyoComun, "Apoyo en preventa · las " + sols.length + " soluciones"]); }
+  (pr.contactos_area || []).forEach((c) => { if (!vistos.has(c.persona)) { vistos.add(c.persona); cross.push([c.persona, c.rol]); } });
+
+  const bloqueCross = cross.length
+    ? `<div class="dir-cross"><span class="dir-cross-t">En toda la práctica</span><div class="dir-cross-l">${cross.map(([id, rol]) => fichaCross(id, rol)).join("")}</div></div>`
+    : "";
+
+  let tabla;
+  if (respComun && apoyoComun) {
+    // no queda nada que varíe: la tabla sería filas vacías
+    tabla = `<div class="dir-fila dir-solo"><span class="footer-note">Cubre</span><span>${sols.map((s) => `<a class="text-link" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">${esc(s.nombre)}</a>`).join(" · ")}</span></div>`;
+  } else {
+    const cols = ["Solución"];
+    if (!respComun) cols.push("Responsable de la oferta");
+    if (!apoyoComun) cols.push("Apoyo en preventa");
+    const filas = sols.map((s) => `<div class="dir-fila dir-c${cols.length}">
       <div class="dir-sol"><span class="rol-movil">Solución</span><a class="text-link" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">${esc(s.nombre)}</a></div>
-      <div><span class="rol-movil">Comercial</span>${celdaPersona(s.contactos && s.contactos.comercial)}</div>
-      <div><span class="rol-movil">Técnico</span>${celdaTecnico(s)}</div>
+      ${respComun ? "" : `<div><span class="rol-movil">Responsable de la oferta</span>${celdaPersona(s.contactos && s.contactos.responsable)}</div>`}
+      ${apoyoComun ? "" : `<div><span class="rol-movil">Apoyo en preventa</span>${celdaApoyo(s)}</div>`}
     </div>`).join("");
+    tabla = `<div class="dir-cols dir-c${cols.length}">${cols.map((c) => `<span>${c}</span>`).join("")}</div>${filas}`;
+  }
   return `<div class="dir-tabla">
       <div class="dir-cab">${esc(pr.nombre)}${resp ? ` <span class="footer-note">· Responsable: ${esc(resp)}</span>` : ""}</div>
-      <div class="dir-cols"><span>Solución</span><span>Comercial</span><span>Técnico</span></div>
-      ${filas}
+      ${bloqueCross}
+      ${tabla}
     </div>`;
 }
 
@@ -350,7 +391,7 @@ function solucionPage(pr, s) {
     <p class="eyebrow"><a href="/practicas/${esc(pr.id)}/" style="color:inherit">${esc(pr.nombre)}</a> · Solución</p>
     <h1 style="font-size:var(--font-size-5xl);line-height:1.02;letter-spacing:-.02em;margin:var(--space-2) 0">${esc(s.nombre)}</h1>
     <p class="lede">${esc(s.una_linea)}</p>
-    <p style="margin-top:var(--space-2);color:var(--color-text-secondary);font-size:var(--font-size-sm)">Comercial: <b>${esc((personaPorId(s.contactos && s.contactos.comercial) || {}).nombre || nombreCompleto(s.especialista))}</b> · Técnico: ${personaPorId(s.contactos && s.contactos.tecnico) ? `<b>${esc(personaPorId(s.contactos.tecnico).nombre)}</b>` : `<span class="chip">por confirmar</span>`}${s.estado === "en_preparacion" ? " · " + chipVigencia("pendiente", s.fecha_objetivo) : ""}</p>
+    <p style="margin-top:var(--space-2);color:var(--color-text-secondary);font-size:var(--font-size-sm)">Responsable de la oferta: <b>${esc((personaPorId(s.contactos && s.contactos.responsable) || {}).nombre || nombreCompleto(s.especialista))}</b> · Apoyo en preventa: ${personaPorId(s.contactos && s.contactos.apoyo) ? `<b>${esc(personaPorId(s.contactos.apoyo).nombre)}</b>` : `<span class="chip">por confirmar</span>`}${s.estado === "en_preparacion" ? " · " + chipVigencia("pendiente", s.fecha_objetivo) : ""}</p>
   </div></section>`;
 
   // 2 · La propuesta (BB · dos columnas; el diferenciador como cita, la objeción como diálogo,
@@ -955,16 +996,16 @@ function contactosPage(practicas, personas) {
   const body = `<section class="section"><div class="wrap">
     <p class="eyebrow">Directorio</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-2)">A quién llamo</h1>
-    <p class="lede">Por solución: quien la vende y quien la sostiene. Donde falta el técnico, se dice quién lo está pidiendo.</p>
+    <p class="lede">Arriba, quien cubre la práctica entera. Abajo, solo lo que cambia de una solución a otra. Donde falta alguien, se dice quién lo está pidiendo.</p>
     <div style="margin-top:var(--space-5);display:grid;gap:var(--space-5)">${tablas}</div>
   </div></section>
   <section class="section"><div class="wrap">
     <p class="eyebrow">Las personas</p>
     <h2 style="font-size:var(--font-size-2xl);margin:var(--space-2) 0 var(--space-4)">${personas.length} personas, todo lo que llevan</h2>
     <div class="grid grid-3">${tarjetas}</div>
-    <p class="footer-note" style="margin-top:var(--space-4)">Los canales de Teams se enlazan cuando estén validados. Los datos que faltan (teléfono, título y técnico de cada solución) se están pidiendo a cada responsable.</p>
+    <p class="footer-note" style="margin-top:var(--space-4)">Los canales de Teams se enlazan cuando estén validados. Los datos que faltan (teléfono, título y apoyo en preventa de cada solución) se están pidiendo a cada responsable.</p>
   </div></section>`;
-  return page({ title: "Contactos · Hipatia", desc: "A quién llamar por solución: comercial y técnico.", active: "contactos", body });
+  return page({ title: "Contactos · Hipatia", desc: "A quién llamar: quien responde de cada oferta y quien entra contigo en preventa.", active: "contactos", body });
 }
 
 // =====================================================================
@@ -1016,8 +1057,8 @@ function escribeIndicePregunta(practicas, personas, corp) {
       entradas.push({
         id: s.id, clase: "solucion", nombre: s.nombre, practica: pr.id,
         linea: s.una_linea || null,
-        comercial: (s.contactos && s.contactos.comercial) || null,
-        tecnico: (s.contactos && s.contactos.tecnico) || null,
+        comercial: (s.contactos && s.contactos.responsable) || null,
+        tecnico: (s.contactos && s.contactos.apoyo) || null,
         url: `/practicas/${pr.id}/${s.id}/`,
       });
     });

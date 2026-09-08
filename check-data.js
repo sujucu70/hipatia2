@@ -82,9 +82,13 @@ PRACTICAS.forEach((id) => {
   [].concat(pr.responsable_id || []).forEach((rid) => {
     if (rid && !idsPersona.has(rid)) err(`práctica ${id} responsable_id inexistente: ${rid}`);
   });
+  (pr.contactos_area || []).forEach((c, i) => {
+    if (!c.persona || !idsPersona.has(c.persona)) err(`práctica ${id} contacto de área ${i} inexistente: ${c.persona}`);
+    if (!c.rol) err(`práctica ${id} contacto de área ${i} sin rol`);
+  });
   (pr.soluciones || []).forEach((s) => {
     totalSoluciones++;
-    if (s.contactos) ["comercial", "tecnico"].forEach((rol) => {
+    if (s.contactos) ["responsable", "apoyo"].forEach((rol) => {
       const v = s.contactos[rol];
       if (v && !idsPersona.has(v)) err(`solución ${id}/${s.id} contacto ${rol} inexistente: ${v}`);
     });

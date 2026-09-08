@@ -142,7 +142,7 @@
         var fila = per.correo ? esc(per.correo) + ' · <a class="text-link" href="mailto:' + esc(per.correo) + '">escribir →</a>' : '<a class="text-link" href="/contactos/">ver en Contactos →</a>';
         out += '<div class="pregunta-item"><h4>' + esc(per.nombre) + '</h4><p class="pregunta-item-linea">' + tit + esc(res.entrada.nombre) + '.</p><p class="pregunta-foot"><span>' + fila + "</span></p></div>";
       });
-      if (res.tecnico) out += '<p class="footer-note">Técnico: ' + esc(res.tecnico.nombre) + ".</p>";
+      if (res.tecnico) out += '<p class="footer-note">Apoyo en preventa: ' + esc(res.tecnico.nombre) + ".</p>";
       if (res.otras && res.otras.length) out += '<p class="footer-note">También lleva ' + res.otras.map(esc).join(", ") + ".</p>";
       return out;
     }

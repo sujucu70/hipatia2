@@ -197,8 +197,8 @@
       ],
       "acreditacion": [],
       "contactos": {
-        "comercial": "carmen-rode",
-        "tecnico": "raul-duque"
+        "responsable": "carmen-rode",
+        "apoyo": "raul-duque"
       }
     },
     {
@@ -361,8 +361,8 @@
         "fecha_objetivo": "sept 2026"
       },
       "contactos": {
-        "comercial": "carla-gonzalez",
-        "tecnico": "david-escribano"
+        "responsable": "carla-gonzalez",
+        "apoyo": "david-escribano"
       }
     }
   ],
@@ -375,5 +375,6 @@
   "responsable_id": [
     "carmen-rode",
     "carla-gonzalez"
-  ]
+  ],
+  "contactos_area": []
 }
