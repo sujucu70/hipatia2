@@ -282,9 +282,13 @@ function sectionHead(eyebrow, h2, nota) {
   return `<div class="section-head"><div>${eyebrow ? `<p class="eyebrow">${esc(eyebrow)}</p>` : ""}<h2>${esc(h2)}</h2></div>${nota ? `<p>${esc(nota)}</p>` : ""}</div>`;
 }
 
+// Todo enlace que sale hacia un material abre en pestaña nueva: el portal se queda detrás y
+// cerrar la pestaña devuelve al sitio exacto desde el que se abrió.
+const NUEVA_PESTANA = 'target="_blank" rel="noopener"';
+
 function materialLink(m) {
   if (!m) return "";
-  if (m.url_documento) return `<a class="btn" href="${esc(m.url_documento)}">Abrir en pantalla ↗</a>`;
+  if (m.url_documento) return `<a class="btn" href="${esc(m.url_documento)}" ${NUEVA_PESTANA}>Abrir en pantalla ↗</a>`;
   // una referencia sin documento es autocontenida (su texto citable es el entregable), no un enlace por llegar
   if (m.tipo === "Referencia") return `<span class="chip">sin documento aparte</span>`;
   return `<span class="chip">enlace pendiente</span>`;
@@ -294,7 +298,7 @@ const DESCARGA_LABEL = { pdf: "PDF ↓", pptx: "PPT ↓", docx: "Word ↓", xlsx
 const DESCARGA_ORDEN = ["pdf", "pptx", "docx", "xlsx"];
 function descargasMini(m) {
   return (m.descargas || []).slice().sort((a, b) => DESCARGA_ORDEN.indexOf(a.formato) - DESCARGA_ORDEN.indexOf(b.formato))
-    .map((d) => ` <a class="text-link llev-mini" href="${esc(d.url)}">${esc(DESCARGA_LABEL[d.formato] || d.formato.toUpperCase() + " ↓")}</a>`).join("");
+    .map((d) => ` <a class="text-link llev-mini" href="${esc(d.url)}" ${NUEVA_PESTANA}>${esc(DESCARGA_LABEL[d.formato] || d.formato.toUpperCase() + " ↓")}</a>`).join("");
 }
 // Bloque «Llévatelo» de la ficha: presentar / enviar / adaptar. Las referencias no lo llevan.
 function llevatelo(m) {
@@ -304,13 +308,13 @@ function llevatelo(m) {
     return correo ? `<a class="text-link" href="mailto:${esc(correo)}">pídeselo a ${quien}</a>` : `pídeselo a ${quien}`;
   };
   const fila = (uso, accion, nota) => `<div class="llev-fila"><span class="llev-uso">${esc(uso)}</span><span class="llev-accion">${accion}</span></div>${nota ? `<p class="footer-note llev-nota">${esc(nota)}</p>` : ""}`;
-  const presentar = m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}">Abrir en pantalla ↗</a>` : `<span class="footer-note">enlace pendiente</span>`;
+  const presentar = m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}" ${NUEVA_PESTANA}>Abrir en pantalla ↗</a>` : `<span class="footer-note">enlace pendiente</span>`;
   const pdf = byFmt.pdf;
   const adap = byFmt.pptx || byFmt.docx || byFmt.xlsx;
   return `<div class="llevatelo"><p class="eyebrow">Llévatelo</p>
     ${fila("Presentar", presentar)}
-    ${fila("Enviar", pdf ? `<a class="text-link" href="${esc(pdf.url)}">${DESCARGA_LABEL.pdf}</a>` : pedir(), pdf && pdf.nota)}
-    ${fila("Adaptar", adap ? `<a class="text-link" href="${esc(adap.url)}">${esc(DESCARGA_LABEL[adap.formato])}</a>` : pedir(), adap && adap.nota)}
+    ${fila("Enviar", pdf ? `<a class="text-link" href="${esc(pdf.url)}" ${NUEVA_PESTANA}>${DESCARGA_LABEL.pdf}</a>` : pedir(), pdf && pdf.nota)}
+    ${fila("Adaptar", adap ? `<a class="text-link" href="${esc(adap.url)}" ${NUEVA_PESTANA}>${esc(DESCARGA_LABEL[adap.formato])}</a>` : pedir(), adap && adap.nota)}
   </div>`;
 }
 function materialMini(m, solucionNombre) {
@@ -759,7 +763,7 @@ function portadaPage(corp, practicas) {
       <p style="margin-top:var(--space-3)"><a class="text-link" href="/practicas/${esc(pr.id)}/">Ver la práctica →</a></p>
     </article>`;
     const enlace = m.url_documento
-      ? `<a class="text-link" href="${esc(m.url_documento)}">Abrir en pantalla ↗</a>${descargasMini(m)}`
+      ? `<a class="text-link" href="${esc(m.url_documento)}" ${NUEVA_PESTANA}>Abrir en pantalla ↗</a>${descargasMini(m)}`
       : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`;
     return `<article class="${cls}">
       <p class="eyebrow">${m.practica === "corporativo" ? esc(eyebrowTipo(m)) : esc(eyebrowTipo(m)) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
@@ -862,7 +866,7 @@ function entelgyPage(corp, practicas) {
     <p class="eyebrow">${esc(eyebrowTipo(m))}</p>
     <h3 style="font-size:28px;margin:10px 0 8px"><a style="text-decoration:none;color:#fff" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
     <p style="max-width:44ch">${esc(m.nota_de_uso || "")}</p>
-    <div class="ed-mat-foot"><div class="chips">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}</div>${m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}">Abrir en pantalla ↗</a>${descargasMini(m)}` : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`}</div>
+    <div class="ed-mat-foot"><div class="chips">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}</div>${m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}" ${NUEVA_PESTANA}>Abrir en pantalla ↗</a>${descargasMini(m)}` : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`}</div>
   </article>`;
   const matCards = (mat.ids || []).map((id, i) => MAT[id] ? (i === 0 ? deckFeat(MAT[id]) : materialCard(MAT[id])) : "").join("");
   const material = (mat.ids && mat.ids.length) ? `<section class="section" id="material">
