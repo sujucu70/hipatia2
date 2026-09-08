@@ -686,7 +686,7 @@ function materialCard(m) {
       <p class="eyebrow">${m.practica === "corporativo" ? esc(eyebrowTipo(m)) : esc(eyebrowTipo(m)) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
       <h3><a href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
       <p>${esc(m.nota_de_uso || "")}</p>
-      <div class="ed-mat-foot"><div class="chips">${m.tipo === "Referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(nombreCompleto(m.dueno))}</span></div><span>${descargasMini(m)}<a class="ver-ficha" href="/materiales/${esc(m.id)}/">Ver ficha →</a></span></div>
+      <div class="ed-mat-foot"><div class="chips">${m.tipo === "Referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(nombreCompleto(m.dueno))}</span></div><span class="mat-acciones">${descargasMini(m)}<a class="ver-ficha" href="/materiales/${esc(m.id)}/">Ver →</a></span></div>
     </article>`;
 }
 

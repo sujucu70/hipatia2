@@ -605,6 +605,9 @@ details.fold>.fold-body{ padding:0 var(--space-5) var(--space-5); }
 .filters-panel .filter-group b{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-purple-300); }
 .filters-panel .filter-group label{ color:var(--color-slate-200); }
 .filters-panel .text-link{ color:var(--color-purple-300); font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; text-decoration:none; }
+/* acciones del pie de la tarjeta de material: descargas + ver, sin apelotonarse */
+.mat-acciones{ display:inline-flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.mat-acciones .llev-mini{ margin:0; }
 .ver-ficha{ font-family:var(--font-family-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--color-purple-700); text-decoration:none; white-space:nowrap; }
 .ver-ficha:hover{ text-decoration:underline; }
 
