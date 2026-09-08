@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automatización de procesos · Entelgy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; background:#DFE4E7; }
+  a { color:#FE5000; text-decoration:none; }
+  a:hover { opacity:.7; }
+  @media print { .desk { padding:0 !important; background:#fff !important; } .page { box-shadow:none !important; } @page { size:A4; margin:0; } }
+</style>
+</head>
+<body>
+<div class="desk" style="padding:26px 0 40px;display:flex;justify-content:center;">
+<div class="page" style="width:210mm;height:297mm;background:#fff;box-shadow:0 26px 70px rgba(0,0,0,.4);position:relative;overflow:hidden;display:flex;flex-direction:column;color:#0E2230;">
+
+  <div style="height:4px;background:#FE5000;flex-shrink:0;"></div>
+
+  <!-- ===================== HEADER (navy) ===================== -->
+  <div style="background:#041C2C;color:#fff;padding:4.5mm 16mm 3mm;position:relative;overflow:hidden;flex-shrink:0;">
+    <div style="position:absolute;inset:0;z-index:0;background:linear-gradient(118deg,#041C2C 0%,#062736 60%,#0A2E40 100%);"></div>
+    <div style="position:absolute;inset:0;z-index:0;background:radial-gradient(120% 90% at 88% 10%, rgba(254,80,0,0.12) 0%, rgba(254,80,0,0) 55%);"></div>
+
+    <!-- pixel mosaic detail (navy → orange) -->
+    <div style="position:absolute;z-index:2;top:20mm;right:16mm;width:64px;height:64px;pointer-events:none;">
+      <span style="position:absolute;top:0;left:0;width:11px;height:11px;background:#123246;"></span>
+      <span style="position:absolute;top:0;left:14px;width:11px;height:11px;background:#1c4358;"></span>
+      <span style="position:absolute;top:14px;left:14px;width:11px;height:11px;background:#2a5a72;"></span>
+      <span style="position:absolute;top:14px;left:28px;width:11px;height:11px;background:#FE5000;"></span>
+      <span style="position:absolute;top:28px;left:28px;width:11px;height:11px;background:#123246;"></span>
+      <span style="position:absolute;top:28px;left:42px;width:11px;height:11px;background:#FE5000;opacity:.55;"></span>
+    </div>
+
+    <div style="position:relative;z-index:2;">
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <span style="font-family:'Manrope';font-weight:800;font-size:20px;letter-spacing:-.02em;color:#fff;">entelgy<span style="color:#FE5000;">.</span></span>
+      <div style="border:1px solid #26485C;color:#9FB6C4;font-family:'Manrope';font-weight:700;font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:6px 12px;border-radius:5px;">Data &amp; Process · Task Intelligence</div>
+    </div>
+
+    <div style="margin-top:4.5mm;font-family:'Manrope';font-weight:700;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#7E93A0;">RPA · Hiperautomatización · Agentes de IA</div>
+    <h1 style="font-family:'Manrope';font-weight:800;font-size:30px;line-height:1;letter-spacing:-.03em;margin-top:5px;color:#fff;">Automatización de procesos<span style="color:#FE5000;">.</span></h1>
+    <p style="max-width:160mm;margin-top:7px;font-size:12.5px;line-height:1.5;color:#B9C6CF;font-weight:400;">Automatizamos tus procesos y operamos el resultado: <span style="color:#fff;font-weight:600;">del RPA que ya funciona al agente que decide</span>, con un Centro de Expertos en tu casa. Respondemos de que la automatización escale, no solo de que arranque.</p>
+
+    <div style="margin-top:2.5mm;padding-top:1.5mm;border-top:1px solid #1B384A;display:grid;grid-template-columns:repeat(3,1fr);">
+      <div style="padding-right:22px;">
+        <div style="font-family:'Manrope';font-weight:800;font-size:21px;letter-spacing:-.02em;color:#fff;line-height:1;font-variant-numeric:tabular-nums;">+40</div>
+        <div style="margin-top:5px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#7E93A0;font-weight:600;">robots en producción</div>
+      </div>
+      <div style="padding:0 22px;border-left:1px solid #1B384A;">
+        <div style="font-family:'Manrope';font-weight:800;font-size:21px;letter-spacing:-.02em;color:#fff;line-height:1;font-variant-numeric:tabular-nums;">95%</div>
+        <div style="margin-top:5px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#7E93A0;font-weight:600;">de los agentes IA no escala<sup style="font-size:8px;font-weight:700;color:#6E8391;vertical-align:top;line-height:0;">1</sup></div>
+      </div>
+      <div style="padding-left:22px;border-left:1px solid #1B384A;">
+        <div style="font-family:'Manrope';font-weight:800;font-size:21px;letter-spacing:-.02em;color:#fff;line-height:1;font-variant-numeric:tabular-nums;">5%</div>
+        <div style="margin-top:5px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#7E93A0;font-weight:600;">que sí escala, tenía RPA de base<sup style="font-size:8px;font-weight:700;color:#6E8391;vertical-align:top;line-height:0;">1</sup></div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- ===================== BODY ===================== -->
+  <div style="padding:2.5mm 16mm 0;flex:1;display:flex;flex-direction:column;position:relative;">
+    <div style="position:absolute;left:14px;top:0;bottom:0;display:flex;align-items:center;pointer-events:none;"><span style="writing-mode:vertical-rl;transform:rotate(180deg);font-family:'Manrope';font-weight:700;font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:#C8CFD4;">Human Driven Technology</span></div>
+
+    <!-- 01 -->
+    <section>
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:8px;">
+        <span style="font-family:'Manrope';font-weight:800;font-size:12px;color:#041C2C;letter-spacing:.02em;">01</span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8593A0;white-space:nowrap;">El punto de partida</span>
+        <span style="flex:1;height:1px;background:#E4E8EA;"></span>
+      </div>
+      <h2 style="font-family:'Manrope';font-weight:800;font-size:17px;letter-spacing:-.015em;line-height:1.2;color:#041C2C;max-width:170mm;">Todo el mundo quiere agentes de IA. Casi ninguno llega a producción</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:9px;">
+        <div style="border-top:2px solid #041C2C;padding-top:10px;">
+          <div style="font-family:'Manrope';font-weight:700;font-size:13.5px;color:#041C2C;line-height:1.3;">La IA sobre un proceso que no conoces multiplica el caos</div>
+          <p style="font-size:12px;line-height:1.55;color:#4A5B65;margin-top:7px;">El 95% de los pilotos de IA no llega a producción; el 5% que sí escala tenía una base de RPA rodada debajo. Automatizar lo que no entiendes lleva a una solución ineficiente, solo que más rápido.</p>
+        </div>
+        <div style="border-top:2px solid #041C2C;padding-top:10px;">
+          <div style="font-family:'Manrope';font-weight:700;font-size:13.5px;color:#041C2C;line-height:1.3;">El robot suelto tampoco basta, y ahora responde ante el regulador</div>
+          <p style="font-size:12px;line-height:1.55;color:#4A5B65;margin-top:7px;">Automatizaciones aisladas por departamento, sin gobierno ni escalado, se vuelven deuda técnica. Y el agente que tramita expedientes o reclamaciones entra en el alto riesgo del EU AI Act.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section style="margin-top:11px;">
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:8px;">
+        <span style="font-family:'Manrope';font-weight:800;font-size:12px;color:#041C2C;letter-spacing:.02em;">02</span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8593A0;white-space:nowrap;">Qué hacemos</span>
+        <span style="flex:1;height:1px;background:#E4E8EA;"></span>
+      </div>
+      <h2 style="font-family:'Manrope';font-weight:800;font-size:17px;letter-spacing:-.015em;line-height:1.2;color:#041C2C;">Del RPA que ya funciona al agente que escala — operado, no prometido</h2>
+      <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:30px;margin-top:9px;align-items:center;">
+        <p style="font-size:12px;line-height:1.55;color:#33454F;">Operamos un <span style="color:#041C2C;font-weight:600;">Centro de Expertos de automatización</span> en tu casa. Arrancamos por el RPA fiable, subimos a la hiperautomatización con <span style="color:#041C2C;font-weight:600;">IDP</span> para el documento no estructurado, y ponemos agentes donde el proceso exige razonar. Elegimos la tecnología por tu problema —UiPath, Blue Prism o Microsoft—, no por nuestra licencia. La gestión del cambio va dentro: lo que separa al 5% que escala del 95% que se queda en piloto.</p>
+        <!-- escalera visual -->
+        <div>
+          <div style="display:flex;align-items:flex-end;gap:8px;height:74px;">
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+              <div style="width:100%;height:34px;background:#DDE3E7;border-radius:5px 5px 0 0;"></div>
+              <div style="width:100%;height:3px;background:#FE5000;"></div>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+              <div style="width:100%;height:52px;background:#7E93A0;border-radius:5px 5px 0 0;"></div>
+              <div style="width:100%;height:3px;background:#FE5000;"></div>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+              <div style="width:100%;height:70px;background:#041C2C;border-radius:5px 5px 0 0;"></div>
+              <div style="width:100%;height:3px;background:#FE5000;"></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px;text-align:center;">
+            <span style="font-family:'Manrope';font-weight:700;font-size:9px;letter-spacing:.03em;color:#5A6B75;line-height:1.25;">RPA<br><span style="font-weight:500;color:#8593A0;">la base rodada</span></span>
+            <span style="font-family:'Manrope';font-weight:700;font-size:9px;letter-spacing:.03em;color:#5A6B75;line-height:1.25;">Hiperautom.<br><span style="font-weight:500;color:#8593A0;">RPA + IDP + IA</span></span>
+            <span style="font-family:'Manrope';font-weight:700;font-size:9px;letter-spacing:.03em;color:#041C2C;line-height:1.25;">Agentes<br><span style="font-weight:500;color:#8593A0;">IA que razona</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section style="margin-top:11px;">
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:8px;">
+        <span style="font-family:'Manrope';font-weight:800;font-size:12px;color:#041C2C;letter-spacing:.02em;">03</span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8593A0;white-space:nowrap;">La prueba</span>
+        <span style="flex:1;height:1px;background:#E4E8EA;"></span>
+      </div>
+      <h2 style="font-family:'Manrope';font-weight:800;font-size:17px;letter-spacing:-.015em;line-height:1.2;color:#041C2C;">Automatizando procesos críticos hoy</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:9px;">
+        <!-- card 1: UNED -->
+        <div style="border:1px solid #E4E8EA;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="background:#041C2C;color:#fff;padding:9px 18px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:'Manrope';font-weight:800;font-size:15px;">UNED</span>
+            <span style="font-family:'Manrope';font-weight:700;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:#9FB6C4;text-align:right;line-height:1.4;">Oficina de<br>Automatización · AAPP</span>
+          </div>
+          <div style="padding:10px 18px 11px;display:flex;flex-direction:column;flex:1;">
+            <p style="font-size:11px;line-height:1.5;color:#4A5B65;">Detección y levantamiento de oportunidades y robotización sobre Blue Prism: 95 procesos levantados en 18 meses y los 26 primeros robots en producción en 6 meses. Referencia de servicio por vía de contratación pública.<sup style="font-size:8px;font-weight:700;color:#8593A0;vertical-align:top;line-height:0;">2</sup></p>
+            <div style="display:flex;justify-content:space-between;margin-top:auto;padding-top:7px;">
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:20px;color:#041C2C;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">95</div><div style="font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:4px;line-height:1.3;">procesos<br>levantados</div></div>
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:20px;color:#041C2C;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">26</div><div style="font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:4px;line-height:1.3;">robots en<br>6 meses</div></div>
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:20px;color:#041C2C;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">Blue Prism</div><div style="font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:4px;line-height:1.3;">plataforma<br>del proyecto</div></div>
+            </div>
+          </div>
+        </div>
+        <!-- card 2: CoE -->
+        <div style="border:1px solid #E4E8EA;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="background:#041C2C;color:#fff;padding:9px 18px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:'Manrope';font-weight:800;font-size:15px;">Centro de Expertos</span>
+            <span style="font-family:'Manrope';font-weight:700;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:#9FB6C4;text-align:right;line-height:1.4;">Motor operativo<br>· multi-plataforma</span>
+          </div>
+          <div style="padding:10px 18px 11px;display:flex;flex-direction:column;flex:1;">
+            <p style="font-size:11px;line-height:1.5;color:#4A5B65;">Equipo certificado operando automatización en cliente real sobre las tres plataformas líderes, con más de 40 robots en producción y los primeros agentes de IA en marcha — cartera mixta gobernada por trazabilidad y compliance.<sup style="font-size:8px;font-weight:700;color:#8593A0;vertical-align:top;line-height:0;">2</sup></p>
+            <div style="display:flex;justify-content:space-between;margin-top:auto;padding-top:7px;">
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:20px;color:#041C2C;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">+40</div><div style="font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:4px;line-height:1.3;">robots en<br>producción</div></div>
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:20px;color:#041C2C;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">3</div><div style="font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:4px;line-height:1.3;">plataformas<br>certificadas</div></div>
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:20px;color:#041C2C;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">24×7</div><div style="font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:4px;line-height:1.3;">operación<br>gobernada</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="flex:1;"></div>
+
+    <!-- 04 payoff band -->
+    <div style="background:linear-gradient(158deg,#0A2637,#041C2C);color:#fff;margin:0 -16mm;padding:7px 16mm;">
+      <div style="display:flex;align-items:center;gap:11px;margin-bottom:9px;">
+        <span style="width:22px;height:3px;background:#FE5000;display:inline-block;"></span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9FB6C4;">04 · Qué gana el negocio</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+        <div style="padding-right:20px;font-family:'Manrope';font-weight:700;font-size:13px;line-height:1.28;color:#fff;">Menos trabajo manual y menos error, con retorno medible</div>
+        <div style="padding:0 20px;border-left:1px solid #1B384A;font-family:'Manrope';font-weight:700;font-size:13px;line-height:1.28;color:#fff;">El conocimiento del proceso queda en la organización</div>
+        <div style="padding:0 20px;border-left:1px solid #1B384A;font-family:'Manrope';font-weight:700;font-size:13px;line-height:1.28;color:#fff;">IA que escala de verdad: del piloto a producción</div>
+        <div style="padding-left:20px;border-left:1px solid #1B384A;font-family:'Manrope';font-weight:700;font-size:13px;line-height:1.28;color:#fff;">Riesgo regulatorio cubierto (EU AI Act · ENS desde el diseño)</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="display:grid;grid-template-columns:1.55fr 1fr;gap:24px;align-items:center;padding:6px 0;border-bottom:1px solid #E4E8EA;">
+      <div>
+        <div style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#FE5000;display:flex;align-items:center;gap:9px;"><span style="width:20px;height:3px;background:#FE5000;"></span>El siguiente paso</div>
+        <h3 style="font-family:'Manrope';font-weight:800;font-size:17px;margin-top:7px;letter-spacing:-.01em;color:#041C2C;">Una conversación de 30 minutos</h3>
+        <p style="font-size:11px;line-height:1.55;color:#4A5B65;margin-top:4px;max-width:110mm;">Media hora sobre tus procesos reales: dónde tienes trabajo manual que drena horas, qué automatización ya tienes suelta sin escalar, y qué haría falta para llevar un caso del piloto a producción con gobierno. Sin compromiso.</p>
+      </div>
+      <div style="border-left:2px solid #041C2C;padding-left:20px;">
+        <div style="font-family:'Manrope';font-weight:700;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#8593A0;">Contacto</div>
+        <div style="font-family:'Manrope';font-weight:800;font-size:17px;margin-top:6px;color:#041C2C;">[contacto Entelgy]</div>
+        <div style="font-size:12px;color:#5A6B75;margin-top:3px;">Automatización de procesos · Data &amp; Process</div>
+        <div style="font-size:12px;color:#FE5000;margin-top:8px;font-weight:600;">[email · teléfono]</div>
+      </div>
+    </div>
+
+    <!-- FOOT -->
+    <div style="padding:3px 0 1mm;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;">
+      <div style="font-size:8px;line-height:1.5;color:#9AA7AE;max-width:158mm;font-style:italic;"><sup style="font-weight:700;color:#5A6B75;font-style:normal;">1</sup> MIT (2025) y Gartner; edición en verificación. <sup style="font-weight:700;color:#5A6B75;font-style:normal;">2</sup> Datos Entelgy (Automatización) en validación; referencias de servicio en operación, importes de contrato omitidos; naming de clientes sujeto a autorización.</div>
+      <div style="font-family:'Manrope';font-weight:800;font-size:11px;color:#041C2C;white-space:nowrap;">01 <span style="color:#FE5000;">/</span> 01</div>
+    </div>
+
+  </div>
+</div>
+</div>
+<div id="hipatia-volver"><button type="button" aria-label="Volver a Hipatia">← Volver a Hipatia</button></div>
+<style>
+#hipatia-volver{position:fixed;top:14px;left:14px;z-index:2147483000;font:500 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+#hipatia-volver button{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid #E6E8EA;background:#fff;color:#041C2C;cursor:pointer;box-shadow:0 1px 3px rgba(4,28,44,.10);font:inherit;transition:color .15s,border-color .15s}
+#hipatia-volver button:hover{color:#FE5000;border-color:#FE5000}
+#hipatia-volver button:focus-visible{outline:2px solid #FE5000;outline-offset:2px}
+@media print{#hipatia-volver{display:none !important}}
+</style>
+<script>
+(function(){
+  var PORTAL="https://hipatia-v4.guberna.es/";
+  function volver(){
+    // si el portal abrió esta pestaña, cerrarla lo devuelve tal como estaba
+    try{ if(window.opener && !window.opener.closed){ window.close(); return; } }catch(e){}
+    location.href=PORTAL;
+  }
+  var b=document.getElementById('hipatia-volver');
+  if(b) b.firstChild.addEventListener('click',volver);
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape'||e.defaultPrevented) return;
+    if(document.fullscreenElement) return;                 // Escape sale de pantalla completa
+    var a=document.activeElement;
+    if(a&&(a.tagName==='INPUT'||a.tagName==='TEXTAREA'||a.isContentEditable)) return;
+    volver();
+  });
+})();
+</script></body>
+</html>

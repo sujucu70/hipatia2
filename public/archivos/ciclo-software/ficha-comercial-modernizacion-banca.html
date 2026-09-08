@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ficha Comercial · Modernización de Aplicaciones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --timon:       #1E1712;
+  --timon-2:     #352B23;
+  --cobre:       #A6703E;
+  --cobre-osc:   #7A5028;
+  --cobre-cla:   #D4A870;
+  --cobre-pal:   #F0E2CA;
+  --arena:       #FAF7F2;
+  --arena-pro:   #F0EBE2;
+  --arena-som:   #E4DDD2;
+  --arena-borde: #D5CCC0;
+  --eucalipto:   #5E8272;
+  --eucalipto-pal:#DFF0E9;
+  --arcilla:     #B45C38;
+  --arcilla-pal: #F5E8E2;
+  --niebla:      #8A837A;
+  --niebla-cla:  #C8C0B8;
+  --f-display:   'Cormorant Garamond', Georgia, serif;
+  --f-label:     'Syne', system-ui, sans-serif;
+  --f-body:      'DM Sans', -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: var(--arena); }
+body {
+  background: var(--arena);
+  color: var(--timon);
+  font-family: var(--f-body);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+.page-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
+}
+
+/* ── NAV ── */
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .9rem 1.5rem;
+  border-bottom: 1px solid var(--arena-borde);
+  position: sticky; top: 0;
+  background: rgba(250,247,242,0.96);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  z-index: 50;
+  width: 100%;
+  box-sizing: border-box;
+}
+.topbar-logo {
+  font-family: var(--f-display); font-weight: 300; font-size: 1.1rem;
+  color: var(--timon); text-decoration: none;
+}
+.topbar-logo em { font-style: italic; color: var(--cobre); }
+.topbar-back {
+  font-family: var(--f-label); font-size: .58rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--niebla); text-decoration: none;
+  display: flex; align-items: center; gap: .4rem; transition: color .2s;
+}
+.topbar-back::before { content: '←'; color: var(--cobre); }
+.topbar-back:hover { color: var(--cobre); }
+
+/* ── HEADER FICHA ── */
+.ficha-header {
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--arena-borde);
+}
+.ficha-tipo {
+  font-family: var(--f-label); font-size: .6rem; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--cobre);
+  display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem;
+}
+.ficha-tipo::before { content: ''; width: 24px; height: 1px; background: var(--cobre); }
+.ficha-title {
+  font-family: var(--f-display); font-weight: 300;
+  font-size: clamp(2rem, 5vw, 3rem); line-height: .98;
+  margin-bottom: 1rem;
+}
+.ficha-title em { font-style: italic; color: var(--cobre); }
+.ficha-tagline {
+  font-family: var(--f-body); font-weight: 300; font-size: .98rem;
+  color: var(--niebla); max-width: 580px; line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+.ficha-pills {
+  display: flex; flex-wrap: wrap; gap: .5rem;
+}
+.pill {
+  font-family: var(--f-label); font-size: .58rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: .35rem .85rem; border-radius: 100px;
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+  color: var(--niebla);
+}
+.pill.cobre { background: var(--cobre-pal); border-color: var(--cobre-cla); color: var(--cobre-osc); }
+.pill.verde { background: var(--eucalipto-pal); border-color: #A0BDB2; color: var(--eucalipto); }
+.pill.arcilla { background: var(--arcilla-pal); border-color: #D4A090; color: var(--arcilla); }
+
+/* ── PITCH PRINCIPAL ── */
+.pitch-box {
+  margin: 2rem 0;
+  background: var(--timon);
+  border-radius: 12px;
+  padding: 2rem 2.25rem;
+  position: relative; overflow: hidden;
+}
+.pitch-box::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cobre-cla), transparent);
+}
+.pitch-label {
+  font-family: var(--f-label); font-size: .58rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--cobre-cla); margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: .6rem;
+}
+.pitch-label::after {
+  content: '5 min'; font-size: .6rem; padding: .15rem .5rem;
+  background: rgba(166,112,62,0.2); border-radius: 4px;
+  letter-spacing: .05em;
+}
+.pitch-step {
+  display: grid; grid-template-columns: 28px 1fr;
+  gap: .5rem 1rem; margin-bottom: 1.25rem;
+  align-items: start;
+}
+.pitch-step:last-child { margin-bottom: 0; }
+.pitch-num {
+  font-family: var(--f-display); font-size: 1.3rem; font-weight: 300;
+  color: var(--cobre-cla); line-height: 1.2; padding-top: .1rem;
+}
+.pitch-text {
+  font-family: var(--f-body); font-weight: 300; font-size: .9rem;
+  color: rgba(250,247,242,0.75); line-height: 1.7;
+}
+.pitch-text strong { color: #FAF7F2; font-weight: 500; }
+.pitch-text em { font-style: italic; color: var(--cobre-cla); }
+.pitch-text .cita {
+  display: block; margin-top: .5rem;
+  font-style: italic; color: rgba(250,247,242,0.55);
+  font-size: .85rem; border-left: 2px solid var(--cobre-osc);
+  padding-left: .75rem;
+}
+
+/* ── SABER RÁPIDO ── */
+.saber-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1rem; margin: 2rem 0;
+}
+.saber-card {
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+  border-radius: 10px; padding: 1.25rem 1.4rem;
+}
+.saber-card-label {
+  font-family: var(--f-label); font-size: .58rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--niebla-cla); margin-bottom: .6rem;
+}
+.saber-card-text {
+  font-family: var(--f-body); font-weight: 300; font-size: .88rem;
+  color: var(--niebla); line-height: 1.65;
+}
+.saber-card-text strong { color: var(--timon); font-weight: 500; }
+
+/* ── SECCIÓN GENÉRICA ── */
+.seccion { margin: 0; border-top: 1px solid var(--arena-borde); }
+
+.seccion-trigger {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 0;
+  text-align: left;
+}
+.seccion-trigger:hover .seccion-titulo { color: var(--cobre); }
+.seccion-titulo {
+  font-family: var(--f-label); font-size: .68rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--timon); transition: color .2s;
+}
+.seccion-icon {
+  font-family: var(--f-display); font-size: 1.1rem; font-weight: 300;
+  color: var(--cobre); transition: transform .3s;
+  line-height: 1; flex-shrink: 0;
+}
+.seccion.open .seccion-icon { transform: rotate(45deg); }
+.seccion-body {
+  display: none; padding-bottom: 2rem;
+}
+.seccion.open .seccion-body { display: block; }
+
+/* ── CASOS ── */
+.casos-list { display: flex; flex-direction: column; gap: .75rem; }
+.caso {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: .75rem 1.25rem;
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+  border-radius: 10px; padding: 1.1rem 1.25rem;
+  align-items: start; cursor: pointer; transition: background .2s;
+}
+.caso:hover { background: var(--cobre-pal); }
+.caso-id {
+  font-family: var(--f-display); font-weight: 400; font-size: 1.3rem;
+  color: var(--cobre-cla); line-height: 1.1; padding-top: .1rem;
+}
+.caso-nombre {
+  font-family: var(--f-label); font-size: .68rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--timon); margin-bottom: .3rem;
+}
+.caso-sector {
+  font-family: var(--f-label); font-size: .56rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--niebla-cla);
+}
+.caso-body {
+  grid-column: 1 / -1; display: none;
+  border-top: 1px solid var(--arena-borde);
+  padding-top: .85rem; margin-top: .2rem;
+}
+.caso.open .caso-body { display: block; }
+.caso-hizo, .caso-pitch {
+  font-family: var(--f-body); font-weight: 300; font-size: .86rem;
+  color: var(--niebla); line-height: 1.65; margin-bottom: .6rem;
+}
+.caso-pitch { color: var(--timon); font-weight: 400; }
+.caso-pitch-label {
+  font-family: var(--f-label); font-size: .55rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--cobre); margin-bottom: .3rem; margin-top: .75rem;
+}
+
+/* ── OBJECIONES ── */
+.objs-list { display: flex; flex-direction: column; gap: .6rem; }
+.obj {
+  border: 1px solid var(--arena-borde); border-radius: 10px;
+  overflow: hidden; background: var(--arena-pro);
+}
+.obj-trigger {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: grid; grid-template-columns: 1fr 24px;
+  gap: .5rem; padding: 1rem 1.1rem;
+  text-align: left; align-items: center;
+  transition: background .2s;
+}
+.obj-trigger:hover { background: var(--cobre-pal); }
+.obj-pregunta {
+  font-family: var(--f-body); font-size: .88rem; font-weight: 400;
+  color: var(--timon); font-style: italic; line-height: 1.5;
+}
+.obj-chevron {
+  font-size: .9rem; color: var(--cobre); transition: transform .3s;
+  line-height: 1; text-align: center;
+}
+.obj.open .obj-chevron { transform: rotate(180deg); }
+.obj-body {
+  display: none;
+  padding: 0 1.1rem 1rem;
+  border-top: 1px solid var(--arena-borde);
+}
+.obj.open .obj-body { display: block; }
+.obj-respuesta {
+  font-family: var(--f-body); font-weight: 300; font-size: .86rem;
+  color: var(--niebla); line-height: 1.7; padding-top: .75rem;
+}
+.obj-respuesta strong { color: var(--timon); font-weight: 500; }
+.obj-respuesta em { font-style: italic; color: var(--cobre); }
+.obj-frase {
+  margin-top: .75rem; padding: .75rem 1rem;
+  background: var(--timon); border-radius: 8px;
+  font-family: var(--f-body); font-weight: 300; font-size: .84rem;
+  color: rgba(250,247,242,0.85); line-height: 1.6; font-style: italic;
+}
+
+/* ── PROFUNDIZAR ── */
+.detalle-grid {
+  display: flex; flex-direction: column; gap: .6rem;
+}
+.detalle {
+  border: 1px solid var(--arena-borde); border-radius: 10px;
+  overflow: hidden; background: var(--arena);
+}
+.detalle-trigger {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .9rem 1.1rem; text-align: left;
+  transition: background .2s;
+}
+.detalle-trigger:hover { background: var(--arena-pro); }
+.detalle-titulo {
+  font-family: var(--f-label); font-size: .62rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--niebla);
+}
+.detalle-chevron {
+  font-size: .8rem; color: var(--niebla-cla); transition: transform .3s; line-height: 1;
+}
+.detalle.open .detalle-chevron { transform: rotate(180deg); }
+.detalle-body {
+  display: none;
+  padding: 0 1.1rem 1.1rem;
+  border-top: 1px solid var(--arena-borde);
+}
+.detalle.open .detalle-body { display: block; }
+.detalle-prose {
+  font-family: var(--f-body); font-weight: 300; font-size: .86rem;
+  color: var(--niebla); line-height: 1.7; padding-top: .85rem;
+}
+.detalle-prose strong { color: var(--timon); font-weight: 500; }
+.detalle-prose p + p { margin-top: .75rem; }
+.detalle-prose ul { padding-left: 1.1rem; margin-top: .5rem; }
+.detalle-prose li { margin-bottom: .35rem; }
+.detalle-prose .tabla {
+  width: 100%; border-collapse: collapse; margin-top: .75rem;
+  font-size: .82rem;
+}
+.detalle-prose .tabla th {
+  font-family: var(--f-label); font-size: .55rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--niebla); border-bottom: 1px solid var(--arena-borde);
+  padding: .5rem .6rem; text-align: left;
+}
+.detalle-prose .tabla td {
+  padding: .5rem .6rem; border-bottom: 1px solid var(--niebla-muy, #ECE8E2);
+  color: var(--niebla); vertical-align: top;
+}
+.detalle-prose .tabla td:first-child { color: var(--timon); font-weight: 500; }
+
+/* ── SEÑALES DE COMPRA ── */
+.senales-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: .6rem; margin-top: .5rem;
+}
+.senal {
+  display: flex; align-items: flex-start; gap: .6rem;
+  background: var(--eucalipto-pal); border-radius: 8px;
+  padding: .7rem .9rem; border: 1px solid #A0BDB2;
+}
+.senal-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--eucalipto); flex-shrink: 0; margin-top: .35rem;
+}
+.senal-text {
+  font-family: var(--f-body); font-weight: 300; font-size: .82rem;
+  color: var(--eucalipto); line-height: 1.5;
+}
+
+/* ── DATOS CLAVE ── */
+.datos-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: .75rem; margin: 1.5rem 0;
+}
+.dato {
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+  border-radius: 10px; padding: 1rem 1.1rem; text-align: center;
+}
+.dato-num {
+  font-family: var(--f-display); font-size: 1.8rem; font-weight: 400;
+  color: var(--cobre); line-height: 1; margin-bottom: .3rem;
+}
+.dato-desc {
+  font-family: var(--f-body); font-weight: 300; font-size: .76rem;
+  color: var(--niebla); line-height: 1.5;
+}
+.dato-desc strong { color: var(--timon); font-weight: 500; }
+
+/* ── FOOTER ── */
+.ficha-footer {
+  margin-top: 3rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--arena-borde);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: .75rem;
+}
+.footer-brand {
+  font-family: var(--f-display); font-weight: 300; font-size: .95rem;
+  color: var(--niebla-cla);
+}
+.footer-brand em { font-style: italic; color: var(--cobre); }
+.footer-meta {
+  font-family: var(--f-label); font-size: .56rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--niebla-cla);
+  text-align: right; line-height: 1.8;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .saber-grid { grid-template-columns: 1fr; }
+  .senales-grid { grid-template-columns: 1fr; }
+  .datos-row { grid-template-columns: repeat(2, 1fr); }
+  .caso { grid-template-columns: 60px 1fr; }
+  .ficha-footer { flex-direction: column; align-items: flex-start; }
+  .footer-meta { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="topbar">
+  <a class="topbar-logo" href="../">Entelgy<em>·</em></a>
+  <a class="topbar-back" href="index.html">Software Engineering</a>
+</div>
+
+<div class="page-content">
+
+<!-- HEADER -->
+<div class="ficha-header">
+  <div class="ficha-tipo">Ficha comercial · Banca</div>
+  <h1 class="ficha-title">Modernización<br>de <em>Aplicaciones</em></h1>
+  <p class="ficha-tagline">El 67% del presupuesto IT en banca va a mantener lo que ya existe. DORA está activo desde enero de 2025. El mainframe COBOL no puede dar lo que la regulación exige. Entelgy moderniza el legacy — sin parar el negocio, firmando el resultado.</p>
+  <div class="ficha-pills">
+    <span class="pill cobre">CIO · CISO · Consejo · CFO</span>
+    <span class="pill verde">Ya vendible</span>
+    <span class="pill">DORA · NIS2 · AI Act</span>
+    <span class="pill">Core Banking · COBOL · PL/SQL</span>
+  </div>
+</div>
+
+<!-- DATOS CLAVE -->
+<div class="datos-row">
+  <div class="dato">
+    <div class="dato-num">67%</div>
+    <div class="dato-desc">del presupuesto IT en banca va a <strong>Run the Business</strong> — solo el 21% queda para crecer · Gartner IT Budget Benchmark (n=131)</div>
+  </div>
+  <div class="dato">
+    <div class="dato-num">22.000</div>
+    <div class="dato-desc">entidades financieras bajo <strong>supervisión activa DORA</strong> desde enero 2025 · 19 ICT críticos ya designados</div>
+  </div>
+  <div class="dato">
+    <div class="dato-num">43%</div>
+    <div class="dato-desc">de instituciones financieras opera sobre <strong>legacy de más de 20 años</strong> — documentación viva inexistente</div>
+  </div>
+</div>
+
+<!-- PITCH -->
+<div class="pitch-box">
+  <div class="pitch-label">Pitch</div>
+
+  <div style="background: rgba(166,112,62,0.12); border-radius: 8px; padding: 1.1rem 1.25rem; margin-bottom: 1.5rem; border-left: 3px solid var(--cobre);">
+    <div style="font-family: var(--f-label); font-size: .55rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cobre-cla); margin-bottom: .5rem;">Gancho · 30 segundos</div>
+    <div style="font-family: var(--f-display); font-size: 1.15rem; font-weight: 400; color: #FAF7F2; line-height: 1.4; font-style: italic;">"DORA lleva activo desde enero de 2025. Exige observabilidad en tiempo real, trazabilidad de terceros y cláusulas contractuales sobre cada sistema crítico. Un mainframe COBOL de los 80 no puede dar nativamente lo que DORA pide. Entelgy lo moderniza — sin parar el negocio, con cobertura regulatoria contractual."</div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">1</div>
+    <div class="pitch-text">
+      <strong>La pregunta que abre la conversación</strong>
+      <span class="cita">"¿Cuál es el sistema más crítico que DORA ya está tocando y que todavía no tenéis documentado técnicamente?"</span>
+      DORA exige documentación técnica, testing de resiliencia y trazabilidad de terceros sobre cada sistema crítico. El 43% de los bancos opera sobre legacy de más de 20 años que nunca tuvo documentación viva. Si no saben responder en treinta segundos, hay proyecto.
+    </div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">2</div>
+    <div class="pitch-text">
+      <strong>El dato que hace el problema concreto</strong>
+      <span class="cita">"Gartner mide en banca y servicios financieros: el 67% del presupuesto IT va a Run the Business. El 46% solo a la función Applications. Solo el 21% queda para crecer. Pega/Savanta cifra el desperdicio anual de la empresa global media en 370 millones de dólares por incapacidad de modernizar legacy."</span>
+      La deuda técnica vale entre el 20% y el 40% del valor total de los activos tecnológicos — un pasivo que no aparece en el balance pero que se paga todos los meses.
+    </div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">3</div>
+    <div class="pitch-text">
+      <strong>Lo que diferencia a Entelgy</strong>
+      Modernización progresiva — no big-bang. <em>Spec-Driven Development</em> produce de forma nativa la documentación técnica auditable que DORA, NIS2 y el AI Act van a pedir. <strong>Foreworth</strong> certifica la productividad como tercero. Cláusula bilateral: <strong>el 40% del ahorro de productividad va al cliente en la factura siguiente.</strong>
+      <span class="cita">"Globant vende AI Pods. EPAM vende AI/Run — con base en Bielorrusia. Thoughtworks, Super Spec. Ninguno firma cobertura regulatoria europea contractual. Entelgy sí."</span>
+    </div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">4</div>
+    <div class="pitch-text">
+      <strong>El cierre natural</strong>
+      <span class="cita">"¿Os interesa empezar por un assessment de la cartera? En dos semanas sabéis qué sistemas tienen más exposición regulatoria, cuánto vale la deuda técnica acumulada y qué modernizar primero — con criterios que podéis llevar al Consejo y al equipo de riesgo operacional."</span>
+      El assessment produce el blueprint que el CIO necesita para defender la inversión internamente. Es el primer entregable facturable y no requiere comprometer una transformación completa.
+    </div>
+  </div>
+</div>
+
+<!-- SABER RÁPIDO -->
+<div class="saber-grid">
+  <div class="saber-card">
+    <div class="saber-card-label">Quién compra</div>
+    <div class="saber-card-text"><strong>CIO</strong> en el 90% de los casos — es la entrada. <strong>CISO</strong> y <strong>Consejo</strong> cuando DORA o NIS2 tienen responsabilidad personal del CEO. <strong>CFO</strong> cuando hay deuda técnica visible en presupuesto. Dir. de Aplicaciones y Procurement en contratos de mantenimiento recurrente.</div>
+  </div>
+  <div class="saber-card">
+    <div class="saber-card-label">Qué firma Entelgy</div>
+    <div class="saber-card-text">Modernización progresiva con <strong>Spec-Driven</strong> — documentación técnica auditable nativa para DORA/AI Act. <strong>CoE de +50 profesionales</strong> (IA, Arquitectura, DevOps, Calidad). Productividad certificada por <strong>Foreworth</strong>. ISO 3300 N3 SPICE. El <strong>40% del ahorro</strong> va al cliente — contractual, no declarativo.</div>
+  </div>
+  <div class="saber-card">
+    <div class="saber-card-label">Cuándo entrar</div>
+    <div class="saber-card-text">Mainframe COBOL o PL/SQL en sistemas críticos sin documentación técnica viva. DORA activo sobre su cartera de ICT. Proveedor único que "conoce el sistema" — knowledge captive. Presupuesto IT con más del 60% en run. IA en decisiones automatizadas (scoring, crédito, onboarding) sin documentación auditable para AI Act.</div>
+  </div>
+  <div class="saber-card">
+    <div class="saber-card-label">Clientes en Banca</div>
+    <div class="saber-card-text"><strong>Core banking:</strong> BBVA (+250 prof.) · Santander · Openbank · RSI · Cajamar. <strong>Legal / plataformas:</strong> Wolters Kluwer (+125 prof.). <strong>Seguros / financiero:</strong> AXA · Mapfre · Caser · Admiral · Línea Directa · AMA · TIREA. Confirmar con Jorge cuáles son referenciables para cada reunión concreta.</div>
+  </div>
+</div>
+
+<!-- SEÑALES DE COMPRA -->
+<div class="seccion open" id="s-senales">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-senales')">
+    <span class="seccion-titulo">Señales de que hay oportunidad real</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="senales-grid">
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">DORA les ha llegado por el equipo de riesgo operacional — y no saben qué implica para su stack de desarrollo</div></div>
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">Tienen mainframe COBOL o sistemas de más de 15 años en producción sin documentación viva</div></div>
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">Su proveedor de mainframe lleva 10-20 años con ellos y "nadie más sabe cómo funciona"</div></div>
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">Usan IA en scoring, crédito o decisiones automatizadas — sin documentación técnica auditable</div></div>
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">El CIO dice que más del 60% del presupuesto IT va a mantener lo que ya tienen</div></div>
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">Tienen sistemas legacy que "no se pueden tocar sin romper el core" — llevan años aplazando la modernización</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CASOS -->
+<div class="seccion open" id="s-casos">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-casos')">
+    <span class="seccion-titulo">Referencias y casos</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="casos-list">
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">BBVA</div>
+        <div>
+          <div class="caso-nombre">BBVA</div>
+          <div class="caso-sector">Core Banking · Java / Google Cloud · +250 profesionales</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo"><strong>Relación activa:</strong> más de 250 profesionales de Entelgy en España, Perú y Chile. Modelo Fábrica SW. Entornos Java y Google Cloud. Core Banking y Software de Seguridad.</div>
+          <div class="caso-pitch-label">Cómo usarlo en reunión</div>
+          <div class="caso-pitch">La referencia de mayor escala de Entelgy en banca. Demuestra capacidad para operar en entornos core banking con rigor técnico, escala internacional y tecnología moderna. Confirmar referenciabilidad con Jorge antes de usar.</div>
+        </div>
+      </div>
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">WK</div>
+        <div>
+          <div class="caso-nombre">Wolters Kluwer</div>
+          <div class="caso-sector">Plataformas legales y de negocio · Azure / Android / iOS · +125 profesionales</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo"><strong>Relación activa:</strong> más de 125 profesionales en España, Dinamarca y Holanda. Modelo mixto Fábrica SW / Agile SW. Entornos Microsoft Azure, Android e iOS. Plataformas de soporte legal y aplicaciones de negocio para el sector financiero y legal.</div>
+          <div class="caso-pitch-label">Cómo usarlo en reunión</div>
+          <div class="caso-pitch">Caso relevante para bancos que necesiten ver experiencia en plataformas de cumplimiento, aplicaciones de negocio reguladas y entornos Microsoft Azure. Demuestra presencia internacional y modelo mixto flexible.</div>
+        </div>
+      </div>
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">PL/SQL</div>
+        <div>
+          <div class="caso-nombre">Migración PL/SQL → Java · UNED</div>
+          <div class="caso-sector">Caso documentado · Legacy crítico · IA Generativa aplicada</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo"><strong>El problema:</strong> procedimientos PL/SQL legacy sin documentación funcional, complejidad de conversión manual, equipos IT sin capacidad para migrar en paralelo al mantenimiento operativo.<br><strong>Lo que hizo Entelgy:</strong> ChatGPT para generación automática de documentación de los procedimientos. Migración asistida PL/SQL → Java. GitHub Copilot para generar tests unitarios. Resultado: reducción significativa de tiempo y esfuerzo, mejora de mantenibilidad y escalabilidad.</div>
+          <div class="caso-pitch-label">Cómo usarlo en reunión</div>
+          <div class="caso-pitch">Aplicable directamente a cualquier banco con lógica de negocio en procedimientos Oracle. "Ese código PL/SQL que nadie quiere tocar porque nadie sabe qué rompe — eso es exactamente lo que hacemos, con IA y con tests que garantizan que la funcionalidad se preserva."</div>
+        </div>
+      </div>
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">REFs</div>
+        <div>
+          <div class="caso-nombre">Cartera Banca y Financiero · Entelgy</div>
+          <div class="caso-sector">Core Banking · Seguros · Plataformas financieras</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo">
+            <strong>Core Banking:</strong> BBVA · Santander · Openbank · RSI · Cajamar<br>
+            <strong>Plataformas financieras:</strong> Wolters Kluwer<br>
+            <strong>Seguros y financiero:</strong> AXA · Mapfre · Caser · Admiral Seguros · Línea Directa · AMA · TIREA
+          </div>
+          <div class="caso-pitch-label">Nota de uso</div>
+          <div class="caso-pitch">Clientes activos de Software Engineering en Entelgy. Confirmar con Jorge qué casos son referenciables y con qué nivel de detalle antes de usar en reunión externa.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- OBJECIONES -->
+<div class="seccion open" id="s-objs">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-objs')">
+    <span class="seccion-titulo">Objeciones más frecuentes</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="objs-list">
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"DORA lo lleva el equipo de riesgo operacional — no es un tema de desarrollo de software."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            DORA exige cosas muy concretas sobre el software: documentación técnica de cada sistema ICT crítico, testing de resiliencia operacional, trazabilidad de terceros y cláusulas contractuales en cada contrato de proveedor ICT. <strong>Todo eso vive en el código y en cómo se desarrolla y mantiene.</strong> El equipo de riesgo operacional puede gestionar el framework — pero quien tiene que producir la evidencia técnica que el auditor va a pedir es el equipo de desarrollo. Spec-Driven genera esa evidencia de forma nativa, no como trabajo extra posterior.
+            <div class="obj-frase">"¿Quién en vuestro equipo es responsable de producir la documentación técnica que el Joint Examination Team del ESA podría pedir sobre vuestros sistemas críticos?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"El mainframe lo gestiona nuestro proveedor histórico — llevan 20 años con nosotros."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            Exactamente el problema. <strong>El conocimiento del sistema vive en la cabeza del proveedor, no en documentación del banco.</strong> Si ese proveedor sube tarifas, reduce equipo o simplemente se va, el banco no tiene salida. DORA llama a esto "dependencia excesiva de un proveedor ICT" y exige planes de salida documentados. Entelgy entra con reverse spec — reconstruye la documentación técnica del mainframe a partir del código existente, extrae el conocimiento del proveedor y lo pone en un activo propiedad del banco. No pedimos reemplazar al proveedor — pedimos que el banco tenga la llave de su propio sistema.
+            <div class="obj-frase">"Si vuestro proveedor de mainframe os dijera mañana que sube tarifas un 40%, ¿cuánto tiempo necesitaríais para poder cambiar?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"El AI Act se ha aplazado hasta 2027 — tenemos tiempo."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            DORA no se ha aplazado — lleva activo desde enero de 2025 con 22.000 entidades bajo supervisión activa. NIS2 tampoco. El aplazamiento del AI Act high-risk a diciembre de 2027 no cambia lo que ya está en aplicación hoy. Y cualquier banco que use IA en decisiones de crédito, scoring o onboarding tiene sistemas high-risk bajo el AI Act — que necesitan documentación técnica auditable. <strong>Quien llegue a 2027 sin esa documentación construida llega con dos años de precedente de supervisión encima y cero margen.</strong>
+            <div class="obj-frase">"¿Tenéis ya documentados técnicamente los sistemas de IA que toman decisiones sobre clientes? ¿Podría un auditor pedirla hoy?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"No podemos permitirnos interrupciones en el core — cualquier cambio es un riesgo."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            El modelo de Entelgy es progresivo por definición — no big-bang. Se empieza por una pieza lateral, no por el core. <strong>Spec-Driven garantiza que cada cambio tiene una spec firmada, tests automatizados y trazabilidad completa antes de tocar producción.</strong> IDC predice que el 40% de los bancos globales adoptará estrategias sidecar en 2026 (70-80% en 2028) — modernizar en paralelo al core sin tocarlo es exactamente el modelo que el mercado ya está adoptando. Las eficiencias documentadas en bancos europeos llegan al 30%.
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"Estamos con Accenture / Deloitte / un Big 4 para esto."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            Los Big 4 diseñan el framework regulatorio — Entelgy produce la evidencia técnica que ese framework va a necesitar. Son roles complementarios, no excluyentes. Y hay una diferencia estructural: <strong>los Big 4 no firman productividad medida por tercero con cláusula bilateral.</strong> Cobran por horas de consultoría. Entelgy firma capacidad UCE auditable con el 40% del ahorro al cliente. El CISO y el equipo de riesgo necesitan el framework — el CIO necesita que alguien lo ejecute y lo mida.
+            <div class="obj-frase">"¿Quién está produciendo la documentación técnica concreta que DORA va a pedir sobre vuestros sistemas ICT críticos?"</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- PROFUNDIZAR -->
+<div class="seccion" id="s-detalle">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-detalle')">
+    <span class="seccion-titulo">Profundizar — mecánica y detalle</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="detalle-grid">
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">DORA · lo mínimo que necesitas saber para la reunión</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p><strong>Qué es:</strong> Reglamento UE 2022/2554 (Digital Operational Resilience Act). Vigente desde enero 2025. Aplica a 22.000 entidades financieras — bancos, aseguradoras, fondos, pagos, criptoactivos.</p>
+            <p><strong>Qué exige sobre el software:</strong> documentación técnica de cada sistema ICT crítico, testing periódico de resiliencia operacional, trazabilidad de todos los proveedores ICT, cláusulas contractuales obligatorias en cada contrato ICT (Article 30), y planes documentados de salida de proveedor.</p>
+            <p><strong>Quién ya está bajo supervisión directa:</strong> en noviembre 2025 se designaron 19 proveedores ICT críticos (AWS, Azure, Google Cloud) bajo Joint Examination Teams de EBA/EIOPA/ESMA. Las entidades que dependen de ellos están bajo escrutinio.</p>
+            <p><strong>Responsabilidad del Consejo:</strong> el Consejo debe aprobar el framework ICT y la política de gestión de riesgo de terceros. Si hay incumplimiento, la responsabilidad es personal de los consejeros.</p>
+            <p><strong>Cómo responde Entelgy:</strong> Spec-Driven produce de forma nativa la documentación técnica auditable que DORA va a pedir sobre cada sistema. CoE DevOps implementa la observabilidad y el testing de resiliencia. Las cláusulas DORA Article 30 se integran en el contrato UCE.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">Spec-Driven — qué es y qué produce para DORA</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p>Antes de escribir una línea de código, se define formalmente qué tiene que hacer: entradas, salidas, reglas de negocio, criterios de aceptación. Esa spec se firma. El código se desarrolla guiado por tests que verifican el cumplimiento. Cada línea queda vinculada a un requisito — trazabilidad total.</p>
+            <p><strong>Para DORA:</strong> la spec firmada es la documentación técnica que el regulador va a pedir sobre el sistema. El test automatizado es la evidencia de que funciona como se especificó. La trazabilidad es el audit trail. Todo generado de forma nativa — no como trabajo extra posterior a la entrega.</p>
+            <p><strong>Reverse spec sobre mainframe:</strong> se aplica también sobre código legacy existente. Entelgy reconstruye la spec a partir del código COBOL o PL/SQL que ya existe, extrayendo el conocimiento del proveedor histórico y poniéndolo en un documento propiedad del banco. Después esa spec es la base para la modernización progresiva.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">UCE / IGE — el modelo de precio</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p><strong>UCE:</strong> sprint de 10 días hábiles con un senior. ~42 Story Points entregados y aceptados, tests ≥80%, Spec Compliance 100%. Facturación por capacidad entregada, no por horas.</p>
+            <p><strong>IGE:</strong> Spec Compliance (40%) + Test Coverage (25%) + Cycle Time (20%) + Bug Leakage (15%). IGE ≥ 98 → +5% bonus al equipo. IGE &lt; 75 → −8% penalización a Entelgy. El 40% del ahorro de productividad generado por IA va al cliente en la factura siguiente.</p>
+            <p><strong>Entrada en banca:</strong> el primer contrato puede hacerse en modelo hora con Spec-Driven aplicado. UCE en la primera renovación, cuando hay métricas reales del proyecto como referencia. Las cláusulas DORA Article 30 se integran desde el primer contrato.</p>
+            <table class="tabla">
+              <thead><tr><th>Nivel</th><th>Composición</th><th>Precio</th></tr></thead>
+              <tbody>
+                <tr><td>UCE Base</td><td>Equipo estándar</td><td>Tarifa Base</td></tr>
+                <tr><td>UCE Plus</td><td>+ 1 especialista CoE</td><td>×1,20</td></tr>
+                <tr><td>UCE Premium</td><td>+ 2 CoE + IA</td><td>×1,40</td></tr>
+                <tr><td>UCE Innovation</td><td>Squad + Chapter Lead</td><td>×1,65</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">La competencia en banca — qué dicen y en qué flaquean</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <table class="tabla">
+              <thead><tr><th>Competidor</th><th>Pitch</th><th>Flaqueza vs Entelgy</th></tr></thead>
+              <tbody>
+                <tr><td>Accenture / Deloitte</td><td>Framework regulatorio DORA, transformación end-to-end</td><td>No producen la evidencia técnica — diseñan el framework. Sin cláusula bilateral de productividad. Precio hora consultoría vs UCE</td></tr>
+                <tr><td>EPAM</td><td>AI/Run™ Transform Playbook, banca europea (Edward Jones, Deutsche Bank)</td><td>Base Bielorrusia/Ucrania — exposición geopolítica que DORA puede cuestionar como riesgo de tercero. Sin firma bilateral</td></tr>
+                <tr><td>Globant</td><td>AI Pods, pricing por token, adelantado desde jun-2025</td><td>US/LatAm focus, sin cobertura regulatoria UE contractual, sin firma de resultado</td></tr>
+                <tr><td>Proveedor histórico del mainframe</td><td>"Somos los únicos que sabemos cómo funciona"</td><td>Knowledge captive — exactamente el riesgo que DORA señala. Sin plan de salida documentado</td></tr>
+                <tr><td>Infosys / Wipro / TCS</td><td>Offshore, escala, precio</td><td>Sin presencia DORA contractual, sin Foreworth, modelo hora sin firma de resultado</td></tr>
+              </tbody>
+            </table>
+            <p style="margin-top:.75rem;"><strong>La frase:</strong> <em>"Ninguno firma cobertura regulatoria DORA contractual + productividad certificada por tercero + cláusula bilateral del 40%. Los tres a la vez solo los firma Entelgy."</em></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="ficha-footer">
+  <div class="footer-brand" style="font-family: var(--f-label); font-size: .75rem; font-weight: 600; letter-spacing: .08em; color: var(--niebla);">Entelgy · Hipatia</div>
+  <div class="footer-meta">
+    Ficha comercial · Modernización · Vertical Banca<br>
+    Jorge Herrero · Ciclo de vida de desarrollo de software · Mayo 2026
+  </div>
+</div>
+
+</div><!-- /page-content -->
+
+<script>
+function toggleSeccion(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+function toggleObj(el) { el.classList.toggle('open'); }
+function toggleDetalle(el) { el.classList.toggle('open'); }
+function toggleCaso(el) { el.classList.toggle('open'); }
+</script>
+<div id="hipatia-volver"><button type="button" aria-label="Volver a Hipatia">← Volver a Hipatia</button></div>
+<style>
+#hipatia-volver{position:fixed;top:14px;left:14px;z-index:2147483000;font:500 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+#hipatia-volver button{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid #E6E8EA;background:#fff;color:#041C2C;cursor:pointer;box-shadow:0 1px 3px rgba(4,28,44,.10);font:inherit;transition:color .15s,border-color .15s}
+#hipatia-volver button:hover{color:#FE5000;border-color:#FE5000}
+#hipatia-volver button:focus-visible{outline:2px solid #FE5000;outline-offset:2px}
+@media print{#hipatia-volver{display:none !important}}
+</style>
+<script>
+(function(){
+  var PORTAL="https://hipatia-v4.guberna.es/";
+  function volver(){
+    // si el portal abrió esta pestaña, cerrarla lo devuelve tal como estaba
+    try{ if(window.opener && !window.opener.closed){ window.close(); return; } }catch(e){}
+    location.href=PORTAL;
+  }
+  var b=document.getElementById('hipatia-volver');
+  if(b) b.firstChild.addEventListener('click',volver);
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape'||e.defaultPrevented) return;
+    if(document.fullscreenElement) return;                 // Escape sale de pantalla completa
+    var a=document.activeElement;
+    if(a&&(a.tagName==='INPUT'||a.tagName==='TEXTAREA'||a.isContentEditable)) return;
+    volver();
+  });
+})();
+</script></body>
+</html>

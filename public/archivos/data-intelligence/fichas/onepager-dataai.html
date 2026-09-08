@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entelgy · Data &amp; AI — One-pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0b1720; display:flex; align-items:center; justify-content:center; min-height:100vh; font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; }
+  .desk { padding:26px 0 40px; display:flex; justify-content:center; }
+  @media print { body{background:#fff;} .desk{padding:0;} .page{box-shadow:none !important;} @page{size:A4;margin:0;} }
+</style>
+</head>
+<body>
+<div class="desk">
+<div class="page" style="width:210mm;height:297mm;background:#fff;box-shadow:0 26px 70px rgba(0,0,0,.4);position:relative;overflow:hidden;display:flex;flex-direction:column;color:#0E2230;">
+
+  <div style="height:4px;background:#FE5000;flex-shrink:0;"></div>
+
+  <!-- ===================== HEADER (navy — anchor zone) ===================== -->
+  <div style="background:linear-gradient(118deg,#041C2C 0%,#041C2C 46%,#0A2839 100%);color:#fff;padding:3mm 16mm 2mm;position:relative;overflow:hidden;flex-shrink:0;">
+
+    <div style="position:absolute;z-index:2;top:22mm;right:16mm;width:64px;height:64px;pointer-events:none;"><span style="position:absolute;top:0px;left:0px;width:11px;height:11px;background:#123246;"></span><span style="position:absolute;top:0px;left:14px;width:11px;height:11px;background:#1c4358;"></span><span style="position:absolute;top:0px;left:28px;width:11px;height:11px;background:#123246;"></span><span style="position:absolute;top:14px;left:0px;width:11px;height:11px;background:#1c4358;"></span><span style="position:absolute;top:14px;left:14px;width:11px;height:11px;background:#245268;"></span><span style="position:absolute;top:14px;left:42px;width:11px;height:11px;background:#FE5000;opacity:.5;"></span><span style="position:absolute;top:28px;left:14px;width:11px;height:11px;background:#123246;"></span><span style="position:absolute;top:28px;left:28px;width:11px;height:11px;background:#FE5000;opacity:.75;"></span><span style="position:absolute;top:28px;left:42px;width:11px;height:11px;background:#FE5000;opacity:.55;"></span><span style="position:absolute;top:42px;left:28px;width:11px;height:11px;background:#1c4358;"></span><span style="position:absolute;top:42px;left:42px;width:11px;height:11px;background:#123246;"></span></div>
+
+    <div style="position:relative;z-index:3;">
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <img src="data:image/png;base64,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" alt="Entelgy" style="height:29px;width:auto;display:block;">
+      <div style="border:1px solid #26485C;color:#9FB6C4;font-family:'Manrope';font-weight:700;font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:6px 12px;border-radius:5px;">Data Intelligence · Data &amp; AI</div>
+    </div>
+
+    <div style="margin-top:2.4mm;font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#7E93A0;">Data &amp; AI · Data Intelligence</div>
+    <h1 style="font-family:'Manrope';font-weight:800;font-size:26px;line-height:1;letter-spacing:-.03em;margin-top:4px;color:#fff;">Datos que se pueden auditar<span style="color:#FE5000;">.</span></h1>
+    <p style="max-width:158mm;margin-top:3px;font-size:12px;line-height:1.4;color:#B9C6CF;font-weight:400;">Construimos y operamos la base de dato fiable —<span style="color:#fff;font-weight:600;">gobierno, ingeniería, analítica y modelos</span>— para que la IA y la plataforma decidan sobre dato completo, trazable y bajo control.</p>
+
+    <div style="margin-top:1.4mm;padding-top:0.8mm;border-top:1px solid #1B384A;display:grid;grid-template-columns:repeat(3,1fr);">
+      <div style="padding-right:22px;">
+        <div style="font-family:'Manrope';font-weight:800;font-size:21px;letter-spacing:-.02em;color:#fff;line-height:1;font-variant-numeric:tabular-nums;">+95%</div>
+        <div style="margin-top:5px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#7E93A0;font-weight:600;">clientes renuevan<sup style="font-size:8px;font-weight:700;color:#6E8391;vertical-align:top;line-height:0;">1</sup></div>
+      </div>
+      <div style="padding:0 22px;border-left:1px solid #1B384A;">
+        <div style="font-family:'Manrope';font-weight:800;font-size:21px;letter-spacing:-.02em;color:#fff;line-height:1;font-variant-numeric:tabular-nums;">2.000</div>
+        <div style="margin-top:5px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#7E93A0;font-weight:600;">profesionales delivery<sup style="font-size:8px;font-weight:700;color:#6E8391;vertical-align:top;line-height:0;">1</sup></div>
+      </div>
+      <div style="padding-left:22px;border-left:1px solid #1B384A;">
+        <div style="font-family:'Manrope';font-weight:800;font-size:21px;letter-spacing:-.02em;color:#fff;line-height:1;font-variant-numeric:tabular-nums;">20+</div>
+        <div style="margin-top:5px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#7E93A0;font-weight:600;">años en organizaciones complejas</div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- ===================== BODY ===================== -->
+  <div style="padding:1.5mm 16mm 0;flex:1;display:flex;flex-direction:column;position:relative;">
+    <div style="position:absolute;left:14px;top:0;bottom:0;display:flex;align-items:center;pointer-events:none;"><span style="writing-mode:vertical-rl;transform:rotate(180deg);font-family:'Manrope';font-weight:700;font-size:8px;letter-spacing:.3em;text-transform:uppercase;color:#C8CFD4;">Human Driven Technology</span></div>
+
+    <!-- 01 -->
+    <section style="margin-bottom:0mm;">
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:6px;">
+        <span style="font-family:'Manrope';font-weight:800;font-size:12px;color:#041C2C;letter-spacing:.02em;">01</span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8593A0;white-space:nowrap;">El punto de partida</span>
+        <span style="flex:1;height:1px;background:#E4E8EA;"></span>
+      </div>
+      <h2 style="font-family:'Manrope';font-weight:800;font-size:17px;letter-spacing:-.015em;line-height:1.2;color:#041C2C;max-width:170mm;">Sin gobierno del dato la IA no captura el valor esperado, y ahora la regulación también mira al dato</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:5px;">
+        <div style="border-top:2px solid #041C2C;padding-top:8px;">
+          <div style="font-family:'Manrope';font-weight:700;font-size:13.5px;color:#041C2C;line-height:1.3;">El modelo hereda el error del dato</div>
+          <p style="font-size:12px;line-height:1.42;color:#4A5B65;margin-top:5px;">El <span style="color:#041C2C;font-weight:700;">60%</span> de las organizaciones no captará el valor esperado de su IA por un gobierno del dato deficiente. Modelo y plataforma deciden sobre el dato que reciben; si está incompleto o sin medir, la decisión hereda ese fallo.<sup style="font-size:8px;font-weight:700;color:#8593A0;vertical-align:top;line-height:0;">2</sup></p>
+        </div>
+        <div style="border-top:2px solid #041C2C;padding-top:8px;">
+          <div style="font-family:'Manrope';font-weight:700;font-size:13.5px;color:#041C2C;line-height:1.3;">La regulación entró en el dato y en los modelos</div>
+          <p style="font-size:12px;line-height:1.42;color:#4A5B65;margin-top:5px;">RGPD, DORA y el EU AI Act fijan obligaciones sobre el dato y los modelos. Los sistemas de alto riesgo aplican desde el <span style="color:#041C2C;font-weight:600;">2 de diciembre de 2027</span>, y responde quien firma, no el modelo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section style="margin-top:6px;margin-bottom:0mm;">
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:6px;">
+        <span style="font-family:'Manrope';font-weight:800;font-size:12px;color:#041C2C;letter-spacing:.02em;">02</span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8593A0;white-space:nowrap;">Qué hacemos</span>
+        <span style="flex:1;height:1px;background:#E4E8EA;"></span>
+      </div>
+      <h2 style="font-family:'Manrope';font-weight:800;font-size:17px;letter-spacing:-.015em;line-height:1.2;color:#041C2C;">Construimos la base; la analítica y los modelos deciden sobre dato fiable</h2>
+      <div style="display:grid;grid-template-columns:1.12fr 1fr;gap:30px;margin-top:6px;align-items:center;">
+        <p style="font-size:12px;line-height:1.42;color:#33454F;">Operamos el <span style="color:#041C2C;font-weight:600;">gobierno del dato y de los modelos</span> —roles con mandato, catálogo vivo, linaje trazable— y sobre esa base construimos ingeniería y plataforma, analítica en producción y GenAI sobre dato gobernado, y modelos con control de drift, sesgos y explicabilidad. Si la GenAI expone el dato que no debe, responde quien firma: por eso operamos <span style="color:#041C2C;font-weight:600;">seguridad del dato e IA auditable</span> de extremo a extremo.</p>
+        <!-- capabilities stack -->
+        <div style="border:1px solid #E4E8EA;border-radius:12px;padding:10px 13px;">
+          <div style="font-family:'Manrope';font-weight:700;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#8593A0;margin-bottom:9px;">Cinco capacidades</div>
+          <div style="display:flex;flex-direction:column;gap:5px;">
+            <div style="display:flex;gap:9px;align-items:baseline;"><span style="font-family:'Manrope';font-weight:800;font-size:10px;color:#FE5000;font-variant-numeric:tabular-nums;">01</span><span style="font-size:11px;color:#33454F;line-height:1.25;">Gobierno del dato y de los modelos</span></div>
+            <div style="display:flex;gap:9px;align-items:baseline;"><span style="font-family:'Manrope';font-weight:800;font-size:10px;color:#FE5000;font-variant-numeric:tabular-nums;">02</span><span style="font-size:11px;color:#33454F;line-height:1.25;">Ingeniería y plataforma del dato</span></div>
+            <div style="display:flex;gap:9px;align-items:baseline;"><span style="font-family:'Manrope';font-weight:800;font-size:10px;color:#FE5000;font-variant-numeric:tabular-nums;">03</span><span style="font-size:11px;color:#33454F;line-height:1.25;">Analítica, visualización y GenAI</span></div>
+            <div style="display:flex;gap:9px;align-items:baseline;"><span style="font-family:'Manrope';font-weight:800;font-size:10px;color:#FE5000;font-variant-numeric:tabular-nums;">04</span><span style="font-size:11px;color:#33454F;line-height:1.25;">Analítica avanzada / ciencia del dato</span></div>
+            <div style="display:flex;gap:9px;align-items:baseline;"><span style="font-family:'Manrope';font-weight:800;font-size:10px;color:#FE5000;font-variant-numeric:tabular-nums;">05</span><span style="font-size:11px;color:#33454F;line-height:1.25;">Seguridad del dato e IA auditable</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section style="margin-top:6px;margin-bottom:0mm;">
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:6px;">
+        <span style="font-family:'Manrope';font-weight:800;font-size:12px;color:#041C2C;letter-spacing:.02em;">03</span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8593A0;white-space:nowrap;">La prueba</span>
+        <span style="flex:1;height:1px;background:#E4E8EA;"></span>
+      </div>
+      <h2 style="font-family:'Manrope';font-weight:800;font-size:17px;letter-spacing:-.015em;line-height:1.2;color:#041C2C;">Dato, analítica e IA en entornos exigentes</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px;">
+        <!-- card CNMV -->
+        <div style="border:1px solid #E4E8EA;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="background:#041C2C;color:#fff;padding:9px 18px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:'Manrope';font-weight:800;font-size:15px;">CNMV</span>
+            <span style="font-family:'Manrope';font-weight:700;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:#9FB6C4;text-align:right;line-height:1.4;">Gobierno del dato<br>· SupTech</span>
+          </div>
+          <div style="padding:9px 16px 9px;display:flex;flex-direction:column;flex:1;">
+            <p style="font-size:11px;line-height:1.44;color:#4A5B65;">Gobierno del dato (DAMA) con RACI e implantación de MS Purview —catálogo, linaje, clasificación— para una supervisión basada en IA: la base sobre la que sus modelos detectan manipulaciones y anomalías en los mercados. Adjudicado frente a las Big 4.<sup style="font-size:8px;font-weight:700;color:#8593A0;vertical-align:top;line-height:0;">3</sup></p>
+            <div style="display:flex;justify-content:space-between;margin-top:auto;padding-top:6px;">
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:16px;color:#041C2C;letter-spacing:-.02em;">Big 4</div><div style="font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:4px;line-height:1.3;">adjudicado<br>frente a</div></div>
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:16px;color:#041C2C;letter-spacing:-.02em;">DAMA</div><div style="font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:4px;line-height:1.3;">marco · RACI<br>operativo</div></div>
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:16px;color:#041C2C;letter-spacing:-.02em;">Purview</div><div style="font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:4px;line-height:1.3;">catálogo<br>+ linaje</div></div>
+            </div>
+          </div>
+        </div>
+        <!-- card Bankinter -->
+        <div style="border:1px solid #E4E8EA;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="background:#041C2C;color:#fff;padding:9px 18px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:'Manrope';font-weight:800;font-size:15px;">Bankinter</span>
+            <span style="font-family:'Manrope';font-weight:700;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:#9FB6C4;text-align:right;line-height:1.4;">Analítica<br>· Banca</span>
+          </div>
+          <div style="padding:9px 16px 9px;display:flex;flex-direction:column;flex:1;">
+            <p style="font-size:11px;line-height:1.44;color:#4A5B65;">Analítica y visualización en producción en un entorno financiero exigente, con negocio dentro (Banca Telefónica, Consumer Finance, Sostenibilidad) y ciclo del dato fiable de origen a consumo.<sup style="font-size:8px;font-weight:700;color:#8593A0;vertical-align:top;line-height:0;">3</sup></p>
+            <div style="display:flex;justify-content:space-between;margin-top:auto;padding-top:6px;">
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:16px;color:#041C2C;letter-spacing:-.02em;">Producción</div><div style="font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:4px;line-height:1.3;">con negocio<br>dentro</div></div>
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:16px;color:#041C2C;letter-spacing:-.02em;">Spotfire</div><div style="font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:4px;line-height:1.3;">visualización<br>en servicio</div></div>
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:16px;color:#041C2C;letter-spacing:-.02em;">Origen→</div><div style="font-size:9px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:4px;line-height:1.3;">dato fiable<br>al consumo</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- anonymized proof strip -->
+      <div style="margin-top:5px;background:#F5F7F8;border-radius:10px;padding:6px 14px;display:flex;align-items:center;gap:16px;">
+        <span style="font-family:'Manrope';font-weight:700;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:#8593A0;white-space:nowrap;">Analítica avanzada</span>
+        <span style="font-size:10.5px;line-height:1.45;color:#4A5B65;">Fabricante industrial cotizado: predictivos que detectan la desviación antes del defecto. · Operador de drones de largo alcance: detección de anomalías con IA auditable. · Gran planta de automoción: planificación de días a minutos.<sup style="font-size:8px;font-weight:700;color:#8593A0;vertical-align:top;line-height:0;">3</sup></span>
+      </div>
+    </section>
+
+    <div style="flex:1;"></div>
+
+    <!-- 04 payoff band (navy — emphasis) -->
+    <div style="background:linear-gradient(158deg,#0A2637,#041C2C);color:#fff;margin:0 -16mm;padding:4px 16mm;">
+      <div style="display:flex;align-items:center;gap:11px;margin-bottom:7px;">
+        <span style="width:22px;height:3px;background:#FE5000;display:inline-block;"></span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9FB6C4;">04 · Qué gana el negocio</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+        <div style="padding-right:20px;font-family:'Manrope';font-weight:700;font-size:11.5px;line-height:1.22;color:#fff;">Más valor de la IA (dato fiable, modelos que rinden)</div>
+        <div style="padding:0 20px;border-left:1px solid #1B384A;font-family:'Manrope';font-weight:700;font-size:11.5px;line-height:1.22;color:#fff;">Menos riesgo regulatorio (RGPD · DORA · AI Act)</div>
+        <div style="padding:0 20px;border-left:1px solid #1B384A;font-family:'Manrope';font-weight:700;font-size:11.5px;line-height:1.22;color:#fff;">Decisiones más rápidas (autoservicio gobernado)</div>
+        <div style="padding-left:20px;border-left:1px solid #1B384A;font-family:'Manrope';font-weight:700;font-size:11.5px;line-height:1.22;color:#fff;">Capacidad instalada, que evoluciona con tus equipos</div>
+      </div>
+    </div>
+
+    <!-- CTA (light — breaks the symmetry) -->
+    <div style="display:grid;grid-template-columns:1.55fr 1fr;gap:24px;align-items:center;padding:3px 0 3px;border-bottom:1px solid #E4E8EA;">
+      <div>
+        <div style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#FE5000;display:flex;align-items:center;gap:9px;"><span style="width:20px;height:3px;background:#FE5000;"></span>El siguiente paso</div>
+        <h3 style="font-family:'Manrope';font-weight:800;font-size:17px;margin-top:5px;letter-spacing:-.01em;color:#041C2C;">Assessment de datos, analítica e IA</h3>
+        <p style="font-size:11px;line-height:1.48;color:#4A5B65;margin-top:3px;max-width:108mm;">Evaluación acotada de tus datos, capacidades y plataformas: dónde está el valor, brechas de calidad y hueco de gobierno. 4–6 semanas · 2 perfiles senior · alcance acotado.</p>
+      </div>
+      <div style="border-left:2px solid #041C2C;padding-left:20px;">
+        <div style="font-family:'Manrope';font-weight:700;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#8593A0;">Contacto</div>
+        <div style="font-family:'Manrope';font-weight:800;font-size:17px;margin-top:4px;color:#041C2C;">Daniela Ongaro</div>
+        <div style="font-size:12px;color:#5A6B75;margin-top:3px;">Head of Data · Data &amp; AI</div>
+        <div style="font-size:12px;color:#FE5000;margin-top:6px;font-weight:600;">daniela.ongaro@entelgy.com</div>
+      </div>
+    </div>
+
+    <!-- FOOT -->
+    <div style="padding:2px 0 1.5mm;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;">
+      <div style="font-size:8px;line-height:1.5;color:#9AA7AE;max-width:150mm;font-style:italic;"><sup style="font-weight:700;color:#5A6B75;font-style:normal;">1</sup> Cifras corporativas Entelgy, en validación. <sup style="font-weight:700;color:#5A6B75;font-style:normal;">2</sup> Gartner, predicción a 2027. <sup style="font-weight:700;color:#5A6B75;font-style:normal;">3</sup> EU AI Act, sistemas de alto riesgo (Anexo III): aplicación desde el 2 de diciembre de 2027. Casos citados con autorización por referencia; casos por sector, anonimizados. Importes y puntuaciones de adjudicación omitidos por documento público.</div>
+      <div style="font-family:'Manrope';font-weight:800;font-size:11px;color:#041C2C;white-space:nowrap;">01 <span style="color:#FE5000;">/</span> 01</div>
+    </div>
+
+  </div>
+</div>
+</div>
+<div id="hipatia-volver"><button type="button" aria-label="Volver a Hipatia">← Volver a Hipatia</button></div>
+<style>
+#hipatia-volver{position:fixed;top:14px;left:14px;z-index:2147483000;font:500 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+#hipatia-volver button{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid #E6E8EA;background:#fff;color:#041C2C;cursor:pointer;box-shadow:0 1px 3px rgba(4,28,44,.10);font:inherit;transition:color .15s,border-color .15s}
+#hipatia-volver button:hover{color:#FE5000;border-color:#FE5000}
+#hipatia-volver button:focus-visible{outline:2px solid #FE5000;outline-offset:2px}
+@media print{#hipatia-volver{display:none !important}}
+</style>
+<script>
+(function(){
+  var PORTAL="https://hipatia-v4.guberna.es/";
+  function volver(){
+    // si el portal abrió esta pestaña, cerrarla lo devuelve tal como estaba
+    try{ if(window.opener && !window.opener.closed){ window.close(); return; } }catch(e){}
+    location.href=PORTAL;
+  }
+  var b=document.getElementById('hipatia-volver');
+  if(b) b.firstChild.addEventListener('click',volver);
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape'||e.defaultPrevented) return;
+    if(document.fullscreenElement) return;                 // Escape sale de pantalla completa
+    var a=document.activeElement;
+    if(a&&(a.tagName==='INPUT'||a.tagName==='TEXTAREA'||a.isContentEditable)) return;
+    volver();
+  });
+})();
+</script></body>
+</html>

@@ -67,6 +67,9 @@ for (const m of materiales) {
   const descargas = [];
   for (const ext of FORMATOS) {
     const hermano = sinExt + ext;
+    // los casos de éxito de SmartOPS son un .pptx que YA es el documento:
+    // no se ofrece como descarga de sí mismo
+    if (hermano === rutaRel) continue;
     if (!fs.existsSync(path.join(ORIGEN, hermano))) continue;
     copiar(hermano);
     descargas.push({ formato: ext.slice(1), url: "/archivos/" + hermano.split("/").map(encodeURIComponent).join("/") });

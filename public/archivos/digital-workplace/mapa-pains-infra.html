@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guberna · Mapa de pains · SmartOPS for Infra · Entelgy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root {
+  --timon:          #1E1712;
+  --timon-2:        #352B23;
+  --cobre:          #A6703E;
+  --cobre-osc:      #7A5028;
+  --cobre-cla:      #D4A870;
+  --cobre-pal:      #F0E2CA;
+  --arena:          #FAF7F2;
+  --arena-pro:      #F0EBE2;
+  --arena-som:      #E4DDD2;
+  --arena-borde:    #D5CCC0;
+  --eucalipto:      #5E8272;
+  --eucalipto-osc:  #3A5549;
+  --eucalipto-cla:  #A0BDB2;
+  --eucalipto-pal:  #DFF0E9;
+  --arcilla:        #B45C38;
+  --arcilla-pal:    #F0DDD2;
+  --trigo:          #C4A040;
+  --niebla:         #8A837A;
+  --niebla-cla:     #C8C0B8;
+  --niebla-muy:     #ECE8E2;
+  --f-timon: 'Cormorant Garamond', Georgia, serif;
+  --f-const: 'Syne', system-ui, sans-serif;
+  --f-oper:  'DM Sans', -apple-system, sans-serif;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--arena); color: var(--timon); font-family: var(--f-oper); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; cursor: none; }
+
+/* ── CURSOR ── */
+.cursor { position: fixed; width: 8px; height: 8px; background: var(--cobre); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); mix-blend-mode: multiply; }
+.cursor-ring { position: fixed; width: 30px; height: 30px; border: 1px solid rgba(166,112,62,0.4); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .3s, height .3s, opacity .3s; }
+
+/* ── TEXTURES ── */
+.tex-papel {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  background-size: 300px;
+}
+.tex-carta {
+  background-image:
+    linear-gradient(rgba(166,112,62,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(166,112,62,0.08) 1px, transparent 1px),
+    linear-gradient(rgba(166,112,62,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(166,112,62,0.03) 1px, transparent 1px);
+  background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
+}
+.tex-lino {
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(30,23,18,0.02) 2px, rgba(30,23,18,0.02) 3px),
+    repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(30,23,18,0.015) 2px, rgba(30,23,18,0.015) 3px);
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 3rem;
+  background: rgba(250,247,242,0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--arena-borde);
+}
+.nav-logo {
+  font-family: var(--f-timon); font-weight: 300; font-size: 1.4rem;
+  letter-spacing: 0.02em; color: var(--timon); text-decoration: none;
+}
+.nav-logo em { font-style: italic; color: var(--cobre); }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-family: var(--f-const); font-size: .65rem; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--niebla); text-decoration: none; transition: color .2s;
+}
+.nav-links a:hover { color: var(--cobre); }
+
+/* ── SIDE NAV ── */
+.side-nav {
+  position: fixed; right: 2rem; top: 50%; transform: translateY(-50%);
+  display: flex; flex-direction: column; gap: .75rem; z-index: 100;
+}
+.side-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--arena-borde); transition: all .3s; cursor: pointer;
+}
+.side-dot.active { background: var(--cobre); transform: scale(1.6); }
+
+/* ── SECTIONS ── */
+section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 3rem; position: relative; }
+.container { max-width: 1080px; margin: 0 auto; width: 100%; }
+
+/* ── LABELS ── */
+.label {
+  font-family: var(--f-const); font-size: .65rem; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--cobre);
+  margin-bottom: 1.75rem; display: flex; align-items: center; gap: .75rem;
+}
+.label::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--cobre); }
+
+/* ── HERO ── */
+#hero {
+  background-color: var(--arena);
+  justify-content: flex-end;
+  padding-bottom: 5rem;
+  min-height: 100vh;
+}
+.hero-grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(166,112,62,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(166,112,62,0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.hero-noise {
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 300px; pointer-events: none;
+}
+.hero-rule {
+  position: absolute; right: 3rem; top: 8rem; bottom: 5rem;
+  width: 1px; background: var(--arena-borde);
+}
+.hero-rule::before {
+  content: 'Documento de trabajo · Susana → Amador & Miguel Ángel · Mayo 2026';
+  position: absolute; top: 0; right: 14px;
+  font-family: var(--f-const); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--niebla-cla); writing-mode: vertical-rl; transform: rotate(180deg);
+}
+.hero-ghost {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  font-family: var(--f-timon); font-weight: 300;
+  font-size: clamp(8rem, 18vw, 18rem); line-height: .85;
+  color: transparent; -webkit-text-stroke: 1px rgba(166,112,62,0.12);
+  white-space: nowrap; pointer-events: none; letter-spacing: -.02em;
+  user-select: none;
+}
+.hero-content { position: relative; z-index: 2; }
+.hero-tag {
+  font-family: var(--f-const); font-size: .65rem; font-weight: 700;
+  letter-spacing: .28em; text-transform: uppercase; color: var(--cobre);
+  margin-bottom: 2rem; display: flex; align-items: center; gap: .875rem;
+}
+.hero-tag::before { content: ''; width: 36px; height: 1px; background: var(--cobre); }
+h1 {
+  font-family: var(--f-timon); font-weight: 300;
+  font-size: clamp(3.5rem, 7vw, 6.5rem); line-height: .92;
+  letter-spacing: -.01em; color: var(--timon); margin-bottom: 2.5rem;
+}
+h1 em { font-style: italic; color: var(--cobre); }
+.hero-sub {
+  font-family: var(--f-oper); font-weight: 300; font-size: 1.05rem;
+  color: var(--niebla); max-width: 540px; line-height: 1.8; margin-bottom: 3rem;
+}
+.hero-meta { display: flex; gap: 3.5rem; align-items: flex-end; flex-wrap: wrap; }
+.hero-meta-item label {
+  font-family: var(--f-const); font-size: .58rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--niebla-cla);
+  display: block; margin-bottom: .3rem;
+}
+.hero-meta-item span { font-family: var(--f-oper); font-size: .9rem; font-weight: 500; color: var(--timon); }
+
+/* Horizonte line */
+.horizonte {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cobre-cla), var(--arena-borde), var(--cobre-cla), transparent);
+}
+
+/* ── SITUACIÓN ── */
+#situacion { background-color: var(--arena-pro); }
+.big-statement {
+  font-family: var(--f-timon); font-weight: 400;
+  font-size: clamp(2rem,4vw,3.5rem); line-height: 1.12;
+  letter-spacing: -.01em; color: var(--timon); max-width: 820px; margin-bottom: 2.5rem;
+}
+.big-statement em { font-style: italic; color: var(--cobre); }
+.prose { font-family: var(--f-oper); font-weight: 300; font-size: 1.02rem; line-height: 1.85; color: var(--niebla); max-width: 580px; }
+.prose p + p { margin-top: 1.25rem; }
+.prose strong { color: var(--timon); font-weight: 500; }
+
+.three-cols {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 1px; margin-top: 4rem; background: var(--arena-borde);
+  border: 1px solid var(--arena-borde); border-radius: 12px; overflow: hidden;
+}
+.col-card { background: var(--arena); padding: 2rem 1.75rem; transition: background .25s; }
+.col-card:hover { background: var(--cobre-pal); }
+.col-num {
+  font-family: var(--f-const); font-size: .6rem; font-weight: 700;
+  letter-spacing: .2em; color: var(--cobre); margin-bottom: 1rem;
+}
+.col-title { font-family: var(--f-const); font-weight: 700; font-size: .95rem; color: var(--timon); margin-bottom: .75rem; line-height: 1.25; }
+.col-text { font-family: var(--f-oper); font-weight: 300; font-size: .88rem; color: var(--niebla); line-height: 1.7; }
+
+/* ── FUERZAS (frente-list pattern) ── */
+#fuerzas { background-color: var(--arena); }
+h2 {
+  font-family: var(--f-timon); font-weight: 300;
+  font-size: clamp(2rem,3.5vw,3rem); line-height: 1.1;
+  color: var(--timon); margin-bottom: 3rem;
+}
+h2 em { font-style: italic; color: var(--cobre); }
+
+.frente-list {
+  display: flex; flex-direction: column;
+  border: 1px solid var(--arena-borde); border-radius: 12px; overflow: hidden;
+}
+.frente-item {
+  background: var(--arena); display: grid;
+  grid-template-columns: 64px 1fr 1.4fr;
+  align-items: start; gap: 2.5rem; padding: 2.5rem;
+  border-bottom: 1px solid var(--arena-borde); transition: background .25s;
+}
+.frente-item:last-child { border-bottom: none; }
+.frente-item:hover { background: var(--arena-pro); }
+.frente-num {
+  font-family: var(--f-timon); font-size: 2.2rem; font-weight: 300;
+  color: var(--niebla-cla); line-height: 1; padding-top: .25rem;
+  transition: color .3s;
+}
+.frente-item:hover .frente-num { color: var(--cobre-cla); }
+.frente-sub {
+  font-family: var(--f-const); font-size: .6rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--cobre); margin-bottom: .5rem;
+}
+.frente-title { font-family: var(--f-const); font-weight: 700; font-size: 1.05rem; color: var(--timon); line-height: 1.25; }
+.frente-desc { font-family: var(--f-oper); font-weight: 300; font-size: .9rem; color: var(--niebla); line-height: 1.75; padding-top: .2rem; }
+.frente-tags { display: flex; flex-wrap: wrap; gap: .5rem; padding-top: .25rem; }
+.tag {
+  font-family: var(--f-const); font-size: .58rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; padding: .3rem .75rem;
+  border: 1px solid var(--arena-borde); color: var(--niebla);
+  border-radius: 20px; white-space: nowrap; background: var(--arena-pro);
+}
+
+/* ── PAINS · familias y cards (NUEVO) ── */
+#pains { background-color: var(--arena-pro); }
+.familia-block { margin-bottom: 4rem; }
+.familia-block:last-child { margin-bottom: 0; }
+.familia-header {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: baseline;
+  gap: 1.5rem; padding-bottom: 1.25rem; margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--arena-borde);
+}
+.familia-tag {
+  font-family: var(--f-const); font-size: .58rem; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--cobre);
+  padding: .35rem .8rem; border: 1px solid var(--cobre-cla);
+  border-radius: 4px; background: var(--cobre-pal);
+}
+.familia-title {
+  font-family: var(--f-timon); font-weight: 400; font-size: 1.6rem;
+  color: var(--timon); line-height: 1.2;
+}
+.familia-title em { font-style: italic; color: var(--cobre); }
+.familia-meta {
+  font-family: var(--f-const); font-size: .58rem; font-weight: 600;
+  letter-spacing: .15em; text-transform: uppercase; color: var(--niebla);
+}
+.pain-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--arena-borde);
+  border: 1px solid var(--arena-borde); border-radius: 12px; overflow: hidden;
+}
+.pain-card {
+  background: var(--arena); padding: 1.75rem 1.6rem;
+  display: flex; flex-direction: column; gap: .85rem;
+  transition: background .25s; min-height: 100%;
+}
+.pain-card:hover { background: var(--cobre-pal); }
+.pain-head {
+  display: flex; align-items: baseline; gap: .9rem;
+  border-bottom: 1px solid var(--arena-som); padding-bottom: .85rem;
+}
+.pain-num {
+  font-family: var(--f-timon); font-size: 1.55rem; font-weight: 300;
+  color: var(--cobre); line-height: 1; flex-shrink: 0;
+}
+.pain-title {
+  font-family: var(--f-const); font-weight: 700; font-size: .92rem;
+  color: var(--timon); line-height: 1.25;
+}
+.pain-headline {
+  font-family: var(--f-timon); font-style: italic; font-weight: 400;
+  font-size: .98rem; color: var(--timon-2); line-height: 1.45;
+  padding-left: .85rem; border-left: 2px solid var(--cobre-cla);
+}
+.pain-row { display: flex; gap: .65rem; align-items: flex-start; flex-wrap: wrap; }
+.pain-row-label {
+  font-family: var(--f-const); font-size: .54rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--niebla);
+  padding-top: .3rem; flex-shrink: 0;
+}
+.pain-pill {
+  font-family: var(--f-const); font-size: .55rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  padding: .25rem .55rem; border-radius: 12px;
+  background: var(--arena-pro); color: var(--niebla);
+  border: 1px solid var(--arena-borde);
+}
+.pain-pill.who { color: var(--timon-2); border-color: var(--cobre-cla); background: var(--cobre-pal); }
+.pain-response {
+  margin-top: auto; padding-top: .85rem;
+  border-top: 1px solid var(--arena-som);
+  font-family: var(--f-oper); font-weight: 300; font-size: .8rem;
+  color: var(--niebla); line-height: 1.55;
+}
+.pain-response strong {
+  font-family: var(--f-const); font-size: .58rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase; color: var(--cobre);
+  display: block; margin-bottom: .25rem;
+}
+.pain-status {
+  display: inline-block; margin-top: .4rem;
+  font-family: var(--f-const); font-size: .54rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: .2rem .55rem; border-radius: 3px;
+}
+.pain-status.vendible { background: var(--eucalipto-pal); color: var(--eucalipto-osc); }
+.pain-status.mvp { background: var(--arcilla-pal); color: var(--arcilla); }
+.pain-status.reframe { background: var(--cobre-pal); color: var(--cobre-osc); }
+
+/* ── MÉTRICA ── */
+#metrica { background-color: var(--arena); }
+.metrica-center { text-align: center; }
+.metrica-big {
+  font-family: var(--f-timon); font-weight: 300;
+  font-size: clamp(4rem,11vw,9.5rem); line-height: .85;
+  letter-spacing: -.02em;
+  display: flex; align-items: baseline; justify-content: center; gap: .15em;
+  margin: 2rem 0; flex-wrap: wrap;
+}
+.metrica-big .from { color: var(--arena-borde); }
+.metrica-big .arrow { color: var(--niebla-cla); font-size: .55em; }
+.metrica-big .mid  { color: var(--cobre); }
+.metrica-big .to   { color: var(--cobre-osc); }
+.metrica-desc {
+  font-family: var(--f-oper); font-weight: 300; font-size: 1.05rem;
+  color: var(--niebla); max-width: 580px; margin: 0 auto 3rem; line-height: 1.8;
+}
+.dimensions-row {
+  display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; margin-top: 2rem;
+}
+.dim { text-align: center; }
+.dim-dot { width: 6px; height: 6px; background: var(--cobre); border-radius: 50%; margin: 0 auto .75rem; }
+.dim span {
+  font-family: var(--f-const); font-size: .6rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--niebla); display: block; line-height: 1.5;
+}
+
+/* ── CRUCE (timeline-style dark) ── */
+#cruce { background-color: var(--timon); }
+#cruce .label { color: var(--cobre-cla); }
+#cruce .label::before { background: var(--cobre-cla); }
+#cruce h2 { color: var(--arena); }
+#cruce h2 em { color: var(--cobre-cla); }
+#cruce .prose { color: var(--niebla-cla); }
+#cruce .prose strong { color: var(--arena); }
+
+.cruce-summary {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 1px; background: var(--timon-2);
+  border: 1px solid var(--timon-2); border-radius: 12px; overflow: hidden;
+  margin: 3rem 0;
+}
+.cruce-bucket {
+  background: var(--timon); padding: 2rem 1.75rem 2.25rem;
+  transition: background .25s;
+}
+.cruce-bucket:hover { background: var(--timon-2); }
+.cruce-bucket-num {
+  font-family: var(--f-timon); font-weight: 300; font-size: 3rem;
+  color: var(--cobre-cla); line-height: 1; margin-bottom: .5rem;
+}
+.cruce-bucket-label {
+  font-family: var(--f-const); font-size: .58rem; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--cobre-cla);
+  margin-bottom: 1rem;
+}
+.cruce-bucket-title { font-family: var(--f-timon); font-weight: 300; font-size: 1.3rem; color: var(--arena); margin-bottom: 1rem; line-height: 1.15; }
+.cruce-bucket-list { list-style: none; display: flex; flex-direction: column; gap: .45rem; }
+.cruce-bucket-list li {
+  font-family: var(--f-oper); font-weight: 300; font-size: .8rem;
+  color: var(--niebla-cla); line-height: 1.5;
+}
+.cruce-bucket-list li strong { color: var(--arena); font-weight: 500; }
+
+.cruce-table-wrap { overflow-x: auto; margin-top: 1.5rem; border: 1px solid var(--timon-2); border-radius: 12px; }
+.cruce-table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--f-oper); font-size: .82rem;
+  background: var(--timon);
+}
+.cruce-table thead th {
+  font-family: var(--f-const); font-size: .58rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--cobre-cla);
+  text-align: left; padding: 1rem .9rem;
+  background: var(--timon-2);
+  border-bottom: 1px solid var(--timon-2);
+  white-space: nowrap;
+}
+.cruce-table tbody td {
+  padding: .85rem .9rem; color: var(--niebla-cla);
+  border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top;
+}
+.cruce-table tbody tr:hover td { background: var(--timon-2); }
+.cruce-table tbody tr:last-child td { border-bottom: none; }
+.cruce-table .col-num { font-family: var(--f-timon); font-size: 1rem; color: var(--cobre-cla); font-weight: 400; width: 50px; }
+.cruce-table .col-pain { color: var(--arena); font-weight: 400; min-width: 200px; }
+.cruce-table .col-tick { text-align: center; width: 90px; color: var(--eucalipto-cla); font-weight: 500; }
+.cruce-table .col-tick em { font-style: normal; font-size: .7em; color: var(--niebla); display: block; margin-top: .15rem; }
+.cruce-table .col-status { width: 200px; }
+.estado-pill {
+  display: inline-block;
+  font-family: var(--f-const); font-size: .55rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: .25rem .55rem; border-radius: 3px; white-space: nowrap;
+}
+.estado-pill.vendible { background: rgba(160,189,178,.18); color: var(--eucalipto-cla); border: 1px solid rgba(160,189,178,.35); }
+.estado-pill.mvp { background: rgba(180,92,56,.18); color: var(--arcilla); border: 1px solid rgba(180,92,56,.35); }
+.estado-pill.reframe { background: rgba(212,168,112,.18); color: var(--cobre-cla); border: 1px solid rgba(212,168,112,.4); }
+
+.cruce-lectura {
+  margin-top: 2rem; padding: 2rem; background: var(--timon-2);
+  border-radius: 12px; border-left: 2px solid var(--cobre-cla);
+}
+.cruce-lectura strong {
+  font-family: var(--f-const); font-size: .6rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--cobre-cla); display: block; margin-bottom: 1rem;
+}
+.cruce-lectura ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+.cruce-lectura li {
+  font-family: var(--f-oper); font-size: .87rem; font-weight: 300;
+  color: var(--niebla-cla); line-height: 1.65;
+  display: flex; gap: .7rem; align-items: flex-start;
+}
+.cruce-lectura li::before { content: '—'; color: var(--cobre-cla); flex-shrink: 0; }
+.cruce-lectura li b { color: var(--arena); font-weight: 500; }
+
+/* ── ANCLAS (deliverables-grid pattern) ── */
+#anclas { background-color: var(--arena); }
+.ancla-list {
+  display: flex; flex-direction: column; gap: 1px;
+  margin-top: 3rem; background: var(--arena-borde);
+  border: 1px solid var(--arena-borde); border-radius: 12px; overflow: hidden;
+}
+.ancla-item {
+  background: var(--arena); padding: 2.25rem 2rem;
+  display: grid; grid-template-columns: 56px 1fr; gap: 1.75rem;
+  transition: background .25s;
+}
+.ancla-item:hover { background: var(--arena-pro); }
+.ancla-num {
+  font-family: var(--f-timon); font-size: 2.4rem; font-weight: 300;
+  color: var(--cobre); line-height: 1; padding-top: .15rem;
+}
+.ancla-body {}
+.ancla-tag {
+  font-family: var(--f-const); font-size: .58rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--cobre);
+  margin-bottom: .4rem;
+}
+.ancla-title {
+  font-family: var(--f-timon); font-weight: 400; font-size: 1.5rem;
+  color: var(--timon); line-height: 1.2; margin-bottom: 1.2rem;
+}
+.ancla-title em { font-style: italic; color: var(--cobre); }
+.ancla-row {
+  display: grid; grid-template-columns: 130px 1fr;
+  gap: 1.5rem; padding: .85rem 0;
+  border-top: 1px solid var(--arena-som);
+}
+.ancla-row:first-of-type { border-top: 1px solid var(--arena-borde); }
+.ancla-row-label {
+  font-family: var(--f-const); font-size: .58rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--niebla);
+  padding-top: .15rem;
+}
+.ancla-row-text {
+  font-family: var(--f-oper); font-weight: 300; font-size: .9rem;
+  color: var(--niebla); line-height: 1.7;
+}
+.ancla-row-text strong { color: var(--timon); font-weight: 500; }
+.ancla-row-text em { color: var(--timon-2); font-style: italic; }
+.ancla-gancho {
+  font-family: var(--f-timon); font-style: italic; font-weight: 400;
+  font-size: 1rem; color: var(--timon-2); line-height: 1.65;
+}
+
+/* ── PREGUNTAS (reasons pattern) ── */
+#preguntas { background-color: var(--arena-pro); }
+.preguntas-list { display: flex; flex-direction: column; margin-top: 3rem; }
+.pregunta {
+  display: grid; grid-template-columns: 240px 1fr; gap: 3rem;
+  padding: 2.5rem 0; border-bottom: 1px solid var(--arena-borde);
+}
+.pregunta:first-child { border-top: 1px solid var(--arena-borde); }
+.pregunta-label {
+  font-family: var(--f-const); font-size: .6rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--cobre);
+  margin-bottom: .5rem;
+}
+.pregunta-q {
+  font-family: var(--f-timon); font-weight: 400; font-size: 1.2rem;
+  color: var(--timon); line-height: 1.3;
+}
+.pregunta-q em { font-style: italic; color: var(--cobre); }
+.pregunta-body { font-family: var(--f-oper); font-weight: 300; font-size: .95rem; color: var(--niebla); line-height: 1.8; }
+.pregunta-body p + p { margin-top: 1rem; }
+.pregunta-body strong { color: var(--timon); font-weight: 500; }
+.pregunta-body em { color: var(--cobre); font-style: italic; }
+
+/* ── CTA ── */
+#cta { background-color: var(--timon); min-height: 70vh; justify-content: center; }
+#cta .label { color: var(--cobre-cla); }
+#cta .label::before { background: var(--cobre-cla); }
+.cta-title {
+  font-family: var(--f-timon); font-weight: 300;
+  font-size: clamp(2.5rem, 5.5vw, 5rem); line-height: 1.0;
+  color: var(--arena); margin-bottom: 1.5rem; letter-spacing: -.01em;
+}
+.cta-title em { font-style: italic; color: var(--cobre-cla); }
+.cta-sub { font-family: var(--f-oper); font-weight: 300; font-size: 1rem; color: var(--niebla-cla); margin-bottom: 3.5rem; max-width: 620px; }
+.next-steps { display: flex; gap: 3rem; flex-wrap: wrap; margin-bottom: 4rem; }
+.next-step { max-width: 260px; }
+.next-step-n {
+  font-family: var(--f-const); font-size: .6rem; font-weight: 700;
+  letter-spacing: .22em; color: var(--cobre-cla); margin-bottom: .6rem;
+}
+.next-step-text { font-family: var(--f-oper); font-weight: 300; font-size: .88rem; color: var(--niebla-cla); line-height: 1.65; }
+.next-step-text strong { color: var(--arena); font-weight: 400; }
+.cta-contact {
+  display: inline-flex; align-items: center; gap: 1.25rem;
+  font-family: var(--f-const); font-size: .7rem; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--arena); text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.2); padding: 1.1rem 2.25rem;
+  border-radius: 4px; transition: all .25s; background: transparent;
+}
+.cta-contact:hover { background: var(--cobre); border-color: var(--cobre); color: var(--arena); }
+.cta-contact::after { content: '→'; font-size: .9rem; }
+.footer-line {
+  margin-top: 5rem; padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-brand { font-family: var(--f-timon); font-weight: 300; font-size: 1.4rem; color: var(--arena); }
+.footer-brand em { font-style: italic; color: var(--cobre-cla); }
+.footer-copy { font-family: var(--f-const); font-size: .58rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--niebla); }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: .12s; }
+.reveal-delay-2 { transition-delay: .24s; }
+.reveal-delay-3 { transition-delay: .36s; }
+
+/* ── RESPONSIVE ── */
+
+/* Tablet: ≤ 900px */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .side-nav, .hero-rule, .hero-ghost, .cursor, .cursor-ring { display: none; }
+  body { cursor: auto; }
+
+  section { padding: 5rem 1.5rem; }
+
+  h1 { font-size: clamp(2.5rem, 8vw, 4rem); }
+  h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); }
+  .big-statement { font-size: clamp(1.5rem, 4vw, 2.4rem); }
+  .cta-title { font-size: clamp(2rem, 5vw, 3.2rem); }
+
+  .hero-meta { gap: 1.5rem; flex-wrap: wrap; }
+  .hero-sub { max-width: 100%; }
+
+  .three-cols { grid-template-columns: 1fr; }
+  .cruce-summary { grid-template-columns: 1fr; }
+  .pain-grid { grid-template-columns: 1fr; }
+
+  .frente-item { grid-template-columns: 1fr; gap: 1rem; }
+  .frente-num { font-size: 1.5rem; }
+
+  .ancla-item { grid-template-columns: 1fr; gap: 1rem; }
+  .ancla-row { grid-template-columns: 1fr; gap: .35rem; }
+  .ancla-num { font-size: 1.7rem; }
+
+  .pregunta { grid-template-columns: 1fr; gap: .75rem; }
+
+  .familia-header { grid-template-columns: 1fr; gap: .5rem; align-items: start; }
+  .familia-meta { display: none; }
+
+  .metrica-big { font-size: clamp(3.5rem, 16vw, 7rem); gap: .08em; }
+  .dimensions-row { gap: 1.5rem; }
+
+  .next-steps { gap: 2rem; flex-wrap: wrap; }
+  .next-step { max-width: 100%; flex: 1 1 200px; }
+}
+
+/* Móvil: ≤ 600px */
+@media (max-width: 600px) {
+  /* Desactivar animaciones reveal en móvil — contenido siempre visible */
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  section { padding: 4.5rem 1.25rem; }
+  nav { padding: .9rem 1.25rem; }
+  .nav-logo { font-size: 1.2rem; }
+
+  h1 { font-size: clamp(2.2rem, 9vw, 3rem); line-height: .95; }
+  h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
+  .big-statement { font-size: clamp(1.4rem, 5.5vw, 2rem); }
+  .cta-title { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+  .hero-sub { font-size: .95rem; }
+  .prose { font-size: .95rem; }
+
+  .hero-meta { gap: 1.25rem; }
+  .hero-meta-item span { font-size: .85rem; }
+
+  .label { font-size: .6rem; margin-bottom: 1.25rem; }
+
+  .three-cols .col-card { padding: 1.5rem 1.25rem; }
+
+  .frente-item { padding: 1.75rem 1.25rem; }
+  .frente-tags { gap: .4rem; }
+  .tag { font-size: .55rem; padding: .3rem .6rem; }
+
+  .pain-card { padding: 1.4rem 1.2rem; }
+  .pain-num { font-size: 1.3rem; }
+  .pain-headline { font-size: .9rem; }
+
+  .ancla-item { padding: 1.75rem 1.25rem; }
+  .ancla-title { font-size: 1.25rem; }
+  .ancla-gancho { font-size: .9rem; }
+
+  .metrica-big { font-size: clamp(3rem, 18vw, 5.5rem); }
+  .metrica-desc { font-size: .95rem; }
+  .dimensions-row { gap: 1.25rem; }
+  .dim span { font-size: .58rem; }
+
+  .cruce-bucket { padding: 1.5rem 1.25rem; }
+  .cruce-bucket-num { font-size: 2.4rem; }
+  .cruce-table thead th, .cruce-table tbody td { padding: .65rem .55rem; font-size: .72rem; }
+  .cruce-table .col-pain { min-width: 160px; }
+
+  .pregunta-q { font-size: 1.05rem; }
+  .pregunta-body { font-size: .9rem; }
+
+  .next-steps { flex-direction: column; gap: 1.5rem; }
+  .next-step { max-width: 100%; flex: none; }
+  .cta-contact { font-size: .65rem; padding: 1rem 1.75rem; width: 100%; justify-content: center; }
+
+  .footer-line { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a class="nav-logo" href="#hero">Guberna<em>.</em></a>
+  <ul class="nav-links">
+    <li><a href="#situacion">Por qué</a></li>
+    <li><a href="#fuerzas">Territorio</a></li>
+    <li><a href="#pains">Pains</a></li>
+    <li><a href="#cruce">Cruce</a></li>
+    <li><a href="#anclas">Anclas</a></li>
+    <li><a href="#cta">Cierre</a></li>
+  </ul>
+</nav>
+
+<div class="side-nav" id="sideNav">
+  <div class="side-dot active" data-section="hero"></div>
+  <div class="side-dot" data-section="situacion"></div>
+  <div class="side-dot" data-section="fuerzas"></div>
+  <div class="side-dot" data-section="pains"></div>
+  <div class="side-dot" data-section="metrica"></div>
+  <div class="side-dot" data-section="cruce"></div>
+  <div class="side-dot" data-section="anclas"></div>
+  <div class="side-dot" data-section="preguntas"></div>
+  <div class="side-dot" data-section="cta"></div>
+</div>
+
+<!-- ── HERO ── -->
+<section id="hero" class="tex-papel">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-noise"></div>
+  <div class="hero-rule"></div>
+  <div class="hero-ghost" aria-hidden="true">23 / 6</div>
+  <div class="horizonte"></div>
+  <div class="container hero-content">
+    <div class="hero-tag">Mapa SmartOPS for Infra · v1.1 · 8 Mayo 2026</div>
+    <h1>Las cinco fuerzas que caen en 2026<br>sobre el CIO. <em>23 pains</em> debajo.</h1>
+    <p class="hero-sub">Mapa del territorio infra del cliente mediano-grande español. Lo usaremos como base para el workshop interno con Amador y para la presentación-SmartOps-Infra..</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><label>Para</label><span>Amador · Miguel Ángel</span></div>
+      <div class="hero-meta-item"><label>Versión</label><span>v1</span></div>
+      <div class="hero-meta-item"><label>Mapa</label><span>6 familias · 23 pains</span></div>
+      <div class="hero-meta-item"><label>Preparado por</label><span>Susana Juan</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SITUACIÓN · Por qué este documento ── -->
+<section id="situacion" class="tex-lino">
+  <div class="container">
+    <div class="label">Por qué este documento</div>
+    <p class="big-statement reveal"><em>Necesitamos</em> una conversación-SmartOps-Infra completa. </p>
+    <div class="prose reveal reveal-delay-1">
+      <p>El mapa anterior está muy enfocado en Workplace. Cuando un cliente entra por reto de infraestructura el mapa-Workplace no nos sirve. Hace falta uno propio, de servidor, red y cloud.</p>
+      <p>Eso es lo que hemos trabajado aqui. 23 pains del cliente mediano-grande español cruzados con los 3 paquetes SmartOPS. Y 4 decisiones a cerrar para seguir avanzando.
+    </div>
+    <div class="three-cols reveal reveal-delay-2">
+      <div class="col-card">
+        <div class="col-num">01 / 03</div>
+        <div class="col-title">Doble valor del trabajo</div>
+        <div class="col-text">Chasis de la futura presentación cliente Infra. Y material orientativo para definir futuro roadmap de producto: si tenemos los pains claros, sabemos qué pedirle al producto.</div>
+      </div>
+      <div class="col-card">
+        <div class="col-num">02 / 03</div>
+        <div class="col-title">Tres territorios SmartOPS for Infra</div>
+        <div class="col-text">Operación 24×7 (lo vendible hoy: +100 contratos, +25K elementos, 99,9% disponibilidad). Assessment + Migración Cloud (vía partner en cierre). FinOps embebido (palanca al CFO, candidato a expansión). Network/SD-WAN-SASE queda fuera.</div>
+      </div>
+      <div class="col-card">
+        <div class="col-num">03 / 03</div>
+        <div class="col-title">CIO ancla, CFO y CISO segundos</div>
+        <div class="col-text">El CIO nuestro principal interlocutor. CFO también crítico por FinOps, CISO por NIS2 y resiliencia. Las cifras vienen de Flexera, FinOps Foundation, Uptime, Forrester, Gartner, ENISA e INCIBE-CERT.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FUERZAS · El territorio ── -->
+<section id="fuerzas">
+  <div class="container">
+    <div class="label">El territorio · Infra en España 2026</div>
+    <h2 class="reveal">Cinco fuerzas que ya conocemos.<br><em>Lo nuevo es que llegan juntas.</em></h2>
+    <p class="prose reveal reveal-delay-1" style="margin-bottom:3rem;max-width:720px">Caen sobre el mismo CIO en varios frentes a la vez, y en varias hay responsabilidad personal del firmante encima. Esto es lo que tiene este año en agenda.</p>
+    <div class="frente-list">
+      <div class="frente-item reveal">
+        <div class="frente-num">01</div>
+        <div>
+          <div class="frente-sub">Coste cloud</div>
+          <div class="frente-title">El cloud que se desbordó del presupuesto</div>
+        </div>
+        <div>
+          <div class="frente-desc"><strong>Flexera 2026: cloud waste sube por primera vez en 5 años al 29% sobre IaaS y PaaS</strong>, empujado por workloads GenAI con patrones impredecibles. ~$182B en residuo bruto global, $100B+ accionable. El 76% de grandes empresas gasta más de $5M/mes en cloud público. Solo el 28% reporta FinOps maduro. La conversación CFO ↔ CIO ya no es "¿migramos al cloud?" — es "¿por qué cuesta el doble del business case?".</div>
+          <div class="frente-tags" style="margin-top:1rem">
+            <span class="tag">29% waste · primer aumento en 5 años</span>
+            <span class="tag">76% · &gt;$5M/mes</span>
+            <span class="tag">98% FinOps gestiona AI spend</span>
+          </div>
+        </div>
+      </div>
+      <div class="frente-item reveal">
+        <div class="frente-num">02</div>
+        <div>
+          <div class="frente-sub">Regulación</div>
+          <div class="frente-title">NIS2 cambia el contrato del proveedor</div>
+        </div>
+        <div>
+          <div class="frente-desc"><strong>RD-ley 7/2025 transpone parcialmente NIS2 en España. Inspecciones INCIBE-CERT en curso.</strong> Multas hasta 10M€ o 2% facturación global. <em>Responsabilidad personal del firmante</em> — el órgano de dirección puede ser inhabilitado temporalmente. Cadena de suministro ICT auditable como obligación expresa: el proveedor TIC entra dentro del perímetro auditable del cliente.</div>
+          <div class="frente-tags" style="margin-top:1rem">
+            <span class="tag">10M€ o 2% facturación</span>
+            <span class="tag">Inhabilitación del CEO</span>
+            <span class="tag">Cadena de suministro auditable</span>
+          </div>
+        </div>
+      </div>
+      <div class="frente-item reveal">
+        <div class="frente-num">03</div>
+        <div>
+          <div class="frente-sub">Reseteo Broadcom</div>
+          <div class="frente-title">VMware se le multiplicó por 4-10 al renovar</div>
+        </div>
+        <div>
+          <div class="frente-desc"><strong>Subidas documentadas entre 150% y 1.500%. AT&amp;T denunció 1.050%.</strong> Mínimo 72 cores por CPU desde abril 2025 (vs 16 anteriormente). Fin de licencias perpetuas, bundling forzoso a VCF/VVF. Gartner encuestó a 182 IT Leaders y CIOs en enero 2026: <strong>el 76% se siente negativamente sobre la propiedad de Broadcom</strong> (frente al 33% en 2024 y 64% en 2025). <strong>El 63% persigue activamente alternativas o está acelerando la migración.</strong> Solo el 7% sigue comprometido con VMware. El 35% ya ha migrado o está en proceso de migración completa. Y Gartner lo dice sin rodeos: <em>no existe un reemplazo directo con paridad para VMware</em> — las alternativas no alcanzarán madurez operativa plena hasta dentro de 24 meses. <em>Casi nadie está aterrizando esto comercialmente con criterio.</em></div>
+          <div class="frente-tags" style="margin-top:1rem">
+            <span class="tag">93% buscando alternativa · solo 7% comprometido</span>
+            <span class="tag">35% ya migrando · 21% sin decidir</span>
+            <span class="tag">Hueco competitivo claro 2026</span>
+          </div>
+        </div>
+      </div>
+      <div class="frente-item reveal">
+        <div class="frente-num">04</div>
+        <div>
+          <div class="frente-sub">AIOps</div>
+          <div class="frente-title">El corte de mercado de 2026</div>
+        </div>
+        <div>
+          <div class="frente-desc"><strong>10.000+ alertas/día en empresas medias. Solo el 18% recibe acción.</strong> Sin AIOps, MTTR &gt;30h. AIOps maduro reduce el volumen 80-95% y baja MTTR 30-78%. BT Group: 2h → 85 segundos. Forrester: 274% ROI sobre 3 años, payback &lt;6 meses. CNCF: Kubernetes establecido como OS de facto para IA, 82% uso producción 2025. <em>El 5-10% de top performers ya está delante; el resto en alert fatigue permanente.</em></div>
+          <div class="frente-tags" style="margin-top:1rem">
+            <span class="tag">82% accionado vs 18%</span>
+            <span class="tag">274% ROI · payback &lt;6m</span>
+            <span class="tag">40% Autonomous Obs fin 2026</span>
+          </div>
+        </div>
+      </div>
+      <div class="frente-item reveal">
+        <div class="frente-num">05</div>
+        <div>
+          <div class="frente-sub">Talento</div>
+          <div class="frente-title">Crítico de infra imposible de contratar</div>
+        </div>
+        <div>
+          <div class="frente-desc"><strong>España: 30.000 vacantes ciberseguridad sobre 83.000 empleos totales (~36% del sector vacante).</strong> Eurostat: brecha estructural &gt;10M ICT en UE. CISO el perfil con mayor crecimiento salarial 2026 (+15%, tras +12% en 2025). 71% de organizaciones considera la escasez riesgo directo de negocio. Los partners pequeños tampoco lo encuentran — <em>solo proveedores de cierta escala pueden operar con ese talento</em>.</div>
+          <div class="frente-tags" style="margin-top:1rem">
+            <span class="tag">30K vacantes ciber España</span>
+            <span class="tag">CISO +15% salarial 2026</span>
+            <span class="tag">86% sufrió brecha año anterior</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="prose reveal" style="margin-top:3rem;max-width:760px;font-style:italic;color:var(--timon-2);font-family:var(--f-timon);font-size:1.15rem;line-height:1.6">Cloud desbordado, NIS2 con responsabilidad personal del firmante, factura VMware multiplicada al renovar, AIOps partiendo el mercado y un talento que ni el cliente ni los partners pequeños pueden contratar. Cinco frentes a la vez. <strong style="color:var(--cobre);font-weight:500">Aquí ya no es una conversación técnica.</strong> Es cómo aterrizar todo eso sin que se caiga la operación y sin que el Consejo acabe firmando lo que no debe.</p>
+  </div>
+</section>
+
+<!-- ── PAINS · 23 pains en 6 familias ── -->
+<section id="pains">
+  <div class="container">
+    <div class="label">Mapa de pains</div>
+    <h2 class="reveal">23 pains agrupados<br>en <em>6 familias.</em>.</h2>
+    <p class="prose reveal reveal-delay-1" style="margin-bottom:3rem;max-width:720px">Cada pain lleva cifra con fuente, perfiles a los que les duele y el paquete SmartOPS que lo responde. Tres aparecen también en el mapa-Workplace, aquí con voz infra: NIS2 cadena de suministro, talento ICT, proveedor que no reta.</p>
+
+    <!-- FAMILIA 1 -->
+    <div class="familia-block reveal">
+      <div class="familia-header">
+        <div class="familia-tag">Familia 1</div>
+        <div class="familia-title">Disponibilidad y resiliencia <em>operativa</em></div>
+        <div class="familia-meta">4 pains</div>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">1.1</div>
+            <div class="pain-title">La caída que no se anticipó</div>
+          </div>
+          <div class="pain-headline">"54% de outages cuestan más de $100K, 20% más de $1M"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">Dir. Infra</span><span class="pain-pill who">CIO</span><span class="pain-pill who">CFO</span><span class="pain-pill who">CEO</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">BFSI</span><span class="pain-pill">Retail</span><span class="pain-pill">Manufactura OT</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>Operación 24×7 + AIOps base. Caso 01 pincelada: −40% MTTD.
+            <span class="pain-status mvp">MVP requerido</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">1.2</div>
+            <div class="pain-title">Alert fatigue</div>
+          </div>
+          <div class="pain-headline">"82% de alertas se ignoran — el incidente real está en ese 82%"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">Dir. Infra</span><span class="pain-pill who">CISO</span><span class="pain-pill who">CIO</span><span class="pain-pill who">CHRO</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">BFSI · DORA</span><span class="pain-pill">Telco</span><span class="pain-pill">Salud 24×7</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>Operación 24×7 con AIOps embebido + runbooks automatizados. Del 18% al 70%+ accionable, 5× menos volumen.
+            <span class="pain-status mvp">MVP requerido</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">1.3</div>
+            <div class="pain-title">MTTD/MTTR estancados sin AIOps</div>
+          </div>
+          <div class="pain-headline">"el corte de mercado 2026: con o sin detección anticipada"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CIO</span><span class="pain-pill who">Dir. Infra</span><span class="pain-pill who">CFO</span><span class="pain-pill who">COO</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">E-commerce</span><span class="pain-pill">Banca digital</span><span class="pain-pill">Telco · Streaming</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>Operación 24×7 con AIOps en producción. Caso 01 pincelada como prueba operativa.
+            <span class="pain-status vendible">Ya vendible</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">1.4</div>
+            <div class="pain-title">DR/BCP que no se prueba</div>
+          </div>
+          <div class="pain-headline">"RTO/RPO escritos en 2018, cargas que ya no caben en esa ventana"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CIO</span><span class="pain-pill who">CISO</span><span class="pain-pill who">COO</span><span class="pain-pill who">Compliance</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">BFSI · DORA</span><span class="pain-pill">Salud · Energía</span><span class="pain-pill">AAPP esencial</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>DR gestionado con runbooks probados, asesoría regulatoria NIS2/DORA. Plan probado en producción anualmente.
+            <span class="pain-status vendible">Ya vendible · MVP para TLPT DORA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAMILIA 2 -->
+    <div class="familia-block reveal">
+      <div class="familia-header">
+        <div class="familia-tag">Familia 2</div>
+        <div class="familia-title">Coste cloud <em>descontrolado</em></div>
+        <div class="familia-meta">5 pains · ángulo CFO</div>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">2.1</div>
+            <div class="pain-title">Cloud waste 30%+</div>
+          </div>
+          <div class="pain-headline">"~$182B globales en residuo. Una parte de ellos son los tuyos."</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CFO</span><span class="pain-pill who">CIO</span><span class="pain-pill who">Dir. Infra</span><span class="pain-pill who">Procurement</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">BFSI volumetría alta</span><span class="pain-pill">Tech con AI</span><span class="pain-pill">Retail estacional</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>FinOps embebido. Assessment fixed-price 10 días con M€ recuperables identificados.
+            <span class="pain-status mvp">MVP requerido</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">2.2</div>
+            <div class="pain-title">Multicloud sprawl sin gobierno</div>
+          </div>
+          <div class="pain-headline">"3-4 nubes por organización · 0 catálogos consolidados"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CFO</span><span class="pain-pill who">CIO</span><span class="pain-pill who">CISO</span><span class="pain-pill who">Procurement</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">M&amp;A reciente</span><span class="pain-pill">Multinacionales</span><span class="pain-pill">Proyectos IA</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>Assessment + FinOps multicloud + FOCUS como estándar. Single pane of glass.
+            <span class="pain-status mvp">MVP requerido</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">2.3</div>
+            <div class="pain-title">Reservas mal dimensionadas</div>
+          </div>
+          <div class="pain-headline">"commitment gap 25-60% · el cliente paga doble"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CFO</span><span class="pain-pill who">CIO</span><span class="pain-pill who">Cloud Architect</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">BFSI · Tech</span><span class="pain-pill">Telco</span><span class="pain-pill">Retail e-commerce</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>Commitment management automatizado. Fixed-price discovery + gain-share execution.
+            <span class="pain-status mvp">MVP requerido</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">2.4</div>
+            <div class="pain-title">FinOps como práctica ausente</div>
+          </div>
+          <div class="pain-headline">"60% de organizaciones sin equipo FinOps formal"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CFO</span><span class="pain-pill who">CIO</span><span class="pain-pill who">CHRO</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">Privado mid-cap sin tradición</span><span class="pain-pill">AAPP</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>FinOps as a Service. SmartOPS aporta equipo certificado que el cliente no contrata.
+            <span class="pain-status mvp">MVP requerido</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">2.5</div>
+            <div class="pain-title">Costes IA fuera de business case <span style="font-family:var(--f-const);font-size:.5rem;letter-spacing:.15em;background:var(--cobre);color:var(--arena);padding:.15rem .4rem;border-radius:3px;margin-left:.4rem;vertical-align:middle">v1.1</span></div>
+          </div>
+          <div class="pain-headline">"80% falla forecast IA por 25% · 84% margen erosionado · 67% planea repatriar"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CFO</span><span class="pain-pill who">CIO</span><span class="pain-pill who">Dir. Plataforma IA</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">BFSI risk/fraud</span><span class="pain-pill">Retail personalización</span><span class="pain-pill">Telco · Salud</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>FinOps embebido + módulo AI cost governance. Tracking GPU, repatriación selectiva si aplica.
+            <span class="pain-status mvp">MVP requerido</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAMILIA 3 -->
+    <div class="familia-block reveal">
+      <div class="familia-header">
+        <div class="familia-tag">Familia 3</div>
+        <div class="familia-title">Seguridad operativa y <em>NIS2</em></div>
+        <div class="familia-meta">4 pains · ángulo CISO + Consejo</div>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">3.1</div>
+            <div class="pain-title">NIS2 con responsabilidad personal</div>
+          </div>
+          <div class="pain-headline">"el órgano de dirección que firma puede ser inhabilitado"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">Consejo</span><span class="pain-pill who">CEO</span><span class="pain-pill who">CISO</span><span class="pain-pill who">CIO</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">18 sectores Anexo I/II</span><span class="pain-pill">+50 emp. · &gt;10M€</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>Operación 24×7 bajo NIS2 desde día uno. ISO 20000 + ISO 27001 + ENS + 174 cert. Microsoft. Plazos 24h/72h/30d como procedimiento.
+            <span class="pain-status vendible">Ya vendible · mochila certificada</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">3.2</div>
+            <div class="pain-title">Vulnerability mgmt que no escala</div>
+          </div>
+          <div class="pain-headline">"40.000+ CVEs/año · CSVS solo ya no funciona"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CISO</span><span class="pain-pill who">Dir. Infra</span><span class="pain-pill who">CIO</span><span class="pain-pill who">Compliance</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">BFSI · DORA+NIS2</span><span class="pain-pill">AAPP · ENS</span><span class="pain-pill">Salud · Energía</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>VM contextual: explotabilidad × exposición × criticidad. Caso 02 pincelada: 3× velocidad de remediación.
+            <span class="pain-status vendible">Ya vendible</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">3.3</div>
+            <div class="pain-title">Ransomware ataca al hypervisor</div>
+          </div>
+          <div class="pain-headline">"3% → 25% en H2 2025 · Marks &amp; Spencer $400M+"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CISO</span><span class="pain-pill who">Dir. Infra</span><span class="pain-pill who">CIO</span><span class="pain-pill who">CEO</span><span class="pain-pill who">CFO</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">Retail · M&amp;S/Co-op</span><span class="pain-pill">Salud</span><span class="pain-pill">Cualquiera con ESXi</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>Hypervisor hardening como baseline + AIOps de seguridad sobre management interfaces.
+            <span class="pain-status vendible">Ya vendible · MVP AIOps seguridad</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">3.4</div>
+            <div class="pain-title">IAM cloud sin governance</div>
+          </div>
+          <div class="pain-headline">"87% de identidades sobre-privilegiadas · 99% sufrió incidente identity"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CISO</span><span class="pain-pill who">Dir. Infra</span><span class="pain-pill who">CIO</span><span class="pain-pill who">Compliance</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">BFSI · DORA art.21</span><span class="pain-pill">Migración cloud reciente</span><span class="pain-pill">Retail e-commerce</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>IAM governance con telemetría continua. Least privilege + evidencia auditable bajo NIS2/DORA.
+            <span class="pain-status mvp">MVP requerido · partner cloud</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAMILIA 4 -->
+    <div class="familia-block reveal">
+      <div class="familia-header">
+        <div class="familia-tag">Familia 4</div>
+        <div class="familia-title">Modernización con <em>cargas legacy</em></div>
+        <div class="familia-meta">4 pains · 2026 acumula relojes</div>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">4.1</div>
+            <div class="pain-title">Win Server 2016 EOL + reloj datacenter</div>
+          </div>
+          <div class="pain-headline">"12 enero 2027 · SQL Server 2016 ESU termina julio 2026"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CIO</span><span class="pain-pill who">Dir. Infra</span><span class="pain-pill who">CISO</span><span class="pain-pill who">CFO</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">AAPP · ENS</span><span class="pain-pill">BFSI · DORA</span><span class="pain-pill">Privado tradicional</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>Assessment + Migración Cloud + ESU bridge. Cruce con Workplace Pain 3.1 (Win10 EOL) — paquete combinado.
+            <span class="pain-status vendible">Ya vendible · con partner</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">4.2</div>
+            <div class="pain-title">Crisis Broadcom-VMware</div>
+          </div>
+          <div class="pain-headline">"solo el 7% sigue comprometido con VMware — el 93% busca salida, el 35% ya está migrando"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CFO</span><span class="pain-pill who">CIO</span><span class="pain-pill who">Dir. Infra</span><span class="pain-pill who">Procurement</span><span class="pain-pill who">CISO</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">Todo el mid-market</span><span class="pain-pill">Enterprise con ESXi</span><span class="pain-pill">Edge · sucursales</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>Assessment de capa virtualización · evaluación Nutanix/Hyper-V/Proxmox/OpenShift/repatriación. Gartner confirma que no existe sustituto directo con paridad — las alternativas no maduran hasta 2027-2028. SmartOPS conoce los tres caminos, ha operado los tres, y opera el resultado después. La barrera principal no es técnica: es la resistencia organizacional a cambiar arquitecturas y modelos operativos — exactamente donde entra el modelo gestionado.
+            <span class="pain-status vendible">Ya vendible · diferenciador 2026</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">4.3</div>
+            <div class="pain-title">Datacenter propio envejeciendo</div>
+          </div>
+          <div class="pain-headline">"PUE &gt;1,8 medio · ESG entrando como filtro de compra"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CIO</span><span class="pain-pill who">Dir. Infra</span><span class="pain-pill who">CFO</span><span class="pain-pill who">CHRO/Marketing</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">Privado tradicional</span><span class="pain-pill">Industrial</span><span class="pain-pill">AAPP fuera CNI</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>Assessment con scope ESG · target architecture cloud/colocation/hybrid · KPIs sostenibilidad embebidos en Power BI.
+            <span class="pain-status vendible">Ya vendible · con partner</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">4.4</div>
+            <div class="pain-title">Aplicaciones legacy bloqueando migración</div>
+          </div>
+          <div class="pain-headline">"el 70% del cloud business case se queda en mitad"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CIO</span><span class="pain-pill who">Dir. Infra</span><span class="pain-pill who">CFO</span><span class="pain-pill who">Dueño funcional</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">Banca core legacy</span><span class="pain-pill">Seguros actuariales</span><span class="pain-pill">AAPP · Manufactura</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>Patrón 6R honesto (rehost, replatform, refactor, repurchase, retain, retire). Operación de híbrido. Cruce con Jorge Herrero para apps.
+            <span class="pain-status vendible">Ya vendible · cruce Jorge</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAMILIA 5 -->
+    <div class="familia-block reveal">
+      <div class="familia-header">
+        <div class="familia-tag">Familia 5</div>
+        <div class="familia-title">IA en <em>operaciones</em></div>
+        <div class="familia-meta">3 pains · DORA: la IA es un amplificador</div>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">5.1</div>
+            <div class="pain-title">AIOps prometido, reactivo entregado</div>
+          </div>
+          <div class="pain-headline">"DORA 2025: la IA magnifica fortalezas y debilidades existentes"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CIO</span><span class="pain-pill who">Dir. Infra</span><span class="pain-pill who">CFO</span><span class="pain-pill who">CISO</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">BFSI · risk AI</span><span class="pain-pill">Retail · forecast</span><span class="pain-pill">Telco · NetOps</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>No compras AIOps que pondrás en producción — compras un servicio en producción con AIOps embebido sobre operación madura.
+            <span class="pain-status vendible">Ya vendible · pincelada como prueba</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">5.2</div>
+            <div class="pain-title">Observabilidad fragmentada</div>
+          </div>
+          <div class="pain-headline">"5-10 herramientas sin correlación · CIO sin foto única"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CIO</span><span class="pain-pill who">Dir. Infra</span><span class="pain-pill who">CFO</span><span class="pain-pill who">CISO</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">Post-M&amp;A</span><span class="pain-pill">Multinacionales</span><span class="pain-pill">Sector público</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>Capa de observabilidad consolidada que ingiere lo existente sin forzar reemplazo. Power BI + Data Lake + OTel.
+            <span class="pain-status mvp">MVP requerido</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">5.3</div>
+            <div class="pain-title">Predictive ops como brecha competitiva</div>
+          </div>
+          <div class="pain-headline">"top performers anticipan · los demás reaccionan"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CIO</span><span class="pain-pill who">Dir. Infra</span><span class="pain-pill who">CFO</span><span class="pain-pill who">COO</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">E-commerce</span><span class="pain-pill">Banca digital</span><span class="pain-pill">AAPP 24×7</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>AIOps predictivo desde la base, no como add-on. Reportes mensuales que cuentan también la prevención efectiva, no solamente la resolución.
+            <span class="pain-status mvp">MVP requerido</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAMILIA 6 -->
+    <div class="familia-block reveal">
+      <div class="familia-header">
+        <div class="familia-tag">Familia 6</div>
+        <div class="familia-title">Modelo de proveedor + <em>talento</em></div>
+        <div class="familia-meta">3 pains · cruce con Workplace</div>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">6.1</div>
+            <div class="pain-title">Proveedor que opera pero no transforma</div>
+          </div>
+          <div class="pain-headline">"41% en infra outsourcing: 'mi proveedor no me reta'"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CIO</span><span class="pain-pill who">Dir. Infra</span><span class="pain-pill who">CFO</span><span class="pain-pill who">COO</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">Banca tradicional +5a</span><span class="pain-pill">AAPP concesiones</span><span class="pain-pill">Energía SLAs heredados</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>Toda la propuesta. +100 contratos · +25K elementos · 99,9% disponibilidad · 95%+ tasa de renovación.
+            <span class="pain-status reframe">Reframe transversal</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">6.2</div>
+            <div class="pain-title">Talento cloud/SecOps/FinOps imposible</div>
+          </div>
+          <div class="pain-headline">"el cliente no contrata · los partners pequeños tampoco"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CIO/CISO</span><span class="pain-pill who">CHRO</span><span class="pain-pill who">CFO</span><span class="pain-pill who">Procurement</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">BFSI · DORA+NIS2</span><span class="pain-pill">AAPP concursos desiertos</span><span class="pain-pill">Salud · Sector regulado</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>Externalización del talento crítico. 174 cert. Microsoft + ISO 20000 + ISO 27001 + ENS. Modelo N0-N3 multi-geo (Madrid · Lima · São Paulo · Miami).
+            <span class="pain-status vendible">Ya vendible</span>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-head">
+            <div class="pain-num">6.3</div>
+            <div class="pain-title">Sin partner que sepa navegar el reseteo</div>
+          </div>
+          <div class="pain-headline">"los grandes cobran consultoría, los pequeños no pueden"</div>
+          <div class="pain-row"><span class="pain-row-label">Sufre</span><span class="pain-pill who">CIO</span><span class="pain-pill who">Procurement</span><span class="pain-pill who">CFO</span><span class="pain-pill who">COO</span></div>
+          <div class="pain-row"><span class="pain-row-label">Duele en</span><span class="pain-pill">Mid-market sin equipo interno</span><span class="pain-pill">Entre BFSI top-10 y SMB</span></div>
+          <div class="pain-response">
+            <strong>Responde</strong>Este es el hueco que ocupa SmartOPS. No somos Indra ni Accenture, tampoco boutique. Combinamos los cuatro ángulos.
+            <span class="pain-status reframe">Reframe estratégico</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MÉTRICA ── -->
+<section id="metrica" class="tex-papel">
+  <div class="container metrica-center">
+    <div class="label" style="justify-content:center">La columna vertebral</div>
+    <div class="metrica-big reveal">
+      <span class="from">5</span><span class="arrow">→</span><span class="mid">23</span><span class="arrow">→</span><span class="to">5</span>
+    </div>
+    <p class="metrica-desc reveal">5 fuerzas cayendo a la vez sobre el mismo CIO. 23 pains con su fuente externa. 5 anclas para abrir conversación-Infra con cualquier perfil del comité.</p>
+    <div class="dimensions-row reveal">
+      <div class="dim"><div class="dim-dot"></div><span>5 fuerzas<br>a la vez</span></div>
+      <div class="dim"><div class="dim-dot"></div><span>23 pains<br>documentados</span></div>
+      <div class="dim"><div class="dim-dot"></div><span>9 ya vendibles<br>oferta actual</span></div>
+      <div class="dim"><div class="dim-dot"></div><span>12 MVP<br>workshop interno</span></div>
+      <div class="dim"><div class="dim-dot"></div><span>5 anclas<br>candidatas</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CRUCE ── -->
+<section id="cruce">
+  <div class="container">
+    <div class="label">Cruce pain × paquete SmartOPS for Infra</div>
+    <h2 class="reveal">Lo que vendemos hoy.<br><em>Lo que pide el MVP.</em></h2>
+    <p class="prose reveal reveal-delay-1" style="max-width:720px">23 pains contra los tres paquetes SmartOPS — Operación 24×7, Assessment + Migración Cloud, FinOps embebido.</p>
+
+    <div class="cruce-summary reveal reveal-delay-2">
+      <div class="cruce-bucket">
+        <div class="cruce-bucket-label">Bucket 01</div>
+        <div class="cruce-bucket-num">9</div>
+        <div class="cruce-bucket-title">Ya vendibles<br>con oferta actual</div>
+        <ul class="cruce-bucket-list">
+          <li><strong>1.3</strong> · MTTD/MTTR estancados</li>
+          <li><strong>3.1</strong> · NIS2 responsabilidad personal</li>
+          <li><strong>3.2</strong> · Vulnerability mgmt</li>
+          <li><strong>4.1</strong> · Win Server 2016 EOL</li>
+          <li><strong>4.2</strong> · Crisis Broadcom-VMware</li>
+          <li><strong>4.3</strong> · Datacenter envejeciendo</li>
+          <li><strong>4.4</strong> · Apps legacy bloqueando</li>
+          <li><strong>5.1</strong> · AIOps prometido reactivo</li>
+          <li><strong>6.2</strong> · Talento crítico imposible</li>
+        </ul>
+      </div>
+      <div class="cruce-bucket">
+        <div class="cruce-bucket-label">Bucket 02</div>
+        <div class="cruce-bucket-num">12</div>
+        <div class="cruce-bucket-title">MVP requerido<br>workshop interno</div>
+        <ul class="cruce-bucket-list">
+          <li><strong>1.1</strong> · Caída no anticipada</li>
+          <li><strong>1.2</strong> · Alert fatigue</li>
+          <li><strong>1.4</strong> · DR/BCP no probado</li>
+          <li><strong>2.1</strong> · Cloud waste</li>
+          <li><strong>2.2</strong> · Multicloud sprawl</li>
+          <li><strong>2.3</strong> · Reservas mal dimensionadas</li>
+          <li><strong>2.4</strong> · FinOps ausente</li>
+          <li><strong>2.5</strong> · Costes IA fuera business case</li>
+          <li><strong>3.3</strong> · Ransomware al hypervisor</li>
+          <li><strong>3.4</strong> · IAM cloud sin governance</li>
+          <li><strong>5.2</strong> · Observabilidad fragmentada</li>
+          <li><strong>5.3</strong> · Predictive ops</li>
+        </ul>
+      </div>
+      <div class="cruce-bucket">
+        <div class="cruce-bucket-label">Bucket 03</div>
+        <div class="cruce-bucket-num">2</div>
+        <div class="cruce-bucket-title">Reframe transversal<br>discurso completo</div>
+        <ul class="cruce-bucket-list">
+          <li><strong>6.1</strong> · Proveedor que no reta — toda la oferta es la respuesta</li>
+          <li><strong>6.3</strong> · Sin partner que navegue el reseteo — toda la propuesta</li>
+        </ul>
+        <p style="font-family:var(--f-oper);font-weight:300;font-size:.78rem;color:var(--niebla-cla);line-height:1.55;margin-top:1rem;font-style:italic">No son producto suelto. Son cómo nos colocamos en el mercado.</p>
+      </div>
+    </div>
+
+    <div class="cruce-table-wrap reveal">
+      <table class="cruce-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Pain</th>
+            <th>24×7</th>
+            <th>A+M Cloud</th>
+            <th>FinOps</th>
+            <th>Estado producto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="col-num">1.1</td><td class="col-pain">Caída no anticipada</td><td class="col-tick">✓<em>AIOps base</em></td><td class="col-tick"></td><td class="col-tick"></td><td class="col-status"><span class="estado-pill mvp">MVP · AIOps integrado</span></td></tr>
+          <tr><td class="col-num">1.2</td><td class="col-pain">Alert fatigue</td><td class="col-tick">✓<em>AIOps + runbooks</em></td><td class="col-tick"></td><td class="col-tick"></td><td class="col-status"><span class="estado-pill mvp">MVP requerido</span></td></tr>
+          <tr><td class="col-num">1.3</td><td class="col-pain">MTTD/MTTR estancados</td><td class="col-tick">✓<em>AIOps producción</em></td><td class="col-tick"></td><td class="col-tick"></td><td class="col-status"><span class="estado-pill vendible">Ya vendible · caso 01</span></td></tr>
+          <tr><td class="col-num">1.4</td><td class="col-pain">DR/BCP no probado</td><td class="col-tick">✓<em>DR gestionado</em></td><td class="col-tick"></td><td class="col-tick"></td><td class="col-status"><span class="estado-pill vendible">Vendible · MVP TLPT DORA</span></td></tr>
+          <tr><td class="col-num">2.1</td><td class="col-pain">Cloud waste 30%+</td><td class="col-tick"></td><td class="col-tick">✓<em>assessment</em></td><td class="col-tick">✓<em>FinOps</em></td><td class="col-status"><span class="estado-pill mvp">MVP · FinOps producto</span></td></tr>
+          <tr><td class="col-num">2.2</td><td class="col-pain">Multicloud sprawl</td><td class="col-tick"></td><td class="col-tick">✓<em>Assessment</em></td><td class="col-tick">✓<em>FOCUS</em></td><td class="col-status"><span class="estado-pill mvp">MVP requerido</span></td></tr>
+          <tr><td class="col-num">2.3</td><td class="col-pain">Reservas mal dimensionadas</td><td class="col-tick"></td><td class="col-tick"></td><td class="col-tick">✓<em>Commitment</em></td><td class="col-status"><span class="estado-pill mvp">MVP · autonomous</span></td></tr>
+          <tr><td class="col-num">2.4</td><td class="col-pain">FinOps ausente</td><td class="col-tick"></td><td class="col-tick"></td><td class="col-tick">✓<em>FinOps managed</em></td><td class="col-status"><span class="estado-pill mvp">MVP · FinOps as a Service</span></td></tr>
+          <tr><td class="col-num">2.5</td><td class="col-pain">Costes IA fuera de BC</td><td class="col-tick">✓<em>post-repat.</em></td><td class="col-tick">✓<em>Assess. IA</em></td><td class="col-tick">✓<em>AI cost gov.</em></td><td class="col-status"><span class="estado-pill mvp">MVP · AI cost governance</span></td></tr>
+          <tr><td class="col-num">3.1</td><td class="col-pain">NIS2 responsabilidad personal</td><td class="col-tick">✓<em>Op. NIS2</em></td><td class="col-tick">✓</td><td class="col-tick"></td><td class="col-status"><span class="estado-pill vendible">Vendible · mochila certif.</span></td></tr>
+          <tr><td class="col-num">3.2</td><td class="col-pain">Vulnerability mgmt no escala</td><td class="col-tick">✓<em>VM contextual</em></td><td class="col-tick"></td><td class="col-tick"></td><td class="col-status"><span class="estado-pill vendible">Ya vendible · caso 02</span></td></tr>
+          <tr><td class="col-num">3.3</td><td class="col-pain">Ransomware al hypervisor</td><td class="col-tick">✓<em>Hardening</em></td><td class="col-tick"></td><td class="col-tick"></td><td class="col-status"><span class="estado-pill vendible">Vendible · MVP AIOps sec.</span></td></tr>
+          <tr><td class="col-num">3.4</td><td class="col-pain">IAM cloud sin governance</td><td class="col-tick">✓</td><td class="col-tick">✓<em>partner</em></td><td class="col-tick"></td><td class="col-status"><span class="estado-pill mvp">MVP · partner especialista</span></td></tr>
+          <tr><td class="col-num">4.1</td><td class="col-pain">Win Server 2016 EOL</td><td class="col-tick">✓<em>post-mig.</em></td><td class="col-tick">✓<em>migration</em></td><td class="col-tick"></td><td class="col-status"><span class="estado-pill vendible">Ya vendible · con partner</span></td></tr>
+          <tr><td class="col-num">4.2</td><td class="col-pain">Crisis Broadcom-VMware</td><td class="col-tick">✓<em>post-mig.</em></td><td class="col-tick">✓<em>Assessment</em></td><td class="col-tick"></td><td class="col-status"><span class="estado-pill vendible">Vendible · diferenciador 2026</span></td></tr>
+          <tr><td class="col-num">4.3</td><td class="col-pain">Datacenter envejeciendo</td><td class="col-tick">✓<em>post-mig.</em></td><td class="col-tick">✓<em>ESG</em></td><td class="col-tick">✓</td><td class="col-status"><span class="estado-pill vendible">Ya vendible · con partner</span></td></tr>
+          <tr><td class="col-num">4.4</td><td class="col-pain">Apps legacy bloqueando</td><td class="col-tick">✓<em>híbrido</em></td><td class="col-tick">✓<em>patrón 6R</em></td><td class="col-tick"></td><td class="col-status"><span class="estado-pill vendible">Vendible · cruce Jorge</span></td></tr>
+          <tr><td class="col-num">5.1</td><td class="col-pain">AIOps prometido reactivo</td><td class="col-tick">✓<em>AIOps producción</em></td><td class="col-tick"></td><td class="col-tick"></td><td class="col-status"><span class="estado-pill vendible">Ya vendible · pincelada</span></td></tr>
+          <tr><td class="col-num">5.2</td><td class="col-pain">Observabilidad fragmentada</td><td class="col-tick">✓<em>Power BI</em></td><td class="col-tick"></td><td class="col-tick"></td><td class="col-status"><span class="estado-pill mvp">MVP · OTel + consolidación</span></td></tr>
+          <tr><td class="col-num">5.3</td><td class="col-pain">Predictive ops</td><td class="col-tick">✓<em>AIOps maduro</em></td><td class="col-tick"></td><td class="col-tick"></td><td class="col-status"><span class="estado-pill mvp">MVP · predictive producción</span></td></tr>
+          <tr><td class="col-num">6.1</td><td class="col-pain">Proveedor que no reta</td><td class="col-tick">✓</td><td class="col-tick">✓</td><td class="col-tick">✓</td><td class="col-status"><span class="estado-pill reframe">Reframe · toda la oferta</span></td></tr>
+          <tr><td class="col-num">6.2</td><td class="col-pain">Talento crítico imposible</td><td class="col-tick">✓</td><td class="col-tick">✓</td><td class="col-tick">✓</td><td class="col-status"><span class="estado-pill vendible">Vendible · N0-N3</span></td></tr>
+          <tr><td class="col-num">6.3</td><td class="col-pain">Sin partner que navegue</td><td class="col-tick">✓</td><td class="col-tick">✓</td><td class="col-tick">✓</td><td class="col-status"><span class="estado-pill reframe">Reframe · toda la propuesta</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cruce-lectura reveal">
+      <strong>Lectura del cruce</strong>
+      <ul>
+        <li><b>Assessment + Migración Cloud (vía partner)</b> aparece en 9 pains. Sin esa alianza no podemos prometer respuesta en ninguno — IMPORTANTE cerrar la negociación que Amador tiene ya abierta.</li>
+        <li><b>FinOps embebido</b> responde a 7 pains, todos de Familia 2 (incluido el nuevo 2.5). Creo que justifica subirlo a vertical o submódulo con identidad propia, no solo "embebido". Vinculado a la Pregunta 02.</li>
+        <li><b>AIOps en producción</b> es la pieza que más cruza el mapa: aparece en Familia 1 (1.1, 1.2, 1.3), Familia 5 entera (5.1, 5.2, 5.3) y parcial en 3.3. La pincelada Infra del slide 15 ya lo prueba operativamente — es la prueba comercial más fuerte que tenemos.</li>
+        <li>El <b>Pain 4.2 (Broadcom)</b> es el hueco más claro del año. Casi nadie está dando respuesta comercial seria.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── ANCLAS ── -->
+<section id="anclas">
+  <div class="container">
+    <div class="label">Cinco anclas candidatas · Conversación-Infra</div>
+    <h2 class="reveal">5 aperturas. Distintas<br>de las del <em>mapa-Workplace.</em></h2>
+    <p class="prose reveal reveal-delay-1" style="max-width:720px">De los 23 pains he sacado las 5 aperturas que yo considero más fuertes para una conversación-Infra con un potencial comprador. El criterio tenido en cuenta: dolor cuantificado con fuente externa, palanca temporal con fecha en agenda, y respuesta directa de SmartOPS con números o casos referenciables.</p>
+
+    <div class="ancla-list">
+      <div class="ancla-item reveal">
+        <div class="ancla-num">01</div>
+        <div class="ancla-body">
+          <div class="ancla-tag">Para Consejo · CEO · CIO · CISO</div>
+          <div class="ancla-title">Tres relojes con <em>responsabilidad personal</em> del firmante</div>
+          <div class="ancla-row">
+            <div class="ancla-row-label">El gancho</div>
+            <div class="ancla-row-text"><span class="ancla-gancho">"NIS2 con responsabilidad personal entrando en España, DORA en aplicación si eres financiero, AI Act con high-risk Annex III sobre infraestructura crítica el 2 de agosto. Tres relojes, tres regulaciones, todas con multas de 10M€+ y NIS2 con inhabilitación temporal del CEO entre las sanciones. Tu proveedor TIC entra dentro de tu perímetro auditable. SmartOPS opera bajo NIS2 + DORA + AI Act desde día uno, con ISO 20000 + ISO 27001 + ENS + 174 certificaciones Microsoft como mochila certificada — tu compliance es operativo, no documental."</span></div>
+          </div>
+          <div class="ancla-row">
+            <div class="ancla-row-label">Por qué funciona</div>
+            <div class="ancla-row-text">Distinto del Ancla 1 del mapa-Workplace, donde se cruzan Win10, AI Act y NIS2 sobre puesto. Aquí el ángulo es <strong>infra y responsabilidad personal del firmante</strong>, lo que sube la conversación directamente al Consejo. Las tres regulaciones tienen fecha encima: NIS2 en transposición durante 2026, DORA en aplicación desde enero 2025, AI Act el 2 de agosto. Casi ningún competidor está hablando de las tres a la vez sobre infra.</div>
+          </div>
+          <div class="ancla-row">
+            <div class="ancla-row-label">Lo que aporta</div>
+            <div class="ancla-row-text">Operación 24×7 ya certificada para los tres frentes (ISO 20000 + ISO 27001 + ENS + 174 Microsoft). Cadena de suministro auditable, plazos 24h/72h/30d como procedimiento, evidencia continua sobre Power BI + Data Lake. Y track record real operando bajo ENS para sector público.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ancla-item reveal">
+        <div class="ancla-num">02</div>
+        <div class="ancla-body">
+          <div class="ancla-tag">Para CFO primario · CIO operativo · COO</div>
+          <div class="ancla-title">Cloud waste + AI cost governance · <em>M€ recuperables</em> con horquilla en €</div>
+          <div class="ancla-row">
+            <div class="ancla-row-label">El gancho</div>
+            <div class="ancla-row-text"><span class="ancla-gancho">"Tienes dos huecos abiertos a la vez. El primero: Flexera 2026 documenta que el 29% de tu factura cloud es residuo — primer aumento en cinco años. El segundo: Mavvrik 2026 documenta que el 80% de empresas falla sus forecasts de infraestructura IA por más del 25%, y el 84% ve su margen bruto erosionado por encima del 6%. En tu volumen son X M€/año recuperables. SmartOPS for Infra incluye diagnóstico FinOps fixed-price de 10 días que identifica esa cifra con horquilla en € — cubriendo cloud tradicional y AI workloads. Si después decides operar con nosotros, recuperamos esos M€ — y compartimos el ahorro. Si no, te quedas con el assessment."</span></div>
+          </div>
+          <div class="ancla-row">
+            <div class="ancla-row-label">Por qué funciona</div>
+            <div class="ancla-row-text"><strong>Es la palanca CFO directa que el mapa-Workplace no tiene.</strong> Desde v1.1 abre dos puertas distintas: el cliente que sigue lidiando con cloud tradicional entra por waste; el que ya tiene AI workloads en producción entra por AI cost governance, y esta segunda es la conversación más urgente del año. Las cifras vienen de Flexera (n=753) y Mavvrik. El modelo fixed-price + gain-share pone el riesgo del lado de Guberna.</div>
+          </div>
+          <div class="ancla-row">
+            <div class="ancla-row-label">Lo que aporta</div>
+            <div class="ancla-row-text">Diagnóstico Data Driven de 10 días, fixed-price, con extensión FinOps + módulo AI cost governance específico. <strong>El MVP es lo que hace falta para entregar esto limpio:</strong> tooling FinOps, integración con AWS/Azure/GCP, módulo de tracking GPU/inference, dashboards Power BI con detalle por unit economics. Una de las piezas más urgentes del workshop interno.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ancla-item reveal">
+        <div class="ancla-num">03</div>
+        <div class="ancla-body">
+          <div class="ancla-tag">Para CFO · CIO · Director de Infraestructuras</div>
+          <div class="ancla-title">Crisis post-Broadcom como <em>reseteo</em> del coste de infra</div>
+          <div class="ancla-row">
+            <div class="ancla-row-label">El gancho</div>
+            <div class="ancla-row-text"><span class="ancla-gancho">"Gartner encuestó a 182 IT Leaders y CIOs en enero 2026: solo el 7% sigue comprometido con VMware. El 63% está persiguiendo alternativas activamente. El 35% ya ha migrado o está en proceso. Las renovaciones promedian 3-4 veces los niveles anteriores según Gartner — AT&amp;T denunció el 1.050%, casos típicos del 200-1.500%. Y Gartner dice explícitamente que no existe un sustituto directo con paridad, y que las alternativas no maduran hasta 2027-2028. Hay tres caminos: pagar y renegociar, migrar a Nutanix/Hyper-V/OpenShift, repatriar a hyperscaler. SmartOPS conoce los tres, ha operado los tres, y opera el resultado después. No te vendemos una alternativa única — te vendemos criterio para elegir."</span></div>
+          </div>
+          <div class="ancla-row">
+            <div class="ancla-row-label">Por qué funciona</div>
+            <div class="ancla-row-text"><strong>Pain agudo con fecha en agenda y datos Gartner detrás.</strong> El 76% de los CIOs se siente negativamente sobre Broadcom — y ese sentimiento lleva dos años empeorando (33% en 2024, 64% en 2025, 76% en 2026). Apenas hay quien esté aterrizando esto comercialmente — los grandes integradores cobran consultoría premium, los pequeños recomiendan lo único que conocen. El cliente se queda solo con la decisión más compleja: elegir entre tres caminos sin sustituto directo y con el reloj del contrato corriendo. Gartner señala que la principal barrera no es técnica — es la resistencia organizacional a cambiar arquitecturas y modelos operativos. Ahí es exactamente donde un modelo gestionado tiene ventaja sobre un integrador puntual. Cruce directo con Pain 6.3 (sin partner que navegue el reseteo).</div>
+          </div>
+          <div class="ancla-row">
+            <div class="ancla-row-label">Lo que aporta</div>
+            <div class="ancla-row-text">Assessment + Migración Cloud (vía partner) con scope ampliado a capa virtualización: estado actual, costes previstos de renovación, alternativas con horquillas TCO, plan de migración. Operación 24×7 sobre el entorno nuevo cierra el ciclo dentro de la propuesta. <strong>El partner cloud que Amador tiene en negociación encaja en este ancla.</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ancla-item reveal">
+        <div class="ancla-num">04</div>
+        <div class="ancla-body">
+          <div class="ancla-tag">Para CIO · Director de Infraestructuras · CISO</div>
+          <div class="ancla-title">AIOps en producción · <em>no en demo</em></div>
+          <div class="ancla-row">
+            <div class="ancla-row-label">El gancho</div>
+            <div class="ancla-row-text"><span class="ancla-gancho">"El 95% de los proyectos AI no entrega retorno medible — MIT NANDA aplicado a operaciones es exactamente el patrón AIOps que ves en tu mercado. Demo bonita, piloto, integración compleja, modelo black-box, runbooks no integrados, SREs validando manualmente. SmartOPS opera con AIOps en producción: detección de anomalías que reduce MTTD un 40%, priorización contextual de vulnerabilidades 3× más rápida, copilot en code que reduce review 30%. Casos en clientes con cifras verificables, no piloto eterno."</span></div>
+          </div>
+          <div class="ancla-row">
+            <div class="ancla-row-label">Por qué funciona</div>
+            <div class="ancla-row-text">Replica el reframe del Ancla 3 mapa-Workplace (Shadow AI + SmartHelp en producción 2018) aplicado a operaciones. <strong>El paralelo MIT NANDA hace la conversación inmediata</strong> — el comprador de infra sabe que su mercado está saturado de demos sin producción. La pincelada Infra del slide 15 es la prueba comercial.</div>
+          </div>
+          <div class="ancla-row">
+            <div class="ancla-row-label">Lo que aporta</div>
+            <div class="ancla-row-text">Los <strong>tres casos de la pincelada Infra</strong> aterrizados como práctica continua: logs y observabilidad (−40% MTTD), seguridad y vulnerabilidades (3× velocidad de remediación), code &amp; DevOps (−30% revisión). MVP a expandir: predictive ops, self-healing automation, observability consolidation con OTel.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ancla-item reveal">
+        <div class="ancla-num">05</div>
+        <div class="ancla-body">
+          <div class="ancla-tag">Para CFO · CIO · Procurement</div>
+          <div class="ancla-title">Del cuerpo al modelo gestionado · <em>95% renovación</em> como prueba</div>
+          <div class="ancla-row">
+            <div class="ancla-row-label">El gancho</div>
+            <div class="ancla-row-text"><span class="ancla-gancho">"Pagas a 20 admins L2 que en 2018 tenían sentido. Hoy un servicio gestionado con AIOps + runbooks automatizados + commitment FinOps entrega más con menos. SmartOPS for Infra opera con +100 contratos, +25K elementos gestionados, 99,9% disponibilidad, 95%+ tasa de renovación año tras año. La tasa de renovación es la única métrica de marketing que no se puede falsear — porque la decide el cliente, no el proveedor."</span></div>
+          </div>
+          <div class="ancla-row">
+            <div class="ancla-row-label">Por qué funciona</div>
+            <div class="ancla-row-text">Variante infra del Ancla 5 mapa-Workplace, con foco en operación 24×7. La <strong>95%+ renovación</strong> es la única métrica que ningún competidor puede falsear: la decide el cliente. El 41% que en el estudio Whitelane dice "mi proveedor de infra no me reta" tiene la conversación abierta. Aquí coinciden dos enemigos: el modelo de cuerpo a tarifa fija que ya no aguanta, y la presión regulatoria y competitiva a la vez.</div>
+          </div>
+          <div class="ancla-row">
+            <div class="ancla-row-label">Lo que aporta</div>
+            <div class="ancla-row-text">Toda la arquitectura del paquete, con horquillas todavía a definir con Amador para Operación 24×7 — pendientes del cierre de estructura de costes interna. Las referencias sí son verificables: +100 contratos, +25K elementos, 99,9%, 95%+ renovación. Falta un caso bandera con números detallados, sector financiero como candidato — todavía hay que identificarlo y conseguir autorización para publicar.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PREGUNTAS ── -->
+<section id="preguntas">
+  <div class="container">
+    <div class="label">Cuatro decisiones abiertas</div>
+    <h2 class="reveal">4 preguntas a responder</h2>
+    <p class="prose reveal reveal-delay-1" style="max-width:720px">En un workshop específico con roles críticos identificados (por Amador) y antes de construir la versión definitiva de la presentación-Infra.</p>
+    <div class="preguntas-list">
+      <div class="pregunta reveal">
+        <div>
+          <div class="pregunta-label">Pregunta 01</div>
+          <div class="pregunta-q">¿Tres anclas o cinco<br>en la <em>presentación-Infra final?</em></div>
+        </div>
+        <div class="pregunta-body">
+          <p>Las 5 aguantan. <strong>Mi inclinación: empezar con 3</strong> — Ancla 1 (NIS2/DORA/AI Act) + Ancla 3 (Broadcom) + Ancla 4 (AIOps en producción) — y dejar Ancla 2 (Cloud waste) y Ancla 5 (modelo gestionado) como secundarias según interlocutor.</p>
+          <p>Diferencia con el mapa-Workplace: el ancla número 1 aquí es <em>regulatoria</em> (responsabilidad personal del firmante), no técnica (Win10). </p>
+        </div>
+      </div>
+      <div class="pregunta reveal">
+        <div>
+          <div class="pregunta-label">Pregunta 02</div>
+          <div class="pregunta-q">¿Subimos FinOps de "embebido"<br>a <em>vertical con identidad propia?</em></div>
+        </div>
+        <div class="pregunta-body">
+          <p>El cruce muestra que FinOps cubre 7 de los 23 pains, todos en la Familia 2. Hoy lo tratamos como módulo dentro de Operación 24×7.</p>
+          <p><strong>Mi inclinación: subirlo a "FinOps as a Service"</strong> con identidad propia y entrada standalone (assessment fixed-price de 10 días). Ventaja: abre conversación directa con el CFO sin pasar por el CIO. Coste: complica la arquitectura mental de la oferta. ¿Cómo lo veis?</p>
+        </div>
+      </div>
+      <div class="pregunta reveal">
+        <div>
+          <div class="pregunta-label">Pregunta 03</div>
+          <div class="pregunta-q">¿Cómo posicionamos los pains<br><em>"MVP requerido"</em> mientras el MVP no existe?</div>
+        </div>
+        <div class="pregunta-body">
+          <p>En primer lugar, hay que verificar que los cruces que yo he realizado entre cosas que ya se pueden dar y que no es correcto. Y despues, decidir que hacemos con lo pendiente. Tres opciones: <strong>(a)</strong> hablar del to-be honestamente como hoja de ruta a 2-3 meses; <strong>(b)</strong> limitar la presentación a los 9 pains "ya vendibles" hasta que el MVP esté armado; <strong>(c)</strong> posicionar SmartOPS for Infra como marco con plan de despliegue por fases del cliente, anclando con la pincelada Infra del slide 15 como prueba operativa.</p>
+          <p><strong>Mi inclinación: para mí (c)</strong> sería la respuesta, pero requiere vuestra opinión y validación, y depende tambien del roadmap real del producto.</p>
+        </div>
+      </div>
+      <div class="pregunta reveal">
+        <div>
+          <div class="pregunta-label">Pregunta 04</div>
+          <div class="pregunta-q">¿La presentación-Infra será deck independiente<br>o <em>expansión del Acto 4</em> de la anterior?</div>
+        </div>
+        <div class="pregunta-body">
+          <p>La presentación cliente v1 ya incluye la pincelada Infra (slide 15). Tres opciones: <strong>(a)</strong> deck Infra independiente de 25-30 slides con estructura de cinco actos pero anclas y casos infra; <strong>(b)</strong> expansión del Acto 4 con los 8-10 pains más fuertes infra, manteniendo un solo deck unificado; <strong>(c)</strong> versión modular — presentación maestra con módulos intercambiables Workplace/Infra según cliente.</p>
+          <p><strong>Mi inclinación: (a)</strong> por separación clara cliente-vertical, pero con cuidado de mantener el motor SmartOPS coherente. Pendiente de decidir con Amador.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section id="cta">
+  <div class="container">
+    <div class="label">Próximo paso</div>
+    <h2 class="cta-title reveal">El territorio Infra<br><em>ya está mapeado.</em></h2>
+    <p class="cta-sub reveal">Falta cerrar las 4 preguntas. Después llevamos el material al workshop para recoger feedback y armamos la presentación-Infra.</p>
+    <div class="next-steps reveal">
+      <div class="next-step">
+        <div class="next-step-n">01 ·</div>
+        <div class="next-step-text"><strong>Cerrar P1-P4.</strong> Tres anclas o cinco. FinOps embebido o vertical. Cómo posicionar los 12 MVP. Deck independiente o expansión.</div>
+      </div>
+      <div class="next-step">
+        <div class="next-step-n">02 ·</div>
+        <div class="next-step-text"><strong>Workshop interno.</strong> Validación de pains identificados y trasladar los "MVP requerido" a lista de requisitos funcionales del producto a armar.</div>
+      </div>
+      <div class="next-step">
+        <div class="next-step-n">03 ·</div>
+        <div class="next-step-text"><strong>Generar presentación-Infra hermana.</strong> Publicación en <code style="font-family:var(--f-const);font-size:.7rem;color:var(--cobre-cla)">/digital-workplace/mapa-pains-infra.html</code> .</div>
+      </div>
+    </div>
+    <a class="cta-contact reveal" href="mailto:susana@guberna.es">susana@guberna.es</a>
+    <div class="footer-line reveal">
+      <div class="footer-brand">Guberna<em>.</em></div>
+      <div class="footer-copy">Documento de trabajo · SmartOPS for Infra · v1 · Mayo 2026</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx=0, my=0, rx=0, ry=0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  (function anim() {
+    cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+    rx += (mx - rx) * .12; ry += (my - ry) * .12;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(anim);
+  })();
+  document.querySelectorAll('a, .col-card, .frente-item, .pain-card, .ancla-item, .pregunta, .cruce-bucket').forEach(el => {
+    el.addEventListener('mouseenter', () => { ring.style.width = '44px'; ring.style.height = '44px'; ring.style.opacity = '.6'; });
+    el.addEventListener('mouseleave', () => { ring.style.width = '30px'; ring.style.height = '30px'; ring.style.opacity = '1'; });
+  });
+
+  // Reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+
+  // Fallback: si después de 1s algo sigue invisible, lo mostramos
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(r => r.classList.add('visible'));
+  }, 1000);
+
+  // Side dots
+  const sections = ['hero','situacion','fuerzas','pains','metrica','cruce','anclas','preguntas','cta'];
+  const dots = document.querySelectorAll('.side-dot');
+  dots.forEach((d, i) => d.addEventListener('click', () => document.getElementById(sections[i]).scrollIntoView({ behavior: 'smooth' })));
+  const sels = sections.map(id => document.getElementById(id));
+  const dObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const idx = sels.indexOf(e.target);
+        dots.forEach(d => d.classList.remove('active'));
+        if (idx >= 0) dots[idx].classList.add('active');
+      }
+    });
+  }, { threshold: .4 });
+  sels.forEach(s => s && dObs.observe(s));
+</script>
+<div id="hipatia-volver"><button type="button" aria-label="Volver a Hipatia">← Volver a Hipatia</button></div>
+<style>
+#hipatia-volver{position:fixed;top:14px;left:14px;z-index:2147483000;font:500 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+#hipatia-volver button{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid #E6E8EA;background:#fff;color:#041C2C;cursor:pointer;box-shadow:0 1px 3px rgba(4,28,44,.10);font:inherit;transition:color .15s,border-color .15s}
+#hipatia-volver button:hover{color:#FE5000;border-color:#FE5000}
+#hipatia-volver button:focus-visible{outline:2px solid #FE5000;outline-offset:2px}
+@media print{#hipatia-volver{display:none !important}}
+</style>
+<script>
+(function(){
+  var PORTAL="https://hipatia-v4.guberna.es/";
+  function volver(){
+    // si el portal abrió esta pestaña, cerrarla lo devuelve tal como estaba
+    try{ if(window.opener && !window.opener.closed){ window.close(); return; } }catch(e){}
+    location.href=PORTAL;
+  }
+  var b=document.getElementById('hipatia-volver');
+  if(b) b.firstChild.addEventListener('click',volver);
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape'||e.defaultPrevented) return;
+    if(document.fullscreenElement) return;                 // Escape sale de pantalla completa
+    var a=document.activeElement;
+    if(a&&(a.tagName==='INPUT'||a.tagName==='TEXTAREA'||a.isContentEditable)) return;
+    volver();
+  });
+})();
+</script></body>
+</html>
