@@ -49,9 +49,9 @@
     "¿Cuánto valor se queda encima de la mesa mientras la adopción no llega?"
   ],
   "primer_avance": {
-    "titulo": "Diagnóstico de madurez en IA",
-    "plazo": "~25 min por persona",
-    "nota": "Madurez por persona y por área, mapa de calor de resistencia e impulso y línea base para medir lo que venga. El alcance se cierra en una sesión de descubrimiento. Sin precio ni plazo del arranque hasta que Alfredo fije la puerta de entrada."
+    "titulo": "Un diagnóstico de entrada distinto en cada solución",
+    "plazo": "de 20 minutos a un proyecto corto",
+    "nota": "No es el mismo diagnóstico ni se venden juntos. IAbility entra por un readiness de madurez en IA: un formulario en plataforma, unos 20 minutos por persona, con nivel de 1 a 4 por persona, departamento y organización. La Oficina de Gobernanza Humana entra por un diagnóstico de gobernanza dimensionado para caber en un contrato menor de administración pública, y deja el borrador de la política de uso aceptable y el diseño del plan de alfabetización. PreservIA entra por un focus group con el equipo directivo para separar el conocimiento estratégico del resto."
   },
   "soluciones": [
     {
@@ -211,17 +211,25 @@
       ],
       "materiales": [
         "iability-onepager",
-        "iability-ficha"
+        "iability-ficha",
+        "dc-iability-landing",
+        "dc-iability-calculadora",
+        "dc-iability-podcast-youtube",
+        "dc-iability-podcast-spotify",
+        "dc-iability-teaser-es",
+        "dc-iability-teaser-en",
+        "dc-iability-trailer-es",
+        "dc-iability-trailer-en"
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Lectura de Alfredo: puerta de entrada del área, permiso escrito de Admiral y Bahía de Bizkaia, una cifra de uso en la sombra con fuente, 151/15/9 o 150/9, «Oficina de Gobierno» → «Gobernanza Humana» en su ficha.",
+        "texto": "Lectura de Alfredo: permiso escrito de Bahía de Bizkaia, una cifra de uso en la sombra con fuente, 151/15/9 o 150/9, «Oficina de Gobierno» → «Gobernanza Humana» en su ficha.",
         "dueno": "Alfredo",
         "fecha_objetivo": "sept 2026"
       },
       "contactos": {
         "comercial": "alfredo-zurdo",
-        "tecnico": null
+        "tecnico": "vanesa-vaquero"
       }
     },
     {
@@ -368,7 +376,9 @@
       "materiales": [
         "preservia-privado",
         "preservia-publico",
-        "preservia-ficha"
+        "preservia-ficha",
+        "dc-preservia-demo",
+        "dc-preservia-caso-financiero"
       ],
       "acreditacion": [],
       "pendiente": {
@@ -378,7 +388,7 @@
       },
       "contactos": {
         "comercial": "alfredo-zurdo",
-        "tecnico": null
+        "tecnico": "dolores-santayana"
       }
     },
     {

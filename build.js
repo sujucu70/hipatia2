@@ -285,10 +285,17 @@ function sectionHead(eyebrow, h2, nota) {
 // Todo enlace que sale hacia un material abre en pestaña nueva: el portal se queda detrás y
 // cerrar la pestaña devuelve al sitio exacto desde el que se abrió.
 const NUEVA_PESTANA = 'target="_blank" rel="noopener"';
+// Los materiales HTML llevan dentro su barra «← Volver a Hipatia», así que se
+// abren en la misma pestaña: volver devuelve al listado exacto, con su scroll y
+// sus filtros. Lo que se descarga (PDF, PPT, Word) y el autodiagnóstico no
+// llevan barra, así que esos sí abren en pestaña nueva.
+function abrirEn(url) {
+  return /^\/archivos\/.*\.html$/i.test(url || "") ? "" : NUEVA_PESTANA;
+}
 
 function materialLink(m) {
   if (!m) return "";
-  if (m.url_documento) return `<a class="btn" href="${esc(m.url_documento)}" ${NUEVA_PESTANA}>Abrir en pantalla ↗</a>`;
+  if (m.url_documento) return `<a class="btn" href="${esc(m.url_documento)}" ${abrirEn(m.url_documento)}>Abrir en pantalla ↗</a>`;
   // una referencia sin documento es autocontenida (su texto citable es el entregable), no un enlace por llegar
   if (m.tipo === "Referencia") return `<span class="chip">sin documento aparte</span>`;
   return `<span class="chip">enlace pendiente</span>`;
@@ -308,7 +315,7 @@ function llevatelo(m) {
     return correo ? `<a class="text-link" href="mailto:${esc(correo)}">pídeselo a ${quien}</a>` : `pídeselo a ${quien}`;
   };
   const fila = (uso, accion, nota) => `<div class="llev-fila"><span class="llev-uso">${esc(uso)}</span><span class="llev-accion">${accion}</span></div>${nota ? `<p class="footer-note llev-nota">${esc(nota)}</p>` : ""}`;
-  const presentar = m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}" ${NUEVA_PESTANA}>Abrir en pantalla ↗</a>` : `<span class="footer-note">enlace pendiente</span>`;
+  const presentar = m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}" ${abrirEn(m.url_documento)}>Abrir en pantalla ↗</a>` : `<span class="footer-note">enlace pendiente</span>`;
   const pdf = byFmt.pdf;
   const adap = byFmt.pptx || byFmt.docx || byFmt.xlsx;
   return `<div class="llevatelo"><p class="eyebrow">Llévatelo</p>
@@ -763,7 +770,7 @@ function portadaPage(corp, practicas) {
       <p style="margin-top:var(--space-3)"><a class="text-link" href="/practicas/${esc(pr.id)}/">Ver la práctica →</a></p>
     </article>`;
     const enlace = m.url_documento
-      ? `<a class="text-link" href="${esc(m.url_documento)}" ${NUEVA_PESTANA}>Abrir en pantalla ↗</a>${descargasMini(m)}`
+      ? `<a class="text-link" href="${esc(m.url_documento)}" ${abrirEn(m.url_documento)}>Abrir en pantalla ↗</a>${descargasMini(m)}`
       : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`;
     return `<article class="${cls}">
       <p class="eyebrow">${m.practica === "corporativo" ? esc(eyebrowTipo(m)) : esc(eyebrowTipo(m)) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
@@ -866,7 +873,7 @@ function entelgyPage(corp, practicas) {
     <p class="eyebrow">${esc(eyebrowTipo(m))}</p>
     <h3 style="font-size:28px;margin:10px 0 8px"><a style="text-decoration:none;color:#fff" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
     <p style="max-width:44ch">${esc(m.nota_de_uso || "")}</p>
-    <div class="ed-mat-foot"><div class="chips">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}</div>${m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}" ${NUEVA_PESTANA}>Abrir en pantalla ↗</a>${descargasMini(m)}` : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`}</div>
+    <div class="ed-mat-foot"><div class="chips">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}</div>${m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}" ${abrirEn(m.url_documento)}>Abrir en pantalla ↗</a>${descargasMini(m)}` : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`}</div>
   </article>`;
   const matCards = (mat.ids || []).map((id, i) => MAT[id] ? (i === 0 ? deckFeat(MAT[id]) : materialCard(MAT[id])) : "").join("");
   const material = (mat.ids && mat.ids.length) ? `<section class="section" id="material">

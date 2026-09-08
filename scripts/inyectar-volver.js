@@ -36,8 +36,10 @@ const BARRA = `<div id="hipatia-volver"><button type="button" aria-label="Volver
 (function(){
   var PORTAL=${JSON.stringify(PORTAL)};
   function volver(){
-    // si el portal abrió esta pestaña, cerrarla lo devuelve tal como estaba
-    try{ if(window.opener && !window.opener.closed){ window.close(); return; } }catch(e){}
+    // el material se abre en la misma pestaña, así que hay historial: volver
+    // atrás devuelve al listado exacto, con su scroll y sus filtros. Si alguien
+    // llegó por la URL directa no hay historial y se va a la portada.
+    if(history.length>1){ history.back(); return; }
     location.href=PORTAL;
   }
   var b=document.getElementById('hipatia-volver');
