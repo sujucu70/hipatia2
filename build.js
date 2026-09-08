@@ -210,6 +210,9 @@ function datosContacto(p) {
   if (p.correo) l.push(`<a class="text-link" href="mailto:${esc(p.correo)}">${esc(p.correo)}</a>`);
   if (p.telefono) l.push(`<a class="text-link" href="tel:${esc(p.telefono.replace(/\s+/g, ""))}">${esc(p.telefono)}</a>`);
   if (p.teams) l.push(`<a class="text-link" href="${esc(p.teams)}">Teams</a>`);
+  // Alfredo (8-sep): su equipo publica en LinkedIn y los comerciales lo reparten;
+  // tener el perfil a mano es una herramienta de venta más
+  if (p.linkedin) l.push(`<a class="text-link" href="${esc(p.linkedin)}" ${NUEVA_PESTANA}>LinkedIn</a>`);
   return l;
 }
 // «Lo que lleva» de una persona, generado desde los datos de prácticas y soluciones.
@@ -486,6 +489,15 @@ function solucionPage(pr, s) {
     prep += `<h4>El pitch, según quién tienes delante</h4>${kit.pitch_nota ? `<p class="footer-note">${esc(kit.pitch_nota)}</p>` : ""}<ul>` +
       kit.pitch_por_rol.map((r) => `<li><b>${esc(r.rol)}</b> — «${esc(r.pregunta)}» · le mueve: <i>${esc(r.le_mueve)}</i></li>`).join("") + `</ul>`;
   }
+  // Planes y precios de entrada (Alfredo, 8-sep): precio público en los paquetes
+  // de entrada, no en los servicios grandes. Vive en «Para prepararte», que es
+  // material interno: no se enseña en pantalla al cliente.
+  if (kit.planes && kit.planes.filas && kit.planes.filas.length) {
+    prep += `<h4>Planes y precios</h4>${kit.planes.nota ? `<p class="footer-note">${esc(kit.planes.nota)}</p>` : ""}
+      <div class="planes"><div class="planes-cab"><span>Plan</span><span>Precio</span><span>Alcance</span><span>Qué incluye</span></div>` +
+      kit.planes.filas.map((f) => `<div class="planes-fila"><span><b>${esc(f.plan)}</b></span><span>${esc(f.precio)}</span><span>${esc(f.alcance)}</span><span>${esc(f.incluye || "")}</span></div>`).join("") +
+      `</div>${kit.planes.pie ? `<p class="footer-note">${esc(kit.planes.pie)}</p>` : ""}`;
+  }
   if (kit.objeciones && kit.objeciones.length) {
     prep += `<h4>Objeciones</h4><ul>` + kit.objeciones.map((o) => `<li><b>«${esc(o.texto)}»</b><br>${esc(o.respuesta)}</li>`).join("") + `</ul>`;
   }
@@ -513,25 +525,34 @@ function solucionPage(pr, s) {
     <details class="fold"><summary>Para prepararte</summary><div class="fold-body">${prep}${dossierCta}</div></details>
   </div></section>`;
 
-  // 5b · Recursos: enlaces sueltos en una línea, agrupados por lo que son.
+  // 5b · Recursos: vídeos, podcast, calculadora y enlaces del área. Van al final
+  // y con menos peso que el material, pero con lo que de verdad ayuda a elegir:
+  // para qué sirve cada uno, que hasta ahora vivía escondido en un tooltip.
   if (recursos.length) {
-    const ETIQUETA = { "Vídeo": "Vídeos", "Podcast": "Podcast", "Calculadora": "Herramientas", "Enlace corto": "Enlaces" };
-    const grupos = [];
-    recursos.forEach((r) => {
-      const k = ETIQUETA[r.subtipo] || r.subtipo || "Enlaces";
-      let g = grupos.find((x) => x[0] === k);
-      if (!g) { g = [k, []]; grupos.push(g); }
-      g[1].push(r);
-    });
-    // en la página de la solución sobra repetir su nombre en cada enlace
-    const corto = (t) => t.replace(/^[^·]+·\s*/, "");
-    const filas = grupos.map(([k, items]) => `<div class="rec-fila"><span class="rec-t">${esc(k)}</span><span class="rec-l">${
-      items.map((r) => `<a class="text-link" href="${esc(r.url_documento)}" ${NUEVA_PESTANA}${r.nota_de_uso ? ` title="${esc(r.nota_de_uso)}"` : ""}>${esc(corto(r.titulo))}</a>${r.sale_al_cliente === "no" ? ` <span class="chip">interna</span>` : ""}`).join('<span class="rec-sep">·</span>')
-    }</span></div>`).join("");
-    const avisos = recursos.filter((r) => r.aviso).map((r) => `<p class="footer-note" style="margin-top:var(--space-2)">${esc(r.aviso)}</p>`).join("");
+    const ICONO = {
+      "Vídeo": '<polygon points="6 3 20 12 6 21 6 3"/>',
+      "Podcast": '<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/>',
+      "Calculadora": '<rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8"/><path d="M8 11h.01"/><path d="M12 11h.01"/><path d="M16 11h.01"/><path d="M8 15h.01"/><path d="M12 15h.01"/><path d="M16 15v3"/>',
+      "Enlace corto": '<path d="M7 17 17 7"/><path d="M8 7h9v9"/>'
+    };
+    const svg = (sub) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONO[sub] || ICONO["Enlace corto"]}</svg>`;
+    // en la página de su solución sobra repetir el nombre de la solución, y el
+    // idioma se lee mejor como etiqueta que dentro del título
+    const idioma = (t) => (/\(español\)/i.test(t) ? "ES" : /\(inglés\)/i.test(t) ? "EN" : null);
+    // sin forzar mayúscula: hay títulos que son un dominio (iability.ai)
+    const corto = (t) => t.replace(/^[^·]+·\s*/, "").replace(/\s*\((español|inglés)\)/i, "").trim();
+    const tarjetas = recursos.map((r) => `<a class="rec-card" href="${esc(r.url_documento)}" ${NUEVA_PESTANA}>
+      <span class="rec-ico">${svg(r.subtipo)}</span>
+      <span class="rec-txt">
+        <span class="rec-tit">${esc(corto(r.titulo))}${idioma(r.titulo) ? ` <span class="rec-idioma">${idioma(r.titulo)}</span>` : ""}${r.sale_al_cliente === "no" ? ` <span class="rec-int">interna</span>` : ""}</span>
+        ${r.nota_de_uso ? `<span class="rec-para">${esc(r.nota_de_uso)}</span>` : ""}
+      </span>
+    </a>`).join("");
+    const avisos = recursos.filter((r) => r.aviso).map((r) => `<p class="footer-note" style="margin-top:var(--space-3)">${esc(r.aviso)}</p>`).join("");
     body += `<section class="section"><div class="wrap">
       <p class="eyebrow">Recursos</p>
-      <div class="recursos">${filas}</div>${avisos}
+      <h2 style="font-size:var(--font-size-xl);margin:var(--space-2) 0 var(--space-4)">Para tener a mano</h2>
+      <div class="rec-grid">${tarjetas}</div>${avisos}
     </div></section>`;
   }
 

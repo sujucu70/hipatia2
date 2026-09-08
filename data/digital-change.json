@@ -50,8 +50,8 @@
   ],
   "primer_avance": {
     "titulo": "Un diagnóstico de entrada distinto en cada solución",
-    "plazo": "de 20 minutos a un proyecto corto",
-    "nota": "No es el mismo diagnóstico ni se venden juntos. IAbility entra por un readiness de madurez en IA: un formulario en plataforma, unos 20 minutos por persona, con nivel de 1 a 4 por persona, departamento y organización. La Oficina de Gobernanza Humana entra por un diagnóstico de gobernanza dimensionado para caber en un contrato menor de administración pública, y deja el borrador de la política de uso aceptable y el diseño del plan de alfabetización. PreservIA entra por un focus group con el equipo directivo para separar el conocimiento estratégico del resto."
+    "plazo": "de 20 minutos a un piloto de dos meses",
+    "nota": "No es el mismo diagnóstico ni se venden juntos. IAbility entra por un readiness de madurez —formulario en plataforma, unos 20 minutos por persona, con nivel de 1 a 4 por persona, departamento y organización—; el primer paquete de pago es el piloto Explorer: 5.000 €, 10 usuarios, un mes. PreservIA entra por su piloto Explorer completo: 14.900 €, un mes de montaje y otro de uso activo, un perfil experto y hasta 30 usuarios; el focus group con dirección es su primera fase, no un servicio aparte. La Oficina de Gobernanza Humana entra por un diagnóstico de gobernanza de menos de un mes —vacíos de decisión, situación frente al AI Act, inventario de usos en dos workshops y kit mínimo de política y roles— y su arranque son 3-4 meses a precio cerrado."
   },
   "soluciones": [
     {
@@ -177,7 +177,37 @@
           "digital-change-legacy-competition"
         ],
         "material_interno_nota": "Competencia real en España, Kymatio y Tier8 (no KnowBe4); Indra como «proyecto de horas»; TFWM solo en América; IAbility Secure fuera; no se sale con el conflicto Tier8–TFWM.",
-        "dossier_imprimible": true
+        "dossier_imprimible": true,
+        "planes": {
+          "nota": "Precios internos: se dicen, no se enseñan en pantalla. IVA no incluido y sujetos a configuración final. Fuente: IAbility · Negocio (Alfredo, sep-2026), slide de inversión.",
+          "filas": [
+            {
+              "plan": "Freemium",
+              "precio": "0 €",
+              "alcance": "hasta 5 usuarios · 2 semanas",
+              "incluye": "Evaluación 1+5 usuarios · Skills módulos 0-1 · 1 portal de concienciación"
+            },
+            {
+              "plan": "Explorer",
+              "precio": "5.000 €",
+              "alcance": "10 usuarios · 1 mes",
+              "incluye": "Evaluación 10 usuarios · Skills completas (7+1) · 4 portales temáticos · 1 Lab completo de 5 talleres"
+            },
+            {
+              "plan": "Growth",
+              "precio": "desde 11.400 €",
+              "alcance": "15–2.000 usuarios · 3-6 meses",
+              "incluye": "Explorer + plan a medida · webinars · Labs configurables"
+            },
+            {
+              "plan": "Corporate",
+              "precio": "a configurar",
+              "alcance": "6-12 meses",
+              "incluye": "Growth + personalización avanzada · IAbility Help incluido · soporte multiidioma"
+            }
+          ],
+          "pie": "El programa completo dura cinco meses: Evaluar (1) · Formar (2-3) · Concienciar (4) · Adoptar (5). IAbility Help solo entra en Corporate."
+        }
       },
       "keynotes": [
         {
@@ -348,7 +378,31 @@
           "digital-change-legacy-preview"
         ],
         "material_interno_nota": "PreservIA no es marca registrada (no lleva ®); WalkMe no compara; «Senior IT → Senior ID» como ángulo de sector público para otoño.",
-        "dossier_imprimible": true
+        "dossier_imprimible": true,
+        "planes": {
+          "nota": "Precios internos: se dicen, no se enseñan en pantalla. IVA no incluido. Fuente: PreservIA · Negocio genérica (Alfredo, sep-2026), slides de planes y oferta.",
+          "filas": [
+            {
+              "plan": "Piloto Explorer",
+              "precio": "14.900 €",
+              "alcance": "1 mes de montaje + 1 mes activo · hasta 30 usuarios",
+              "incluye": "1 perfil experto · 1-3 flujos de trabajo · 1 aplicación de uso · 2 entrevistas · 1 Knowledge Book"
+            },
+            {
+              "plan": "Growth",
+              "precio": "desde 49.500 €",
+              "alcance": "licencia anual · desde 200 usuarios",
+              "incluye": "Desde 5 expertos, 5 flujos y 5 aplicaciones · Knowledge Book multiexperto · catálogo de piezas · cloud dedicado"
+            },
+            {
+              "plan": "Enterprise Corporate",
+              "precio": "consultar",
+              "alcance": "capacidad permanente",
+              "incluye": "PreservIA en modo oficina, dentro de la organización"
+            }
+          ],
+          "pie": "Facturación 50% al arranque y 50% al final; validez de la oferta, 30 días. Sala, medios técnicos, dietas y desplazamientos no van incluidos si las sesiones son presenciales."
+        }
       },
       "keynotes": [
         {
@@ -521,7 +575,31 @@
           "digital-change-legacy-preview"
         ],
         "material_interno_nota": "Sin plazos publicados hasta que Alfredo cierre el fork; Cristina Aparicio co-desarrolla; Joanna Ferrer es interna (delivery), no competencia; Arkea no se cita; tendrá componente de plataforma en construcción, no se vende.",
-        "dossier_imprimible": true
+        "dossier_imprimible": true,
+        "planes": {
+          "nota": "Sin precio publicado: la presentación no lo lleva. Fuente: OGH-IA Entelgy (Alfredo, sep-2026), slides de implantación y arranque.",
+          "filas": [
+            {
+              "plan": "Diagnóstico de gobernanza",
+              "precio": "sin precio publicado",
+              "alcance": "menos de 1 mes",
+              "incluye": "Vacíos de decisión y control · situación frente al AI Act · inventario de usos en 2 workshops con clasificación por riesgo · política básica, roles y reglas de aprobación · certificación People 4IA Change para 2 personas"
+            },
+            {
+              "plan": "Proyecto de arranque",
+              "precio": "precio cerrado",
+              "alcance": "3-4 meses",
+              "incluye": "Comité de IA constituido · política de IA a medida · plan de alfabetización de dirección a plantilla · inventario v1 de casos de uso"
+            },
+            {
+              "plan": "Servicio recurrente",
+              "precio": "fijo + variable",
+              "alcance": "banda de 1,5 a 5 FTE al mes",
+              "incluye": "Fijo: cuota del CGO-IA y coordinación. Variable: los pilares que se activen — gobierno del dato, pilotos LLM, casos de uso, ISO 42001, revisión legal"
+            }
+          ],
+          "pie": "El CGO-IA es el suelo del recurrente; los pilares que se activen cada mes marcan el techo."
+        }
       },
       "keynotes": [
         {

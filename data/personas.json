@@ -106,8 +106,8 @@
     "telefono": "+34 696 400 067",
     "teams": null,
     "practica": "digital-change",
-    "foto": null,
-    "linkedin": null
+    "foto": "/assets/personas/alfredo-zurdo.jpg",
+    "linkedin": "https://www.linkedin.com/in/alfredozurdo/"
   },
   {
     "id": "cristina-aparicio",
@@ -117,8 +117,8 @@
     "telefono": "+34 618 737 099",
     "teams": null,
     "practica": "digital-change",
-    "foto": null,
-    "linkedin": null
+    "foto": "/assets/personas/cristina-aparicio.jpg",
+    "linkedin": "https://www.linkedin.com/in/crisaparicio/"
   },
   {
     "id": "vanesa-vaquero",
@@ -128,8 +128,8 @@
     "telefono": "+34 620 833 003",
     "teams": null,
     "practica": "digital-change",
-    "foto": null,
-    "linkedin": null
+    "foto": "/assets/personas/vanesa-vaquero.jpg",
+    "linkedin": "https://www.linkedin.com/in/vanesa-vaquero-sanchez/"
   },
   {
     "id": "dolores-santayana",
@@ -139,8 +139,8 @@
     "telefono": "+34 669 382 648",
     "teams": null,
     "practica": "digital-change",
-    "foto": null,
-    "linkedin": null
+    "foto": "/assets/personas/dolores-santayana.jpg",
+    "linkedin": "https://www.linkedin.com/in/doloressantayana/"
   },
   {
     "id": "abraham-rojo",
@@ -150,7 +150,7 @@
     "telefono": "+34 679 038 514",
     "teams": null,
     "practica": "digital-change",
-    "foto": null,
-    "linkedin": null
+    "foto": "/assets/personas/abraham-rojo.jpg",
+    "linkedin": "https://www.linkedin.com/in/abrahamrojomartinez/"
   }
 ]
