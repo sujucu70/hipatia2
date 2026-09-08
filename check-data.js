@@ -44,12 +44,13 @@ materiales.forEach((p) => {
     // material vigente/revisar sin URL: debe entenderse como enlace pendiente, no roto
     warn(`pieza ${p.id} (${p.estado}) sin url_documento → se mostrará «enlace pendiente»`);
   }
-  // BC · descargas por formato (opcional): formato del vocabulario y URL http(s)
+  // BC · descargas por formato (opcional): formato del vocabulario y URL http(s) o ruta del portal
   if (p.descargas !== undefined) {
     if (!Array.isArray(p.descargas)) err(`pieza ${p.id}: descargas debe ser una lista`);
     else p.descargas.forEach((d, i) => {
       if (!DESCARGA_FORMATOS.has(d.formato)) err(`pieza ${p.id}: descarga ${i} con formato inválido (${d.formato})`);
-      if (!/^https?:\/\//.test(d.url || "")) err(`pieza ${p.id}: descarga ${i} sin URL http(s)`);
+      // los documentos servidos por el propio portal van en /archivos/; los de fuera, http(s)
+      if (!/^(https?:\/\/|\/)/.test(d.url || "")) err(`pieza ${p.id}: descarga ${i} sin URL válida (http(s) o ruta del portal)`);
     });
   }
 });
