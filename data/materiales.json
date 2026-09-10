@@ -67,9 +67,15 @@
       "sector": [],
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck de la práctica para la reunión introductoria (v3, jul 2026). Jorge tiene tres cambios pendientes: la slide de Asistencia Técnica, la de referencias y un anexo de créditos. Sirve para preparar la reunión; no lo envíes hasta la versión corregida.",
-      "url_documento": "https://entelgy.guberna.es/ciclo-software/decks/entelgy-ciclo-software.html",
+      "url_documento": "/archivos/ciclo-software/decks/entelgy-ciclo-software.html",
       "origen": "estatus-v1 · índice de materiales",
-      "subtipo": "Práctica"
+      "subtipo": "Práctica",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/ciclo-software/decks/entelgy-ciclo-software.pdf"
+        }
+      ]
     },
     {
       "id": "mod-onepager",
@@ -111,7 +117,7 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Ficha de dos caras para dejar al cliente; valida ante IT y compras. V1 provisional: menciona el reparto del 40% del ahorro y Jorge aún tiene que confirmar que puede ir en un documento público. Si el cliente pregunta por esa cifra, remite a Jorge.",
+      "nota_de_uso": "Ficha de dos caras para dejar al cliente; valida ante IT y compras. V1 provisional: menciona un reparto del 40 % del ahorro que Jorge no fija como cifra (se pacta con cada cliente según la productividad conseguida). Si el cliente pregunta por esa cifra, remite a Jorge.",
       "url_documento": "/modernizacion/materiales/ficha-modernizacion.html",
       "origen": "modernizacion/materiales/ficha-modernizacion.html",
       "subtipo": "De servicio"
@@ -322,13 +328,13 @@
         "Sector público"
       ],
       "momento_comercial": "Aportar prueba",
-      "nota_de_uso": "Citable en presentación; el envío formal de la referencia al cliente se autoriza por cuenta.",
+      "nota_de_uso": "Citable en presentación. Las llamadas de referencia se gestionan siempre a través del responsable de la cuenta (Jorge Herrero); el envío formal de la referencia al cliente se autoriza por cuenta.",
       "url_documento": null,
       "origen": "paquete-jorge/03-casos-repositorio.md",
       "contexto": "Empresa pública del Gobierno de Navarra. Migración de un core con una estimación clásica de 9 meses.",
       "que_hicimos": "El método del área: la IA documenta y traduce el sistema existente a especificaciones y el equipo gobierna y valida. En la primera semana quedaron documentadas 1.000 horas de carga funcional.",
       "resultado": "Entregado en 3 meses (frente a 9 estimados) con un 70% de ahorro sobre el esfuerzo previsto.",
-      "frase_reunion": "Un organismo público nos estimó la migración en 9 meses por el método tradicional. La entregamos en 3. Y si quieres, se lo preguntas a ellos: el cliente atiende llamadas de referencia.",
+      "frase_reunion": "Un organismo público nos estimó la migración en 9 meses por el método tradicional. La entregamos en 3. Y si quieres, se lo preguntas a ellos: NASERTIC atiende llamadas de referencia, a través del responsable de la cuenta.",
       "cifras": [
         {
           "valor": "1.000 h documentadas en 1 semana",
@@ -549,9 +555,19 @@
       "sector": [],
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck corporativo v6 (jul 2026): el que presentas en reunión. Las cifras de resultados por cliente y los logos siguen pendientes de autorización: preséntalo, no lo envíes en frío.",
-      "url_documento": "https://entelgy.guberna.es/corporativo/decks/Entelgy_Executive_Deck.html",
+      "url_documento": "/archivos/corporativo/decks/Entelgy_Executive_Deck.html",
       "origen": "corporativo/decks/Entelgy_Executive_Deck.html",
-      "subtipo": "Corporativo"
+      "subtipo": "Corporativo",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/corporativo/decks/Entelgy_Executive_Deck.pdf"
+        },
+        {
+          "formato": "pptx",
+          "url": "/archivos/corporativo/decks/Entelgy_Executive_Deck.pptx"
+        }
+      ]
     },
     {
       "id": "corp-portfolio",
@@ -595,9 +611,19 @@
       "sector": [],
       "momento_comercial": "reunion",
       "nota_de_uso": "Visión global para la reunión introductoria a dirección: un motor, dos territorios, seis fuerzas del CIO con fuente, casos y diagnóstico. Los decks de cada vertical van después.",
-      "url_documento": "https://entelgy.guberna.es/digital-workplace/decks/SmartOPS_Resumen_Ejecutivo_Global_2026.html",
+      "url_documento": "/archivos/digital-workplace/decks/SmartOPS_Resumen_Ejecutivo_Global_2026.html",
       "origen": "digital-workplace/decks/SmartOPS_Resumen_Ejecutivo_Global_2026.html",
-      "subtipo": "Ejecutivo"
+      "subtipo": "Ejecutivo",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/digital-workplace/decks/SmartOPS_Resumen_Ejecutivo_Global_2026.pdf"
+        },
+        {
+          "formato": "pptx",
+          "url": "/archivos/digital-workplace/decks/SmartOPS_Resumen_Ejecutivo_Global_2026.pptx"
+        }
+      ]
     },
     {
       "id": "smartops-workplace",
@@ -618,9 +644,19 @@
       "sector": [],
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck de 22 láminas para la reunión: seis frentes del CIO, motor SmartOPS, cuatro piezas, IA por fase del ticket con porcentajes, SmartHelp, casos y modelo de relación en tres fases. Ojo: la lámina 10 lleva los niveles invertidos y la 14 publica horquillas de precio; hasta que Amador lo corrija, sáltalas en pantalla y no lo envíes.",
-      "url_documento": "https://entelgy.guberna.es/digital-workplace/decks/SmartOPS_Workplace_2026.html",
+      "url_documento": "/archivos/digital-workplace/decks/SmartOPS_Workplace_2026.html",
       "origen": "digital-workplace/decks/SmartOPS_Workplace_2026.html",
-      "subtipo": "Vertical"
+      "subtipo": "Vertical",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/digital-workplace/decks/SmartOPS_Workplace_2026.pdf"
+        },
+        {
+          "formato": "pptx",
+          "url": "/archivos/digital-workplace/decks/SmartOPS_Workplace_2026.pptx"
+        }
+      ]
     },
     {
       "id": "smartops-infra",
@@ -641,9 +677,19 @@
       "sector": [],
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck de 13 láminas más apéndices para la reunión: resumen ejecutivo en una página, cinco fuerzas, el precio de esperar, tres piezas, casos y modelo de relación con salida sin operación. Apéndices de AIOps, modelo N0–N3, cumplimiento y alianzas para cuando la conversación lo pide. Lleva una horquilla de precio en la lámina 12: no lo envíes hasta que Amador decida si se queda.",
-      "url_documento": "https://entelgy.guberna.es/digital-workplace/decks/SmartOPS_for_Infra_2026.html",
+      "url_documento": "/archivos/digital-workplace/decks/SmartOPS_for_Infra_2026.html",
       "origen": "digital-workplace/decks/SmartOPS_for_Infra_2026.html",
-      "subtipo": "Vertical"
+      "subtipo": "Vertical",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/digital-workplace/decks/SmartOPS_for_Infra_2026.pdf"
+        },
+        {
+          "formato": "pptx",
+          "url": "/archivos/digital-workplace/decks/SmartOPS_for_Infra_2026.pptx"
+        }
+      ]
     },
     {
       "id": "smartops-onepager-workplace",
@@ -664,8 +710,14 @@
       "sector": [],
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Una cara para abrir la puerta al CIO: dos enemigos (modelo por horas, regulación en el puesto), qué hacemos, Telefónica y Navantia como prueba y cierre en conversación de 30 minutos. Nombra dos clientes: úsalo cuando la cuenta lo permita. Lleva los huecos {{cliente}} y {{contacto}} para personalizar.",
-      "url_documento": "https://entelgy.guberna.es/digital-workplace/fichas/onepager-smartops-desktop.html",
-      "origen": "digital-workplace/fichas/onepager-smartops-desktop.html"
+      "url_documento": "/archivos/digital-workplace/fichas/onepager-smartops-desktop.html",
+      "origen": "digital-workplace/fichas/onepager-smartops-desktop.html",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/digital-workplace/fichas/onepager-smartops-desktop.pdf"
+        }
+      ]
     },
     {
       "id": "smartops-onepager-infra",
@@ -686,8 +738,14 @@
       "sector": [],
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Una cara para el CIO: dos enemigos (coste que se dispara con Broadcom, cloud waste y Windows Server 2016; regulación con tu nombre en el contrato), qué hacemos, Telefónica Tech e IZENPE como prueba y cierre en conversación de 30 minutos. Las cifras de Telefónica Tech están en validación: en pantalla sí, por escrito espera al sign-off.",
-      "url_documento": "https://entelgy.guberna.es/digital-workplace/fichas/onepager-smartops-infra.html",
-      "origen": "digital-workplace/fichas/onepager-smartops-infra.html"
+      "url_documento": "/archivos/digital-workplace/fichas/onepager-smartops-infra.html",
+      "origen": "digital-workplace/fichas/onepager-smartops-infra.html",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/digital-workplace/fichas/onepager-smartops-infra.pdf"
+        }
+      ]
     },
     {
       "id": "smartops-case-ejie",
@@ -710,7 +768,7 @@
       ],
       "momento_comercial": "Aportar prueba",
       "nota_de_uso": "Es un contrato distinto del de Educación (EJIE-078-2021): no mezclar cifras. Las cifras salen de la lámina 20 del deck de Workplace y están sin verificar; confirmar con Amador que son las del DaaS.",
-      "url_documento": "https://entelgy.guberna.es/digital-workplace/casos-exito/originales/Caso_Exito_DaaS%20EJIE.pptx",
+      "url_documento": "/archivos/digital-workplace/casos-exito/originales/Caso_Exito_DaaS%20EJIE.pptx",
       "origen": "digital-workplace/casos-exito/originales/Caso_Exito_DaaS EJIE.pptx",
       "contexto": "Puesto de trabajo del Gobierno Vasco como servicio: 11.000 puestos, 280 organismos, más de 400 aplicaciones bajo soporte, más de 8 años en producción.",
       "que_hicimos": "Gestión del parque y del ciclo de vida del dispositivo con cumplimiento ENS.",
@@ -736,7 +794,7 @@
       "sector": [],
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Una cara para abrir la primera reunión: el run deja de devorar el change, y por qué Entelgy. Dice «tercero certificador» donde Jorge ya dice contraste de mercado: cuéntalo tú bien.",
-      "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/onepager-mantenimiento.html",
+      "url_documento": "/archivos/ciclo-software/fichas/onepager-mantenimiento.html",
       "origen": "ciclo-software/fichas/onepager-mantenimiento.html"
     },
     {
@@ -758,7 +816,7 @@
       "sector": [],
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para quien lo valida dentro (CIO, compras): las tres capas, la medición en la factura y las cláusulas. Los porcentajes de las capas y el reparto del ahorro están en revisión con Jorge; cita el mecanismo, no el número.",
-      "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/ficha-mantenimiento.html",
+      "url_documento": "/archivos/ciclo-software/fichas/ficha-mantenimiento.html",
       "origen": "ciclo-software/fichas/ficha-mantenimiento.html",
       "subtipo": "De servicio"
     },
@@ -772,7 +830,7 @@
       "sale_al_cliente": "si",
       "confidencialidad": "compartible",
       "audiencia": "Cliente",
-      "estado": "revisar",
+      "estado": "vigente",
       "fecha_revision": "sep 2026",
       "dueno": "Jorge",
       "mantenida_por": "sm",
@@ -780,8 +838,8 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "primer_contacto",
-      "nota_de_uso": "Una cara para abrir la primera reunión: contratas entrega, no currículums. Va con el modelo de julio (UCE); Jorge lo cambió a créditos de modernización: sirve para la conversación, no lo envíes hasta la versión corregida.",
-      "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/onepager-asistencia.html",
+      "nota_de_uso": "Una cara para abrir la primera reunión: contratas entrega, no currículums. Lleva el modelo UCE (capacidad de entrega), que Jorge mantiene: es una fortaleza para clientes con madurez en IA; en un primer contacto no entres a defenderlo, abre con la entrega medida y sustituible por contrato.",
+      "url_documento": "/archivos/ciclo-software/fichas/onepager-asistencia.html",
       "origen": "ciclo-software/fichas/onepager-asistencia.html"
     },
     {
@@ -794,7 +852,7 @@
       "sale_al_cliente": "si",
       "confidencialidad": "compartible",
       "audiencia": "Cliente",
-      "estado": "revisar",
+      "estado": "vigente",
       "fecha_revision": "sep 2026",
       "dueno": "Jorge",
       "mantenida_por": "sm",
@@ -802,8 +860,8 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Dos caras para quien lo valida dentro (CIO, compras). Mismo aviso: modelo de julio, pendiente de la versión con créditos de modernización.",
-      "url_documento": "https://entelgy.guberna.es/ciclo-software/fichas/ficha-asistencia.html",
+      "nota_de_uso": "Dos caras para quien lo valida dentro (CIO, compras). Explica el modelo UCE, que Jorge mantiene; déjala cuando el cliente ya ha entendido que contrata entrega, no horas.",
+      "url_documento": "/archivos/ciclo-software/fichas/ficha-asistencia.html",
       "origen": "ciclo-software/fichas/ficha-asistencia.html",
       "subtipo": "De servicio"
     },
@@ -826,9 +884,19 @@
       "sector": [],
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck cliente de Process Intelligence para la reunión introductoria: del proceso real, con datos, a la automatización y los agentes.",
-      "url_documento": "https://entelgy.guberna.es/process-mining/DECKS/Process_Intelligence.html",
+      "url_documento": "/archivos/process-mining/DECKS/Process_Intelligence.html",
       "origen": "process-mining/DECKS/Process_Intelligence.html",
-      "subtipo": "Ejecutivo"
+      "subtipo": "Ejecutivo",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/process-mining/DECKS/Process_Intelligence.pdf"
+        },
+        {
+          "formato": "pptx",
+          "url": "/archivos/process-mining/DECKS/Process_Intelligence.pptx"
+        }
+      ]
     },
     {
       "id": "process-onepager",
@@ -849,8 +917,14 @@
       "sector": [],
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Una cara para dejar tras la primera reunión: qué es Process Intelligence y por qué Entelgy.",
-      "url_documento": "https://entelgy.guberna.es/process-mining/fichas/onepager-process-intelligence.html",
-      "origen": "process-mining/fichas/onepager-process-intelligence.html"
+      "url_documento": "/archivos/process-mining/fichas/onepager-process-intelligence.html",
+      "origen": "process-mining/fichas/onepager-process-intelligence.html",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/process-mining/fichas/onepager-process-intelligence.pdf"
+        }
+      ]
     },
     {
       "id": "process-ficha",
@@ -871,9 +945,15 @@
       "sector": [],
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para quien lo valida dentro (IT, compras): qué incluye el servicio y cómo se contrata.",
-      "url_documento": "https://entelgy.guberna.es/process-mining/fichas/ficha-process-intelligence.html",
+      "url_documento": "/archivos/process-mining/fichas/ficha-process-intelligence.html",
       "origen": "process-mining/fichas/ficha-process-intelligence.html",
-      "subtipo": "De servicio"
+      "subtipo": "De servicio",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/process-mining/fichas/ficha-process-intelligence.pdf"
+        }
+      ]
     },
     {
       "id": "process-pains",
@@ -917,9 +997,19 @@
       "sector": [],
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck de Comité de 11 láminas: el oficio, las cuatro fugas, prêt-à-porter, un reto y una solución por lámina, urgencia del AI Act, por qué Entelgy y cierre. Ojo: lleva 150/9 (las piezas dicen 151/15/9), Bahía de Bizkaia sin firma y una cifra de MAPFRE (−82%) que no está en la ficha.",
-      "url_documento": "https://entelgy.guberna.es/ia-digital-change/decks/digital-change-deck.html",
+      "url_documento": "/archivos/ia-digital-change/decks/digital-change-deck.html",
       "origen": "ia-digital-change/decks/digital-change-deck.html",
-      "subtipo": "Ejecutivo"
+      "subtipo": "Ejecutivo",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/ia-digital-change/decks/digital-change-deck.pdf"
+        },
+        {
+          "formato": "pptx",
+          "url": "/archivos/ia-digital-change/decks/digital-change-deck.pptx"
+        }
+      ]
     },
     {
       "id": "iability-onepager",
@@ -940,8 +1030,14 @@
       "sector": [],
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Una cara para abrir la puerta al CFO o a negocio: la factura que no rinde, el uso sin gobierno, el marco SER, las cuatro fases y dos pruebas (Entelgy en casa, Admiral). Cierra en conversación de 30 minutos. Admiral va con nombre: úsalo cuando la cuenta lo permita. Lleva el hueco [contacto Entelgy].",
-      "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/onepager-iability.html",
-      "origen": "ia-digital-change/fichas/onepager-iability.html"
+      "url_documento": "/archivos/ia-digital-change/fichas/onepager-iability.html",
+      "origen": "ia-digital-change/fichas/onepager-iability.html",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/ia-digital-change/fichas/onepager-iability.pdf"
+        }
+      ]
     },
     {
       "id": "iability-ficha",
@@ -962,9 +1058,15 @@
       "sector": [],
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para dejar a IT, seguridad y compras: las cuatro fases con lo que te llevas de cada una, qué gana el negocio, por qué creernos, y seguridad y cumplimiento con el art. 4 explicado. Sin precio. Cierra en diagnóstico. Dice «Oficina de Gobierno de la IA» en dos sitios; el nombre bueno es Gobernanza Humana.",
-      "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/Ficha_IAbility.html",
+      "url_documento": "/archivos/ia-digital-change/fichas/Ficha_IAbility.html",
       "origen": "ia-digital-change/fichas/Ficha_IAbility.html",
-      "subtipo": "De servicio"
+      "subtipo": "De servicio",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/ia-digital-change/fichas/Ficha_IAbility.pdf"
+        }
+      ]
     },
     {
       "id": "preservia-publico",
@@ -985,9 +1087,15 @@
       "sector": [],
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Una cara para abrir la puerta: la misma pieza en dos versiones, banca y seguros (40% senior en 2030) y sector público (43.000 funcionarios se jubilan en cinco años), con MAPFRE como prueba y cierre en 30 minutos. Elige la del sector de la cuenta; el resto es igual.",
-      "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/PreservIA-onepager-sectorpublico.html",
+      "url_documento": "/archivos/ia-digital-change/fichas/PreservIA-onepager-sectorpublico.html",
       "origen": "ia-digital-change/fichas/PreservIA-onepager-sectorpublico.html",
-      "subtipo": "Sector público"
+      "subtipo": "Sector público",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/ia-digital-change/fichas/PreservIA-onepager-sectorpublico.pdf"
+        }
+      ]
     },
     {
       "id": "preservia-privado",
@@ -1008,9 +1116,15 @@
       "sector": [],
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Una cara para abrir la puerta: la misma pieza en dos versiones, banca y seguros (40% senior en 2030) y sector público (43.000 funcionarios se jubilan en cinco años), con MAPFRE como prueba y cierre en 30 minutos. Elige la del sector de la cuenta; el resto es igual.",
-      "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/PreservIA-onepager-sectorprivado.html",
+      "url_documento": "/archivos/ia-digital-change/fichas/PreservIA-onepager-sectorprivado.html",
       "origen": "ia-digital-change/fichas/PreservIA-onepager-sectorprivado.html",
-      "subtipo": "Sector privado"
+      "subtipo": "Sector privado",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/ia-digital-change/fichas/PreservIA-onepager-sectorprivado.pdf"
+        }
+      ]
     },
     {
       "id": "preservia-ficha",
@@ -1031,7 +1145,7 @@
       "sector": [],
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para dejar a operaciones, IT y compras: qué es, las tres fases con su resultado, MAPFRE con cifras, el piloto detallado (alcance, qué necesitamos, cómo se mide, precio) e integración y seguridad. Cierra en diseñar el piloto. Lleva el precio del piloto: úsala sabiendo que es el importe que va a leer compras.",
-      "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/Ficha_PreservIA_standalone.html",
+      "url_documento": "/archivos/ia-digital-change/fichas/Ficha_PreservIA_standalone.html",
       "origen": "ia-digital-change/fichas/Ficha_PreservIA_standalone.html",
       "subtipo": "De servicio"
     },
@@ -1054,8 +1168,14 @@
       "sector": [],
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Una cara para Dirección, Legal o el CISO: lo que ya está pasando, el coste de esperar (fechas del AI Act, sanciones, BOSCO), cómo se gobierna en tres capas y por qué Entelgy. Cierra en 30 minutos. Sin caso de cliente: la prueba es la autoaplicación.",
-      "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/OnePager_OGH-IA.html",
-      "origen": "ia-digital-change/fichas/OnePager_OGH-IA.html"
+      "url_documento": "/archivos/ia-digital-change/fichas/OnePager_OGH-IA.html",
+      "origen": "ia-digital-change/fichas/OnePager_OGH-IA.html",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/ia-digital-change/fichas/OnePager_OGH-IA.pdf"
+        }
+      ]
     },
     {
       "id": "ogh-ficha",
@@ -1076,9 +1196,15 @@
       "sector": [],
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para dejar a Legal, Compliance, IT y compras: qué es y qué no es, el modelo en tres capas, qué gana el negocio, tres formas de entrar, por qué creernos y el AI Act por fases con las sanciones. Sin precio ni plazo: el modelo es flexible hasta que Alfredo cierre el arranque. Cierra en diagnóstico.",
-      "url_documento": "https://entelgy.guberna.es/ia-digital-change/fichas/Ficha_OGH-IA.html",
+      "url_documento": "/archivos/ia-digital-change/fichas/Ficha_OGH-IA.html",
       "origen": "ia-digital-change/fichas/Ficha_OGH-IA.html",
-      "subtipo": "De servicio"
+      "subtipo": "De servicio",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/ia-digital-change/fichas/Ficha_OGH-IA.pdf"
+        }
+      ]
     },
     {
       "id": "digital-change-pains",
@@ -1122,9 +1248,19 @@
       "sector": [],
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck de producto para la reunión introductoria (junio): cinco capacidades, seguridad y cumplimiento, y seis casos en anexo. Los anexos nombran tres clientes que en el resto del material van anonimizados: úsalo en pantalla, no lo envíes. Se rehace en octubre con la propuesta de valor ampliada.",
-      "url_documento": "https://entelgy.guberna.es/data-intelligence/decks/entelgy-dataai-producto.html",
+      "url_documento": "/archivos/data-intelligence/decks/entelgy-dataai-producto.html",
       "origen": "data-intelligence/decks/entelgy-dataai-producto.html",
-      "subtipo": "Ejecutivo"
+      "subtipo": "Ejecutivo",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/data-intelligence/decks/entelgy-dataai-producto.pdf"
+        },
+        {
+          "formato": "pptx",
+          "url": "/archivos/data-intelligence/decks/entelgy-dataai-producto.pptx"
+        }
+      ]
     },
     {
       "id": "dataai-mutua",
@@ -1145,7 +1281,7 @@
       "sector": [],
       "momento_comercial": "preparar",
       "nota_de_uso": "Ejemplo de deck de primer contacto a una cuenta objetivo (Mutua), con su nombre dentro: sirve para ver cómo se entra por el reloj regulatorio del sector; no se enseña a otro cliente.",
-      "url_documento": "https://entelgy.guberna.es/data-intelligence/entelgy-dataai-mutua.html",
+      "url_documento": "/archivos/data-intelligence/entelgy-dataai-mutua.html",
       "origen": "data-intelligence/entelgy-dataai-mutua.html",
       "subtipo": "Primer contacto · Mutua"
     },
@@ -1168,7 +1304,7 @@
       "sector": [],
       "momento_comercial": "primer_contacto",
       "nota_de_uso": "Una cara para dejar tras la primera reunión: qué es Data Intelligence y por qué Entelgy.",
-      "url_documento": "https://entelgy.guberna.es/data-intelligence/fichas/onepager-dataai.html",
+      "url_documento": "/archivos/data-intelligence/fichas/onepager-dataai.html",
       "origen": "data-intelligence/fichas/onepager-dataai.html"
     },
     {
@@ -1190,7 +1326,7 @@
       "sector": [],
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye Data Intelligence y cómo se contrata.",
-      "url_documento": "https://entelgy.guberna.es/data-intelligence/fichas/ficha-dataai.html",
+      "url_documento": "/archivos/data-intelligence/fichas/ficha-dataai.html",
       "origen": "data-intelligence/fichas/ficha-dataai.html",
       "subtipo": "De servicio"
     },
@@ -1236,7 +1372,7 @@
       "sector": [],
       "momento_comercial": "reunion",
       "nota_de_uso": "Deck para la reunión introductoria: del proceso a la automatización y los agentes, con criterio de negocio.",
-      "url_documento": "https://entelgy.guberna.es/automatizacion/decks/deck_cliente.html",
+      "url_documento": "/archivos/automatizacion/decks/deck_cliente.html",
       "origen": "automatizacion/decks/deck_cliente.html",
       "subtipo": "Cliente"
     },
@@ -1258,8 +1394,8 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "primer_contacto",
-      "nota_de_uso": "Una cara para abrir la primera reunión: qué automatizamos y por qué Entelgy. El contacto está sin rellenar y aún dice «hiperautomatización»: pídele a Carla la versión corregida antes de enviarlo.",
-      "url_documento": "https://entelgy.guberna.es/automatizacion/fichas/onepager-automatizacion-procesos.html",
+      "nota_de_uso": "Una cara para abrir la primera reunión: qué automatizamos y por qué Entelgy. La versión publicada lleva el contacto sin rellenar y dice todavía «hiperautomatización»: Carla dio los cambios el 7-sep y la corrección está en camino. Hasta entonces, pídesela antes de enviarlo.",
+      "url_documento": "/archivos/automatizacion/fichas/onepager-automatizacion-procesos.html",
       "origen": "automatizacion/fichas/onepager-automatizacion-procesos.html"
     },
     {
@@ -1280,8 +1416,8 @@
       "sign_off": null,
       "sector": [],
       "momento_comercial": "para_dejar",
-      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye la automatización de procesos y cómo se contrata. El contacto está sin rellenar y aún dice «hiperautomatización»: pídele a Carla la versión corregida antes de enviarlo.",
-      "url_documento": "https://entelgy.guberna.es/automatizacion/fichas/ficha-automatizacion-procesos.html",
+      "nota_de_uso": "Dos caras para quien lo valida dentro: qué incluye la automatización de procesos y cómo se contrata. La versión publicada lleva el contacto sin rellenar, el diagnóstico a 4–6 semanas y todavía «hiperautomatización»: Carla dio los cambios el 7-sep y la corrección está en camino. Hasta entonces, pídesela antes de enviarlo.",
+      "url_documento": "/archivos/automatizacion/fichas/ficha-automatizacion-procesos.html",
       "origen": "automatizacion/fichas/ficha-automatizacion-procesos.html",
       "subtipo": "De servicio"
     },
@@ -1304,9 +1440,15 @@
       "sector": [],
       "momento_comercial": "reunion",
       "nota_de_uso": "Edición LATAM del deck corporativo. Pendiente la lectura de Omar sobre edición y referencias antes de usarla con un cliente.",
-      "url_documento": "https://entelgy.guberna.es/corporativo/decks/Entelgy_Executive_Deck_LATAM.html",
+      "url_documento": "/archivos/corporativo/decks/Entelgy_Executive_Deck_LATAM.html",
       "origen": "corporativo/decks/Entelgy_Executive_Deck_LATAM.html",
-      "subtipo": "Corporativo · LATAM"
+      "subtipo": "Corporativo · LATAM",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/corporativo/decks/Entelgy_Executive_Deck_LATAM.pdf"
+        }
+      ]
     },
     {
       "id": "software-modernizacion-tarjeta",
@@ -1352,7 +1494,7 @@
       ],
       "momento_comercial": "preparar",
       "nota_de_uso": "Familiar de trabajo de Modernización; no equivale al deck corporativo de Banca retirado. Confirmar su vigencia y condición de uso.",
-      "url_documento": "https://entelgy.guberna.es/ciclo-software/ficha-comercial-modernizacion-banca.html",
+      "url_documento": "/archivos/ciclo-software/ficha-comercial-modernizacion-banca.html",
       "origen": "ciclo-software/ficha-comercial-modernizacion-banca.html",
       "subtipo": "Sectorial · Banca"
     },
@@ -1377,7 +1519,7 @@
       ],
       "momento_comercial": "preparar",
       "nota_de_uso": "Familiar de trabajo de Modernización. Confirmar vigencia, referencias y condición de uso antes de compartir.",
-      "url_documento": "https://entelgy.guberna.es/ciclo-software/ficha-comercial-modernizacion-aapp.html",
+      "url_documento": "/archivos/ciclo-software/ficha-comercial-modernizacion-aapp.html",
       "origen": "ciclo-software/ficha-comercial-modernizacion-aapp.html",
       "subtipo": "Sectorial · AAPP"
     },
@@ -1402,7 +1544,7 @@
       ],
       "momento_comercial": "preparar",
       "nota_de_uso": "Familiar de trabajo de Modernización. Confirmar vigencia, referencias y condición de uso antes de compartir.",
-      "url_documento": "https://entelgy.guberna.es/ciclo-software/ficha-comercial-modernizacion-industria.html",
+      "url_documento": "/archivos/ciclo-software/ficha-comercial-modernizacion-industria.html",
       "origen": "ciclo-software/ficha-comercial-modernizacion-industria.html",
       "subtipo": "Sectorial · Industria"
     },
@@ -1427,7 +1569,7 @@
       ],
       "momento_comercial": "preparar",
       "nota_de_uso": "Familiar de trabajo de Modernización. Confirmar vigencia, referencias y condición de uso antes de compartir.",
-      "url_documento": "https://entelgy.guberna.es/ciclo-software/ficha-comercial-modernizacion-telco.html",
+      "url_documento": "/archivos/ciclo-software/ficha-comercial-modernizacion-telco.html",
       "origen": "ciclo-software/ficha-comercial-modernizacion-telco.html",
       "subtipo": "Sectorial · Telco"
     },
@@ -1519,7 +1661,7 @@
       "sector": [],
       "momento_comercial": "preparar",
       "nota_de_uso": "Ejemplo de pre-read de primer contacto a una cuenta objetivo (Mutua), con su nombre dentro: sirve para ver cómo se entra por el reloj regulatorio del sector; no se enseña a otro cliente.",
-      "url_documento": "https://entelgy.guberna.es/data-intelligence/decks/entelgy-dataai-mutua-preread.html",
+      "url_documento": "/archivos/data-intelligence/decks/entelgy-dataai-mutua-preread.html",
       "origen": "data-intelligence/decks/entelgy-dataai-mutua-preread.html",
       "subtipo": "Pre-read · Mutua"
     },
@@ -1588,9 +1730,15 @@
       "sector": [],
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para dejar a IT o compras: qué es, las cuatro piezas con alcance, cómo trabajamos, por qué Entelgy, dos casos anonimizados, beneficios, partners y el diagnóstico. Sin importes. Es la pieza que cierra en diagnóstico.",
-      "url_documento": "https://entelgy.guberna.es/digital-workplace/fichas/ficha-smartops-desktop.html",
+      "url_documento": "/archivos/digital-workplace/fichas/ficha-smartops-desktop.html",
       "origen": "digital-workplace/fichas/ficha-smartops-desktop.html",
-      "subtipo": "De servicio"
+      "subtipo": "De servicio",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/digital-workplace/fichas/ficha-smartops-desktop.pdf"
+        }
+      ]
     },
     {
       "id": "smartops-infra-ficha",
@@ -1611,9 +1759,15 @@
       "sector": [],
       "momento_comercial": "para_dejar",
       "nota_de_uso": "Dos caras para dejar a IT o compras: qué es, tres piezas con alcance, cómo trabajamos, por qué Entelgy, Telefónica Tech e IZENPE, beneficios, alianzas y el diagnóstico. Sin importes. Cierra en diagnóstico.",
-      "url_documento": "https://entelgy.guberna.es/digital-workplace/fichas/ficha-smartops-infra.html",
+      "url_documento": "/archivos/digital-workplace/fichas/ficha-smartops-infra.html",
       "origen": "digital-workplace/fichas/ficha-smartops-infra.html",
-      "subtipo": "De servicio"
+      "subtipo": "De servicio",
+      "descargas": [
+        {
+          "formato": "pdf",
+          "url": "/archivos/digital-workplace/fichas/ficha-smartops-infra.pdf"
+        }
+      ]
     },
     {
       "id": "smartops-pains-infra",
@@ -1634,7 +1788,7 @@
       "sector": [],
       "momento_comercial": "preparar",
       "nota_de_uso": "Guía interna de discovery. Sirve para contrastar señales, no para diagnosticar sin evidencia.",
-      "url_documento": "https://entelgy.guberna.es/digital-workplace/mapa-pains-infra.html",
+      "url_documento": "/archivos/digital-workplace/mapa-pains-infra.html",
       "origen": "digital-workplace/mapa-pains-infra.html",
       "subtipo": "Mapa de pains"
     },
@@ -1659,7 +1813,7 @@
       ],
       "momento_comercial": "Aportar prueba",
       "nota_de_uso": "Licitación confirmada como existente; importe (2,6 M€/año), reparto y adjudicatario sin verificar en abierto. Pliego vía Nacho (preventa). No citar cifras hasta tenerlo.",
-      "url_documento": "https://entelgy.guberna.es/digital-workplace/casos-exito/originales/Caso_Exito_NAVANTIA.pptx",
+      "url_documento": "/archivos/digital-workplace/casos-exito/originales/Caso_Exito_NAVANTIA.pptx",
       "origen": "digital-workplace/casos-exito/originales/Caso_Exito_NAVANTIA.pptx",
       "contexto": "Astillero público con entorno industrial crítico que licitó la externalización del soporte y la atención al usuario.",
       "que_hicimos": "CAU con modelo de servicio propio y niveles N0–N3 definidos, medido en SLA y XLA.",
@@ -1685,7 +1839,7 @@
       "sector": [],
       "momento_comercial": "Aportar prueba",
       "nota_de_uso": "No es SmartOPS: es soporte N3 y desarrollo Moodle 8×5 para Telefónica Educación Digital (ProFuturo), área de Jorge. No cuelga de ninguna solución hasta decidir su encaje.",
-      "url_documento": "https://entelgy.guberna.es/digital-workplace/casos-exito/originales/Caso_Exito_Moodle_ProFuturo.pptx",
+      "url_documento": "/archivos/digital-workplace/casos-exito/originales/Caso_Exito_Moodle_ProFuturo.pptx",
       "origen": "digital-workplace/casos-exito/originales/Caso_Exito_Moodle_ProFuturo.pptx",
       "contexto": null,
       "que_hicimos": null,
@@ -1713,7 +1867,7 @@
       ],
       "momento_comercial": "Aportar prueba",
       "nota_de_uso": "Servicio confirmado; importe y expediente sin verificar. No usar «riesgo 0».",
-      "url_documento": "https://entelgy.guberna.es/digital-workplace/casos-exito/originales/Caso_Exito_IZENPE.pptx",
+      "url_documento": "/archivos/digital-workplace/casos-exito/originales/Caso_Exito_IZENPE.pptx",
       "origen": "digital-workplace/casos-exito/originales/Caso_Exito_IZENPE.pptx",
       "contexto": "Entidad de certificación del Gobierno Vasco: identidad digital y firma electrónica de alta criticidad.",
       "que_hicimos": "Operación y soporte experto (CAU N2) de tres líneas críticas, con modelo ITIL + Lean.",
@@ -1742,7 +1896,7 @@
       ],
       "momento_comercial": "Aportar prueba",
       "nota_de_uso": "Licitación pública verificada (EJIE-078-2021, DOUE 2021/S 143-380604): lo adjudicado se puede citar; importe y puntuación, no. Es el contrato de Educación; el DaaS de EJIE es otro contrato, sin verificar.",
-      "url_documento": "https://entelgy.guberna.es/digital-workplace/casos-exito/originales/Caso_Exito_Educacion%20EJIE.pptx",
+      "url_documento": "/archivos/digital-workplace/casos-exito/originales/Caso_Exito_Educacion%20EJIE.pptx",
       "origen": "digital-workplace/casos-exito/originales/Caso_Exito_Educacion EJIE.pptx",
       "contexto": "Soporte hardware y software N1+N2 de los centros educativos no universitarios del País Vasco: más de 200.000 usuarios y dispositivos en 855 centros de tres provincias, remoto y presencial.",
       "que_hicimos": "Help & Service Desk con cinco servicios estructurados, flota de 50 vehículos, ITSM Jira, ManageEngine, Intune y Entra ID, y una oficina de impulso independiente.",
@@ -2263,8 +2417,11 @@
       "solucion": "process-automation-ai",
       "dueno": "Carla",
       "sale_al_cliente": "con_validacion",
-      "citable": "confirmar_por_cuenta",
-      "sign_off": null,
+      "citable": "citable",
+      "sign_off": {
+        "quien": "Carla González",
+        "fecha": "2026-09-07"
+      },
       "sector": [
         "Sector público",
         "Educación"
@@ -2272,8 +2429,8 @@
       "contexto": "Universidad pública. Oficina de automatización sobre Blue Prism, por contratación pública.",
       "que_hicimos": "Detección y levantamiento de oportunidades área por área y robotización con roadmap.",
       "resultado": "95 procesos levantados en 18 meses; los 26 primeros robots en producción en 6 meses; 9 áreas, más de 30 usuarios y más de 400 horas al año liberadas a trabajo de más valor.",
-      "frase_reunion": "En la UNED levantamos 95 procesos en año y medio y en seis meses ya había 26 robots en producción. La adjudicación es pública; las horas liberadas te las confirmo por cuenta.",
-      "nota_de_uso": "Adjudicación pública (BOE / PLACSP). Cifras del hub y del deck; Carla confirma alcance antes de citarlas con nombre."
+      "frase_reunion": "En la UNED levantamos 95 procesos en año y medio y en seis meses ya había 26 robots en producción. La adjudicación es pública y las cifras las confirma Carla.",
+      "nota_de_uso": "Adjudicación pública (BOE / PLACSP). Cifras confirmadas por Carla el 7-sep: citable con nombre en presentación."
     },
     {
       "tipo": "Referencia",
@@ -2301,7 +2458,7 @@
       "que_hicimos": "Documentamos el parque entero, quitamos duplicidades y diseñamos una arquitectura con base de datos unificada.",
       "resultado": "Menos riesgo operativo y una base estable para escalar.",
       "frase_reunion": "Una energética en Colombia tenía 150 flujos que solo una persona sabía mantener. Documentamos el parque, quitamos duplicados y dejamos una base gobernada sobre la que escalar. Es lo que hace la oficina de gobierno.",
-      "nota_de_uso": "Sin nombre hasta que el cliente autorice. La historia sí se puede contar."
+      "nota_de_uso": "Sin nombre hasta que el cliente autorice. La historia sí se puede contar. Carla la da por citable por su parte (7-sep); el nombre sigue pendiente de que autorice la cuenta."
     },
     {
       "tipo": "Referencia",
@@ -2329,7 +2486,7 @@
       "que_hicimos": "Equipos adscritos a la fábrica, con la capacidad medida y sustituible por contrato y uso aumentado de asistentes de IA.",
       "resultado": "Más de 250 profesionales en la cuenta, en tres países.",
       "frase_reunion": "En una entidad financiera tenemos más de 250 personas sobre su core crítico, en tres países, con la capacidad medida y sustituible por contrato. El nombre te lo confirmo por cuenta.",
-      "nota_de_uso": "Referencia bajo NDA. No es Spec-Driven: es capacidad con asistentes de IA. No atribuirla al método."
+      "nota_de_uso": "Referencia bajo NDA. No es Spec-Driven: es capacidad con asistentes de IA. No atribuirla al método. Pasar a citable depende de Dirección de Negocio (Jorge, 7-sep)."
     },
     {
       "tipo": "Referencia",
@@ -2358,7 +2515,7 @@
       "que_hicimos": "Capacidad de desarrollo con la productividad medida en el código, no en las horas, y contrastada con el mercado (Foreworth).",
       "resultado": "Productividad medida por un tercero; cifras bajo NDA.",
       "frase_reunion": "En una industrial la productividad del equipo se mide en el código y se contrasta con un tercero, no se declara. Las cifras las vemos por cuenta.",
-      "nota_de_uso": "Referencia bajo NDA. Foreworth es contraste de mercado, no certificador."
+      "nota_de_uso": "Referencia bajo NDA. Foreworth es contraste de mercado, no certificador. Pasar a citable depende de Dirección de Negocio (Jorge, 7-sep)."
     },
     {
       "tipo": "Referencia",
@@ -2724,7 +2881,7 @@
       "mantenida_por": "sm",
       "citable": "no_aplica",
       "momento_comercial": "preparar",
-      "url_documento": "https://entelgy.guberna.es/digital-workplace/mapa-pains.html",
+      "url_documento": "/archivos/digital-workplace/mapa-pains.html",
       "origen": "digital-workplace/mapa-pains.html",
       "nota_de_uso": "Guía de discovery interna (30-abr, 22 pains), gemela de la de Infraestructura. Para preparar, no sale al cliente.",
       "subtipo": "Mapa de pains"
@@ -2764,19 +2921,22 @@
       "confidencialidad": "interno",
       "audiencia": "Comercial",
       "estado": "vigente",
-      "fecha_revision": "sep 2026",
+      "fecha_revision": "2026-09-08",
       "mantenida_por": "sm",
       "dueno": "Alfredo",
       "momento_comercial": "Aportar prueba",
-      "url_documento": null,
+      "url_documento": "https://entelgy.com/actualidad-es/entelgy-y-admiral-europe-tech-un-caso-de-exito-en-productividad-gracias-a-la-inteligencia-artificial-y-los-iability-labs/",
       "origen": "docs/contenido-v3-digital-change.md",
       "practica": "digital-change",
       "id": "dc-caso-admiral",
       "titulo": "Admiral Europe Tech · Labs en equipos de desarrollo",
       "solucion": "iability",
       "sale_al_cliente": "con_validacion",
-      "citable": "confirmar_por_cuenta",
-      "sign_off": null,
+      "citable": "citable",
+      "sign_off": {
+        "quien": "Alfredo Zurdo",
+        "fecha": "2026-09-08"
+      },
       "sector": [
         "Seguros"
       ],
@@ -2784,7 +2944,7 @@
       "que_hicimos": "IAbility Labs en 12 equipos, con métrica híbrida: análisis de código para ver qué cambió en el producto y evaluación ADKAR para ver si la gente cambió con él.",
       "resultado": "Premios Computing 2025, IA y productividad. El porcentaje de productividad no es público.",
       "frase_reunion": "En Admiral medimos dos cosas a la vez: el código dice qué cambió en el producto y ADKAR, si la gente cambió con él. Doce equipos, y un premio Computing.",
-      "nota_de_uso": "Con nombre en ficha y one-pager, pero sin autorización escrita registrada. Confirmar con Alfredo antes de citarlo fuera de la reunión."
+      "nota_de_uso": "Caso publicado por Entelgy: la autorización del cliente está dada. Alfredo lo confirmó el 8 de septiembre enseñando la nota pública."
     },
     {
       "tipo": "Referencia",
@@ -2824,7 +2984,7 @@
       "mantenida_por": "sm",
       "dueno": "Alfredo",
       "momento_comercial": "Aportar prueba",
-      "url_documento": null,
+      "url_documento": "https://entelgy.com/casos-de-exito/smart-help-revoluciona-el-soporte-en-mapfre/",
       "origen": "docs/contenido-v3-digital-change.md",
       "practica": "digital-change",
       "id": "dc-caso-mapfre",
@@ -2844,6 +3004,248 @@
       "resultado": "3.500 tickets de soporte menos al mes; apertura de incidencia de 5:30 a 1 minuto; 45 € de ahorro estimado por ticket; 71% de recurrencia de usuarios activos. Premio Computing 2021.",
       "frase_reunion": "En MAPFRE, con 15.000 puestos, el conocimiento puesto en la pantalla evitó 3.500 tickets al mes y la apertura de una incidencia pasó de cinco minutos y medio a uno. Lo dice MAPFRE: «sin salir de la pantalla en la que trabajamos».",
       "nota_de_uso": "Única referencia autorizada del área; se cuenta una sola vez, bajo PreservIA. En Smart Operations el mismo caso se cuenta como SmartHelp: un solo juego de cifras para las dos prácticas."
+    },
+    {
+      "id": "dc-iability-landing",
+      "titulo": "IAbility · iability.ai",
+      "tipo": "Herramienta",
+      "practica": "digital-change",
+      "solucion": "iability",
+      "zona": "cliente",
+      "sale_al_cliente": "si",
+      "confidencialidad": "compartible",
+      "audiencia": "Cliente",
+      "estado": "vigente",
+      "fecha_revision": "2026-09-08",
+      "dueno": "Alfredo",
+      "mantenida_por": "sm",
+      "citable": "no_aplica",
+      "sign_off": null,
+      "sector": [],
+      "momento_comercial": "primer_contacto",
+      "nota_de_uso": "La dirección corta de IAbility, para darla de viva voz o en un correo. Lleva al mismo contenido que entelgy.com.",
+      "url_documento": "https://iability.ai",
+      "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
+      "subtipo": "Enlace corto",
+      "bloque": "recursos"
+    },
+    {
+      "id": "dc-iability-calculadora",
+      "titulo": "IAbility · Calculadora de paquetes",
+      "tipo": "Herramienta",
+      "practica": "digital-change",
+      "solucion": "iability",
+      "zona": "interno",
+      "sale_al_cliente": "no",
+      "confidencialidad": "interno",
+      "audiencia": "Comercial",
+      "estado": "vigente",
+      "fecha_revision": "2026-09-08",
+      "dueno": "Alfredo",
+      "mantenida_por": "sm",
+      "citable": "no_aplica",
+      "sign_off": null,
+      "sector": [],
+      "momento_comercial": "primer_contacto",
+      "nota_de_uso": "Los cuatro paquetes con su precio: Freemium, Explorer, Growth y Corporate. Pide un código contra tu cuenta de correo.",
+      "url_documento": "https://calculadora.iability.ai",
+      "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
+      "subtipo": "Calculadora",
+      "bloque": "recursos",
+      "aviso": "La calculadora lleva precios: es interna y no se enseña en pantalla al cliente. La copia que hay en el Hipatia antiguo está desactualizada."
+    },
+    {
+      "id": "dc-iability-podcast-youtube",
+      "titulo": "IAbility · Podcast en vídeo",
+      "tipo": "Herramienta",
+      "practica": "digital-change",
+      "solucion": "iability",
+      "zona": "cliente",
+      "sale_al_cliente": "si",
+      "confidencialidad": "compartible",
+      "audiencia": "Cliente",
+      "estado": "vigente",
+      "fecha_revision": "2026-09-08",
+      "dueno": "Alfredo",
+      "mantenida_por": "sm",
+      "citable": "no_aplica",
+      "sign_off": null,
+      "sector": [],
+      "momento_comercial": "primer_contacto",
+      "nota_de_uso": "Entrevistas sobre adopción y gobierno de la IA. Para compartir con un cliente inquieto.",
+      "url_documento": "https://www.youtube.com/watch?v=6nQhhkgenaU",
+      "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
+      "subtipo": "Podcast",
+      "bloque": "recursos"
+    },
+    {
+      "id": "dc-iability-podcast-spotify",
+      "titulo": "IAbility · Podcast en audio",
+      "tipo": "Herramienta",
+      "practica": "digital-change",
+      "solucion": "iability",
+      "zona": "cliente",
+      "sale_al_cliente": "si",
+      "confidencialidad": "compartible",
+      "audiencia": "Cliente",
+      "estado": "vigente",
+      "fecha_revision": "2026-09-08",
+      "dueno": "Alfredo",
+      "mantenida_por": "sm",
+      "citable": "no_aplica",
+      "sign_off": null,
+      "sector": [],
+      "momento_comercial": "primer_contacto",
+      "nota_de_uso": "El mismo podcast en audio, para quien lo prefiera de fondo.",
+      "url_documento": "https://open.spotify.com/show/4Nq774RdCEOZZ7NcPWYhp6",
+      "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
+      "subtipo": "Podcast",
+      "bloque": "recursos"
+    },
+    {
+      "id": "dc-iability-teaser-es",
+      "titulo": "IAbility · Teaser (español)",
+      "tipo": "Herramienta",
+      "practica": "digital-change",
+      "solucion": "iability",
+      "zona": "cliente",
+      "sale_al_cliente": "si",
+      "confidencialidad": "compartible",
+      "audiencia": "Cliente",
+      "estado": "vigente",
+      "fecha_revision": "2026-09-08",
+      "dueno": "Alfredo",
+      "mantenida_por": "sm",
+      "citable": "no_aplica",
+      "sign_off": null,
+      "sector": [],
+      "momento_comercial": "primer_contacto",
+      "nota_de_uso": "Pieza corta para abrir una conversación o un correo.",
+      "url_documento": "https://youtu.be/-ihYP2Lx-Ck",
+      "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
+      "subtipo": "Vídeo",
+      "bloque": "recursos"
+    },
+    {
+      "id": "dc-iability-teaser-en",
+      "titulo": "IAbility · Teaser (inglés)",
+      "tipo": "Herramienta",
+      "practica": "digital-change",
+      "solucion": "iability",
+      "zona": "cliente",
+      "sale_al_cliente": "si",
+      "confidencialidad": "compartible",
+      "audiencia": "Cliente",
+      "estado": "vigente",
+      "fecha_revision": "2026-09-08",
+      "dueno": "Alfredo",
+      "mantenida_por": "sm",
+      "citable": "no_aplica",
+      "sign_off": null,
+      "sector": [],
+      "momento_comercial": "primer_contacto",
+      "nota_de_uso": "La misma pieza corta, para cuentas fuera de España.",
+      "url_documento": "https://youtu.be/8zmY_mFWTl8",
+      "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
+      "subtipo": "Vídeo",
+      "bloque": "recursos"
+    },
+    {
+      "id": "dc-iability-trailer-es",
+      "titulo": "IAbility · Trailer (español)",
+      "tipo": "Herramienta",
+      "practica": "digital-change",
+      "solucion": "iability",
+      "zona": "cliente",
+      "sale_al_cliente": "si",
+      "confidencialidad": "compartible",
+      "audiencia": "Cliente",
+      "estado": "vigente",
+      "fecha_revision": "2026-09-08",
+      "dueno": "Alfredo",
+      "mantenida_por": "sm",
+      "citable": "no_aplica",
+      "sign_off": null,
+      "sector": [],
+      "momento_comercial": "primer_contacto",
+      "nota_de_uso": "Pieza larga: enseña el universo narrativo y cómo se vive el programa.",
+      "url_documento": "https://youtu.be/iHf8szujoBI",
+      "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
+      "subtipo": "Vídeo",
+      "bloque": "recursos"
+    },
+    {
+      "id": "dc-iability-trailer-en",
+      "titulo": "IAbility · Trailer (inglés)",
+      "tipo": "Herramienta",
+      "practica": "digital-change",
+      "solucion": "iability",
+      "zona": "cliente",
+      "sale_al_cliente": "si",
+      "confidencialidad": "compartible",
+      "audiencia": "Cliente",
+      "estado": "vigente",
+      "fecha_revision": "2026-09-08",
+      "dueno": "Alfredo",
+      "mantenida_por": "sm",
+      "citable": "no_aplica",
+      "sign_off": null,
+      "sector": [],
+      "momento_comercial": "primer_contacto",
+      "nota_de_uso": "El trailer, para cuentas fuera de España.",
+      "url_documento": "https://youtu.be/Aoe4T8ai6A4",
+      "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
+      "subtipo": "Vídeo",
+      "bloque": "recursos"
+    },
+    {
+      "id": "dc-preservia-demo",
+      "titulo": "PreservIA · Demostración de la solución",
+      "tipo": "Herramienta",
+      "practica": "digital-change",
+      "solucion": "preservia",
+      "zona": "cliente",
+      "sale_al_cliente": "si",
+      "confidencialidad": "compartible",
+      "audiencia": "Cliente",
+      "estado": "vigente",
+      "fecha_revision": "2026-09-08",
+      "dueno": "Alfredo",
+      "mantenida_por": "sm",
+      "citable": "no_aplica",
+      "sign_off": null,
+      "sector": [],
+      "momento_comercial": "primer_contacto",
+      "nota_de_uso": "Presentación general de la tecnología de soporte y conocimiento.",
+      "url_documento": "https://www.youtube.com/watch?v=Sq42DKPbef8",
+      "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
+      "subtipo": "Vídeo",
+      "bloque": "recursos",
+      "aviso": "Los dos vídeos se grabaron con el nombre Smart Help, retirado como etiqueta comercial: preséntalos como PreservIA."
+    },
+    {
+      "id": "dc-preservia-caso-financiero",
+      "titulo": "PreservIA · Caso de uso en entidades financieras",
+      "tipo": "Herramienta",
+      "practica": "digital-change",
+      "solucion": "preservia",
+      "zona": "cliente",
+      "sale_al_cliente": "si",
+      "confidencialidad": "compartible",
+      "audiencia": "Cliente",
+      "estado": "vigente",
+      "fecha_revision": "2026-09-08",
+      "dueno": "Alfredo",
+      "mantenida_por": "sm",
+      "citable": "no_aplica",
+      "sign_off": null,
+      "sector": [],
+      "momento_comercial": "primer_contacto",
+      "nota_de_uso": "El mismo recorrido aplicado a banca y seguros.",
+      "url_documento": "https://www.youtube.com/watch?v=zQKr7DQ9QEk",
+      "origen": "Alfredo Zurdo · reunión de feedback 8-sep-2026",
+      "subtipo": "Vídeo",
+      "bloque": "recursos"
     }
   ]
 }

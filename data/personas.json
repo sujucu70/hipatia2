@@ -1,10 +1,156 @@
 [
-  { "id": "carmen-rode", "nombre": "Carmen Rode", "titulo": null, "correo": null, "telefono": null, "teams": null, "practica": "process-intelligence", "foto": null },
-  { "id": "carla-gonzalez", "nombre": "Carla González", "titulo": null, "correo": null, "telefono": null, "teams": null, "practica": "process-intelligence", "foto": null },
-  { "id": "jorge-herrero", "nombre": "Jorge Herrero", "titulo": null, "correo": null, "telefono": null, "teams": null, "practica": "software-development", "foto": null },
-  { "id": "daniela-ongaro", "nombre": "Daniela Ongaro", "titulo": "Head of Data", "correo": "daniela.ongaro@entelgy.com", "telefono": null, "teams": null, "practica": "data-intelligence", "foto": null },
-  { "id": "luis-sanz", "nombre": "Luis Sanz", "titulo": "Technical Lead · Data Intelligence", "correo": null, "telefono": null, "teams": null, "practica": "data-intelligence", "foto": null },
-  { "id": "amador-sobrino", "nombre": "Amador Sobrino", "titulo": "Solution Manager · Smart Operations", "correo": "amador.sobrino@entelgy.com", "telefono": null, "teams": null, "practica": "smart-operations", "foto": null },
-  { "id": "alfredo-zurdo", "nombre": "Alfredo Zurdo", "titulo": "Head of Digital Change", "correo": "alfredo.zurdo@entelgy.com", "telefono": null, "teams": null, "practica": "digital-change", "foto": null },
-  { "id": "cristina-aparicio", "nombre": "Cristina Aparicio", "titulo": null, "correo": "cristina.aparicio@entelgy.com", "telefono": null, "teams": null, "practica": "digital-change", "foto": null }
+  {
+    "id": "carmen-rode",
+    "nombre": "Carmen Rode",
+    "titulo": "Process Intelligence Manager",
+    "correo": "carmen.rode@entelgy.com",
+    "telefono": "+34 608 310 918",
+    "teams": null,
+    "practica": "process-intelligence",
+    "foto": "/assets/personas/carmen-rode.jpg",
+    "linkedin": null
+  },
+  {
+    "id": "carla-gonzalez",
+    "nombre": "Carla González",
+    "titulo": "Manager CoE Automatización",
+    "correo": "carla.gonzalez@entelgy.com",
+    "telefono": "+34 669 888 729",
+    "teams": null,
+    "practica": "process-intelligence",
+    "foto": "/assets/personas/carla-gonzalez.jpg",
+    "linkedin": null
+  },
+  {
+    "id": "raul-duque",
+    "nombre": "Raúl Duque",
+    "titulo": "Líder Técnico Process Intelligence",
+    "correo": "raul.duque@entelgy.com",
+    "telefono": null,
+    "teams": null,
+    "practica": "process-intelligence",
+    "foto": null,
+    "linkedin": null
+  },
+  {
+    "id": "david-escribano",
+    "nombre": "David Escribano",
+    "titulo": "Líder Técnico CoE Automatización",
+    "correo": "david.escribano@entelgy.com",
+    "telefono": null,
+    "teams": null,
+    "practica": "process-intelligence",
+    "foto": null,
+    "linkedin": null
+  },
+  {
+    "id": "jorge-herrero",
+    "nombre": "Jorge Herrero",
+    "titulo": "Solution Manager · Software Engineering · Head of Technology | AI Director",
+    "correo": "jorge.herrero@entelgy.com",
+    "telefono": "+34 679 186 366",
+    "teams": null,
+    "practica": "software-development",
+    "foto": null,
+    "linkedin": null
+  },
+  {
+    "id": "miguel-angel-villacanas",
+    "nombre": "Miguel Ángel Villacañas",
+    "titulo": "Head of Digital Architecture & Devs",
+    "correo": "miguelangel.villacanas@entelgy.com",
+    "telefono": "+34 680 449 125",
+    "teams": null,
+    "practica": "software-development",
+    "foto": null,
+    "linkedin": null
+  },
+  {
+    "id": "daniela-ongaro",
+    "nombre": "Daniela Ongaro",
+    "titulo": "Data Intelligence Practice Manager",
+    "correo": "daniela.ongaro@entelgy.com",
+    "telefono": "+34 686 370 833",
+    "teams": null,
+    "practica": "data-intelligence",
+    "foto": null,
+    "linkedin": null
+  },
+  {
+    "id": "luis-sanz",
+    "nombre": "Luis Sanz",
+    "titulo": "Technical Lead · Data Intelligence",
+    "correo": null,
+    "telefono": null,
+    "teams": null,
+    "practica": "data-intelligence",
+    "foto": null,
+    "linkedin": null
+  },
+  {
+    "id": "amador-sobrino",
+    "nombre": "Amador Sobrino",
+    "titulo": "Solution Manager · Smart Operations",
+    "correo": "amador.sobrino@entelgy.com",
+    "telefono": "+34 638 152 505",
+    "teams": null,
+    "practica": "smart-operations",
+    "foto": null,
+    "linkedin": null
+  },
+  {
+    "id": "alfredo-zurdo",
+    "nombre": "Alfredo Zurdo",
+    "titulo": "Head of Digital Change | IAbility Product Manager",
+    "correo": "alfredo.zurdo@entelgy.com",
+    "telefono": "+34 696 400 067",
+    "teams": null,
+    "practica": "digital-change",
+    "foto": "/assets/personas/alfredo-zurdo.jpg",
+    "linkedin": "https://www.linkedin.com/in/alfredozurdo/"
+  },
+  {
+    "id": "cristina-aparicio",
+    "nombre": "Cristina Aparicio",
+    "titulo": "Transformation Team Leader",
+    "correo": "cristina.aparicio@entelgy.com",
+    "telefono": "+34 618 737 099",
+    "teams": null,
+    "practica": "digital-change",
+    "foto": "/assets/personas/cristina-aparicio.jpg",
+    "linkedin": "https://www.linkedin.com/in/crisaparicio/"
+  },
+  {
+    "id": "vanesa-vaquero",
+    "nombre": "Vanesa Vaquero",
+    "titulo": "Awareness Team Leader",
+    "correo": "vanesa.vaquero@entelgy.com",
+    "telefono": "+34 620 833 003",
+    "teams": null,
+    "practica": "digital-change",
+    "foto": "/assets/personas/vanesa-vaquero.jpg",
+    "linkedin": "https://www.linkedin.com/in/vanesa-vaquero-sanchez/"
+  },
+  {
+    "id": "dolores-santayana",
+    "nombre": "Dolores Santayana",
+    "titulo": "Digital Adoption Team Leader",
+    "correo": "dolores.santayana@entelgy.com",
+    "telefono": "+34 669 382 648",
+    "teams": null,
+    "practica": "digital-change",
+    "foto": "/assets/personas/dolores-santayana.jpg",
+    "linkedin": "https://www.linkedin.com/in/doloressantayana/"
+  },
+  {
+    "id": "abraham-rojo",
+    "nombre": "Abraham Rojo",
+    "titulo": "Gerente de Negocio y Growth",
+    "correo": "abraham.rojo@entelgy.com",
+    "telefono": "+34 679 038 514",
+    "teams": null,
+    "practica": "digital-change",
+    "foto": "/assets/personas/abraham-rojo.jpg",
+    "linkedin": "https://www.linkedin.com/in/abrahamrojomartinez/"
+  }
 ]

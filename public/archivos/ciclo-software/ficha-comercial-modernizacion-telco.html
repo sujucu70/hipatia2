@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ficha Comercial · Modernización de Aplicaciones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --timon:       #1E1712;
+  --timon-2:     #352B23;
+  --cobre:       #A6703E;
+  --cobre-osc:   #7A5028;
+  --cobre-cla:   #D4A870;
+  --cobre-pal:   #F0E2CA;
+  --arena:       #FAF7F2;
+  --arena-pro:   #F0EBE2;
+  --arena-som:   #E4DDD2;
+  --arena-borde: #D5CCC0;
+  --eucalipto:   #5E8272;
+  --eucalipto-pal:#DFF0E9;
+  --arcilla:     #B45C38;
+  --arcilla-pal: #F5E8E2;
+  --niebla:      #8A837A;
+  --niebla-cla:  #C8C0B8;
+  --f-display:   'Cormorant Garamond', Georgia, serif;
+  --f-label:     'Syne', system-ui, sans-serif;
+  --f-body:      'DM Sans', -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: var(--arena); }
+body {
+  background: var(--arena);
+  color: var(--timon);
+  font-family: var(--f-body);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+.page-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
+}
+
+/* ── NAV ── */
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .9rem 1.5rem;
+  border-bottom: 1px solid var(--arena-borde);
+  position: sticky; top: 0;
+  background: rgba(250,247,242,0.96);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  z-index: 50;
+  width: 100%;
+  box-sizing: border-box;
+}
+.topbar-logo {
+  font-family: var(--f-display); font-weight: 300; font-size: 1.1rem;
+  color: var(--timon); text-decoration: none;
+}
+.topbar-logo em { font-style: italic; color: var(--cobre); }
+.topbar-back {
+  font-family: var(--f-label); font-size: .58rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--niebla); text-decoration: none;
+  display: flex; align-items: center; gap: .4rem; transition: color .2s;
+}
+.topbar-back::before { content: '←'; color: var(--cobre); }
+.topbar-back:hover { color: var(--cobre); }
+
+/* ── HEADER FICHA ── */
+.ficha-header {
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--arena-borde);
+}
+.ficha-tipo {
+  font-family: var(--f-label); font-size: .6rem; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--cobre);
+  display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem;
+}
+.ficha-tipo::before { content: ''; width: 24px; height: 1px; background: var(--cobre); }
+.ficha-title {
+  font-family: var(--f-display); font-weight: 300;
+  font-size: clamp(2rem, 5vw, 3rem); line-height: .98;
+  margin-bottom: 1rem;
+}
+.ficha-title em { font-style: italic; color: var(--cobre); }
+.ficha-tagline {
+  font-family: var(--f-body); font-weight: 300; font-size: .98rem;
+  color: var(--niebla); max-width: 580px; line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+.ficha-pills {
+  display: flex; flex-wrap: wrap; gap: .5rem;
+}
+.pill {
+  font-family: var(--f-label); font-size: .58rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: .35rem .85rem; border-radius: 100px;
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+  color: var(--niebla);
+}
+.pill.cobre { background: var(--cobre-pal); border-color: var(--cobre-cla); color: var(--cobre-osc); }
+.pill.verde { background: var(--eucalipto-pal); border-color: #A0BDB2; color: var(--eucalipto); }
+.pill.arcilla { background: var(--arcilla-pal); border-color: #D4A090; color: var(--arcilla); }
+
+/* ── PITCH PRINCIPAL ── */
+.pitch-box {
+  margin: 2rem 0;
+  background: var(--timon);
+  border-radius: 12px;
+  padding: 2rem 2.25rem;
+  position: relative; overflow: hidden;
+}
+.pitch-box::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cobre-cla), transparent);
+}
+.pitch-label {
+  font-family: var(--f-label); font-size: .58rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--cobre-cla); margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: .6rem;
+}
+.pitch-label::after {
+  content: '5 min'; font-size: .6rem; padding: .15rem .5rem;
+  background: rgba(166,112,62,0.2); border-radius: 4px;
+  letter-spacing: .05em;
+}
+.pitch-step {
+  display: grid; grid-template-columns: 28px 1fr;
+  gap: .5rem 1rem; margin-bottom: 1.25rem;
+  align-items: start;
+}
+.pitch-step:last-child { margin-bottom: 0; }
+.pitch-num {
+  font-family: var(--f-display); font-size: 1.3rem; font-weight: 300;
+  color: var(--cobre-cla); line-height: 1.2; padding-top: .1rem;
+}
+.pitch-text {
+  font-family: var(--f-body); font-weight: 300; font-size: .9rem;
+  color: rgba(250,247,242,0.75); line-height: 1.7;
+}
+.pitch-text strong { color: #FAF7F2; font-weight: 500; }
+.pitch-text em { font-style: italic; color: var(--cobre-cla); }
+.pitch-text .cita {
+  display: block; margin-top: .5rem;
+  font-style: italic; color: rgba(250,247,242,0.55);
+  font-size: .85rem; border-left: 2px solid var(--cobre-osc);
+  padding-left: .75rem;
+}
+
+/* ── SABER RÁPIDO ── */
+.saber-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1rem; margin: 2rem 0;
+}
+.saber-card {
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+  border-radius: 10px; padding: 1.25rem 1.4rem;
+}
+.saber-card-label {
+  font-family: var(--f-label); font-size: .58rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--niebla-cla); margin-bottom: .6rem;
+}
+.saber-card-text {
+  font-family: var(--f-body); font-weight: 300; font-size: .88rem;
+  color: var(--niebla); line-height: 1.65;
+}
+.saber-card-text strong { color: var(--timon); font-weight: 500; }
+
+/* ── SECCIÓN GENÉRICA ── */
+.seccion { margin: 0; border-top: 1px solid var(--arena-borde); }
+
+.seccion-trigger {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 0;
+  text-align: left;
+}
+.seccion-trigger:hover .seccion-titulo { color: var(--cobre); }
+.seccion-titulo {
+  font-family: var(--f-label); font-size: .68rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--timon); transition: color .2s;
+}
+.seccion-icon {
+  font-family: var(--f-display); font-size: 1.1rem; font-weight: 300;
+  color: var(--cobre); transition: transform .3s;
+  line-height: 1; flex-shrink: 0;
+}
+.seccion.open .seccion-icon { transform: rotate(45deg); }
+.seccion-body {
+  display: none; padding-bottom: 2rem;
+}
+.seccion.open .seccion-body { display: block; }
+
+/* ── CASOS ── */
+.casos-list { display: flex; flex-direction: column; gap: .75rem; }
+.caso {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: .75rem 1.25rem;
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+  border-radius: 10px; padding: 1.1rem 1.25rem;
+  align-items: start; cursor: pointer; transition: background .2s;
+}
+.caso:hover { background: var(--cobre-pal); }
+.caso-id {
+  font-family: var(--f-display); font-weight: 400; font-size: 1.3rem;
+  color: var(--cobre-cla); line-height: 1.1; padding-top: .1rem;
+}
+.caso-nombre {
+  font-family: var(--f-label); font-size: .68rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--timon); margin-bottom: .3rem;
+}
+.caso-sector {
+  font-family: var(--f-label); font-size: .56rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--niebla-cla);
+}
+.caso-body {
+  grid-column: 1 / -1; display: none;
+  border-top: 1px solid var(--arena-borde);
+  padding-top: .85rem; margin-top: .2rem;
+}
+.caso.open .caso-body { display: block; }
+.caso-hizo, .caso-pitch {
+  font-family: var(--f-body); font-weight: 300; font-size: .86rem;
+  color: var(--niebla); line-height: 1.65; margin-bottom: .6rem;
+}
+.caso-pitch { color: var(--timon); font-weight: 400; }
+.caso-pitch-label {
+  font-family: var(--f-label); font-size: .55rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--cobre); margin-bottom: .3rem; margin-top: .75rem;
+}
+
+/* ── OBJECIONES ── */
+.objs-list { display: flex; flex-direction: column; gap: .6rem; }
+.obj {
+  border: 1px solid var(--arena-borde); border-radius: 10px;
+  overflow: hidden; background: var(--arena-pro);
+}
+.obj-trigger {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: grid; grid-template-columns: 1fr 24px;
+  gap: .5rem; padding: 1rem 1.1rem;
+  text-align: left; align-items: center;
+  transition: background .2s;
+}
+.obj-trigger:hover { background: var(--cobre-pal); }
+.obj-pregunta {
+  font-family: var(--f-body); font-size: .88rem; font-weight: 400;
+  color: var(--timon); font-style: italic; line-height: 1.5;
+}
+.obj-chevron {
+  font-size: .9rem; color: var(--cobre); transition: transform .3s;
+  line-height: 1; text-align: center;
+}
+.obj.open .obj-chevron { transform: rotate(180deg); }
+.obj-body {
+  display: none;
+  padding: 0 1.1rem 1rem;
+  border-top: 1px solid var(--arena-borde);
+}
+.obj.open .obj-body { display: block; }
+.obj-respuesta {
+  font-family: var(--f-body); font-weight: 300; font-size: .86rem;
+  color: var(--niebla); line-height: 1.7; padding-top: .75rem;
+}
+.obj-respuesta strong { color: var(--timon); font-weight: 500; }
+.obj-respuesta em { font-style: italic; color: var(--cobre); }
+.obj-frase {
+  margin-top: .75rem; padding: .75rem 1rem;
+  background: var(--timon); border-radius: 8px;
+  font-family: var(--f-body); font-weight: 300; font-size: .84rem;
+  color: rgba(250,247,242,0.85); line-height: 1.6; font-style: italic;
+}
+
+/* ── PROFUNDIZAR ── */
+.detalle-grid {
+  display: flex; flex-direction: column; gap: .6rem;
+}
+.detalle {
+  border: 1px solid var(--arena-borde); border-radius: 10px;
+  overflow: hidden; background: var(--arena);
+}
+.detalle-trigger {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .9rem 1.1rem; text-align: left;
+  transition: background .2s;
+}
+.detalle-trigger:hover { background: var(--arena-pro); }
+.detalle-titulo {
+  font-family: var(--f-label); font-size: .62rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--niebla);
+}
+.detalle-chevron {
+  font-size: .8rem; color: var(--niebla-cla); transition: transform .3s; line-height: 1;
+}
+.detalle.open .detalle-chevron { transform: rotate(180deg); }
+.detalle-body {
+  display: none;
+  padding: 0 1.1rem 1.1rem;
+  border-top: 1px solid var(--arena-borde);
+}
+.detalle.open .detalle-body { display: block; }
+.detalle-prose {
+  font-family: var(--f-body); font-weight: 300; font-size: .86rem;
+  color: var(--niebla); line-height: 1.7; padding-top: .85rem;
+}
+.detalle-prose strong { color: var(--timon); font-weight: 500; }
+.detalle-prose p + p { margin-top: .75rem; }
+.detalle-prose ul { padding-left: 1.1rem; margin-top: .5rem; }
+.detalle-prose li { margin-bottom: .35rem; }
+.detalle-prose .tabla {
+  width: 100%; border-collapse: collapse; margin-top: .75rem;
+  font-size: .82rem;
+}
+.detalle-prose .tabla th {
+  font-family: var(--f-label); font-size: .55rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--niebla); border-bottom: 1px solid var(--arena-borde);
+  padding: .5rem .6rem; text-align: left;
+}
+.detalle-prose .tabla td {
+  padding: .5rem .6rem; border-bottom: 1px solid var(--niebla-muy, #ECE8E2);
+  color: var(--niebla); vertical-align: top;
+}
+.detalle-prose .tabla td:first-child { color: var(--timon); font-weight: 500; }
+
+/* ── SEÑALES DE COMPRA ── */
+.senales-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: .6rem; margin-top: .5rem;
+}
+.senal {
+  display: flex; align-items: flex-start; gap: .6rem;
+  background: var(--eucalipto-pal); border-radius: 8px;
+  padding: .7rem .9rem; border: 1px solid #A0BDB2;
+}
+.senal-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--eucalipto); flex-shrink: 0; margin-top: .35rem;
+}
+.senal-text {
+  font-family: var(--f-body); font-weight: 300; font-size: .82rem;
+  color: var(--eucalipto); line-height: 1.5;
+}
+
+/* ── DATOS CLAVE ── */
+.datos-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: .75rem; margin: 1.5rem 0;
+}
+.dato {
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+  border-radius: 10px; padding: 1rem 1.1rem; text-align: center;
+}
+.dato-num {
+  font-family: var(--f-display); font-size: 1.8rem; font-weight: 400;
+  color: var(--cobre); line-height: 1; margin-bottom: .3rem;
+}
+.dato-desc {
+  font-family: var(--f-body); font-weight: 300; font-size: .76rem;
+  color: var(--niebla); line-height: 1.5;
+}
+.dato-desc strong { color: var(--timon); font-weight: 500; }
+
+/* ── FOOTER ── */
+.ficha-footer {
+  margin-top: 3rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--arena-borde);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: .75rem;
+}
+.footer-brand {
+  font-family: var(--f-display); font-weight: 300; font-size: .95rem;
+  color: var(--niebla-cla);
+}
+.footer-brand em { font-style: italic; color: var(--cobre); }
+.footer-meta {
+  font-family: var(--f-label); font-size: .56rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--niebla-cla);
+  text-align: right; line-height: 1.8;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .saber-grid { grid-template-columns: 1fr; }
+  .senales-grid { grid-template-columns: 1fr; }
+  .datos-row { grid-template-columns: repeat(2, 1fr); }
+  .caso { grid-template-columns: 60px 1fr; }
+  .ficha-footer { flex-direction: column; align-items: flex-start; }
+  .footer-meta { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="topbar">
+  <a class="topbar-logo" href="../">Entelgy<em>·</em></a>
+  <a class="topbar-back" href="index.html">Software Engineering</a>
+</div>
+
+<div class="page-content">
+
+<!-- HEADER -->
+<div class="ficha-header">
+  <div class="ficha-tipo">Ficha comercial · Telco</div>
+  <h1 class="ficha-title">Modernización<br>de <em>Aplicaciones</em></h1>
+  <p class="ficha-tagline">El BSS que tarda seis meses en lanzar un nuevo producto ya no es competitivo. Los sistemas de negocio que sostienen la red son el cuello de botella — y casi todos llevan una década sin tocarlos en serio.</p>
+  <div class="ficha-pills">
+    <span class="pill cobre">CTO · CIO · Dir. Tecnología</span>
+    <span class="pill verde">Ya vendible</span>
+    <span class="pill">BSS · OSS · Billing · APIs</span>
+    <span class="pill">NIS2 · AI Act</span>
+  </div>
+</div>
+
+<!-- DATOS CLAVE -->
+<div class="datos-row">
+  <div class="dato">
+    <div class="dato-num">+70%</div>
+    <div class="dato-desc">aceleración en la <strong>migración de código legacy</strong> con IA respecto a métodos tradicionales · Entelgy</div>
+  </div>
+  <div class="dato">
+    <div class="dato-num">−60%</div>
+    <div class="dato-desc">reducción de <strong>errores funcionales</strong> con refactorización automatizada y testing inteligente · Entelgy</div>
+  </div>
+  <div class="dato">
+    <div class="dato-num">40%</div>
+    <div class="dato-desc">más de rapidez en entrega de <strong>nuevas funcionalidades</strong> migrando de monolito a microservicios</div>
+  </div>
+</div>
+
+<!-- PITCH -->
+<div class="pitch-box">
+  <div class="pitch-label">Pitch</div>
+
+  <div style="background: rgba(166,112,62,0.12); border-radius: 8px; padding: 1.1rem 1.25rem; margin-bottom: 1.5rem; border-left: 3px solid var(--cobre);">
+    <div style="font-family: var(--f-label); font-size: .55rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cobre-cla); margin-bottom: .5rem;">Gancho · 30 segundos</div>
+    <div style="font-family: var(--f-display); font-size: 1.15rem; font-weight: 400; color: #FAF7F2; line-height: 1.4; font-style: italic;">"El problema de las telcos no es la red — es el software de negocio que rodea a la red. El BSS que tarda meses en lanzar un producto, el billing que nadie quiere tocar, el OSS que no habla con las APIs de 5G. Entelgy moderniza esa capa — con IA, sin parar el servicio, firmando el resultado."</div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">1</div>
+    <div class="pitch-text">
+      <strong>La pregunta que abre la conversación</strong>
+      <span class="cita">"¿Cuánto tiempo tardáis desde que negocio decide un nuevo producto hasta que está disponible para el cliente? ¿Y cuánto de ese tiempo es culpa del BSS o del sistema de billing?"</span>
+      En la mayoría de telcos la respuesta son meses. El cuello de botella no está en la red — está en los sistemas de negocio construidos hace quince o veinte años sobre arquitecturas monolíticas que nadie quiere tocar porque nadie sabe qué rompe.
+    </div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">2</div>
+    <div class="pitch-text">
+      <strong>El dato que hace el problema concreto</strong>
+      <span class="cita">"Migrar de ESB a microservicios permite lanzar nuevas funcionalidades en días, no en meses. Las empresas que lo hacen reducen hasta un 50% sus costes de mantenimiento y un 60% el downtime. El ESB te obliga a coordinar y testear todo como un bloque antes de tocar nada."</span>
+      Y el 57% de las empresas europeas no encuentra desarrolladores cualificados para hacerlo. El talento de sistemas legacy se está jubilando sin reemplazo.
+    </div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">3</div>
+    <div class="pitch-text">
+      <strong>Lo que diferencia a Entelgy</strong>
+      Modernización progresiva — módulo por módulo, sin parar el servicio. <em>Spec-Driven Development</em> garantiza que cada pieza migrada tiene spec firmada, tests automatizados y trazabilidad completa. <strong>Foreworth</strong> certifica la productividad como tercero. Cláusula bilateral: <strong>el 40% del ahorro de productividad va al cliente en la factura siguiente.</strong>
+      <span class="cita">"Amdocs o Ericsson te venden plataforma. Minsait te vende capacidad por hora. Entelgy firma el resultado — con métricas auditables y el ahorro directo en tu factura."</span>
+    </div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">4</div>
+    <div class="pitch-text">
+      <strong>El cierre natural</strong>
+      <span class="cita">"¿Os interesa que empecemos con un assessment del BSS o del sistema que más frena el time-to-market? En dos semanas sabéis exactamente qué tenéis, cuánta deuda técnica hay acumulada y en qué orden conviene modernizar — con criterios que el CTO puede defender internamente."</span>
+      El assessment es el producto de entrada. Bajo riesgo, entregable concreto, primer contrato facturable.
+    </div>
+  </div>
+</div>
+
+<!-- SABER RÁPIDO -->
+<div class="saber-grid">
+  <div class="saber-card">
+    <div class="saber-card-label">Quién compra</div>
+    <div class="saber-card-text"><strong>CTO</strong> en primera conversación — conoce el dolor del BSS/OSS legacy. <strong>CIO</strong> cuando afecta al stack corporativo y al roadmap digital. <strong>Dir. de Tecnología de Red</strong> cuando el OSS bloquea el despliegue de 5G. <strong>CFO</strong> cuando los costes de mantenimiento del BSS están fuera de control.</div>
+  </div>
+  <div class="saber-card">
+    <div class="saber-card-label">Qué firma Entelgy</div>
+    <div class="saber-card-text">Modernización progresiva de BSS/OSS/Billing con <strong>Spec-Driven</strong> — spec formal antes de cada funcionalidad, migración módulo a módulo. <strong>CoE de +50 profesionales</strong> (IA, Arquitectura, DevOps, Calidad). Productividad certificada por <strong>Foreworth</strong>. El <strong>40% del ahorro</strong> va al cliente — en la factura, no en promesas.</div>
+  </div>
+  <div class="saber-card">
+    <div class="saber-card-label">Cuándo entrar</div>
+    <div class="saber-card-text">BSS/OSS de más de 8-10 años sin modernización mayor. Time-to-market de nuevos productos superior a 3 meses. ESB monolítico que bloquea la integración con APIs de 5G o con partners. Sistemas de billing con lógica de negocio enterrada en PL/SQL o COBOL. NIS2 activo sobre infraestructura de comunicaciones.</div>
+  </div>
+  <div class="saber-card">
+    <div class="saber-card-label">Clientes en Telco</div>
+    <div class="saber-card-text"><strong>Telefónica Innovación Digital</strong> · <strong>Telefónica España</strong> · <strong>Telefónica Global Solutions</strong> · <strong>MásMóvil</strong>. Tres cuentas activas de Telefónica en distintas unidades — referencia de primer nivel en el sector. Confirmar con Jorge qué casos son referenciables y con qué nivel de detalle.</div>
+  </div>
+</div>
+
+<!-- SEÑALES DE COMPRA -->
+<div class="seccion open" id="s-senales">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-senales')">
+    <span class="seccion-titulo">Señales de que hay oportunidad real</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="senales-grid">
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">El time-to-market de un nuevo producto de datos o de voz supera los tres meses — y el BSS es el cuello de botella</div></div>
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">Tienen un ESB o middleware centralizado que "si falla, cae todo" — punto único de fallo activo</div></div>
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">El sistema de billing tiene lógica de negocio en PL/SQL o en capas que nadie sabe bien cómo funcionan</div></div>
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">Tienen proyectos de IA (churn, fraude, network optimization) que llevan más de un año sin llegar a producción</div></div>
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">Las APIs de red para 5G o para partners están expuestas pero el backend que las alimenta es legacy</div></div>
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">NIS2 ha llegado por el equipo legal y no saben qué implica para la documentación técnica de sus sistemas</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CASOS -->
+<div class="seccion open" id="s-casos">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-casos')">
+    <span class="seccion-titulo">Referencias y casos</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="casos-list">
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">TEF</div>
+        <div>
+          <div class="caso-nombre">Telefónica · tres cuentas activas</div>
+          <div class="caso-sector">Telco · Innovación Digital · España · Global Solutions</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo">
+            <strong>Telefónica Innovación Digital:</strong> desarrollo e ingeniería de software en la unidad de innovación del grupo.<br>
+            <strong>Telefónica España:</strong> equipos de Software Engineering para productos y plataformas de la operadora española.<br>
+            <strong>Telefónica Global Solutions:</strong> desarrollo para la unidad de soluciones empresariales globales del grupo.
+          </div>
+          <div class="caso-pitch-label">Cómo usarlo en reunión</div>
+          <div class="caso-pitch">La referencia más potente del sector. Tres unidades distintas de Telefónica confían en Entelgy para Software Engineering — desde innovación hasta operaciones globales. Para cualquier telco, ver que Telefónica trabaja con Entelgy es credencial suficiente. Confirmar nivel de detalle con Jorge antes de usar.</div>
+        </div>
+      </div>
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">ESB</div>
+        <div>
+          <div class="caso-nombre">Del ESB a microservicios · práctica documentada</div>
+          <div class="caso-sector">Middleware · Arquitectura · Reducción de costes operativos</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo"><strong>El problema:</strong> ESB centralizado que obliga a coordinar y testear todo como un bloque. Cada nueva integración requiere modificar el bus completo. Time-to-market bloqueado. Punto único de fallo activo.<br><strong>Lo que hace Entelgy:</strong> reingeniería del ESB reimplementando las integraciones y servicios como microservicios independientes. Cada servicio puede evolucionar sin tocar el resto. CI/CD con rollback inteligente. Resultado: más de un 40% de rapidez en entrega de nuevas funcionalidades, hasta 50% de reducción de costes de mantenimiento, 60% de reducción de downtime.</div>
+          <div class="caso-pitch-label">Cómo usarlo en reunión</div>
+          <div class="caso-pitch">El caso más directo para telcos con ESB monolítico bloqueando la integración con plataformas de 5G o con APIs de partners. "La migración es módulo por módulo — no hay que parar nada. En el momento en que el primer microservicio está en producción, ya estáis obteniendo valor."</div>
+        </div>
+      </div>
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">PL/SQL</div>
+        <div>
+          <div class="caso-nombre">Migración PL/SQL → Java · práctica con IA</div>
+          <div class="caso-sector">Billing legacy · Lógica de negocio en base de datos · IA Generativa</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo"><strong>El problema:</strong> lógica de negocio del billing enterrada en procedimientos PL/SQL Oracle. Equipos IT centrados en mantenimiento operativo sin capacidad para migrar. Cada vez menos especialistas PL/SQL en el mercado.<br><strong>Lo que hace Entelgy:</strong> ChatGPT para documentar automáticamente los procedimientos existentes. Migración asistida PL/SQL → Java/.NET con IA. GitHub Copilot para generar tests unitarios. Resultado: reducción de tiempo y esfuerzo, mejora de mantenibilidad, eliminación de vendor lock-in de la base de datos Oracle.</div>
+          <div class="caso-pitch-label">Cómo usarlo en reunión</div>
+          <div class="caso-pitch">Directamente aplicable a cualquier telco con billing o sistemas de gestión de clientes sobre Oracle PL/SQL. "Ese código que lleva diez años sin que nadie lo toque porque nadie sabe qué rompe — lo documentamos con IA y lo migramos con tests que garantizan que la funcionalidad se preserva."</div>
+        </div>
+      </div>
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">REFs</div>
+        <div>
+          <div class="caso-nombre">Cartera Telco · Entelgy</div>
+          <div class="caso-sector">Operadoras · Software de red · Plataformas digitales</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo">
+            <strong>Operadoras activas:</strong> Telefónica Innovación Digital · Telefónica España · Telefónica Global Solutions · MásMóvil
+          </div>
+          <div class="caso-pitch-label">Nota de uso</div>
+          <div class="caso-pitch">Confirmar con Jorge qué casos son referenciables y con qué nivel de detalle antes de mencionar en reunión externa. En el sector telco la competencia entre operadoras hace que la referenciabilidad sea especialmente sensible.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- OBJECIONES -->
+<div class="seccion open" id="s-objs">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-objs')">
+    <span class="seccion-titulo">Objeciones más frecuentes</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="objs-list">
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"El BSS y el OSS los gestiona Amdocs / Ericsson / Oracle — son el estándar del sector."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            Amdocs y Ericsson venden plataforma — el software empaquetado del BSS/OSS. Entelgy trabaja en la capa de desarrollo y modernización que rodea a esa plataforma: las integraciones, las customizaciones, los desarrollos a medida, los conectores con sistemas legacy y con APIs de red. <strong>Ningún BSS estándar cubre el 100% de las necesidades de una operadora — siempre hay una capa de desarrollo propio.</strong> Y es esa capa la que normalmente no tiene spec, no tiene tests y nadie quiere tocar. Ahí es donde entra Entelgy.
+            <div class="obj-frase">"¿Cuánto código propio tenéis por encima o alrededor del BSS de Amdocs? ¿Esa capa tiene documentación técnica?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"Tenemos un equipo interno de desarrollo muy potente."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            El equipo interno está centrado en el mantenimiento operativo y en los proyectos del roadmap activo. <strong>La modernización del legacy es trabajo adicional que compite con el delivery del día a día.</strong> El 57% de las empresas europeas no encuentra desarrolladores cualificados para esto — y los especialistas en sistemas BSS legacy son especialmente escasos. Entelgy aporta capacidad especializada en modernización sin quitarle recursos al equipo interno ni competir con sus prioridades.
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"Estamos en medio de una transformación digital — ya tenemos roadmap."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            Bien. La pregunta es si ese roadmap incluye el legacy que frena la transformación o solo las capas nuevas encima. La experiencia habitual es que las transformaciones digitales de telcos acaban chocando con el BSS legacy a los 12-18 meses — cuando intentan conectar los nuevos servicios digitales con los sistemas de facturación y gestión de clientes que llevan décadas sin tocar. <strong>Entelgy no compite con el roadmap — moderniza la capa que el roadmap va a necesitar que funcione.</strong>
+            <div class="obj-frase">"¿Vuestro roadmap de transformación incluye la modernización del sistema de billing? ¿O asume que seguirá funcionando tal como está?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"Somos un cliente grande — necesitamos un proveedor de nuestro tamaño."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            Telefónica trabaja con Entelgy en tres unidades distintas — Innovación Digital, España y Global Solutions. <strong>Entelgy tiene 2.000 profesionales, presencia en España y LATAM, y una de las tasas de fidelización más altas del sector.</strong> Lo que diferencia a Entelgy de un proveedor grande no es el tamaño — es que Susana Juan trabaja directamente con el proyecto, sin delegación. Y que los resultados están firmados con métricas auditables, no declarados en una presentación.
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"No podemos permitirnos interrupciones — cualquier cambio en producción es un riesgo."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            La modernización progresiva de Entelgy es por definición modular — se migra un componente mientras el resto sigue en producción. Spec-Driven garantiza que cada pieza tiene spec firmada y tests automatizados antes de ir a producción. El enfoque de micro-frontend y microservicios permite ejecutar componentes legacy y nuevos en paralelo durante la transición — nadie ve nada en el servicio al cliente. <strong>El riesgo no es modernizar con este modelo — es no modernizar y llegar a un fallo de sistema sin documentación.</strong>
+            <div class="obj-frase">"¿Qué pasa si vuestro sistema de billing cae mañana y el único que sabe cómo funciona no está disponible?"</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- PROFUNDIZAR -->
+<div class="seccion" id="s-detalle">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-detalle')">
+    <span class="seccion-titulo">Profundizar — mecánica y detalle</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="detalle-grid">
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">Qué moderniza Entelgy en telco — los tres tipos</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p><strong>Frontales / portales de cliente (JSP → Angular/React):</strong> interfaces de autogestión y portales de cliente construidos sobre tecnologías obsoletas. Modernización incremental módulo a módulo. Hasta el 81% de clientes abandona una aplicación lenta o deficiente — la modernización reduce esa tasa y eleva el NPS por encima del 30%. Mejora del 30-60% en tiempo de respuesta.</p>
+            <p><strong>Middleware / ESB → microservicios:</strong> el ESB que bloquea el time-to-market. Cada integración con un nuevo partner, API de red o servicio digital pasa por un bus que hay que coordinar completo. Migrar a microservicios permite escalar cada componente de forma independiente. +40% de rapidez en nuevas funcionalidades. 73% de empresas reporta mejora notable de escalabilidad. Hasta 60% de reducción de downtime.</p>
+            <p><strong>Backend de billing / PL/SQL → Java/.NET:</strong> lógica de facturación enterrada en procedimientos Oracle. Entelgy la documenta con IA, la migra a servicios independientes y genera tests automáticos. Al bajar la carga de la BD se puede reducir la licencia Oracle — ahorro significativo en contratos de renovación.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">Spec-Driven — por qué importa en telco</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p>Antes de escribir una línea de código, la funcionalidad queda especificada formalmente y firmada. El código se desarrolla guiado por tests. Cada línea queda trazada a un requisito — trazabilidad total.</p>
+            <p><strong>Para telco:</strong> los sistemas BSS/OSS tienen ciclos de vida muy largos y equipos que rotan. Sin spec, el conocimiento vive en las personas — cuando se van, el conocimiento se va con ellas. Con Spec-Driven, el conocimiento queda en el código y en la documentación, propiedad de la telco.</p>
+            <p><strong>Para NIS2:</strong> las telcos son operadores de infraestructura esencial de comunicaciones bajo NIS2. NIS2 exige documentación técnica y planes de gestión de riesgos sobre los sistemas críticos. Spec-Driven la genera de forma nativa.</p>
+            <p><strong>Reverse spec:</strong> sobre código BSS/OSS legacy existente — reconstruye la spec a partir del código que ya existe, extrayendo el conocimiento del sistema y poniéndolo en un documento propiedad de la telco. Base para la modernización progresiva.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">UCE / IGE — el modelo de precio</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p><strong>UCE:</strong> sprint de 10 días hábiles con un senior. ~42 Story Points entregados y aceptados, tests ≥80%, Spec Compliance 100%. Facturación por capacidad entregada, no por horas.</p>
+            <p><strong>IGE:</strong> Spec Compliance (40%) + Test Coverage (25%) + Cycle Time (20%) + Bug Leakage (15%). IGE ≥ 98 → +5% bonus. IGE &lt; 75 → −8% penalización a Entelgy. El 40% del ahorro de productividad generado por IA va al cliente en la factura siguiente.</p>
+            <p><strong>Entrada en telco:</strong> primer contrato en modelo hora con Spec-Driven aplicado. UCE en la primera renovación, con métricas reales del proyecto como referencia. Para cuentas grandes, el modelo UCE Premium con CoE embebido es el más habitual.</p>
+            <table class="tabla">
+              <thead><tr><th>Nivel</th><th>Composición</th><th>Precio</th></tr></thead>
+              <tbody>
+                <tr><td>UCE Base</td><td>Equipo estándar</td><td>Tarifa Base</td></tr>
+                <tr><td>UCE Plus</td><td>+ 1 especialista CoE</td><td>×1,20</td></tr>
+                <tr><td>UCE Premium</td><td>+ 2 CoE + IA</td><td>×1,40</td></tr>
+                <tr><td>UCE Innovation</td><td>Squad + Chapter Lead</td><td>×1,65</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">La competencia en telco — qué dicen y en qué flaquean</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <table class="tabla">
+              <thead><tr><th>Competidor</th><th>Pitch</th><th>Flaqueza vs Entelgy</th></tr></thead>
+              <tbody>
+                <tr><td>Amdocs / Ericsson</td><td>Plataforma BSS/OSS estándar del sector</td><td>Venden plataforma, no development services. No trabajan la capa de desarrollos propios ni la modernización del legacy propio de la telco</td></tr>
+                <tr><td>Accenture / Capgemini</td><td>Transformación BSS end-to-end, grandes programas</td><td>Modelo hora-consultoría, sin cláusula bilateral de productividad. Para grandes transformaciones, no para modernización progresiva por piezas</td></tr>
+                <tr><td>Indra / Minsait</td><td>Incumbentes en telco español, capacidad local</td><td>Modelo hora-perfil, sin Spec-Driven sistemático, sin Foreworth. Percepción de commodity</td></tr>
+                <tr><td>TCS / Infosys</td><td>Escala offshore, precio bajo</td><td>Sin presencia local sólida, sin Foreworth, modelo hora sin firma de resultado. Conocimiento del contexto regulatorio español limitado</td></tr>
+                <tr><td>Globant / EPAM</td><td>IA y modernización global</td><td>Sin foco telco en España, sin cobertura regulatoria NIS2 contractual, sin cláusula bilateral</td></tr>
+              </tbody>
+            </table>
+            <p style="margin-top:.75rem;"><strong>La frase:</strong> <em>"Todos te venden capacidad o plataforma. Entelgy firma productividad certificada, con el ahorro directo en tu factura."</em></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">NIS2 en telco — lo mínimo que necesitas saber</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p><strong>Por qué aplica a telcos:</strong> las redes de comunicaciones electrónicas son infraestructura esencial bajo NIS2. Las operadoras están obligadas a implementar medidas de gestión de riesgos de ciberseguridad que incluyen la cadena de suministro de software.</p>
+            <p><strong>Qué exige sobre el software:</strong> gestión de riesgos en la cadena de suministro (los proveedores de software son parte del perímetro), documentación técnica de sistemas críticos, planes de continuidad de negocio, y notificación de incidentes en 24/72 horas.</p>
+            <p><strong>Multas:</strong> hasta 10M€ o el 2% de la facturación global. Inhabilitación personal del CEO contemplada en casos graves. La responsabilidad es del Consejo de Administración.</p>
+            <p><strong>Cómo responde Entelgy:</strong> Spec-Driven produce la documentación técnica de los sistemas desarrollados. Las cláusulas de gestión de riesgos de terceros se integran en el contrato UCE. El CoE de Calidad gestiona los estándares de código seguro.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="ficha-footer">
+  <div class="footer-brand" style="font-family: var(--f-label); font-size: .75rem; font-weight: 600; letter-spacing: .08em; color: var(--niebla);">Entelgy · Hipatia</div>
+  <div class="footer-meta">
+    Ficha comercial · Modernización · Vertical Telco<br>
+    Jorge Herrero · Ciclo de vida de desarrollo de software · Mayo 2026
+  </div>
+</div>
+
+</div><!-- /page-content -->
+
+<script>
+function toggleSeccion(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+function toggleObj(el) { el.classList.toggle('open'); }
+function toggleDetalle(el) { el.classList.toggle('open'); }
+function toggleCaso(el) { el.classList.toggle('open'); }
+</script>
+<div id="hipatia-volver"><button type="button" aria-label="Volver a Hipatia">← Volver a Hipatia</button></div>
+<style>
+#hipatia-volver{position:fixed;top:14px;left:14px;z-index:2147483000;font:500 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+#hipatia-volver button{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid #E6E8EA;background:#fff;color:#041C2C;cursor:pointer;box-shadow:0 1px 3px rgba(4,28,44,.10);font:inherit;transition:color .15s,border-color .15s}
+#hipatia-volver button:hover{color:#FE5000;border-color:#FE5000}
+#hipatia-volver button:focus-visible{outline:2px solid #FE5000;outline-offset:2px}
+@media print{#hipatia-volver{display:none !important}}
+</style>
+<script>
+(function(){
+  var PORTAL="https://hipatia-v4.guberna.es/";
+  function volver(){
+    // el material se abre en la misma pestaña, así que hay historial: volver
+    // atrás devuelve al listado exacto, con su scroll y sus filtros. Si alguien
+    // llegó por la URL directa no hay historial y se va a la portada.
+    if(history.length>1){ history.back(); return; }
+    location.href=PORTAL;
+  }
+  var b=document.getElementById('hipatia-volver');
+  if(b) b.firstChild.addEventListener('click',volver);
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape'||e.defaultPrevented) return;
+    if(document.fullscreenElement) return;                 // Escape sale de pantalla completa
+    var a=document.activeElement;
+    if(a&&(a.tagName==='INPUT'||a.tagName==='TEXTAREA'||a.isContentEditable)) return;
+    volver();
+  });
+})();
+</script></body>
+</html>

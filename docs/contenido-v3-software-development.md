@@ -204,7 +204,14 @@ Hay una complicación que no había en Process Intelligence. Jorge cambió dos c
 
 ## 4 · Contactos (`data/personas.json`)
 
-- Jorge: `nombre` «Jorge Herrero», correo `jorge.herrero@entelgy.com` (en las cuatro piezas). Segundo contacto: no hay ninguno nombrado en el material; Fernando Naranjo (Operaciones) es el dueño de datos, no un contacto comercial.
+**Cerrado el 7 de septiembre.** Software Development ya no tiene ningún «por confirmar» en `/contactos/`: las tres soluciones (Modernización de aplicaciones, Mantenimiento evolutivo, Asistencia técnica aumentada) llevan a Jorge como comercial y a **Miguel Ángel Villacañas** (Head of Digital Architecture & Devs, `miguelangel.villacanas@entelgy.com`, +34 680 449 125) como técnico. Es la única práctica con la columna técnica completa.
+
+- Jorge: `titulo` «Solution Manager · Software Engineering · Head of Technology | AI Director», correo `jorge.herrero@entelgy.com` (en las cuatro piezas), móvil +34 679 186 366. Con el correo en ficha, los «pídeselo a Jorge Herrero» de los materiales ya salen como enlace de correo.
+- Miguel Ángel Villacañas: alta nueva en `personas.json`, `practica` `software-development`, `contactos.tecnico` en las tres soluciones. Sin foto ni canal de Teams todavía.
+- Fernando Naranjo (Operaciones) es el dueño de datos, no un contacto comercial: no entra en el directorio.
+- El portal solo guarda un teléfono por persona y es el móvil; los fijos no se registran.
+
+Sigue abierto en otras prácticas: técnico de Automatización de procesos (lo pide Susana a Carla), de Puesto de trabajo e Infraestructura crítica (a Amador) y de IAbility y PreservIA (a Alfredo). Los móviles y títulos de esas cuatro personas sí están ya completos.
 
 ---
 

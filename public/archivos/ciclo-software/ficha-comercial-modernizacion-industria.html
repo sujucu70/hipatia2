@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ficha Comercial · Modernización de Aplicaciones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --timon:       #1E1712;
+  --timon-2:     #352B23;
+  --cobre:       #A6703E;
+  --cobre-osc:   #7A5028;
+  --cobre-cla:   #D4A870;
+  --cobre-pal:   #F0E2CA;
+  --arena:       #FAF7F2;
+  --arena-pro:   #F0EBE2;
+  --arena-som:   #E4DDD2;
+  --arena-borde: #D5CCC0;
+  --eucalipto:   #5E8272;
+  --eucalipto-pal:#DFF0E9;
+  --arcilla:     #B45C38;
+  --arcilla-pal: #F5E8E2;
+  --niebla:      #8A837A;
+  --niebla-cla:  #C8C0B8;
+  --f-display:   'Cormorant Garamond', Georgia, serif;
+  --f-label:     'Syne', system-ui, sans-serif;
+  --f-body:      'DM Sans', -apple-system, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: var(--arena); }
+body {
+  background: var(--arena); color: var(--timon);
+  font-family: var(--f-body); font-size: 14px;
+  line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.page-content { max-width: 860px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+/* ── TOPBAR ── */
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .9rem 1.5rem; border-bottom: 1px solid var(--arena-borde);
+  position: sticky; top: 0; background: rgba(250,247,242,0.96);
+  backdrop-filter: blur(6px); z-index: 50; width: 100%;
+}
+.topbar-logo { font-family: var(--f-display); font-weight: 300; font-size: 1.1rem; color: var(--timon); text-decoration: none; }
+.topbar-logo em { font-style: italic; color: var(--cobre); }
+.topbar-back {
+  font-family: var(--f-label); font-size: .58rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--niebla); text-decoration: none;
+  display: flex; align-items: center; gap: .4rem; transition: color .2s;
+}
+.topbar-back::before { content: '←'; color: var(--cobre); }
+.topbar-back:hover { color: var(--cobre); }
+
+/* ── HEADER ── */
+.ficha-header { padding: 2.5rem 0 2rem; border-bottom: 1px solid var(--arena-borde); }
+.ficha-tipo {
+  font-family: var(--f-label); font-size: .6rem; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--cobre);
+  display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem;
+}
+.ficha-tipo::before { content: ''; width: 24px; height: 1px; background: var(--cobre); }
+.ficha-title { font-family: var(--f-display); font-weight: 300; font-size: clamp(2rem,5vw,3rem); line-height: .98; margin-bottom: 1rem; }
+.ficha-title em { font-style: italic; color: var(--cobre); }
+.ficha-tagline { font-family: var(--f-body); font-weight: 300; font-size: .98rem; color: var(--niebla); max-width: 580px; line-height: 1.7; margin-bottom: 1.75rem; }
+.ficha-pills { display: flex; flex-wrap: wrap; gap: .5rem; }
+.pill {
+  font-family: var(--f-label); font-size: .58rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: .35rem .85rem; border-radius: 100px;
+  background: var(--arena-pro); border: 1px solid var(--arena-borde); color: var(--niebla);
+}
+.pill.cobre { background: var(--cobre-pal); border-color: var(--cobre-cla); color: var(--cobre-osc); }
+.pill.verde { background: var(--eucalipto-pal); border-color: #A0BDB2; color: var(--eucalipto); }
+.pill.arcilla { background: var(--arcilla-pal); border-color: #D4A090; color: var(--arcilla); }
+
+/* ── DATOS CLAVE ── */
+.datos-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin: 1.5rem 0; }
+.dato { background: var(--arena-pro); border: 1px solid var(--arena-borde); border-radius: 10px; padding: 1rem 1.1rem; text-align: center; }
+.dato-num { font-family: var(--f-display); font-size: 1.8rem; font-weight: 400; color: var(--cobre); line-height: 1; margin-bottom: .3rem; }
+.dato-desc { font-family: var(--f-body); font-weight: 300; font-size: .76rem; color: var(--niebla); line-height: 1.5; }
+.dato-desc strong { color: var(--timon); font-weight: 500; }
+.dato-fuente { display: block; margin-top: .45rem; font-family: var(--f-label); font-size: .5rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--niebla-cla); line-height: 1.4; }
+
+/* ── ZONA HEADERS ── */
+.zona-header {
+  margin: 2.5rem -1.25rem 1.75rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--timon);
+  display: flex; align-items: center; gap: 1.25rem;
+  position: relative; overflow: hidden;
+}
+.zona-header::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.zona-header.z0::before { background: var(--cobre); }
+.zona-header.z1::before { background: linear-gradient(90deg, var(--cobre), var(--cobre-cla)); }
+.zona-header.z2::before { background: var(--eucalipto); }
+.zona-header.z3::before { background: var(--niebla); }
+.zona-num {
+  font-family: var(--f-display); font-size: 3.5rem; font-weight: 300;
+  color: var(--cobre-cla); line-height: 1; flex-shrink: 0;
+}
+.zona-sep {
+  width: 1px; height: 42px;
+  background: rgba(166,112,62,0.25); flex-shrink: 0;
+}
+.zona-tag {
+  font-family: var(--f-label); font-size: .5rem; font-weight: 700;
+  letter-spacing: .25em; text-transform: uppercase;
+  color: rgba(250,247,242,0.35); margin-bottom: .2rem;
+}
+.zona-name {
+  font-family: var(--f-body); font-size: .95rem; font-weight: 400;
+  color: rgba(250,247,242,0.88); line-height: 1.25;
+}
+.zona-sub {
+  font-family: var(--f-body); font-size: .76rem; font-weight: 300;
+  color: rgba(250,247,242,0.4); line-height: 1.4;
+}
+
+/* ── SCANNER ── */
+.scanner-box {
+  background: white; border: 1px solid var(--arena-borde);
+  border-radius: 12px; padding: 1.35rem 1.6rem; margin-bottom: 1.5rem;
+  position: relative; overflow: hidden;
+}
+.scanner-box::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--cobre), var(--cobre-cla), transparent);
+}
+.scanner-heading {
+  font-family: var(--f-label); font-size: .55rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--cobre);
+  margin-bottom: .3rem;
+}
+.scanner-desc {
+  font-family: var(--f-body); font-size: .8rem; font-weight: 300;
+  color: var(--niebla); line-height: 1.5; margin-bottom: 1rem;
+}
+#sc-form { display: flex; gap: .55rem; }
+#sc-input {
+  flex: 1; padding: .7rem 1rem;
+  border: 1px solid var(--arena-borde); border-radius: 8px;
+  background: var(--arena-pro); color: var(--timon);
+  font-family: var(--f-body); font-size: .88rem; outline: none;
+  transition: border-color .2s;
+}
+#sc-input::placeholder { color: var(--niebla-cla); }
+#sc-input:focus { border-color: var(--cobre); }
+.sc-btn {
+  padding: .7rem 1.1rem; background: var(--timon); color: var(--arena);
+  border: none; border-radius: 8px; cursor: pointer;
+  font-family: var(--f-label); font-size: .58rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; white-space: nowrap;
+  transition: background .2s;
+}
+.sc-btn:hover { background: var(--timon-2); }
+#sc-loading { display: none; padding-top: .85rem; }
+.sc-loading-inner { display: flex; align-items: center; gap: .85rem; }
+.sc-spinner {
+  width: 18px; height: 18px; flex-shrink: 0;
+  border: 2px solid var(--arena-borde); border-top-color: var(--cobre);
+  border-radius: 50%; animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.sc-loading-company {
+  font-family: var(--f-label); font-size: .5rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--cobre);
+  display: block; margin-bottom: .2rem;
+}
+#sc-loading-msg {
+  font-family: var(--f-body); font-size: .82rem; font-weight: 300;
+  color: var(--niebla); line-height: 1.5;
+}
+#sc-error {
+  display: none; margin-top: .75rem; align-items: center; gap: .75rem;
+  padding: .7rem 1rem; background: var(--arcilla-pal);
+  border-radius: 8px; border: 1px solid #D4A090;
+}
+.sc-error-text {
+  font-family: var(--f-body); font-size: .82rem; font-weight: 300;
+  color: var(--arcilla); flex: 1; line-height: 1.5;
+}
+.sc-retry {
+  background: none; border: 1px solid var(--arcilla); color: var(--arcilla);
+  border-radius: 100px; padding: .28rem .7rem; cursor: pointer;
+  font-family: var(--f-label); font-size: .52rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; flex-shrink: 0;
+}
+#sc-results { display: none; margin-top: .85rem; }
+.sc-temp-badge {
+  display: block; padding: .6rem .9rem; border-radius: 8px; border: 1px solid;
+  font-family: var(--f-body); font-size: .86rem; font-weight: 300;
+  margin-bottom: .55rem; line-height: 1.4;
+}
+.sc-score-bar { display: flex; gap: .25rem; margin-bottom: .7rem; }
+.sc-bar-seg { flex: 1; height: 3px; border-radius: 2px; background: var(--arena-borde); transition: background .4s; }
+.sc-bar-seg.active { background: var(--cobre); }
+.sc-signals { display: flex; flex-direction: column; gap: .3rem; margin-bottom: .7rem; }
+.sc-signal {
+  display: flex; align-items: flex-start; gap: .6rem;
+  padding: .5rem .75rem; border-radius: 7px;
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+}
+.sc-signal.found { background: var(--eucalipto-pal); border-color: #A0BDB2; }
+.sc-sig-icon { font-size: .82rem; flex-shrink: 0; opacity: .5; margin-top: .1rem; }
+.sc-sig-body { flex: 1; min-width: 0; }
+.sc-sig-label {
+  font-family: var(--f-label); font-size: .52rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--niebla-cla);
+}
+.sc-signal.found .sc-sig-label { color: var(--eucalipto); }
+.sc-sig-evidence {
+  font-family: var(--f-body); font-size: .75rem; font-weight: 300;
+  color: var(--niebla); line-height: 1.5; margin-top: .1rem; font-style: italic;
+}
+.sc-signal.found .sc-sig-evidence { color: #3D6355; }
+.sc-sig-check {
+  font-family: var(--f-body); font-size: .75rem; font-weight: 600;
+  color: var(--niebla-cla); flex-shrink: 0; margin-top: .1rem; width: 14px; text-align: center;
+}
+.sc-signal.found .sc-sig-check { color: var(--eucalipto); font-weight: 700; }
+.sc-action {
+  padding: .6rem .85rem; background: var(--cobre-pal); border-radius: 8px;
+  border-left: 3px solid var(--cobre); font-family: var(--f-body); font-size: .84rem;
+  font-weight: 300; color: var(--timon); line-height: 1.6; margin-bottom: .6rem;
+}
+.sc-reset {
+  background: none; border: 1px solid var(--arena-borde); border-radius: 100px;
+  padding: .28rem .7rem; font-family: var(--f-label); font-size: .5rem;
+  font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--niebla); cursor: pointer; transition: all .2s;
+}
+.sc-reset:hover { border-color: var(--timon); color: var(--timon); }
+
+/* ── DESPUÉS (ZONA 2) ── */
+.despues-intro {
+  font-family: var(--f-body); font-size: .86rem; font-weight: 300;
+  color: var(--niebla); line-height: 1.6; margin-bottom: 1rem;
+  font-style: italic;
+}
+.despues-tabs { display: flex; gap: .5rem; margin-bottom: 1.1rem; flex-wrap: wrap; }
+.dtab {
+  flex: 1; min-width: 140px; padding: .9rem 1rem; border-radius: 10px;
+  border: 1px solid var(--arena-borde); background: var(--arena-pro);
+  font-family: var(--f-body); font-size: .84rem; font-weight: 300;
+  color: var(--niebla); cursor: pointer; text-align: center;
+  transition: all .2s; line-height: 1.4;
+}
+.dtab:hover { border-color: var(--cobre-cla); background: var(--cobre-pal); color: var(--timon); }
+.dtab.active.bien  { background: var(--eucalipto-pal); border-color: #A0BDB2; color: var(--eucalipto); font-weight: 400; }
+.dtab.active.tibio { background: #FFFBEB; border-color: #FDE68A; color: #B45309; font-weight: 400; }
+.dtab.active.frio  { background: var(--arena-som); border-color: var(--niebla-cla); color: var(--timon); font-weight: 400; }
+.dscenario { display: none; }
+.dscenario.active { display: block; animation: fadeIn .2s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+.d-placeholder {
+  padding: 2rem; text-align: center; border: 1px dashed var(--arena-borde);
+  border-radius: 10px; font-family: var(--f-body); font-size: .86rem;
+  font-weight: 300; color: var(--niebla-cla); font-style: italic;
+}
+.d-action-box {
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+  border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1rem;
+}
+.d-action-label {
+  font-family: var(--f-label); font-size: .55rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--niebla-cla); margin-bottom: .5rem;
+}
+.d-action-text {
+  font-family: var(--f-body); font-size: .86rem; font-weight: 300;
+  color: var(--timon); line-height: 1.65;
+}
+.d-action-text strong { font-weight: 500; }
+.d-email-label {
+  font-family: var(--f-label); font-size: .55rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--niebla); margin: 1rem 0 .65rem;
+}
+.d-frio-items { display: flex; flex-direction: column; gap: .45rem; margin: .75rem 0 1.25rem; }
+.d-frio-item {
+  display: flex; gap: .75rem; align-items: flex-start;
+  padding: .65rem .9rem; background: var(--arena-pro);
+  border: 1px solid var(--arena-borde); border-radius: 8px;
+}
+.d-frio-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--niebla-cla); flex-shrink: 0; margin-top: .42rem; }
+.d-frio-text { font-family: var(--f-body); font-size: .84rem; font-weight: 300; color: var(--niebla); line-height: 1.55; }
+.assessment-toggle { border-top: 1px solid var(--arena-borde); margin-top: 1.25rem; padding-top: 1rem; }
+.assessment-toggle-btn {
+  background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; gap: .6rem; padding: 0;
+  font-family: var(--f-label); font-size: .58rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--niebla); transition: color .2s;
+}
+.assessment-toggle-btn:hover { color: var(--cobre); }
+.assessment-toggle-icon {
+  color: var(--cobre); font-family: var(--f-display); font-size: 1rem;
+  font-weight: 300; line-height: 1; transition: transform .3s;
+}
+.assessment-toggle.open .assessment-toggle-icon { transform: rotate(45deg); }
+.assessment-toggle-body { display: none; margin-top: .85rem; }
+.assessment-toggle.open .assessment-toggle-body { display: block; }
+
+/* ── CONTACTO TABS ── */
+
+/* ── SECCIONES GENÉRICAS ── */
+.seccion { margin: 0; border-top: 1px solid var(--arena-borde); }
+.seccion-trigger {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 0; text-align: left;
+}
+.seccion-trigger:hover .seccion-titulo { color: var(--cobre); }
+.seccion-titulo {
+  font-family: var(--f-label); font-size: .68rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--timon); transition: color .2s;
+}
+.seccion-icon { font-family: var(--f-display); font-size: 1.1rem; font-weight: 300; color: var(--cobre); transition: transform .3s; line-height: 1; flex-shrink: 0; }
+.seccion.open .seccion-icon { transform: rotate(45deg); }
+.seccion-body { display: none; padding-bottom: 2rem; }
+.seccion.open .seccion-body { display: block; }
+
+/* ── SEÑALES ── */
+.senales-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-top: .5rem; }
+.senal { background: var(--eucalipto-pal); border-radius: 8px; border: 1px solid #A0BDB2; overflow: hidden; }
+.senal-main { display: flex; align-items: flex-start; gap: .6rem; padding: .7rem .9rem; }
+.senal-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--eucalipto); flex-shrink: 0; margin-top: .42rem; }
+.senal-text { font-family: var(--f-body); font-weight: 300; font-size: .82rem; color: var(--eucalipto); line-height: 1.5; flex: 1; }
+.senal-i {
+  width: 17px; height: 17px; border-radius: 50%; flex-shrink: 0;
+  background: none; border: 1px solid #A0BDB2; cursor: pointer;
+  font-family: var(--f-body); font-size: .62rem; font-weight: 600;
+  color: var(--eucalipto); display: flex; align-items: center; justify-content: center;
+  transition: all .15s; margin-top: .1rem; line-height: 1;
+}
+.senal-i:hover { background: var(--eucalipto); border-color: var(--eucalipto); color: white; }
+.senal.info-open .senal-i { background: var(--eucalipto); border-color: var(--eucalipto); color: white; }
+.senal-info {
+  display: none; padding: .6rem .9rem .7rem 2rem;
+  border-top: 1px solid #A0BDB2;
+  font-family: var(--f-body); font-size: .78rem; font-weight: 300;
+  color: var(--eucalipto); line-height: 1.65;
+  background: rgba(95,130,114,0.07);
+}
+.senal.info-open .senal-info { display: block; }
+.senal-info strong { font-weight: 500; color: #3D6355; }
+.senal-temp-nota {
+  margin-top: .85rem; padding: .6rem .85rem;
+  background: var(--arena-pro); border-radius: 6px; border: 1px solid var(--arena-borde);
+  font-family: var(--f-body); font-size: .78rem; font-weight: 300; color: var(--niebla); line-height: 1.6;
+}
+.senal-temp-nota strong { color: var(--timon); font-weight: 500; }
+
+
+/* ── CONTACTO TABS ── */
+.contacto-tabs { display: flex; gap: .4rem; margin-bottom: .85rem; flex-wrap: wrap; }
+.ctab {
+  font-family: var(--f-label); font-size: .55rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: .35rem .85rem; border-radius: 100px; cursor: pointer;
+  border: 1px solid var(--arena-borde); background: var(--arena-pro);
+  color: var(--niebla); transition: all .2s;
+}
+.ctab.active { background: var(--timon); border-color: var(--timon); color: #FAF7F2; }
+.ctemplate { display: none; }
+.ctemplate.active { display: block; }
+.email-mock { background: var(--arena); border: 1px solid var(--arena-borde); border-radius: 10px; overflow: hidden; }
+.email-mock-bar { background: var(--arena-pro); border-bottom: 1px solid var(--arena-borde); padding: .55rem 1rem; display: flex; align-items: center; gap: .45rem; }
+.email-dot { width: 8px; height: 8px; border-radius: 50%; }
+.email-mock-meta { padding: .65rem 1rem 0; }
+.email-meta-row { display: flex; gap: .5rem; align-items: baseline; font-family: var(--f-body); font-size: .8rem; line-height: 1.9; }
+.email-meta-label { font-family: var(--f-label); font-size: .5rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--niebla-cla); flex-shrink: 0; width: 52px; }
+.email-meta-val { color: var(--timon); font-weight: 400; }
+.email-subject-row { font-family: var(--f-body); font-size: .88rem; font-weight: 500; color: var(--timon); padding: .5rem 1rem; border-top: 1px solid var(--arena-borde); border-bottom: 1px solid var(--arena-borde); margin-top: .5rem; }
+.email-mock-body { padding: 1rem 1.1rem; font-family: var(--f-body); font-size: .86rem; font-weight: 300; color: var(--timon); line-height: 1.75; }
+.email-mock-body p + p { margin-top: .6rem; }
+.email-mock-body .firma { color: var(--niebla); font-size: .8rem; margin-top: .85rem; border-top: 1px solid var(--arena-borde); padding-top: .6rem; }
+.call-box {
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+  border-left: 3px solid var(--cobre);
+  border-radius: 10px; padding: 1.25rem 1.4rem;
+}
+.call-box-label { font-family: var(--f-label); font-size: .52rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--cobre); margin-bottom: .75rem; }
+.call-text { font-family: var(--f-body); font-size: .9rem; font-weight: 300; color: var(--timon); line-height: 1.7; font-style: italic; }
+.call-nota { margin-top: .75rem; font-family: var(--f-body); font-size: .78rem; font-weight: 300; color: var(--niebla); line-height: 1.5; font-style: normal; border-top: 1px solid var(--arena-borde); padding-top: .6rem; }
+.linkedin-box { border: 1px solid var(--arena-borde); border-radius: 10px; overflow: hidden; }
+.linkedin-bar { background: #0A66C2; padding: .5rem 1rem; font-family: var(--f-label); font-size: .52rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: white; }
+.linkedin-body { padding: 1rem 1.1rem; font-family: var(--f-body); font-size: .84rem; font-weight: 300; color: var(--timon); line-height: 1.75; background: var(--arena-pro); }
+.linkedin-body p + p { margin-top: .6rem; }
+.linkedin-nota { padding: .55rem 1rem; background: var(--arena); border-top: 1px solid var(--arena-borde); font-family: var(--f-label); font-size: .5rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--niebla-cla); }
+
+/* ── PITCH ── */
+.pitch-box {
+  margin: 2rem 0; background: white;
+  border-radius: 12px; padding: 2rem 2.25rem;
+  border: 1px solid var(--arena-borde);
+  position: relative; overflow: hidden;
+}
+.pitch-box::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--cobre), var(--cobre-cla), transparent);
+}
+.pitch-label {
+  font-family: var(--f-label); font-size: .58rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--cobre);
+  margin-bottom: 1.25rem; display: flex; align-items: center; gap: .6rem;
+}
+.pitch-label::after {
+  content: '5 min'; font-size: .6rem; padding: .15rem .5rem;
+  background: var(--cobre-pal); border-radius: 4px;
+  letter-spacing: .05em; color: var(--cobre-osc);
+}
+.pitch-step { display: grid; grid-template-columns: 28px 1fr; gap: .5rem 1rem; margin-bottom: 1.5rem; align-items: start; }
+.pitch-step:last-child { margin-bottom: 0; }
+.pitch-num { font-family: var(--f-display); font-size: 1.3rem; font-weight: 300; color: var(--cobre); line-height: 1.2; padding-top: .1rem; }
+.pitch-text { font-family: var(--f-body); font-weight: 300; font-size: .9rem; color: var(--niebla); line-height: 1.7; }
+.pitch-text strong { color: var(--timon); font-weight: 500; }
+.pitch-text em { font-style: italic; color: var(--cobre-osc); }
+/* Las citas siguen en oscuro — son el guión literal, el contraste ayuda */
+.cita {
+  display: block; margin-top: .6rem; font-style: italic;
+  font-size: .86rem; line-height: 1.7;
+  background: var(--timon); color: rgba(250,247,242,0.82);
+  border-radius: 8px; padding: .75rem 1rem;
+}
+.pitch-dato-box { margin-top: .75rem; padding: .75rem 1rem; background: var(--cobre-pal); border-radius: 6px; border-left: 2px solid var(--cobre); }
+.pitch-dato-label { font-family: var(--f-label); font-size: .5rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--cobre); margin-bottom: .4rem; }
+
+/* ── DECISOR CARDS ── */
+.decisor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; margin-top: .5rem; }
+.decisor-card { padding: 1rem 1.1rem; border-radius: 10px; background: var(--arena-pro); border: 1px solid var(--arena-borde); }
+.decisor-role { font-family: var(--f-label); font-size: .58rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--cobre); margin-bottom: .5rem; }
+.decisor-hook { font-family: var(--f-body); font-size: .8rem; font-weight: 300; color: var(--niebla); font-style: italic; margin-bottom: .5rem; line-height: 1.5; padding-left: .65rem; border-left: 2px solid var(--cobre-cla); }
+.decisor-move { font-family: var(--f-body); font-size: .8rem; font-weight: 400; color: var(--timon); line-height: 1.5; }
+.decisor-move strong { color: var(--cobre-osc); }
+
+/* ── CASOS ── */
+.casos-list { display: flex; flex-direction: column; gap: .75rem; }
+.caso { display: grid; grid-template-columns: 80px 1fr; gap: .75rem 1.25rem; background: var(--arena-pro); border: 1px solid var(--arena-borde); border-radius: 10px; padding: 1.1rem 1.25rem; align-items: start; cursor: pointer; transition: background .2s; }
+.caso:hover { background: var(--cobre-pal); }
+.caso-id { font-family: var(--f-display); font-weight: 400; font-size: 1.3rem; color: var(--cobre-cla); line-height: 1.1; padding-top: .1rem; }
+.caso-nombre { font-family: var(--f-label); font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--timon); margin-bottom: .3rem; }
+.caso-sector { font-family: var(--f-label); font-size: .56rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--niebla-cla); }
+.caso-body { grid-column: 1 / -1; display: none; border-top: 1px solid var(--arena-borde); padding-top: .85rem; margin-top: .2rem; }
+.caso.open .caso-body { display: block; }
+.caso-hizo, .caso-pitch { font-family: var(--f-body); font-weight: 300; font-size: .86rem; color: var(--niebla); line-height: 1.65; margin-bottom: .6rem; }
+.caso-pitch { color: var(--timon); font-weight: 400; }
+.caso-pitch-label { font-family: var(--f-label); font-size: .55rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--cobre); margin-bottom: .3rem; margin-top: .75rem; }
+
+/* ── OBJECIONES ── */
+.objs-list { display: flex; flex-direction: column; gap: .6rem; }
+.obj { border: 1px solid var(--arena-borde); border-radius: 10px; overflow: hidden; background: var(--arena-pro); }
+.obj-trigger { width: 100%; background: none; border: none; cursor: pointer; display: grid; grid-template-columns: 1fr 24px; gap: .5rem; padding: 1rem 1.1rem; text-align: left; align-items: center; transition: background .2s; }
+.obj-trigger:hover { background: var(--cobre-pal); }
+.obj-pregunta { font-family: var(--f-body); font-size: .88rem; font-weight: 400; color: var(--timon); font-style: italic; line-height: 1.5; }
+.obj-chevron { font-size: .9rem; color: var(--cobre); transition: transform .3s; line-height: 1; text-align: center; }
+.obj.open .obj-chevron { transform: rotate(180deg); }
+.obj-body { display: none; padding: 0 1.1rem 1rem; border-top: 1px solid var(--arena-borde); }
+.obj.open .obj-body { display: block; }
+.obj-respuesta { font-family: var(--f-body); font-weight: 300; font-size: .86rem; color: var(--niebla); line-height: 1.7; padding-top: .75rem; }
+.obj-respuesta strong { color: var(--timon); font-weight: 500; }
+.obj-frase { margin-top: .75rem; padding: .75rem 1rem; background: var(--timon); border-radius: 8px; font-family: var(--f-body); font-weight: 300; font-size: .84rem; color: rgba(250,247,242,0.85); line-height: 1.6; font-style: italic; }
+
+/* ── ASSESSMENT BLOCK (zona 2) ── */
+.assessment-block {
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+  border-radius: 12px; padding: 1.35rem 1.6rem;
+  position: relative; overflow: hidden;
+}
+.assessment-block::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--cobre), var(--cobre-cla), transparent);
+}
+.assessment-label { font-family: var(--f-label); font-size: .55rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cobre); margin-bottom: .75rem; }
+.assessment-items { display: flex; flex-direction: column; gap: .45rem; }
+.assessment-item { display: flex; gap: .75rem; align-items: flex-start; }
+.assessment-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--cobre); flex-shrink: 0; margin-top: .45rem; }
+.assessment-text { font-family: var(--f-body); font-size: .84rem; font-weight: 300; color: var(--niebla); line-height: 1.6; }
+.assessment-text strong { color: var(--timon); font-weight: 500; }
+
+/* ── PROFUNDIZAR ── */
+.detalle-grid { display: flex; flex-direction: column; gap: .6rem; }
+.detalle { border: 1px solid var(--arena-borde); border-radius: 10px; overflow: hidden; background: var(--arena); }
+.detalle-trigger { width: 100%; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: .9rem 1.1rem; text-align: left; transition: background .2s; }
+.detalle-trigger:hover { background: var(--arena-pro); }
+.detalle-titulo { font-family: var(--f-label); font-size: .62rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--niebla); }
+.detalle-chevron { font-size: .8rem; color: var(--niebla-cla); transition: transform .3s; line-height: 1; }
+.detalle.open .detalle-chevron { transform: rotate(180deg); }
+.detalle-body { display: none; padding: 0 1.1rem 1.1rem; border-top: 1px solid var(--arena-borde); }
+.detalle.open .detalle-body { display: block; }
+.detalle-prose { font-family: var(--f-body); font-weight: 300; font-size: .86rem; color: var(--niebla); line-height: 1.7; padding-top: .85rem; }
+.detalle-prose strong { color: var(--timon); font-weight: 500; }
+.detalle-prose p + p { margin-top: .75rem; }
+.detalle-prose ul { padding-left: 1.1rem; margin-top: .5rem; }
+.detalle-prose li { margin-bottom: .35rem; }
+.tabla { width: 100%; border-collapse: collapse; margin-top: .75rem; font-size: .82rem; }
+.tabla th { font-family: var(--f-label); font-size: .55rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--niebla); border-bottom: 1px solid var(--arena-borde); padding: .5rem .6rem; text-align: left; }
+.tabla td { padding: .5rem .6rem; border-bottom: 1px solid var(--arena-borde); color: var(--niebla); vertical-align: top; }
+.tabla td:first-child { color: var(--timon); font-weight: 500; }
+
+/* ── FOOTER ── */
+.ficha-footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--arena-borde); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem; }
+.footer-meta { font-family: var(--f-label); font-size: .56rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--niebla-cla); text-align: right; line-height: 1.8; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .datos-row { grid-template-columns: repeat(2,1fr); }
+  .mini-cards { grid-template-columns: 1fr; }
+  .senales-grid { grid-template-columns: 1fr; }
+  .temp-grid { grid-template-columns: 1fr; }
+  .decisor-grid { grid-template-columns: 1fr; }
+  .caso { grid-template-columns: 60px 1fr; }
+  .ficha-footer { flex-direction: column; align-items: flex-start; }
+  .footer-meta { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a class="topbar-logo" href="../">Entelgy<em>·</em></a>
+  <a class="topbar-back" href="index.html">Software Engineering</a>
+</div>
+
+<div class="page-content">
+
+<!-- HEADER -->
+<div class="ficha-header">
+  <div class="ficha-tipo">Ficha comercial · Industria</div>
+  <h1 class="ficha-title">Modernización<br>de <em>Aplicaciones</em></h1>
+  <p class="ficha-tagline">Aplicaciones construidas hace demasiado tiempo frenan lo que el negocio quiere hacer hoy. Entelgy las moderniza con IA — sin parar lo que ya funciona, firmando el resultado.</p>
+  <div class="ficha-pills">
+    <span class="pill cobre">CTO · CIO · Dir. Operaciones · CFO</span>
+    <span class="pill verde">Ya vendible</span>
+    <span class="pill">Energía · Retail · Construcción · Seguridad</span>
+    <span class="pill">ISO 3300 N3 · Foreworth</span>
+  </div>
+
+  <!-- METADATA STRIP -->
+  <div style="margin-top:1.25rem;display:flex;gap:0;background:var(--timon);border-radius:8px;overflow:hidden;">
+    <div style="flex:1;padding:.6rem 1rem;border-right:1px solid rgba(255,255,255,0.08);">
+      <div style="font-family:var(--f-label);font-size:.48rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,247,242,0.35);margin-bottom:.2rem;">Vertical</div>
+      <div style="font-family:var(--f-label);font-size:.62rem;font-weight:600;letter-spacing:.06em;color:rgba(250,247,242,0.85);">Industria</div>
+    </div>
+    <div style="flex:1;padding:.6rem 1rem;border-right:1px solid rgba(255,255,255,0.08);">
+      <div style="font-family:var(--f-label);font-size:.48rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,247,242,0.35);margin-bottom:.2rem;">Líder</div>
+      <div style="font-family:var(--f-label);font-size:.62rem;font-weight:600;letter-spacing:.06em;color:rgba(250,247,242,0.85);">Jorge Herrero</div>
+    </div>
+    <div style="flex:1;padding:.6rem 1rem;border-right:1px solid rgba(255,255,255,0.08);">
+      <div style="font-family:var(--f-label);font-size:.48rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,247,242,0.35);margin-bottom:.2rem;">Revisión</div>
+      <div style="font-family:var(--f-label);font-size:.62rem;font-weight:600;letter-spacing:.06em;color:rgba(250,247,242,0.85);">Mayo 2026</div>
+    </div>
+    <div style="flex:1;padding:.6rem 1rem;">
+      <div style="font-family:var(--f-label);font-size:.48rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,247,242,0.35);margin-bottom:.2rem;">Estado</div>
+      <div style="font-family:var(--f-label);font-size:.62rem;font-weight:600;letter-spacing:.06em;color:var(--eucalipto);">Activa</div>
+    </div>
+  </div>
+
+<!-- DATOS CLAVE -->
+<div class="datos-row">
+  <div class="dato">
+    <div class="dato-num">+70%</div>
+    <div class="dato-desc">aceleración en la <strong>migración de código legacy</strong> respecto a métodos tradicionales con IA</div>
+    <span class="dato-fuente">Datos Entelgy · Foreworth certificado</span>
+  </div>
+  <div class="dato">
+    <div class="dato-num">−60%</div>
+    <div class="dato-desc">reducción de <strong>errores funcionales</strong> con refactorización automatizada y testing inteligente</div>
+    <span class="dato-fuente">Datos Entelgy · Foreworth certificado</span>
+  </div>
+  <div class="dato">
+    <div class="dato-num">+35%</div>
+    <div class="dato-desc">eficiencia operativa: <strong>menos esfuerzo de mantenimiento</strong>, más recursos para innovar</div>
+    <span class="dato-fuente">Datos Entelgy · Foreworth certificado</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- ZONA 0 · ANTES DE ENTRAR                  -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="zona-header z0">
+  <div class="zona-num">0</div>
+  <div class="zona-sep"></div>
+  <div class="zona-info">
+    <div class="zona-tag">Zona 0</div>
+    <div class="zona-name">Antes de entrar</div>
+    <div class="zona-sub">Escáner de cuenta · señales · primer contacto</div>
+  </div>
+</div>
+
+<!-- SEÑALES + ESCÁNER -->
+<div class="seccion" id="s-senales">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-senales')">
+    <span class="seccion-titulo">Señales de oportunidad · Escáner de cuenta</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+
+    <!-- SCANNER integrado -->
+    <div class="scanner-box">
+      <div class="scanner-heading">Escáner automático · IA</div>
+      <div class="scanner-desc">Escribe el nombre de la empresa. El sistema lanza las búsquedas y devuelve un score en segundos.</div>
+      <div id="sc-form">
+        <input id="sc-input" type="text" placeholder="Nombre de la empresa (ej. Acciona, Inditex...)" onkeydown="if(event.key==='Enter') scannerAnalyze()" />
+        <button class="sc-btn" onclick="scannerAnalyze()">Analizar</button>
+      </div>
+      <div id="sc-loading">
+        <div class="sc-loading-inner">
+          <div class="sc-spinner"></div>
+          <div>
+            <span class="sc-loading-company" id="sc-loading-company"></span>
+            <span id="sc-loading-msg">Iniciando análisis...</span>
+          </div>
+        </div>
+      </div>
+      <div id="sc-error">
+        <div class="sc-error-text">No se pudo completar el análisis. Comprueba la conexión e inténtalo de nuevo.</div>
+        <button class="sc-retry" onclick="scannerReset()">Reintentar</button>
+      </div>
+      <div id="sc-results"></div>
+    </div>
+
+    <div style="font-family:var(--f-label);font-size:.55rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--niebla-cla);margin:.25rem 0 .75rem;">Para decidir si llamas · señales externas</div>
+    <div class="senales-grid">
+
+      <div class="senal">
+        <div class="senal-main">
+          <div class="senal-dot"></div>
+          <div class="senal-text">Mencionan una aplicación que "nadie quiere tocar" porque el que la construyó ya no está</div>
+          <button class="senal-i" onclick="toggleSenalInfo(this)">i</button>
+        </div>
+        <div class="senal-info"><strong>Cómo verificarlo:</strong> Pregunta directamente en la primera llamada: "¿Hay alguna aplicación que lleváis años aplazando?" Si la tienen, la nombran solos — y suelen saber exactamente cuál es.</div>
+      </div>
+
+      <div class="senal">
+        <div class="senal-main">
+          <div class="senal-dot"></div>
+          <div class="senal-text">Tienen proyectos de IA o digitalización en "piloto permanente" desde hace más de un año</div>
+          <button class="senal-i" onclick="toggleSenalInfo(this)">i</button>
+        </div>
+        <div class="senal-info"><strong>Cómo verificarlo:</strong> Busca en Google "[empresa] inteligencia artificial [año anterior]" o "[empresa] digitalización". Si hay noticias de anuncio sin noticias de lanzamiento → señal. También: posts del CTO en LinkedIn sobre IA en los últimos 12 meses.</div>
+      </div>
+
+      <div class="senal">
+        <div class="senal-main">
+          <div class="senal-dot"></div>
+          <div class="senal-text">El ERP o sistemas de gestión llevan más de 7-10 años sin actualización mayor</div>
+          <button class="senal-i" onclick="toggleSenalInfo(this)">i</button>
+        </div>
+        <div class="senal-info"><strong>Cómo verificarlo:</strong> Memoria anual o web corporativa. En LinkedIn Jobs, busca si publican mantenimiento de versiones antiguas (SAP R/3, Oracle E-Business, etc.). En conversación: "¿Cuándo fue la última actualización mayor del sistema core?"</div>
+      </div>
+
+      <div class="senal">
+        <div class="senal-main">
+          <div class="senal-dot"></div>
+          <div class="senal-text">El CTO se queja de que el proveedor mide en horas — no puede decir qué entregó ni cuánto valió</div>
+          <button class="senal-i" onclick="toggleSenalInfo(this)">i</button>
+        </div>
+        <div class="senal-info"><strong>Cómo verificarlo:</strong> LinkedIn del CTO — posts sobre productividad de software, proveedores, calidad. En conversación: "¿Tu proveedor actual puede decirte qué productividad entregó el mes pasado en un número concreto?"</div>
+      </div>
+
+      <div class="senal">
+        <div class="senal-main">
+          <div class="senal-dot"></div>
+          <div class="senal-text">Tienen PL/SQL, COBOL o frontales JSP sobre sistemas que el negocio usa a diario</div>
+          <button class="senal-i" onclick="toggleSenalInfo(this)">i</button>
+        </div>
+        <div class="senal-info"><strong>Cómo verificarlo:</strong> LinkedIn Jobs — busca ofertas de la empresa o sus proveedores con: <strong>COBOL, PL/SQL, JSP, VB6, .NET Framework, ASP clásico</strong>. Si las publican, tienen dependencia activa. Es la señal más objetiva y rápida de comprobar.</div>
+      </div>
+
+      <div class="senal">
+        <div class="senal-main">
+          <div class="senal-dot"></div>
+          <div class="senal-text">La velocidad de lanzar nuevas funcionalidades se mide en meses, no en semanas</div>
+          <button class="senal-i" onclick="toggleSenalInfo(this)">i</button>
+        </div>
+        <div class="senal-info"><strong>Cómo verificarlo:</strong> En conversación: "¿Cuánto tiempo tarda una funcionalidad nueva importante desde que se decide hasta que está en producción?" Si la respuesta es "meses", hay un problema de proceso o de legacy. También: quejas en LinkedIn de responsables de negocio sobre velocidad IT.</div>
+      </div>
+
+    </div>
+    <div class="senal-temp-nota"><strong>Temperatura de la cuenta:</strong> 2 o más señales → llama esta semana · 1 señal → email primero (ver Primer contacto) · ninguna → nurturing, vuelve en 90 días</div>
+
+    <!-- CRITERIO DE CUALIFICACIÓN -->
+    <div style="margin-top:1.25rem;padding:1.1rem 1.25rem;background:var(--timon);border-radius:10px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cobre),var(--cobre-cla),transparent);"></div>
+      <div style="font-family:var(--f-label);font-size:.55rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cobre-cla);margin-bottom:.65rem;">Para cualificar en la llamada · si responde sí a una, hay proyecto</div>
+      <div style="display:flex;flex-direction:column;gap:.5rem;">
+        <div style="display:flex;gap:.75rem;align-items:flex-start;">
+          <div style="font-family:var(--f-display);font-size:1.1rem;color:var(--cobre-cla);line-height:1;flex-shrink:0;margin-top:.1rem;">1</div>
+          <div style="font-family:var(--f-body);font-size:.86rem;font-weight:300;color:rgba(250,247,242,0.8);line-height:1.55;">"¿Tienen alguna aplicación que lleva años pendiente de modernizar porque nadie sabe qué rompe si la tocan?"</div>
+        </div>
+        <div style="display:flex;gap:.75rem;align-items:flex-start;">
+          <div style="font-family:var(--f-display);font-size:1.1rem;color:var(--cobre-cla);line-height:1;flex-shrink:0;margin-top:.1rem;">2</div>
+          <div style="font-family:var(--f-body);font-size:.86rem;font-weight:300;color:rgba(250,247,242,0.8);line-height:1.55;">"¿Tienen proyectos de IA o digitalización que llevan más de un año en piloto sin llegar a producción?"</div>
+        </div>
+        <div style="display:flex;gap:.75rem;align-items:flex-start;">
+          <div style="font-family:var(--f-display);font-size:1.1rem;color:var(--cobre-cla);line-height:1;flex-shrink:0;margin-top:.1rem;">3</div>
+          <div style="font-family:var(--f-body);font-size:.86rem;font-weight:300;color:rgba(250,247,242,0.8);line-height:1.55;">"¿Saben cuánto les cuesta mantener los sistemas actuales tal como están — en número concreto?"</div>
+        </div>
+      </div>
+      <div style="margin-top:.85rem;padding:.6rem .85rem;background:rgba(166,112,62,0.18);border-radius:7px;border-left:2px solid var(--cobre-cla);">
+        <div style="font-family:var(--f-body);font-size:.8rem;font-weight:300;color:rgba(250,247,242,0.6);line-height:1.55;">Sí a una → pide reunión y avisa a Jorge antes de entrar. Sin confirmación → email de seguimiento, vuelve en 30 días.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRIMER CONTACTO -->
+<div class="seccion" id="s-contacto">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-contacto')">
+    <span class="seccion-titulo">Primer contacto — email, llamada y LinkedIn</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="contacto-tabs">
+      <button class="ctab active" data-group="contacto" onclick="switchTab(event,'contacto','email')">Email frío</button>
+      <button class="ctab" data-group="contacto" onclick="switchTab(event,'contacto','llamada')">Apertura de llamada</button>
+      <button class="ctab" data-group="contacto" onclick="switchTab(event,'contacto','linkedin')">LinkedIn</button>
+    </div>
+
+    <div class="ctemplate active" data-group="contacto" data-name="email">
+      <div class="email-mock">
+        <div class="email-mock-bar">
+          <div class="email-dot" style="background:#FF5F57;"></div>
+          <div class="email-dot" style="background:#FEBC2E;"></div>
+          <div class="email-dot" style="background:#28C840;"></div>
+        </div>
+        <div class="email-mock-meta">
+          <div class="email-meta-row"><span class="email-meta-label">De</span><span class="email-meta-val">[Tu nombre] · Entelgy</span></div>
+          <div class="email-meta-row"><span class="email-meta-label">Para</span><span class="email-meta-val">[Nombre] · [Empresa]</span></div>
+        </div>
+        <div class="email-subject-row">[Empresa] · ¿cuánto cuesta mantener el legacy tal como está?</div>
+        <div class="email-mock-body">
+          <p>Hola [nombre],</p>
+          <p>La mayoría de empresas de [sector] tienen una aplicación legacy que lleva años "para después". El coste real — en mantenimiento y en proyectos de IA que no llegan a producción — rara vez está documentado.</p>
+          <p>Lo hemos resuelto ya con empresas de [sector / referencia autorizada — consulta a Jorge]. Y lo diferente: firmamos el resultado — si no mejoramos la productividad, sale de nuestra factura, no de la suya.</p>
+          <p>En dos semanas hacemos un análisis que pone ese número sobre la mesa, con criterios que se pueden llevar a dirección.</p>
+          <p>¿Tiene sentido hablar 20 minutos?</p>
+          <div class="firma">[Nombre] · Entelgy · [Teléfono]</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ctemplate" data-group="contacto" data-name="llamada">
+      <div class="call-box">
+        <div class="call-box-label">Apertura · primeros 20 segundos</div>
+        <div class="call-text">"Buenos días [nombre], le llamo de Entelgy. Pregunta directa: ¿tienen alguna aplicación que lleva años pendiente de modernizar porque nadie sabe bien qué rompe si la tocan? Si la respuesta es sí, puede que tengamos algo útil que contarle. ¿Me regala dos minutos?"</div>
+        <div class="call-nota">Si dice que no: "¿Y proyectos de IA que llevan más de un año sin llegar a producción?" — casi ninguno dice no a las dos.</div>
+      </div>
+    </div>
+
+    <div class="ctemplate" data-group="contacto" data-name="linkedin">
+      <div class="linkedin-box">
+        <div class="linkedin-bar">LinkedIn · publicación personal</div>
+        <div class="linkedin-body">
+          <p>El 95% de las empresas industriales tiene al menos una aplicación que nadie quiere tocar.</p>
+          <p>No porque sea imposible modernizarla. Porque nadie sabe exactamente qué rompe si la mueven — y el día a día siempre gana.</p>
+          <p>Mientras tanto: el presupuesto de mantenimiento crece. Los proyectos de IA se quedan en piloto. El proveedor "que es el único que sabe" cumple su quinto año siendo el único que sabe.</p>
+          <p>¿En tu empresa cuántas hay?</p>
+          <p style="color:var(--niebla); font-size:.8rem; margin-top:.5rem;">— En Entelgy modernizamos aplicaciones legacy con IA, sin parar el servicio, firmando el resultado. Si te interesa, cuéntame.</p>
+        </div>
+        <div class="linkedin-nota">Uso personal del comercial · No publicar desde cuenta corporativa · Adaptar el sector si tienes foco específico</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- CULTURA DE PRODUCTO -->
+<div class="seccion" id="s-cultura">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-cultura')">
+    <span class="seccion-titulo">Cultura de producto — lo que hay que saber</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="detalle-grid">
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">Qué firma Entelgy — la propuesta en una línea</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p>Modernización progresiva con <strong>Spec-Driven</strong> — especificación formal firmada antes de escribir código: el conocimiento del sistema pasa a ser del cliente. <strong>CoE de +50 profesionales</strong> detrás (IA, Arquitectura SW, DevOps/Cloud, Calidad). Productividad certificada externamente por <strong>Foreworth</strong>. ISO 3300 N3 SPICE.</p>
+            <p>Y lo que ningún competidor firma: el <strong>40% del ahorro de productividad medido va al cliente en la factura siguiente</strong>. Si Entelgy no mejora la productividad, sale de su factura, no del presupuesto del cliente.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">Qué moderniza Entelgy — los tres tipos</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p><strong>Frontales legacy (JSP → Angular/React):</strong> interfaces antiguas sobre arquitecturas monolíticas. Entelgy migra módulo por módulo — enfoque incremental, sin parar el servicio. Resultado: mejora del 30-60% en tiempo de respuesta, 40-60% de reducción en esfuerzo de mantenimiento.</p>
+            <p><strong>Middleware (ESB → microservicios):</strong> migrar de un ESB a microservicios no es solo técnico — es pasar de una arquitectura rígida a una plataforma que puede escalar por componente. 73% de empresas reporta mejora notable de escalabilidad. Hasta 50% de reducción de costes de mantenimiento. 60% de reducción de downtime.</p>
+            <p><strong>Backends / PL/SQL → Java/.NET:</strong> lógica de negocio enterrada en procedimientos almacenados. Entelgy la documenta con IA, la migra a servicios independientes y genera tests unitarios automáticos. Al bajar la carga de la BD se puede reducir la licencia Oracle.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">Spec-Driven — qué es y por qué importa</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p>Antes de escribir una línea de código, se define formalmente qué tiene que hacer: entradas, salidas, reglas de negocio, criterios de aceptación. Esa definición se firma. El código se desarrolla guiado por tests que verifican el cumplimiento de la spec. Cada línea queda trazada a un requisito.</p>
+            <p><strong>Por qué importa:</strong> cuando un sistema falla, la pregunta es "¿quién es responsable y qué estaba especificado?". Con Spec-Driven, la respuesta es inmediata. Sin spec, el debate dura meses y el conocimiento vive en la cabeza del proveedor. Con reverse spec también se aplica sobre legacy existente — se reconstruye la spec a partir del código que ya existe, sacando ese conocimiento del proveedor y poniéndolo en un documento propiedad del cliente.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">UCE / IGE — el modelo de precio en una página</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p><strong>UCE:</strong> bloque de capacidad productiva — sprint de 10 días hábiles con un senior. ~42 Story Points entregados y aceptados, cobertura de tests ≥80%, Spec Compliance 100%. Se factura por capacidad entregada, no por horas.</p>
+            <p><strong>IGE:</strong> Spec Compliance (40%) + Test Coverage (25%) + Cycle Time (20%) + Bug Leakage (15%). IGE ≥ 98 → +5% bonus al equipo. IGE &lt; 75 → −8% penalización a Entelgy. El 40% del ahorro de productividad va al cliente en la factura siguiente.</p>
+            <p><strong>Traducción ejecutiva del IGE:</strong> si la calidad del código baja de un umbral medido por Foreworth, Entelgy cobra menos — no el cliente. El riesgo del proceso lo asume el proveedor.</p>
+            <p><strong>Cómo introducirlo:</strong> el primer contrato puede hacerse en el modelo hora de siempre con Spec-Driven aplicado encima. UCE en la primera renovación, cuando hay métricas propias del proyecto como referencia.</p>
+            <table class="tabla">
+              <thead><tr><th>Nivel</th><th>Composición</th><th>Precio</th></tr></thead>
+              <tbody>
+                <tr><td>UCE Base</td><td>Equipo estándar</td><td>Tarifa Base ①</td></tr>
+                <tr><td>UCE Plus</td><td>+ 1 especialista CoE</td><td>×1,20</td></tr>
+                <tr><td>UCE Premium</td><td>+ 2 CoE + IA</td><td>×1,40</td></tr>
+                <tr><td>UCE Innovation</td><td>Squad + Chapter Lead</td><td>×1,65</td></tr>
+              </tbody>
+            </table>
+            <p style="margin-top:.6rem; font-size:.78rem; color:var(--niebla-cla);">① La tarifa base es información interna — solicitar a Jorge antes de cualquier conversación de precio con el cliente.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">La competencia — mapa completo</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <table class="tabla">
+              <thead><tr><th>Competidor</th><th>Pitch</th><th>Flaqueza vs Entelgy</th></tr></thead>
+              <tbody>
+                <tr><td>Accenture / Capgemini</td><td>Partner certificado del ERP, transformación end-to-end</td><td>No trabajan bien el desarrollo a medida ni los sistemas satélite. Sin cláusula bilateral de productividad</td></tr>
+                <tr><td>Minsait / Atos</td><td>Capacidad industrial en España</td><td>Modelo hora-perfil, sin Spec-Driven sistemático, sin Foreworth</td></tr>
+                <tr><td>Globant / EPAM</td><td>IA y modernización global, AI Pods</td><td>Sin presencia industrial sólida en España, sin cobertura regulatoria UE contractual, sin firma bilateral</td></tr>
+                <tr><td>Ada Leap</td><td>Plataforma IA-nativa — "modernización automática sin equipo humano"</td><td>Asiste, no firma. Sin ingeniería humana sobre el proceso, sin accountability sobre el resultado. La plataforma entrega código — Entelgy entrega un sistema en producción con garantía bilateral. <em>"Ada Leap es la herramienta. Nosotros somos el ejército que firma."</em></td></tr>
+                <tr><td>GitHub Copilot / herramientas IA</td><td>Productividad inmediata en desarrollo</td><td>No firma nada. Gap METR 39% documentado. La herramienta no gestiona el proceso</td></tr>
+                <tr><td>Integrador del ERP</td><td>Ya estamos dentro, conocemos el sistema</td><td>No moderniza lo que rodea al ERP. El conocimiento legacy se queda con ellos</td></tr>
+              </tbody>
+            </table>
+            <p style="margin-top:.75rem;"><strong>La frase:</strong> <em>"Ninguno firma productividad certificada por tercero con cláusula bilateral. Entelgy sí — y si no la entregamos, sale de nuestra factura."</em></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">ISO 3300 N3 (SPICE) — qué significa y qué le dice al cliente</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p>Los procesos de ciclo de vida del software de Entelgy — incluyendo mantenimiento — están certificados en ISO 3300 en su nivel de madurez 3 (SPICE). No es una certificación de equipo, es de proceso: cualquier proyecto Entelgy opera bajo los mismos estándares.</p>
+            <p><strong>Qué le dice al cliente:</strong> que lo que funciona en el proyecto de BBVA funciona también en el suyo. Los estándares de calidad no dependen del equipo asignado — están en el proceso. Se complementa en proyectos 100% Agile con la certificación European Scrum Agile Nivel Plata.</p>
+            <p><strong>Cuándo mencionarlo:</strong> cuando el cliente pregunta por garantías de calidad, en licitaciones públicas con criterios de madurez, o cuando hay un auditor o CISO en la sala.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">El assessment — la puerta de entrada</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p>El assessment es el primer contrato de Modernización. Produce algo que el cliente necesita — saber cuánto vale la deuda técnica que acumula — a coste bajo y en plazo corto. En muchos casos el número que genera es el argumento que desbloquea el presupuesto para el proyecto mayor. Es el producto de entrada porque baja el riesgo percibido del cliente: en lugar de comprometer una modernización grande, comprueban el método y obtienen un entregable concreto que pueden llevar a dirección.</p>
+            <p><strong>Qué recibe el cliente:</strong></p>
+            <ul>
+              <li>Análisis del código actual guiado por IA: obsolescencia, vulnerabilidades, calidad, acoplamiento, complejidad y documentación</li>
+              <li>Mapa as is → to be: qué modernizar, por qué y en qué orden — con criterios de TCO, no solo técnicos</li>
+              <li>Documento con datos propios del cliente para llevar a Dirección — no estimaciones del proveedor</li>
+              <li>Plazo: dos semanas · Precio: coordinar con Jorge antes de dar números</li>
+            </ul>
+            <p><strong>Cómo usarlo comercialmente:</strong> propónlo como cierre natural de la primera reunión — "¿Os interesa que empecemos con un assessment? En dos semanas sabéis exactamente qué tenéis y cuánto vale la deuda acumulada." Si el cliente dice que no tienen presupuesto para modernización, el assessment es la respuesta: no es un proyecto, es una decisión informada.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">Más recursos — Software Engineering en Hipatia</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p>El hub de Hipatia contiene el análisis completo del territorio de Modernización: mapas de pains por subfamilia (Modernización, Mantenimiento Evolutivo Inteligente, Asistencia Técnica Aumentada), análisis del portfolio de Entelgy frente al mercado y benchmarks competitivos por vertical. Es el material de fondo para preparar conversaciones estratégicas donde el cliente quiere ir más al fondo del problema o donde necesitas argumentos regulatorios sectoriales concretos.</p>
+            <p style="margin-top:.85rem;">
+              <a href="index.html" style="display:inline-flex;align-items:center;gap:.5rem;font-family:var(--f-label);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cobre);text-decoration:none;padding:.45rem .9rem;border:1px solid var(--cobre-cla);border-radius:100px;background:var(--cobre-pal);transition:all .2s;" onmouseover="this.style.background='var(--cobre)';this.style.color='var(--arena)'" onmouseout="this.style.background='var(--cobre-pal)';this.style.color='var(--cobre)'">
+                ↗ Ir al área de Software Engineering
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- ZONA 1 · EN LA REUNIÓN                    -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="zona-header z1">
+  <div class="zona-num">1</div>
+  <div class="zona-sep"></div>
+  <div class="zona-info">
+    <div class="zona-tag">Zona 1</div>
+    <div class="zona-name">En la reunión</div>
+    <div class="zona-sub">Pitch · decisores · referencias · objeciones</div>
+  </div>
+</div>
+
+<!-- PITCH -->
+<div class="pitch-box">
+  <div class="pitch-label">Pitch</div>
+
+  <div style="background: rgba(166,112,62,0.12); border-radius: 8px; padding: 1.1rem 1.25rem; margin-bottom: 1.5rem; border-left: 3px solid var(--cobre);">
+    <div style="font-family: var(--f-label); font-size: .55rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cobre-cla); margin-bottom: .5rem;">Gancho · 30 segundos</div>
+    <div style="font-family: var(--f-display); font-size: 1.15rem; font-weight: 400; color: var(--timon); line-height: 1.4; font-style: italic;">"¿Tienes aplicaciones que llevan años sin poder tocar porque nadie sabe qué rompe si las mueves? Eso es exactamente lo que resolvemos. Modernización progresiva con IA, sin parar el negocio, firmando el resultado."</div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">1</div>
+    <div class="pitch-text">
+      <strong>La pregunta que abre la conversación</strong>
+      <span class="cita">"¿Cuál es la aplicación que más frena al negocio y que lleváis años sin poder tocar?"</span>
+      Si nombran una, hay un proyecto. Si dicen que no saben por dónde empezar, hay un assessment. En ambos casos, hay próximo paso. Casi cualquier empresa mediana-grande tiene al menos una — construida sobre COBOL, VB, .NET antiguo, JSP o PL/SQL que nadie quiere mover porque nadie sabe qué rompe.
+    </div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">2</div>
+    <div class="pitch-text">
+      <strong>El dato que hace el problema concreto</strong> — usa uno según el momento:
+      <div class="pitch-dato-box">
+        <div class="pitch-dato-label">Si el cliente todavía "está explorando IA"</div>
+        <span class="cita">"El MIT NANDA mide que el 95% de las empresas obtiene retorno cero de su inversión en IA. McKinsey lo confirma — dos tercios no han escalado a enterprise. El problema casi nunca es la herramienta. Es que el software que rodea al negocio no se desarrolla con metodología."</span>
+      </div>
+      <div class="pitch-dato-box" style="margin-top:.6rem;">
+        <div class="pitch-dato-label">Si el cliente ya usa Copilot u otras herramientas IA</div>
+        <span class="cita">"El estudio METR (MIT, julio 2025) midió que developers con IA tardan un 19% más mientras creen que van un 20% más rápido — un gap de 39 puntos entre percepción y realidad. La IA amplifica lo que ya hay: si el proceso es malo, lo amplifica."</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">3</div>
+    <div class="pitch-text">
+      <strong>Lo que diferencia a Entelgy</strong>
+      Dos cosas que ningún competidor firma a la vez: <em>Spec-Driven</em> — spec formal firmada antes de escribir código, el conocimiento del sistema pasa a ser del cliente, no del proveedor — y <strong>cláusula bilateral de productividad</strong> certificada por Foreworth: el 40% del ahorro medido va al cliente en la factura siguiente. Si no entregamos, sale de la nuestra.
+      <span class="cita">"No te pedimos que confíes en nuestra metodología. Firmamos que si no mejoramos tu productividad, sale de nuestra factura."</span>
+    </div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">4</div>
+    <div class="pitch-text">
+      <strong>El único cierre de esta reunión</strong>
+      El assessment. No hay otro cierre posible para el comercial en primera reunión — no la propuesta completa, no el proyecto. Solo esto:
+      <span class="cita">"El siguiente paso es un assessment de dos semanas. Os traigo al especialista de producto para que os explique exactamente qué produce y qué podéis llevar a Dirección. ¿Cuándo nos viene bien a todos?"</span>
+      Si el cliente dice que no tiene presupuesto para el proyecto, el assessment es la respuesta. Si dice que no sabe por dónde empezar, el assessment es la respuesta. Si dice que necesita datos para convencer a dirección, el assessment produce esos datos. <strong>Siempre es la respuesta.</strong>
+    </div>
+  </div>
+</div>
+
+<!-- QUÉ FIRMA / CUÁNDO ENTRAR -->
+<!-- ADAPTAR POR DECISOR -->
+<div class="seccion" id="s-decisor">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-decisor')">
+    <span class="seccion-titulo">Adaptar el pitch según quién tienes delante</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="decisor-grid">
+      <div class="decisor-card">
+        <div class="decisor-role">CTO</div>
+        <div class="decisor-hook">"¿Cuál es la aplicación que más frena al negocio y que lleváis años sin poder tocar?"</div>
+        <div class="decisor-move">Le mueve: <strong>Spec-Driven</strong> — el conocimiento del sistema pasa a ser del cliente. Ya no puede irse el proveedor con el código en la cabeza.</div>
+      </div>
+      <div class="decisor-card">
+        <div class="decisor-role">Dir. de Operaciones</div>
+        <div class="decisor-hook">"¿Cuántos proyectos de digitalización llevan más de un año en piloto sin llegar a producción?"</div>
+        <div class="decisor-move">Le mueve: <strong>productividad certificada</strong> — Foreworth mide lo real, no lo prometido. Es el argumento que cierra debates internos.</div>
+      </div>
+      <div class="decisor-card">
+        <div class="decisor-role">CIO</div>
+        <div class="decisor-hook">"¿Qué porcentaje del presupuesto IT va a mantener lo que ya existe frente a construir cosas nuevas?"</div>
+        <div class="decisor-move">Le mueve: el <strong>assessment</strong> — un mapa de deuda técnica que puede llevar a Dirección con datos propios, no estimaciones del proveedor.</div>
+      </div>
+      <div class="decisor-card">
+        <div class="decisor-role">CFO</div>
+        <div class="decisor-hook">"¿Sabéis cuánto os cuesta mantener los sistemas actuales tal como están — en número concreto?"</div>
+        <div class="decisor-move">Le mueve: la <strong>cláusula bilateral</strong> — riesgo acotado, 40% del ahorro en factura. Gartner estima la deuda técnica en el 20–40% del valor de los activos tecnológicos.</div>
+      </div>
+    </div>
+
+    <!-- CÓMO LO DEFIENDE EL CIO INTERNAMENTE -->
+    <div style="margin-top:1.1rem;background:var(--timon);border-radius:10px;overflow:hidden;position:relative;">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cobre),var(--cobre-cla),transparent);"></div>
+      <div style="padding:.6rem 1.25rem .5rem;border-bottom:1px solid rgba(255,255,255,0.07);">
+        <span style="font-family:var(--f-label);font-size:.5rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cobre-cla);">Cómo lo defiende el CIO internamente</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+        <div style="padding:.85rem 1.25rem;border-right:1px solid rgba(255,255,255,0.07);">
+          <div style="font-family:var(--f-label);font-size:.48rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,247,242,0.3);margin-bottom:.4rem;">Objetivo ante el Consejo</div>
+          <div style="font-family:var(--f-body);font-size:.84rem;font-weight:300;color:rgba(250,247,242,0.82);line-height:1.55;">Reducir la dependencia de sistemas que nadie puede tocar — con un proveedor que firma el resultado y mide la productividad con datos propios, no con horas.</div>
+        </div>
+        <div style="padding:.85rem 1.25rem;">
+          <div style="font-family:var(--f-label);font-size:.48rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,247,242,0.3);margin-bottom:.4rem;">Coste de no actuar</div>
+          <div style="font-family:var(--f-body);font-size:.84rem;font-weight:300;color:rgba(250,247,242,0.82);line-height:1.55;">Gartner estima la deuda técnica en el 20–40% del valor de los activos tecnológicos — un pasivo que crece solo. Y el AI Act entra en vigor en agosto 2026: sistemas con decisiones automatizadas sin documentación auditable son riesgo regulatorio inmediato.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REFERENCIAS Y CASOS -->
+<div class="seccion" id="s-casos">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-casos')">
+    <span class="seccion-titulo">Referencias y casos</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div style="margin-bottom: .75rem; padding: .6rem .85rem; background: var(--arcilla-pal); border-radius: 8px; border-left: 2px solid var(--arcilla); font-family: var(--f-body); font-size: .82rem; font-weight: 300; color: var(--arcilla); line-height: 1.5;">
+      ⚠ <strong>Confirma con Jorge antes de la reunión</strong> qué nombres son mencionables. No todos los clientes están autorizados para uso comercial externo.
+    </div>
+    <div style="margin-bottom: 1rem; padding: .6rem .85rem; background: var(--eucalipto-pal); border-radius: 8px; border-left: 2px solid var(--eucalipto); font-family: var(--f-body); font-size: .82rem; font-weight: 300; color: var(--eucalipto); line-height: 1.5;">
+      💬 <strong>Si el cliente pregunta detalles técnicos del caso</strong> que no tienes — metodología, métricas exactas, arquitectura — no improvises. Di: <em>"Eso te lo confirma el especialista de producto en la siguiente reunión, que es precisamente lo que quiero proponerte como próximo paso."</em> Lo convierte en argumento para cerrar la reunión siguiente, no en un problema.
+    </div>
+
+    <div class="casos-list">
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">PL/SQL</div>
+        <div>
+          <div class="caso-nombre">Migración PL/SQL → Java · UNED</div>
+          <div class="caso-sector">Caso documentado · Legacy crítico · IA Generativa aplicada</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo"><strong>El problema:</strong> Procedimientos almacenados PL/SQL sin documentación funcional clara, complejidad de conversión manual a Java, equipos IT internos sin capacidad para emprender la migración en paralelo al mantenimiento operativo.</div>
+          <div class="caso-hizo" style="margin-top:.5rem;"><strong>Lo que hizo Entelgy:</strong> ChatGPT para generar documentación automática. Migración asistida PL/SQL → Java. GitHub Copilot para generar tests unitarios. <strong>Resultado: reducción del tiempo de migración estimado en un 60–70% sobre el enfoque manual</strong>; código Java con cobertura de tests desde el primer día; conocimiento funcional documentado y en manos del cliente.</div>
+          <div class="caso-pitch-label">Cómo usarlo en reunión</div>
+          <div class="caso-pitch">Es el caso más directo para cualquier empresa con lógica enterrada en procedimientos Oracle. "Tenemos una práctica específica — lo hemos hecho con ChatGPT + Copilot y el resultado es Java limpio con tests. ¿Cuántos procedures tienen activos en producción?"</div>
+        </div>
+      </div>
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">REA</div>
+        <div>
+          <div class="caso-nombre">REA · Solución propia Entelgy</div>
+          <div class="caso-sector">IA en producción · Video peritación · Prueba de método</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo"><strong>Qué es:</strong> Solución propietaria de Entelgy con IA para video peritación de hogar y autos desde la pandemia. IA real en producción — no piloto — sobre un sistema con requisitos de precisión y trazabilidad. Más de 4 años funcionando.</div>
+          <div class="caso-pitch-label">Cómo usarlo en reunión</div>
+          <div class="caso-pitch">Para clientes escépticos de que la IA funcione en entornos de producción reales. El argumento no es el sistema en sí — es el mensaje de fondo: <strong>"Nosotros lo aplicamos a nuestros propios sistemas antes de ofrecerlo a clientes. No vendemos lo que no hemos probado con riesgo propio."</strong></div>
+        </div>
+      </div>
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">H10</div>
+        <div>
+          <div class="caso-nombre">H10 Hotels</div>
+          <div class="caso-sector">Hotelero · Assessment modernización · Primer contrato facturable</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo"><strong>Qué hizo Entelgy:</strong> Assessment completo de modernización de sistemas legacy y propuesta de adopción de Spec-Driven. El cliente obtuvo un blueprint de priorización con criterios que llevó a dirección: qué modernizar, en qué orden, y cuánto costaba mantener el estado actual tal como estaba. <strong>El assessment fue el primer contrato facturable y la base que permitió tomar decisiones de inversión con datos propios.</strong></div>
+          <div class="caso-pitch-label">Cómo usarlo en reunión</div>
+          <div class="caso-pitch">Para clientes que dicen "no sé por dónde empezar" o "no tenemos presupuesto para una transformación". <strong>El assessment no es un proyecto — es una decisión informada.</strong> Bajo compromiso inicial, alto impacto en la conversación de dirección. El número que produce (cuánto vale la deuda técnica acumulada) es en muchos casos el argumento que desbloquea el presupuesto.</div>
+        </div>
+      </div>
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">REFs</div>
+        <div>
+          <div class="caso-nombre">Cartera Industria · Entelgy</div>
+          <div class="caso-sector">Energía · Retail · Construcción · Seguridad · Transporte · Ocio · Banca</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo">
+            <strong>Industria:</strong> Iberdrola · TotalEnergies · Repsol (IBIL) · Elecnor · Acciona · Culmia · Prosegur · IKUSI/Velatia · euskotren · Cirsa · Kirolbet · Decathlon · Inditex<br><br>
+            <strong>Banca y financiero:</strong> BBVA (+250 prof.) · Santander · Openbank · Wolters Kluwer · Randstad · RSI · Mapfre · AXA · Línea Directa · Caser · Cajamar<br><br>
+            <strong>Telco:</strong> Telefónica Innovación Digital · Telefónica España · Telefónica Global Solutions · MásOrange
+          </div>
+          <div class="caso-pitch-label">Nota de uso</div>
+          <div class="caso-pitch">Son clientes activos de Software Engineering. Confirmar siempre con Jorge qué casos son referenciables para cada reunión concreta antes de mencionar nombres específicos.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- OBJECIONES -->
+<div class="seccion" id="s-objs">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-objs')">
+    <span class="seccion-titulo">Objeciones más frecuentes</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="objs-list">
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"Ya tenemos proveedor de desarrollo — llevamos años con ellos."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            No pedimos que los cambies. El modelo de entrada es complementar al incumbente en la pieza que más duele — la que lleva años aplazada, la que nadie quiere tocar. Demostramos el modelo con métricas auditables en esa pieza concreta, y el cliente decide qué escalar. <strong>La pregunta real es: ¿tu proveedor actual puede decirte qué productividad entregó el mes pasado, certificada por un tercero?</strong> Foreworth lo hace. Muy pocos proveedores aceptan esa medición.
+            <div class="obj-frase">"¿Hay alguna aplicación concreta donde vuestro proveedor lleva años diciendo que 'no es el momento' de modernizar?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"Tenemos el sistema bajo control — no vemos urgencia ahora mismo."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            El legacy no duele hasta que deja de funcionar o hasta que el negocio pide algo que el sistema no puede dar. Gartner estima que <strong>la deuda técnica vale entre el 20% y el 40% del valor total de los activos tecnológicos</strong> — es un pasivo que no aparece en el balance pero que se paga todos los meses en coste de mantenimiento. Y el AI Act entra en vigor en agosto de 2026 exigiendo documentación técnica auditable sobre sistemas que toman decisiones automatizadas. Quien empiece entonces no llega.
+            <div class="obj-frase">"¿Cuánto de vuestro presupuesto IT va a mantener lo que ya existe frente a construir cosas nuevas?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"Es demasiado caro / no tenemos presupuesto para modernización."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            El assessment no tiene el coste de un proyecto de modernización. Y produce algo que el CFO necesita: un número — cuánto vale la deuda técnica que tienen acumulada. Cuando ese número aparece en un informe propio, el debate de presupuesto cambia. Además, el modelo UCE permite empezar por una pieza pequeña, demostrar retorno con métricas reales de Foreworth, y escalar en la siguiente renovación. <strong>No hay que comprometer una transformación para empezar.</strong>
+            <div class="obj-frase">"¿Sabéis cuánto os cuesta mantener los sistemas actuales tal como están? ¿Ese número está documentado en algún sitio?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"Nuestros equipos internos pueden hacer esto."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            Los equipos internos están centrados en el mantenimiento operativo: resolver incidencias, desarrollar nuevas funcionalidades, asegurar disponibilidad. En la mayoría de los casos <strong>no están dimensionados para emprender proyectos complejos de migración en paralelo</strong>. Y la brecha de talento es estructural — el 57% de empresas europeas no encuentra desarrolladores cualificados (Eurostat). El talento COBOL y PL/SQL se está jubilando, no se está formando. Entelgy aporta capacidad especializada sin competir con el equipo interno.
+            <div class="obj-frase">"¿Cuántos de esos desarrolladores están ahora mismo resolviendo incidencias o desarrollando funcionalidad nueva? ¿Cuántos tienen tiempo real para emprender una migración en paralelo sin parar la operación?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"Ya tenemos GitHub Copilot / herramientas IA para desarrollo."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            El Copilot no firma nada. El estudio METR del MIT (julio 2025) midió que developers experimentados con IA <strong>tardan un 19% más</strong> mientras creen que van un 20% más rápido — un gap de 39 puntos entre percepción y realidad. La IA amplifica el proceso que ya existe: si el proceso es malo, lo amplifica. <strong>Entelgy no vende herramienta — vende resultado firmado.</strong> El 40% del ahorro va al cliente en la factura siguiente.
+            <div class="obj-frase">"¿Vuestro proveedor os garantiza la productividad contractualmente? ¿O os da datos de commits y líneas de código?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"Ya estamos hablando con Accenture / una consultora grande para esto."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            Son buenos dentro del ERP — nadie lo discute. Donde no trabajan bien es en las aplicaciones que rodean al ERP: desarrollo a medida, sistemas satélite, lógica en COBOL o PL/SQL que no es parte del core. Y no ofrecen cláusula bilateral de productividad — cobran por horas igual que todos. <strong>Si el alcance incluye solo el ERP, son razonables. Si hay aplicaciones críticas de desarrollo propio fuera del ERP, ese es exactamente nuestro territorio.</strong>
+            <div class="obj-frase">"¿El alcance que estáis discutiendo con ellos incluye las aplicaciones de desarrollo propio que rodean al ERP, o solo el core?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"Estamos evaluando Ada Leap u otras plataformas de modernización automática con IA."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            Ada Leap genera código — eso es real y útil. La pregunta es quién firma ese código cuando llega a producción. Ada Leap es una herramienta: produce código que alguien tiene que validar, integrar, desplegar y mantener. <strong>No hay nadie al otro lado que asuma el riesgo de lo que no funciona.</strong> Nosotros sí — cláusula bilateral, Foreworth certificando, equipo que responde. La diferencia no es la tecnología, es quién firma el resultado.
+            <div class="obj-frase">"¿Tenéis claro quién validaría y desplegaría lo que genera la plataforma? ¿Quién firmaría que el sistema funciona como tiene que funcionar en producción?"</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="zona-header z2">
+  <div class="zona-num">2</div>
+  <div class="zona-sep"></div>
+  <div class="zona-info">
+    <div class="zona-tag">Zona 2</div>
+    <div class="zona-name">Después de la reunión</div>
+    <div class="zona-sub">Selecciona cómo fue · ve exactamente qué hacer</div>
+  </div>
+</div>
+
+<div class="despues-tabs">
+  <button class="dtab" data-sc="bien"  onclick="selectScenario('bien')">✅  Bien — hay interés</button>
+  <button class="dtab" data-sc="tibio" onclick="selectScenario('tibio')">⏳  Pidió pensarlo</button>
+  <button class="dtab" data-sc="frio"  onclick="selectScenario('frio')">❄  Sin interés claro</button>
+</div>
+
+<!-- placeholder -->
+<div class="dscenario active" id="ds-placeholder">
+  <div class="d-placeholder">Selecciona cómo fue la reunión para ver exactamente qué hacer.</div>
+</div>
+
+<!-- BIEN -->
+<div class="dscenario" id="ds-bien">
+
+  <!-- TRASPASO INTERNO -->
+  <div style="margin-bottom:1rem;padding:1.1rem 1.25rem;background:var(--timon);border-radius:10px;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cobre),var(--cobre-cla),transparent);"></div>
+    <div style="font-family:var(--f-label);font-size:.55rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cobre-cla);margin-bottom:.65rem;">Antes de salir de la sala · escribe esto</div>
+    <div style="display:flex;flex-direction:column;gap:.45rem;margin-bottom:.85rem;">
+      <div style="display:flex;gap:.6rem;align-items:flex-start;">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--cobre-cla);flex-shrink:0;margin-top:.5rem;"></div>
+        <div style="font-family:var(--f-body);font-size:.84rem;font-weight:300;color:rgba(250,247,242,0.75);line-height:1.55;"><strong style="color:rgba(250,247,242,0.95);font-weight:500;">Empresa y sector</strong> — con quién hablaste, cargo exacto</div>
+      </div>
+      <div style="display:flex;gap:.6rem;align-items:flex-start;">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--cobre-cla);flex-shrink:0;margin-top:.5rem;"></div>
+        <div style="font-family:var(--f-body);font-size:.84rem;font-weight:300;color:rgba(250,247,242,0.75);line-height:1.55;"><strong style="color:rgba(250,247,242,0.95);font-weight:500;">El problema que nombraron</strong> — la aplicación concreta, el sistema, la frase exacta que usaron</div>
+      </div>
+      <div style="display:flex;gap:.6rem;align-items:flex-start;">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--cobre-cla);flex-shrink:0;margin-top:.5rem;"></div>
+        <div style="font-family:var(--f-body);font-size:.84rem;font-weight:300;color:rgba(250,247,242,0.75);line-height:1.55;"><strong style="color:rgba(250,247,242,0.95);font-weight:500;">Quién más estaba en la sala</strong> — otros decisores, técnicos, alguien que no habló pero escuchaba</div>
+      </div>
+      <div style="display:flex;gap:.6rem;align-items:flex-start;">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--cobre-cla);flex-shrink:0;margin-top:.5rem;"></div>
+        <div style="font-family:var(--f-body);font-size:.84rem;font-weight:300;color:rgba(250,247,242,0.75);line-height:1.55;"><strong style="color:rgba(250,247,242,0.95);font-weight:500;">Qué preguntas hicieron</strong> — especialmente las técnicas o de precio que no pudiste responder</div>
+      </div>
+      <div style="display:flex;gap:.6rem;align-items:flex-start;">
+        <div style="width:5px;height:5px;border-radius:50%;background:var(--cobre-cla);flex-shrink:0;margin-top:.5rem;"></div>
+        <div style="font-family:var(--f-body);font-size:.84rem;font-weight:300;color:rgba(250,247,242,0.75);line-height:1.55;"><strong style="color:rgba(250,247,242,0.95);font-weight:500;">Fecha acordada</strong> para la siguiente reunión con el especialista</div>
+      </div>
+    </div>
+    <div style="padding:.6rem .85rem;background:rgba(166,112,62,0.18);border-radius:7px;border-left:2px solid var(--cobre-cla);">
+      <div style="font-family:var(--f-body);font-size:.8rem;font-weight:300;color:rgba(250,247,242,0.6);line-height:1.55;">Manda esto a Jorge antes de la siguiente reunión. No hay que resumir nada más — con estos cinco puntos tiene todo lo que necesita para entrar bien.</div>
+    </div>
+  </div>
+
+  <div class="d-action-box">
+    <div class="d-action-label">Qué decirle al cliente para mantener el momentum</div>
+    <div class="d-action-text">Antes de salir, confirma fecha. <strong>No salgas sin un "próximo paso" con día concreto.</strong> La frase para cerrar la sala: <em>"Os mando un email ahora con los detalles del assessment. Y os traigo al especialista de producto — que es quien puede responder a las preguntas técnicas que han surgido — para que podamos darle forma juntos."</em></div>
+  </div>
+
+  <div class="d-email-label">Email a enviar en las siguientes 24 horas</div>
+  <div class="email-mock">
+    <div class="email-mock-bar">
+      <div class="email-dot" style="background:#FF5F57;"></div>
+      <div class="email-dot" style="background:#FEBC2E;"></div>
+      <div class="email-dot" style="background:#28C840;"></div>
+    </div>
+    <div class="email-mock-meta">
+      <div class="email-meta-row"><span class="email-meta-label">Para</span><span class="email-meta-val">[Nombre] · [Empresa]</span></div>
+    </div>
+    <div class="email-subject-row">Assessment · próximos pasos</div>
+    <div class="email-mock-body">
+      <p>Hola [nombre],</p>
+      <p>El assessment que le propuse: dos semanas, análisis del código actual con IA — obsolescencia, deuda técnica, vulnerabilidades — y un mapa de qué modernizar y en qué orden, con datos que puede llevar a dirección.</p>
+      <p>Os traigo a [nombre del especialista] para la siguiente reunión — es quien puede entrar en el detalle técnico y afinar el alcance con vosotros.</p>
+      <p>¿Arrancamos la semana del [fecha]?</p>
+      <div class="firma">[Nombre] · Entelgy · [Teléfono]</div>
+    </div>
+  </div>
+  <div class="assessment-toggle" id="at-bien">
+    <button class="assessment-toggle-btn" onclick="toggleAssessment('at-bien')">
+      <span class="assessment-toggle-icon">+</span>
+      ¿Te preguntan qué incluye el assessment?
+    </button>
+    <div class="assessment-toggle-body">
+      <div class="assessment-block">
+        <div class="assessment-label">Qué recibe el cliente</div>
+        <div class="assessment-items">
+          <div class="assessment-item"><div class="assessment-dot"></div><div class="assessment-text"><strong>Análisis del código actual guiado por IA:</strong> obsolescencia, vulnerabilidades, calidad, acoplamiento, complejidad y cobertura de documentación</div></div>
+          <div class="assessment-item"><div class="assessment-dot"></div><div class="assessment-text"><strong>Mapa as is → to be:</strong> qué modernizar, por qué y en qué orden — con criterios de TCO, no solo técnicos</div></div>
+          <div class="assessment-item"><div class="assessment-dot"></div><div class="assessment-text"><strong>Documento con datos propios</strong> del cliente — para llevar a Dirección sin depender de estimaciones del proveedor</div></div>
+          <div class="assessment-item"><div class="assessment-dot"></div><div class="assessment-text"><strong>Plazo: dos semanas</strong> desde el arranque · Precio: coordinar con Jorge antes de dar números</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TIBIO -->
+<div class="dscenario" id="ds-tibio">
+  <div class="d-action-box">
+    <div class="d-action-label">Qué hacer</div>
+    <div class="d-action-text"><strong>No mandes la presentación completa.</strong> Es demasiado y se convierte en excusa para no responder. Envía el email de abajo. <strong>Espera 5 días hábiles</strong> — si no hay respuesta, llama con una pregunta directa, no para "hacer seguimiento".</div>
+  </div>
+  <div class="d-email-label">Email a enviar hoy</div>
+  <div class="email-mock">
+    <div class="email-mock-bar">
+      <div class="email-dot" style="background:#FF5F57;"></div>
+      <div class="email-dot" style="background:#FEBC2E;"></div>
+      <div class="email-dot" style="background:#28C840;"></div>
+    </div>
+    <div class="email-mock-meta">
+      <div class="email-meta-row"><span class="email-meta-label">Para</span><span class="email-meta-val">[Nombre] · [Empresa]</span></div>
+    </div>
+    <div class="email-subject-row">Modernización de Aplicaciones · lo que comentamos</div>
+    <div class="email-mock-body">
+      <p>Hola [nombre],</p>
+      <p>El dato que mencioné: Gartner estima que la deuda técnica representa el 20–40% del valor de los activos tecnológicos — un pasivo que rara vez está documentado, pero que el CFO agradece conocer.</p>
+      <p>Si quiere ponerle número a la suya, un assessment de dos semanas lo hace.</p>
+      <p>¿Hablamos la semana que viene?</p>
+      <div class="firma">[Nombre] · Entelgy · [Teléfono]</div>
+    </div>
+  </div>
+  <div class="assessment-toggle" id="at-tibio">
+    <button class="assessment-toggle-btn" onclick="toggleAssessment('at-tibio')">
+      <span class="assessment-toggle-icon">+</span>
+      ¿Te preguntan qué incluye el assessment?
+    </button>
+    <div class="assessment-toggle-body">
+      <div class="assessment-block">
+        <div class="assessment-label">Qué recibe el cliente</div>
+        <div class="assessment-items">
+          <div class="assessment-item"><div class="assessment-dot"></div><div class="assessment-text"><strong>Análisis del código actual guiado por IA:</strong> obsolescencia, vulnerabilidades, calidad, acoplamiento, complejidad y documentación</div></div>
+          <div class="assessment-item"><div class="assessment-dot"></div><div class="assessment-text"><strong>Mapa as is → to be:</strong> qué modernizar, por qué y en qué orden — con criterios de TCO</div></div>
+          <div class="assessment-item"><div class="assessment-dot"></div><div class="assessment-text"><strong>Documento con datos propios</strong> — para llevar a Dirección y justificar inversión con números concretos</div></div>
+          <div class="assessment-item"><div class="assessment-dot"></div><div class="assessment-text"><strong>Plazo: dos semanas</strong> · Precio: coordinar con Jorge antes de dar números</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FRÍO -->
+<div class="dscenario" id="ds-frio">
+  <div class="d-action-box">
+    <div class="d-action-label">Qué hacer</div>
+    <div class="d-action-text">No insistas por email. <strong>Añade a nurturing</strong> y anota el motivo del frío — a veces el problema es el interlocutor incorrecto, no la falta de interés.</div>
+  </div>
+  <div style="font-family:var(--f-body);font-size:.86rem;font-weight:300;color:var(--niebla);line-height:1.6;margin-bottom:.65rem;">Vuelve en 60–90 días cuando haya uno de estos eventos:</div>
+  <div class="d-frio-items">
+    <div class="d-frio-item"><div class="d-frio-dot"></div><div class="d-frio-text">Un caso cerrado en su sector que puedas mencionar sin pedir permiso</div></div>
+    <div class="d-frio-item"><div class="d-frio-dot"></div><div class="d-frio-text">Noticia sobre el AI Act (agosto 2026) o regulación que les afecte directamente</div></div>
+    <div class="d-frio-item"><div class="d-frio-dot"></div><div class="d-frio-text">Webinar de Entelgy donde puedas invitarles sin presión comercial</div></div>
+    <div class="d-frio-item"><div class="d-frio-dot"></div><div class="d-frio-text">Cambio de CTO, Dir. IT u otro decisor en la empresa — nueva cara, nueva oportunidad</div></div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+
+
+<!-- FOOTER -->
+<div class="ficha-footer">
+  <div style="font-family: var(--f-label); font-size: .75rem; font-weight: 600; letter-spacing: .08em; color: var(--niebla);">Entelgy · Hipatia</div>
+  <div class="footer-meta">
+    Ficha comercial · Modernización · Vertical Industria<br>
+    Jorge Herrero · Ciclo de vida de desarrollo de software · Mayo 2026
+  </div>
+</div>
+
+</div><!-- /page-content -->
+
+<script>
+/* ── SECCIONES GENÉRICAS ── */
+function toggleSeccion(id) { document.getElementById(id).classList.toggle('open'); }
+function toggleObj(el) { el.classList.toggle('open'); }
+function toggleDetalle(el) { el.classList.toggle('open'); }
+function toggleCaso(el) { el.classList.toggle('open'); }
+function toggleSenalInfo(btn) { btn.closest('.senal').classList.toggle('info-open'); }
+function switchTab(e, group, name) {
+  document.querySelectorAll('.ctab[data-group="' + group + '"]').forEach(function(t) { t.classList.remove('active'); });
+  e.currentTarget.classList.add('active');
+  document.querySelectorAll('.ctemplate[data-group="' + group + '"]').forEach(function(t) { t.classList.remove('active'); });
+  var target = document.querySelector('.ctemplate[data-group="' + group + '"][data-name="' + name + '"]');
+  if (target) target.classList.add('active');
+}
+
+/* ── ZONA 2 · DESPUÉS ── */
+function selectScenario(name) {
+  document.querySelectorAll('.dtab').forEach(function(t) {
+    t.classList.remove('active','bien','tibio','frio');
+    if (t.dataset.sc === name) t.classList.add('active', name);
+  });
+  ['placeholder','bien','tibio','frio'].forEach(function(s) {
+    var el = document.getElementById('ds-' + s);
+    if (el) el.classList.toggle('active', s === name);
+  });
+}
+function toggleAssessment(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+
+/* ── SCANNER ── */
+var scannerRunning = false;
+var scannerInterval = null;
+
+var SCAN_MSGS = [
+  'Buscando ofertas con tecnologías legacy...',
+  'Revisando proyectos digitales recientes...',
+  'Analizando menciones de deuda técnica...',
+  'Buscando señales del equipo IT...',
+  'Procesando resultados...'
+];
+var SCAN_LABELS = {
+  legacy_jobs:      { label: 'Tecnologías legacy en empleo', icon: '⚙' },
+  stalled_projects: { label: 'Proyectos sin materializar',   icon: '⏱' },
+  tech_debt:        { label: 'Menciones deuda técnica',      icon: '🔧' },
+  cto_signals:      { label: 'Señales del CTO / Dir. IT',    icon: '👤' }
+};
+
+function scannerAnalyze() {
+  var company = document.getElementById('sc-input').value.trim();
+  if (!company || scannerRunning) return;
+  scannerRunning = true;
+
+  document.getElementById('sc-form').style.display = 'none';
+  document.getElementById('sc-error').style.display = 'none';
+  document.getElementById('sc-results').style.display = 'none';
+  document.getElementById('sc-loading').style.display = 'block';
+  document.getElementById('sc-loading-company').textContent = company;
+  document.getElementById('sc-loading-msg').textContent = SCAN_MSGS[0];
+
+  var mi = 0;
+  scannerInterval = setInterval(function() {
+    mi = (mi + 1) % SCAN_MSGS.length;
+    document.getElementById('sc-loading-msg').textContent = SCAN_MSGS[mi];
+  }, 2500);
+
+  // Llama al Worker proxy — el Worker gestiona la API key y la llamada a Anthropic
+  fetch('https://scanner.entelgy.guberna.es/analyze', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ company: company })
+  })
+  .then(function(r) {
+    if (!r.ok) throw new Error('status ' + r.status);
+    return r.json();
+  })
+  .then(function(result) {
+    clearInterval(scannerInterval);
+    renderScannerResults(result);
+  })
+  .catch(function() {
+    clearInterval(scannerInterval);
+    document.getElementById('sc-loading').style.display = 'none';
+    document.getElementById('sc-error').style.display = 'flex';
+    scannerRunning = false;
+  });
+}
+
+function renderScannerResults(r) {
+  var TEMP_CFG = {
+    caliente: { emoji: '🔴', label: 'Cuenta caliente', color: '#B45C38', bg: '#F5E8E2', border: '#D4A090' },
+    tibia:    { emoji: '🟡', label: 'Cuenta tibia',    color: '#B45309', bg: '#FFFBEB', border: '#FDE68A' },
+    fria:     { emoji: '⚪', label: 'Cuenta fría',      color: '#8A837A', bg: '#F0EBE2', border: '#D5CCC0' }
+  };
+  var tc = TEMP_CFG[r.temperature] || TEMP_CFG.fria;
+
+  var sigHtml = Object.entries(SCAN_LABELS).map(function(entry) {
+    var key = entry[0], meta = entry[1];
+    var s = r.signals && r.signals[key];
+    var found = s && s.found;
+    return '<div class="sc-signal' + (found ? ' found' : '') + '">'
+      + '<span class="sc-sig-icon">' + meta.icon + '</span>'
+      + '<div class="sc-sig-body">'
+      + '<div class="sc-sig-label">' + meta.label + '</div>'
+      + (s && s.evidence ? '<div class="sc-sig-evidence">' + s.evidence + '</div>' : '')
+      + '</div>'
+      + '<span class="sc-sig-check">' + (found ? '✓' : '–') + '</span>'
+      + '</div>';
+  }).join('');
+
+  var bars = [0,1,2,3].map(function(i) {
+    return '<div class="sc-bar-seg' + (i < r.score ? ' active' : '') + '"></div>';
+  }).join('');
+
+  document.getElementById('sc-results').innerHTML =
+    '<div class="sc-temp-badge" style="background:' + tc.bg + ';border-color:' + tc.border + ';color:' + tc.color + '">'
+    + tc.emoji + ' <strong>' + r.company + '</strong> · ' + tc.label + ' · ' + r.score + '/4 señales'
+    + '</div>'
+    + '<div class="sc-score-bar">' + bars + '</div>'
+    + '<div class="sc-signals">' + sigHtml + '</div>'
+    + '<div class="sc-action">' + r.recommended_action + '</div>'
+    + '<button class="sc-reset" onclick="scannerReset()">Nueva búsqueda</button>';
+
+  document.getElementById('sc-loading').style.display = 'none';
+  document.getElementById('sc-results').style.display = 'block';
+  document.getElementById('sc-results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  scannerRunning = false;
+}
+
+function scannerReset() {
+  document.getElementById('sc-input').value = '';
+  document.getElementById('sc-results').style.display = 'none';
+  document.getElementById('sc-error').style.display = 'none';
+  document.getElementById('sc-form').style.display = 'flex';
+  document.getElementById('sc-input').focus();
+  scannerRunning = false;
+}
+</script>
+<div id="hipatia-volver"><button type="button" aria-label="Volver a Hipatia">← Volver a Hipatia</button></div>
+<style>
+#hipatia-volver{position:fixed;top:14px;left:14px;z-index:2147483000;font:500 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+#hipatia-volver button{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid #E6E8EA;background:#fff;color:#041C2C;cursor:pointer;box-shadow:0 1px 3px rgba(4,28,44,.10);font:inherit;transition:color .15s,border-color .15s}
+#hipatia-volver button:hover{color:#FE5000;border-color:#FE5000}
+#hipatia-volver button:focus-visible{outline:2px solid #FE5000;outline-offset:2px}
+@media print{#hipatia-volver{display:none !important}}
+</style>
+<script>
+(function(){
+  var PORTAL="https://hipatia-v4.guberna.es/";
+  function volver(){
+    // el material se abre en la misma pestaña, así que hay historial: volver
+    // atrás devuelve al listado exacto, con su scroll y sus filtros. Si alguien
+    // llegó por la URL directa no hay historial y se va a la portada.
+    if(history.length>1){ history.back(); return; }
+    location.href=PORTAL;
+  }
+  var b=document.getElementById('hipatia-volver');
+  if(b) b.firstChild.addEventListener('click',volver);
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape'||e.defaultPrevented) return;
+    if(document.fullscreenElement) return;                 // Escape sale de pantalla completa
+    var a=document.activeElement;
+    if(a&&(a.tagName==='INPUT'||a.tagName==='TEXTAREA'||a.isContentEditable)) return;
+    volver();
+  });
+})();
+</script></body>
+</html>

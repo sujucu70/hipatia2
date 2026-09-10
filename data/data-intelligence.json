@@ -212,8 +212,8 @@
       },
       "es_solucion_unica": true,
       "contactos": {
-        "comercial": "daniela-ongaro",
-        "tecnico": "luis-sanz"
+        "responsable": "daniela-ongaro",
+        "apoyo": "luis-sanz"
       }
     }
   ],
@@ -224,5 +224,6 @@
   ],
   "propuesta_portada": "Datos que se pueden auditar: gobierno, ingeniería, analítica y modelos sobre dato fiable.",
   "nota_interna": "Data Intelligence es una única solución con el nombre de la práctica (revisión 5, 3 sep): sus cuatro capacidades —gobernar el dato, gobernar los modelos, decidir con analítica, predecir y operar— viven dentro de la página de solución. Cuando Daniela valide el desglose, se abre en soluciones.",
-  "responsable_id": "daniela-ongaro"
+  "responsable_id": "daniela-ongaro",
+  "contactos_area": []
 }

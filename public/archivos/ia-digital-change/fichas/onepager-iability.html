@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entelgy · IAbility · One-pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#8a97a0;font-family:'Inter',-apple-system,sans-serif;color:#0E2230;}
+  .desk{padding:26px 0 40px;display:flex;justify-content:center;}
+  .page{width:210mm;height:297mm;background:#fff;box-shadow:0 26px 70px rgba(0,0,0,.4);position:relative;overflow:hidden;display:flex;flex-direction:column;color:#0E2230;}
+  h1,h2,h3{font-family:'Manrope';}
+  sup{font-size:8px;font-weight:700;color:#8593A0;vertical-align:top;line-height:0;}
+  @media print{
+    @page{size:A4;margin:0;}
+    body{background:#fff;}
+    .desk{padding:0;}
+    .page{box-shadow:none;width:210mm;height:297mm;}
+  }
+</style>
+</head>
+<body>
+<div class="desk">
+<div class="page">
+
+  <div style="height:4px;background:#FE5000;flex-shrink:0;"></div>
+
+  <!-- ===================== HEADER (navy) ===================== -->
+  <div style="background:linear-gradient(118deg,#041C2C 0%,#041C2C 52%,#0A2A3D 100%);color:#fff;padding:4.5mm 16mm 3mm;position:relative;overflow:hidden;flex-shrink:0;">
+
+    <!-- pixel mosaic -->
+    <div style="position:absolute;z-index:2;top:15mm;right:16mm;width:64px;height:64px;pointer-events:none;">
+      <span style="position:absolute;top:0;left:0;width:11px;height:11px;background:#123246;"></span>
+      <span style="position:absolute;top:0;left:14px;width:11px;height:11px;background:#1c4358;"></span>
+      <span style="position:absolute;top:14px;left:14px;width:11px;height:11px;background:#2a5a72;"></span>
+      <span style="position:absolute;top:14px;left:28px;width:11px;height:11px;background:#FE5000;"></span>
+      <span style="position:absolute;top:28px;left:28px;width:11px;height:11px;background:#123246;"></span>
+      <span style="position:absolute;top:28px;left:42px;width:11px;height:11px;background:#FE5000;opacity:.55;"></span>
+    </div>
+
+    <div style="position:relative;z-index:3;">
+      <img src="data:image/png;base64,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" alt="Entelgy" style="position:absolute;top:0;right:0;height:26px;width:auto;">
+      
+
+      <div style="margin-top:1mm;display:flex;align-items:center;gap:10px;">
+        <span style="width:26px;height:3px;background:#FE5000;display:block;"></span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#7E93A0;">Digital Change · Cultura de IA</span>
+      </div>
+      <h1 style="font-family:'Manrope';font-weight:800;font-size:31px;line-height:1;letter-spacing:-.03em;margin-top:6px;color:#fff;">IAbility<span style="font-size:14px;vertical-align:super;font-weight:700;">&reg;</span><span style="color:#FE5000;">.</span></h1>
+      <div style="font-family:'Manrope';font-weight:700;font-size:16px;line-height:1.25;letter-spacing:-.01em;color:#fff;margin-top:7px;max-width:152mm;">El retorno de tu inversión en IA empieza en las personas.</div>
+      <p style="max-width:155mm;margin-top:6px;font-size:12px;line-height:1.5;color:#B9C6CF;font-weight:400;">IAbility es <span style="color:#fff;font-weight:600;">la capa de adopción humana</span>: convierte los copilotos y agentes que ya tienes en hábitos de uso Seguro, Ético y Responsable, medidos por persona y por área. No formamos: <span style="color:#fff;font-weight:600;">cambiamos comportamientos</span> &mdash; y respondemos del resultado.</p>
+
+      <div style="margin-top:2.2mm;padding-top:1.3mm;border-top:1px solid #1B384A;display:grid;grid-template-columns:repeat(3,1fr);">
+        <div style="padding-right:22px;">
+          <div style="font-family:'Manrope';font-weight:800;font-size:21px;letter-spacing:-.02em;color:#fff;line-height:1;font-variant-numeric:tabular-nums;"><span style="font-size:12px;color:#8299A6;font-weight:800;vertical-align:2px;margin-right:2px;">~</span>10 min</div>
+          <div style="margin-top:5px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:#7E93A0;font-weight:600;line-height:1.3;">a la semana por persona<br>&middot; lluvia fina, sin parar la jornada</div>
+        </div>
+        <div style="padding:0 22px;border-left:1px solid #1B384A;">
+          <div style="font-family:'Manrope';font-weight:800;font-size:21px;letter-spacing:-.02em;color:#fff;line-height:1;font-variant-numeric:tabular-nums;">73%</div>
+          <div style="margin-top:5px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:#7E93A0;font-weight:600;line-height:1.3;">retención del método<br>vs 10&ndash;20% del e-learning</div>
+        </div>
+        <div style="padding-left:22px;border-left:1px solid #1B384A;">
+          <div style="font-family:'Manrope';font-weight:800;font-size:21px;letter-spacing:-.02em;color:#fff;line-height:1;font-variant-numeric:tabular-nums;">12 sem</div>
+          <div style="margin-top:5px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:#7E93A0;font-weight:600;line-height:1.3;">de la línea base al cambio<br>de comportamiento</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== BODY ===================== -->
+  <div style="padding:3mm 16mm 0;flex:1;display:flex;flex-direction:column;position:relative;">
+    
+    <!-- 01 -->
+    <section>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+        <span style="width:26px;height:3px;background:#FE5000;display:block;"></span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:11px;color:#fff;background:#041C2C;border-radius:3px;padding:1px 6px;">01</span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8593A0;white-space:nowrap;">El punto de partida</span>
+        <span style="flex:1;height:1px;background:#E4E8EA;"></span>
+      </div>
+      <h2 style="font-family:'Manrope';font-weight:800;font-size:16px;letter-spacing:-.015em;line-height:1.22;color:#041C2C;max-width:170mm;">Compraste la IA; la adopción no venía incluida</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:8px;">
+        <div style="padding-top:4px;">
+          <div style="font-family:'Manrope';font-weight:700;font-size:13px;color:#041C2C;line-height:1.3;">La factura no rinde</div>
+          <p style="font-size:11.5px;line-height:1.5;color:#4A5B65;margin-top:6px;">Licencias sin usar &mdash;Copilot es el caso típico&mdash; y agentes a medias. Solo 5 de cada 100 pilotos de GenAI dejan impacto medible en la cuenta de resultados (MIT, 2025). La adopción convierte esa factura en productividad.</p>
+        </div>
+        <div style="padding-top:4px;">
+          <div style="font-family:'Manrope';font-weight:700;font-size:13px;color:#041C2C;line-height:1.3;">El uso sin gobierno ya es riesgo</div>
+          <p style="font-size:11.5px;line-height:1.5;color:#4A5B65;margin-top:6px;">El 90% de los empleados usa IA personal en el trabajo (MIT, 2025) y el 48% mete datos sensibles en herramientas públicas (KPMG, 2025). El art.&nbsp;4 del AI Act &mdash;alfabetización en IA&mdash; obliga desde febrero de 2025.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section style="margin-top:14px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+        <span style="width:26px;height:3px;background:#FE5000;display:block;"></span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:11px;color:#fff;background:#041C2C;border-radius:3px;padding:1px 6px;">02</span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8593A0;white-space:nowrap;">Qué hacemos</span>
+        <span style="flex:1;height:1px;background:#E4E8EA;"></span>
+      </div>
+      <h2 style="font-family:'Manrope';font-weight:800;font-size:16px;letter-spacing:-.015em;line-height:1.22;color:#041C2C;">Llevamos la IA al puesto con criterio, y el hábito se queda</h2>
+      <div style="display:grid;grid-template-columns:1.12fr 1fr;gap:30px;margin-top:8px;align-items:start;">
+        <p style="font-size:11.5px;line-height:1.5;color:#33454F;">Un método propio de narrativa inmersiva y juego, en dosis cortas &mdash;<span style="color:#041C2C;font-weight:600;">lluvia fina</span>&mdash; que bajan el miedo y suben el uso real. Pensado para organizaciones grandes: despliegue <span style="color:#041C2C;font-weight:600;">por oleadas de colectivo y en varios idiomas</span>, sin parar la operación, medido por persona y por área.</p>
+        <div>
+          <div style="font-family:'Manrope';font-weight:700;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#8593A0;margin-bottom:7px;">Marco SER &middot; el criterio que se interioriza</div>
+          <div style="display:flex;flex-direction:column;gap:5px;">
+            <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-family:'Manrope';font-weight:800;font-size:15px;color:#FE5000;width:15px;">S</span><span style="font-size:11px;color:#33454F;"><b style="color:#041C2C;">Seguro</b> &middot; riesgo técnico y de seguridad</span></div>
+            <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-family:'Manrope';font-weight:800;font-size:15px;color:#FE5000;width:15px;">E</span><span style="font-size:11px;color:#33454F;"><b style="color:#041C2C;">Ético</b> &middot; sesgo y equidad en el uso</span></div>
+            <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-family:'Manrope';font-weight:800;font-size:15px;color:#FE5000;width:15px;">R</span><span style="font-size:11px;color:#33454F;"><b style="color:#041C2C;">Responsable</b> &middot; cumplimiento y normativa</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- tira de 4 fases -->
+      <div style="margin-top:8px;display:grid;grid-template-columns:repeat(4,1fr);gap:7px;">
+        <div style="border-top:3px solid #041C2C;padding-top:6px;">
+          <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-family:'Manrope';font-weight:800;font-size:11px;color:#fff;background:#041C2C;border-radius:50%;width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">1</span><span style="font-family:'Manrope';font-weight:700;font-size:12.5px;color:#041C2C;letter-spacing:-.01em;">Evaluar</span></div>
+          <p style="font-size:9.5px;line-height:1.4;color:#5A6B76;margin-top:4px;">El punto de partida, medido: radar por persona y mapa de calor por áreas.</p>
+        </div>
+        <div style="border-top:3px solid #3B6EA5;padding-top:6px;">
+          <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-family:'Manrope';font-weight:800;font-size:11px;color:#fff;background:#3B6EA5;border-radius:50%;width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">2</span><span style="font-family:'Manrope';font-weight:700;font-size:12.5px;color:#041C2C;letter-spacing:-.01em;">Formar</span></div>
+          <p style="font-size:9.5px;line-height:1.4;color:#5A6B76;margin-top:4px;">Toda la plantilla en el mismo punto, en píldoras de 5&ndash;10 min.</p>
+        </div>
+        <div style="border-top:3px solid #855AC6;padding-top:6px;">
+          <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-family:'Manrope';font-weight:800;font-size:11px;color:#fff;background:#855AC6;border-radius:50%;width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">3</span><span style="font-family:'Manrope';font-weight:700;font-size:12.5px;color:#041C2C;letter-spacing:-.01em;">Concienciar</span></div>
+          <p style="font-size:9.5px;line-height:1.4;color:#5A6B76;margin-top:4px;">La campaña narrativa: 12 semanas, ~10 min a la semana.</p>
+        </div>
+        <div style="border-top:3px solid #2FA36B;padding-top:6px;">
+          <div style="display:flex;align-items:baseline;gap:8px;"><span style="font-family:'Manrope';font-weight:800;font-size:11px;color:#fff;background:#2FA36B;border-radius:50%;width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">4</span><span style="font-family:'Manrope';font-weight:700;font-size:12.5px;color:#041C2C;letter-spacing:-.01em;">Adoptar</span></div>
+          <p style="font-size:9.5px;line-height:1.4;color:#5A6B76;margin-top:4px;">Al puesto con Labs y Help: casos de uso reales, a escala de toda la organización.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section style="margin-top:14px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+        <span style="width:26px;height:3px;background:#FE5000;display:block;"></span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:11px;color:#fff;background:#041C2C;border-radius:3px;padding:1px 6px;">03</span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8593A0;white-space:nowrap;">Por qué creernos</span>
+        <span style="flex:1;height:1px;background:#E4E8EA;"></span>
+      </div>
+      <p style="font-size:11.5px;line-height:1.5;color:#33454F;max-width:172mm;">Los activos no se improvisan: una serie narrativa propia donde cada riesgo &mdash;técnico, ético, legal&mdash; tiene su personaje, con años de producción detrás, que llega hecha y se viste con vuestra marca. Y lo usamos en casa antes de venderlo:</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
+        <!-- card 1 -->
+        <div style="border:1px solid #E4E8EA;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="background:#041C2C;color:#fff;padding:7px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px;">
+            <span style="font-family:'Manrope';font-weight:800;font-size:13.5px;">Entelgy</span>
+            <span style="font-family:'Manrope';font-weight:700;font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;color:#041C2C;background:#FE5000;padding:3px 7px;border-radius:3px;">Autoaplicación &middot; Labs</span>
+          </div>
+          <div style="padding:7px 16px 9px;display:flex;flex-direction:column;flex:1;">
+            <p style="font-size:10.5px;line-height:1.45;color:#4A5B65;">Entelgy pasó su plantilla por el programa: cinco células de innovación, +30 personas y la base de su comité de gobernanza de IA.</p>
+            <div style="display:flex;justify-content:space-between;margin-top:auto;padding-top:7px;">
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:18px;color:#041C2C;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">151</div><div style="font-size:8.5px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:3px;line-height:1.3;">ideas<br>generadas</div></div>
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:18px;color:#041C2C;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">15</div><div style="font-size:8.5px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:3px;line-height:1.3;">casos de uso<br>priorizados</div></div>
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:18px;color:#041C2C;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">9</div><div style="font-size:8.5px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:3px;line-height:1.3;">prototipos<br>funcionales</div></div>
+            </div>
+          </div>
+        </div>
+        <!-- card 2 -->
+        <div style="border:1px solid #E4E8EA;border-radius:10px;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="background:#041C2C;color:#fff;padding:7px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px;">
+            <span style="font-family:'Manrope';font-weight:800;font-size:13.5px;">Admiral Europe Tech</span>
+            <span style="font-family:'Manrope';font-weight:700;font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;color:#9FB6C4;border:1px solid rgba(255,255,255,.4);padding:3px 7px;border-radius:3px;">Labs &middot; premiado</span>
+          </div>
+          <div style="padding:7px 16px 9px;display:flex;flex-direction:column;flex:1;">
+            <p style="font-size:10.5px;line-height:1.45;color:#4A5B65;">IA integrada en los equipos de desarrollo, GitHub Copilot incluido. El análisis de código dice qué cambió en el producto; la evaluación ADKAR, si la gente cambió con él.</p>
+            <div style="display:flex;justify-content:space-between;margin-top:auto;padding-top:7px;">
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:18px;color:#041C2C;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">12</div><div style="font-size:8.5px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:3px;line-height:1.3;">equipos de<br>desarrollo</div></div>
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:18px;color:#041C2C;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">ADKAR</div><div style="font-size:8.5px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:3px;line-height:1.3;">medición<br>conductual</div></div>
+              <div><div style="font-family:'Manrope';font-weight:800;font-size:18px;color:#041C2C;letter-spacing:-.02em;font-variant-numeric:tabular-nums;">2025</div><div style="font-size:8.5px;letter-spacing:.04em;text-transform:uppercase;color:#8593A0;margin-top:3px;line-height:1.3;">Premios<br>Computing</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="flex:1;"></div>
+
+    <!-- 04 payoff band (navy) -->
+    <div style="background:linear-gradient(158deg,#0A2637,#041C2C);color:#fff;margin:12px -16mm 0;padding:6px 16mm 7px;">
+      <div style="display:flex;align-items:center;gap:11px;margin-bottom:8px;">
+        <span style="width:22px;height:3px;background:#FE5000;display:inline-block;"></span>
+        <span style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#9FB6C4;">04 · Qué gana el negocio</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+        <div style="padding-right:18px;font-family:'Manrope';font-weight:700;font-size:12.5px;line-height:1.3;color:#fff;"><span style="color:#FE5000;">&times;4</span> el uso efectivo de las licencias que ya pagas <span style="font-weight:600;font-size:9px;color:#6E8391;font-style:italic;">estimación propia</span></div>
+        <div style="padding:0 18px;border-left:1px solid #1B384A;font-family:'Manrope';font-weight:700;font-size:12.5px;line-height:1.3;color:#fff;">La IA en la sombra, a la baja: &laquo;prohibido&raquo; no lo corrige; el criterio sí</div>
+        <div style="padding:0 18px;border-left:1px solid #1B384A;font-family:'Manrope';font-weight:700;font-size:12.5px;line-height:1.3;color:#fff;">Expediente del art. 4 documentado y auditable, con <span style="color:#FE5000;">Audens</span></div>
+        <div style="padding-left:18px;border-left:1px solid #1B384A;font-family:'Manrope';font-weight:700;font-size:12.5px;line-height:1.3;color:#fff;">Time-to-value más corto al escalar copilots y agentes</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="display:grid;grid-template-columns:1.55fr 1fr;gap:24px;align-items:center;padding:7px 0;border-bottom:1px solid #E4E8EA;">
+      <div>
+        <div style="font-family:'Manrope';font-weight:700;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#FE5000;display:flex;align-items:center;gap:9px;"><span style="width:20px;height:3px;background:#FE5000;"></span>El siguiente paso</div>
+        <h3 style="font-family:'Manrope';font-weight:800;font-size:16px;margin-top:6px;letter-spacing:-.01em;color:#041C2C;">Una conversación de 30 minutos</h3>
+        <p style="font-size:11px;line-height:1.5;color:#4A5B65;margin-top:4px;max-width:112mm;">Media hora sobre tu entorno real: dónde está tu brecha de adopción y cómo estás frente al art. 4 del AI Act. En adopción, quien empieza hoy llega con margen; quien espera, con semanas.</p>
+      </div>
+      <div style="border-left:2px solid #041C2C;padding-left:20px;">
+        <div style="font-family:'Manrope';font-weight:700;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#8593A0;">Contacto</div>
+        <div style="font-family:'Manrope';font-weight:800;font-size:16px;margin-top:5px;color:#041C2C;">Alfredo Zurdo</div>
+        <div style="font-size:11.5px;color:#5A6B75;margin-top:2px;">Head of Digital Change</div>
+        <div style="font-size:11.5px;color:#FE5000;margin-top:7px;font-weight:600;">[contacto Entelgy]</div>
+      </div>
+    </div>
+
+    <!-- FOOT -->
+    <div style="padding:6px 0 2.2mm;display:flex;justify-content:space-between;align-items:center;gap:20px;">
+      <span style="display:flex;align-items:center;gap:10px;"><span style="font-family:'Manrope';font-weight:700;font-size:8px;letter-spacing:.14em;color:#041C2C;text-transform:uppercase;white-space:nowrap;">Human Driven Technology</span><span style="font-style:italic;font-size:9px;color:#93A2AC;">Digital Change &middot; Gestión del cambio y adopción digital de Entelgy. IAbility&reg; es marca registrada.</span></span>
+      
+    </div>
+  </div>
+
+</div>
+</div>
+<div id="hipatia-volver"><button type="button" aria-label="Volver a Hipatia">← Volver a Hipatia</button></div>
+<style>
+#hipatia-volver{position:fixed;top:14px;left:14px;z-index:2147483000;font:500 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+#hipatia-volver button{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid #E6E8EA;background:#fff;color:#041C2C;cursor:pointer;box-shadow:0 1px 3px rgba(4,28,44,.10);font:inherit;transition:color .15s,border-color .15s}
+#hipatia-volver button:hover{color:#FE5000;border-color:#FE5000}
+#hipatia-volver button:focus-visible{outline:2px solid #FE5000;outline-offset:2px}
+@media print{#hipatia-volver{display:none !important}}
+</style>
+<script>
+(function(){
+  var PORTAL="https://hipatia-v4.guberna.es/";
+  function volver(){
+    // el material se abre en la misma pestaña, así que hay historial: volver
+    // atrás devuelve al listado exacto, con su scroll y sus filtros. Si alguien
+    // llegó por la URL directa no hay historial y se va a la portada.
+    if(history.length>1){ history.back(); return; }
+    location.href=PORTAL;
+  }
+  var b=document.getElementById('hipatia-volver');
+  if(b) b.firstChild.addEventListener('click',volver);
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape'||e.defaultPrevented) return;
+    if(document.fullscreenElement) return;                 // Escape sale de pantalla completa
+    var a=document.activeElement;
+    if(a&&(a.tagName==='INPUT'||a.tagName==='TEXTAREA'||a.isContentEditable)) return;
+    volver();
+  });
+})();
+</script></body>
+</html>

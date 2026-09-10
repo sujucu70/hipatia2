@@ -37,8 +37,8 @@
     
     <div style="margin-top:var(--space-4)"><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Tipo</b><div>Ficha · De servicio</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Práctica</b><div>Digital Change</div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Uso</b><div><span class="chip is-cliente">sale al cliente</span> <span class="footer-note">compartible</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Vigencia</b><div><span class="chip is-vigente">vigente · sep 2026</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Dueño</b><div>Alfredo Zurdo <span class="footer-note">(✍️ SM)</span></div></div><div class="grid-2" style="gap:var(--space-3);padding:var(--space-2) 0;border-top:1px solid var(--color-border-subtle)"><b>Momento</b><div>Para dejar al cliente</div></div></div>
     <div class="llevatelo"><p class="eyebrow">Llévatelo</p>
-    <div class="llev-fila"><span class="llev-uso">Presentar</span><span class="llev-accion"><a class="text-link" href="https://entelgy.guberna.es/ia-digital-change/fichas/Ficha_OGH-IA.html">Abrir en pantalla ↗</a></span></div>
-    <div class="llev-fila"><span class="llev-uso">Enviar</span><span class="llev-accion"><a class="text-link" href="mailto:alfredo.zurdo@entelgy.com">pídeselo a Alfredo Zurdo</a></span></div>
+    <div class="llev-fila"><span class="llev-uso">Presentar</span><span class="llev-accion"><a class="text-link" href="/archivos/ia-digital-change/fichas/Ficha_OGH-IA.html" >Abrir en pantalla ↗</a></span></div>
+    <div class="llev-fila"><span class="llev-uso">Enviar</span><span class="llev-accion"><a class="text-link" href="/archivos/ia-digital-change/fichas/Ficha_OGH-IA.pdf" target="_blank" rel="noopener">PDF ↓</a></span></div>
     <div class="llev-fila"><span class="llev-uso">Adaptar</span><span class="llev-accion"><a class="text-link" href="mailto:alfredo.zurdo@entelgy.com">pídeselo a Alfredo Zurdo</a></span></div>
   </div>
     <p style="margin-top:var(--space-4);color:var(--color-text-secondary)">Dos caras para dejar a Legal, Compliance, IT y compras: qué es y qué no es, el modelo en tres capas, qué gana el negocio, tres formas de entrar, por qué creernos y el AI Act por fases con las sanciones. Sin precio ni plazo: el modelo es flexible hasta que Alfredo cierre el arranque. Cierra en diagnóstico.</p></div>
@@ -51,6 +51,28 @@
   </div></div>
 </footer>
 
+<div class="pregunta" data-pregunta>
+  <button class="pregunta-tab" type="button" aria-expanded="false" aria-controls="pregunta-panel">
+    <span class="pregunta-dot" aria-hidden="true"></span>
+    <span class="pregunta-tab-full">Pregunta a Hipatia</span>
+    <span class="pregunta-tab-corto" aria-hidden="true">Pregunta</span>
+  </button>
+  <section class="pregunta-panel" id="pregunta-panel" role="dialog" aria-label="Pregunta a Hipatia" hidden>
+    <div class="pregunta-head">
+      <p class="pregunta-eyebrow">Pregunta a Hipatia</p>
+      <button class="pregunta-cerrar" type="button" aria-label="Cerrar el panel">cerrar ×</button>
+    </div>
+    <form class="pregunta-form" data-pregunta-form>
+      <label class="visually-hidden" for="pregunta-input">Escribe tu pregunta</label>
+      <input id="pregunta-input" class="pregunta-input" type="text" name="q" placeholder="Escribe tu pregunta" autocomplete="off">
+      <button class="pregunta-buscar" type="submit">Buscar</button>
+    </form>
+    <p class="pregunta-intro">Responde con lo que hay en el portal. Si no lo tiene, te lo dice.</p>
+    <div class="pregunta-sugerencias"><button class="pregunta-sug" type="button" data-q="última versión de la presentación corporativa">última versión de la presentación corporativa</button><button class="pregunta-sug" type="button" data-q="a quién llamo por infraestructura">a quién llamo por infraestructura</button><button class="pregunta-sug" type="button" data-q="qué es process intelligence">qué es process intelligence</button></div>
+    <div class="pregunta-respuesta" data-pregunta-respuesta aria-live="polite"></div>
+  </section>
+  <script>(function(){var w=document.currentScript.parentNode,t=w.querySelector(".pregunta-tab"),pedido=false;function cargar(){if(pedido)return;pedido=true;var s=document.createElement("script");s.src="/pregunta.js";s.onerror=function(){t.addEventListener("click",function(){location.href="/materiales/";});};document.head.appendChild(s);}t.addEventListener("click",cargar);t.addEventListener("focus",cargar);})();</script>
+</div>
 <script src="/app.js" defer></script>
 </body>
 </html>

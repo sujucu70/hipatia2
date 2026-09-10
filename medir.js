@@ -55,6 +55,11 @@ const routes = htmlFiles.map(rutaDe);
 
 // ---- checks sin navegador ----
 const CSS = fs.readFileSync(path.join(PUB, "styles.css")); const JS = fs.readFileSync(path.join(PUB, "app.js"));
+// Pregunta a Hipatia (revisión 18): el índice y pregunta.js se cargan bajo demanda (al abrir el
+// panel), no con la página; por eso no cuentan en el peso. El <script> inline de la pestaña sí, y va
+// dentro del HTML. Se informan aparte, abajo.
+const PREG = fs.existsSync(path.join(PUB, "pregunta.js")) ? fs.readFileSync(path.join(PUB, "pregunta.js")) : Buffer.alloc(0);
+const INDICE_PREGUNTA = fs.existsSync(path.join(PUB, "indice-pregunta.json")) ? fs.readFileSync(path.join(PUB, "indice-pregunta.json")) : Buffer.alloc(0);
 const results = { pesos: [], enlacesRotos: [], bloques: [], honestidad: [], sinBuscador: [], sinURL: [], opcionales: {} };
 const BLOQUES_SOL = ["La propuesta", "Material para el cliente", "Referencias", "Para prepararte", "¿Falta algo?"];
 htmlFiles.forEach((f) => {
@@ -224,6 +229,10 @@ function tick(ok) { return ok ? "🟢" : "🔴"; }
   md += "## Peso por página (HTML + CSS + JS)\n\n| Ruta | KB |\n|---|---|\n" +
     results.pesos.sort((a, b) => b.kb - a.kb).slice(0, 12).map((p) => `| ${p.route || "/"} | ${p.kb} |`).join("\n") +
     `\n\n(máximo ${pesoMax} KB de ${results.pesos.length} páginas; imágenes aparte)\n\n`;
+
+  const kbIndice = Math.round(INDICE_PREGUNTA.length / 1024);
+  const kbPreg = Math.round(PREG.length / 1024);
+  md += `## Pregunta a Hipatia\n\n- Índice ${kbIndice} KB · pregunta.js ${kbPreg} KB · los dos bajo demanda (se cargan al abrir el panel, no con la página; no cuentan en el peso).\n\n`;
 
   if (results.enlacesRotos.length) md += "## Enlaces rotos\n\n" + results.enlacesRotos.map((b) => `- ${b.route} → ${b.href}`).join("\n") + "\n\n";
   if (results.bloques.length) md += "## Bloques fuera de orden\n\n" + results.bloques.map((b) => `- ${b.route}`).join("\n") + "\n\n";

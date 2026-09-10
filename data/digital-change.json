@@ -49,9 +49,9 @@
     "¿Cuánto valor se queda encima de la mesa mientras la adopción no llega?"
   ],
   "primer_avance": {
-    "titulo": "Diagnóstico de madurez en IA",
-    "plazo": "~25 min por persona",
-    "nota": "Madurez por persona y por área, mapa de calor de resistencia e impulso y línea base para medir lo que venga. El alcance se cierra en una sesión de descubrimiento. Sin precio ni plazo del arranque hasta que Alfredo fije la puerta de entrada."
+    "titulo": "Un diagnóstico de entrada distinto en cada solución",
+    "plazo": "de 20 minutos a un piloto de dos meses",
+    "nota": "No es el mismo diagnóstico ni se venden juntos. IAbility entra por un readiness de madurez —formulario en plataforma, unos 20 minutos por persona, con nivel de 1 a 4 por persona, departamento y organización—; el primer paquete de pago es el piloto Explorer: 5.000 €, 10 usuarios, un mes. PreservIA entra por su piloto Explorer completo: 14.900 €, un mes de montaje y otro de uso activo, un perfil experto y hasta 30 usuarios; el focus group con dirección es su primera fase, no un servicio aparte. La Oficina de Gobernanza Humana entra por un diagnóstico de gobernanza de menos de un mes —vacíos de decisión, situación frente al AI Act, inventario de usos en dos workshops y kit mínimo de política y roles— y su arranque son 3-4 meses a precio cerrado."
   },
   "soluciones": [
     {
@@ -177,7 +177,37 @@
           "digital-change-legacy-competition"
         ],
         "material_interno_nota": "Competencia real en España, Kymatio y Tier8 (no KnowBe4); Indra como «proyecto de horas»; TFWM solo en América; IAbility Secure fuera; no se sale con el conflicto Tier8–TFWM.",
-        "dossier_imprimible": true
+        "dossier_imprimible": true,
+        "planes": {
+          "nota": "Precios internos: se dicen, no se enseñan en pantalla. IVA no incluido y sujetos a configuración final. Fuente: IAbility · Negocio (Alfredo, sep-2026), slide de inversión.",
+          "filas": [
+            {
+              "plan": "Freemium",
+              "precio": "0 €",
+              "alcance": "hasta 5 usuarios · 2 semanas",
+              "incluye": "Evaluación 1+5 usuarios · Skills módulos 0-1 · 1 portal de concienciación"
+            },
+            {
+              "plan": "Explorer",
+              "precio": "5.000 €",
+              "alcance": "10 usuarios · 1 mes",
+              "incluye": "Evaluación 10 usuarios · Skills completas (7+1) · 4 portales temáticos · 1 Lab completo de 5 talleres"
+            },
+            {
+              "plan": "Growth",
+              "precio": "desde 11.400 €",
+              "alcance": "15–2.000 usuarios · 3-6 meses",
+              "incluye": "Explorer + plan a medida · webinars · Labs configurables"
+            },
+            {
+              "plan": "Corporate",
+              "precio": "a configurar",
+              "alcance": "6-12 meses",
+              "incluye": "Growth + personalización avanzada · IAbility Help incluido · soporte multiidioma"
+            }
+          ],
+          "pie": "El programa completo dura cinco meses: Evaluar (1) · Formar (2-3) · Concienciar (4) · Adoptar (5). IAbility Help solo entra en Corporate."
+        }
       },
       "keynotes": [
         {
@@ -211,42 +241,50 @@
       ],
       "materiales": [
         "iability-onepager",
-        "iability-ficha"
+        "iability-ficha",
+        "dc-iability-landing",
+        "dc-iability-calculadora",
+        "dc-iability-podcast-youtube",
+        "dc-iability-podcast-spotify",
+        "dc-iability-teaser-es",
+        "dc-iability-teaser-en",
+        "dc-iability-trailer-es",
+        "dc-iability-trailer-en"
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Lectura de Alfredo: puerta de entrada del área, permiso escrito de Admiral y Bahía de Bizkaia, una cifra de uso en la sombra con fuente, 151/15/9 o 150/9, «Oficina de Gobierno» → «Gobernanza Humana» en su ficha.",
+        "texto": "Lectura de Alfredo: permiso escrito de Bahía de Bizkaia, una cifra de uso en la sombra con fuente, 151/15/9 o 150/9, «Oficina de Gobierno» → «Gobernanza Humana» en su ficha.",
         "dueno": "Alfredo",
         "fecha_objetivo": "sept 2026"
       },
       "contactos": {
-        "comercial": "alfredo-zurdo",
-        "tecnico": null
+        "responsable": "alfredo-zurdo",
+        "apoyo": "vanesa-vaquero"
       }
     },
     {
       "id": "preservia",
       "nombre": "PreservIA",
-      "una_linea": "El conocimiento de tus expertos, después de tus expertos: capturado, validado y a un clic.",
+      "una_linea": "El conocimiento de tus expertos más allá de tus expertos: capturado, validado y a un clic.",
       "especialista": "Alfredo",
       "estado": "vigente",
       "dueno": "Alfredo",
       "fecha_objetivo": "sept 2026",
       "propuesta": {
-        "que_es": "Identificamos el conocimiento crítico de tu organización, lo extraemos con entrevistas al experto mientras todavía está, lo validamos con la propia organización y lo convertimos en respuestas disponibles en el puesto, 24/7. Tres fases con resultado propio: capturar (Knowledge Book), estructurar (Red de Conocimiento por momento de uso) y activar (Mentor Virtual a un clic en Microsoft 365 o en tu LMS). La IA hace el trabajo pesado; lo que responde el Mentor lo ha aprobado alguien con nombre.",
-        "a_quien": "Dirección de operaciones o de negocio con procesos críticos que dependen de tres personas: banca, seguros, industria. RRHH cuando hay plan de jubilaciones. En lo público, quien sufre el relevo por convocatoria. Y quien esté montando IA corporativa sobre documentos: sin el conocimiento tácito capturado, esa IA es cara y mediocre.",
+        "que_es": "Identificamos el conocimiento crítico de tu organización, lo extraemos con entrevistas estructuradas al experto mientras todavía está y con IA sobre sus correos y sus documentos en la nube, donde haya licencia para leerlos, lo validamos con la propia organización y lo convertimos en respuestas disponibles en el puesto, 24/7. Tres fases con resultado propio: capturar (Knowledge Book), estructurar (Red de Conocimiento por momento de uso) y activar (Mentor Virtual a un clic en Microsoft 365 o en tu LMS). La IA hace el trabajo pesado; lo que responde el Mentor lo ha aprobado alguien con nombre.",
+        "a_quien": "Dirección de operaciones o de negocio con procesos críticos que dependen de tres personas: banca, seguros, industria. RRHH cuando hay plan de jubilaciones. En lo público, quien sufre el relevo por convocatoria. También quien incorpora gente a ritmo alto y con rotación constante: ahí el experto no se va, pero vive interrumpido porque es el único que sabe. Y quien esté montando IA corporativa sobre documentos: sin el conocimiento tácito capturado, esa IA es cara y mediocre.",
         "senal": "Un experto se jubila, rota o cambia de función y se lleva el criterio para resolver lo que ningún manual recoge. Hay procesos críticos que dependen de pocas personas y el soporte funcional vive de preguntas de «cómo se hace esto». Se está montando un asistente de IA sobre documentos que nadie mantiene. Y el relevo, cuando llega, no tiene a quién preguntar.",
-        "por_que_nosotros": "Rescatamos el conocimiento que todavía no existe como documento; lo demás solo encuentra lo ya escrito. La captura la hace una persona sentada delante de tu experto, y eso no viene en ninguna licencia. En MAPFRE, con más de 15.000 puestos y 3.500 tickets al mes de preguntas de uso, el conocimiento puesto donde se trabaja evitó 3.500 tickets al mes y bajó la apertura de incidencia de cinco minutos y medio a uno. Empezamos por un piloto de dos meses con línea base: sin ella no hay decisión de escalado.",
+        "por_que_nosotros": "Rescatamos el conocimiento que todavía no existe como documento, porque nadie encuentra lo que nunca se ha escrito. La captura se hace con entrevistas estructuradas y técnicas de extracción que sacan la experiencia crítica en muy poco tiempo, y eso no viene en ninguna licencia. En MAPFRE, con más de 15.000 puestos y 3.500 tickets al mes de preguntas de uso, el conocimiento puesto donde se trabaja evitó esos 3.500 tickets y bajó la apertura de incidencia de cinco minutos y medio a uno. Empezamos por un piloto de dos meses con línea base: sin ella no hay decisión de escalado.",
         "diferenciador": "La parte difícil no es la conversación: es que lo que responde sea cierto. Personas validando en las tres fases.",
         "objecion_principal": {
           "texto": "Ya tenemos un buscador con IA sobre nuestra documentación.",
           "respuesta": "Encuentra lo que está escrito, y lo que se va con el experto no lo está: el 80% de lo que sabe la casa vive en su cabeza. PreservIA lo captura en dos entrevistas, lo valida y lo pone en el mismo buscador o en M365. El piloto son dos meses, un área y un experto, con medición antes y después."
         },
-        "como_abres": "«¿Qué conocimiento no os podéis permitir perder cuando se jubile quien lo tiene?»",
+        "como_abres": "«¿Qué conocimiento no os podéis permitir perder cuando se jubile o rote quien lo tiene?»",
         "primer_paso": {
           "titulo": "Piloto Explorer",
           "plazo": "2 meses",
-          "nota": "Un área, un experto y dos entrevistas, un Knowledge Book, hasta 30 usuarios activados; un mes de puesta en marcha y otro de uso, con línea base y decisión de escalado al cierre. Precio cerrado: 14.900 € sin IVA, 50% al arranque y 50% al cierre. Se diseña en una sesión de trabajo. Con Alfredo."
+          "nota": "Un área, un experto y dos entrevistas, un Knowledge Book, hasta 30 usuarios activados; un mes de puesta en marcha y otro de uso, con línea base y decisión de escalado al cierre. Precio cerrado: 14.900 € sin IVA, 50% al arranque y 50% al cierre. Se diseña en una sesión de trabajo."
         }
       },
       "limites": [
@@ -327,7 +365,9 @@
           }
         ],
         "preguntas_cualificacion": [
-          "¿Qué expertos se jubilan o rotan en los próximos dos años?",
+          "¿Consideras que el conocimiento es un activo de tu organización?",
+        "¿Dónde está el conocimiento de tu casa: en las personas o lo tiene la organización?",
+        "¿Qué expertos se jubilan o rotan en los próximos dos años?",
           "¿Qué procesos dependen de pocas personas?",
           "¿Tenéis un proyecto de IA sobre documentación corporativa?",
           "¿Trabajáis en Microsoft 365 y qué LMS tenéis?"
@@ -340,7 +380,31 @@
           "digital-change-legacy-preview"
         ],
         "material_interno_nota": "PreservIA no es marca registrada (no lleva ®); WalkMe no compara; «Senior IT → Senior ID» como ángulo de sector público para otoño.",
-        "dossier_imprimible": true
+        "dossier_imprimible": true,
+        "planes": {
+          "nota": "Precios internos: se dicen, no se enseñan en pantalla. IVA no incluido. Fuente: PreservIA · Negocio genérica (Alfredo, sep-2026), slides de planes y oferta.",
+          "filas": [
+            {
+              "plan": "Piloto Explorer",
+              "precio": "14.900 €",
+              "alcance": "1 mes de montaje + 1 mes activo · hasta 30 usuarios",
+              "incluye": "1 perfil experto · 1-3 flujos de trabajo · 1 aplicación de uso · 2 entrevistas · 1 Knowledge Book"
+            },
+            {
+              "plan": "Growth",
+              "precio": "desde 49.500 €",
+              "alcance": "licencia anual · desde 200 usuarios",
+              "incluye": "Desde 5 expertos, 5 flujos y 5 aplicaciones · Knowledge Book multiexperto · catálogo de piezas · cloud dedicado"
+            },
+            {
+              "plan": "Enterprise Corporate",
+              "precio": "consultar",
+              "alcance": "capacidad permanente",
+              "incluye": "PreservIA en modo oficina, dentro de la organización"
+            }
+          ],
+          "pie": "Facturación 50% al arranque y 50% al final; validez de la oferta, 30 días. Sala, medios técnicos, dietas y desplazamientos no van incluidos si las sesiones son presenciales."
+        }
       },
       "keynotes": [
         {
@@ -368,7 +432,9 @@
       "materiales": [
         "preservia-privado",
         "preservia-publico",
-        "preservia-ficha"
+        "preservia-ficha",
+        "dc-preservia-demo",
+        "dc-preservia-caso-financiero"
       ],
       "acreditacion": [],
       "pendiente": {
@@ -377,8 +443,8 @@
         "fecha_objetivo": "sept 2026"
       },
       "contactos": {
-        "comercial": "alfredo-zurdo",
-        "tecnico": null
+        "responsable": "alfredo-zurdo",
+        "apoyo": "dolores-santayana"
       }
     },
     {
@@ -390,7 +456,7 @@
       "dueno": "Alfredo",
       "fecha_objetivo": "sept 2026",
       "propuesta": {
-        "que_es": "Un servicio gestionado, no un software: instalamos en tu organización la capacidad de decidir qué IA avanza, qué se corrige y qué se detiene, y la operamos contigo cada mes. Tres capas: tu comité gobierna, con autoridad formal para autorizar, condicionar, limitar o retirar; nuestro Responsable de Gobernanza de IA pone el criterio y prepara cada decisión con evidencias; y especialistas (datos, ciberseguridad, legal, cambio) se activan cuando hay que ejecutar. Cinco capacidades: ordenar, decidir, escalar, frenar y aprender. El mando nunca se cede y el modelo se queda en casa.",
+        "que_es": "Un servicio gestionado, no un software: instalamos en tu organización la capacidad de decidir qué IA avanza, qué se corrige y qué se detiene, y la operamos contigo cada mes. Tres capas: tu comité gobierna, con autoridad formal para autorizar, condicionar, limitar o retirar; nuestro Responsable de Gobernanza de IA pone el criterio y prepara cada decisión con evidencias; y especialistas (datos, ciberseguridad, legal, cambio) se activan cuando hay que ejecutar. Cinco capacidades: registrar, decidir, escalar, frenar, y asegurar y mejorar. El mando nunca se cede y el modelo se queda en casa.",
         "a_quien": "Es decisión de comité de dirección, no del CIO: lo que se paga es quién responde de la IA, el reskilling al automatizar, los derechos fundamentales en los proyectos de riesgo y quién aprieta el botón de parar. Entras por Dirección, Legal y Compliance o el CISO; el CIO y negocio se sientan en el comité. Donde hay multas detrás: banca, seguros, sector público, salud, cualquiera con sistemas que decidan sobre personas.",
         "senal": "Copilots y agentes que cada área contrata por su cuenta, pilotos sin propietario y sin retorno medible, datos saliendo por aplicaciones que IT no ve. O el reverso: iniciativas valiosas paradas por miedo legal. Nadie sabe cuántos sistemas de IA hay ni cuáles serán de alto riesgo en diciembre de 2027. Y alguien ha preguntado quién firma.",
         "por_que_nosotros": "No te dejamos un informe: te instalamos una capacidad. Traemos un modelo ya construido, roles, criterios, plantillas de decisión y controles, que se adapta a tu organización en meses donde diseñarlo desde cero consume cerca de un año. Lo operamos en casa: Entelgy tiene su propio comité de gobernanza de IA, toda la plantilla formada con IAbility y consejeros y directivos dentro. Y la gobernanza no llega sola: cultura y conocimiento del mismo equipo, para que lo gobernado se sostenga.",
@@ -511,7 +577,31 @@
           "digital-change-legacy-preview"
         ],
         "material_interno_nota": "Sin plazos publicados hasta que Alfredo cierre el fork; Cristina Aparicio co-desarrolla; Joanna Ferrer es interna (delivery), no competencia; Arkea no se cita; tendrá componente de plataforma en construcción, no se vende.",
-        "dossier_imprimible": true
+        "dossier_imprimible": true,
+        "planes": {
+          "nota": "Sin precio publicado: la presentación no lo lleva. Fuente: OGH-IA Entelgy (Alfredo, sep-2026), slides de implantación y arranque.",
+          "filas": [
+            {
+              "plan": "Diagnóstico de gobernanza",
+              "precio": "sin precio publicado",
+              "alcance": "menos de 1 mes",
+              "incluye": "Vacíos de decisión y control · situación frente al AI Act · inventario de usos en 2 workshops con clasificación por riesgo · política básica, roles y reglas de aprobación · certificación People 4IA Change para 2 personas"
+            },
+            {
+              "plan": "Proyecto de arranque",
+              "precio": "precio cerrado",
+              "alcance": "3-4 meses",
+              "incluye": "Comité de IA constituido · política de IA a medida · plan de alfabetización de dirección a plantilla · inventario v1 de casos de uso"
+            },
+            {
+              "plan": "Servicio recurrente",
+              "precio": "fijo + variable",
+              "alcance": "banda de 1,5 a 5 FTE al mes",
+              "incluye": "Fijo: cuota del CGO-IA y coordinación. Variable: los pilares que se activen — gobierno del dato, pilotos LLM, casos de uso, ISO 42001, revisión legal"
+            }
+          ],
+          "pie": "El CGO-IA es el suelo del recurrente; los pilares que se activen cada mes marcan el techo."
+        }
       },
       "keynotes": [
         {
@@ -553,8 +643,8 @@
         "fecha_objetivo": "sept 2026"
       },
       "contactos": {
-        "comercial": "alfredo-zurdo",
-        "tecnico": "cristina-aparicio"
+        "responsable": "alfredo-zurdo",
+        "apoyo": "cristina-aparicio"
       }
     }
   ],
@@ -562,5 +652,11 @@
     "digital-change-deck"
   ],
   "propuesta_portada": "La tecnología ya está comprada; el retorno, no. Cultura, conocimiento y gobierno de la IA.",
-  "responsable_id": "alfredo-zurdo"
+  "responsable_id": "alfredo-zurdo",
+  "contactos_area": [
+    {
+      "persona": "abraham-rojo",
+      "rol": "Apoyo a negocio y growth"
+    }
+  ]
 }

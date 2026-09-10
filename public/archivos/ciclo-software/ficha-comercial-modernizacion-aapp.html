@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ficha Comercial · Modernización de Aplicaciones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Syne:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --timon:       #1E1712;
+  --timon-2:     #352B23;
+  --cobre:       #A6703E;
+  --cobre-osc:   #7A5028;
+  --cobre-cla:   #D4A870;
+  --cobre-pal:   #F0E2CA;
+  --arena:       #FAF7F2;
+  --arena-pro:   #F0EBE2;
+  --arena-som:   #E4DDD2;
+  --arena-borde: #D5CCC0;
+  --eucalipto:   #5E8272;
+  --eucalipto-pal:#DFF0E9;
+  --arcilla:     #B45C38;
+  --arcilla-pal: #F5E8E2;
+  --niebla:      #8A837A;
+  --niebla-cla:  #C8C0B8;
+  --f-display:   'Cormorant Garamond', Georgia, serif;
+  --f-label:     'Syne', system-ui, sans-serif;
+  --f-body:      'DM Sans', -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; background: var(--arena); }
+body {
+  background: var(--arena);
+  color: var(--timon);
+  font-family: var(--f-body);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+.page-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
+}
+
+/* ── NAV ── */
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .9rem 1.5rem;
+  border-bottom: 1px solid var(--arena-borde);
+  position: sticky; top: 0;
+  background: rgba(250,247,242,0.96);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  z-index: 50;
+  width: 100%;
+  box-sizing: border-box;
+}
+.topbar-logo {
+  font-family: var(--f-display); font-weight: 300; font-size: 1.1rem;
+  color: var(--timon); text-decoration: none;
+}
+.topbar-logo em { font-style: italic; color: var(--cobre); }
+.topbar-back {
+  font-family: var(--f-label); font-size: .58rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--niebla); text-decoration: none;
+  display: flex; align-items: center; gap: .4rem; transition: color .2s;
+}
+.topbar-back::before { content: '←'; color: var(--cobre); }
+.topbar-back:hover { color: var(--cobre); }
+
+/* ── HEADER FICHA ── */
+.ficha-header {
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--arena-borde);
+}
+.ficha-tipo {
+  font-family: var(--f-label); font-size: .6rem; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--cobre);
+  display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem;
+}
+.ficha-tipo::before { content: ''; width: 24px; height: 1px; background: var(--cobre); }
+.ficha-title {
+  font-family: var(--f-display); font-weight: 300;
+  font-size: clamp(2rem, 5vw, 3rem); line-height: .98;
+  margin-bottom: 1rem;
+}
+.ficha-title em { font-style: italic; color: var(--cobre); }
+.ficha-tagline {
+  font-family: var(--f-body); font-weight: 300; font-size: .98rem;
+  color: var(--niebla); max-width: 580px; line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+.ficha-pills {
+  display: flex; flex-wrap: wrap; gap: .5rem;
+}
+.pill {
+  font-family: var(--f-label); font-size: .58rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: .35rem .85rem; border-radius: 100px;
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+  color: var(--niebla);
+}
+.pill.cobre { background: var(--cobre-pal); border-color: var(--cobre-cla); color: var(--cobre-osc); }
+.pill.verde { background: var(--eucalipto-pal); border-color: #A0BDB2; color: var(--eucalipto); }
+.pill.arcilla { background: var(--arcilla-pal); border-color: #D4A090; color: var(--arcilla); }
+
+/* ── PITCH PRINCIPAL ── */
+.pitch-box {
+  margin: 2rem 0;
+  background: var(--timon);
+  border-radius: 12px;
+  padding: 2rem 2.25rem;
+  position: relative; overflow: hidden;
+}
+.pitch-box::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cobre-cla), transparent);
+}
+.pitch-label {
+  font-family: var(--f-label); font-size: .58rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--cobre-cla); margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: .6rem;
+}
+.pitch-label::after {
+  content: '5 min'; font-size: .6rem; padding: .15rem .5rem;
+  background: rgba(166,112,62,0.2); border-radius: 4px;
+  letter-spacing: .05em;
+}
+.pitch-step {
+  display: grid; grid-template-columns: 28px 1fr;
+  gap: .5rem 1rem; margin-bottom: 1.25rem;
+  align-items: start;
+}
+.pitch-step:last-child { margin-bottom: 0; }
+.pitch-num {
+  font-family: var(--f-display); font-size: 1.3rem; font-weight: 300;
+  color: var(--cobre-cla); line-height: 1.2; padding-top: .1rem;
+}
+.pitch-text {
+  font-family: var(--f-body); font-weight: 300; font-size: .9rem;
+  color: rgba(250,247,242,0.75); line-height: 1.7;
+}
+.pitch-text strong { color: #FAF7F2; font-weight: 500; }
+.pitch-text em { font-style: italic; color: var(--cobre-cla); }
+.pitch-text .cita {
+  display: block; margin-top: .5rem;
+  font-style: italic; color: rgba(250,247,242,0.55);
+  font-size: .85rem; border-left: 2px solid var(--cobre-osc);
+  padding-left: .75rem;
+}
+
+/* ── SABER RÁPIDO ── */
+.saber-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1rem; margin: 2rem 0;
+}
+.saber-card {
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+  border-radius: 10px; padding: 1.25rem 1.4rem;
+}
+.saber-card-label {
+  font-family: var(--f-label); font-size: .58rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--niebla-cla); margin-bottom: .6rem;
+}
+.saber-card-text {
+  font-family: var(--f-body); font-weight: 300; font-size: .88rem;
+  color: var(--niebla); line-height: 1.65;
+}
+.saber-card-text strong { color: var(--timon); font-weight: 500; }
+
+/* ── SECCIÓN GENÉRICA ── */
+.seccion { margin: 0; border-top: 1px solid var(--arena-borde); }
+
+.seccion-trigger {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 0;
+  text-align: left;
+}
+.seccion-trigger:hover .seccion-titulo { color: var(--cobre); }
+.seccion-titulo {
+  font-family: var(--f-label); font-size: .68rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--timon); transition: color .2s;
+}
+.seccion-icon {
+  font-family: var(--f-display); font-size: 1.1rem; font-weight: 300;
+  color: var(--cobre); transition: transform .3s;
+  line-height: 1; flex-shrink: 0;
+}
+.seccion.open .seccion-icon { transform: rotate(45deg); }
+.seccion-body {
+  display: none; padding-bottom: 2rem;
+}
+.seccion.open .seccion-body { display: block; }
+
+/* ── CASOS ── */
+.casos-list { display: flex; flex-direction: column; gap: .75rem; }
+.caso {
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: .75rem 1.25rem;
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+  border-radius: 10px; padding: 1.1rem 1.25rem;
+  align-items: start; cursor: pointer; transition: background .2s;
+}
+.caso:hover { background: var(--cobre-pal); }
+.caso-id {
+  font-family: var(--f-display); font-weight: 400; font-size: 1.3rem;
+  color: var(--cobre-cla); line-height: 1.1; padding-top: .1rem;
+}
+.caso-nombre {
+  font-family: var(--f-label); font-size: .68rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--timon); margin-bottom: .3rem;
+}
+.caso-sector {
+  font-family: var(--f-label); font-size: .56rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--niebla-cla);
+}
+.caso-body {
+  grid-column: 1 / -1; display: none;
+  border-top: 1px solid var(--arena-borde);
+  padding-top: .85rem; margin-top: .2rem;
+}
+.caso.open .caso-body { display: block; }
+.caso-hizo, .caso-pitch {
+  font-family: var(--f-body); font-weight: 300; font-size: .86rem;
+  color: var(--niebla); line-height: 1.65; margin-bottom: .6rem;
+}
+.caso-pitch { color: var(--timon); font-weight: 400; }
+.caso-pitch-label {
+  font-family: var(--f-label); font-size: .55rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--cobre); margin-bottom: .3rem; margin-top: .75rem;
+}
+
+/* ── OBJECIONES ── */
+.objs-list { display: flex; flex-direction: column; gap: .6rem; }
+.obj {
+  border: 1px solid var(--arena-borde); border-radius: 10px;
+  overflow: hidden; background: var(--arena-pro);
+}
+.obj-trigger {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: grid; grid-template-columns: 1fr 24px;
+  gap: .5rem; padding: 1rem 1.1rem;
+  text-align: left; align-items: center;
+  transition: background .2s;
+}
+.obj-trigger:hover { background: var(--cobre-pal); }
+.obj-pregunta {
+  font-family: var(--f-body); font-size: .88rem; font-weight: 400;
+  color: var(--timon); font-style: italic; line-height: 1.5;
+}
+.obj-chevron {
+  font-size: .9rem; color: var(--cobre); transition: transform .3s;
+  line-height: 1; text-align: center;
+}
+.obj.open .obj-chevron { transform: rotate(180deg); }
+.obj-body {
+  display: none;
+  padding: 0 1.1rem 1rem;
+  border-top: 1px solid var(--arena-borde);
+}
+.obj.open .obj-body { display: block; }
+.obj-respuesta {
+  font-family: var(--f-body); font-weight: 300; font-size: .86rem;
+  color: var(--niebla); line-height: 1.7; padding-top: .75rem;
+}
+.obj-respuesta strong { color: var(--timon); font-weight: 500; }
+.obj-respuesta em { font-style: italic; color: var(--cobre); }
+.obj-frase {
+  margin-top: .75rem; padding: .75rem 1rem;
+  background: var(--timon); border-radius: 8px;
+  font-family: var(--f-body); font-weight: 300; font-size: .84rem;
+  color: rgba(250,247,242,0.85); line-height: 1.6; font-style: italic;
+}
+
+/* ── PROFUNDIZAR ── */
+.detalle-grid {
+  display: flex; flex-direction: column; gap: .6rem;
+}
+.detalle {
+  border: 1px solid var(--arena-borde); border-radius: 10px;
+  overflow: hidden; background: var(--arena);
+}
+.detalle-trigger {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .9rem 1.1rem; text-align: left;
+  transition: background .2s;
+}
+.detalle-trigger:hover { background: var(--arena-pro); }
+.detalle-titulo {
+  font-family: var(--f-label); font-size: .62rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--niebla);
+}
+.detalle-chevron {
+  font-size: .8rem; color: var(--niebla-cla); transition: transform .3s; line-height: 1;
+}
+.detalle.open .detalle-chevron { transform: rotate(180deg); }
+.detalle-body {
+  display: none;
+  padding: 0 1.1rem 1.1rem;
+  border-top: 1px solid var(--arena-borde);
+}
+.detalle.open .detalle-body { display: block; }
+.detalle-prose {
+  font-family: var(--f-body); font-weight: 300; font-size: .86rem;
+  color: var(--niebla); line-height: 1.7; padding-top: .85rem;
+}
+.detalle-prose strong { color: var(--timon); font-weight: 500; }
+.detalle-prose p + p { margin-top: .75rem; }
+.detalle-prose ul { padding-left: 1.1rem; margin-top: .5rem; }
+.detalle-prose li { margin-bottom: .35rem; }
+.detalle-prose .tabla {
+  width: 100%; border-collapse: collapse; margin-top: .75rem;
+  font-size: .82rem;
+}
+.detalle-prose .tabla th {
+  font-family: var(--f-label); font-size: .55rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--niebla); border-bottom: 1px solid var(--arena-borde);
+  padding: .5rem .6rem; text-align: left;
+}
+.detalle-prose .tabla td {
+  padding: .5rem .6rem; border-bottom: 1px solid var(--niebla-muy, #ECE8E2);
+  color: var(--niebla); vertical-align: top;
+}
+.detalle-prose .tabla td:first-child { color: var(--timon); font-weight: 500; }
+
+/* ── SEÑALES DE COMPRA ── */
+.senales-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: .6rem; margin-top: .5rem;
+}
+.senal {
+  display: flex; align-items: flex-start; gap: .6rem;
+  background: var(--eucalipto-pal); border-radius: 8px;
+  padding: .7rem .9rem; border: 1px solid #A0BDB2;
+}
+.senal-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--eucalipto); flex-shrink: 0; margin-top: .35rem;
+}
+.senal-text {
+  font-family: var(--f-body); font-weight: 300; font-size: .82rem;
+  color: var(--eucalipto); line-height: 1.5;
+}
+
+/* ── DATOS CLAVE ── */
+.datos-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: .75rem; margin: 1.5rem 0;
+}
+.dato {
+  background: var(--arena-pro); border: 1px solid var(--arena-borde);
+  border-radius: 10px; padding: 1rem 1.1rem; text-align: center;
+}
+.dato-num {
+  font-family: var(--f-display); font-size: 1.8rem; font-weight: 400;
+  color: var(--cobre); line-height: 1; margin-bottom: .3rem;
+}
+.dato-desc {
+  font-family: var(--f-body); font-weight: 300; font-size: .76rem;
+  color: var(--niebla); line-height: 1.5;
+}
+.dato-desc strong { color: var(--timon); font-weight: 500; }
+
+/* ── FOOTER ── */
+.ficha-footer {
+  margin-top: 3rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--arena-borde);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: .75rem;
+}
+.footer-brand {
+  font-family: var(--f-display); font-weight: 300; font-size: .95rem;
+  color: var(--niebla-cla);
+}
+.footer-brand em { font-style: italic; color: var(--cobre); }
+.footer-meta {
+  font-family: var(--f-label); font-size: .56rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--niebla-cla);
+  text-align: right; line-height: 1.8;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .saber-grid { grid-template-columns: 1fr; }
+  .senales-grid { grid-template-columns: 1fr; }
+  .datos-row { grid-template-columns: repeat(2, 1fr); }
+  .caso { grid-template-columns: 60px 1fr; }
+  .ficha-footer { flex-direction: column; align-items: flex-start; }
+  .footer-meta { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="topbar">
+  <a class="topbar-logo" href="../">Entelgy<em>·</em></a>
+  <a class="topbar-back" href="index.html">Software Engineering</a>
+</div>
+
+<div class="page-content">
+
+<!-- HEADER -->
+<div class="ficha-header">
+  <div class="ficha-tipo">Ficha comercial · Administración Pública</div>
+  <h1 class="ficha-title">Modernización<br>de <em>Aplicaciones</em></h1>
+  <p class="ficha-tagline">Los sistemas que dan servicio al ciudadano llevan décadas sin actualizarse. El ENS exige documentación que no existe. Y el AI Act convierte en high-risk cualquier decisión automatizada sobre personas. El reloj corre — y el proveedor histórico no tiene incentivo para que cambie nada.</p>
+  <div class="ficha-pills">
+    <span class="pill cobre">Dir. TIC · Subdirector · Jefe de Servicio</span>
+    <span class="pill verde">Ya vendible</span>
+    <span class="pill">ENS · AI Act · NIS2</span>
+    <span class="pill">Oracle Forms · COBOL · PL/SQL</span>
+  </div>
+</div>
+
+<!-- DATOS CLAVE -->
+<div class="datos-row">
+  <div class="dato">
+    <div class="dato-num">+70%</div>
+    <div class="dato-desc">aceleración en la <strong>migración de código legacy</strong> con IA respecto a métodos tradicionales · Entelgy</div>
+  </div>
+  <div class="dato">
+    <div class="dato-num">2027</div>
+    <div class="dato-desc">plazo AI Act para sistemas high-risk — <strong>decisiones automatizadas sobre ciudadanos</strong> son high-risk por definición en el Annex III</div>
+  </div>
+  <div class="dato">
+    <div class="dato-num">ENS</div>
+    <div class="dato-desc"><strong>Esquema Nacional de Seguridad</strong> obligatorio para todos los sistemas que tratan información de la administración o de ciudadanos · RD 311/2022</div>
+  </div>
+</div>
+
+<!-- PITCH -->
+<div class="pitch-box">
+  <div class="pitch-label">Pitch</div>
+
+  <div style="background: rgba(166,112,62,0.12); border-radius: 8px; padding: 1.1rem 1.25rem; margin-bottom: 1.5rem; border-left: 3px solid var(--cobre);">
+    <div style="font-family: var(--f-label); font-size: .55rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cobre-cla); margin-bottom: .5rem;">Gancho · 30 segundos</div>
+    <div style="font-family: var(--f-display); font-size: 1.15rem; font-weight: 400; color: #FAF7F2; line-height: 1.4; font-style: italic;">"El AI Act considera high-risk cualquier sistema que tome decisiones automatizadas sobre ciudadanos — prestaciones, permisos, expedientes. La administración tiene más sistemas en esa categoría que ningún otro sector. Y la mayoría no tiene la documentación técnica que el AI Act va a exigir. Entelgy la construye — con Spec-Driven, con certificación ISO 3300 y con el ENS desde el primer día."</div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">1</div>
+    <div class="pitch-text">
+      <strong>La pregunta que abre la conversación</strong>
+      <span class="cita">"¿Cuántos sistemas del organismo tienen el conocimiento técnico concentrado en el proveedor que los desarrolló? ¿Qué pasaría si ese proveedor cambiara de equipo o subiera sus tarifas en la próxima licitación?"</span>
+      En la administración pública el lock-in de proveedor es estructural — los contratos de mantenimiento pueden durar décadas y el conocimiento del sistema nunca queda documentado en el organismo. Cuando sale a licitación, el incumbente siempre gana porque es el único que sabe cómo funciona.
+    </div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">2</div>
+    <div class="pitch-text">
+      <strong>El dato que hace el problema urgente</strong>
+      <span class="cita">"El AI Act considera high-risk por definición los sistemas que toman decisiones automatizadas sobre ciudadanos en áreas de empleo, prestaciones sociales, educación, permisos o infraestructura crítica. Esos sistemas necesitan documentación técnica auditable antes de diciembre de 2027. La administración española tiene más sistemas en esa categoría que cualquier otro sector — y casi ninguno tiene esa documentación."</span>
+      Más el ENS obligatorio y NIS2 para entidades esenciales. Tres marcos regulatorios activos al mismo tiempo.
+    </div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">3</div>
+    <div class="pitch-text">
+      <strong>Lo que diferencia a Entelgy</strong>
+      <em>Spec-Driven Development</em> produce de forma nativa la documentación técnica que ENS, AI Act y NIS2 van a pedir — no como trabajo extra posterior. Certificación <strong>ISO 3300 N3 (SPICE)</strong> en procesos del ciclo de vida del software. <strong>Foreworth</strong> como tercero que certifica la productividad. El organismo recupera la propiedad del conocimiento técnico de sus sistemas — el conocimiento deja de estar en la cabeza del proveedor.
+      <span class="cita">"Con Entelgy, el organismo tiene la spec firmada, los tests automatizados y la documentación técnica — propiedad de la administración, no del proveedor. Al final del contrato, pueden cambiar de proveedor sin perder nada."</span>
+    </div>
+  </div>
+
+  <div class="pitch-step">
+    <div class="pitch-num">4</div>
+    <div class="pitch-text">
+      <strong>El cierre natural</strong>
+      <span class="cita">"¿Cuándo caduca el contrato actual de mantenimiento? ¿Y hay algún sistema que el organismo quiera modernizar antes de esa fecha — o que necesite documentación técnica para cumplir con el AI Act?"</span>
+      La entrada puede ser el assessment antes de la siguiente licitación — produce el diagnóstico técnico que el pliego necesita para estar bien redactado. O un proyecto de Spec-Driven sobre un sistema concreto dentro del contrato actual.
+    </div>
+  </div>
+</div>
+
+<!-- SABER RÁPIDO -->
+<div class="saber-grid">
+  <div class="saber-card">
+    <div class="saber-card-label">Quién compra</div>
+    <div class="saber-card-text"><strong>Subdirector/a General de TIC</strong> o equivalente — es quien gestiona los contratos de desarrollo y mantenimiento. <strong>Director/a General</strong> cuando hay implicación regulatoria (ENS, AI Act). <strong>Responsable de Contratación</strong> cuando se está redactando un pliego. <strong>Secretario/a General Técnico/a</strong> cuando la responsabilidad es orgánica.</div>
+  </div>
+  <div class="saber-card">
+    <div class="saber-card-label">Qué aporta Entelgy</div>
+    <div class="saber-card-text">Modernización progresiva con <strong>Spec-Driven</strong> — documentación técnica auditable nativa para ENS y AI Act. El organismo recupera la <strong>propiedad del conocimiento técnico</strong> de sus sistemas. <strong>ISO 3300 N3 SPICE</strong> y European Scrum Agile. Productividad certificada por <strong>Foreworth</strong>. Código abierto y reutilizable conforme a la LCSP.</div>
+  </div>
+  <div class="saber-card">
+    <div class="saber-card-label">Cuándo entrar</div>
+    <div class="saber-card-text">Contrato de mantenimiento próximo a caducar — momento de licitación. Sistemas que toman decisiones automatizadas sobre ciudadanos sin documentación técnica (AI Act). Oracle Forms, COBOL o PL/SQL sobre sistemas críticos sin ENS actualizado. Organismo con fondos PRTR o FEDER para digitalización disponibles.</div>
+  </div>
+  <div class="saber-card">
+    <div class="saber-card-label">Clientes en AAPP</div>
+    <div class="saber-card-text"><strong>Ministerios:</strong> Hacienda · Cultura y Deporte · Agricultura · Consumo. <strong>Organismos:</strong> UNED · AESA · MICIU · DGOJ · Tribunal de Cuentas · Loterías del Estado · CELAD. También: Catastro · Administración País Vasco (euskotren). Confirmar referenciabilidad con Jorge antes de cada reunión.</div>
+  </div>
+</div>
+
+<!-- SEÑALES DE COMPRA -->
+<div class="seccion open" id="s-senales">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-senales')">
+    <span class="seccion-titulo">Señales de que hay oportunidad real</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="senales-grid">
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">El contrato de mantenimiento actual vence en los próximos 12-18 meses — momento de redactar el pliego</div></div>
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">Tienen sistemas sobre Oracle Forms, COBOL o PL/SQL que el proveedor actual "es el único que sabe cómo funcionan"</div></div>
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">El organismo tiene sistemas que toman decisiones automatizadas sobre ciudadanos — prestaciones, expedientes, permisos</div></div>
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">ENS sin actualizar o pendiente de auditoría — documentación técnica de sistemas incompleta</div></div>
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">Tienen partidas PRTR o FEDER para digitalización sin proyecto concreto asignado</div></div>
+      <div class="senal"><div class="senal-dot"></div><div class="senal-text">La experiencia del ciudadano con sus sistemas online es deficiente — interfaces antiguas, sin responsive, sin accesibilidad WCAG</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CASOS -->
+<div class="seccion open" id="s-casos">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-casos')">
+    <span class="seccion-titulo">Referencias y casos</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="casos-list">
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">AESA</div>
+        <div>
+          <div class="caso-nombre">Agencia Estatal de Seguridad Aérea</div>
+          <div class="caso-sector">AAPP · Aviación · Spec-Driven en producción · Automatización con IA</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo"><strong>Qué hizo Entelgy:</strong> automatización completa de la gestión de reclamaciones de pasajeros. Spec-Driven aplicado sobre un proceso regulado con requisitos estrictos de trazabilidad — spec formal antes de cada funcionalidad, validación documental automatizada con IA, documentación técnica auditable. Sistema en producción real, no piloto.</div>
+          <div class="caso-pitch-label">Cómo usarlo en reunión</div>
+          <div class="caso-pitch">El mejor caso para demostrar Spec-Driven en un entorno administrativo regulado. Procesos críticos de atención al ciudadano, trazabilidad total, IA aplicada a validación documental — y documentación técnica que cualquier auditor del AI Act puede revisar. Exactamente lo que la administración va a necesitar producir.</div>
+        </div>
+      </div>
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">UNED</div>
+        <div>
+          <div class="caso-nombre">Universidad Nacional de Educación a Distancia</div>
+          <div class="caso-sector">AAPP · Educación · Modernización Oracle Forms + PL/SQL · IA aplicada</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo"><strong>Qué hizo Entelgy:</strong> mantenimiento de aplicaciones + modernización de Oracle Form Developer. Migración PL/SQL → Java con ChatGPT para documentación automática de procedimientos y GitHub Copilot para generación de tests unitarios. Documentación de aplicativos. Optimización de procesos de base de datos.</div>
+          <div class="caso-pitch-label">Cómo usarlo en reunión</div>
+          <div class="caso-pitch">Caso directo para cualquier organismo con Oracle Forms o PL/SQL legacy. Demuestra que Entelgy puede entrar en un contrato de mantenimiento, aplicar IA para documentar lo que no tiene documentación, y modernizar sin interrumpir el servicio. La combinación mantenimiento + modernización progresiva es el modelo más frecuente en AAPP.</div>
+        </div>
+      </div>
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">DGOJ</div>
+        <div>
+          <div class="caso-nombre">Dirección General de Ordenación del Juego</div>
+          <div class="caso-sector">AAPP · Sector regulado · Modernización + documentación automatizada</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo"><strong>Qué hizo Entelgy:</strong> actualización de frameworks, modernización de aplicativos regulados, generación automatizada de documentación técnica y obtención de flujos de procesos. Contexto de alta exigencia regulatoria con sistemas críticos de control sobre licencias y operadores.</div>
+          <div class="caso-pitch-label">Cómo usarlo en reunión</div>
+          <div class="caso-pitch">Referencia para organismos reguladores con requisitos de auditoría y documentación técnica obligatoria. El AI Act va a pedir exactamente esto — documentación viva sobre sistemas que ya existen y que nunca la tuvieron. El caso DGOJ demuestra que Entelgy lo hace de forma automatizada, no manual.</div>
+        </div>
+      </div>
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">MICIU</div>
+        <div>
+          <div class="caso-nombre">Min. de Ciencia, Innovación y Universidades</div>
+          <div class="caso-sector">AAPP · Ministerio · Mantenimiento + desarrollo de herramienta interna</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo"><strong>Qué hizo Entelgy:</strong> servicio de mantenimiento de aplicaciones. Desarrollo del sistema ASIA para el equipo de soporte interno del ministerio. Documentación de aplicativos críticos.</div>
+          <div class="caso-pitch-label">Cómo usarlo en reunión</div>
+          <div class="caso-pitch">Referencia para ministerios que necesiten ver experiencia en mantenimiento de sistemas críticos con equipos mixtos interno-externo. Buen caso para abrir conversación sobre herramientas de soporte interno y documentación de sistemas que "nadie sabe del todo cómo funcionan".</div>
+        </div>
+      </div>
+
+      <div class="caso" onclick="toggleCaso(this)">
+        <div class="caso-id">REFs</div>
+        <div>
+          <div class="caso-nombre">Cartera AAPP · Entelgy</div>
+          <div class="caso-sector">Ministerios · Organismos · Universidades · Administración autonómica</div>
+        </div>
+        <div class="caso-body">
+          <div class="caso-hizo">
+            <strong>Ministerios:</strong> Hacienda · Cultura y Deporte · Agricultura, Pesca y Alimentación · Consumo<br>
+            <strong>Organismos y agencias:</strong> UNED · AESA · MICIU · DGOJ · Tribunal de Cuentas · Loterías y Apuestas del Estado · CELAD<br>
+            <strong>Administración autonómica:</strong> euskotren (País Vasco)
+          </div>
+          <div class="caso-pitch-label">Nota de uso</div>
+          <div class="caso-pitch">Confirmar con Jorge qué organismos son referenciables y con qué nivel de detalle. En AAPP la referenciabilidad suele estar condicionada por los pliegos de confidencialidad de cada contrato.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- OBJECIONES -->
+<div class="seccion open" id="s-objs">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-objs')">
+    <span class="seccion-titulo">Objeciones más frecuentes</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="objs-list">
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"Tenemos contrato en vigor con nuestro proveedor hasta [fecha] — no podemos cambiar."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            Bien. Hay dos formas de entrar sin tocar el contrato actual. La primera: un <strong>assessment independiente</strong> — Entelgy analiza el estado técnico de los sistemas y produce el diagnóstico que el organismo necesita para redactar el próximo pliego con criterios objetivos, no con los que imponga el proveedor saliente. La segunda: un <strong>proyecto complementario</strong> fuera del alcance del contrato actual — documentación técnica para ENS o AI Act, por ejemplo, que el proveedor actual normalmente no hace porque no está en pliego. En ambos casos, Entelgy no necesita tocar el contrato vigente.
+            <div class="obj-frase">"¿Cuándo vence el contrato actual? ¿Tenéis ya el pliego redactado para la siguiente licitación o estáis en esa fase?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"El proceso de contratación pública es muy largo — los pliegos tardan meses."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            Exacto — por eso hay que empezar antes de que el proceso empiece. <strong>El assessment previo a la licitación es el producto más valioso que Entelgy puede ofrecer en AAPP.</strong> Produce el diagnóstico técnico independiente que permite redactar un pliego con criterios objetivos de calidad (cobertura de tests, Spec Compliance, certificaciones ISO) en lugar de criterios genéricos que favorecen al incumbente. Un pliego bien redactado es la mejor garantía de que el proceso de licitación produce el mejor resultado para el organismo.
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"El presupuesto está comprometido — no hay partida para modernización."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            Dos ángulos. El primero: los fondos <strong>PRTR y FEDER</strong> para digitalización de la administración están disponibles — muchos organismos tienen partidas asignadas sin proyecto concreto que las justifique. La modernización de sistemas legacy con Spec-Driven y con métricas auditables es exactamente el tipo de proyecto que esos fondos financian. El segundo: el ENS y el AI Act no son opcionales — el coste de incumplimiento (sanciones, responsabilidad personal) es mayor que el coste de la modernización. La pregunta no es si hay presupuesto, sino qué presupuesto se activa — el de modernización o el de sanciones.
+            <div class="obj-frase">"¿Tiene el organismo partidas PRTR o FEDER disponibles para digitalización? ¿Hay alguna que necesite un proyecto concreto que la justifique?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"No podemos arriesgar sistemas que dan servicio directo al ciudadano."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            La modernización progresiva de Entelgy es modular por definición — se moderniza un módulo mientras el resto sigue en producción. <strong>Spec-Driven garantiza que cada pieza tiene spec firmada, tests automatizados y trazabilidad antes de ir a producción.</strong> El riesgo real no es modernizar con este modelo — es no modernizar y que el sistema falle sin documentación técnica ni plan de contingencia. Con ENS y AI Act activos, un sistema crítico sin documentación técnica es un riesgo regulatorio mayor que cualquier proceso de modernización controlado.
+            <div class="obj-frase">"¿Tiene el organismo un plan de contingencia documentado para el sistema más crítico si el proveedor actual no puede atender una incidencia mayor?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obj">
+        <button class="obj-trigger" onclick="toggleObj(this.parentElement)">
+          <span class="obj-pregunta">"Ya cumplimos con el ENS — tenemos la certificación."</span>
+          <span class="obj-chevron">▾</span>
+        </button>
+        <div class="obj-body">
+          <div class="obj-respuesta">
+            El ENS cubre la seguridad del sistema — pero no cubre la documentación técnica del código que el AI Act va a pedir. Son marcos distintos. <strong>Un sistema puede tener ENS categoría alta y no tener ninguna spec técnica del software que lo sustenta.</strong> El AI Act exige documentación del modelo de IA, de los datos usados, de los criterios de decisión y de los mecanismos de supervisión humana — ninguno de eso está en el ENS. Y NIS2 añade requisitos de gestión de riesgos en la cadena de suministro de software que tampoco están cubiertos por el ENS.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- PROFUNDIZAR -->
+<div class="seccion" id="s-detalle">
+  <button class="seccion-trigger" onclick="toggleSeccion('s-detalle')">
+    <span class="seccion-titulo">Profundizar — mecánica y detalle</span>
+    <span class="seccion-icon">+</span>
+  </button>
+  <div class="seccion-body">
+    <div class="detalle-grid">
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">AI Act en AAPP — por qué la administración tiene más exposición que nadie</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p><strong>Qué considera high-risk el Annex III:</strong> sistemas de IA usados en decisiones sobre ciudadanos en áreas de empleo y gestión de trabajadores, acceso a educación, prestaciones y servicios sociales esenciales, infraestructura crítica, administración de justicia, procesos electorales, y aplicación de la ley. <strong>La administración española tiene más sistemas en estas categorías que cualquier sector privado.</strong></p>
+            <p><strong>Qué exige para sistemas high-risk:</strong> documentación técnica completa del sistema antes del despliegue, evaluación de conformidad, registro en la base de datos de la UE, supervisión humana demostrable, transparencia con los ciudadanos afectados, y trazabilidad de las decisiones tomadas. Multas hasta 15M€ o 3% de la facturación.</p>
+            <p><strong>El plazo:</strong> diciembre de 2027 para sistemas high-risk. Watermarking de contenido IA en diciembre de 2026. Cualquier organismo que use IA en decisiones sobre ciudadanos necesita empezar ya a construir la documentación técnica — no se hace en seis meses.</p>
+            <p><strong>Cómo responde Entelgy:</strong> Spec-Driven produce de forma nativa la documentación técnica que el AI Act exige — spec del modelo, criterios de decisión, mecanismos de supervisión humana, trazabilidad de las decisiones. El CoE de Calidad gestiona los estándares de código seguro y auditable.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">ENS y NIS2 — lo mínimo que necesitas saber</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p><strong>ENS (RD 311/2022):</strong> obligatorio para todos los sistemas de información de las administraciones públicas y de sus proveedores que traten información de la administración. Categorías básica/media/alta según el impacto de una incidencia. Requiere documentación técnica, análisis de riesgos, medidas de seguridad y auditoría periódica. Spec-Driven genera de forma nativa la documentación técnica que el ENS necesita.</p>
+            <p><strong>NIS2:</strong> las administraciones centrales y las CCAA son entidades esenciales o importantes bajo NIS2. Obliga a gestión de riesgos en la cadena de suministro de software — los proveedores de desarrollo están dentro del perímetro. Multas hasta 10M€. El organismo es responsable de los riesgos que introduce su proveedor de software.</p>
+            <p><strong>La diferencia entre ENS y AI Act:</strong> el ENS cubre la seguridad del sistema como infraestructura. El AI Act cubre la lógica de decisión del sistema cuando afecta a derechos de ciudadanos. Un sistema puede tener ENS alta y no tener ninguna documentación del modelo de IA que toma las decisiones. Son complementarios, no excluyentes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">Spec-Driven — qué produce y por qué la administración lo necesita</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <p>Antes de escribir una línea de código, se define formalmente qué tiene que hacer: entradas, salidas, reglas de negocio, criterios de aceptación. Esa spec se firma. El código se desarrolla guiado por tests. Cada línea queda vinculada a un requisito — trazabilidad total.</p>
+            <p><strong>Por qué es especialmente valioso en AAPP:</strong> el código de la administración es patrimonio público. Con Spec-Driven, ese código tiene documentación técnica propia del organismo — no del proveedor. Al final del contrato, el organismo puede licitar con otro proveedor sin perder el conocimiento del sistema. El proveedor saliente no puede retener información porque la spec es propiedad del organismo desde el primer día.</p>
+            <p><strong>Reverse spec sobre legacy:</strong> se aplica sobre sistemas existentes. Entelgy reconstruye la spec a partir del código Oracle Forms, COBOL o PL/SQL que ya existe, produciendo la documentación técnica que el organismo nunca tuvo. Primera acción antes de cualquier proceso de licitación — el organismo ya sabe exactamente qué tiene antes de preguntar.</p>
+            <p><strong>LCSP:</strong> la Ley de Contratos del Sector Público exige que el código desarrollado para la administración sea de su propiedad y reutilizable. Spec-Driven garantiza que el código tiene documentación suficiente para ser efectivamente reutilizable — no solo nominalmente.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <button class="detalle-trigger" onclick="toggleDetalle(this.parentElement)">
+          <span class="detalle-titulo">La competencia en AAPP — cómo posicionarse</span>
+          <span class="detalle-chevron">▾</span>
+        </button>
+        <div class="detalle-body">
+          <div class="detalle-prose">
+            <table class="tabla">
+              <thead><tr><th>Competidor</th><th>Posición habitual</th><th>Flaqueza vs Entelgy</th></tr></thead>
+              <tbody>
+                <tr><td>Indra / Minsait</td><td>Incumbentes históricos en AAPP española, grandes contratos</td><td>Modelo hora-perfil, sin Spec-Driven sistemático, sin Foreworth. El conocimiento del sistema queda en el proveedor, no en el organismo</td></tr>
+                <tr><td>Fujitsu / IBM</td><td>Contratos de mainframe y grandes sistemas legados</td><td>Lock-in tecnológico y de conocimiento. Sin cláusula bilateral. El organismo depende indefinidamente del proveedor</td></tr>
+                <tr><td>Capgemini / Everis-NTT</td><td>Consultoría y proyectos de transformación grandes</td><td>Proyectos grandes de larga duración, sin modernización progresiva módulo a módulo. Sin Foreworth</td></tr>
+                <tr><td>Pequeñas empresas locales</td><td>Precio bajo, conocimiento específico del organismo</td><td>Sin certificaciones ISO, sin capacidad de CoE, sin Spec-Driven. El conocimiento sigue en personas, no en documentación</td></tr>
+              </tbody>
+            </table>
+            <p style="margin-top:.75rem;"><strong>El argumento diferencial en AAPP:</strong> <em>"Con Entelgy, al final del contrato el organismo tiene la spec, los tests y la documentación — puede cambiar de proveedor sin perder nada. Con cualquier otro proveedor, el conocimiento del sistema sigue siendo del proveedor."</em></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="ficha-footer">
+  <div class="footer-brand" style="font-family: var(--f-label); font-size: .75rem; font-weight: 600; letter-spacing: .08em; color: var(--niebla);">Entelgy · Hipatia</div>
+  <div class="footer-meta">
+    Ficha comercial · Modernización · Administración Pública<br>
+    Jorge Herrero · Ciclo de vida de desarrollo de software · Mayo 2026
+  </div>
+</div>
+
+</div><!-- /page-content -->
+
+<script>
+function toggleSeccion(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+function toggleObj(el) { el.classList.toggle('open'); }
+function toggleDetalle(el) { el.classList.toggle('open'); }
+function toggleCaso(el) { el.classList.toggle('open'); }
+</script>
+<div id="hipatia-volver"><button type="button" aria-label="Volver a Hipatia">← Volver a Hipatia</button></div>
+<style>
+#hipatia-volver{position:fixed;top:14px;left:14px;z-index:2147483000;font:500 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+#hipatia-volver button{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid #E6E8EA;background:#fff;color:#041C2C;cursor:pointer;box-shadow:0 1px 3px rgba(4,28,44,.10);font:inherit;transition:color .15s,border-color .15s}
+#hipatia-volver button:hover{color:#FE5000;border-color:#FE5000}
+#hipatia-volver button:focus-visible{outline:2px solid #FE5000;outline-offset:2px}
+@media print{#hipatia-volver{display:none !important}}
+</style>
+<script>
+(function(){
+  var PORTAL="https://hipatia-v4.guberna.es/";
+  function volver(){
+    // el material se abre en la misma pestaña, así que hay historial: volver
+    // atrás devuelve al listado exacto, con su scroll y sus filtros. Si alguien
+    // llegó por la URL directa no hay historial y se va a la portada.
+    if(history.length>1){ history.back(); return; }
+    location.href=PORTAL;
+  }
+  var b=document.getElementById('hipatia-volver');
+  if(b) b.firstChild.addEventListener('click',volver);
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape'||e.defaultPrevented) return;
+    if(document.fullscreenElement) return;                 // Escape sale de pantalla completa
+    var a=document.activeElement;
+    if(a&&(a.tagName==='INPUT'||a.tagName==='TEXTAREA'||a.isContentEditable)) return;
+    volver();
+  });
+})();
+</script></body>
+</html>

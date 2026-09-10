@@ -1,6 +1,8 @@
 {
+  // Rama v4 (Pregunta a Hipatia): se despliega en el Worker hipatia-v4 -> hipatia-v4.guberna.es.
+  // La rama v3 usa name "hipatia-v3" -> hipatia-v3.guberna.es. El name decide el Worker de destino.
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "hipatia-v3",
+  "name": "hipatia-v4",
   "compatibility_date": "2026-06-01",
   "assets": {
     "directory": "./public",

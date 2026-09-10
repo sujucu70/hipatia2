@@ -37,7 +37,7 @@
   "primer_avance": {
     "titulo": "Un diagnóstico sobre un proceso real",
     "plazo": "6–8 semanas",
-    "nota": "Con minería si el proceso deja rastro en los sistemas (Carmen) y a mano si no lo deja (Carla). Baseline medida en horas y tareas, mejoras priorizadas y retorno estimado. Precio cerrado: 15–20 K€ en el diagnóstico de entrada de Inteligencia de procesos; el de Automatización se cierra con Carla González."
+    "nota": "Con minería si el proceso deja rastro en los sistemas (Carmen Rode) y a mano si no lo deja (Carla González). Baseline medida en horas y tareas, mejoras priorizadas y retorno estimado. Alcance y precio, con la responsable de cada solución."
   },
   "soluciones": [
     {
@@ -196,14 +196,9 @@
         "process-ficha"
       ],
       "acreditacion": [],
-      "pendiente": {
-        "texto": "Lectura de Carmen: Celonis Gold e Inverbis-GBTEC en «Por qué Entelgy», precios visibles en el portal interno, ficha de Universidad LATAM.",
-        "dueno": "Carmen",
-        "fecha_objetivo": "sept 2026"
-      },
       "contactos": {
-        "comercial": "carmen-rode",
-        "tecnico": null
+        "responsable": "carmen-rode",
+        "apoyo": "raul-duque"
       }
     },
     {
@@ -222,7 +217,7 @@
         "diferenciador": "Un único responsable, del diagnóstico al proceso en producción, y la IA encima del RPA que ya funciona, no en su lugar.",
         "objecion_principal": {
           "texto": "Queremos agentes de IA, no robots.",
-          "respuesta": "El 95% de los pilotos de IA no llega a producción (MIT, State of AI in Business 2025). Los que llegan tienen debajo un proceso ordenado y RPA rodado. Ponemos el agente donde el proceso exige decidir, encima de esa base y con una oficina de gobierno que registra qué hace cada robot y cada agente. Es lo que separa un agente que escala de uno caro e impredecible. (La gobernanza humana de la IA, quién decide qué avanza y qué se frena, es la Oficina de Gobernanza Humana de la IA, en Digital Change.)"
+          "respuesta": "El 95% de los pilotos de IA no consigue el retorno esperado (MIT, State of AI in Business 2025). Los que lo consiguen tienen debajo un proceso ordenado y RPA rodado. Ponemos el agente donde el proceso exige decidir, encima de esa base y con una oficina de gobierno que registra qué hace cada robot y cada agente. Es lo que separa un agente que escala de uno caro e impredecible. (La gobernanza humana de la IA, quién decide qué avanza y qué se frena, es la Oficina de Gobernanza Humana de la IA, en Digital Change.)"
         },
         "como_abres": "«¿Qué automatización tenéis hoy suelta, sin escalar, y quién la mantiene?»",
         "primer_paso": {
@@ -252,7 +247,7 @@
             {
               "angulo": "Por el piloto que no escala",
               "cuando": "si han probado IA",
-              "texto": "El 95% de los pilotos de IA no llega a producción. Los que llegan tienen un proceso ordenado y RPA por debajo. Empezamos por ahí, y el agente va encima solo donde el proceso exige decidir."
+              "texto": "El 95% de los pilotos de IA no consigue el retorno esperado. Los que lo consiguen tienen un proceso ordenado y RPA por debajo. Empezamos por ahí, y el agente va encima solo donde el proceso exige decidir."
             },
             {
               "angulo": "Por el informe en el cajón",
@@ -333,7 +328,7 @@
         },
         {
           "dolor": "Metimos IA y no ha pasado nada. No escala.",
-          "frase": "El 95% de los pilotos de IA no llega a producción; los que llegan tienen RPA rodado debajo.",
+          "frase": "El 95% de los pilotos de IA no consigue el retorno esperado; los que lo consiguen tienen RPA rodado debajo.",
           "prueba": "UNED: 95 procesos levantados, 26 robots en producción en seis meses.",
           "paso": "Empezamos por el proceso ordenado; el agente va encima donde decide."
         },
@@ -361,13 +356,13 @@
       ],
       "acreditacion": [],
       "pendiente": {
-        "texto": "Lectura de Carla: diagnóstico de 6–8 semanas y corrección de la ficha, F1 de UNED y de la energética, «hiperautomatización» y «Task Intelligence» fuera de sus piezas, contacto sin rellenar.",
+        "texto": "Lectura de Carla (7-sep): diagnóstico de 6–8 semanas confirmado, UNED citable y contacto técnico asignado. Queda la corrección de la ficha y el one-pager (plazo, vocabulario y hueco de contacto), que se hace fuera del portal.",
         "dueno": "Carla",
         "fecha_objetivo": "sept 2026"
       },
       "contactos": {
-        "comercial": "carla-gonzalez",
-        "tecnico": null
+        "responsable": "carla-gonzalez",
+        "apoyo": "david-escribano"
       }
     }
   ],
@@ -380,5 +375,6 @@
   "responsable_id": [
     "carmen-rode",
     "carla-gonzalez"
-  ]
+  ],
+  "contactos_area": []
 }

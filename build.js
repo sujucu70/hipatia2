@@ -56,6 +56,39 @@ function footer() {
   </div></div>
 </footer>`;
 }
+// Widget «Pregunta a Hipatia» (revisión 18 · BJ.2). Se inyecta al final del
+// <body> de todas las páginas generadas. Pinta sin JS (pestaña cerrada); el
+// panel lo abre y responde pregunta.js. Sin iconos, avatar ni animación.
+function preguntaWidget() {
+  // Una sugerencia por intención (rev19 · BN.1); lo que se ve es lo que se manda.
+  const sugerencias = [
+    "última versión de la presentación corporativa",
+    "a quién llamo por infraestructura",
+    "qué es process intelligence",
+  ].map((q) => `<button class="pregunta-sug" type="button" data-q="${esc(q)}">${esc(q)}</button>`).join("");
+  return `<div class="pregunta" data-pregunta>
+  <button class="pregunta-tab" type="button" aria-expanded="false" aria-controls="pregunta-panel">
+    <span class="pregunta-dot" aria-hidden="true"></span>
+    <span class="pregunta-tab-full">Pregunta a Hipatia</span>
+    <span class="pregunta-tab-corto" aria-hidden="true">Pregunta</span>
+  </button>
+  <section class="pregunta-panel" id="pregunta-panel" role="dialog" aria-label="Pregunta a Hipatia" hidden>
+    <div class="pregunta-head">
+      <p class="pregunta-eyebrow">Pregunta a Hipatia</p>
+      <button class="pregunta-cerrar" type="button" aria-label="Cerrar el panel">cerrar ×</button>
+    </div>
+    <form class="pregunta-form" data-pregunta-form>
+      <label class="visually-hidden" for="pregunta-input">Escribe tu pregunta</label>
+      <input id="pregunta-input" class="pregunta-input" type="text" name="q" placeholder="Escribe tu pregunta" autocomplete="off">
+      <button class="pregunta-buscar" type="submit">Buscar</button>
+    </form>
+    <p class="pregunta-intro">Responde con lo que hay en el portal. Si no lo tiene, te lo dice.</p>
+    <div class="pregunta-sugerencias">${sugerencias}</div>
+    <div class="pregunta-respuesta" data-pregunta-respuesta aria-live="polite"></div>
+  </section>
+  <script>(function(){var w=document.currentScript.parentNode,t=w.querySelector(".pregunta-tab"),pedido=false;function cargar(){if(pedido)return;pedido=true;var s=document.createElement("script");s.src="/pregunta.js";s.onerror=function(){t.addEventListener("click",function(){location.href="/materiales/";});};document.head.appendChild(s);}t.addEventListener("click",cargar);t.addEventListener("focus",cargar);})();</script>
+</div>`;
+}
 function page({ title, desc, active, body, modal }) {
   return `<!DOCTYPE html>
 <html lang="es">
@@ -75,6 +108,7 @@ ${body}
 </main>
 ${footer()}
 ${modal || ""}
+${preguntaWidget()}
 <script src="/app.js" defer></script>
 </body>
 </html>
@@ -176,6 +210,9 @@ function datosContacto(p) {
   if (p.correo) l.push(`<a class="text-link" href="mailto:${esc(p.correo)}">${esc(p.correo)}</a>`);
   if (p.telefono) l.push(`<a class="text-link" href="tel:${esc(p.telefono.replace(/\s+/g, ""))}">${esc(p.telefono)}</a>`);
   if (p.teams) l.push(`<a class="text-link" href="${esc(p.teams)}">Teams</a>`);
+  // Alfredo (8-sep): su equipo publica en LinkedIn y los comerciales lo reparten;
+  // tener el perfil a mano es una herramienta de venta más
+  if (p.linkedin) l.push(`<a class="text-link" href="${esc(p.linkedin)}" ${NUEVA_PESTANA}>LinkedIn</a>`);
   return l;
 }
 // «Lo que lleva» de una persona, generado desde los datos de prácticas y soluciones.
@@ -183,13 +220,16 @@ function rolesDe(id, practicas) {
   const bits = [];
   const resp = practicas.filter((pr) => [].concat(pr.responsable_id || []).includes(id)).map((pr) => pr.nombre);
   if (resp.length) bits.push("Responsable de " + resp.join(", "));
-  const comercial = [], tecnico = [];
-  practicas.forEach((pr) => (pr.soluciones || []).forEach((s) => {
-    if (s.contactos && s.contactos.comercial === id) comercial.push(s.nombre);
-    if (s.contactos && s.contactos.tecnico === id) tecnico.push(s.nombre);
-  }));
-  if (comercial.length) bits.push("Comercial en " + comercial.join(", "));
-  if (tecnico.length) bits.push("Técnico en " + tecnico.join(", "));
+  const resp2 = [], apoyo = [];
+  practicas.forEach((pr) => {
+    (pr.soluciones || []).forEach((s) => {
+      if (s.contactos && s.contactos.responsable === id) resp2.push(s.nombre);
+      if (s.contactos && s.contactos.apoyo === id) apoyo.push(s.nombre);
+    });
+    (pr.contactos_area || []).forEach((c) => { if (c.persona === id) bits.push(c.rol + " en " + pr.nombre); });
+  });
+  if (resp2.length) bits.push("Responsable de la oferta en " + resp2.join(", "));
+  if (apoyo.length) bits.push("Apoyo en preventa en " + apoyo.join(", "));
   return bits.join(" · ");
 }
 // BD · celda de persona en la tabla «A quién llamo» (avatar, nombre enlazado a su tarjeta, datos)
@@ -199,24 +239,62 @@ function celdaPersona(id) {
   const datos = datosContacto(p);
   return `<div class="dir-persona">${avatar(p, 32)}<div><a class="text-link" href="/contactos/#${esc(p.id)}"><b>${esc(p.nombre)}</b></a>${p.titulo ? `<span class="footer-note">${esc(p.titulo)}</span>` : ""}${datos.length ? `<span class="footer-note">${datos.join(" · ")}</span>` : ""}</div></div>`;
 }
-function celdaTecnico(s) {
-  const t = s.contactos && s.contactos.tecnico;
+function celdaApoyo(s) {
+  const t = s.contactos && s.contactos.apoyo;
   if (t) return celdaPersona(t);
-  const com = personaPorId(s.contactos && s.contactos.comercial);
-  return `<span class="footer-note dir-pendiente">por confirmar · lo pide Susana a ${esc(com ? com.nombre : "el comercial")}</span>`;
+  const r = personaPorId(s.contactos && s.contactos.responsable);
+  return `<span class="footer-note dir-pendiente">por confirmar · lo pide Susana a ${esc(r ? r.nombre : "su responsable")}</span>`;
 }
-// Tabla «A quién llamo» de una práctica: una fila por solución (Solución · Comercial · Técnico).
+// Bloque «A quién llamo» de una práctica, a dos niveles: arriba quien cubre el
+// área entera (no se repite en cada fila) y abajo solo lo que cambia de una
+// solución a otra. Los nombres de los roles son los de Alfredo (8-sep): quien
+// responde de la oferta y quien entra contigo en preventa; ninguno es «el
+// comercial», que es quien está usando el portal.
+function fichaCross(id, rol) {
+  const p = personaPorId(id);
+  if (!p) return "";
+  const datos = datosContacto(p);
+  return `<div class="dir-cross-p">${avatar(p, 32)}<div><a class="text-link" href="/contactos/#${esc(p.id)}"><b>${esc(p.nombre)}</b></a><span class="footer-note">${esc(rol)}</span>${datos.length ? `<span class="footer-note">${datos.join(" · ")}</span>` : ""}</div></div>`;
+}
 function tablaContactos(pr) {
+  const sols = pr.soluciones || [];
   const resp = [].concat(pr.responsable_id || []).map((id) => personaPorId(id)).filter(Boolean).map((p) => p.nombre).join(" y ");
-  const filas = (pr.soluciones || []).map((s) => `<div class="dir-fila">
+  // alguien «cubre el área» cuando sale en todas las soluciones, no solo en alguna
+  const enTodas = (rol) => {
+    if (sols.length < 2) return null;
+    const v = sols[0].contactos && sols[0].contactos[rol];
+    if (!v) return null;
+    return sols.every((s) => s.contactos && s.contactos[rol] === v) ? v : null;
+  };
+  const respComun = enTodas("responsable"), apoyoComun = enTodas("apoyo");
+  const cross = [], vistos = new Set();
+  if (respComun) { vistos.add(respComun); cross.push([respComun, "Responsable de la oferta · las " + sols.length + " soluciones"]); }
+  if (apoyoComun && !vistos.has(apoyoComun)) { vistos.add(apoyoComun); cross.push([apoyoComun, "Apoyo en preventa · las " + sols.length + " soluciones"]); }
+  (pr.contactos_area || []).forEach((c) => { if (!vistos.has(c.persona)) { vistos.add(c.persona); cross.push([c.persona, c.rol]); } });
+
+  const bloqueCross = cross.length
+    ? `<div class="dir-cross"><span class="dir-cross-t">En toda la práctica</span><div class="dir-cross-l">${cross.map(([id, rol]) => fichaCross(id, rol)).join("")}</div></div>`
+    : "";
+
+  let tabla;
+  if (respComun && apoyoComun) {
+    // no queda nada que varíe: la tabla sería filas vacías
+    tabla = `<div class="dir-fila dir-solo"><span class="footer-note">Cubre</span><span>${sols.map((s) => `<a class="text-link" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">${esc(s.nombre)}</a>`).join(" · ")}</span></div>`;
+  } else {
+    const cols = ["Solución"];
+    if (!respComun) cols.push("Responsable de la oferta");
+    if (!apoyoComun) cols.push("Apoyo en preventa");
+    const filas = sols.map((s) => `<div class="dir-fila dir-c${cols.length}">
       <div class="dir-sol"><span class="rol-movil">Solución</span><a class="text-link" href="/practicas/${esc(pr.id)}/${esc(s.id)}/">${esc(s.nombre)}</a></div>
-      <div><span class="rol-movil">Comercial</span>${celdaPersona(s.contactos && s.contactos.comercial)}</div>
-      <div><span class="rol-movil">Técnico</span>${celdaTecnico(s)}</div>
+      ${respComun ? "" : `<div><span class="rol-movil">Responsable de la oferta</span>${celdaPersona(s.contactos && s.contactos.responsable)}</div>`}
+      ${apoyoComun ? "" : `<div><span class="rol-movil">Apoyo en preventa</span>${celdaApoyo(s)}</div>`}
     </div>`).join("");
+    tabla = `<div class="dir-cols dir-c${cols.length}">${cols.map((c) => `<span>${c}</span>`).join("")}</div>${filas}`;
+  }
   return `<div class="dir-tabla">
       <div class="dir-cab">${esc(pr.nombre)}${resp ? ` <span class="footer-note">· Responsable: ${esc(resp)}</span>` : ""}</div>
-      <div class="dir-cols"><span>Solución</span><span>Comercial</span><span>Técnico</span></div>
-      ${filas}
+      ${bloqueCross}
+      ${tabla}
     </div>`;
 }
 
@@ -248,9 +326,20 @@ function sectionHead(eyebrow, h2, nota) {
   return `<div class="section-head"><div>${eyebrow ? `<p class="eyebrow">${esc(eyebrow)}</p>` : ""}<h2>${esc(h2)}</h2></div>${nota ? `<p>${esc(nota)}</p>` : ""}</div>`;
 }
 
+// Todo enlace que sale hacia un material abre en pestaña nueva: el portal se queda detrás y
+// cerrar la pestaña devuelve al sitio exacto desde el que se abrió.
+const NUEVA_PESTANA = 'target="_blank" rel="noopener"';
+// Los materiales HTML llevan dentro su barra «← Volver a Hipatia», así que se
+// abren en la misma pestaña: volver devuelve al listado exacto, con su scroll y
+// sus filtros. Lo que se descarga (PDF, PPT, Word) y el autodiagnóstico no
+// llevan barra, así que esos sí abren en pestaña nueva.
+function abrirEn(url) {
+  return /^\/archivos\/.*\.html$/i.test(url || "") ? "" : NUEVA_PESTANA;
+}
+
 function materialLink(m) {
   if (!m) return "";
-  if (m.url_documento) return `<a class="btn" href="${esc(m.url_documento)}">Abrir en pantalla ↗</a>`;
+  if (m.url_documento) return `<a class="btn" href="${esc(m.url_documento)}" ${abrirEn(m.url_documento)}>Abrir en pantalla ↗</a>`;
   // una referencia sin documento es autocontenida (su texto citable es el entregable), no un enlace por llegar
   if (m.tipo === "Referencia") return `<span class="chip">sin documento aparte</span>`;
   return `<span class="chip">enlace pendiente</span>`;
@@ -260,7 +349,7 @@ const DESCARGA_LABEL = { pdf: "PDF ↓", pptx: "PPT ↓", docx: "Word ↓", xlsx
 const DESCARGA_ORDEN = ["pdf", "pptx", "docx", "xlsx"];
 function descargasMini(m) {
   return (m.descargas || []).slice().sort((a, b) => DESCARGA_ORDEN.indexOf(a.formato) - DESCARGA_ORDEN.indexOf(b.formato))
-    .map((d) => ` <a class="text-link llev-mini" href="${esc(d.url)}">${esc(DESCARGA_LABEL[d.formato] || d.formato.toUpperCase() + " ↓")}</a>`).join("");
+    .map((d) => ` <a class="text-link llev-mini" href="${esc(d.url)}" ${NUEVA_PESTANA}>${esc(DESCARGA_LABEL[d.formato] || d.formato.toUpperCase() + " ↓")}</a>`).join("");
 }
 // Bloque «Llévatelo» de la ficha: presentar / enviar / adaptar. Las referencias no lo llevan.
 function llevatelo(m) {
@@ -270,13 +359,13 @@ function llevatelo(m) {
     return correo ? `<a class="text-link" href="mailto:${esc(correo)}">pídeselo a ${quien}</a>` : `pídeselo a ${quien}`;
   };
   const fila = (uso, accion, nota) => `<div class="llev-fila"><span class="llev-uso">${esc(uso)}</span><span class="llev-accion">${accion}</span></div>${nota ? `<p class="footer-note llev-nota">${esc(nota)}</p>` : ""}`;
-  const presentar = m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}">Abrir en pantalla ↗</a>` : `<span class="footer-note">enlace pendiente</span>`;
+  const presentar = m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}" ${abrirEn(m.url_documento)}>Abrir en pantalla ↗</a>` : `<span class="footer-note">enlace pendiente</span>`;
   const pdf = byFmt.pdf;
   const adap = byFmt.pptx || byFmt.docx || byFmt.xlsx;
   return `<div class="llevatelo"><p class="eyebrow">Llévatelo</p>
     ${fila("Presentar", presentar)}
-    ${fila("Enviar", pdf ? `<a class="text-link" href="${esc(pdf.url)}">${DESCARGA_LABEL.pdf}</a>` : pedir(), pdf && pdf.nota)}
-    ${fila("Adaptar", adap ? `<a class="text-link" href="${esc(adap.url)}">${esc(DESCARGA_LABEL[adap.formato])}</a>` : pedir(), adap && adap.nota)}
+    ${fila("Enviar", pdf ? `<a class="text-link" href="${esc(pdf.url)}" ${NUEVA_PESTANA}>${DESCARGA_LABEL.pdf}</a>` : pedir(), pdf && pdf.nota)}
+    ${fila("Adaptar", adap ? `<a class="text-link" href="${esc(adap.url)}" ${NUEVA_PESTANA}>${esc(DESCARGA_LABEL[adap.formato])}</a>` : pedir(), adap && adap.nota)}
   </div>`;
 }
 function materialMini(m, solucionNombre) {
@@ -305,7 +394,7 @@ function solucionPage(pr, s) {
     <p class="eyebrow"><a href="/practicas/${esc(pr.id)}/" style="color:inherit">${esc(pr.nombre)}</a> · Solución</p>
     <h1 style="font-size:var(--font-size-5xl);line-height:1.02;letter-spacing:-.02em;margin:var(--space-2) 0">${esc(s.nombre)}</h1>
     <p class="lede">${esc(s.una_linea)}</p>
-    <p style="margin-top:var(--space-2);color:var(--color-text-secondary);font-size:var(--font-size-sm)">Comercial: <b>${esc((personaPorId(s.contactos && s.contactos.comercial) || {}).nombre || nombreCompleto(s.especialista))}</b> · Técnico: ${personaPorId(s.contactos && s.contactos.tecnico) ? `<b>${esc(personaPorId(s.contactos.tecnico).nombre)}</b>` : `<span class="chip">por confirmar</span>`}${s.estado === "en_preparacion" ? " · " + chipVigencia("pendiente", s.fecha_objetivo) : ""}</p>
+    <p style="margin-top:var(--space-2);color:var(--color-text-secondary);font-size:var(--font-size-sm)">Responsable de la oferta: <b>${esc((personaPorId(s.contactos && s.contactos.responsable) || {}).nombre || nombreCompleto(s.especialista))}</b> · Apoyo en preventa: ${personaPorId(s.contactos && s.contactos.apoyo) ? `<b>${esc(personaPorId(s.contactos.apoyo).nombre)}</b>` : `<span class="chip">por confirmar</span>`}${s.estado === "en_preparacion" ? " · " + chipVigencia("pendiente", s.fecha_objetivo) : ""}</p>
   </div></section>`;
 
   // 2 · La propuesta (BB · dos columnas; el diferenciador como cita, la objeción como diálogo,
@@ -349,7 +438,12 @@ function solucionPage(pr, s) {
   }
 
   // 3 · Material para el cliente (por momento)
-  const mats = (s.materiales || []).map((id) => MAT[id]).filter((m) => m && m.sale_al_cliente !== "no");
+  // Los recursos —vídeos, podcast, calculadora, enlaces— se sacan de aquí: son
+  // útiles, pero al tener el mismo peso visual que el deck, la ficha y el
+  // one-pager los enterraban. Van en una línea al final de la página.
+  const todos = (s.materiales || []).map((id) => MAT[id]).filter(Boolean);
+  const recursos = todos.filter((m) => m.bloque === "recursos");
+  const mats = todos.filter((m) => m.bloque !== "recursos" && m.sale_al_cliente !== "no");
   let cols = MOMENTOS.map((mo) => {
     const items = mats.filter((m) => m.momento_comercial === mo.key);
     const inner = items.length ? items.map(materialMini).join("") : `<p class="pending">Sin pieza para este momento todavía.</p>`;
@@ -365,13 +459,16 @@ function solucionPage(pr, s) {
   const refs = (s.referencias || []).map((id) => MAT[id]).filter(Boolean);
   let refsHtml;
   if (refs.length) {
+    // la leyenda de citabilidad solo si todas las referencias del bloque lo son; si hay mezcla, manda el chip de cada tarjeta
+    const todasCitables = refs.every((r) => r.citable === "citable");
     refsHtml = `<div class="grid grid-2">` + refs.map((r) => `<article class="card">
         <h3 style="font-size:var(--font-size-xl)">${esc(r.titulo)}</h3>
         <p style="color:var(--color-text-secondary);font-size:var(--font-size-sm);margin:var(--space-2) 0">${esc(r.resultado || "")}</p>
         <p style="font-style:italic">«${esc(r.frase_reunion || "")}»</p>
         <div class="chips" style="margin-top:var(--space-3)">${chipCitable(r)}</div>
-      </article>`).join("") + `</div>
-      <p class="footer-note" style="margin-top:var(--space-3);color:var(--color-text-secondary)">Citable en presentación. El envío formal de la referencia al cliente se autoriza por cuenta.</p>`;
+      </article>`).join("") + `</div>` + (todasCitables
+      ? `\n      <p class="footer-note" style="margin-top:var(--space-3);color:var(--color-text-secondary)">Citable en presentación. El envío formal de la referencia al cliente se autoriza por cuenta.</p>`
+      : "");
   } else {
     refsHtml = `<p class="pending">Sin referencia autorizada para esta solución · pídesela a <b>${esc(nombreCompleto(s.especialista))}</b>.</p>`;
   }
@@ -391,6 +488,15 @@ function solucionPage(pr, s) {
   if (kit.pitch_por_rol && kit.pitch_por_rol.length) {
     prep += `<h4>El pitch, según quién tienes delante</h4>${kit.pitch_nota ? `<p class="footer-note">${esc(kit.pitch_nota)}</p>` : ""}<ul>` +
       kit.pitch_por_rol.map((r) => `<li><b>${esc(r.rol)}</b> — «${esc(r.pregunta)}» · le mueve: <i>${esc(r.le_mueve)}</i></li>`).join("") + `</ul>`;
+  }
+  // Planes y precios de entrada (Alfredo, 8-sep): precio público en los paquetes
+  // de entrada, no en los servicios grandes. Vive en «Para prepararte», que es
+  // material interno: no se enseña en pantalla al cliente.
+  if (kit.planes && kit.planes.filas && kit.planes.filas.length) {
+    prep += `<h4>Planes y precios</h4>${kit.planes.nota ? `<p class="footer-note">${esc(kit.planes.nota)}</p>` : ""}
+      <div class="planes"><div class="planes-cab"><span>Plan</span><span>Precio</span><span>Alcance</span><span>Qué incluye</span></div>` +
+      kit.planes.filas.map((f) => `<div class="planes-fila"><span><b>${esc(f.plan)}</b></span><span>${esc(f.precio)}</span><span>${esc(f.alcance)}</span><span>${esc(f.incluye || "")}</span></div>`).join("") +
+      `</div>${kit.planes.pie ? `<p class="footer-note">${esc(kit.planes.pie)}</p>` : ""}`;
   }
   if (kit.objeciones && kit.objeciones.length) {
     prep += `<h4>Objeciones</h4><ul>` + kit.objeciones.map((o) => `<li><b>«${esc(o.texto)}»</b><br>${esc(o.respuesta)}</li>`).join("") + `</ul>`;
@@ -418,6 +524,37 @@ function solucionPage(pr, s) {
   body += `<section class="section"><div class="wrap">
     <details class="fold"><summary>Para prepararte</summary><div class="fold-body">${prep}${dossierCta}</div></details>
   </div></section>`;
+
+  // 5b · Recursos: vídeos, podcast, calculadora y enlaces del área. Van al final
+  // y con menos peso que el material, pero con lo que de verdad ayuda a elegir:
+  // para qué sirve cada uno, que hasta ahora vivía escondido en un tooltip.
+  if (recursos.length) {
+    const ICONO = {
+      "Vídeo": '<polygon points="6 3 20 12 6 21 6 3"/>',
+      "Podcast": '<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/>',
+      "Calculadora": '<rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8"/><path d="M8 11h.01"/><path d="M12 11h.01"/><path d="M16 11h.01"/><path d="M8 15h.01"/><path d="M12 15h.01"/><path d="M16 15v3"/>',
+      "Enlace corto": '<path d="M7 17 17 7"/><path d="M8 7h9v9"/>'
+    };
+    const svg = (sub) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONO[sub] || ICONO["Enlace corto"]}</svg>`;
+    // en la página de su solución sobra repetir el nombre de la solución, y el
+    // idioma se lee mejor como etiqueta que dentro del título
+    const idioma = (t) => (/\(español\)/i.test(t) ? "ES" : /\(inglés\)/i.test(t) ? "EN" : null);
+    // sin forzar mayúscula: hay títulos que son un dominio (iability.ai)
+    const corto = (t) => t.replace(/^[^·]+·\s*/, "").replace(/\s*\((español|inglés)\)/i, "").trim();
+    const tarjetas = recursos.map((r) => `<a class="rec-card" href="${esc(r.url_documento)}" ${NUEVA_PESTANA}>
+      <span class="rec-ico">${svg(r.subtipo)}</span>
+      <span class="rec-txt">
+        <span class="rec-tit">${esc(corto(r.titulo))}${idioma(r.titulo) ? ` <span class="rec-idioma">${idioma(r.titulo)}</span>` : ""}${r.sale_al_cliente === "no" ? ` <span class="rec-int">interna</span>` : ""}</span>
+        ${r.nota_de_uso ? `<span class="rec-para">${esc(r.nota_de_uso)}</span>` : ""}
+      </span>
+    </a>`).join("");
+    const avisos = recursos.filter((r) => r.aviso).map((r) => `<p class="footer-note" style="margin-top:var(--space-3)">${esc(r.aviso)}</p>`).join("");
+    body += `<section class="section"><div class="wrap">
+      <p class="eyebrow">Recursos</p>
+      <h2 style="font-size:var(--font-size-xl);margin:var(--space-2) 0 var(--space-4)">Para tener a mano</h2>
+      <div class="rec-grid">${tarjetas}</div>${avisos}
+    </div></section>`;
+  }
 
   // 6 · ¿Falta algo?
   const asunto = encodeURIComponent(`Hipatia · ${pr.nombre} · ${s.nombre}: falta algo`);
@@ -560,7 +697,7 @@ function fichaBody(m) {
   if (esRef) {
     // La referencia encabeza por su citabilidad (con sign-off), no por «con validación».
     meta += fila("Citabilidad", chipCitable(m) + (m.citable === "citable" && m.sign_off ? ` <span class="footer-note">${esc(m.sign_off.quien)} · ${esc(fechaCorta(m.sign_off.fecha))}</span>` : ""));
-    meta += fila("Envío al cliente", `<span class="footer-note">${esc(LEYENDA_CITA)}</span>`);
+    if (m.citable === "citable") meta += fila("Envío al cliente", `<span class="footer-note">${esc(LEYENDA_CITA)}</span>`);
   } else {
     meta += fila("Uso", chipUsoSiempre(m.sale_al_cliente) + ` <span class="footer-note">${esc(m.confidencialidad || "")}</span>`);
   }
@@ -645,7 +782,7 @@ function materialCard(m) {
       <p class="eyebrow">${m.practica === "corporativo" ? esc(eyebrowTipo(m)) : esc(eyebrowTipo(m)) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
       <h3><a href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
       <p>${esc(m.nota_de_uso || "")}</p>
-      <div class="ed-mat-foot"><div class="chips">${m.tipo === "Referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(nombreCompleto(m.dueno))}</span></div><span>${descargasMini(m)}<a class="ver-ficha" href="/materiales/${esc(m.id)}/">Ver ficha →</a></span></div>
+      <div class="ed-mat-foot"><div class="chips">${m.tipo === "Referencia" ? chipCitable(m) : chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}<span class="chip">${esc(nombreCompleto(m.dueno))}</span></div><span class="mat-acciones">${descargasMini(m)}<a class="ver-ficha" href="/materiales/${esc(m.id)}/">Ver →</a></span></div>
     </article>`;
 }
 
@@ -685,7 +822,7 @@ function portadaPage(corp, practicas) {
       </article>`;
   }).join("");
   const oferta = `<section class="section oferta" style="padding:48px 0"><div class="wrap">
-      ${sectionHead("La oferta", "Cinco prácticas. Una forma de elegir por dónde empezar.", "No es un recorrido obligatorio ni un catálogo de silos. Parte de la necesidad y entra por la práctica que puede trabajarla.")}
+      ${sectionHead("La oferta", "Un método, cinco prácticas. Elige por dónde empezar.", "No es un recorrido obligatorio ni un catálogo de silos. Parte de la necesidad y entra por la práctica que puede trabajarla.")}
       <div class="oferta-md" style="margin-top:var(--space-5)">${radios}<div class="of-list">${filas}</div><div class="of-panels">${paneles}</div></div>
     </div></section>`;
   // separador entre «La oferta» y «Materiales» (mosaico de píxeles de la marca)
@@ -722,7 +859,7 @@ function portadaPage(corp, practicas) {
       <p style="margin-top:var(--space-3)"><a class="text-link" href="/practicas/${esc(pr.id)}/">Ver la práctica →</a></p>
     </article>`;
     const enlace = m.url_documento
-      ? `<a class="text-link" href="${esc(m.url_documento)}">Abrir en pantalla ↗</a>${descargasMini(m)}`
+      ? `<a class="text-link" href="${esc(m.url_documento)}" ${abrirEn(m.url_documento)}>Abrir en pantalla ↗</a>${descargasMini(m)}`
       : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`;
     return `<article class="${cls}">
       <p class="eyebrow">${m.practica === "corporativo" ? esc(eyebrowTipo(m)) : esc(eyebrowTipo(m)) + " · " + esc(NOMBRE_PRACTICA[m.practica] || m.practica)}</p>
@@ -777,6 +914,19 @@ function entelgyPage(corp, practicas) {
     return `<article class="card card-num" data-num="${esc(p.paso)}"><h4 style="font-size:var(--font-size-lg);margin:var(--space-1) 0 var(--space-2)">${esc(p.titulo)}</h4><p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)">${esc(main)}</p>${evita ? `<p class="evita">${esc(evita)}</p>` : ""}</article>`;
   }).join("");
 
+  // El método como ciclo (rev21d): banda que lo cuenta como servicio continuo, no proyecto que acaba.
+  const mp = (r.metodo && r.metodo.pasos) || [];
+  const cicloPasos = mp.map((p) => `<li class="ciclo-step"><span class="ciclo-h"><b class="ciclo-num">${esc(p.paso)}</b> ${esc(p.titulo)}</span><span class="ciclo-sintesis">${esc(p.sintesis || "")}</span><span class="ciclo-node" aria-hidden="true"></span></li>`).join("");
+  const cicloBand = (r.metodo && r.metodo.ciclico && mp.length) ? `<div class="ciclo">
+    <div class="ciclo-head">
+      <span class="ciclo-eyebrow">Método Entelgy</span>
+      <span class="ciclo-linea">${esc(r.metodo.ciclo_linea || "")}</span>
+      <a class="ciclo-detalle" href="#metodo-detalle">Ver detalle →</a>
+    </div>
+    <ol class="ciclo-track">${cicloPasos}</ol>
+    <div class="ciclo-loop"><span class="ciclo-loop-label">↻ Mejora continua</span></div>
+  </div>` : "";
+
   // Dónde entramos (banda navy · cinco prácticas)
   const de = r.donde_entramos || {};
   const cols = (practicas || []).map((pr) => {
@@ -812,25 +962,32 @@ function entelgyPage(corp, practicas) {
     <p class="eyebrow">${esc(eyebrowTipo(m))}</p>
     <h3 style="font-size:28px;margin:10px 0 8px"><a style="text-decoration:none;color:#fff" href="/materiales/${esc(m.id)}/">${esc(m.titulo)}</a></h3>
     <p style="max-width:44ch">${esc(m.nota_de_uso || "")}</p>
-    <div class="ed-mat-foot"><div class="chips">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}</div>${m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}">Abrir en pantalla ↗</a>${descargasMini(m)}` : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`}</div>
+    <div class="ed-mat-foot"><div class="chips">${chipUso(m.sale_al_cliente)}${chipVigencia(m.estado, m.fecha_revision)}</div>${m.url_documento ? `<a class="text-link" href="${esc(m.url_documento)}" ${abrirEn(m.url_documento)}>Abrir en pantalla ↗</a>${descargasMini(m)}` : `<a class="text-link" href="/materiales/${esc(m.id)}/">Ver la ficha →</a>`}</div>
   </article>`;
   const matCards = (mat.ids || []).map((id, i) => MAT[id] ? (i === 0 ? deckFeat(MAT[id]) : materialCard(MAT[id])) : "").join("");
-  const material = (mat.ids && mat.ids.length) ? `<section class="section">
+  const material = (mat.ids && mat.ids.length) ? `<section class="section" id="material">
     <p class="eyebrow">${esc(mat.eyebrow || "")}</p>
     <div class="grid grid-2" style="margin-top:var(--space-3)">${matCards}</div>
   </section>` : "";
 
+  // Presentación corporativa desde el hero (rev21b): un único CTA visible que baja a la pieza
+  // (la apertura directa del deck sigue en la tarjeta de la sección de material). Naranja de marca:
+  // es el único CTA de la pantalla /entelgy/.
+  const deck0 = (mat.ids && mat.ids.length && MAT[mat.ids[0]]) ? MAT[mat.ids[0]] : null;
+  const heroDeck = deck0 ? `<p style="margin-top:var(--space-4);text-align:right"><a class="btn btn-cta" href="#material">Ver la presentación corporativa ↓</a></p>` : "";
   const body = `<section class="section hero"><div class="wrap">
     <p class="eyebrow">Cómo presentar Entelgy</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0">Entelgy, en una conversación</h1>
     <p class="lede">${esc(r.sesenta_segundos || corp.entelgy_una_frase)}</p>
+    ${heroDeck}
   </div></section>
   <div class="wrap">
     ${porQue}
     <section class="section">${sectionHead("Cuatro entradas al mismo relato", "Empieza por la pregunta que tienes delante.", "No son cuatro respuestas desconectadas ni un guion: son cuatro formas naturales de entrar en la misma propuesta.")}
       <div class="grid grid-2" style="margin-top:var(--space-3)">${entradas}</div></section>
     <section class="section">${sectionHead("El método", "Cada fase evita una forma conocida de perder el impacto.", (r.metodo && r.metodo.nota || "") + " Transversal: " + (r.metodo && r.metodo.transversal || []).join(" · ") + ".")}
-      <div class="grid grid-5" style="margin-top:var(--space-4)">${metodo}</div></section>
+      ${cicloBand}
+      <div class="grid grid-5" id="metodo-detalle" style="margin-top:var(--space-4)">${metodo}</div></section>
   </div>
   ${donde}
   <div class="wrap">
@@ -887,16 +1044,81 @@ function contactosPage(practicas, personas) {
   const body = `<section class="section"><div class="wrap">
     <p class="eyebrow">Directorio</p>
     <h1 style="font-size:var(--font-size-4xl);margin:var(--space-2) 0 var(--space-2)">A quién llamo</h1>
-    <p class="lede">Por solución: quien la vende y quien la sostiene. Donde falta el técnico, se dice quién lo está pidiendo.</p>
+    <p class="lede">Arriba, quien cubre la práctica entera. Abajo, solo lo que cambia de una solución a otra. Donde falta alguien, se dice quién lo está pidiendo.</p>
     <div style="margin-top:var(--space-5);display:grid;gap:var(--space-5)">${tablas}</div>
   </div></section>
   <section class="section"><div class="wrap">
     <p class="eyebrow">Las personas</p>
     <h2 style="font-size:var(--font-size-2xl);margin:var(--space-2) 0 var(--space-4)">${personas.length} personas, todo lo que llevan</h2>
     <div class="grid grid-3">${tarjetas}</div>
-    <p class="footer-note" style="margin-top:var(--space-4)">Los canales de Teams se enlazan cuando estén validados. Los datos que faltan (teléfono, título y técnico de cada solución) se están pidiendo a cada responsable.</p>
+    <p class="footer-note" style="margin-top:var(--space-4)">Los canales de Teams se enlazan cuando estén validados. Los datos que faltan (teléfono, título y apoyo en preventa de cada solución) se están pidiendo a cada responsable.</p>
   </div></section>`;
-  return page({ title: "Contactos · Hipatia", desc: "A quién llamar por solución: comercial y técnico.", active: "contactos", body });
+  return page({ title: "Contactos · Hipatia", desc: "A quién llamar: quien responde de cada oferta y quien entra contigo en preventa.", active: "contactos", body });
+}
+
+// =====================================================================
+// Índice de «Pregunta a Hipatia» (revisión 18 · BJ.1)
+// JSON en una línea servido desde public/. No lleva notas de uso, kit,
+// keynotes, cifras ni precios: la respuesta enlaza a la ficha, no la repite.
+// =====================================================================
+// Dueño (nombre de pila en materiales) → id de persona. «Corporativo» → null.
+const DUENO_A_ID = Object.fromEntries(PERSONAS.map((p) => [p.nombre.split(" ")[0].toLowerCase(), p.id]));
+function duenoId(dueno) {
+  if (!dueno) return null;
+  const first = String(dueno).split("/")[0].trim().toLowerCase();
+  if (!first || first === "corporativo") return null;
+  return DUENO_A_ID[first] || null;
+}
+// Citabilidad de una referencia como la pinta la biblioteca (chipCitable), en texto.
+function citaLabel(m) {
+  if (m.citable === "citable" && m.sign_off) return "citable · sign-off " + fechaCorta(m.sign_off.fecha);
+  return "confirmar por cuenta";
+}
+function escribeIndicePregunta(practicas, personas, corp) {
+  const piezas = materiales.map((m) => {
+    const fila = {
+      id: m.id, titulo: m.titulo, tipo: m.tipo, subtipo: m.subtipo || null,
+      practica: m.practica || null, solucion: m.solucion || null,
+      sector: m.sector || [], estado: m.estado, sale_al_cliente: m.sale_al_cliente,
+      momento: m.momento_comercial || null, abre: !!m.url_documento,
+      dueno: duenoId(m.dueno), url: `/materiales/${m.id}/`,
+    };
+    if (m.tipo === "Referencia") fila.citable = citaLabel(m);
+    return fila;
+  });
+  const entradas = [];
+  // Entrada corporativa (rev19 · BN.2): «qué es entelgy» y «deck corporativo» tienen asunto.
+  if (corp && corp.entelgy_una_frase) {
+    entradas.push({
+      id: "corporativo", clase: "practica", nombre: "Entelgy · corporativo", practica: "corporativo",
+      linea: corp.entelgy_una_frase, comercial: null, tecnico: null, url: "/entelgy/",
+    });
+  }
+  practicas.forEach((pr) => {
+    entradas.push({
+      id: pr.id, clase: "practica", nombre: pr.nombre, practica: pr.id,
+      linea: pr.propuesta_portada || pr.propuesta || null,
+      comercial: pr.responsable_id || null, tecnico: null,
+      url: `/practicas/${pr.id}/`,
+    });
+    (pr.soluciones || []).forEach((s) => {
+      entradas.push({
+        id: s.id, clase: "solucion", nombre: s.nombre, practica: pr.id,
+        linea: s.una_linea || null,
+        comercial: (s.contactos && s.contactos.responsable) || null,
+        tecnico: (s.contactos && s.contactos.apoyo) || null,
+        url: `/practicas/${pr.id}/${s.id}/`,
+      });
+    });
+  });
+  const pers = personas.map((p) => ({
+    id: p.id, nombre: p.nombre, correo: p.correo || null, titulo: p.titulo || null,
+    lleva: rolesDe(p.id, practicas),
+  }));
+  const indice = { piezas, entradas, personas: pers };
+  fs.writeFileSync(path.join(PUB, "indice-pregunta.json"), JSON.stringify(indice), "utf8");
+  const kb = Math.round(Buffer.byteLength(JSON.stringify(indice)) / 1024);
+  console.log(`Índice Pregunta a Hipatia: ${piezas.length} piezas · ${entradas.length} entradas · ${pers.length} personas · ${kb} KB`);
 }
 
 // =====================================================================
@@ -923,6 +1145,7 @@ function build() {
   write("materiales", materialesIndex("cliente"));
   write(path.join("materiales", "todo"), materialesIndex("todo"));
   materiales.forEach((m) => write(path.join("materiales", m.id), materialFicha(m)));
+  escribeIndicePregunta(practicas, personas, corp);
   console.log(`Generadas: / · /entelgy · /punto-de-partida · /lo-que-viene · /contactos · /practicas + ${practicas.length} prácticas + ${nSol} soluciones · /materiales + ${materiales.length} fichas`);
 }
 build();

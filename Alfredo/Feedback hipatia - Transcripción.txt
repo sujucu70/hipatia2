@@ -1,0 +1,521 @@
+Feedback hipatia - Transcripción
+00:02:17
+
+Susana Juan: Hola, Alfredo,
+Alfredo Entelgy: Hola,
+Susana Juan: ¿qué tal?
+Alfredo Entelgy: ¿qué tal? ¿Cómo estás, Susana?
+Susana Juan: Muy bien.
+Alfredo Entelgy: ¿Cuánto tiempo?
+Susana Juan: Tanto tiempo sin vernos. Es verdad, un montón. Voy a coger papel y bly. ¿Qué tal las vacaciones? Bien, ¿no?
+Alfredo Entelgy: Bien. Bueno, ya yo me he cogido vacaciones en julio, trabajado agosto y ahora en octubre me cojo un par de semanitas porque
+Susana Juan: Ah, qué guay.
+Alfredo Entelgy: tengo de de crucero porque hacemos bodas de
+Susana Juan: Ah, es verdad que me lo contaste el día que comimos.
+Alfredo Entelgy: plata y por eso este año tengo las vacaciones
+Susana Juan: Es verdad, ¿verdad?
+Alfredo Entelgy: raras.
+Susana Juan: Pues qué bien, qué alegría que todavía te queres. Yo me he ido un mes de vacaciones que hacía años, pero muchos años que no estaba un mes fuera y
+Alfredo Entelgy: Yo nunca eh un mes desde que era niño, yo no la mi récord hace 3 años fueron tres semanas.
+Susana Juan: sí, sí. Pues ya te digo que yo he gastado todos los cartuchos, o sea, que Pero bueno, aquí estoy aterrizando.
+
+
+00:03:21
+
+Susana Juan: Que qué tal has visto? Ah, por cierto,
+Alfredo Entelgy: He visto y bueno, lo primero cuando estuve mirándolo en verano, ah, esto le has pegado un cambio fuerte, ¿no?
+Susana Juan: sí, es que bueno, entre medias ha surgido, me imagino que estás al tanto bastante más que yo, ha surgido la reunión esta famosa del día 10 de del jueves.
+Alfredo Entelgy: Sí, sí. El jueves
+Susana Juan: Entonces, bueno, eh Miguel Ángel quería sí o sí tener una versión terminada, ¿no?, del nuevo IPATIA para enseñar, eh, con lo cual he tenido que meterle un poco de caña y al final pues un poco solo tenía desarrollada la parte de modernización de aplicaciones. Entonces, eh ha habido también que elegir que qué quitábamos, que dejábamos porque no daba tiempo a meterlo todo. Entonces, la idea era hacer una versión acabada que enseñar el jueves e que pudierais antes revisar vosotros y revisar también Roberto desde el lado más comercial a ver a él que le parecía, porque creo que va a ser él quien lo presente. Eh, y entonces había que correr, con lo cual pues bueno, hice esa versión eh con con otro principio, además, que para mí el ángel era fundamental y era la simplicidad, o sea, no quería apagullar al comercial.
+
+
+00:04:37
+
+Susana Juan: con tantas cosas el el lo que había desarrollado,
+Alfredo Entelgy: Si, eso te lo comenté en en el CP porque me parecía
+Susana Juan: pues tú también lo dijiste en su día.
+Alfredo Entelgy: un una, o sea, el la estructura, el diseño y todo eso me parecía funcionalmente fantástico, pero como primera aproximación te comenté
+Susana Juan: Sí.
+Alfredo Entelgy: que desde el punto de vista de adopción eh la probabilidad de éxito no era alta porque era muy complejo, o sea, el salto
+Susana Juan: Claro, por eso decidimos simplificarlo muchísimo, eh, primero porque no daba tiempo a complicarlo más y segundo porque también lo que dices tú,
+Alfredo Entelgy: No, pero pero Susan no te quedes con eso. O sea, es porque es mejor que sea más sencillo.
+Susana Juan: ya, pero que aparte eso, aparte yo creo que como primer otra cosa es que luego con el tiempo tú le vayas metiendo más funcionalidad a lo que
+Alfredo Entelgy: Lo lo iteres, evolucione y tal,
+Susana Juan: sea. Eso
+Alfredo Entelgy: pero cuando consigas que que las personas lo utilicen, se sientan cómodas, entonces un poquito más. Entonces, un poquito más.
+Susana Juan: es ahora mismo. Eh, yo de ayer a hoy, bueno, de ayer a hoy no, durante el fin de semana hemos hecho una versión nueva.
+
+
+00:05:44
+
+Susana Juan: La que tú viste era Ipatia V3, yo creo. Ahora si pones en el navegador Ipatia-v.es,
+Alfredo Entelgy: Vale.
+Susana Juan: es lo lo hay otra que cambia con primero con cosas que he corregí. ido de del feedback que me habéis ido dando vosotros, pues Carla me dijo,"Corrige esto, Carmen me dijo tal, eh, y luego sobre todo le he metido, por darle un toque un poquito más innovador, le he metido ahí el pregunta y pata, que es como una especie de argentillo que no tiene conexión a ningún LLM." El pregunta y patia de abajo es el portal es el mismo que tú has visto, yo creo, el otro día, pero tiene un pregunta y patria donde si el comercial le puede preguntar lo que quiera, ¿vale? y lo que hace es buscar dentro de ese de la información que tiene él, ¿vale? No busca fuera, pero ahí puede encontrar la última versión de la presión corporativa, preguntarle lo que quiera,
+Alfredo Entelgy: Vale,
+Susana Juan: qué es eh Iil o lo que sea.
+Alfredo Entelgy: pero y y esto en producción, ¿dónde va a estar ubicado?
+Susana Juan: A ver, eso es lo que yo le he dicho porque ahora las, o sea, una vez que esto esté, que se va a presentar, yo creo, tal cual el jueves, ¿vale?
+
+
+00:06:50
+
+Susana Juan: Eh, la idea es, yo creo que es que no me acuerdo, eh, Miguel Ángel ha convocado una reunión la semana que viene en la que está marketing, debe haber alguien de infraestructura que no sé muy bien si es Manu quién es. Y yo creo que está Jorge también. Bueno, no sé si está Jorge o no, pero al final es eh para decidir qué hacemos con esto. ¿Vale? Yo lo que le he propuesto a Miguel Ángel, porque claro, yo el día 30 acabo mi colaboración con vosotros, entonces lo que le he propuesto a Miguel Ángel es de aquí al día 30, aparte de las cosas minoritarias, que tú me digas,"Oye, que esto está mal en mi sitio o que esto ponlo así mejor o que esto lo que sea." Pero aparte de esas mejoras que vosotros me digáis a nivel de contenidos en vuestra parte, eh, mi objetivo es establecer con alguien vuestro interno de infraestructura o de IT o de quien sea, cómo evoluciona esto y a dónde. Yo mi propuesta es, lo que le he dicho a Miguel Ángeles, para mí lo más sencillo es que Entelgy, o sea, coja un dominio para esto y hacerlo igual que está aquí, o sea, en formato web de momento. Luego ya si tiene sentido meterlo en Shapin o no lo que sea.
+
+
+00:08:01
+
+Susana Juan: O sea, yo esto, ¿cómo está montado? Está montado eh con Cloudf, o sea, está en la en la parte de Cloudflare Page, ¿vale? Está ahí alojado con con cero tras, o sea, con autenticación, ¿sabes? Que cada vez que entráis tenéis que meterle vuestras credenciales o lo que sea, que eso lo hace la gente de entg.com. Y mi idea era que esto mismo lo monte Entelgy, pero en un dominio suyo, ¿vale? a priori para no parar, para que siga funcionando tal cual y yo establecer los procesos y las herramientas para que vosotros, y él me dijo también que una tal amparo, que no sé muy bien quién es, podáis eh evolucionar esto con contenido nuevo, con lo que sea, ¿no? Entonces,
+Alfredo Entelgy: Bueno,
+Susana Juan: mi idea, mi propuesta es esa, pero igual cuando me siento con la gente de infraestructura me dicen, pues mira, no, esto tiene que estar en tal, ¿vale? Pues yo yo, o sea, yo lo que hago es dejaros todo el código, todo lo que sea para que se monte donde sea, donde decida la gente que tiene que con las con las características que tiene que estar, pero vamos que ahora mismo esto es perfectamente migrable a cualquier otro dominio y cualquier otra plataforma de Cloudflare o de lo que use internamente que no sé qué usa para publicar sus sus microsites o lo que sea de moverlo a donde sea.
+
+
+00:09:19
+
+Alfredo Entelgy: Vale. Bueno, eso que lo vea quien lo tiene que ver porque aquí siempre va a haber el handicap de del de la certificación esta que tenemos que cumplir de ISO 27000 y el Esquema Nacional de seguridad y su madre, que es lo que complica muchísimo todo, o sea, de alojamientos, permisos, autenticación, información, porque bueno, si fuera información pública da un poco lo mismo, pero información interna eh ya que está etiquetada como interna. j****, pues ya empezamos con los líos. Sí. y y eh eso que te lo digan ellos, yo que me quiero,
+Susana Juan: Claro, por eso te digo que ahí está un poco lo que hay abierto es eso.
+Alfredo Entelgy: pero a mí lo que me da eh pena es que en ah esto para mantenerlo vivo eh tiene que estar en en un proyecto de IA y si lo que subes a un dominio, como dices tú, es un es un site estático, la mantenibilidad de esto baja en picado y es el el Pero bueno, que lo vean ellos. Pero total
+Susana Juan: Eso es que lo vean ellos. Ya te digo, la idea es un poco ahí. Yo lo que sí quiero dejar muy bien establecido y documentado es pues tú que o o tu equipo sobre todo que qué hay que hacer cuando queréis subir un documento nuevo, cuando queréis modificar lo que hay escrito, cuando lo que sea,
+
+
+00:10:40
+
+Alfredo Entelgy: es. Vale,
+Susana Juan: para que por lo menos vosotros lo que son los solu Manager podáis mantener esto vivo a nivel de contenidos, al menos.
+Alfredo Entelgy: vale. Vamos, si quieres a hacer la revisión de las cosas que pedías aquí
+Susana Juan: Sí, sí, sí, sí.
+Alfredo Entelgy: en en la presentación esta
+Susana Juan: Voy a recuperar tu mail.
+Alfredo Entelgy: general. Eh, e no te lo dije, tenemos el partner detrás de de SmartH y de y de eh Reservia. Es el partner tecnológico es TTS. Entonces, te voy a te voy a dejar el dominio, eh, porque estos tienen ahí su logo oficial, identidad de marca y todo eso. Eh, te lo tiro en un chat aquí. A ver,
+Susana Juan: Mhm.
+Alfredo Entelgy: chat, chat. ¿Dónde está el chat?
+Susana Juan: Abajo a la derecha lo tenéis.
+Alfredo Entelgy: Vale, esto es una empresa alemana. Ahí está el logo y el enlace.
+Susana Juan: Vale.
+Alfredo Entelgy: Está eh hay eh perdóname, hija mía. Eh, en esta versión es que en la en la de verano no lo vi, pero aquí sí está.
+Susana Juan: Ah, vale.
+
+
+00:12:09
+
+Alfredo Entelgy: Vale, vale, está está. Perdóname.
+Susana Juan: Mm.
+Alfredo Entelgy: Vale. Ah, vale. Y luego de aquí, eh, esto es lo que ya habíamos hablado, ya habíamos visto, ¿verdad?
+Susana Juan: Mhm.
+Alfredo Entelgy: la parte de gestión del cambio. Vale, esto es un tema de orden. E ah, no entiendo muy bien el cómo la lógica del del orden la mente está de de ingeniero simplista, pero si estás dando un orden en en un ciclo de vida, ¿por qué el orden en por dóe empezamos es otro?
+Susana Juan: A ver, porque en principio son cosas distintas, ¿vale? Al final lo que intentamos plasmar aquí es que el G siempre aplica el mismo método, ¿vale? El método es lo de arriba y eso es lo que un poco es una parte de la una de las de los diferenciadores a nivel de compañía es yo siempre aplico el mismo método el con el objetivo de cubrir las cuatro patas estas que siempre menciona Miguel Ángel, procesos, personas y demás. Con este método yo consigo cubrir todo y de alguna forma asegurar el impacto del proceso del proyecto tecnológico que implemento. Entonces, por un lado está el método, ¿vale?, que es independiente, pero el por dónde empezamos me refiero a ese es el método que voy a aplicar sí o sí, pero el qué práctica voy a desarrollar o voy a implementar en tu empresa depende un poco de la necesidad que tú tengas, ¿vale?
+
+
+00:14:00
+
+Susana Juan: Entonces, las cinco prácticas o lo que yo puedo hacer por ti van reflejadas en en vuestras
+Alfredo Entelgy: Ok.
+Susana Juan: áreas, ¿vale? En inteligencia. Eso es lo que yo puedo hacer por ti. Haga lo que haga, siempre voy a aplicar el método de arriba, tanto si te hago inteligencia de procesos como si te hago modernización de aplicaciones, como si te hago lo que sea, ¿vale? El por dónde empezamos se refiere no dentro del método, sino en qué área o en qué preocupación tuya eh como cliente e aplicamos este método. ¿Sabes lo que no sé si me explico,
+Alfredo Entelgy: Sí.
+Susana Juan: son cosas independientes,
+Alfredo Entelgy: Sí.
+Susana Juan: ¿vale? Una es, te pregunto a ti como cliente por dónde empezamos en el sentido de qué te pica más a ti, legacy que tengas en software, procesos que tienes descontrolados,
+Alfredo Entelgy: Sí, sí,
+Susana Juan: gestión de cambio.
+Alfredo Entelgy: sí, te entiendo. El el problema es que psicológicamente ver 01 flecha, 02 flecha, 03 flecha es un proceso en en mi cabeza.
+Susana Juan: Vale.
+Alfredo Entelgy: Ah.
+Susana Juan: Ahí es pues
+Alfredo Entelgy: Vale. Y ah, entiendo lo que me estás diciendo, pero veo otra cosa.
+
+
+00:15:05
+
+Alfredo Entelgy: O sea, oigo una cosa y veo otra. Yo lo que veo es que eso es un proceso. Primero hago inteligencia de procesos, flecha, luego 02, hago el ciclo de software, flecha, luego hago 03.
+Susana Juan: vale.
+Alfredo Entelgy: No,
+Susana Juan: Sí, ahí puede es verdad que puede que las flechas o el uno, el dos, el tres eh te lleven a a ver se en un proceso. todo el sentido.
+Alfredo Entelgy: eso de eh y en la misma diapositiva donde explicas el método con cinco
+Susana Juan: Ya
+Alfredo Entelgy: pasos y sus flechas correspondientes es psicológicamente confuso, pero bueno.
+Susana Juan: to toda la razón.
+Alfredo Entelgy: Vale, vale. Aquí no.
+Susana Juan: Ese es el método un poco más en profundidad. Entonces, el funcionamiento de la presentación está pensada y esto fue idea de Roberto en que tú en esa cuando yo te pregunto por dónde empezamos, tú estás hablando por el cliente, entonces él te dice por gestión del cambio, ¿vale? Entonces él pincha en la cajita de gestión del cambio y le lleva directamente hasta slide. Eso es como está pensando un poco el el hilo de la de la presentación corporativa. ¿Sabes lo que te digo?
+
+
+00:16:16
+
+Susana Juan: Yo presento la compañía,
+Alfredo Entelgy: Vale, las la
+Susana Juan: presento lo que hacemos y luego voy directamente a a la práctica que tú me has dicho en el por dónde empezamos que quieres empezar.
+Alfredo Entelgy: presentación. Claro. Eh, tú tienes aquí en la presentación corporativa eh esto. Eh, pero aquí el la Sí.
+Susana Juan: Es la foto del apellido del comercial que vaya hacer esta.
+Alfredo Entelgy: Lo que te quiero decir es eh que en principio eh estos van a tener la función descargar en en PPT o algo así.
+Susana Juan: Sí, todos. O sea, eso es algo que lo tengo apuntado, eh, porque me falta eh todos los materiales tienen el verlo, o sea, el formato HTML que te como este que te permite verlo eh directamente en pantalla y luego lo puedes descargar en PPT si es una presentación o en doc si es un documento o lo que sea y en PDF también,
+Alfredo Entelgy: Vale,
+Susana Juan: pero sí
+Alfredo Entelgy: aquí a eh de alguna manera por por cuando estés en porque eso me pasaba a mí también en ah la función esta cerrar o o sea de alguna manera cómo escapas, ¿sabes? ¿Cómo vuelves otra vez a IPA?
+Susana Juan: Eh,
+Alfredo Entelgy: Porque escape no funciona.
+Susana Juan: escape no funciona.
+
+
+00:17:41
+
+Susana Juan: A ver, déjame.
+Alfredo Entelgy: Y aquí solo tiene reset y avanza retroceder y de vez en cuando sale un botón cerrar, pero no continuar cerrar. En algunas hay continuar y cerrar pero no no vuelves a Ipatia.
+Susana Juan: Vale, o sea, si si le das botón derecho si tienes volver, pero si habría que meter no sé por qué le escape no funciona efectivamente. O sea, si le das botón derecho ahí te sale el volver, ¿no? Dale el botón derecho.
+Alfredo Entelgy: Sí, estoy combatiendo la la pantalla y, o sea, perdona, la pestaña y yo creo que no ves el el menú, pero en en mi navegador eh no eh tengo atrás efectivamente
+Susana Juan: Eso es.
+Alfredo Entelgy: y y vuelvo. Vale,
+Susana Juan: Vale. Sí,
+Alfredo Entelgy: eso o o se una etiqueta o algo o o un
+Susana Juan: pero habría que no sé. No, no, yo creo que hay que es eso.
+Alfredo Entelgy: botón.
+Susana Juan: Vale, está claro.
+Alfredo Entelgy: Vale, luego ah, entrando ya en la parte de digital change, eh, por cierto, a ver si está aquí. Ah, vale, esto que te lo dije, eh, no sé por qué en la versión otra no se veía.
+
+
+00:18:54
+
+Susana Juan: Sí, eso lo arreglé.
+Alfredo Entelgy: Vale, pues aquí pasa lo mismo, o sea, tengo que ir atrás si quiero volver. Vale, entonces ah eh de de Dex está digital change y faltan las presentaciones de las soluciones, ¿no?
+Susana Juan: Sí, eso es como yo no la esas son vuestras, me imagino. O sea, que decir que no la hice yo, no la tengo en mi repositorio, por eso no las metí.
+Alfredo Entelgy: ¿Y qué hacemos? Se las paso.
+Susana Juan: Claro, pásamelas. Eso es las que quieras que meta aquí que enlace toda la documentación que quieras subir que no esté me la
+Alfredo Entelgy: Tengo eh tengo las tres.
+Susana Juan: pasas,
+Alfredo Entelgy: Tengo tengo un una presentación para cada una.
+Susana Juan: ¿vale? y que si quieres que visualicemos algo más de eh, yo que sé, de fichas de servicio que tengas, que quieras darle visibilidad o lo que sea, tú todo me lo mandas o me lo referencias dentro de donde esté y yo lo cojom
+Alfredo Entelgy: Vale, te mando las presentaciones.
+Susana Juan: y ahí lo subimos todo lo que necesites.
+Alfredo Entelgy: Vale, espera, voy a apuntar aquí y así un momento. Pi pi pi pi.
+
+
+00:20:08
+
+Alfredo Entelgy: Vale. E, pues vamos a entrar ya en lo que yo te mando las presentaciones, que es lo que veía así gordo que faltaba y y ahora me dices, eh, qué te falta. Mira, lo primero tenías aquí en la parte de contactos, que es fácil para mí, ¿vale? En y ability. Eh, mira, en mi este tenías por aquí una presentación de ¿Dónde está? Ah, per bien. Eh, espérate. Din deck aquí. Vale, en la última slide, ¿vale?
+Susana Juan: Mhm.
+Alfredo Entelgy: Ah, Vanessa Vaquero sería para Iability
+Susana Juan: Mhm.
+Alfredo Entelgy: y Dolores Santayana para e Preservia. Ya tienes a Cristina Aparicio en en la oficina de gobernanza,
+Susana Juan: en la oficina.
+Alfredo Entelgy: ¿correcto? Entonces, eh los títulos que utilizamos son ellos son team leaders y y bueno, pues es el a Cristina le vamos a quitar lo de Ayile Transformation Team Leader.
+Susana Juan: Vale.
+Alfredo Entelgy: Vale,
+Susana Juan: Mhm.
+Alfredo Entelgy: ahora necesitas los teléfonos o y los y los perfiles de LinkedIn, por ejemplo, o cómo haces o los mails.
+Susana Juan: Eh,
+
+
+00:22:13
+
+Alfredo Entelgy: M.
+Susana Juan: lo que vosotros queráis. O sea, yo por defecto sí meto, me gustaría meter teléfono y foto, más que nada porque la gente, los comerciales, sobre todo los nuevos, os ubiquen o lo que sea, pero hay gente, por ejemplo, Miguel Ángel me dijo que no quería fotos. Miguel Ángel Villa Cañas, me refiero al de la parte de software, eh, ahí como vosotros veáis, o sea, si queréis que que dar visibilidad el teléfono internamente a los comerciales o no,
+Alfredo Entelgy: Sí,
+Susana Juan: o lo que sea,
+Alfredo Entelgy: sí, sí,
+Susana Juan: ya hago lo que me digáis.
+Alfredo Entelgy: sí. En principio eso yo creo que es importante. Entonces, te voy a pasar por aquí. Ah, a ver, así lo tienes. Te lo tardo un segundo. Vale. Y y aunque ellos son de la práctica y Cristina Vale, Cristina. Aparicio. No lo tiene la firma de correo, pero da igual te lo pego en un segundo. Cristina Aparicio, ¿vale? El fijo ese que aparece es el de la oficina, ¿vale? Que es común para todos.
+
+
+00:24:34
+
+Susana Juan: Vale, sí, solo pongo móvil, eh, vamos, solo pongo uno. en algunos casos del móvil, si no tiene móvil, pues el fijo,
+Alfredo Entelgy: Entonces,
+Susana Juan: pero siempre pongo un teléfono.
+Alfredo Entelgy: eh aquí Cristina sería transformation sin, ¿vale? Lo pego ahí y luego tengo una persona dentro de mi equipo que es Abraham Rojo, que es el el que da su porta de desarrollo de negocio y yo y es transversal.
+Susana Juan: Vale, pues añádelo, o sea, dame los contacto y
+Alfredo Entelgy: Es que es importante que tengan el contacto de Abraham. Vale. Ah, estás poniendo los perfiles de LinkedIn o algo así.
+Susana Juan: no
+Alfredo Entelgy: Vale, pues eh esos son los contactos nuestros y los títulos los tienes, los mail los tienes y el teléfono directo lo tienes.
+Susana Juan: perfecto.
+Alfredo Entelgy: El mío lo tienes, ¿no?
+Susana Juan: El tuyo lo tengo. Sí, sí, el tuyo está puesto ya.
+Alfredo Entelgy: A ver, eh,
+Susana Juan: Mira a ver lo que está puesto por si acaso.
+Alfredo Entelgy: espérate, voy a para atrás, atrás. Ya está. Tin, tin, tin. En contactos, ¿no? Eh, Alfredo Zurdo 696. Eso es.
+
+
+00:25:54
+
+Alfredo Entelgy: Está bien. Vale, está bien. Entonces,
+Susana Juan: Perfecto.
+Alfredo Entelgy: te falta los contactos de Cristina y el título y y meter y hability preservia y y no sé cómo vas a meter a Abraham. Habrá transversales, soporte al negocio.
+Susana Juan: Vale, voy a ver cómo os meto a ti y a Abraham para que no salgas tú tres, o sea,
+Alfredo Entelgy: Abraham no es responsable de un producto,
+Susana Juan: le doy una pensada.
+Alfredo Entelgy: es el es la persona que ayuda a negocio con eh desde digital
+Susana Juan: Ya,
+Alfredo Entelgy: change,
+Susana Juan: por eso digo que a ver cómo lo pongo, o sea, perfiles como el tuyo, como le de qué pasa con todo. Pero bueno, le doy una pensada a ver cómo pintarlo.
+Alfredo Entelgy: ¿vale? Y luego hay una cosa que no eh no sé cómo lo tenías pensado, pero esto conviene explicarlo bien. Ahí has puesto una columna comercial y una columna técnico.
+Susana Juan: Mhm.
+Alfredo Entelgy: ¿Vale? Entonces, eh ah realmente Eh, entiendo que la columna que pone comercial ah eh las personas que que estamos ahí eh somos los responsables de la línea y eh y en la segunda
+Susana Juan: Mhm.
+
+
+00:27:12
+
+Alfredo Entelgy: columna son los responsables de operativos de la oferta. O sea, lo digo eh eh porque, por ejemplo, personas que participan en preventa, oferta, responden eh eh a al comercial eh en mi caso, por ejemplo, van a ser los que están en la parte técnica. O sea, el técnico no es tan técnico y el comercial no es el comercial,
+Susana Juan: Ya la palabra.
+Alfredo Entelgy: pero por eso te digo que no sé si la definición es la mejor la palabra.
+Susana Juan: Sí, sí.
+Alfredo Entelgy: Pues no, no somos comerciales.
+Susana Juan: Vale, pues déjame que luego piense. Como te quiero también pues eso, rediseñar cómo se pinta esto para las figuras transversales y las no transversales y demás, aprovecho y lo le doy una pensada a todo.
+Alfredo Entelgy: Vale. En te iba a decir en en la cuenta de Office 365 tenemos las las fotos, pero te lo Ah,
+Susana Juan: Claro, pero yo no accedo a vuestras cuentas.
+Alfredo Entelgy: vale. Eh, voy a ver cómo te lo hago llegar.
+Susana Juan: Vale,
+Alfredo Entelgy: Eh,
+Susana Juan: eso cuando me mandes las presentaciones,
+Alfredo Entelgy: eh,
+Susana Juan: si quieres mandarme al menos tu foto que quieres que me ponga o la y la de ellos o les dices que me la manden directamente o me las mandas tú como quieras.
+
+
+00:28:27
+
+Alfredo Entelgy: yo te mando una slide de PowerPoint donde salen todas las fotos. ¿Con eso te vale?
+Susana Juan: Por eso me vale. Sí.
+Alfredo Entelgy: Vale. Y luego en mi caso, en el de Abraham y en el de Dolores o en el de eh nosotros sí generamos mucho contenido en LinkedIn y a veces ellos lo utilizan y no. Entonces, lo de meter el perfil, yo creo que está bien. En nuestro caso,
+Susana Juan: Vale, perfecto. Eso no hay ningún problema.
+Alfredo Entelgy: te paso, te paso los perfiles,
+Susana Juan: Sí.
+Alfredo Entelgy: ¿vale? Porque es una herramienta de venta más, ¿sabes? O sea, que tengan ellos una eh sobre la temática que sea de gobierno, de ta ta contenido a mano, aparte de lo que ponga Hipatia, o sea,
+Susana Juan: Mhm.
+Alfredo Entelgy: público y fácil de mover. Vale, pues eh dejo de compartir y me y ya me preguntas tú lo que quieras, porque esto era lo de los contactos y todo era como lo más lo más fácil, lo que tenía mano.
+Susana Juan: Vale, pues a ver que te que recupero el mail porque no me acuerdo, ¿eh?
+Alfredo Entelgy: Ah.
+Susana Juan: Vale, detalles.
+
+
+00:29:44
+
+Susana Juan: E la puerta de entrada siempre, o sea, en las presentaciones y en los materiales siempre hay como un primer paso, ¿vale? En el caso tuyo está puesto el redines, ¿vale? Eh, tanto en la parte de hability como en la presentación de digital chain en general, o sea,
+Alfredo Entelgy: Vale.
+Susana Juan: que
+Alfredo Entelgy: Eh, eso lo vi. Es es por no confundir. Son cosas distintas. Eh, dentro de cuando un cliente compra solo y hability, hacemos una primera etapa eh que se llama eh eh rediness, pero está circunscrita única y exclusivamente a madurez en el tema de adopción de la IA. Eso lo hacemos con una plataforma, eh un formulario y un informe, que es lo que tardas 20 minutos en rellenar y tal, y es por ahí por donde empieza el cliente siempre. Ahora, otra historia es eh cuando hacemos un diagnóstico en en oficina de gobernanza humana, que eso no se hacen 20 minutos, ¿sabes? Eso es un pequeño proyecto eh donde se trabaja eh muy a fondo porque hay que mirar organización, hay que mirar eh eh estructura, hay que mirar el punto de partida y a lo mejor una de las cosas que miramos es el redes de viability. Vale.
+
+
+00:31:05
+
+Alfredo Entelgy: y luego en digital change en general, sinceramente es raro que nos pidan directamente un diagnóstico últimamente.
+Susana Juan: Vale, pues en en general si te parece no hablamos de puerta de entrar como tal, lo viamos en Iability metemos el Reines en en OTG, o sea, en la parte de oficina de gobernanza metemos diagnóstico de entrada, ¿vale?
+Alfredo Entelgy: Exacto.
+Susana Juan: de cuatro de cuatro o sean suele ser,
+Alfredo Entelgy: Eso está está en la presentación y estaba en la ficha.
+Susana Juan: ¿no?
+Alfredo Entelgy: Efectivamente,
+Susana Juan: Vale.
+Alfredo Entelgy: que es es un poco es como el ahí lo que pensamos es en un servicio que se pueda contratar dentro del marco de un menor para la administración pública, o sea, por debajo de 15, que no me acuerdo si estaba tasado en 14 o una cosa así. y eh y ahí hacemos el diagnóstico, eh de hacemos el primer borrador del de la política del uso aceptable, el diseño de tu plan de alfabetización, el Bueno, pues hay un un
+Susana Juan: Vale, pues lo que lo que o sea, pásame las presentaciones y lo saco de ahí porque en Preservia lo que hacéis también es un redino.
+Alfredo Entelgy: Vale, en Preservia realmente no hacemos un redininess, sino que hacemos, bueno, no rediness eh lo llamamos porque usualmente se llama llama eh si estás preparado y y ese redinés es eh un un diagnóstico que toca diferentes variables, la parte de es como lo nuestro de cultura, procesos, no sé qué, no sé, entonces toca todo, ¿no?
+
+
+00:32:36
+
+Alfredo Entelgy: En Prerbia lo que lo que hacemos es un diagnóstico inicial. En la presentación lo vas a ver, donde lo que rascamos es un tema muy concreto y es eh cuál es el conocimiento relevante para el cliente, el conocimiento eh estratégico, ¿sabes? El que impacta la cuenta de resultados.
+Susana Juan: Vale.
+Alfredo Entelgy: Porque el conocimiento de una organización, tú imagínate lo que saben de nosotros en Entelgy. Ah eh nosotros podemos tener hm montañas de conocimiento, ¿vale? De un montón de cosas, pero de esas montañas de conocimiento solo hay un subconjunto pequeño, hay un hay un hay un puñado que es el que es absoluta y totalmente valioso y es el que hay que preservar. Entonces, eh para poder averiguarlo, eh es una de las primeras acciones que que hacemos. tenemos una especie de focus group con los con los miners en el equipo directivo para rascar eso. O sea, que normalmente todos estos proyectos suelen empezar por ahí, pero con focos distintos y ability es un no es un focus, sino que realmente es un formulario donde eh sacamos cuál es el nivel de madurez inicial de de eh uno de cuatro,
+Susana Juan: Mhm.
+Alfredo Entelgy: ¿no? Eh por persona, por departamento, organización y media de todo, ¿no?
+
+
+00:33:50
+
+Alfredo Entelgy: Con con un informe de diagnóstico. el tema de de oficina de gobernanza, hacemos un en ese servicio de entrada realmente es como una especie de pequeña auditoría para hacer un chequeo de cómo estás como como organización desde el punto de vista de gobernanza. Buscamos los gaps porque es eh luego lo que la oficina tiene que cubrir. Mira, no tienes comité de gobernanza, no tienes plan de alfabetización, no tienes política de uso aceptable, no tienes lo que fuera, no sacamos eh las vergüenzas un poco y de y de ahí establecemos el el plan de acción que la oficina te va a proponer en el proyecto de arranque y y hability oficinas de contra los tres y es y
+Susana Juan: Vale, sí, de todas formas de la presentación ya sea como detalle, pero una duda que yo ahí me lo he planteado en varios sitios eh Desde tu punto de vista y con la experiencia que tú tienes, ¿tiene sentido publicar precios de estas puertas de entrada en general, eh, tanto de tus soluciones como el resto de cara al no? O sea, para que el comercial tenga una idea inicial.
+Alfredo Entelgy: de los servicios gordos, ¿no? De los puntos de entrada. Sí. Y te y te explico por qué. Ah, en las conversaciones con los clientes y me da igual que sea el sector público o privado, cuando planteas temas de de este de este estilo, eh eh la pregunta sale en la primera reunión, pero ¿de qué estamos hablando?
+
+
+00:35:23
+
+Alfredo Entelgy: Pero esto, ¿cuánto me va a cuesta? ¿Esto lo puedo pagar? esto tal, porque no voy a perder el tiempo si esto es estratosférico y el y el el poder responder con con algo que es estándar, que es que es un precio cerrado, que es un que es primero h transparente, segundo asequible, eh porque bueno, asequible bajo mi punto de vista, ¿vale? A lo mejor el cliente piensa que no es asequible, pero si el cliente piensa que no es asequible, entonces no mi cliente y y lo descarto. Ah. eh eh facilita muchísimo la conversación y y adem Además, eh psicológicamente, vuelvo a utilizar la palabra psicológicamente, te da la sensación de que de que esto no está improvisado, ¿sabes? Que que está atasado, que está empaquetado, que que lo haces varias veces.
+Susana Juan: Te lo has hecho antes que no le estás
+Alfredo Entelgy: donde yo no daría el precio es en los servicios grandes,
+Susana Juan: Vale.
+Alfredo Entelgy: pero en los en los paquetes de entrada siempre damos el precio.
+Susana Juan: Mm. Vale, perfecto. A ver que que lo siguiente que tengo aquí apuntado yo es de la parte de OGH. Eh, vale, eso es lo que digo, lo saco de la Eso olvídate, ¿vale?
+
+
+00:36:38
+
+Alfredo Entelgy: Vale,
+Susana Juan: Porque ahí no tenía un poco plazo de tiempos y demás, pero es lo que decíamos antes, lo saco de la presentación,
+Alfredo Entelgy: en la presentación pone el lo que dura el proyecto de y el recurrente.
+Susana Juan: lo que dura un precio aproximado también o no.
+Alfredo Entelgy: Lo otro es un recurrente, es un mensual, es una oficina.
+Susana Juan: Vale. Okay. Eh, de en cuanto a referencias, ¿vale? Por un lado tenemos Enelgy internamente, eso es público, eh, Mafre, ¿vale? En la parte de preservia, ¿no?
+Alfredo Entelgy: Correcto.
+Susana Juan: Pero no tenemos cifras concretas, ¿o sí?
+Alfredo Entelgy: Te las puedo pasar.
+Susana Juan: Vale, pues ahí si me las puedes pasar. Perfecto. Admiral, vale, tengo el nombre,
+Alfredo Entelgy: Porque mira,
+Susana Juan: pero no sé si es pública.
+Alfredo Entelgy: eh, yo te digo lo que tengo público. Un segundo.
+Susana Juan: Pero yo aquí tengo Admiral,
+Alfredo Entelgy: Aquí tienes.
+Susana Juan: como que falta autorización. Lo tengo apuntado. Bahía de Vizcaya, eh, de momento vacía. Entonces, si me pasas las que tengas públicas, las metemos también, porque yo creo que la parte de referencias también es clave, aparte de los materiales.
+
+
+00:37:40
+
+Alfredo Entelgy: Vale. Eh, te pasaré, por ejemplo, esta es la la de Mafre. Admira. Paso aquí también. Eh, estas son públicas y tenemos el okay de porque si no no estía publicado.
+Susana Juan: Mm.
+Alfredo Entelgy: La que no tengo es la de Bahía de Vizcaya.
+Susana Juan: Que no tiene, o sea, que no es pública.
+Alfredo Entelgy: Eh, no,
+Susana Juan: ¿Te refieres?
+Alfredo Entelgy: que no. Voy a preguntarle a Vane porque no sé si tengo la tenemos la autorización. Yo creo que sí, la mane eh porque eh si no tenemos bahía de Bizcalle Bizcalla electricidad, eh la más vistosa que tengo ahora mismo de debility y que el cliente ha aceptado a hacer un caso público es el gobierno de Asturias y además estaba alvin en la plataforma, o sea, el presidente y tal, o sea, es como muy está muy Yeah. Y a y y esa te la paso.
+Susana Juan: Vale, okay. Apuntado. Eh, más cosas. El precio del piloto Explorer 5000.
+Alfredo Entelgy: 5000
+Susana Juan: Vale, ponía 14,900 en algún sitio.
+
+
+00:39:30
+
+Alfredo Entelgy: eh per ah bueno, perdona Eh, ese es el Explorer de Ability.
+Susana Juan: Vale,
+Alfredo Entelgy: Ah, que el otro eh quitamos el nombre de Explorer. Lo tienes en la presentación que te voy a pasar,
+Susana Juan: vale, perfecto. Tam.
+Alfredo Entelgy: ¿vale? Porque eh aquí tenemos, mira, te lo voy a enseñar porque eh una de las cosas que nos obsesiona un poco es el tema de darle seguridad a la gente esta de los precios, ¿no? Entonces eh eh a los comerciales les damos acceso a una calculadora y entonces aquí están los paquetes. Hay un Fremium que es para que lo prueben, hay un Explorer que es el piloto inicial que son 5000, el Growth y el Corporate, ¿vale? Y ya este no lo hacemos público, esto ya en función del número de personas que hay, que quieres que incluya, etcétera, etcétera, se tarifica de una manera o de otra y luego eh varía en función del país, ¿vale? Porque en en Colombia, en en Argentina, en Brasil, en Chile y en Perú, aparte de las monedas, lo que hacemos es aplicar un factor corrector por la por el poder adquisitivo.
+Susana Juan: Mhm.
+Alfredo Entelgy: O sea, el precio de España en Colombia es prohibitivo porque eh 1000 € de España en Colombia son 503, ¿vale?
+
+
+00:41:00
+
+Alfredo Entelgy: O sea, tienen ah eh vamos prácticamente con la mitad de precio. En otros países a lo mejor va un poco más alto, pero ah eh aparte de cambiar la la moneda, también ajustamos el precio porque lo tenemos productificado. Entonces eh eh con el tema de los precios somos muy transparentes.
+Susana Juan: ¿Qué?
+Alfredo Entelgy: Entonces,
+Susana Juan: ¿Quieres que quieres que la hacemos esta calculadora en algún sitio del portal o
+Alfredo Entelgy: sí que va,
+Susana Juan: no?
+Alfredo Entelgy: te lo paso por aquí.
+Susana Juan: Pues yo creo que tiene todo el sentido. La parte de habilities la tienes igual para el resto, ¿no?
+Alfredo Entelgy: No,
+Susana Juan: Para preservia y ese hability.
+Alfredo Entelgy: eh, lo único que es producto productos y ability, el resto es más
+Susana Juan: Vale, vale. Pues yo creo que tiene todo el sentido enlazarlo aquí. Casi todos los comerciales lo conocerán, pero por si hay algún despistado, algún nuevo o alguien que entre nuevo o lo que sea,
+Alfredo Entelgy: es eh eh el sitio correcto donde tiene que estar es ahí. Entonces,
+Susana Juan: ¿vale?
+Alfredo Entelgy: está hospedado en calculadora.I I y tiene una protección también con con una con un código por cuenta de correo, ¿vale?
+
+
+00:41:59
+
+Alfredo Entelgy: Eh, tú no, me imagino que no podrás entrar si no tienes eso
+Susana Juan: Vale, no me da igual. Yo los lazo que no no hay problema.
+Alfredo Entelgy: es.
+Susana Juan: Vale, perfecto. Pues yo creo que con esto lo tenemos todo. Tenía aquí la parte de contactos, la parte de fotos.
+Alfredo Entelgy: Vale,
+Susana Juan: Eh, vale.
+Alfredo Entelgy: otra eh otros enlaces que te pueden resultar interesantes. Eh tenemos un podcast.
+Susana Juan: Pues sí, todo lo que sean enlaces adicionales.
+Alfredo Entelgy: Ah, te paso el podcast, el enlace a esto, ¿no? A a ver. a Spotify, porque esto eh hay eh yo creo que no lo tiene claro mucha gente, ¿sabes? A ver, copiar enlace aquí. Va, este es el Spotify. Eh, pruébalo porque a ver si va va a estar corrompido por por mi contexto.
+Susana Juan: No, va, va perfectamente. Sí.
+Alfredo Entelgy: Vale. Y tenemos este
+Susana Juan: Ese
+Alfredo Entelgy: cuantas que
+Susana Juan: es un canal de YouTube, ¿no?
+Alfredo Entelgy: es el el de Spotify es en audio y ese es en vídeo.
+
+
+00:43:44
+
+Alfredo Entelgy: Es el mismo podcast, pero en vídeo y en audio.
+Susana Juan: Vale, funciona perfecto.
+Alfredo Entelgy: Pues son como unas entrevistas,
+Susana Juan: Mhm.
+Alfredo Entelgy: un rollo de estos que hacemos. Pero es material porque luego muchas muchos comerciales lo comparten con los clientes, ¿sabes? Lo los más inquietos. Luego, ah eh otra cosa que me piden constantemente los comerciales y que si lo tenemos puesto ahí, lo tiro por aquí. Tiki tiki tiki los vídeos de ability. Eh, tenemos un teaser y un trailer en español y en inglés.
+Susana Juan: Why?
+Alfredo Entelgy: y estos de Smarth Hel. que los puedes colocar dentro de preservia
+Susana Juan: Vale, perfecto.
+Alfredo Entelgy: y luego tenemos la eh el dominio que has visto que que es como una especie de acceso directo a la landing de ability ability. Porque es mucho más fácil de dar que que sí, métete en entelg.com/n bar no sé cuántos patatin y patatán. Entonces, eso es como un acceso directo y te iba a dar firewall mindset, pero no estamos metiendo en ciberseguridad de momento.
+Susana Juan: Vale. Y este, okay. Esto no es no es si es la misma información que hay en no si entras a través de la web o no.
+
+
+00:46:05
+
+Susana Juan: O sea, si entras en intelig.com y al final acabas encontrando dónde está es lo
+Alfredo Entelgy: Al final llegas hastaility. Eso es. No,
+Susana Juan: mismo.
+Alfredo Entelgy: no hay no hay diferencia.
+Susana Juan: Vale.
+Alfredo Entelgy: No hay diferencia. Lo único que eh el es ese dominio lo utilizamos para los envíos de correo, las campañas que hacemos con los clientes, es donde está albergada la plataforma y todo eso y es muy fácil de dar en una conversación o en un ability.
+Susana Juan: Hhm.
+Alfredo Entelgy: Ya está. O sea,
+Susana Juan: Ok.
+Alfredo Entelgy: es una marca que además es una marca registrada nuestra en lo tenemos registrado en la oficina de patentes y marca desde hace ya un par de años o tres, eh, y es un activo que que trabajamos, tiene su logo, tiene tiene todo. De hecho, si quieres te mando hasta un kit de de marca.
+Susana Juan: ¿Tú crees que solo puedes necesitar? Es que tampoco quiero meter mucho ruido en que un comercial lo puede necesitar un kit de marcas.
+Alfredo Entelgy: Eh eh los comerciales a veces me lo piden,
+Susana Juan: No, no, no sé.
+Alfredo Entelgy: el te digo porque me lo piden, me piden un fondo de pantalla para hacer una presentación, un el cacharro este que ponemos en las firmas de correo, que es muy bonito y y tal, o un Bueno, como veas
+
+
+00:47:18
+
+Susana Juan: Bueno, si lo si lo tienes en algún sitio que ya esté quiere decir que sea público, que se pueda acceder vía una ORL, lo ponemos. O sea, que eso no cuesta nada. es eh kit de marca para pues eso, fondos de reuniones,
+Alfredo Entelgy: Fondos de Teams,
+Susana Juan: lo que eso es,
+Alfredo Entelgy: firma.
+Susana Juan: o sea, si es un enlace que ya está externo,
+Alfredo Entelgy: Ah,
+Susana Juan: que es de que no le da peso ni hace mucho ruido, eh,
+Alfredo Entelgy: vale.
+Susana Juan: lo metemos porque si es algo que te piden,
+Alfredo Entelgy: Sí, es porque lo tengan a mano en lugar de andar yo buscando y pasarlo.
+Susana Juan: ¿no? Eso es que te quiten aquí a ti trabajo y que lo y que tengan más cosas. Vale,
+Alfredo Entelgy: Vale,
+Susana Juan: pues pásamelo si quieres por aquí.
+Alfredo Entelgy: eso te lo mando. Lo voy a pedir a Banny.
+Susana Juan: o me lo mandas o lo que sea.
+Alfredo Entelgy: ¿Alguien lo tiene? M. y y me queda eh la referencia eh de BBE o de eh o de Asturias. Te voy a mandar las las tres presentaciones en PowerPoint y una slide con las fotos y los perfiles de LinkedIn.
+
+
+00:48:24
+
+Alfredo Entelgy: Más cosas, Susana.
+Susana Juan: Eh, nada más.
+Alfredo Entelgy: Seguro había un montón de cosas.
+Susana Juan: Seguro, seguro, seguro. Luego echaré un vistazo ya por terminar de cerrar el ciclo a lo que tienes en tu área ahora mismo en el antiguo IPATIA por si hay algo que se nos haya olvidado a ti y a mí. Y te pregunto decir,"Oye, que esto que está aquí se usa, ¿lo metemos? ¿No lo metemos?" O sea, me falta un repaso final de lo que tiene ahora para que no echen nada de menos. Eh, y te pregunto decir,"Oye, que esto que está aquí y me dices, no, pero ya está solito, olvídate. O esto o esto sí o esto es lo único que me falta,
+Alfredo Entelgy: Vale, pero ¿por qué vas a migrar todo lo que había?
+Susana Juan: pero cuando lo haga te no yo no voy a migrar nada." O sea,
+Alfredo Entelgy: No, no.
+Susana Juan: la idea es que empezar con algo limpio y útil.
+Alfredo Entelgy: Claro,
+Susana Juan: Por eso te digo que lo que lo que yo,
+Alfredo Entelgy: por eso te digo.
+Susana Juan: o sea, mi idea es hacer un repaso de todo lo que hay, ¿vale? y preguntaros a vosotros, decir,"Oye, todo esto nos olvidamos, lo dejamos porque eso habrá un histórico que se mantenga ahí al marketing le diremos que se encargue de algún
+
+
+00:49:27
+
+Alfredo Entelgy: Claro, eso eso es un SHP que no nos cuesta nada tenerlo archivado por si acaso.
+Susana Juan: momento." Eso es por si acaso alguna vez hace falta y ya está. Pero la idea es no replicar, si no tiene sentido, pero sí echar un vistazo de lo que hay, pues hay algo importante que se nos haya olvidado.
+Alfredo Entelgy: Vale.
+Susana Juan: Vale, pues yo creo que con esto de sobra para avanzar. y de aquí al día 10 dejarlo terminado. Yo en cuanto lo tenga, pues mañana probablemente te mando el enlace y te digo, Alfredo, revisa que todo lo que hemos hablado está allí adentro.
+Alfredo Entelgy: Vale, vale. Estoy mirando aquí un poco lo de Hipatia. Vale, en principio
+Susana Juan: Es que yo para acceder necesito que bueno, volver al mail, no sé, es un poco rollo, no es tan inmediato.
+Alfredo Entelgy: no te digo el IPATIA viejo.
+Susana Juan: Por eso digo que el Hipatia viejo,
+Alfredo Entelgy: El IPATIA es que no veo
+Susana Juan: si lo miras tú ahora y me dices algo que veas que te falta, perfecto.
+Alfredo Entelgy: nada porque hay unos vídeos internos y todo eso, pero que eh lo que lo que es interesante es lo que nos hemos cruzado. la la calculadora que encima está desactualizada en la Hipatia tal, o sea, perfecto.
+
+
+00:50:45
+
+Alfredo Entelgy: con lo que te he tirado en el chat, lo que hemos hablado y lo que te voy a mandar, Susana, creo que con eso lo tengo completo.
+Susana Juan: Vale, dejamos un segundo porque igual yo Tengo, a ver, no te estaba mirando si porque igual entre todo lo que tengo tuyo, que tengo muchas cosas, ya tengo las presentaciones y te ahorro mandármelas.
+Alfredo Entelgy: Eh, prefiero mandarte las más actuales porque hay un par de cambios
+Susana Juan: Vale. Mm.
+Alfredo Entelgy: de en alguna y y te voy a mandar las que estoy utilizando hoy,
+Susana Juan: Venga, perfecto. Pues así lo hacemos aquí.
+Alfredo Entelgy: que si ya están en formato nuevo y todo eso, nos acostumbramos, empezamos a a utilizarlas. De hecho, a mí que esté que estén las presentaciones en formato online o descargable en PDF me parece fantástico.
+Susana Juan: Vale, pues si me las pasas. De hecho, yo sé estos días que yo creo que voy a estar más tranquila hasta cuando se pase el día 10, les intentamos un poco hacer eso, cambiar un poco el formato adaptado a lo que hemos hecho nuevo para digital chain,
+Alfredo Entelgy: El mismo aspecto. Claro,
+Susana Juan: que tenga el mismo aspecto y y hacer las versiones. Vale, pues pásamelo y yo me pongo con ello.
+Alfredo Entelgy: perfecto, Susana,
+Susana Juan: Venga,
+Alfredo Entelgy: un placer.
+Susana Juan: pues muchas muchas gracias.
+Alfredo Entelgy: Co?
+Susana Juan: Chao. H luego.
+
+
+La transcripción finalizó después de 00:52:19

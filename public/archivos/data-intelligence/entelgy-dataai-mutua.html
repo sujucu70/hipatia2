@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entelgy · Data &amp; AI · Grupo Mutua Madrileña</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#041C2C;            /* primario oscuro Entelgy */
+    --navy-2:#0A2C42;          /* panel navy */
+    --navy-3:#103A55;          /* borde sobre navy */
+    --magenta:#D04C81;         /* acento Entelgy */
+    --magenta-soft:#E68AB0;
+    --ink:#0B1B26;
+    --paper:#FFFFFF;
+    --mist:#F2F5F7;            /* fondo claro */
+    --mist-2:#E5EBEF;
+    --line:#D9E1E7;
+    --line-dk:rgba(255,255,255,.13);
+    --slate:#5C7384;          /* texto secundario claro */
+    --slate-dk:#A9BECC;       /* texto secundario sobre navy */
+    --f:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--f);color:var(--ink);background:var(--mist-2);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+
+  /* ---- estructura de slide ---- */
+  .deck{max-width:1180px;margin:0 auto;padding:26px 18px 80px;}
+  .slide{
+    background:var(--paper);
+    border-radius:6px;
+    box-shadow:0 1px 0 rgba(4,28,44,.04),0 18px 50px -28px rgba(4,28,44,.35);
+    margin-bottom:26px;
+    padding:60px 64px;
+    min-height:640px;
+    display:flex;flex-direction:column;
+    position:relative;
+    overflow:hidden;
+  }
+  .slide.dark{background:var(--navy);color:#EAF1F6;}
+  .slide.dark .lead{color:#fff;}
+  .slide.dark .sub{color:var(--slate-dk);}
+
+  .s-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:34px;}
+  .eyebrow{font-size:.66rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--magenta);}
+  .slide.dark .eyebrow{color:var(--magenta-soft);}
+  .s-num{font-size:.66rem;font-weight:700;letter-spacing:.18em;color:var(--slate);}
+  .slide.dark .s-num{color:var(--slate-dk);}
+
+  .lead{font-size:2.05rem;font-weight:700;line-height:1.12;letter-spacing:-.018em;color:var(--ink);max-width:18ch;}
+  .lead.wide{max-width:26ch;}
+  .lead em{font-style:normal;color:var(--magenta);}
+  .sub{font-size:1.02rem;color:var(--slate);font-weight:400;margin-top:14px;max-width:60ch;}
+
+  .src{font-size:.66rem;color:var(--slate);letter-spacing:.02em;margin-top:auto;padding-top:22px;}
+  .slide.dark .src{color:#7C97A8;}
+  .src b{font-weight:600;color:var(--slate);}
+
+  .foot{position:absolute;left:64px;right:64px;bottom:22px;display:flex;justify-content:space-between;align-items:center;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);font-weight:600;}
+  .slide.dark .foot{color:#5E7C8E;}
+  .foot .bar{height:2px;width:30px;background:var(--magenta);border-radius:2px;}
+
+  /* ---- PORTADA ---- */
+  .cover{justify-content:center;background:var(--navy);color:#fff;min-height:720px;}
+  .cover::after{content:"";position:absolute;right:-120px;top:-120px;width:520px;height:520px;border:1px solid var(--navy-3);border-radius:50%;}
+  .cover::before{content:"";position:absolute;right:-40px;bottom:-160px;width:360px;height:360px;border:1px solid var(--navy-3);border-radius:50%;}
+  .cover .brand{font-size:.72rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--magenta-soft);margin-bottom:30px;z-index:1;}
+  .cover h1{font-size:3.1rem;font-weight:800;line-height:1.04;letter-spacing:-.025em;max-width:20ch;z-index:1;}
+  .cover h1 em{font-style:normal;color:var(--magenta-soft);}
+  .cover .ctx{margin-top:26px;font-size:1.1rem;color:#CFE0EC;font-weight:500;z-index:1;}
+  .cover .meta{margin-top:48px;display:flex;gap:42px;z-index:1;}
+  .cover .meta div{font-size:.82rem;color:var(--slate-dk);}
+  .cover .meta b{display:block;color:#fff;font-weight:600;font-size:.95rem;margin-top:3px;}
+
+  /* ---- MONEY SLIDE ---- */
+  .money{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line-dk);margin-top:6px;}
+  .money .col{padding:24px 22px 26px;border-right:1px solid var(--line-dk);}
+  .money .col:last-child{border-right:none;}
+  .money .lbl{font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta-soft);margin-bottom:14px;}
+  .money .col ul{list-style:none;}
+  .money .col li{font-size:.86rem;line-height:1.45;color:#D7E4EC;padding:7px 0 7px 16px;position:relative;}
+  .money .col li::before{content:"";position:absolute;left:0;top:13px;width:5px;height:5px;border-radius:50%;background:var(--magenta);}
+  .money .col.ask{background:linear-gradient(180deg,rgba(208,76,129,.16),rgba(208,76,129,.05));}
+  .money .col.ask li::before{background:var(--magenta-soft);}
+  .money .col.ask .big{font-size:.98rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:10px;}
+
+  /* ---- RELOJ REGULATORIO (signature) ---- */
+  .clock{margin-top:8px;}
+  .clock-track{position:relative;margin:46px 8px 30px;height:2px;background:linear-gradient(90deg,var(--navy-3),var(--magenta));}
+  .pin{position:absolute;top:-7px;transform:translateX(-50%);}
+  .pin .dot{width:16px;height:16px;border-radius:50%;background:var(--navy);border:3px solid var(--slate-dk);margin:0 auto;}
+  .pin.now .dot{border-color:var(--magenta);}
+  .pin.future .dot{background:var(--magenta);border-color:var(--magenta);box-shadow:0 0 0 6px rgba(208,76,129,.18);}
+  .pin .when{position:absolute;top:-30px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:.72rem;font-weight:800;letter-spacing:.04em;color:#fff;}
+  .pin .what{position:absolute;top:30px;left:50%;transform:translateX(-50%);width:200px;text-align:center;font-size:.78rem;color:var(--slate-dk);line-height:1.4;}
+  .pin .what b{color:#EAF1F6;font-weight:700;display:block;margin-bottom:3px;}
+  .clock-note{margin-top:118px;font-size:1.02rem;color:#CFE0EC;max-width:62ch;border-left:2px solid var(--magenta);padding-left:18px;}
+
+  /* ---- TESIS ---- */
+  .thesis{flex:1;display:flex;flex-direction:column;justify-content:center;}
+  .thesis .big{font-size:2.5rem;font-weight:800;line-height:1.1;letter-spacing:-.02em;max-width:20ch;}
+  .thesis .big em{font-style:normal;color:var(--magenta);}
+  .stat-row{display:flex;gap:54px;margin-top:40px;flex-wrap:wrap;}
+  .stat .n{font-size:2.6rem;font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1;}
+  .stat .n.mag{color:var(--magenta);}
+  .stat .t{font-size:.84rem;color:var(--slate);margin-top:8px;max-width:24ch;}
+  .thesis .turn{margin-top:34px;font-size:1.06rem;color:var(--ink);font-weight:500;max-width:54ch;}
+
+  /* ---- listas de problemas / activos ---- */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px 28px;margin-top:6px;}
+  .item{padding:20px 22px;background:var(--mist);border-radius:5px;border-left:3px solid var(--magenta);}
+  .item h4{font-size:1.02rem;font-weight:700;color:var(--ink);margin-bottom:7px;letter-spacing:-.01em;}
+  .item p{font-size:.86rem;color:var(--slate);line-height:1.5;}
+
+  .assets{display:flex;flex-direction:column;gap:12px;margin-top:6px;}
+  .asset{display:grid;grid-template-columns:42px 1fr auto;gap:18px;align-items:center;padding:16px 20px;background:var(--mist);border-radius:5px;}
+  .asset .tag{width:42px;height:42px;border-radius:5px;background:var(--navy);color:#fff;font-weight:800;font-size:1.1rem;display:flex;align-items:center;justify-content:center;}
+  .asset.ready .tag{background:var(--magenta);}
+  .asset .body h4{font-size:1rem;font-weight:700;color:var(--ink);}
+  .asset .body p{font-size:.83rem;color:var(--slate);margin-top:3px;line-height:1.45;}
+  .asset .impact{font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);text-align:right;white-space:nowrap;}
+  .asset .impact .pill{display:inline-block;margin-top:6px;background:var(--mist-2);color:var(--navy);padding:4px 9px;border-radius:20px;font-size:.6rem;}
+  .asset.ready .impact .pill{background:rgba(208,76,129,.12);color:var(--magenta);}
+  .nowtag{font-size:.58rem;font-weight:800;letter-spacing:.1em;color:var(--magenta);text-transform:uppercase;}
+
+  /* ---- por qué entelgy ---- */
+  .why{display:flex;flex-direction:column;gap:14px;margin-top:6px;}
+  .why .row{display:grid;grid-template-columns:30px 1fr;gap:18px;padding:18px 0;border-top:1px solid var(--line);}
+  .why .row:first-child{border-top:none;}
+  .why .ix{font-size:1.3rem;font-weight:800;color:var(--magenta);line-height:1;}
+  .why h4{font-size:1.12rem;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-.01em;}
+  .why p{font-size:.9rem;color:var(--slate);line-height:1.55;max-width:78ch;}
+
+  /* ---- prueba ---- */
+  .proof{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px;margin-top:6px;}
+  .card{padding:24px 22px;border-radius:6px;background:var(--mist);border:1px solid var(--line);}
+  .card.real{background:var(--navy);color:#fff;border:none;}
+  .card.real .role{color:var(--magenta-soft);}
+  .card .role{font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--magenta);margin-bottom:12px;}
+  .card h4{font-size:1.18rem;font-weight:700;letter-spacing:-.01em;margin-bottom:10px;}
+  .card.real h4{color:#fff;}
+  .card p{font-size:.85rem;line-height:1.5;color:var(--slate);}
+  .card.real p{color:#CFE0EC;}
+  .card .micro{margin-top:14px;font-size:.66rem;color:var(--slate);font-style:italic;}
+  .card.real .micro{color:#7C97A8;}
+  .card.slot{background:repeating-linear-gradient(135deg,#fff,#fff 9px,#fafcfd 9px,#fafcfd 18px);border:1.5px dashed var(--magenta);}
+  .card.slot .role{color:var(--slate);}
+  .card.slot h4{color:var(--slate);font-weight:600;font-size:1rem;}
+  .card.slot p{color:var(--slate);}
+
+  /* ---- ask / entrada ---- */
+  .entry{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;margin-top:6px;align-items:start;}
+  .entry .box{background:var(--navy);color:#fff;border-radius:6px;padding:30px 30px 32px;}
+  .entry .box .k{font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta-soft);}
+  .entry .box h3{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;margin:8px 0 16px;line-height:1.12;}
+  .entry .box ul{list-style:none;}
+  .entry .box li{font-size:.88rem;color:#D7E4EC;padding:7px 0 7px 18px;position:relative;line-height:1.45;}
+  .entry .box li::before{content:"→";position:absolute;left:0;color:var(--magenta-soft);font-weight:700;}
+  .entry .scope{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;}
+  .entry .scope span{font-size:.7rem;font-weight:700;background:rgba(255,255,255,.08);border:1px solid var(--navy-3);padding:7px 12px;border-radius:20px;color:#EAF1F6;}
+  .entry .scope span.ph{border-style:dashed;border-color:var(--magenta-soft);color:var(--magenta-soft);}
+  .entry .after h4{font-size:.95rem;font-weight:700;margin-bottom:12px;color:var(--ink);}
+  .entry .after .step{padding:13px 0;border-top:1px solid var(--line);font-size:.86rem;color:var(--slate);}
+  .entry .after .step:first-of-type{border-top:none;}
+  .entry .after .step b{color:var(--ink);font-weight:700;}
+
+  /* ---- cierre ---- */
+  .close{justify-content:center;text-align:left;}
+  .close h2{font-size:2.8rem;font-weight:800;letter-spacing:-.025em;line-height:1.06;max-width:18ch;}
+  .close h2 em{font-style:normal;color:var(--magenta-soft);}
+  .close .ask-line{margin-top:24px;font-size:1.15rem;color:#CFE0EC;max-width:56ch;}
+  .close .who{margin-top:46px;display:flex;align-items:center;gap:16px;}
+  .close .who .av{width:46px;height:46px;border-radius:50%;background:var(--magenta);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;}
+  .close .who .nm b{display:block;color:#fff;font-weight:700;}
+  .close .who .nm span{font-size:.82rem;color:var(--slate-dk);}
+
+  /* ---- apéndice ---- */
+  .ap-stages{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:14px;}
+  .stg{padding:24px 22px;border-right:1px solid var(--line);position:relative;}
+  .stg:last-child{border-right:none;}
+  .stg .n{font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--magenta);}
+  .stg h4{font-size:1.15rem;font-weight:700;margin:8px 0 8px;letter-spacing:-.01em;}
+  .stg p{font-size:.83rem;color:var(--slate);line-height:1.5;}
+  .stg::after{content:"→";position:absolute;right:-9px;top:24px;color:var(--magenta);font-weight:700;}
+  .stg:last-child::after{display:none;}
+  .sources{margin-top:14px;columns:2;column-gap:36px;}
+  .sources p{font-size:.78rem;color:var(--slate);line-height:1.5;padding:7px 0;border-top:1px solid var(--line);break-inside:avoid;}
+  .sources p b{color:var(--ink);font-weight:600;}
+
+  .note{background:#FFF6FA;border:1px dashed var(--magenta);border-radius:5px;padding:12px 16px;font-size:.76rem;color:var(--slate);margin-top:18px;line-height:1.5;}
+  .note b{color:var(--magenta);font-weight:700;}
+
+  @media print{
+    body{background:#fff;}
+    .deck{max-width:none;padding:0;}
+    .slide{box-shadow:none;border-radius:0;margin:0;page-break-after:always;min-height:100vh;}
+  }
+  @media(max-width:880px){
+    .slide{padding:38px 26px 64px;min-height:auto;}
+    .foot{left:26px;right:26px;}
+    .money{grid-template-columns:1fr 1fr;}
+    .money .col{border-bottom:1px solid var(--line-dk);}
+    .grid2,.proof,.entry,.ap-stages{grid-template-columns:1fr;}
+    .stg{border-right:none;border-bottom:1px solid var(--line);}
+    .stg::after{display:none;}
+    .sources{columns:1;}
+    .cover h1{font-size:2.2rem;}
+    .lead,.thesis .big{font-size:1.7rem;}
+    .clock-track{margin:60px 4px;}
+    .pin .what{width:120px;font-size:.68rem;}
+    .clock-note{margin-top:150px;}
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- ░░ S01 · PORTADA ░░ -->
+  <section class="slide cover">
+    <div class="brand">Entelgy · Data &amp; AI</div>
+    <h1>Gobernar el dato y los <em>modelos de IA.</em></h1>
+    <div class="ctx">La base sobre la que un asegurador decide y cumple.</div>
+    <div class="meta">
+      <div>Para<b>Grupo Mutua Madrileña</b></div>
+      <div>Documento<b>Propuesta de capacidades</b></div>
+      <div>Fecha<b>Junio 2026 · Confidencial</b></div>
+    </div>
+  </section>
+
+  <!-- ░░ S02 · MONEY SLIDE ░░ -->
+  <section class="slide dark">
+    <div class="s-head"><span class="eyebrow">Resumen para Dirección</span><span class="s-num">02</span></div>
+    <p class="lead wide" style="color:#fff">Mutua ya opera IA en producción. El siguiente movimiento es <em style="color:var(--magenta-soft)">gobernar lo que ya hay</em>, con el reloj regulatorio encima.</p>
+    <div class="money">
+      <div class="col">
+        <div class="lbl">Situación</div>
+        <ul>
+          <li>Modelos de pricing, fraude y atención en producción sobre datos de 19 M de asegurados.</li>
+          <li>El valor de esos modelos depende del dato que los alimenta — y de poder demostrar cómo deciden.</li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="lbl">Complicación</div>
+        <ul>
+          <li>DORA en aplicación desde ene·2025 sobre las entidades financieras.</li>
+          <li>EU AI Act: sistemas de alto riesgo (pricing en vida y salud) en plena aplicación dic·2027.</li>
+          <li>Inventariar y clasificar lleva meses. Empezar tarde no es una opción.</li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="lbl">Por qué Entelgy</div>
+        <ul>
+          <li>Gobernamos el dato <b>y</b> los modelos como infraestructura de cumplimiento, no como buena práctica.</li>
+          <li>Construimos el modelo operativo que sobrevive al cambio de dirección.</li>
+          <li>Lo operamos con vuestro equipo. Referencia en entidad supervisora financiera.</li>
+        </ul>
+      </div>
+      <div class="col ask">
+        <div class="lbl">El primer paso</div>
+        <div class="big">Assessment de conformidad EU AI Act + estado del dato.</div>
+        <ul>
+          <li>Inventario y clasificación por riesgo de los sistemas de IA en producción.</li>
+          <li>Gap frente al Reglamento y plan con fecha.</li>
+          <li>Alcance acotado · precio cerrado.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot"><span class="bar"></span><span>Entelgy · Data &amp; AI · Grupo Mutua Madrileña</span></div>
+  </section>
+
+  <!-- ░░ S03 · HOOK · RELOJ REGULATORIO ░░ -->
+  <section class="slide dark">
+    <div class="s-head"><span class="eyebrow">El momento del seguro</span><span class="s-num">03</span></div>
+    <p class="lead" style="color:#fff">El reloj corre sobre la IA que <em style="color:var(--magenta-soft)">ya tenéis</em>, no sobre la que falta por hacer.</p>
+    <div class="clock">
+      <div class="clock-track">
+        <div class="pin now" style="left:6%">
+          <div class="when" style="color:var(--magenta-soft)">Ene 2025</div>
+          <div class="dot"></div>
+          <div class="what"><b>DORA · ya en vigor</b>Entidad financiera: clasificar activos críticos y gestionar el riesgo TIC sobre el dato.</div>
+        </div>
+        <div class="pin now" style="left:42%">
+          <div class="when" style="color:var(--magenta-soft)">Hoy</div>
+          <div class="dot"></div>
+          <div class="what"><b>GDPR técnico</b>La sanción llega por el control técnico real, no por la política documentada.</div>
+        </div>
+        <div class="pin future" style="left:92%">
+          <div class="when">Dic 2027</div>
+          <div class="dot"></div>
+          <div class="what"><b>EU AI Act · alto riesgo</b>Pricing y suscripción en vida y salud: clasificados, documentados y auditables.</div>
+        </div>
+      </div>
+    </div>
+    <p class="clock-note">Construir el inventario de sistemas de IA, clasificarlos por nivel de riesgo y levantar la documentación lleva meses. Quien empiece cuando el supervisor apriete, no llega. El margen de tiempo es la ventaja — si se usa ahora.</p>
+    <div class="src"><b>Fuentes:</b> Reglamento UE 2022/2554 (DORA), en aplicación desde 17·ene·2025 · Reglamento UE 2024/1689 (EU AI Act), Anexo III, plena aplicación de sistemas de alto riesgo dic·2027 · Reglamento UE 2016/679 (GDPR).</div>
+    <div class="foot"><span class="bar"></span><span>Entelgy · Data &amp; AI · Grupo Mutua Madrileña</span></div>
+  </section>
+
+  <!-- ░░ S04 · TESIS ░░ -->
+  <section class="slide">
+    <div class="s-head"><span class="eyebrow">La tesis</span><span class="s-num">04</span></div>
+    <div class="thesis">
+      <p class="big">La IA vale lo que vale el <em>dato que la alimenta.</em></p>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="n">88%</div>
+          <div class="t">de las organizaciones ya usa IA.</div>
+        </div>
+        <div class="stat">
+          <div class="n mag">6%</div>
+          <div class="t">lo ve reflejado en su cuenta de resultados.</div>
+        </div>
+      </div>
+      <p class="turn">La diferencia entre el 88 y el 6 no está en el modelo. Está en la base: dato gobernado, trazable y con calidad medida. Entelgy entra por ahí, por los cimientos.</p>
+    </div>
+    <div class="src"><b>Fuente:</b> McKinsey, <i>The State of AI in 2025</i> — 1.993 organizaciones, 105 países, julio 2025. Cadena: 88% usa IA → 39% atribuye algún impacto en EBIT → 6% supera el umbral del 5% de EBIT.</div>
+    <div class="foot"><span class="bar"></span><span>Entelgy · Data &amp; AI · Grupo Mutua Madrileña</span></div>
+  </section>
+
+  <!-- ░░ S05 · LO QUE HAY QUE GOBERNAR ░░ -->
+  <section class="slide">
+    <div class="s-head"><span class="eyebrow">Lo que un asegurador necesita gobernar</span><span class="s-num">05</span></div>
+    <p class="lead wide">Cuatro frentes donde el dato y los modelos deciden — y donde hoy nadie tiene el mando claro.</p>
+    <div class="grid2" style="margin-top:30px">
+      <div class="item">
+        <h4>Modelos en producción sin control de validez</h4>
+        <p>Un asegurador con dos años de iniciativas de IA tiene decenas de modelos en distintos estados. Sin registro central ni evaluación periódica, los modelos que han derivado siguen decidiendo sobre personas — de forma invisible y, en alto riesgo, no defendible ante el supervisor.</p>
+      </div>
+      <div class="item">
+        <h4>Gobierno del dato como obligación auditable</h4>
+        <p>DORA exige clasificar los activos de información críticos y gestionar el riesgo sobre ellos. El catálogo "que nunca se termina" y el RACI firmado no bastan: hace falta un gobierno con roles que ejercen y procesos vivos que un auditor pueda recorrer.</p>
+      </div>
+      <div class="item">
+        <h4>Analítica que el negocio usa para decidir</h4>
+        <p>El reporting que llega tarde y se discute en lugar de usarse. Cada área con sus KPIs y los números que no cuadran con dirección. Se arregla con una capa semántica acordada: que un dato signifique lo mismo en ventas, en siniestros y en dirección.</p>
+      </div>
+      <div class="item">
+        <h4>Calidad y linaje que sostienen la IA</h4>
+        <p>Si no se sabe de dónde viene el dato que alimenta un modelo de pricing, no hay forma de defender la decisión ante el regulador ni de corregirla cuando falla. El linaje deja de ser higiene técnica y pasa a ser prueba de cumplimiento.</p>
+      </div>
+    </div>
+    <div class="foot"><span class="bar"></span><span>Entelgy · Data &amp; AI · Grupo Mutua Madrileña</span></div>
+  </section>
+
+  <!-- ░░ S06 · QUÉ CONSTRUIMOS ░░ -->
+  <section class="slide">
+    <div class="s-head"><span class="eyebrow">Qué construimos</span><span class="s-num">06</span></div>
+    <p class="lead wide">Cuatro capacidades. Ordenadas por lo que entregamos <em>hoy</em> y por lo que más pesa en seguros.</p>
+    <div class="assets" style="margin-top:26px">
+      <div class="asset ready">
+        <div class="tag">D</div>
+        <div class="body">
+          <h4>Conformidad EU AI Act <span class="nowtag">· vendible ya</span></h4>
+          <p>Inventario de sistemas de IA, clasificación por nivel de riesgo, gap frente al Reglamento y plan priorizado. Advisory que arranca sin plataforma ni dependencia de socios.</p>
+        </div>
+        <div class="impact">Impacto<span class="pill">Riesgo regulatorio</span></div>
+      </div>
+      <div class="asset ready">
+        <div class="tag">A</div>
+        <div class="body">
+          <h4>Gobierno del dato y de los modelos <span class="nowtag">· vendible ya</span></h4>
+          <p>Modelo operativo con roles que ejercen, catálogo vivo y gobierno de modelos: catalogación, clasificación y trazabilidad de los datasets de entrenamiento. La base que DORA y el AI Act exigen demostrar.</p>
+        </div>
+        <div class="impact">Impacto<span class="pill">Riesgo · Cumplimiento</span></div>
+      </div>
+      <div class="asset">
+        <div class="tag">B</div>
+        <div class="body">
+          <h4>BI y analítica que decide</h4>
+          <p>Del informe que se discute al dato que el negocio usa. Capa semántica unificada y autoservicio que libera tiempo de IT. Demostración de valor en semanas, sin esperar a nada.</p>
+        </div>
+        <div class="impact">Impacto<span class="pill">OPEX · Velocidad</span></div>
+      </div>
+      <div class="asset">
+        <div class="tag">C</div>
+        <div class="body">
+          <h4>Analítica avanzada y modelos predictivos</h4>
+          <p>Con alcance honesto: entregamos el modelo y el pipeline de datos; la operación en producción la diseñamos con vuestro equipo. Sin prometer un servicio con SLA antes de poder sostenerlo.</p>
+        </div>
+        <div class="impact">Impacto<span class="pill">Pérdida evitada</span></div>
+      </div>
+    </div>
+    <div class="foot"><span class="bar"></span><span>Entelgy · Data &amp; AI · Grupo Mutua Madrileña</span></div>
+  </section>
+
+  <!-- ░░ S07 · POR QUÉ ENTELGY ░░ -->
+  <section class="slide">
+    <div class="s-head"><span class="eyebrow">Por qué Entelgy y no cualquier otro</span><span class="s-num">07</span></div>
+    <div class="why" style="flex:1;justify-content:center">
+      <div class="row">
+        <div class="ix">01</div>
+        <div>
+          <h4>Gobierno como cumplimiento, no como buena práctica</h4>
+          <p>Las plataformas venden la herramienta. Las grandes consultoras tienen la práctica legal separada de la de datos y rara vez las juntan en un mensaje de venta. Entelgy une el conocimiento del dato y el del marco regulatorio en una sola conversación — la que un asegurador necesita para llegar a diciembre de 2027 con garantías.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="ix">02</div>
+        <div>
+          <h4>El modelo operativo que sobrevive al próximo CDO</h4>
+          <p>El mercado entrega roadmaps que duran lo que dura el mandato de quien los encargó. Nosotros construimos el sistema, no el documento: roles con mandato real, procesos con responsable y métrica, y mantenimiento del catálogo que no depende de una persona. Eso es lo que un auditor puede recorrer dos años después.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="ix">03</div>
+        <div>
+          <h4>Lo construimos y lo operamos con vuestro equipo</h4>
+          <p>No entregamos un informe y desaparecemos. Construimos la capacidad en vuestro entorno y la operamos con vuestra gente hasta que la gobiernan solos. La honestidad sobre el alcance — qué entregamos hoy y qué cuando esté la base — es parte de la propuesta, no la letra pequeña.</p>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span class="bar"></span><span>Entelgy · Data &amp; AI · Grupo Mutua Madrileña</span></div>
+  </section>
+
+  <!-- ░░ S08 · PRUEBA ░░ -->
+  <section class="slide">
+    <div class="s-head"><span class="eyebrow">Prueba</span><span class="s-num">08</span></div>
+    <p class="lead wide">Gobierno del dato en un entorno regulado real, con la responsable del área al frente.</p>
+    <div class="proof" style="margin-top:28px">
+      <div class="card real">
+        <div class="role">Entidad supervisora financiera</div>
+        <h4>Supervisor financiero de primer nivel</h4>
+        <p>Proyecto de gobierno del dato en un organismo supervisor del sector financiero, en marcha, liderado directamente por la responsable de Data &amp; AI. Una referencia reciente, en un entorno donde el cumplimiento no es opcional.</p>
+        <div class="micro">Naming pendiente de autorización del cliente · se presenta anonimizado.</div>
+      </div>
+      <div class="card slot">
+        <div class="role">Hueco para referencia citable</div>
+        <h4>[ Cliente + resultado ]</h4>
+        <p>Caso citable en banca, AAPP o seguros con cifra de impacto. A confirmar con la responsable del área qué nombres se pueden usar.</p>
+      </div>
+      <div class="card slot">
+        <div class="role">Hueco para referencia citable</div>
+        <h4>[ Cliente + resultado ]</h4>
+        <p>Segundo caso, preferiblemente de analítica o BI con tracción demostrable y nombre verificable.</p>
+      </div>
+    </div>
+    <div class="note"><b>Nota para Daniela:</b> CNMV no se puede nombrar todavía (sin autorización, proyecto sin cerrar). Va anonimizado como "supervisor financiero de primer nivel". Los dos huecos son para los clientes que sí podamos citar — mejor dos nombres españoles verificables que diez genéricos.</div>
+    <div class="foot"><span class="bar"></span><span>Entelgy · Data &amp; AI · Grupo Mutua Madrileña</span></div>
+  </section>
+
+  <!-- ░░ S09 · POR DÓNDE ENTRAMOS ░░ -->
+  <section class="slide">
+    <div class="s-head"><span class="eyebrow">Por dónde entramos</span><span class="s-num">09</span></div>
+    <p class="lead wide">Un primer proyecto acotado, de bajo riesgo, que abre la conversación con una foto clara.</p>
+    <div class="entry" style="margin-top:26px">
+      <div class="box">
+        <div class="k">Módulo de entrada</div>
+        <h3>Assessment de conformidad EU AI Act + estado del dato</h3>
+        <ul>
+          <li>Inventario de los sistemas de IA en producción.</li>
+          <li>Clasificación por nivel de riesgo según el Reglamento.</li>
+          <li>Gap frente a las obligaciones de alto riesgo.</li>
+          <li>Diagnóstico del dato que alimenta esos modelos.</li>
+          <li>Mapa de exposición + plan priorizado con fecha.</li>
+        </ul>
+        <div class="scope">
+          <span>Alcance acotado</span>
+          <span>Precio cerrado</span>
+          <span class="ph">[ plazo · a fijar ]</span>
+        </div>
+      </div>
+      <div class="after">
+        <h4>Y después, en orden:</h4>
+        <div class="step"><b>Gobierno del dato y de los modelos</b> — sobre lo que el assessment haya destapado.</div>
+        <div class="step"><b>BI y analítica que decide</b> — quick win en paralelo, demuestra valor pronto.</div>
+        <div class="step"><b>Propuesta end-to-end</b> — cuando la base esté y los socios cerrados. Sin prometerla antes.</div>
+      </div>
+    </div>
+    <div class="foot"><span class="bar"></span><span>Entelgy · Data &amp; AI · Grupo Mutua Madrileña</span></div>
+  </section>
+
+  <!-- ░░ S10 · CIERRE ░░ -->
+  <section class="slide dark close">
+    <div class="s-head" style="position:absolute;top:38px;left:64px;right:64px"><span class="eyebrow">El paso siguiente</span><span class="s-num">10</span></div>
+    <h2>Empecemos por la <em>base.</em></h2>
+    <p class="ask-line">Una sesión de alcance para acordar el assessment de conformidad sobre vuestros sistemas de IA en producción y el estado del dato que los sostiene. De ahí sale el primer mapa — y el primer proyecto.</p>
+    <div class="who">
+      <div class="av">D</div>
+      <div class="nm"><b>Daniela · Responsable de Data &amp; AI</b><span>Entelgy</span></div>
+    </div>
+    <div class="foot"><span class="bar"></span><span>Entelgy · Data &amp; AI · Grupo Mutua Madrileña</span></div>
+  </section>
+
+  <!-- ░░ A1 · APÉNDICE · LOS TRES ESTADIOS ░░ -->
+  <section class="slide">
+    <div class="s-head"><span class="eyebrow">Apéndice · El mapa de madurez</span><span class="s-num">A1</span></div>
+    <p class="lead wide">Tres estadios para ubicar dónde está Mutua hoy y qué le toca en cada momento.</p>
+    <div class="ap-stages" style="margin-top:24px">
+      <div class="stg">
+        <div class="n">Estadio 1</div>
+        <h4>Base confiable</h4>
+        <p>Gobierno del dato operativo, calidad medida, linaje trazable y los sistemas de IA inventariados y clasificados. Es el suelo sobre el que se sostiene todo lo demás — y lo que el regulador exige demostrar.</p>
+      </div>
+      <div class="stg">
+        <div class="n">Estadio 2</div>
+        <h4>Analítica activada</h4>
+        <p>Capa semántica acordada, autoservicio que el negocio usa sin depender de IT, y data products documentados con calidad y disponibilidad. El dato deja de reconciliarse en los comités y empieza a decidir.</p>
+      </div>
+      <div class="stg">
+        <div class="n">Estadio 3</div>
+        <h4>IA sostenible</h4>
+        <p>Modelos que llegan a producción, se monitorizan y se gobiernan a lo largo de su vida. La IA escala porque la base la sostiene — no al revés.</p>
+      </div>
+    </div>
+    <div class="note"><b>Uso interno:</b> este es el armazón "Trusted Data 360" traducido a estadios. Sirve para situar a Mutua en la conversación; no se presenta como framework con nombre propio.</div>
+    <div class="foot"><span class="bar"></span><span>Entelgy · Data &amp; AI · Grupo Mutua Madrileña</span></div>
+  </section>
+
+  <!-- ░░ A2 · APÉNDICE · FUENTES ░░ -->
+  <section class="slide">
+    <div class="s-head"><span class="eyebrow">Apéndice · Fuentes</span><span class="s-num">A2</span></div>
+    <p class="lead wide">Cada dato, con su origen.</p>
+    <div class="sources" style="margin-top:18px">
+      <p><b>EU AI Act</b> — Reglamento UE 2024/1689. Obligaciones de conformidad para sistemas de alto riesgo (Anexo III, pricing y suscripción en vida y salud entre ellos): clasificación, documentación, registro y supervisión humana. Plena aplicación de alto riesgo: dic·2027.</p>
+      <p><b>DORA</b> — Reglamento UE 2022/2554. Resiliencia operativa digital para entidades financieras, incluidas las aseguradoras. En aplicación desde el 17·ene·2025.</p>
+      <p><b>GDPR</b> — Reglamento UE 2016/679. Régimen sancionador sobre el tratamiento de datos personales, con foco creciente en el control técnico efectivo.</p>
+      <p><b>McKinsey</b> — <i>The State of AI in 2025</i>. 1.993 organizaciones, 105 países, julio 2025. 88% usa IA · 39% atribuye impacto en EBIT · 6% supera el umbral del 5%.</p>
+      <p><b>Grupo Mutua Madrileña</b> — datos públicos del grupo: líder en seguros generales, &gt;19 M de asegurados, entidad financiera con líneas de vida y salud (SegurCaixa Adeslas).</p>
+    </div>
+    <div class="foot"><span class="bar"></span><span>Entelgy · Data &amp; AI · Grupo Mutua Madrileña</span></div>
+  </section>
+
+</div>
+<div id="hipatia-volver"><button type="button" aria-label="Volver a Hipatia">← Volver a Hipatia</button></div>
+<style>
+#hipatia-volver{position:fixed;top:14px;left:14px;z-index:2147483000;font:500 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+#hipatia-volver button{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:999px;border:1px solid #E6E8EA;background:#fff;color:#041C2C;cursor:pointer;box-shadow:0 1px 3px rgba(4,28,44,.10);font:inherit;transition:color .15s,border-color .15s}
+#hipatia-volver button:hover{color:#FE5000;border-color:#FE5000}
+#hipatia-volver button:focus-visible{outline:2px solid #FE5000;outline-offset:2px}
+@media print{#hipatia-volver{display:none !important}}
+</style>
+<script>
+(function(){
+  var PORTAL="https://hipatia-v4.guberna.es/";
+  function volver(){
+    // el material se abre en la misma pestaña, así que hay historial: volver
+    // atrás devuelve al listado exacto, con su scroll y sus filtros. Si alguien
+    // llegó por la URL directa no hay historial y se va a la portada.
+    if(history.length>1){ history.back(); return; }
+    location.href=PORTAL;
+  }
+  var b=document.getElementById('hipatia-volver');
+  if(b) b.firstChild.addEventListener('click',volver);
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape'||e.defaultPrevented) return;
+    if(document.fullscreenElement) return;                 // Escape sale de pantalla completa
+    var a=document.activeElement;
+    if(a&&(a.tagName==='INPUT'||a.tagName==='TEXTAREA'||a.isContentEditable)) return;
+    volver();
+  });
+})();
+</script></body>
+</html>
